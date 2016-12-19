@@ -38,4 +38,24 @@
         android:paddingTop="20dp"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer3"
+        android:id="@+id/tv_answer3"
+        android:clickable="true"
+        android:textSize="@dimen/answer_size"
+        android:paddingTop="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Answer4"
+        android:id="@+id/tv_answer4"
+        android:clickable="true"
+        android:textSize="@dimen/answer_size"
+        android:paddingTop="20dp"
+        />
+
 </TableLayout>

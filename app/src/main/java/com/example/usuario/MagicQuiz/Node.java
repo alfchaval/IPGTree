@@ -61,28 +61,8 @@ public class Node<T> {
         children.add(node);
     }
 
-    //MEJORAR
-    public boolean existChild (int[] position) {
-        Node<T> node = new Node<T>(data, parent, children);
-        for(int i = 0; i < position.length; i++) {
-            if(node.existChild(position[i])) node = node.getChild(position[i]);
-            else return false;
-        }
-        return true;
-    }
-
     public boolean existChild(int position) {
         return (position >= 0 && position < children.size());
-    }
-
-    //MEJORAR
-    //WARNING: ask only for a node that exist
-    public Node<T> getChild(int[] position) {
-        Node<T> node = new Node<T>(data, parent, children);
-        for(int i = 0; i < position.length; i++) {
-            node = node.getChild(position[i]);
-        }
-        return node;
     }
 
     //WARNING: ask only for a child that exist
