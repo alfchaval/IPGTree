@@ -46,6 +46,14 @@ public class Quiz {
         this.answers.add(answer);
     }
 
+    public boolean removeAnswer(int position) {
+        if(position >= 0 && position < answers.size()) {
+            answers.remove(position);
+            return true;
+        }
+        else return false;
+    }
+
     public int getChoice() {
         return choice;
     }

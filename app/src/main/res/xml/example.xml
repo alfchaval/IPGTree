@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question text="¿Qué ha pasado?">
+    <answer text="El jugador ha robado una carta extra">
+        <question text="¿Conocía la carta del top?">
+            <answer text="Si">
+                <question text="¿El oponente la conocía?">
+                    <answer text="Si">
+                        <question text="GPE - Game Rule Violation, se coloca la carta de vuelta al top, tiene un warning"></question>
+                    </answer>
+                    <answer text="No">
+                        <question text="GPE - Hidden Card Error, el oponente le mira la mano, elige una carta de allí y se pone en el top, tiene un warning"></question>
+                    </answer>
+                </question>
+            </answer>
+            <answer text="No">
+                <question text="GPE - Hidden Card Error, el oponente le mira la mano, elige una carta de allí y se baraja en la porción aleatoria de la biblioteca, tiene un warning"></question>
+            </answer>
+        </question>
+    </answer>
+    <answer text="El jugador ha apuñalado a su oponente">
+        <question text="¿El oponente jugaba Eggs?">
+            <answer text="Si">
+                <question text="UC - Minor, dale un Warning"></question>
+            </answer>
+            <answer text="UC - Minor, dale un Warning">
+                <question text="UC - Aggresive Behavior, DQ, involucra al TO y de paso llama a la poli"></question>
+            </answer>
+            <answer text="No, jugaba Lantern">
+                <question text="Di a los jugadores que continúen jugando"></question>
+            </answer>
+        </question>
+    </answer>
+</question>
+
+
