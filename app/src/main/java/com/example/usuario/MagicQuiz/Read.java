@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Read {
 
     public static Tree<Quiz> readXMLQuiz(File file) throws XmlPullParserException, IOException {
-        Tree<Quiz> tree = new Tree<Quiz>(new Node<Quiz>(new Quiz("")));
+        Tree<Quiz> tree = new Tree<Quiz>(new Tree<Quiz>(new Quiz("")));
         boolean isQuestion = false;
         boolean isAnswer = false;
 

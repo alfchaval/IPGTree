@@ -4,27 +4,177 @@ import java.util.ArrayList;
 
 public class Tree<T> {
 
-    private Node<T> root;
+    //region variables
 
-    public Tree(T rootData) {
-        root = new Node<T>(rootData);
+    private T data;
+    private Tree<T> parent;
+    private ArrayList<Tree<T>> children;
+
+    //endregion
+
+    //region constructors
+
+    public Tree(T data) {
+        this.data = data;
+        this.parent = null;
+        this.children = new ArrayList<>();
     }
 
-    public Tree(T rootData, ArrayList<Node<T>> children) {
-        root = new Node<T>(rootData, children);
+    public Tree(T data, Tree<T> parent) {
+        this.data = data;
+        this.parent = parent;
+        parent.addChild(this);
+        this.children = new ArrayList<>();
     }
 
-    public Tree(Node<T> node) {
-        node.setParent(null);
-        root = node;
+    public Tree(T data, ArrayList<Tree<T>> children) {
+        this.data = data;
+        this.parent = null;
+        this.children = children;
     }
 
-    public Node<T> getRoot() {
-        return root;
+    public Tree(T data, Tree<T> parent, ArrayList<Tree<T>> children) {
+        this.data = data;
+        this.parent = parent;
+        parent.addChild(this);
+        this.children = children;
     }
 
-    public void setRoot(Node<T> root) {
-        this.root = root;
+    public Tree(Tree<T> tree) {
+        this.data = tree.data;
+        this.parent = tree.parent;
+        this.children = new ArrayList<Tree<T>>();
+        for (Tree<T> child: tree.children) {
+            this.children.add(new Tree<T>(child,this));
+        }
     }
 
+    public Tree(Tree<T> tree, Tree<T> parent) {
+        this.data = tree.data;
+        this.parent = parent;
+        this.children = new ArrayList<Tree<T>>();
+        for (Tree<T> child: tree.children) {
+            this.children.add(new Tree<T>(child,this));
+        }
+    }
+
+    //endregion
+
+    //region basicGetsAndSets
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    //WARNING: null if is root
+    public Tree<T> getParent() {
+        return parent;
+    }
+
+    public void setParent(Tree<T> parent) {
+        if(parent != null) parent.children.remove(this);
+        this.parent = parent;
+    }
+
+    public ArrayList<Tree<T>> getChildren() {
+        return children;
+    }
+
+    public void setChildren(ArrayList<Tree<T>> children) {
+        for (Tree<T> tree : children) {
+            tree.setParent(this);
+        }
+        this.children = children;
+    }
+
+    //endregion
+
+    //region others
+
+    public void addChildren(ArrayList<Tree<T>> children) {
+        for (Tree<T> tree : children) {
+            this.addChild(tree);
+        }
+    }
+
+    public void addChild(Tree<T> tree) {
+        tree.setParent(this);
+        this.children.add(tree);
+    }
+
+    public boolean removeChild(int position) {
+        if(existChild(position)) {
+            this.getChild(position).setParent(null);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean existChild(int position) {
+        return (position >= 0 && position < children.size());
+    }
+
+    public boolean existChild(int[] position) {
+        Tree<T> child = this;
+        for(int i = 0; i < position.length; i++) {
+            if(child.existChild(position[i])) child = child.getChild(position[i]);
+            else return false;
+        }
+        return true;
+    }
+
+    //WARNING: ask only for a child that exist
+    public Tree<T> getChild(int position) {
+        return this.children.get(position);
+    }
+
+    //WARNING: ask only for a child that exist
+    public Tree<T> getChild(int[] position) {
+        Tree<T> child = this;
+        for(int i = 0; i < position.length; i++) {
+            child = child.getChild(position[i]);
+        }
+        return child;
+    }
+
+    public Tree<T> getChildIfExist(int position) {
+        if(this.existChild(position)) return this.getChild(position);
+        else return this;
+    }
+
+    public Tree<T> getChildIfExist(int[] position) {
+        Tree<T> child = this;
+        for(int i = 0; i < position.length; i++) {
+            if(child.existChild(position[i])) child = child.getChild(position[i]);
+            else break;
+        }
+        return child;
+    }
+
+    public int getPositionChild(Tree<T> tree) {
+        return this.children.indexOf(tree);
+    }
+
+    public int numberOfChildren() {
+        return this.children.size();
+    }
+
+    public boolean isRoot() {
+        return this.parent == null;
+    }
+
+    public boolean isLeaf() {
+        return numberOfChildren() == 0;
+    }
+
+    public Tree<T> getRoot() {
+        if (!this.isRoot()) return this.parent.getRoot();
+        else return this;
+    }
+
+    //endregion
 }

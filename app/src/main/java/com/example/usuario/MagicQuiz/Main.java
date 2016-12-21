@@ -11,7 +11,7 @@ public class Main extends AppCompatActivity {
 
     TextView tv_question;
     Tree<Quiz> questionTree;
-    Node<Quiz> actualNode;
+    Tree<Quiz> actualNode;
     ArrayList<TextView> answerTVs;
 
     @Override
@@ -25,7 +25,6 @@ public class Main extends AppCompatActivity {
         answerTVs.add((TextView)findViewById(R.id.tv_answer2));
         answerTVs.add((TextView)findViewById(R.id.tv_answer3));
         answerTVs.add((TextView)findViewById(R.id.tv_answer4));
-        questionTree = Data.testTree();
         actualNode = questionTree.getRoot();
         loadQuiz();
     }
