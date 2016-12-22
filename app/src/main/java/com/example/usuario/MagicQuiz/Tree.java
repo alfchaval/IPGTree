@@ -60,7 +60,7 @@ public class Tree<T> {
 
     //endregion
 
-    //region basicGetsAndSets
+    //region gettersAndSetters
 
     public T getData() {
         return data;
@@ -89,6 +89,56 @@ public class Tree<T> {
             tree.setParent(this);
         }
         this.children = children;
+    }
+
+    //WARNING: ask only for a child that exist
+    public Tree<T> getChild(int position) {
+        return this.children.get(position);
+    }
+
+    //WARNING: ask only for a child that exist
+    public Tree<T> getChild(int[] position) {
+        Tree<T> child = this;
+        for(int i = 0; i < position.length; i++) {
+            child = child.getChild(position[i]);
+        }
+        return child;
+    }
+
+    public Tree<T> getChildIfExist(int position) {
+        if(this.existChild(position)) return this.getChild(position);
+        else return this;
+    }
+
+    public Tree<T> getChildIfExist(int[] position) {
+        Tree<T> child = this;
+        for(int i = 0; i < position.length; i++) {
+            if(child.existChild(position[i])) child = child.getChild(position[i]);
+            else break;
+        }
+        return child;
+    }
+
+    public int getPositionChild(Tree<T> tree) {
+        return this.children.indexOf(tree);
+    }
+
+    public Tree<T> getRoot() {
+        Tree root = this;
+        while(!root.isRoot()) {
+            root = root.getParent();
+        }
+        return root;
+    }
+
+    public int getLevel() {
+        int level = 0;
+        Tree root = this;
+        while(!root.isRoot()) {
+            root = root.getParent();
+            level++;
+        }
+        return level;
     }
 
     //endregion
@@ -127,38 +177,6 @@ public class Tree<T> {
         return true;
     }
 
-    //WARNING: ask only for a child that exist
-    public Tree<T> getChild(int position) {
-        return this.children.get(position);
-    }
-
-    //WARNING: ask only for a child that exist
-    public Tree<T> getChild(int[] position) {
-        Tree<T> child = this;
-        for(int i = 0; i < position.length; i++) {
-            child = child.getChild(position[i]);
-        }
-        return child;
-    }
-
-    public Tree<T> getChildIfExist(int position) {
-        if(this.existChild(position)) return this.getChild(position);
-        else return this;
-    }
-
-    public Tree<T> getChildIfExist(int[] position) {
-        Tree<T> child = this;
-        for(int i = 0; i < position.length; i++) {
-            if(child.existChild(position[i])) child = child.getChild(position[i]);
-            else break;
-        }
-        return child;
-    }
-
-    public int getPositionChild(Tree<T> tree) {
-        return this.children.indexOf(tree);
-    }
-
     public int numberOfChildren() {
         return this.children.size();
     }
@@ -169,11 +187,6 @@ public class Tree<T> {
 
     public boolean isLeaf() {
         return numberOfChildren() == 0;
-    }
-
-    public Tree<T> getRoot() {
-        if (!this.isRoot()) return this.parent.getRoot();
-        else return this;
     }
 
     //endregion

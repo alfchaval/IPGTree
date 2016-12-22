@@ -25,6 +25,19 @@ public class Main extends AppCompatActivity {
         answerTVs.add((TextView)findViewById(R.id.tv_answer2));
         answerTVs.add((TextView)findViewById(R.id.tv_answer3));
         answerTVs.add((TextView)findViewById(R.id.tv_answer4));
+
+        for(int i = 0; i < answerTVs.size(); i++) {
+            final int position = i;
+            answerTVs.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    actualNode = actualNode.getChild(position);
+                    loadQuiz();
+                }
+            });
+        }
+
+        questionTree = Read.readXMLQuiz(this.getResources().getXml(R.xml.example));
         actualNode = questionTree.getRoot();
         loadQuiz();
     }
