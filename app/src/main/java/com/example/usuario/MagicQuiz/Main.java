@@ -1,5 +1,6 @@
 package com.example.usuario.MagicQuiz;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,7 @@ public class Main extends AppCompatActivity {
             answerTVs.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    actualNode.getData().setChosedAnswerPosition(position);
                     actualNode = actualNode.getChild(position);
                     loadQuiz();
                 }
@@ -46,6 +48,7 @@ public class Main extends AppCompatActivity {
     public void onBackPressed() {
         if(actualNode.isRoot()) super.onBackPressed();
         else {
+            actualNode.getData().setNoChosedAnswer();
             actualNode = actualNode.getParent();
             loadQuiz();
         }
@@ -59,7 +62,13 @@ public class Main extends AppCompatActivity {
         }
         for(int i = 0; i < actualNode.getData().getAnswers().size(); i++) {
             answerTVs.get(i).setVisibility(View.VISIBLE);
-            answerTVs.get(i).setText(actualNode.getData().getAnswers().get(i));
+            answerTVs.get(i).setText("- "+actualNode.getData().getAnswers().get(i));
+            if(actualNode.getData().isAnswered() && actualNode.getData().getChosedAnswerPosition() == i) {
+                answerTVs.get(i).setBackgroundColor(Color.GREEN);
+            }
+            else {
+                answerTVs.get(i).setBackgroundColor(Color.WHITE);
+            }
         }
     }
 }

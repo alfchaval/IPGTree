@@ -16,6 +16,8 @@
         android:text="Question"
         android:id="@+id/tv_question"
         android:textSize="@dimen/question_size"
+        android:textColor="#000000"
+        android:background="#dddddd"
         />
 
     <TextView
@@ -25,7 +27,8 @@
         android:id="@+id/tv_answer1"
         android:clickable="true"
         android:textSize="@dimen/answer_size"
-        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
         />
 
     <TextView
@@ -35,7 +38,8 @@
         android:id="@+id/tv_answer2"
         android:clickable="true"
         android:textSize="@dimen/answer_size"
-        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
         />
 
     <TextView
@@ -45,7 +49,8 @@
         android:id="@+id/tv_answer3"
         android:clickable="true"
         android:textSize="@dimen/answer_size"
-        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
         />
 
     <TextView
@@ -55,7 +60,8 @@
         android:id="@+id/tv_answer4"
         android:clickable="true"
         android:textSize="@dimen/answer_size"
-        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
         />
 
 </TableLayout>

@@ -171,7 +171,6 @@ public class Quiz {
         return numberOfAnswers() > 0;
     }
 
-
     //endregion
 }
 
