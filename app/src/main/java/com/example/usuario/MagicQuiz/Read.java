@@ -31,6 +31,7 @@ public class Read {
                         }
                         break;
                     case XmlPullParser.TEXT:
+                        //In case you want to read the comments
                         break;
                     case XmlPullParser.END_TAG:
                         if (xpp.getName().equals("answer")) {

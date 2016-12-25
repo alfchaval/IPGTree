@@ -1,6 +1,5 @@
 package com.example.usuario.MagicQuiz;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +17,7 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tree);
+        setContentView(R.layout.activity_ipg_tree);
 
         tv_question = (TextView)findViewById(R.id.tv_question);
         answerTVs = new ArrayList<TextView>();
@@ -26,6 +25,10 @@ public class Main extends AppCompatActivity {
         answerTVs.add((TextView)findViewById(R.id.tv_answer2));
         answerTVs.add((TextView)findViewById(R.id.tv_answer3));
         answerTVs.add((TextView)findViewById(R.id.tv_answer4));
+        answerTVs.add((TextView)findViewById(R.id.tv_answer5));
+        answerTVs.add((TextView)findViewById(R.id.tv_answer6));
+        answerTVs.add((TextView)findViewById(R.id.tv_answer7));
+        answerTVs.add((TextView)findViewById(R.id.tv_answer8));
 
         for(int i = 0; i < answerTVs.size(); i++) {
             final int position = i;
@@ -39,7 +42,7 @@ public class Main extends AppCompatActivity {
             });
         }
 
-        questionTree = Read.readXMLQuiz(this.getResources().getXml(R.xml.example));
+        questionTree = Read.readXMLQuiz(this.getResources().getXml(R.xml.ipg_tree));
         actualNode = questionTree.getRoot();
         loadQuiz();
     }
@@ -58,16 +61,16 @@ public class Main extends AppCompatActivity {
         tv_question.setText(actualNode.getData().getQuestion());
         for (TextView tv : answerTVs) {
             tv.setVisibility(View.INVISIBLE);
-            tv.setText("");
+
         }
         for(int i = 0; i < actualNode.getData().getAnswers().size(); i++) {
             answerTVs.get(i).setVisibility(View.VISIBLE);
             answerTVs.get(i).setText("- "+actualNode.getData().getAnswers().get(i));
             if(actualNode.getData().isAnswered() && actualNode.getData().getChosedAnswerPosition() == i) {
-                answerTVs.get(i).setBackgroundColor(Color.GREEN);
+                answerTVs.get(i).setBackgroundColor(getResources().getColor(R.color.colorSelectedAnswer));
             }
             else {
-                answerTVs.get(i).setBackgroundColor(Color.WHITE);
+                answerTVs.get(i).setBackgroundColor(getResources().getColor(R.color.colorBackground));
             }
         }
     }

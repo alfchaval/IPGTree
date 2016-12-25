@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question text="¿Qué ha ocurrido?">
+    Casos concretos por añadir:
+    - Doble GRV si ambos jugadores son responsables del error
+    <answer text="Se ha producido un error de juego">
+        <question text="¿Qué tipo de error?">
+            <answer text="El jugador ha olvidado una habilidad disparada">
+                <question text="¿Te ha llamado uno de los jugadores?">
+                    <answer text="Si, uno de los jugadores">
+                        <question text="¿Es una habilidad normalmente perjudicial para su controlador?">
+                            <answer text="Si">
+                                <question text="¿Tiene una opción por defecto?">
+                                    <answer text="Si">
+                                        <question text="¿Quiere el oponente resolver la habilidad?">
+                                            <answer text="Si">
+                                                <question text="GPE - Misstrigger, Advertencia.\n\nEl oponente elige si resolver la habilidad la próxima vez que un jugador fuese a recibir prioridad o la próxima vez que un jugador fuese a recibir prioridad en la próxima fase"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="GPE - Misstrigger, Advertencia"></question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                    <answer text="No">
+                                        <question text="¿Es una habilidad disparada retrasada que cambia de zona uno o más objetos?">
+                                            <answer text="Si">
+                                                <question text="GPE - Misstrigger, Advertencia.\n\nCambia de zona esos objetos"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="¿La duración del efecto de la habilidad ha expirado?">
+                                                    <answer text="Si">
+                                                        <question text="GPE - Misstrigger, Advertencia"></question>
+                                                    </answer>
+                                                    <answer text="No">
+                                                        <question text="¿La habilidad fue olvidada antes de la fase actual del turno anterior?">
+                                                            <answer text="Si">
+                                                                <question text="GPE - Misstrigger, Advertencia"></question>
+                                                            </answer>
+                                                            <answer text="No">
+                                                                <question text="¿El oponente quiere que la habilidad se resuelva?">
+                                                                    <answer text="Si">
+                                                                        <question text="¿Hay un lugar en la pila adecuado para la habilidad?">
+                                                                            <answer text="Si">
+                                                                                <question text="GPE - Misstrigger, Advertencia.\n\nPon la habilidad en el lugar adecuado"></question>
+                                                                            </answer>
+                                                                            <answer text="No">
+                                                                                <question text="GPE - Misstrigger, Advertencia.\n\nPon la habilidad en el fondo de la pila"></question>
+                                                                            </answer>
+                                                                        </question>
+                                                                    </answer>
+                                                                    <answer text="No">
+                                                                        <question text="GPE - Misstrigger, Advertencia"></question>
+                                                                    </answer>
+                                                                </question>
+                                                            </answer>
+                                                        </question>
+                                                    </answer>
+                                                </question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                </question>
+                            </answer>
+                            <answer text="No">
+                                <question text="¿Tiene una opción por defecto?">
+                                    <answer text="Si">
+                                        <question text="¿Quiere el oponente resolver la habilidad?">
+                                            <answer text="Si">
+                                                <question text="El oponente elige si resolver la habilidad la próxima vez que un jugador fuese a recibir prioridad o la próxima vez que un jugador fuese a recibir prioridad en la próxima fase"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="No hagas nada"></question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                    <answer text="No">
+                                        <question text="¿Es una habilidad disparada retrasada que cambia de zona uno o más objetos?">
+                                            <answer text="Si">
+                                                <question text="Cambia de zona esos objetos"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="¿La duración del efecto de la habilidad ha expirado?">
+                                                    <answer text="Si">
+                                                        <question text="No hagas nada"></question>
+                                                    </answer>
+                                                    <answer text="No">
+                                                        <question text="¿La habilidad fue olvidada antes de la fase actual del turno anterior?">
+                                                            <answer text="Si">
+                                                                <question text="No hagas nada"></question>
+                                                            </answer>
+                                                            <answer text="No">
+                                                                <question text="¿El oponente quiere que la habilidad se resuelva?">
+                                                                    <answer text="Si">
+                                                                        <question text="¿Hay un lugar en la pila adecuado para la habilidad?">
+                                                                            <answer text="Si">
+                                                                                <question text="Pon la habilidad en el lugar adecuado"></question>
+                                                                            </answer>
+                                                                            <answer text="No">
+                                                                                <question text="Pon la habilidad en el fondo de la pila"></question>
+                                                                            </answer>
+                                                                        </question>
+                                                                    </answer>
+                                                                    <answer text="No">
+                                                                        <question text="No hagas nada"></question>
+                                                                    </answer>
+                                                                </question>
+                                                            </answer>
+                                                        </question>
+                                                    </answer>
+                                                </question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                </question>
+                            </answer>
+                        </question>
+                    </answer>
+                    <answer text="No, lo he visto yo o un espectador">
+                        <question text="¿Es una habilidad normalmente perjudicial para su controlador?">
+                            <answer text="Si">
+                                <question text="¿Tiene una opción por defecto?">
+                                    <answer text="Si">
+                                        <question text="¿Quiere el oponente resolver la habilidad?">
+                                            <answer text="Si">
+                                                <question text="GPE - Misstrigger, Advertencia.\n\nEl oponente elige si resolver la habilidad la próxima vez que un jugador fuese a recibir prioridad o la próxima vez que un jugador fuese a recibir prioridad en la próxima fase"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="GPE - Misstrigger, Advertencia"></question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                    <answer text="No">
+                                        <question text="¿Es una habilidad disparada retrasada que cambia de zona uno o más objetos?">
+                                            <answer text="Si">
+                                                <question text="GPE - Misstrigger, Advertencia.\n\nCambia de zona esos objetos"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="¿La duración del efecto de la habilidad ha expirado?">
+                                                    <answer text="Si">
+                                                        <question text="GPE - Misstrigger, Advertencia"></question>
+                                                    </answer>
+                                                    <answer text="No">
+                                                        <question text="¿La habilidad fue olvidada antes de la fase actual del turno anterior?">
+                                                            <answer text="Si">
+                                                                <question text="GPE - Misstrigger, Advertencia"></question>
+                                                            </answer>
+                                                            <answer text="No">
+                                                                <question text="¿El oponente quiere que la habilidad se resuelva?">
+                                                                    <answer text="Si">
+                                                                        <question text="¿Hay un lugar en la pila adecuado para la habilidad?">
+                                                                            <answer text="Si">
+                                                                                <question text="GPE - Misstrigger, Advertencia.\n\nPon la habilidad en el lugar adecuado"></question>
+                                                                            </answer>
+                                                                            <answer text="No">
+                                                                                <question text="GPE - Misstrigger, Advertencia.\n\nPon la habilidad en el fondo de la pila"></question>
+                                                                            </answer>
+                                                                        </question>
+                                                                    </answer>
+                                                                    <answer text="No">
+                                                                        <question text="GPE - Misstrigger, Advertencia"></question>
+                                                                    </answer>
+                                                                </question>
+                                                            </answer>
+                                                        </question>
+                                                    </answer>
+                                                </question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                </question>
+                            </answer>
+                            <answer text="No">
+                                <question text="No hagas nada"></question>
+                            </answer>
+                        </question>
+                    </answer>
+                </question>
+            </answer>
+            <answer text="El jugador vio cartas que no debió haber visto">
+                <question text="¿Se encuentran las cartas en un conjunto que es únicamente conocido por el jugador?">
+                    <answer text="Si">
+                        <question text="¿Se han movido las cartas de una zona oculta a otra zona oculta?">
+                            <answer text="Si">
+                                <question text="¿Puede solucionarse el error con información públicamente disponible?">
+                                    <answer text="Si">
+                                        <question text="GPE - Game Rule Violation, Advertencia.\n\nPuedes considerar una vuelta atrás o dejar el estado del juego como está"></question>
+                                    </answer>
+                                    <answer text="No">
+                                        <question text="¿La infracción se produjo después del inicio del juego? (Si está haciendo scry después de un mulligan es Si)">
+                                            <answer text="Si">
+                                                <question text="¿La infracción implica una carta con metamorfosis?">
+                                                    <answer text="Si">
+                                                        <question text="GPE - Hidden Card Error, Pérdida de juego"></question>
+                                                    </answer>
+                                                    <answer text="No">
+                                                        <question text="¿El conjunto de cartas que contenía el problema aún existe?">
+                                                            <answer text="Si">
+                                                                <question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
+                                                                    <answer text="Si">
+                                                                        <question text="GPE - Hidden Card Error, Advertencia.\n\nEl jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto"></question>
+                                                                    </answer>
+                                                                    <answer text="No">
+                                                                        <question text="¿El conjunto contiene más cartas de las que debería?">
+                                                                            <answer text="Si">
+                                                                                <question text="GPE - Hidden Card Error, Advertencia.\n\nEl jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles debieron ser reveladas por el efecto. Si esas cartas no pudieron ser reveladas por el efecto, trátalas como exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca"></question>
+                                                                            </answer>
+                                                                            <answer text="No">
+                                                                                <question text="¿La infracción implica una o más cartas que no fueron reveladas?">
+                                                                                    <answer text="Si">
+                                                                                        <question text="GPE - Hidden Card Error, Advertencia.\n\nEl jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles son el exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca"></question>
+                                                                                    </answer>
+                                                                                    <answer text="No">
+                                                                                        <question text="GPE - Hidden Card Error, Advertencia."></question>
+                                                                                    </answer>
+                                                                                </question>
+                                                                            </answer>
+                                                                        </question>
+                                                                    </answer>
+                                                                </question>
+                                                            </answer>
+                                                            <answer text="No">
+                                                                <question text="GPE - Hidden Card Error, Advertencia"></question>
+                                                            </answer>
+                                                        </question>
+                                                    </answer>
+                                                </question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="¿El jugador tiene cartas demás en mano?">
+                                                    <answer text="Si">
+                                                        <question text="GPE - Mulligan Procedure Error, Advertencia.\n\nEl jugador elige entre:\n- Hacer mulligan\n- Mostrar su mano, que su oponente elija qué cartas sobran y que esas se barajen en la biblioteca"></question>
+                                                    </answer>
+                                                    <answer text="No">
+                                                        <question text="GPE - Mulligan Procedure Error, Advertencia. El jugador hace mulligan"></question>
+                                                    </answer>
+                                                </question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                </question>
+                            </answer>
+                            <answer text="No">
+                                <question text="GPE - Game Rule Violation, Advertencia.\n\nPuedes considerar una vuelta atrás o dejar el estado del juego como está"></question>
+                            </answer>
+                        </question>
+                    </answer>
+                    <answer text="No">
+                        <question text="GPE - Looking Extra cards, Advertencia.\n\nBaraja las cartas que no eran conocidas en la porción aleatoria del mazo, luego pon las cartas conocidas en la posición correcta">
+                        </question>
+                    </answer>
+                </question>
+            </answer>
+            <answer text="El jugador ha cometido otro tipo de error de juego">
+                <question text="¿El jugador hizo una elección ilegal (o no hizo ninguna teniendo que hacerlo) para una habilidad estática de un permanente en el campo de batalla?">
+                    <answer text="Si">
+                        <question text="GPE - Game Rule Violation, Advertencia.\nEl jugador realiza una elección legal, puede considerarse una simple vuelta atrás si la elección ilegal generó algún problema"></question>
+                    </answer>
+                    <answer text="No">
+                        <question text="¿Olvidó el jugador robar cartas, descartar cartas o regresar cartas a su mano de otra zona?">
+                            <answer text="Si">
+                                <question text="GPE - Game Rule Violation, Advertencia.\nEl jugador hace lo que ha olvidado hacer"></question>
+                            </answer>
+                            <answer text="No">
+                                <question text="¿Hay un objeto en una zona incorrecta por olvidar moverlo o por moverlo a una zona distinta de la que se tenía que mover, todos los jugadores conocen el objeto y se puede mover sin mucha disrupción?">
+                                    <answer text="Si">
+                                        <question text="GPE - Game Rule Violation, Advertencia.\nMuévelo a la zona correcta"></question>
+                                    </answer>
+                                    <answer text="No">
+                                        <question text="¿Algún jugador ha olvidado indicar el orden de asignación del daño?">
+                                            <answer text="Si">
+                                                <question text="GPE - Game Rule Violation, Advertencia.\nEl jugador indica el orden de asignación del daño"></question>
+                                            </answer>
+                                            <answer text="No">
+                                                <question text="GPE - Game Rule Violation, Advertencia.\nPuedes considerar una vuelta atrás o dejar el estado del juego como está"></question>
+                                            </answer>
+                                        </question>
+                                    </answer>
+                                </question>
+                            </answer>
+                        </question>
+                    </answer>
+                </question>
+            </answer>
+        </question>
+    </answer>
+    <answer text="El jugador está tardando demasiado">
+        3.1. Tournament Error — Tardiness
+        3.3. Tournament Error — Slow Play
+        3.6. Tournament Error — Limited Procedure Violation
+        4.7. Unsporting Conduct — Stalling
+        <question text="PRÓXIMAMENTE\n- Tardiness\n- Slow Play\n- Stalling"></question>
+    </answer>
+    <answer text="Hay un problema con el mazo del jugador">
+        3.4. Tournament Error — Insufficient Shuffling
+        3.5. Tournament Error — Deck/Decklist Problem
+        3.8. Tournament Error — Marked Cards
+        <question text="PRÓXIMAMENTE\n- Insufficient Shuffling\n- Deck/Decklist Problem\n- Marked Cards"></question>
+    </answer>
+    <answer text="Hay un problema con el resultado de un juego/partida">
+        4.3. Unsporting Conduct — Improperly Determining a Winner
+        4.4. Unsporting Conduct — Bribery and Wagering
+        <question text="PRÓXIMAMENTE\n- Improperly Determining a Winner\n- Bribery and Wagering"></question>
+    </answer>
+    <answer text="Hay un problema de comunicación">
+        3.2. Tournament Error — Outside Assistance
+        3.6. Tournament Error — Limited Procedure Violation
+        3.7. Tournament Error — Communication Policy Violation
+        <question text="PRÓXIMAMENTE\n- Outside Assistance\n- Limited Procedure Violation\n- Communication Policy Violation"></question>
+    </answer>
+    <answer text="El jugador se está comportando de forma poco adecuada">
+        4.1. Unsporting Conduct — Minor
+        4.2. Unsporting Conduct — Major
+        4.5. Unsporting Conduct — Aggressive Behavior
+        4.6. Unsporting Conduct — Theft of Tournament Material
+        4.7. Unsporting Conduct — Stalling
+        4.8. Unsporting Conduct — Cheating
+        <question text="PRÓXIMAMENTE\n- Minor\n- Major\n- Aggressive Behavior\n- Theft of Tournament Material\n- Stalling\n- Cheating"></question>
+    </answer>
+    <answer text="Hay un problema durante el draft">
+        3.6. Tournament Error — Limited Procedure Violation
+        <question text="PRÓXIMAMENTE\n- Limited Procedure Violation"></question>
+    </answer>
+</question>
