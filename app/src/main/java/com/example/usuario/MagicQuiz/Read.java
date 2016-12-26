@@ -23,7 +23,7 @@ public class Read {
                         if (xpp.getName().equals("question")) {
                             tree.getData().setQuestion(xpp.getAttributeValue(0));
                         }
-                        if (xpp.getName().equals("answer")) {
+                        else if (xpp.getName().equals("answer")) {
                             tree.getData().addAnswer(xpp.getAttributeValue(0));
                             node = tree.numberOfChildren();
                             tree.addChild(new Tree<Quiz>(new Quiz(null,new ArrayList<String>())));

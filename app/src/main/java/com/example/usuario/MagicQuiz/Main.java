@@ -61,11 +61,11 @@ public class Main extends AppCompatActivity {
         tv_question.setText(actualNode.getData().getQuestion());
         for (TextView tv : answerTVs) {
             tv.setVisibility(View.INVISIBLE);
-
+            tv.setText("");
         }
         for(int i = 0; i < actualNode.getData().getAnswers().size(); i++) {
             answerTVs.get(i).setVisibility(View.VISIBLE);
-            answerTVs.get(i).setText("- "+actualNode.getData().getAnswers().get(i));
+            answerTVs.get(i).setText(actualNode.getData().getAnswers().get(i));
             if(actualNode.getData().isAnswered() && actualNode.getData().getChosedAnswerPosition() == i) {
                 answerTVs.get(i).setBackgroundColor(getResources().getColor(R.color.colorSelectedAnswer));
             }
