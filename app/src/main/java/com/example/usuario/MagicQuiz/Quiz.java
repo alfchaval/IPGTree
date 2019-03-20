@@ -2,7 +2,6 @@ package com.example.usuario.MagicQuiz;
 
 import java.util.ArrayList;
 
-//Originally this project was going to be an app to test your knowledge about Magic rules, that's why this class has a correctAnswerPosition variable
 public class Quiz {
 
     //region variables
@@ -10,7 +9,7 @@ public class Quiz {
     private String question;
     private ArrayList<String> answers;
     private int correctAnswerPosition;
-    private int chosenAnswerPosition;
+    private int chosenAnswerPosition = -1;
 
     //endregion
 

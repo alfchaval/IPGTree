@@ -1,4 +1,4 @@
-package com.example.usuario.MagicQuiz;
+package com.example.usuario.MagicQuiz.Activities;
 
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
@@ -11,9 +11,14 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.usuario.MagicQuiz.Quiz;
+import com.example.usuario.MagicQuiz.R;
+import com.example.usuario.MagicQuiz.Read;
+import com.example.usuario.MagicQuiz.Tree;
+
 import java.util.ArrayList;
 
-public class Main extends AppCompatActivity {
+public class TreeActivity extends AppCompatActivity {
 
     Tree<Quiz> questionTree;
 
@@ -29,7 +34,8 @@ public class Main extends AppCompatActivity {
 
     LinearLayout.LayoutParams layoutParams;
 
-    int TEXT_SIZE = 20;
+    final int TEXT_SIZE = 20;
+
     boolean back = false;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
@@ -58,7 +64,7 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ipg_tree);
+        setContentView(R.layout.activity_quiz);
 
         ll_answers = findViewById(R.id.ll_answers);
         tv_question = findViewById(R.id.tv_question);
@@ -132,7 +138,7 @@ public class Main extends AppCompatActivity {
             questionTree = (Tree<Quiz>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
-            questionTree = Read.readXMLQuiz(this.getResources().getXml(R.xml.ipg_tree));
+            questionTree = Read.readXMLTree(this.getResources().getXml(R.xml.ipg_tree));
         }
     }
 
@@ -160,12 +166,11 @@ public class Main extends AppCompatActivity {
                     addTextView(index);
                 }
                 //When I go back I want to see what answer I chosed last time
-                if (questionTree.getData().isAnswered() && questionTree.getData().getChosenAnswerPosition() == index) {
+                if (questionTree.getData().getChosenAnswerPosition() == index && questionTree.getData().isAnswered()) {
                     answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
                 } else {
                     answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background));
                 }
-                //Show questions
                 answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
                 answerTVs.get(index).setVisibility(View.VISIBLE);
                 index++;
@@ -232,6 +237,8 @@ public class Main extends AppCompatActivity {
 
     //Scroll until the chosen answer is in the middle of the ScrollView
     public void moveToChosenAnswer() {
-        scroll_answers.smoothScrollTo(0, (answerTVs.get(questionTree.getData().getChosenAnswerPosition()).getTop() + answerTVs.get(questionTree.getData().getChosenAnswerPosition()).getBottom()) / 2 - scroll_answers.getHeight() / 2);
+        if(questionTree.getData().isAnswered()) {
+            scroll_answers.smoothScrollTo(0, (answerTVs.get(questionTree.getData().getChosenAnswerPosition()).getTop() + answerTVs.get(questionTree.getData().getChosenAnswerPosition()).getBottom()) / 2 - scroll_answers.getHeight() / 2);
+        }
     }
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 //This class transform the XML in a Tree
 public class Read {
 
-    public static Tree<Quiz> readXMLQuiz(XmlResourceParser resource) {
+    public static Tree<Quiz> readXMLTree(XmlResourceParser resource) {
         Tree<Quiz> tree = new Tree<Quiz>(new Quiz(null,new ArrayList<String>()));
         int node = 0;
         XmlPullParser xpp = resource;
@@ -44,5 +44,42 @@ public class Read {
             e.printStackTrace();
         }
         return tree;
+    }
+
+    public static ArrayList<Quiz> readXMLQuiz (XmlResourceParser resource) {
+        ArrayList<Quiz> array = new ArrayList<Quiz>();
+        Quiz quiz;
+        String question = null;
+        ArrayList<String> answers = null;
+        XmlPullParser xpp = resource;
+        try {
+            int eventType = xpp.getEventType();
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                switch (eventType) {
+                    case XmlPullParser.START_TAG:
+                        if (xpp.getName().equals("question")) {
+                            question = xpp.getAttributeValue(0);
+                            answers = new ArrayList<String>();
+                        }
+                        else if (xpp.getName().equals("answer")) {
+                            answers.add(xpp.getAttributeValue(0));
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        if (xpp.getName().equals("question")) {
+                            quiz = new Quiz(question, answers);
+                            quiz.setCorrectAnswerPosition(0);
+                            array.add(quiz);
+                        }
+                    case XmlPullParser.TEXT:
+                        //In case you want to read the comments
+                        break;
+                }
+                eventType = xpp.next();
+            }
+        } catch (XmlPullParserException|IOException e) {
+            e.printStackTrace();
+        }
+        return array;
     }
 }
