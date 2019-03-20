@@ -28,6 +28,7 @@ public class Main extends AppCompatActivity {
     ArrayList<TextView> answerTVs = new ArrayList<TextView>();
 
     int TEXT_SIZE = 20;
+    boolean back = false;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 
@@ -46,6 +47,8 @@ public class Main extends AppCompatActivity {
         else {
             questionTree.getData().setNoChosenAnswer();
             questionTree = questionTree.getParent();
+            //I need this variable for OnGlobalLayoutListener, that will do additional things after everything
+            back = true;
             showQuiz();
         }
     }
@@ -90,6 +93,10 @@ public class Main extends AppCompatActivity {
                 @Override
                 public void onGlobalLayout() {
                     showOrHideArrows();
+                    if(back) {
+                        moveToChosenAnswer();
+                        back = false;
+                    }
                 }
             });
         }
@@ -102,6 +109,10 @@ public class Main extends AppCompatActivity {
                 @Override
                 public void onGlobalLayout() {
                     showOrHideArrowsOldDevices();
+                    if(back) {
+                        moveToChosenAnswer();
+                        back = false;
+                    }
                 }
             });
         }
@@ -198,8 +209,8 @@ public class Main extends AppCompatActivity {
 
     //In older versions you can't hide an arrow after scrolling, so you always show both arrows
     public void showOrHideArrowsOldDevices() {
-        //You really don't need the "canScrollVertically(-1)" but I leave it there in case in the future I change the initial position of the scroll after go back to show the last chosen answer
-        if(scroll_answers.canScrollVertically(1) || scroll_answers.canScrollVertically(-1)) {
+        //You really don't need the "canScrollVertically(-1)"
+        if(scroll_answers.canScrollVertically(1)) {
             imv_arrow_up.setVisibility(View.VISIBLE);
             imv_arrow_down.setVisibility(View.VISIBLE);
         }
@@ -207,5 +218,10 @@ public class Main extends AppCompatActivity {
             imv_arrow_up.setVisibility(View.INVISIBLE);
             imv_arrow_down.setVisibility(View.INVISIBLE);
         }
+    }
+
+    //Scroll until the chosen answer is in the middle of the ScrollView
+    public void moveToChosenAnswer() {
+        scroll_answers.smoothScrollTo(0, (answerTVs.get(questionTree.getData().getChosenAnswerPosition()).getTop() + answerTVs.get(questionTree.getData().getChosenAnswerPosition()).getBottom()) / 2 - scroll_answers.getHeight() / 2);
     }
 }
