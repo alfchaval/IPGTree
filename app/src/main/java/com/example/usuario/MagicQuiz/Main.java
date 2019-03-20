@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class Main extends AppCompatActivity {
     Tree<Quiz> questionTree;
 
     TextView tv_question;
-    TableLayout table_answers;
+    LinearLayout ll_answers;
     ScrollView scroll_answers;
     ImageView imv_arrow_up;
     ImageView imv_arrow_down;
@@ -26,6 +26,8 @@ public class Main extends AppCompatActivity {
     ViewTreeObserver viewTreeObserver;
 
     ArrayList<TextView> answerTVs = new ArrayList<TextView>();
+
+    LinearLayout.LayoutParams layoutParams;
 
     int TEXT_SIZE = 20;
     boolean back = false;
@@ -58,7 +60,7 @@ public class Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ipg_tree);
 
-        table_answers = findViewById(R.id.table_answers);
+        ll_answers = findViewById(R.id.ll_answers);
         tv_question = findViewById(R.id.tv_question);
         tv_question.setTextSize(TEXT_SIZE);
 
@@ -79,6 +81,9 @@ public class Main extends AppCompatActivity {
                 scroll_answers.fullScroll(View.FOCUS_DOWN);
             }
         });
+
+        layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0, 4, 0, 4);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //Arrows disapear when you full scroll to let you read the first/last question
@@ -137,31 +142,34 @@ public class Main extends AppCompatActivity {
         //If there is no more questions, that question is really the solution to the problem
         if(questionTree.isLeaf()) {
             tv_question.setText(R.string.solution);
-            //This would cause an error if the first question has no answers, because there are no TextViews in answerTVs yet, but you always want the first question has answers so...
+            //Most time you have already a TextView, but you need this check in case you change the orientation while you are in a solution
+            if (answerTVs.size() < 1) {
+                addTextView(index);
+            }
             answerTVs.get(index).setText(questionTree.getData().getQuestion());
             answerTVs.get(index).setVisibility(View.VISIBLE);
             index++;
         }
-        //Show the question
         else {
+            //Show the question
             tv_question.setText(questionTree.getData().getQuestion());
-        }
-        //Show the answers
-        while (index < questionTree.getData().getAnswers().size()) {
-            //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
-            if (index >= answerTVs.size()) {
-                addTextView(index);
+            //Show the answers
+            while (index < questionTree.getData().getAnswers().size()) {
+                //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
+                if (index >= answerTVs.size()) {
+                    addTextView(index);
+                }
+                //When I go back I want to see what answer I chosed last time
+                if (questionTree.getData().isAnswered() && questionTree.getData().getChosenAnswerPosition() == index) {
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+                } else {
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background));
+                }
+                //Show questions
+                answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
+                answerTVs.get(index).setVisibility(View.VISIBLE);
+                index++;
             }
-            //When I go back I want to see what answer I chosed last time
-            if (questionTree.getData().isAnswered() && questionTree.getData().getChosenAnswerPosition() == index) {
-                answerTVs.get(index).setBackgroundColor(ContextCompat.getColor(this, R.color.colorSelectedAnswer));
-            } else {
-                answerTVs.get(index).setBackgroundColor(ContextCompat.getColor(this, R.color.colorBackground));
-            }
-            //Show questions
-            answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
-            answerTVs.get(index).setVisibility(View.VISIBLE);
-            index++;
         }
         //Hide void TextViews
         while (index < answerTVs.size()) {
@@ -173,9 +181,11 @@ public class Main extends AppCompatActivity {
     //Create a TextView
     public void addTextView(final int index) {
         TextView textView = new TextView(this);
+        textView.setLayoutParams(layoutParams);
         textView.setTextSize(TEXT_SIZE);
         textView.setTextColor(ContextCompat.getColor(this, R.color.colorText));
-        textView.setPadding(0, 8, 0, 8);
+        textView.setPadding(8, 8, 8, 8);
+
         answerTVs.add(textView);
         //Clicking an answer moves you to the next question if there is anyone
         answerTVs.get(index).setOnClickListener(new View.OnClickListener() {
@@ -188,7 +198,7 @@ public class Main extends AppCompatActivity {
                 }
             }
         });
-        table_answers.addView(textView);
+        ll_answers.addView(textView);
     }
 
     //Arrows disapear when you full scroll to let you read the first/last question

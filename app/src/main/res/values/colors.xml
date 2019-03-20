@@ -5,6 +5,5 @@
     <color name="colorAccent">#FFFACD</color>
     <color name="colorText">#FFFFFF</color>
     <color name="colorBackground">#202020</color>
-    <color name="colorSelectedAnswer">#00699e</color>
     <color name="colorTransparent">#00000000</color>
 </resources>
