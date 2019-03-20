@@ -8,6 +8,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//This class transform the XML in a Tree
 public class Read {
 
     public static Tree<Quiz> readXMLQuiz(XmlResourceParser resource) {
@@ -16,7 +17,6 @@ public class Read {
         XmlPullParser xpp = resource;
         try {
             int eventType = xpp.getEventType();
-
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
@@ -30,14 +30,14 @@ public class Read {
                             tree = tree.getChild(node);
                         }
                         break;
-                    case XmlPullParser.TEXT:
-                        //In case you want to read the comments
-                        break;
                     case XmlPullParser.END_TAG:
                         if (xpp.getName().equals("answer")) {
                             tree = tree.getParent();
                         }
-                    }
+                    case XmlPullParser.TEXT:
+                        //In case you want to read the comments
+                        break;
+                }
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {

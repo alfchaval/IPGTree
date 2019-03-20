@@ -2,6 +2,7 @@ package com.example.usuario.MagicQuiz;
 
 import java.util.ArrayList;
 
+//Originally this project was going to be an app to test your knowledge about Magic rules, that's why this class has a correctAnswerPosition variable
 public class Quiz {
 
     //region variables
@@ -9,7 +10,7 @@ public class Quiz {
     private String question;
     private ArrayList<String> answers;
     private int correctAnswerPosition;
-    private int chosedAnswerPosition;
+    private int chosenAnswerPosition;
 
     //endregion
 
@@ -19,28 +20,28 @@ public class Quiz {
         this.question = question;
         this.answers = answers;
         this.setNoCorrectAnswer();
-        this.setNoChosedAnswer();
+        this.setNoChosenAnswer();
     }
 
     public Quiz(String question, int correctAnswerPosition, ArrayList<String> answers) {
         this.question = question;
         this.answers = answers;
         this.correctAnswerPosition = correctAnswerPosition;
-        this.setNoChosedAnswer();
+        this.setNoChosenAnswer();
     }
 
     public Quiz(String question, ArrayList<String> answers, int defaultAnswerPosition) {
         this.question = question;
         this.answers = answers;
         this.setNoCorrectAnswer();
-        this.chosedAnswerPosition = defaultAnswerPosition;
+        this.chosenAnswerPosition = defaultAnswerPosition;
     }
 
     public Quiz(String question, int correctAnswerPosition, ArrayList<String> answers, int defaultAnswerPosition) {
         this.question = question;
         this.answers = answers;
         this.correctAnswerPosition = correctAnswerPosition;;
-        this.chosedAnswerPosition = defaultAnswerPosition;
+        this.chosenAnswerPosition = defaultAnswerPosition;
     }
 
     //endregion
@@ -62,25 +63,25 @@ public class Quiz {
     public void setAnswers(ArrayList<String> answers) {
         this.answers = answers;
         this.setNoCorrectAnswer();
-        this.setNoChosedAnswer();
+        this.setNoChosenAnswer();
     }
 
     public void setAnswers(int correctAnswerPosition, ArrayList<String> answers) {
         this.answers = answers;
         this.correctAnswerPosition = correctAnswerPosition;
-        this.setNoChosedAnswer();
+        this.setNoChosenAnswer();
     }
 
     public void setAnswers(ArrayList<String> answers, int defaultAnswerPosition) {
         this.answers = answers;
         this.setNoCorrectAnswer();
-        this.chosedAnswerPosition = defaultAnswerPosition;
+        this.chosenAnswerPosition = defaultAnswerPosition;
     }
 
     public void setAnswers(int correctAnswerPosition, ArrayList<String> answers, int defaultAnswerPosition) {
         this.answers = answers;
         this.correctAnswerPosition = correctAnswerPosition;
-        this.chosedAnswerPosition = defaultAnswerPosition;
+        this.chosenAnswerPosition = defaultAnswerPosition;
     }
 
     public String getAnswer(int position) {
@@ -113,24 +114,24 @@ public class Quiz {
         this.correctAnswerPosition = -1;
     }
 
-    public int getChosedAnswerPosition() {
-        return chosedAnswerPosition;
+    public int getChosenAnswerPosition() {
+        return chosenAnswerPosition;
     }
 
-    public boolean setChosedAnswerPosition(int position) {
+    public boolean setChosenAnswerPosition(int position) {
         if (existAnswer(position)) {
-            this.chosedAnswerPosition = position;
+            this.chosenAnswerPosition = position;
             return true;
         }
         else return false;
     }
 
-    public String getChosedAnswer() {
-        return this.answers.get(chosedAnswerPosition);
+    public String getChosenAnswer() {
+        return this.answers.get(chosenAnswerPosition);
     }
 
-    public void setNoChosedAnswer() {
-        this.chosedAnswerPosition = -1;
+    public void setNoChosenAnswer() {
+        this.chosenAnswerPosition = -1;
     }
 
     //endregion
@@ -147,20 +148,20 @@ public class Quiz {
 
     public void addAnswer(String answer) {
         this.answers.add(answer);
-        this.setNoChosedAnswer();
+        this.setNoChosenAnswer();
     }
 
     public boolean removeAnswer(int position) {
         if(existAnswer(position)) {
             answers.remove(position);
-            this.setNoChosedAnswer();
+            this.setNoChosenAnswer();
             return true;
         }
         else return false;
     }
 
     public boolean isAnswered() {
-        return chosedAnswerPosition != -1;
+        return chosenAnswerPosition != -1;
     }
 
     public boolean hasCorrectAnswer() {

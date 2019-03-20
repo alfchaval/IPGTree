@@ -1,8 +1,9 @@
 package com.example.usuario.MagicQuiz;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Tree<T> {
+public class Tree<T> implements Serializable {
 
     //region variables
 
@@ -91,12 +92,13 @@ public class Tree<T> {
         this.children = children;
     }
 
-    //WARNING: ask only for a child that exist
+    //WARNING: to avoid errors ask only for a child that exist, you can check it with existChild(position)
     public Tree<T> getChild(int position) {
         return this.children.get(position);
     }
 
-    //WARNING: ask only for a child that exist
+    //This let you get the child of the child of the child...
+    //WARNING: to avoid errors ask only for a child that exist, you can check it with existChild(position)
     public Tree<T> getChild(int[] position) {
         Tree<T> child = this;
         for(int i = 0; i < position.length; i++) {
@@ -124,13 +126,14 @@ public class Tree<T> {
     }
 
     public Tree<T> getRoot() {
-        Tree root = this;
+        Tree<T> root = this;
         while(!root.isRoot()) {
             root = root.getParent();
         }
         return root;
     }
 
+    //How much have you entered in the tree
     public int getLevel() {
         int level = 0;
         Tree root = this;
@@ -156,6 +159,7 @@ public class Tree<T> {
         this.children.add(tree);
     }
 
+    //Return true if could find and remove the child
     public boolean removeChild(int position) {
         if(existChild(position)) {
             this.getChild(position).setParent(null);
@@ -181,10 +185,12 @@ public class Tree<T> {
         return this.children.size();
     }
 
+    //A root is where a tree start
     public boolean isRoot() {
         return this.parent == null;
     }
 
+    //And a leaf is where a tree ends
     public boolean isLeaf() {
         return numberOfChildren() == 0;
     }
