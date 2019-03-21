@@ -24,7 +24,6 @@ public class AboutActivity extends AppCompatActivity {
                 "\n" +
                 "Proximamente:\n" +
                 "- Añadir más preguntas al quiz\n" +
-                "- Que el quiz no se reinicie al girar la pantalla\n" +
                 "- En el árbol expandir el tema de los ciclos para incluir casos con varios jugadores involucrados\n" +
                 "- En el árbol expandir ejemplos de errores de comunicación, que ahora abarcan todo el punto 4 de las MTR\n");
     }

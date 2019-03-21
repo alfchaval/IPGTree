@@ -36,8 +36,6 @@ public class TreeActivity extends AppCompatActivity {
 
     final int TEXT_SIZE = 20;
 
-    boolean back = false;
-
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 
     @Override
@@ -55,8 +53,6 @@ public class TreeActivity extends AppCompatActivity {
         else {
             questionTree.getData().setNoChosenAnswer();
             questionTree = questionTree.getParent();
-            //I need this variable for OnGlobalLayoutListener, that will do additional things after everything
-            back = true;
             showQuiz();
         }
     }
@@ -64,7 +60,7 @@ public class TreeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_tree);
 
         ll_answers = findViewById(R.id.ll_answers);
         tv_question = findViewById(R.id.tv_question);
@@ -104,10 +100,7 @@ public class TreeActivity extends AppCompatActivity {
                 @Override
                 public void onGlobalLayout() {
                     showOrHideArrows();
-                    if(back) {
-                        moveToChosenAnswer();
-                        back = false;
-                    }
+                    moveToChosenAnswer();
                 }
             });
         }
@@ -120,10 +113,7 @@ public class TreeActivity extends AppCompatActivity {
                 @Override
                 public void onGlobalLayout() {
                     showOrHideArrowsOldDevices();
-                    if(back) {
-                        moveToChosenAnswer();
-                        back = false;
-                    }
+                    moveToChosenAnswer();
                 }
             });
         }
@@ -169,7 +159,7 @@ public class TreeActivity extends AppCompatActivity {
                 if (questionTree.getData().getChosenAnswerPosition() == index && questionTree.getData().isAnswered()) {
                     answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
                 } else {
-                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background));
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
                 }
                 answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
                 answerTVs.get(index).setVisibility(View.VISIBLE);

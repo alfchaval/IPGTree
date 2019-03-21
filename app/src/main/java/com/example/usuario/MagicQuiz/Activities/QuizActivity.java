@@ -15,7 +15,6 @@ import com.example.usuario.MagicQuiz.Quiz;
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Read;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -24,10 +23,13 @@ public class QuizActivity extends AppCompatActivity {
     ArrayList<Quiz> questions;
 
     TextView tv_question;
+    TextView txv_question_number;
     LinearLayout ll_answers;
     ScrollView scroll_answers;
     ImageView imv_arrow_up;
     ImageView imv_arrow_down;
+    ImageView imv_arrow_left;
+    ImageView imv_arrow_right;
 
     ViewTreeObserver viewTreeObserver;
 
@@ -37,16 +39,19 @@ public class QuizActivity extends AppCompatActivity {
 
     final int TEXT_SIZE = 20;
 
-    boolean back = false;
     boolean finished = false;
     int questionNumber = 0;
 
     private static final String KEY_SERIALIZED_QUIZ = "key_serialized_quiz";
+    private static final String KEY_FINISHED = "key_finished";
+    private static final String KEY_QUESTION_NUMBER = "key_question_number";
 
     @Override
     protected void onSaveInstanceState (Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putSerializable(KEY_SERIALIZED_QUIZ, questions);
+        outState.putBoolean(KEY_FINISHED, finished);
+        outState.putInt(KEY_QUESTION_NUMBER, questionNumber);
     }
 
     @Override
@@ -57,6 +62,7 @@ public class QuizActivity extends AppCompatActivity {
         ll_answers = findViewById(R.id.ll_answers);
         tv_question = findViewById(R.id.tv_question);
         tv_question.setTextSize(TEXT_SIZE);
+        txv_question_number = findViewById(R.id.txv_question_number);
 
         scroll_answers = findViewById(R.id.scroll_answers);
         viewTreeObserver = scroll_answers.getViewTreeObserver();
@@ -76,6 +82,23 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        imv_arrow_left = findViewById(R.id.imv_arrow_left);
+        imv_arrow_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                questionNumber--;
+                showQuiz();
+            }
+        });
+        imv_arrow_right = findViewById(R.id.imv_arrow_right);
+        imv_arrow_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                questionNumber++;
+                showQuiz();
+            }
+        });
+
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 4, 0, 4);
 
@@ -92,10 +115,7 @@ public class QuizActivity extends AppCompatActivity {
                 @Override
                 public void onGlobalLayout() {
                     showOrHideArrows();
-                    if(back) {
-                        moveToChosenAnswer();
-                        back = false;
-                    }
+                    moveToChosenAnswer();
                 }
             });
         }
@@ -108,10 +128,7 @@ public class QuizActivity extends AppCompatActivity {
                 @Override
                 public void onGlobalLayout() {
                     showOrHideArrowsOldDevices();
-                    if(back) {
-                        moveToChosenAnswer();
-                        back = false;
-                    }
+                    moveToChosenAnswer();
                 }
             });
         }
@@ -124,6 +141,8 @@ public class QuizActivity extends AppCompatActivity {
     private void loadQuiz(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             questions = (ArrayList<Quiz>) savedInstanceState.getSerializable(KEY_SERIALIZED_QUIZ);
+            finished = savedInstanceState.getBoolean(KEY_FINISHED);
+            questionNumber = savedInstanceState.getInt(KEY_QUESTION_NUMBER);
         }
         else {
             questions = Read.readXMLQuiz(this.getResources().getXml(R.xml.quiz));
@@ -145,18 +164,14 @@ public class QuizActivity extends AppCompatActivity {
     //Load the question and answers
     public void showQuiz() {
         int index = 0;
-        //Show the result
-        if(questionNumber < 0) {
-            finished = true;
-            tv_question.setText("El questionario ha terminado, tu puntuación es: " + 100*((float)totalPoints())/questions.size() + "%");
-            //Most time you have already a TextView, but you need this check in case you change the orientation
-            if (answerTVs.size() < 1) {
-                addTextView(0);
+        if(questionNumber < questions.size()) {
+            if(questionNumber == 0) {
+                imv_arrow_left.setVisibility(View.INVISIBLE);
             }
-            answerTVs.get(0).setText("Mostrar preguntas");
-            index++;
-        }
-        else {
+            else {
+                imv_arrow_left.setVisibility(View.VISIBLE);
+            }
+            imv_arrow_right.setVisibility(View.VISIBLE);
             //Show the question
             tv_question.setText(questions.get(questionNumber).getQuestion());
             //Show the answers
@@ -164,10 +179,10 @@ public class QuizActivity extends AppCompatActivity {
                 //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
                 if (index >= answerTVs.size()) {
                     addTextView(index);
-                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background));
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
                 }
                 if(finished) {
-                    if (questions.get(questionNumber).getChosenAnswerPosition() == index && questions.get(questionNumber).isAnswered()) {
+                    if (questions.get(questionNumber).getChosenAnswerPosition() == index) {
                         if (questions.get(questionNumber).getChosenAnswerPosition() == questions.get(questionNumber).getCorrectAnswerPosition()) {
                             answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_correct));
                         } else {
@@ -178,11 +193,34 @@ public class QuizActivity extends AppCompatActivity {
                         answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_correct));
                     }
                     else {
-                        answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background));
+                        answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
                     }
+                }
+                else if(questions.get(questionNumber).getChosenAnswerPosition() == index) {
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+                }
+                else {
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
                 }
                 answerTVs.get(index).setText(questions.get(questionNumber).getAnswers().get(index));
                 answerTVs.get(index).setVisibility(View.VISIBLE);
+                index++;
+            }
+            txv_question_number.setText((questionNumber + 1) + " / " + questions.size() + "\n\n");
+        }
+        else {
+            imv_arrow_right.setVisibility(View.INVISIBLE);
+            txv_question_number.setText("");
+            if (finished) {
+                tv_question.setText("Tu puntuación total es: " + totalPoints() + "\n\nPuedes ver las respuestas correctas desplazándote por las preguntas con las flechas");
+            }
+            else {
+                tv_question.setText("No hay más preguntas, pulsa en finalizar para comprobar tus resultados... o puedes usar la flecha para volver y repasar tus respuestas");
+                if (answerTVs.size() < 1) {
+                    addTextView(index);
+                }
+                answerTVs.get(index).setVisibility(View.VISIBLE);
+                answerTVs.get(index).setText("FINALIZAR");
                 index++;
             }
         }
@@ -207,18 +245,22 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!finished) {
-                    questions.get(questionNumber).setChosenAnswerPosition(index);
-                }
-                questionNumber++;
-                if(questionNumber >= questions.size()) {
-                    if(finished) {
-                        questionNumber = 0;
+                    if(questionNumber < questions.size()) {
+                        questions.get(questionNumber).setChosenAnswerPosition(index);
+                        for(int i = 0; i < questions.get(questionNumber).getAnswers().size(); i++) {
+                            if(i == index) {
+                                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+                            }
+                            else {
+                                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                            }
+                        }
                     }
                     else {
-                        questionNumber = -1;
+                        finished = true;
+                        showQuiz();
                     }
                 }
-                showQuiz();
             }
         });
         ll_answers.addView(textView);
@@ -255,18 +297,23 @@ public class QuizActivity extends AppCompatActivity {
 
     //Scroll until the chosen answer is in the middle of the ScrollView
     public void moveToChosenAnswer() {
-        if(questions.get(questionNumber).isAnswered()) {
+        if(questionNumber < questions.size() && questions.get(questionNumber).isAnswered()) {
             scroll_answers.smoothScrollTo(0, (answerTVs.get(questions.get(questionNumber).getChosenAnswerPosition()).getTop() + answerTVs.get(questions.get(questionNumber).getChosenAnswerPosition()).getBottom()) / 2 - scroll_answers.getHeight() / 2);
         }
     }
 
-    public int totalPoints() {
+    public float totalPoints() {
         int points = 0;
         for (Quiz quiz: questions) {
-            if(quiz.getCorrectAnswerPosition() == quiz.getChosenAnswerPosition()) {
-                points++;
+            if(quiz.getChosenAnswerPosition() != -1) {
+                if(quiz.getCorrectAnswerPosition() == quiz.getChosenAnswerPosition()) {
+                    points += 3;
+                }
+                else {
+                    points--;
+                }
             }
         }
-        return points;
+        return (float)(100*points)/(3*questions.size());
     }
 }
