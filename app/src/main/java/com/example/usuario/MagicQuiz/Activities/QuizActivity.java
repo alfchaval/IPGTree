@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -249,10 +250,10 @@ public class QuizActivity extends AppCompatActivity {
                         questions.get(questionNumber).setChosenAnswerPosition(index);
                         for(int i = 0; i < questions.get(questionNumber).getAnswers().size(); i++) {
                             if(i == index) {
-                                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+                                answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
                             }
                             else {
-                                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                                answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
                             }
                         }
                     }
@@ -307,13 +308,13 @@ public class QuizActivity extends AppCompatActivity {
         for (Quiz quiz: questions) {
             if(quiz.getChosenAnswerPosition() != -1) {
                 if(quiz.getCorrectAnswerPosition() == quiz.getChosenAnswerPosition()) {
-                    points += 3;
+                    points += 4;
                 }
                 else {
                     points--;
                 }
             }
         }
-        return (float)(100*points)/(3*questions.size());
+        return (float)(25*points)/(4*questions.size());
     }
 }

@@ -70,10 +70,8 @@
     <TextView
         android:id="@+id/txv_question_number"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:layout_height="22dp"
         android:gravity="center"
-        android:text="LOL"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imv_arrow_right"
         />
