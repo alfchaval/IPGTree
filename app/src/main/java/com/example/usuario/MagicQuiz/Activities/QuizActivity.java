@@ -315,6 +315,6 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         }
-        return (float)(25*points)/(4*questions.size());
+        return (float)(100*points)/(4*questions.size());
     }
 }

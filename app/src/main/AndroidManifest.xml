@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".Activities.TreeActivity"/>
         <activity android:name=".Activities.QuizActivity"/>
+        <activity android:name=".Activities.DecklistActivity"/>
         <activity android:name=".Activities.AboutActivity"/>
     </application>
 

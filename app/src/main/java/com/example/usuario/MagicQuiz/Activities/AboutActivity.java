@@ -17,12 +17,12 @@ public class AboutActivity extends AppCompatActivity {
 
         txv_about = findViewById(R.id.txv_about);
         txv_about.setText(
-                "Actualizado: 20-03-2019, RNA.\n" +
+                "Actualizado: 22-03-2019, RNA.\n" +
                 "\n" +
                 "Código de la app: https://github.com/alfchaval/Tree.git\n" +
                 "Sugerencias: alfchaval@hotmail.com\n" +
                 "\n" +
-                "Proximamente:\n" +
+                "Próximamente:\n" +
                 "- Añadir más preguntas al quiz\n" +
                 "- En el árbol expandir el tema de los ciclos para incluir casos con varios jugadores involucrados\n" +
                 "- En el árbol expandir ejemplos de errores de comunicación, que ahora abarcan todo el punto 4 de las MTR\n");

@@ -10,7 +10,7 @@ import com.example.usuario.MagicQuiz.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_tree, btn_quiz, btn_about;
+    Button btn_tree, btn_quiz, btn_decklist, btn_about;
     Intent intent;
 
     @Override
@@ -31,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 intent = new Intent(MainActivity.this, QuizActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_decklist = findViewById(R.id.btn_decklist);
+        btn_decklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(MainActivity.this, DecklistActivity.class);
                 startActivity(intent);
             }
         });
