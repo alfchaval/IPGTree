@@ -8,17 +8,33 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.usuario.MagicQuiz.Activities.MainActivity">
+        <activity
+            android:name="com.example.usuario.MagicQuiz.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.TreeActivity"/>
-        <activity android:name=".Activities.QuizActivity"/>
-        <activity android:name=".Activities.DecklistActivity"/>
-        <activity android:name=".Activities.AboutActivity"/>
+        <activity
+            android:name=".Activities.DocumentsActivity"
+            />
+        <activity
+            android:name=".Activities.TreeActivity"
+            />
+        <activity
+            android:name=".Activities.QuizActivity"
+            />
+        <activity
+            android:name=".Activities.DecklistActivity"
+            />
+        <activity
+            android:name=".Activities.DraftActivity"
+            android:screenOrientation="nosensor"
+            />
+        <activity
+            android:name=".Activities.AboutActivity"
+            />
     </application>
 
 </manifest>

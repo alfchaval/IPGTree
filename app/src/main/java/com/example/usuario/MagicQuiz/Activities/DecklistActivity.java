@@ -42,8 +42,10 @@ public class DecklistActivity extends AppCompatActivity {
         btn_undo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numbers.remove(numbers.size() - 1);
-                WriteNumbers();
+                if(numbers.size() > 0) {
+                    numbers.remove(numbers.size() - 1);
+                    WriteNumbers();
+                }
             }
         });
         btn_add_1 = findViewById(R.id.btn_add_1);
