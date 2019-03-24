@@ -62,7 +62,7 @@ public class TreeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree);
 
-        ll_answers = findViewById(R.id.ll_answers);
+        ll_answers = findViewById(R.id.ll_points);
         tv_question = findViewById(R.id.tv_question);
         tv_question.setTextSize(TEXT_SIZE);
 

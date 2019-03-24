@@ -18,15 +18,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_documents = findViewById(R.id.btn_documents);
+        btn_documents = findViewById(R.id.btn_docs);
         btn_documents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, DocumentsActivity.class);
+                intent = new Intent(MainActivity.this, DocumentsMenuActivity.class);
                 startActivity(intent);
             }
         });
-        btn_tree = findViewById(R.id.btn_tree);
+        btn_tree = findViewById(R.id.btn_ipgtree);
         btn_tree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

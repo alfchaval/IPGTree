@@ -12,13 +12,13 @@
     >
 
     <Button
-        android:id="@+id/btn_documents"
+        android:id="@+id/btn_docs"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_tree"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ipgtree"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
@@ -26,12 +26,12 @@
         />
 
     <Button
-        android:id="@+id/btn_tree"
+        android:id="@+id/btn_ipgtree"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_documents"
+        app:layout_constraintTop_toBottomOf="@+id/btn_docs"
         app:layout_constraintBottom_toTopOf="@+id/btn_quiz"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
@@ -45,12 +45,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_tree"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ipgtree"
         app:layout_constraintBottom_toTopOf="@+id/btn_decklist"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Quiz"
+        android:text="Quiz IPG"
         />
 
     <Button

@@ -26,12 +26,32 @@ public class DraftActivity extends AppCompatActivity {
     int pick;
     int pack;
 
-    boolean review;
-    boolean started;
-    boolean pause;
-    long last_time;
+    boolean review = false;
+    boolean started = false;
+    boolean pause = false;
+    long last_time = 0;
 
     CountDownTimer timer;
+
+    private static final String KEY_MODE = "key_mode";
+    private static final String KEY_PICK = "key_pick";
+    private static final String KEY_PACK = "key_pack";
+    private static final String KEY_REVIEW = "key_review";
+    private static final String KEY_STARTED = "key_started";
+    private static final String KEY_PAUSE = "key_pause";
+    private static final String KEY_TIME = "key_time";
+
+    @Override
+    protected void onSaveInstanceState (Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_MODE, selected_mode);
+        outState.putInt(KEY_PICK, pick);
+        outState.putInt(KEY_PACK, pack);
+        outState.putBoolean(KEY_REVIEW, review);
+        outState.putBoolean(KEY_STARTED, started);
+        outState.putBoolean(KEY_PAUSE, pause);
+        outState.putLong(KEY_TIME, last_time);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,19 +80,21 @@ public class DraftActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!started) {
+                    timer.start();
                     started = true;
-                    timer.start();
                     btn_play.setText("Pausar");
                 }
-                else if(pause) {
-                    createTimer(last_time);
-                    timer.start();
-                    btn_play.setText("Pausar");
-                }
-                else {
-                    timer.cancel();
-                    pause = true;
-                    btn_play.setText("Reanudar");
+                else if(last_time > 0) {
+                    if(pause) {
+                        createTimer(last_time);
+                        timer.start();
+                        btn_play.setText("Pausar");
+                    }
+                    else {
+                        timer.cancel();
+                        pause = true;
+                        btn_play.setText("Reanudar");
+                    }
                 }
             }
         });
@@ -123,7 +145,43 @@ public class DraftActivity extends AppCompatActivity {
             }
         });
 
-        changeMode(NORMAL);
+        if (savedInstanceState != null) {
+            selected_mode = savedInstanceState.getInt(KEY_MODE);
+            pick = savedInstanceState.getInt(KEY_PICK);
+            pack = savedInstanceState.getInt(KEY_PACK);
+            review = savedInstanceState.getBoolean(KEY_REVIEW);
+            started = savedInstanceState.getBoolean(KEY_STARTED);
+            if(started) {
+                last_time = savedInstanceState.getLong(KEY_TIME);
+                txv_time.setText(last_time/1000 + ".0");
+                showStatus();
+                if(last_time > 0) {
+                    createTimer(last_time);
+                    pause = savedInstanceState.getBoolean(KEY_PAUSE);
+                    if(pause) {
+                        btn_play.setText("Reanudar");
+                    }
+                    else {
+                        btn_play.setText("Pausar");
+                        timer.start();
+                    }
+                }
+                else {
+                    btn_play.setText("---");
+                }
+            }
+            else {
+                setTimer();
+            }
+        }
+        else {
+            changeMode(NORMAL);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     public void changeMode(int mode) {
@@ -152,7 +210,31 @@ public class DraftActivity extends AppCompatActivity {
         if(timer != null) {
             timer.cancel();
         }
+        createTimer(showStatus()*1000);
+        btn_play.setText("Comenzar");
+        started = false;
+    }
+
+    public void createTimer(long millis) {
+        timer = new CountDownTimer(millis, 100) {
+
+            @Override
+            public void onTick(long millisUntilEnd) {
+                last_time = millisUntilEnd;
+                txv_time.setText(millisUntilEnd/1000 + "." + (millisUntilEnd/100)%10);
+            }
+
+            @Override
+            public void onFinish() {
+                btn_play.setText("---");
+            }
+        };
+        txv_time.setText(millis/1000 + ".0");
+        last_time = millis;
         pause = false;
+    }
+
+    public int showStatus() {
         int seconds = 0;
         if(review) {
             switch (selected_mode) {
@@ -184,26 +266,6 @@ public class DraftActivity extends AppCompatActivity {
                     break;
             }
         }
-
-        createTimer(seconds*1000);
-        started = false;
-        txv_time.setText(seconds + ".0");
-        btn_play.setText("Comenzar");
-    }
-
-    public void createTimer(long millis) {
-        timer = new CountDownTimer(millis, 100) {
-
-            @Override
-            public void onTick(long millisUntilEnd) {
-                last_time = millisUntilEnd;
-                txv_time.setText(millisUntilEnd/1000 + "." + (millisUntilEnd/100)%10);
-            }
-
-            @Override
-            public void onFinish() {
-            }
-        };
-        pause = false;
+        return seconds;
     }
 }

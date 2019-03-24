@@ -17,7 +17,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.DocumentsActivity"
+            android:name=".Activities.DocumentsMenuActivity"
+            />
+        <activity
+            android:name=".Activities.DocumentActivity"
             />
         <activity
             android:name=".Activities.TreeActivity"
@@ -30,7 +33,6 @@
             />
         <activity
             android:name=".Activities.DraftActivity"
-            android:screenOrientation="nosensor"
             />
         <activity
             android:name=".Activities.AboutActivity"

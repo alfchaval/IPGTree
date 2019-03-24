@@ -4,7 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -60,7 +59,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        ll_answers = findViewById(R.id.ll_answers);
+        ll_answers = findViewById(R.id.ll_points);
         tv_question = findViewById(R.id.tv_question);
         tv_question.setTextSize(TEXT_SIZE);
         txv_question_number = findViewById(R.id.txv_question_number);

@@ -12,87 +12,59 @@
     >
 
     <Button
-        android:id="@+id/btn_docs"
+        android:id="@+id/btn_cr"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_decklist"
+        app:layout_constraintEnd_toStartOf="@+id/btn_amtr"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_ipgtree"
+        app:layout_constraintBottom_toTopOf="@+id/btn_jar"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Documentos"
+        android:text="CR"
         />
 
     <Button
-        android:id="@+id/btn_ipgtree"
+        android:id="@+id/btn_jar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_draft"
-        app:layout_constraintTop_toBottomOf="@+id/btn_docs"
-        app:layout_constraintBottom_toTopOf="@+id/btn_quiz"
-        android:background="@drawable/answer_background_default"
-        android:textColor="@color/colorText"
-        android:textSize="20dp"
-        android:text="Árbol IPG"
-        />
-
-    <Button
-        android:id="@+id/btn_quiz"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_about"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ipgtree"
+        app:layout_constraintEnd_toStartOf="@+id/btn_amtr"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cr"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Quiz IPG"
+        android:text="JAR"
         />
 
     <Button
-        android:id="@+id/btn_decklist"
+        android:id="@+id/btn_aipg"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/btn_docs"
+        app:layout_constraintStart_toEndOf="@+id/btn_cr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_draft"
+        app:layout_constraintBottom_toTopOf="@+id/btn_amtr"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Contador de listas"
+        android:text="AIPG"
         />
 
     <Button
-        android:id="@+id/btn_draft"
+        android:id="@+id/btn_amtr"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/btn_ipgtree"
+        app:layout_constraintStart_toEndOf="@+id/btn_jar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_decklist"
-        app:layout_constraintBottom_toTopOf="@+id/btn_about"
-        android:background="@drawable/answer_background_default"
-        android:textColor="@color/colorText"
-        android:textSize="20dp"
-        android:text="Tiempos draft"
-        />
-
-    <Button
-        android:id="@+id/btn_about"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/btn_quiz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_draft"
+        app:layout_constraintTop_toBottomOf="@+id/btn_aipg"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Información"
+        android:text="AMTR"
         />
 
 </android.support.constraint.ConstraintLayout>
