@@ -135,36 +135,25 @@ public class TreeActivity extends AppCompatActivity {
     //Load the question and answers
     public void showQuiz() {
         int index = 0;
-        //If there is no more questions, that question is really the solution to the problem
-        if(questionTree.isLeaf()) {
-            tv_question.setText(R.string.solution);
-            //Most time you have already a TextView, but you need this check in case you change the orientation while you are in a solution
-            if (answerTVs.size() < 1) {
+        //Show the question
+        tv_question.setText(questionTree.getData().getQuestion());
+        //Show the answers
+        while (index < questionTree.getData().getAnswers().size()) {
+            //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
+            if (index >= answerTVs.size()) {
                 addTextView(index);
             }
-            answerTVs.get(index).setText(questionTree.getData().getQuestion());
+            if(questionTree.getChild(index).isLeaf()) {
+                answerTVs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+            }
+            else if (questionTree.getData().getChosenAnswerPosition() == index && questionTree.getData().isAnswered()) {
+                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+            } else {
+                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+            }
+            answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
             answerTVs.get(index).setVisibility(View.VISIBLE);
             index++;
-        }
-        else {
-            //Show the question
-            tv_question.setText(questionTree.getData().getQuestion());
-            //Show the answers
-            while (index < questionTree.getData().getAnswers().size()) {
-                //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
-                if (index >= answerTVs.size()) {
-                    addTextView(index);
-                }
-                //When I go back I want to see what answer I chosed last time
-                if (questionTree.getData().getChosenAnswerPosition() == index && questionTree.getData().isAnswered()) {
-                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
-                } else {
-                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
-                }
-                answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
-                answerTVs.get(index).setVisibility(View.VISIBLE);
-                index++;
-            }
         }
         //Hide void TextViews
         while (index < answerTVs.size()) {
@@ -186,7 +175,7 @@ public class TreeActivity extends AppCompatActivity {
         answerTVs.get(index).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(questionTree.existChild(index)) {
+                if(questionTree.existChild(index) && !questionTree  .getChild(index).isLeaf()) {
                     questionTree.getData().setChosenAnswerPosition(index);
                     questionTree = questionTree.getChild(index);
                     showQuiz();

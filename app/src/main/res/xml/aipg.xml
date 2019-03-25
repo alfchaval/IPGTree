@@ -3,63 +3,41 @@
     <point text="1. Filosofia General">
         <point text="1.1. Definición de Penalizaciones">
             <point text="Advertencia (Warning)">
-                <point text="
-Las Advertencias se usan en situaciones de juego incorrecto cuando se necesita un poco de tiempo para implementar el procedimiento correctivo.
-
-Las Advertencias son emitidas típicamente cuando los jueces tienen que intervenir para corregir una situación. El propósito principal de una Advertencia es dar mayor ‘peso’ al recordatorio de jugar con más cuidado. Es anotada y registrada, por lo tanto es importante, pero no necesita causar temor.
-El propósito de una Advertencia es alertar a los jueces y jugadores involucrados que ha ocurrido un problema y mantener un registro permanente de la infracción.
-
-Una Advertencia tiene que estar registrada y los jueces deben anotarla en el reverso del talón de resultados (si se están usando). Luego, el Administrador de resultados introducirá la penalización en el software de torneo para tener un registro de la infracción. Los Administradores de resultados pueden notificarte cuando un jugador está cerca de un aumento en la penalización y los jugadores necesitan saber cuántas penalizaciones han recibido.
-Debería agregarse una extensión de tiempo si aplicarla toma más de un minuto.
-
-Si arreglar el estado del juego ha tomado más de un minuto, da una extensión de tiempo igual al tiempo tomado, a menos que el juego esté en turnos extra. Miraste el reloj antes de ir a la mesa, ¿verdad?
-"></point>
+                <point text="Las Advertencias se usan en situaciones de juego incorrecto cuando se necesita un poco de tiempo para implementar el procedimiento correctivo."></point>
+                <point text="Las Advertencias son emitidas típicamente cuando los jueces tienen que intervenir para corregir una situación. El propósito principal de una Advertencia es dar mayor ‘peso’ al recordatorio de jugar con más cuidado. Es anotada y registrada, por lo tanto es importante, pero no necesita causar temor."></point>
+                <point text="El propósito de una Advertencia es alertar a los jueces y jugadores involucrados que ha ocurrido un problema y mantener un registro permanente de la infracción."></point>
+                <point text="Una Advertencia tiene que estar registrada y los jueces deben anotarla en el reverso del talón de resultados (si se están usando). Luego, el Administrador de resultados introducirá la penalización en el software de torneo para tener un registro de la infracción. Los Administradores de resultados pueden notificarte cuando un jugador está cerca de un aumento en la penalización y los jugadores necesitan saber cuántas penalizaciones han recibido."></point>
+                <point text="Debería agregarse una extensión de tiempo si aplicarla toma más de un minuto."></point>
+                <point text="Si arreglar el estado del juego ha tomado más de un minuto, da una extensión de tiempo igual al tiempo tomado, a menos que el juego esté en turnos extra. Miraste el reloj antes de ir a la mesa, ¿verdad?"></point>
             </point>
             <point text="Pérdida de Juego (Game Loss)">
-                <point text="
-Una Pérdida de Juego termina el juego actual inmediatamente y el jugador que cometió la infracción se considera que perdió el juego a efectos de reportar la partida. El jugador que recibe la Pérdida de Juego elige si jugar o robar en el siguiente juego de la partida, si corresponde. Si se otorga una Pérdida de Juego antes de que comience la partida, ninguno de los jugadores involucrados en la partida puede usar el sideboard (si el torneo los incluye) para el primer juego que jueguen.
-
-Si un jugador recibe una Pérdida de Juego, ese juego ha terminado. La situación de la mesa o si “iba a perder de todos modos” no se tienen en cuenta en la decisión. El resto de este párrafo nos dice qué hacer en el próximo juego. El jugador con la pérdida de juego… pierdió. Así que ese jugador decide si juega o roba en el siguiente juego de la partida. Sin embargo, si la Pérdida de Juego es asignada antes del primer juego, no han jugado aún un juego, así que no tienen la posibilidad de usar el Sideboard.
-Las pérdidas de juego se aplican inmediatamente si el juego está en curso, si no se aplican al próximo juego del jugador, a menos que si indique lo contrario.
-
-Por defecto, las Pérdidas de Juego se aplican inmediatamente. Si no hay un juego en curso, aplicas la penalización al próximo juego que se pueda, incluso si es una partida diferente. Sin embargo, hay algunas pocas infracciones donde la penalización te dice que debe ser aplicada en un momento específico. Sobretodo esto es para Problemas con la lista del mazo descubiertos durante un conteo.
-Si se asignan Pérdidas de juego simultáneas a cada jugador, se registran, pero no afectan la puntuación de la partida.
-
-Esto cubre situaciones en las que ambos jugadores tienen un mazo illegal, u otras circunstancias similares. Si asignamos una Pérdida de Juego a ambos jugadores, solo un juego de la partida determinará el ganador, y siempre es mejor para ambos jugadores jugar una partida completa. Para remediar esto, registras ambas penalizaciones, terminas el juego actual (si aún se está jugando) y ambos jugadores pasan al siguiente juego. En lo que respecta a la puntuación, este juego específico no ocurrió.
-"></point>
+                <point text="Una Pérdida de Juego termina el juego actual inmediatamente y el jugador que cometió la infracción se considera que perdió el juego a efectos de reportar la partida. El jugador que recibe la Pérdida de Juego elige si jugar o robar en el siguiente juego de la partida, si corresponde. Si se otorga una Pérdida de Juego antes de que comience la partida, ninguno de los jugadores involucrados en la partida puede usar el sideboard (si el torneo los incluye) para el primer juego que jueguen."></point>
+                <point text="Si un jugador recibe una Pérdida de Juego, ese juego ha terminado. La situación de la mesa o si “iba a perder de todos modos” no se tienen en cuenta en la decisión. El resto de este párrafo nos dice qué hacer en el próximo juego. El jugador con la pérdida de juego… pierdió. Así que ese jugador decide si juega o roba en el siguiente juego de la partida. Sin embargo, si la Pérdida de Juego es asignada antes del primer juego, no han jugado aún un juego, así que no tienen la posibilidad de usar el Sideboard."></point>
+                <point text="Las pérdidas de juego se aplican inmediatamente si el juego está en curso, si no se aplican al próximo juego del jugador, a menos que si indique lo contrario."></point>
+                <point text="Por defecto, las Pérdidas de Juego se aplican inmediatamente. Si no hay un juego en curso, aplicas la penalización al próximo juego que se pueda, incluso si es una partida diferente. Sin embargo, hay algunas pocas infracciones donde la penalización te dice que debe ser aplicada en un momento específico. Sobretodo esto es para Problemas con la lista del mazo descubiertos durante un conteo."></point>
+                <point text="Si se asignan Pérdidas de juego simultáneas a cada jugador, se registran, pero no afectan la puntuación de la partida."></point>
+                <point text="Esto cubre situaciones en las que ambos jugadores tienen un mazo illegal, u otras circunstancias similares. Si asignamos una Pérdida de Juego a ambos jugadores, solo un juego de la partida determinará el ganador, y siempre es mejor para ambos jugadores jugar una partida completa. Para remediar esto, registras ambas penalizaciones, terminas el juego actual (si aún se está jugando) y ambos jugadores pasan al siguiente juego. En lo que respecta a la puntuación, este juego específico no ocurrió."></point>
             </point>
             <point text="Pérdida de Partida (Match Loss)">
-                <point text="
-Una Pérdida de Partida es una penalización severa que normalmente se asigna cuando la partida misma se encuentra comprometida.
-
-Hay tres infracciones que resultan en una penalización de Pérdida de partida. Aumento de Tardanza; Ayuda Externa y Conducta Antideportiva – Mayor.
-Nota que es posible que una partida sea comprometida pero aun así continúe, como cuando un espectador comete Ayuda Externa.
-Las Pérdidas de partida se aplican a la partida en la cual ocurrió la infracción a menos que esa partida ya hubiera terminado, en cuyo caso la penalización se aplicará en la próxima partida del jugador.
-
-Si la partida ya ha terminado, aplica la penalización a la siguiente partida.
-"></point>
+                <point text="Una Pérdida de Partida es una penalización severa que normalmente se asigna cuando la partida misma se encuentra comprometida."></point>
+                <point text="Hay tres infracciones que resultan en una penalización de Pérdida de partida. Aumento de Tardanza; Ayuda Externa y Conducta Antideportiva – Mayor."></point>
+                <point text="Nota que es posible que una partida sea comprometida pero aun así continúe, como cuando un espectador comete Ayuda Externa."></point>
+                <point text="Las Pérdidas de partida se aplican a la partida en la cual ocurrió la infracción a menos que esa partida ya hubiera terminado, en cuyo caso la penalización se aplicará en la próxima partida del jugador."></point>
+                <point text="Si la partida ya ha terminado, aplica la penalización a la siguiente partida."></point>
             </point>
             <point text="Descalificación (Disqualification)">
-                <point text="
-Una descalificación se asigna a actividades que dañan la integridad del torneo como tal, o por una conducta antideportiva severa.
-
-Las Descalificaciones son para las infracciones más graves. No te sientas mal por ello. Recuerda, tú no das penalizaciones, los jugadores las ganan.
-Quien recibe la descalificación no necesita ser un jugador en el torneo. Puede ser también un espectador. Si esto sucede, debe ser ingresado en el torneo en el Wizards Event Reporter (“WER”) para que pueda ser descalificado y reportado a la DCI.
-
-La razón de ello es para asegurar que haya registro de descalificaciones y de que la información pueda ser utilizada por el Comité de Investigaciones. Obtén el nombre de la persona o su número de DCI, incluso si tienes que preguntar a quienes estén alrededor. Recuerda recoger declaraciones e introducir un informe de investigación.
-La descalificación puede ocurrir sin prueba de hecho siempre y cuando el Juez Principal determine que tiene suficiente información para creer que la integridad del torneo fue comprometida. Se recomienda que el informe del Juez Principal refleje este hecho.
-
-Los eventos de Magic no son un tribunal de justicia o un episodio de CSI:Miami. No necesitas un arma humeante o una prueba de ADN. El Juez principal no necesita probar que su decisión es correcta, solo necesita suficiente información para justificarla. Sin embargo, si descalificas sin evidencia, debes dejar constancia de ello. El Comité de Investigaciones sigue teniendo el derecho de pedir al Juez Principal que explique por qué pensó que el jugador debía ser descalificado.
-Cuando se aplica esta penalización, el jugador pierde su partida actual y es retirado del torneo. Si un jugador ya recibió premios cuando es descalificado, ese jugador puede conservar esos premios, pero no recibe más premios que todavía pueda haber merecido.
-
-Cuando un jugador es descalificado de un torneo, su evento ha terminado. Los resultados de las partidas o juegos que ha terminado no cambiarán, y, si el jugador ha recibido premios antes de la Descalificación, puede mantener lo que ya ha recibido. Sin embargo, no obtendrá nada que fuera a recibir. Esto es principalmente para evitar las complicaciones legales de recuperar algo que ya ha sido dado. Es importante informar a los jugadores que no recibirán Puntos Planeswalker por ese torneo.
-Cuando un jugador es descalificado durante un torneo, es removido del torneo y no ocupa un lugar en las posiciones. Esto significa que todos los jugadores en el torneo avanzan un lugar en las posiciones y reciben cualquier premio relativo a la nueva posición. Si la Descalificación ocurrió después de hacer un corte, ningún jugador avanza en lugar del jugador descalificado, aunque sí se mueven un puesto en las posiciones. Por ejemplo, si un jugador es descalificado durante los cuartos de final de un Magic Tabletop Mythic Qualifier, el anterior 9no puesto no avanza a la eliminación simple del Top 8, pero sí al 8vo puesto en las posiciones.
-
-Este párrafo está para decirle a los jueces (y jugadores) lo que sucede cuando un jugador es descalificado. Una pregunta muy frecuente es “Bueno, ahora que hay un hueco disponible en el Top 8, ¿puede el 9º tomarlo?” La respuesta es: si es después del corte, no, no se puede.
-Se puede encontrar más información sobre el proceso de Descalificación en http://blogs.magicjudges.org/o/disqualification-process/.
-
-El enlace anterior contiene toda la información acerca de qué debe ocurrir cuando un jugador es descalificado. También hay enlaces hacia documentos y el formulario para elevar el informe de descalificación al Comité de Investigaciones.
-"></point>
+                <point text="Una descalificación se asigna a actividades que dañan la integridad del torneo como tal, o por una conducta antideportiva severa."></point>
+                <point text="Las Descalificaciones son para las infracciones más graves. No te sientas mal por ello. Recuerda, tú no das penalizaciones, los jugadores las ganan."></point>
+                <point text="Quien recibe la descalificación no necesita ser un jugador en el torneo. Puede ser también un espectador. Si esto sucede, debe ser ingresado en el torneo en el Wizards Event Reporter (“WER”) para que pueda ser descalificado y reportado a la DCI."></point>
+                <point text="La razón de ello es para asegurar que haya registro de descalificaciones y de que la información pueda ser utilizada por el Comité de Investigaciones. Obtén el nombre de la persona o su número de DCI, incluso si tienes que preguntar a quienes estén alrededor. Recuerda recoger declaraciones e introducir un informe de investigación."></point>
+                <point text="La descalificación puede ocurrir sin prueba de hecho siempre y cuando el Juez Principal determine que tiene suficiente información para creer que la integridad del torneo fue comprometida. Se recomienda que el informe del Juez Principal refleje este hecho."></point>
+                <point text="Los eventos de Magic no son un tribunal de justicia o un episodio de CSI:Miami. No necesitas un arma humeante o una prueba de ADN. El Juez principal no necesita probar que su decisión es correcta, solo necesita suficiente información para justificarla. Sin embargo, si descalificas sin evidencia, debes dejar constancia de ello. El Comité de Investigaciones sigue teniendo el derecho de pedir al Juez Principal que explique por qué pensó que el jugador debía ser descalificado."></point>
+                <point text="Cuando se aplica esta penalización, el jugador pierde su partida actual y es retirado del torneo. Si un jugador ya recibió premios cuando es descalificado, ese jugador puede conservar esos premios, pero no recibe más premios que todavía pueda haber merecido."></point>
+                <point text="Cuando un jugador es descalificado de un torneo, su evento ha terminado. Los resultados de las partidas o juegos que ha terminado no cambiarán, y, si el jugador ha recibido premios antes de la Descalificación, puede mantener lo que ya ha recibido. Sin embargo, no obtendrá nada que fuera a recibir. Esto es principalmente para evitar las complicaciones legales de recuperar algo que ya ha sido dado. Es importante informar a los jugadores que no recibirán Puntos Planeswalker por ese torneo."></point>
+                <point text="Cuando un jugador es descalificado durante un torneo, es removido del torneo y no ocupa un lugar en las posiciones. Esto significa que todos los jugadores en el torneo avanzan un lugar en las posiciones y reciben cualquier premio relativo a la nueva posición. Si la Descalificación ocurrió después de hacer un corte, ningún jugador avanza en lugar del jugador descalificado, aunque sí se mueven un puesto en las posiciones. Por ejemplo, si un jugador es descalificado durante los cuartos de final de un Magic Tabletop Mythic Qualifier, el anterior 9no puesto no avanza a la eliminación simple del Top 8, pero sí al 8vo puesto en las posiciones."></point>
+                <point text="Este párrafo está para decirle a los jueces (y jugadores) lo que sucede cuando un jugador es descalificado. Una pregunta muy frecuente es “Bueno, ahora que hay un hueco disponible en el Top 8, ¿puede el 9º tomarlo?” La respuesta es: si es después del corte, no, no se puede."></point>
+                <point text="Se puede encontrar más información sobre el proceso de Descalificación en http://blogs.magicjudges.org/o/disqualification-process/."></point>
+                <point text="El enlace anterior contiene toda la información acerca de qué debe ocurrir cuando un jugador es descalificado. También hay enlaces hacia documentos y el formulario para elevar el informe de descalificación al Comité de Investigaciones."></point>
             </point>
         </point>
         <point text="1.2. Aplicando Penalizaciones">

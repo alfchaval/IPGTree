@@ -4,9 +4,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
-import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -27,6 +26,8 @@ public class DocumentActivity extends AppCompatActivity {
     ScrollView scroll_points;
     ImageView imv_arrow_up;
     ImageView imv_arrow_down;
+
+    ViewTreeObserver viewTreeObserver;
 
     ArrayList<TextView> branchs = new ArrayList<TextView>();
 
@@ -64,6 +65,8 @@ public class DocumentActivity extends AppCompatActivity {
         tv_title = findViewById(R.id.tv_question);
         tv_title.setTextSize(TEXT_SIZE);
 
+        viewTreeObserver = scroll_points.getViewTreeObserver();
+
         imv_arrow_up = findViewById(R.id.imv_arrow_up);
         imv_arrow_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,11 +93,25 @@ public class DocumentActivity extends AppCompatActivity {
                     showOrHideArrows();
                 }
             });
+            //Also you don't want to see them if there aren't answers outside the screen
+            viewTreeObserver.addOnGlobalLayoutListener (new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    showOrHideArrows();
+                }
+            });
         }
         else {
             //Older versions can't use OnScrollChangeListener, so instead of disapear, the arrows are semitransparent
             imv_arrow_down.setAlpha(0.4f);
             imv_arrow_up.setAlpha(0.4f);
+            //They still disapear if there aren't answers outside the screen
+            viewTreeObserver.addOnGlobalLayoutListener (new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    showOrHideArrowsOldDevices();
+                }
+            });
         }
 
         loadPoints(savedInstanceState);
@@ -138,6 +155,12 @@ public class DocumentActivity extends AppCompatActivity {
             }
             branchs.get(index).setText(tree.getChild(index).getData());
             branchs.get(index).setVisibility(View.VISIBLE);
+            if(tree.getChild(index).isLeaf()) {
+                branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+            }
+            else {
+                branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+            }
             index++;
         }
         //Hide void TextViews
@@ -154,7 +177,7 @@ public class DocumentActivity extends AppCompatActivity {
         textView.setTextSize(TEXT_SIZE);
         textView.setTextColor(ContextCompat.getColor(this, R.color.colorText));
         textView.setPadding(8, 8, 8, 8);
-        textView.setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+
         branchs.add(textView);
         //Clicking an answer moves you to the next question if there is anyone
         branchs.get(index).setOnClickListener(new View.OnClickListener() {

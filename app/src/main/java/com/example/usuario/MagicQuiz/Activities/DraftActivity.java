@@ -226,6 +226,8 @@ public class DraftActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                last_time = 0;
+                txv_time.setText("0.0");
                 btn_play.setText("---");
             }
         };
