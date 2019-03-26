@@ -13,30 +13,36 @@ import java.util.ArrayList;
 public class Read {
 
 
-    public static Tree<String> readXMLDocument(XmlResourceParser resource) {
-        Tree<String> tree = null;
+    public static Tree<TypedText> readXMLDocument(XmlResourceParser resource) {
+        Tree<TypedText> tree = null;
         XmlPullParser xpp = resource;
         try {
             int eventType = xpp.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 switch (eventType) {
                     case XmlPullParser.START_TAG:
-                        if (xpp.getName().equals("point")) {
-                            if(tree != null) {
-                                tree.addChild(new Tree<String>(xpp.getAttributeValue(0)));
-                                tree = tree.getChild(tree.numberOfChildren() - 1);
+                        if(tree != null) {
+                            tree.addChild(new Tree<TypedText>(new TypedText(xpp.getAttributeValue(0))));
+                            tree = tree.getChild(tree.numberOfChildren() - 1);
+                            switch (xpp.getName()) {
+                                case "title":
+                                    tree.getData().setType(TypedText.TITLE);
+                                    break;
+                                case "example":
+                                    tree.getData().setType(TypedText.EXAMPLE);
+                                    break;
+                                case "annotation":
+                                    tree.getData().setType(TypedText.ANNOTATION);
+                                    break;
                             }
-                            else {
-                                tree = new Tree<String>(xpp.getAttributeValue(0));
-                            }
+                        }
+                        else {
+                            tree = new Tree<TypedText>(new TypedText(xpp.getAttributeValue(0)));
                         }
                         break;
                     case XmlPullParser.END_TAG:
-                        if (xpp.getName().equals("point")) {
-                            if(!tree.isRoot()) {
-                                tree = tree.getParent();
-                            }
-
+                        if(!tree.isRoot()) {
+                            tree = tree.getParent();
                         }
                     case XmlPullParser.TEXT:
                         //In case you want to read the comments

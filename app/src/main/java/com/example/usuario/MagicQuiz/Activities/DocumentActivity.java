@@ -1,5 +1,6 @@
 package com.example.usuario.MagicQuiz.Activities;
 
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -14,12 +15,13 @@ import android.widget.TextView;
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Read;
 import com.example.usuario.MagicQuiz.Tree;
+import com.example.usuario.MagicQuiz.TypedText;
 
 import java.util.ArrayList;
 
 public class DocumentActivity extends AppCompatActivity {
 
-    Tree<String> tree;
+    Tree<TypedText> tree;
 
     TextView tv_title;
     LinearLayout ll_points;
@@ -122,7 +124,7 @@ public class DocumentActivity extends AppCompatActivity {
     //You only have to read the XML the first time you start the app
     private void loadPoints(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
-            tree = (Tree<String>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
+            tree = (Tree<TypedText>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
             switch (getIntent().getStringExtra("document")) {
@@ -138,8 +140,14 @@ public class DocumentActivity extends AppCompatActivity {
                 case "amtr":
                     tree = Read.readXMLDocument(this.getResources().getXml(R.xml.amtr));
                     break;
+                case "dq":
+                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.dq));
+                    break;
+                case "banned":
+                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.banned));
+                    break;
                 default:
-                    tree = new Tree<String>("FAIL");
+                    tree = new Tree<TypedText>(new TypedText("ERROR"));
             }
         }
     }
@@ -148,14 +156,29 @@ public class DocumentActivity extends AppCompatActivity {
     public void showList() {
         int index = 0;
         while (index < tree.getChildren().size()) {
-            tv_title.setText(tree.getData());
+            tv_title.setText(tree.getData().getText());
             //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
             if (index >= branchs.size()) {
                 addTextView(index);
             }
-            branchs.get(index).setText(tree.getChild(index).getData());
+            branchs.get(index).setText(tree.getChild(index).getData().getText());
             branchs.get(index).setVisibility(View.VISIBLE);
-            if(tree.getChild(index).isLeaf()) {
+            if(tree.getChild(index).getData().getType() == TypedText.EXAMPLE) {
+                branchs.get(index).setTypeface(null, Typeface.ITALIC);
+            }
+            else {
+                branchs.get(index).setTypeface(null, Typeface.NORMAL);
+            }
+            if(tree.getChild(index).getData().getType() == TypedText.TITLE) {
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
+            }
+            else {
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+            }
+            if(tree.getChild(index).getData().getType() == TypedText.ANNOTATION) {
+                branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
+            }
+            else if(tree.getChild(index).isLeaf()) {
                 branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
             }
             else {
@@ -175,7 +198,6 @@ public class DocumentActivity extends AppCompatActivity {
         TextView textView = new TextView(this);
         textView.setLayoutParams(layoutParams);
         textView.setTextSize(TEXT_SIZE);
-        textView.setTextColor(ContextCompat.getColor(this, R.color.colorText));
         textView.setPadding(8, 8, 8, 8);
 
         branchs.add(textView);

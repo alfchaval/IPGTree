@@ -22,7 +22,7 @@
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Documentos (En progreso)"
+        android:text="Documentos"
         />
 
     <Button

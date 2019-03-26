@@ -16,36 +16,22 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_amtr"
+        app:layout_constraintEnd_toStartOf="@+id/btn_jar"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_jar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_aipg"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="CR"
-        />
-
-    <Button
-        android:id="@+id/btn_jar"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_amtr"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cr"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/answer_background_default"
-        android:textColor="@color/colorText"
-        android:textSize="20dp"
-        android:text="JAR"
+        android:text="CR (Próximamente)"
         />
 
     <Button
         android:id="@+id/btn_aipg"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/btn_cr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_dq"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cr"
         app:layout_constraintBottom_toTopOf="@+id/btn_amtr"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
@@ -57,14 +43,56 @@
         android:id="@+id/btn_amtr"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/btn_jar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_banned"
         app:layout_constraintTop_toBottomOf="@+id/btn_aipg"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/answer_background_default"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="AMTR"
+        android:text="AMTR (Próximamente)"
+        />
+
+    <Button
+        android:id="@+id/btn_jar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/btn_cr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_dq"
+        android:background="@drawable/answer_background_default"
+        android:textColor="@color/colorText"
+        android:textSize="20dp"
+        android:text="JAR"
+        />
+
+    <Button
+        android:id="@+id/btn_dq"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/btn_aipg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_jar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_banned"
+        android:background="@drawable/answer_background_default"
+        android:textColor="@color/colorText"
+        android:textSize="20dp"
+        android:text="Proceso de descalificación (Próximamente)"
+        />
+
+    <Button
+        android:id="@+id/btn_banned"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/btn_amtr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_dq"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/answer_background_default"
+        android:textColor="@color/colorText"
+        android:textSize="20dp"
+        android:text="Lista de baneos"
         />
 
 </android.support.constraint.ConstraintLayout>
