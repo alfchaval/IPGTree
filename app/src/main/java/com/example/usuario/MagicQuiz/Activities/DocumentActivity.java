@@ -1,5 +1,6 @@
 package com.example.usuario.MagicQuiz.Activities;
 
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class DocumentActivity extends AppCompatActivity {
 
     LinearLayout.LayoutParams layoutParams;
 
+    boolean showNotes = true;
+
     final int TEXT_SIZE = 20;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
@@ -66,6 +69,14 @@ public class DocumentActivity extends AppCompatActivity {
         scroll_points = findViewById(R.id.scroll_answers);
         tv_title = findViewById(R.id.tv_question);
         tv_title.setTextSize(TEXT_SIZE);
+        tv_title.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                showNotes = !showNotes;
+                showList();
+                return true;
+            }
+        });
 
         viewTreeObserver = scroll_points.getViewTreeObserver();
 
@@ -171,18 +182,25 @@ public class DocumentActivity extends AppCompatActivity {
             }
             if(tree.getChild(index).getData().getType() == TypedText.TITLE) {
                 branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
             }
             else {
                 branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
             }
             if(tree.getChild(index).getData().getType() == TypedText.ANNOTATION) {
-                branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
+                if(showNotes) {
+                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
+                }
+                else {
+                    branchs.get(index).setVisibility(View.GONE);
+                }
             }
             else if(tree.getChild(index).isLeaf()) {
                 branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
             }
             else {
-                branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
             }
             index++;
         }

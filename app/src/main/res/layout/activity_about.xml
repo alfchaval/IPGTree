@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="8dp"
-        android:background="@drawable/answer_background_default"
+        android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
         />

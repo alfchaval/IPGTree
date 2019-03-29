@@ -872,7 +872,7 @@
             <answer text="Una persona ofrece consejo o información oculta a una persona que está jugando otra partida">
                 <question text="Solución">
                     <answer text="TE - Outside Assistance, Pérdida de partida."></answer>
-                    <answer text="i la persona no está jugando se le puede pedir que abandone el lugar."></answer>
+                    <answer text="Si la persona no está jugando se le puede pedir que abandone el lugar."></answer>
                 </question>
             </answer>
             <answer text="Un jugador se ha comunicado con otra persona durante un draft">

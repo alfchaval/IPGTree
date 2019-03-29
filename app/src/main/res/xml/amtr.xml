@@ -1,6 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<point text="Annotated Magic Tournament Rules">
-    <point text="Próximamente">
+<point text="Reglas de torneo anotadas">
+    <point text="1. Fundamentos de torneos">
+        <point text="1.1 Tipos de torneos">
+            <point text="Los torneos oficiales sancionados se dividen en dos tipos: Premier y no Premier. Los torneos premier son organizados por Wizards of the Coast u Organizadores de torneos elegidos. Tienen nombres y características únicas. Los torneos no Premier son torneos que no son explícitamente Premier."></point>
+            <annotation text="Actualmente los Eventos Premier incluyen: Magic: TMagic: The Gathering World Championship, World Magic Cup, Nationals, Nationals Last Chance Qualifiers, Pro Tour, Regional Pro Tour Qualifiers, Regional Last Chance Qualifiers, Preliminary Pro Tour Qualifiers, Pro Tour Qualifiers, Grand Prix, Grand Prix Trials, WPN Premium Tournaments y WPN Premium Qualifiers. Los Eventos no-Premier incluyen cualquier otro torneo sancionado. Los Eventos Premier están listados en la web de Wizards of the Coast. Las MTR (Reglas de Torneo de Magic) es el documento de políticas para ambos tipos de torneos sancionados, Premier y no-Premier."></annotation>
+            <point text="Hay dos grandes formatos de torneos: Limitado y Construido. Cada uno tiene reglas específicas a su formato. En los torneos limitados, todo el producto para jugar es provisto durante el torneo. En los torneos construidos, los jugadores compiten usando mazos preparados de antemano. Algunos torneos Premier pueden incluir varios formatos durante el mismo torneo."></point>
+            <annotation text="Los formatos limitados incluyen todos aquellos formatos en los cuales los jugadores construyen sus mazos durante el evento — por ejemplo draft, mazo cerrado y mini masters. Los formatos construidos son aquellos donde los jugadores construyen sus mazos antes del evento. Los formatos construidos más populares son Standard, Modern y Legacy."></annotation>
+        </point>
+        <point text="1.2 Publicar información de torneo">
+            <point text="Wizards of the Coast se reserva el derecho de publicar información de un torneo sancionado por la DCI en cualquier momento (incluyendo durante el torneo). La información del torneo incluye, pero no está limitada a, los contenidos de los mazos de uno o más jugadores, descripciones de estrategias de juego, transcripciones y reproducciones de video. Los organizadores de torneo también pueden publicar esta información una vez que el torneo está terminado."></point>
+            <annotation text="Las listas de mazo no se deben hacer públicas hasta que un evento haya terminado, excepto en ciertos eventos Premier donde las listas de mazo de los jugadores son usualmente compartidas con los oponentes al comienzo de la ronda. Esto es para minimizar la ventaja que se genera debido a que ciertas listas se hacen públicas por el equipo de cobertura. El derecho de Wizards of the Coast de publicar esta información no significa necesariamente que un juez o el Organizador de Torneo deba grabarlo."></annotation>
+            <annotation text="En eventos premier como Grand Prix y Pro Tours, Wizards of the Coast tiene usualmente cobertura en línea del evento. Esta sección es sólo para confirmar que ellos tienen permitido publicar las listas. Los Organizadores de Torneo también tienen el derecho de publicar esta información después que el evento concluya, pero algunos Organizadores de Torneo han recibido permiso para manejar la cobertura de la misma forma. Por ejemplo, los Star City Games Opens regularmente tienen listas de mazo publicadas en el sitio web de Star City Games durante el evento o en el Top 8."></annotation>
+            <point text="Wizards of the Coast se reserva el derecho de publicar información de penalizaciones y suspensiones."></point>
+            <annotation text="Los jueces deberían tomar todas las investigaciones e información de penalizaciones muy seriamente, ya que podría terminar en un artículo en la página web de Wizards of the Coast."></annotation>
+            <annotation text="Wizards of the Coast usualmente reportará descalificaciones u otras penalizaciones de alto perfil durante los Pro Tours"></annotation>
+            <annotation text="Wizards of the Coast también publica regularmente una lista de las personas que están suspendidas del juego. Ellos algunas veces escriben artículos acerca de las suspensiones más controversiales, pero la mayoría de las veces simplemente actualizan la lista de jugadores suspendidos."></annotation>
+        </point>
+        <point text="1.3 Roles de torneo">
+            <point text="Para los propósitos del torneo se definen los siguientes roles:"></point>
+            <point text="- Organizador de torneo"></point>
+            <point text="- Juez principal"></point>
+            <point text="- Juez de piso"></point>
+            <point text="- Administrador de resultados"></point>
+            <point text="- Jugador"></point>
+            <point text="- Espectador"></point>
+            <point text="- Los primeros cuatro roles mencionados se consideran oficiales del torneo. El juez principal y los jueces de piso se consideran colectivamente jueces. Un mismo individuo puede actuar en cualquier combinación de roles de oficial de torneo. Los individuos que no son jueces en un torneo son espectadores de cualquier partida en la cual no estén jugando. Los miembros de la prensa son considerados como espectadores."></point>
+            <annotation text="Un individuo puede actuar en los seis roles durante un torneo. En eventos más grandes estos roles usualmente se dividen. Cualquier jugador es un espectador de las partidas que suceden a su alrededor. Todos los individuos que no sean jueces en un evento, incluidos aquellos con o sin un número DCI, son considerados espectadores."></annotation>
+            <annotation text="Se espera de los jugadores que sigan cualquier instrucción dada por Oficiales de Torneo, por lo tanto es importante saber a quiénes se aplica este título. También es importante definir cada uno de estos roles en detalle, lo que afortunadamente las MTR hacen por nosotros en las secciones 1.6 – 1.11, en el orden listado anteriormente."></annotation>
+        </point>
+        <point text="1.4 Elegibilidad de participación">
 
+        </point>
+        <point text="1.5 Número de membresía DCI">
+
+        </point>
+        <point text="1.7 Juez principal">
+
+        </point>
+        <point text="1.8 Jueces de piso">
+
+        </point>
+        <point text="1.9 Administrador de resultado">
+
+        </point>
+        <point text="1.10 Jugadores">
+
+        </point>
+        <point text="1.11 Espectadores">
+
+        </point>
+        <point text="1.12 Niveles de imposición de reglas">
+
+        </point>
+    </point>
+    <point text="2. Mecánicas de Torneo">
+        <point text="2.1 Estructura de partida">
+
+        </point>
+        <point text="2.2 Regla Juega o Roba">
+
+        </point>
+        <point text="2.3 Procedimientos Pre-Juego">
+
+        </point>
+        <point text="2.4 Concediendo o empatando intencionalmente juegos o partidas.">
+
+        </point>
+        <point text="2.5 Procedimientos de fin de partida">
+
+        </point>
+        <point text="2.6 Extensiones de tiempo">
+
+        </point>
+        <point text="2.7 Registro del Mazo">
+
+        </point>
+        <point text="2.8 Control de Mazos">
+
+        </point>
+        <point text="2.9 Apelaciones al Juez Principal">
+
+        </point>
+        <point text="2.10 Abandonando un torneo">
+
+        </point>
+        <point text="2.11 Tomando Notas">
+
+        </point>
+        <point text="2.12 Dispositivos electrónicos.">
+
+        </point>
+        <point text="2.13 Cobertura en video">
+
+        </point>
+        <point text="2.14 Total de vidas">
+
+        </point>
+    </point>
+    <point text="3. Reglas de Torneo">
+        <point text="3.1 Desempates">
+
+        </point>
+        <point text="3.2 Formatos y categorías de puntajes">
+
+        </point>
+        <point text="3.3 Cartas Permitidas">
+
+        </point>
+        <point text="3.4 Cartas de Reemplazo">
+
+        </point>
+        <point text="3.5 Cartas de listado">
+
+        </point>
+        <point text="3.6 Interpretación de las cartas">
+
+        </point>
+        <point text="3.7 Nuevos lanzamientos">
+
+        </point>
+        <point text="3.8 Marcadores de Juego">
+
+        </point>
+        <point text="3.9 Barajado de cartas">
+
+        </point>
+        <point text="3.10 Protectores">
+
+        </point>
+        <point text="3.11 Cartas Marcadas">
+
+        </point>
+        <point text="3.12 Información oculta">
+
+        </point>
+        <point text="3.13 Cartas giradas o invertidas">
+
+        </point>
+        <point text="3.14 Orden del cementerio">
+
+        </point>
+        <point text="3.15 Sideboard">
+
+        </point>
+    </point>
+    <point text="4. Comunicación">
+        <point text="4.1 Comunicación entre jugadores">
+
+        </point>
+        <point text="4.2 Atajos de torneo">
+
+        </point>
+        <point text="4.3 Secuencia fuera de orden">
+
+        </point>
+        <point text="4.4 Repeticiones">
+
+        </point>
+        <point text="4.5 Habilidades disparadas">
+
+        </point>
+        <point text="4.6 Comunicación de equipos / Gigante de dos cabezas">
+
+        </point>
+        <point text="4.7 Disposición del juego">
+
+        </point>
+    </point>
+    <point text="5. Infracciones de torneo">
+        <point text="5.1 Hacer Trampa">
+
+        </point>
+        <point text="5.2 Soborno">
+
+        </point>
+        <point text="5.3 Apuestas">
+
+        </point>
+        <point text=" 5.4 Conducta Antideportiva">
+
+        </point>
+        <point text="5.5 Juego Lento">
+
+        </point>
+        <point text="5.6 Ayuda Externa">
+
+        </point>
+    </point>
+    <point text="6. Reglas de torneos Construidos">
+        <point text="6.1 Restricciones de construcción de mazo">
+
+        </point>
+        <point text="6.2 Uso de Sideboard">
+
+        </point>
+        <point text="6.3 Construcción de Mazos en Formato Estándar">
+
+        </point>
+        <point text="6.4 Construcción de Mazos en Formato Modern">
+
+        </point>
+        <point text="6.5 Construcción de Mazos en Formato Vintage">
+
+        </point>
+        <point text="6.6 Construcción de Mazos en Formato Legacy">
+
+        </point>
+    </point>
+    <point text="7. Reglas de torneos Limitados">
+        <point text="7.1 Restricciones de construcción de mazo">
+
+        </point>
+        <point text="7.2 Uso de cartas en torneos limitado">
+
+        </point>
+        <point text="7.3 Uso de Sideboard">
+
+        </point>
+        <point text="7.4 Producto anormal">
+
+        </point>
+        <point text="7.5 Registo de conjunto de Mazo cerrado">
+
+        </point>
+        <point text="7.6 Creación de mesas de draft">
+
+        </point>
+        <point text="7.7 Procedimientos de Booster Draft">
+
+        </point>
+    </point>
+    <point text="8. Reglas para torneos en equipo">
+        <point text="8.1 Nombre de los Equipos">
+
+        </point>
+        <point text="8.2 Composición e Identificación del Equipo">
+
+        </point>
+        <point text="8.3 Reglas de comunicación de equipos">
+
+        </point>
+        <point text="8.4 Reglas de Construcción de Mazo Unificado">
+
+        </point>
+        <point text="8.5 Torneos Rochester Draft por Equipos">
+
+        </point>
+        <point text="8.6 Torneos Mazo Cerrado por Equipo">
+
+        </point>
+    </point>
+    <point text="9. Reglas de torneos de Gigante de dos cabezas">
+        <point text="9.1 Estructura de partida">
+
+        </point>
+        <point text="9.2 Reglas de comunicación">
+
+        </point>
+        <point text="9.3 Regla Juega o Roba">
+
+        </point>
+        <point text="9.4 Procedimiento pre-juego">
+
+        </point>
+        <point text="9.5 Reglas de Gigante de dos cabezas construido">
+
+        </point>
+        <point text="9.6 Reglas de Gigante de dos cabezas limitado">
+
+        </point>
+        <point text="9.7 Torneos Booster Draft Gigante de dos cabezas">
+
+        </point>
+    </point>
+    <point text="10. Reglas de sanción">
+        <point text="10.1 Mínimos de participación">
+
+        </point>
+        <point text="10.2 Cantidad de rondas">
+
+        </point>
+        <point text="10.3 Torneos sólo por invitación">
+
+        </point>
+        <point text="10.4 Algoritmo de emparejamiento">
+
+        </point>
     </point>
 </point>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

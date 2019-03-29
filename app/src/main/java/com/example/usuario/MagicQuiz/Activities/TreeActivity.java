@@ -149,7 +149,7 @@ public class TreeActivity extends AppCompatActivity {
             else if (questionTree.getData().getChosenAnswerPosition() == index && questionTree.getData().isAnswered()) {
                 answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
             } else {
-                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
             }
             answerTVs.get(index).setText(questionTree.getData().getAnswers().get(index));
             answerTVs.get(index).setVisibility(View.VISIBLE);

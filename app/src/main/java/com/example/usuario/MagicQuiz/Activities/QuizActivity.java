@@ -179,7 +179,7 @@ public class QuizActivity extends AppCompatActivity {
                 //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
                 if (index >= answerTVs.size()) {
                     addTextView(index);
-                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                 }
                 if(finished) {
                     if (questions.get(questionNumber).getChosenAnswerPosition() == index) {
@@ -193,14 +193,14 @@ public class QuizActivity extends AppCompatActivity {
                         answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_correct));
                     }
                     else {
-                        answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                        answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                     }
                 }
                 else if(questions.get(questionNumber).getChosenAnswerPosition() == index) {
                     answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
                 }
                 else {
-                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                    answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                 }
                 answerTVs.get(index).setText(questions.get(questionNumber).getAnswers().get(index));
                 answerTVs.get(index).setVisibility(View.VISIBLE);
@@ -252,7 +252,7 @@ public class QuizActivity extends AppCompatActivity {
                                 answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
                             }
                             else {
-                                answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_default));
+                                answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                             }
                         }
                     }

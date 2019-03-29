@@ -35,6 +35,10 @@
             android:name=".Activities.DraftActivity"
             />
         <activity
+            android:name=".Activities.LifeActivity"
+            android:screenOrientation="nosensor"
+            />
+        <activity
             android:name=".Activities.AboutActivity"
             />
     </application>
