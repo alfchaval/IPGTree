@@ -120,10 +120,10 @@ public class LifeActivity extends AppCompatActivity {
                 else {
                     txv_p1_symbol.setText("-");
                 }
-                p1m = p1life / 1000;
-                p1c = p1life % 1000 / 100;
-                p1d = p1life % 100 / 10;
-                p1u = p1life % 10;
+                p1m = Math.abs(p1life / 1000);
+                p1c = Math.abs(p1life % 1000 / 100);
+                p1d = Math.abs(p1life % 100 / 10);
+                p1u = Math.abs(p1life % 10);
                 txv_p1_m.setText(p1m + "");
                 txv_p1_c.setText(p1c + "");
                 txv_p1_d.setText(p1d + "");
@@ -189,10 +189,10 @@ public class LifeActivity extends AppCompatActivity {
                 else {
                     txv_p2_symbol.setText("-");
                 }
-                p2m = p2life / 1000;
-                p2c = p2life % 1000 / 100;
-                p2d = p2life % 100 / 10;
-                p2u = p2life % 10;
+                p2m = Math.abs(p2life / 1000);
+                p2c = Math.abs(p2life % 1000 / 100);
+                p2d = Math.abs(p2life % 100 / 10);
+                p2u = Math.abs(p2life % 10);
                 txv_p2_m.setText(p2m + "");
                 txv_p2_c.setText(p2c + "");
                 txv_p2_d.setText(p2d + "");

@@ -36,7 +36,7 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Oracle (Próximamente)"
+        android:text="Oracle (En desarrollo)"
         />
 
     <Button
