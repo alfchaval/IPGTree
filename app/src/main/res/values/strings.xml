@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">IPGTree</string>
     <string name="solution">Solución:</string>
+    <string name="my_keyboard">MyKeyboard</string>
 </resources>
