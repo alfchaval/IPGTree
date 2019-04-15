@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.usuario.MagicQuiz.Activities.MainActivity">
+            android:name="com.example.usuario.MagicQuiz.Activities.LoadingActivity"
+            android:screenOrientation="nosensor"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +22,9 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".Activities.MainActivity"
+            />
         <activity
             android:name=".Activities.DocumentsMenuActivity"
             />
@@ -40,6 +45,10 @@
             />
         <activity
             android:name=".Activities.DraftActivity"
+            />
+        <activity
+            android:name=".Activities.TimerActivity"
+            android:screenOrientation="nosensor"
             />
         <activity
             android:name=".Activities.LifeActivity"

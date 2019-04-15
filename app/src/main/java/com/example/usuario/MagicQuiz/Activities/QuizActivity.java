@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.usuario.MagicQuiz.Quiz;
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Read;
+import com.example.usuario.MagicQuiz.Repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,6 +38,8 @@ public class QuizActivity extends AppCompatActivity {
 
     LinearLayout.LayoutParams layoutParams;
 
+    Repository repository;
+
     final int TEXT_SIZE = 20;
 
     boolean finished = false;
@@ -59,45 +62,11 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        ll_answers = findViewById(R.id.ll_points);
-        tv_question = findViewById(R.id.tv_question);
+        linkViews();
+        setListeners();
+
         tv_question.setTextSize(TEXT_SIZE);
-        txv_question_number = findViewById(R.id.txv_question_number);
-
-        scroll_answers = findViewById(R.id.scroll_answers);
         viewTreeObserver = scroll_answers.getViewTreeObserver();
-
-        imv_arrow_up = findViewById(R.id.imv_arrow_up);
-        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_answers.fullScroll(View.FOCUS_UP);
-            }
-        });
-        imv_arrow_down = findViewById(R.id.imv_arrow_down);
-        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_answers.fullScroll(View.FOCUS_DOWN);
-            }
-        });
-
-        imv_arrow_left = findViewById(R.id.imv_arrow_left);
-        imv_arrow_left.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                questionNumber--;
-                showQuiz();
-            }
-        });
-        imv_arrow_right = findViewById(R.id.imv_arrow_right);
-        imv_arrow_right.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                questionNumber++;
-                showQuiz();
-            }
-        });
 
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 4, 0, 4);
@@ -133,8 +102,49 @@ public class QuizActivity extends AppCompatActivity {
             });
         }
 
+        repository = Repository.getInstance();
         loadQuiz(savedInstanceState);
         showQuiz();
+    }
+
+    public void linkViews() {
+        ll_answers = findViewById(R.id.ll_points);
+        tv_question = findViewById(R.id.tv_question);
+        txv_question_number = findViewById(R.id.txv_question_number);
+        scroll_answers = findViewById(R.id.scroll_answers);
+        imv_arrow_up = findViewById(R.id.imv_arrow_up);
+        imv_arrow_down = findViewById(R.id.imv_arrow_down);
+        imv_arrow_left = findViewById(R.id.imv_arrow_left);
+        imv_arrow_right = findViewById(R.id.imv_arrow_right);
+    }
+
+    public void setListeners() {
+        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_answers.fullScroll(View.FOCUS_UP);
+            }
+        });
+        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_answers.fullScroll(View.FOCUS_DOWN);
+            }
+        });
+        imv_arrow_left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                questionNumber--;
+                showQuiz();
+            }
+        });
+        imv_arrow_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                questionNumber++;
+                showQuiz();
+            }
+        });
     }
 
     //You only have to read the XML the first time you start the app
@@ -145,7 +155,7 @@ public class QuizActivity extends AppCompatActivity {
             questionNumber = savedInstanceState.getInt(KEY_QUESTION_NUMBER);
         }
         else {
-            questions = Read.readXMLQuiz(this.getResources().getXml(R.xml.quiz));
+            questions = repository.Quiz;
             shuffleQuestionsAndAnswers();
         }
     }

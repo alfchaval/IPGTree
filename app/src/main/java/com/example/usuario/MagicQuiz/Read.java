@@ -138,7 +138,7 @@ public class Read {
         return array;
     }
 
-    public static HashMap<String, Card> loadDatabase(Context context, TextView textView) {
+    public static HashMap<String, Card> loadDatabase(Context context) {
         HashMap<String, Card> cards = new HashMap<>();
         Gson gson = new GsonBuilder().create();
         Card card;
@@ -156,7 +156,6 @@ public class Read {
             reader.endObject();
             reader.close();
         } catch (Exception e) {
-            textView.setText("Error cargando la base de datos");
         }
 
         //textView.setText("Esta función aún está en desarrollo, pero ya se puede usar parcialmente");

@@ -144,9 +144,12 @@ public class LifeActivity extends AppCompatActivity {
                         }
                         break;
                     case CodeOk:
+                        if(number.length() > 9) {
+                            number = number.substring(0, 9);
+                        }
                         p1life = Integer.parseInt(number);
                         txv_p1life.setText(p1life + "");
-                        txv_p1lifetrack.setText(number + "\n" + p1life);
+                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + number);
                         cly_p1life.setVisibility(View.VISIBLE);
                         cly_p1setlife.setVisibility(View.INVISIBLE);
                         if(scroll_p2.getVisibility() == View.VISIBLE) {
@@ -234,9 +237,12 @@ public class LifeActivity extends AppCompatActivity {
                         }
                         break;
                     case CodeOk:
+                        if(number.length() > 9) {
+                            number = number.substring(0, 9);
+                        }
                         p2life = Integer.parseInt(number);
                         txv_p2life.setText(p2life + "");
-                        txv_p2lifetrack.setText(number + "\n" + p2life);
+                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + number);
                         cly_p2life.setVisibility(View.VISIBLE);
                         cly_p2setlife.setVisibility(View.INVISIBLE);
                         if(scroll_p1.getVisibility() == View.VISIBLE) {

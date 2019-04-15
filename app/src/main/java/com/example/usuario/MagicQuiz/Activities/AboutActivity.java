@@ -26,6 +26,8 @@ public class AboutActivity extends AppCompatActivity {
                 "- Terminar la sección de documentos\n" +
                 "- Añadir más preguntas al quiz\n" +
                 "- En el árbol expandir el tema de los ciclos para incluir casos con varios jugadores involucrados\n" +
-                "- En el árbol expandir ejemplos de errores de comunicación, que ahora abarcan todo el punto 4 de las MTR\n");
+                "- En el árbol expandir ejemplos de errores de comunicación, que ahora abarcan todo el punto 4 de las MTR\n" +
+                "- Que el temporizador continúe en marcha aunque salgas de él\n" +
+                "- Poder buscar en el oracle por edición + número de carta\n");
     }
 }

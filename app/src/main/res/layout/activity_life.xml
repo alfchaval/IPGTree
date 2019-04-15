@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_tree"
+    android:id="@+id/activity_life"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -16,7 +16,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/scroll_p1"
+        app:layout_constraintEnd_toStartOf="@+id/scroll_p1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btn_reset"
         android:rotation="180"
@@ -127,6 +127,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txv_p1setlife"
             app:layout_constraintBottom_toBottomOf="parent"
             />
+
     </android.support.constraint.ConstraintLayout>
 
     <Button
@@ -137,6 +138,7 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_registry"
         app:layout_constraintTop_toBottomOf="@+id/cly_p1setlife"
         app:layout_constraintBottom_toTopOf="@+id/cly_p2setlife"
+        android:background="@drawable/answer_background_parent"
         android:textSize="30dp"
         android:text="REINICIAR"
         android:keepScreenOn="true"
@@ -150,6 +152,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cly_p1setlife"
         app:layout_constraintBottom_toTopOf="@+id/cly_p2setlife"
+        android:background="@drawable/answer_background_parent"
         android:textSize="30dp"
         android:text="REGISTRO"
         />

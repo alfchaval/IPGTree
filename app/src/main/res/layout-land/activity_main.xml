@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_tree"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -36,7 +36,7 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Oracle (En desarrollo)"
+        android:text="Oracle"
         />
 
     <Button
@@ -92,7 +92,7 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Tiempos draft"
+        android:text="Draft"
         />
 
     <Button

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Read;
+import com.example.usuario.MagicQuiz.Repository;
 import com.example.usuario.MagicQuiz.Tree;
 import com.example.usuario.MagicQuiz.TypedText;
 
@@ -35,6 +36,8 @@ public class DocumentActivity extends AppCompatActivity {
     ArrayList<TextView> branchs = new ArrayList<TextView>();
 
     LinearLayout.LayoutParams layoutParams;
+
+    Repository repository;
 
     boolean showNotes = true;
 
@@ -65,35 +68,11 @@ public class DocumentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree);
 
-        ll_points = findViewById(R.id.ll_points);
-        scroll_points = findViewById(R.id.scroll_answers);
-        tv_title = findViewById(R.id.tv_question);
+        linkViews();
+        setListeners();
+
         tv_title.setTextSize(TEXT_SIZE);
-        tv_title.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                showNotes = !showNotes;
-                showList();
-                return true;
-            }
-        });
-
         viewTreeObserver = scroll_points.getViewTreeObserver();
-
-        imv_arrow_up = findViewById(R.id.imv_arrow_up);
-        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_points.fullScroll(View.FOCUS_UP);
-            }
-        });
-        imv_arrow_down = findViewById(R.id.imv_arrow_down);
-        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_points.fullScroll(View.FOCUS_DOWN);
-            }
-        });
 
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 4, 0, 4);
@@ -127,9 +106,41 @@ public class DocumentActivity extends AppCompatActivity {
             });
         }
 
+        repository = Repository.getInstance();
         loadPoints(savedInstanceState);
         showList();
 
+    }
+
+    public void linkViews() {
+        ll_points = findViewById(R.id.ll_points);
+        scroll_points = findViewById(R.id.scroll_answers);
+        tv_title = findViewById(R.id.tv_question);
+        imv_arrow_up = findViewById(R.id.imv_arrow_up);;
+        imv_arrow_down = findViewById(R.id.imv_arrow_down);
+    }
+
+    public void setListeners() {
+        tv_title.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                showNotes = !showNotes;
+                showList();
+                return true;
+            }
+        });
+        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_points.fullScroll(View.FOCUS_UP);
+            }
+        });
+        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_points.fullScroll(View.FOCUS_DOWN);
+            }
+        });
     }
 
     //You only have to read the XML the first time you start the app
@@ -140,22 +151,22 @@ public class DocumentActivity extends AppCompatActivity {
         else {
             switch (getIntent().getStringExtra("document")) {
                 case "cr":
-                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.cr));
+                    tree = repository.ComprehensiveRules;
                     break;
                 case "jar":
-                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.jar));
+                    tree = repository.JudgingAtRegular;
                     break;
                 case "aipg":
-                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.aipg));
+                    tree = repository.AnnotatedInfractionProcedureGuide;
                     break;
                 case "amtr":
-                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.amtr));
+                    tree = repository.AnnotatedMagicTournamentRules;;
                     break;
                 case "dq":
-                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.dq));
+                    tree = repository.DisqualificationProcess;
                     break;
                 case "banned":
-                    tree = Read.readXMLDocument(this.getResources().getXml(R.xml.banned));
+                    tree = repository.BannedAndRestricted;
                     break;
                 default:
                     tree = new Tree<TypedText>(new TypedText("ERROR"));

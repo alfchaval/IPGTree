@@ -19,7 +19,20 @@ public class DocumentsMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_documents_menu);
 
+        linkViews();
+        setListeners();
+    }
+
+    public void linkViews() {
         btn_cr = findViewById(R.id.btn_cr);
+        btn_jar = findViewById(R.id.btn_jar);
+        btn_aipg = findViewById(R.id.btn_aipg);
+        btn_amtr = findViewById(R.id.btn_amtr);
+        btn_dq = findViewById(R.id.btn_dq);
+        btn_banned = findViewById(R.id.btn_banned);
+    }
+
+    public void setListeners() {
         btn_cr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,8 +41,6 @@ public class DocumentsMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btn_jar = findViewById(R.id.btn_jar);
         btn_jar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,8 +49,6 @@ public class DocumentsMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btn_aipg = findViewById(R.id.btn_aipg);
         btn_aipg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,8 +57,6 @@ public class DocumentsMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btn_amtr = findViewById(R.id.btn_amtr);
         btn_amtr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,8 +65,6 @@ public class DocumentsMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btn_dq = findViewById(R.id.btn_dq);
         btn_dq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,8 +73,6 @@ public class DocumentsMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btn_banned = findViewById(R.id.btn_banned);
         btn_banned.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

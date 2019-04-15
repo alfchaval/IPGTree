@@ -58,92 +58,8 @@ public class DraftActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draft);
 
-        txv_status = findViewById(R.id.txv_status);
-        txv_time = findViewById(R.id.txv_time);
-
-        btn_mode = findViewById(R.id.btn_mode);
-        btn_mode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeMode((selected_mode + 1)%3);
-            }
-        });
-        btn_select = findViewById(R.id.btn_select);
-        btn_select.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changeMode(selected_mode);
-            }
-        });
-        btn_play = findViewById(R.id.btn_play);
-        btn_play.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!started) {
-                    timer.start();
-                    started = true;
-                    btn_play.setText("Pausar");
-                }
-                else if(last_time > 0) {
-                    if(pause) {
-                        createTimer(last_time);
-                        timer.start();
-                        btn_play.setText("Pausar");
-                    }
-                    else {
-                        timer.cancel();
-                        pause = true;
-                        btn_play.setText("Reanudar");
-                    }
-                }
-            }
-        });
-        btn_reset = findViewById(R.id.btn_reset);
-        btn_reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setTimer();
-            }
-        });
-        btn_last = findViewById(R.id.btn_last);
-        btn_last.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(review) {
-                    //Check to avoid problems with Rochester
-                    if(pack > 0) {
-                        review = false;
-                        pick--;
-                    }
-                }
-                if(pick == 1 && (pack > 1 || selected_mode == ROCHESTER)) {
-                    review = true;
-                    pack--;
-                    pick = 15;
-                }
-                else if(pick > 1){
-                    pick--;
-                }
-                setTimer();
-                btn_play.setText("Comenzar");
-            }
-        });
-        btn_next = findViewById(R.id.btn_next);
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(review) {
-                    review = false;
-                    pack++;
-                    pick = 1;
-                }
-                else if(++pick > 14) {
-                    review = true;
-                }
-                setTimer();
-                btn_play.setText("Comenzar");
-            }
-        });
+        linkViews();
+        setListeners();
 
         if (savedInstanceState != null) {
             selected_mode = savedInstanceState.getInt(KEY_MODE);
@@ -177,6 +93,97 @@ public class DraftActivity extends AppCompatActivity {
         else {
             changeMode(NORMAL);
         }
+    }
+
+    public void linkViews() {
+        txv_status = findViewById(R.id.txv_status);
+        txv_time = findViewById(R.id.txv_time);
+        btn_mode = findViewById(R.id.btn_mode);
+        btn_select = findViewById(R.id.btn_select);
+        btn_play = findViewById(R.id.btn_play);
+        btn_reset = findViewById(R.id.btn_reset);
+        btn_last = findViewById(R.id.btn_last);
+        btn_next = findViewById(R.id.btn_next);
+    }
+
+    public void setListeners() {
+        btn_mode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeMode((selected_mode + 1)%3);
+            }
+        });
+        btn_select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeMode(selected_mode);
+            }
+        });
+        btn_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!started) {
+                    timer.start();
+                    started = true;
+                    btn_play.setText("Pausar");
+                }
+                else if(last_time > 0) {
+                    if(pause) {
+                        createTimer(last_time);
+                        timer.start();
+                        btn_play.setText("Pausar");
+                    }
+                    else {
+                        timer.cancel();
+                        pause = true;
+                        btn_play.setText("Reanudar");
+                    }
+                }
+            }
+        });
+        btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setTimer();
+            }
+        });
+        btn_last.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(review) {
+                    //Check to avoid problems with Rochester
+                    if(pack > 0) {
+                        review = false;
+                        pick--;
+                    }
+                }
+                if(pick == 1 && (pack > 1 || selected_mode == ROCHESTER)) {
+                    review = true;
+                    pack--;
+                    pick = 15;
+                }
+                else if(pick > 1){
+                    pick--;
+                }
+                setTimer();
+                btn_play.setText("Comenzar");
+            }
+        });
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(review) {
+                    review = false;
+                    pack++;
+                    pick = 1;
+                }
+                else if(++pick > 14) {
+                    review = true;
+                }
+                setTimer();
+                btn_play.setText("Comenzar");
+            }
+        });
     }
 
     @Override

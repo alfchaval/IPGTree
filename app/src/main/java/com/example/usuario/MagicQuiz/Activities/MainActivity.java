@@ -10,7 +10,7 @@ import com.example.usuario.MagicQuiz.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_documents, btn_oracle, btn_tree, btn_quiz, btn_decklist, btn_draft, btn_life, btn_about;
+    Button btn_documents, btn_oracle, btn_tree, btn_quiz, btn_decklist, btn_draft, btn_timer, btn_life, btn_about;
     Intent intent;
 
     @Override
@@ -18,7 +18,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        linkViews();
+        setListeners();
+    }
+
+    public void linkViews() {
         btn_documents = findViewById(R.id.btn_docs);
+        btn_oracle = findViewById(R.id.btn_oracle);
+        btn_tree = findViewById(R.id.btn_ipgtree);
+        btn_quiz = findViewById(R.id.btn_quiz);
+        btn_decklist = findViewById(R.id.btn_decklist);
+        btn_draft = findViewById(R.id.btn_draft);
+        btn_timer = findViewById(R.id.btn_timer);
+        btn_life = findViewById(R.id.btn_life);
+        btn_about = findViewById(R.id.btn_about);
+    }
+
+    public void setListeners() {
         btn_documents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_oracle = findViewById(R.id.btn_oracle);
         btn_oracle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_tree = findViewById(R.id.btn_ipgtree);
         btn_tree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_quiz = findViewById(R.id.btn_quiz);
         btn_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_decklist = findViewById(R.id.btn_decklist);
         btn_decklist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_draft = findViewById(R.id.btn_draft);
         btn_draft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,7 +77,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_life = findViewById(R.id.btn_life);
+        btn_timer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(MainActivity.this, TimerActivity.class);
+                startActivity(intent);
+            }
+        });
         btn_life.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_about = findViewById(R.id.btn_about);
         btn_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

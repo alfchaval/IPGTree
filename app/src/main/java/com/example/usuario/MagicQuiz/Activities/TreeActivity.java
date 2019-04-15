@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.usuario.MagicQuiz.Quiz;
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Read;
+import com.example.usuario.MagicQuiz.Repository;
 import com.example.usuario.MagicQuiz.Tree;
 
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class TreeActivity extends AppCompatActivity {
     ArrayList<TextView> answerTVs = new ArrayList<TextView>();
 
     LinearLayout.LayoutParams layoutParams;
+
+    Repository repository;
 
     final int TEXT_SIZE = 20;
 
@@ -62,27 +65,11 @@ public class TreeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree);
 
-        ll_answers = findViewById(R.id.ll_points);
-        tv_question = findViewById(R.id.tv_question);
+        linkViews();
+        setListeners();
+
         tv_question.setTextSize(TEXT_SIZE);
-
-        scroll_answers = findViewById(R.id.scroll_answers);
         viewTreeObserver = scroll_answers.getViewTreeObserver();
-
-        imv_arrow_up = findViewById(R.id.imv_arrow_up);
-        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_answers.fullScroll(View.FOCUS_UP);
-            }
-        });
-        imv_arrow_down = findViewById(R.id.imv_arrow_down);
-        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_answers.fullScroll(View.FOCUS_DOWN);
-            }
-        });
 
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 4, 0, 4);
@@ -118,8 +105,32 @@ public class TreeActivity extends AppCompatActivity {
             });
         }
 
+        repository = Repository.getInstance();
         loadQuiz(savedInstanceState);
         showQuiz();
+    }
+
+    public void linkViews() {
+        ll_answers = findViewById(R.id.ll_points);
+        tv_question = findViewById(R.id.tv_question);
+        scroll_answers = findViewById(R.id.scroll_answers);
+        imv_arrow_up = findViewById(R.id.imv_arrow_up);
+        imv_arrow_down = findViewById(R.id.imv_arrow_down);
+    }
+
+    public void setListeners() {
+        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_answers.fullScroll(View.FOCUS_UP);
+            }
+        });
+        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_answers.fullScroll(View.FOCUS_DOWN);
+            }
+        });
     }
 
     //You only have to read the XML the first time you start the app
@@ -128,7 +139,7 @@ public class TreeActivity extends AppCompatActivity {
             questionTree = (Tree<Quiz>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
-            questionTree = Read.readXMLTree(this.getResources().getXml(R.xml.ipg_tree));
+            questionTree = repository.IPGTree;
         }
     }
 

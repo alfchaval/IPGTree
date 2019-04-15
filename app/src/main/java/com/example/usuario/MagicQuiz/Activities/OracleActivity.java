@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.example.usuario.MagicQuiz.Card;
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Read;
+import com.example.usuario.MagicQuiz.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,7 +34,21 @@ public class OracleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oracle);
 
+        linkViews();
+        setListeners();
+
+        cards = Repository.getInstance().cards;
+        cardnames = cards.keySet().toArray(new String[cards.size()]);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,cardnames);
+        actv_search.setAdapter(adapter);
+    }
+
+    public void linkViews() {
         actv_search = findViewById(R.id.actv_search);
+        txv_oracle = findViewById(R.id.txv_oracle);
+    }
+
+    public void setListeners() {
         actv_search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -48,12 +63,6 @@ public class OracleActivity extends AppCompatActivity {
                 }
             }
         });
-        txv_oracle = findViewById(R.id.txv_oracle);
-
-        cards = Read.loadDatabase(getApplicationContext(), txv_oracle);
-        cardnames = cards.keySet().toArray(new String[cards.size()]);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,cardnames);
-        actv_search.setAdapter(adapter);
     }
 
     public void showCard(String name) {
