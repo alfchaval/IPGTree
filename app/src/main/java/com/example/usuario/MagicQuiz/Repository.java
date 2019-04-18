@@ -27,6 +27,8 @@ public class Repository {
 
     //Oracle
     public static HashMap<String, Card> cards;
+    public static ArrayList<Set> sets;
+    public static HashMap<String, String> setsMap;
 
     //Documents
     public static Tree<TypedText> ComprehensiveRules;
@@ -43,7 +45,9 @@ public class Repository {
     //Load everything
     public static void createRepository(Context context) {
         repository = new Repository();
-        cards = Read.loadDatabase(context);
+        cards = Read.loadCardDatabase(context);
+        sets = Read.loadSets(context);
+        setsMap = Set.toHashMap(sets);
         ComprehensiveRules = Read.readXMLDocument(context.getResources().getXml(R.xml.cr));
         JudgingAtRegular = Read.readXMLDocument(context.getResources().getXml(R.xml.jar));
         AnnotatedInfractionProcedureGuide = Read.readXMLDocument(context.getResources().getXml(R.xml.aipg));

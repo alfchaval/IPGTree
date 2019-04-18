@@ -16,24 +16,59 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/actv_number"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scrollview"
+        android:hint="Introduce una carta en inglés"
+        android:inputType="text"
+        />
+
+    <AutoCompleteTextView
+        android:id="@+id/actv_number"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toEndOf="@+id/actv_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/txv_about"
-        android:inputType="text"/>
+        app:layout_constraintBottom_toTopOf="@+id/scrollview"
+        android:hint="Nº"
+        android:inputType="number"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:visibility="gone"
+        />
 
-    <TextView
-        android:id="@+id/txv_oracle"
+    <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actv_search"
+        app:layout_constraintBottom_toTopOf="@+id/btn_change_mode"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/txv_oracle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="@color/colorText"
+            android:textSize="20dp"
+            android:text="La búsqueda por edición y número aún no funciona, pero lo hará dentro de poco"
+            />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_change_mode"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollview"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="8dp"
         android:background="@drawable/answer_background_parent"
-        android:textColor="@color/colorText"
-        android:textSize="20dp"
-        android:text="Esta función aún está en desarollo, pero ya se puede usar parcialmente."
         />
 
 </android.support.constraint.ConstraintLayout>
