@@ -55,7 +55,6 @@
             android:padding="8dp"
             android:textColor="@color/colorText"
             android:textSize="20dp"
-            android:text="La búsqueda por edición y número aún no funciona, pero lo hará dentro de poco"
             />
 
     </ScrollView>

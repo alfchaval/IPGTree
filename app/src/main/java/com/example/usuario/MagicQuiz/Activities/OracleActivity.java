@@ -2,7 +2,6 @@ package com.example.usuario.MagicQuiz.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Pair;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -11,7 +10,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.usuario.MagicQuiz.Card;
 import com.example.usuario.MagicQuiz.R;
 import com.example.usuario.MagicQuiz.Repository;
 
@@ -34,6 +32,7 @@ public class OracleActivity extends AppCompatActivity {
 
     Repository repository;
 
+    String selectedSet;
     int mode;
 
     @Override
@@ -46,23 +45,29 @@ public class OracleActivity extends AppCompatActivity {
 
         repository = Repository.getInstance();
         cardnames = repository.cards.keySet().toArray(new String[repository.cards.size()]);
-        setnames = repository.setsMap.keySet().toArray(new String[repository.sets.size()]);
-        numbers = new String[999];
-        for(int i = 1; i < 1000; i++) {
-            String s = "";
-            if(i < 10) {
-                s += "00";
-            }
-            else if (i < 100) {
-                s += "0";
-            }
-            numbers[i-1] = s + i;
-        }
+        setnames = repository.sets.keySet().toArray(new String[repository.sets.size()]);
         nameAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, cardnames);
         setAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, setnames);
-        numberAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, numbers);
-        actv_number.setAdapter(numberAdapter);
         changeMode(nameMode);
+
+        //TODO Find a way to set the adapter after selecting a set.
+        numbers = new String[9999];
+        for(int j = 1; j < 10000; j++) {
+            String s = "";
+            if(j < 10) {
+                s += "000";
+            }
+            else if (j < 100) {
+                s += "00";
+            }
+            else if (j < 1000) {
+                s += "0";
+            }
+            numbers[j-1] = s + j;
+        }
+        numberAdapter = new ArrayAdapter<String>(OracleActivity.this, android.R.layout.simple_list_item_1, numbers);
+        actv_number.setAdapter(numberAdapter);
+        //
     }
 
     public void linkViews() {
@@ -88,7 +93,26 @@ public class OracleActivity extends AppCompatActivity {
                         }
                         break;
                     case setMode:
-                        searchSetAndNumber();
+                        if(repository.sets.containsKey(actv_search.getText().toString())) {
+                            selectedSet = actv_search.getText().toString();
+                            txv_oracle.setText("Set seleccionado:\n" + selectedSet);
+                            /*
+                            numbers = new String[repository.sets.get(selectedSet).cards];
+                            for(int j = 1; j < repository.sets.get(selectedSet).cards; j++) {
+                                String s = "";
+                                if(j < 10) {
+                                    s += "00";
+                                }
+                                else if (j < 100) {
+                                    s += "0";
+                                }
+                                numbers[j-1] = s + j;
+                            }
+                            numberAdapter = new ArrayAdapter<String>(OracleActivity.this, android.R.layout.simple_list_item_1, numbers);
+                            actv_number.setAdapter(numberAdapter);
+                            */
+                            actv_number.setVisibility(View.VISIBLE);
+                        }
                         break;
                 }
             }
@@ -98,7 +122,18 @@ public class OracleActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 InputMethodManager imm = (InputMethodManager) getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(actv_search.getWindowToken(), 0);
-                searchSetAndNumber();
+                try {
+                    int number = Integer.valueOf(actv_number.getText().toString());
+                    //remove first check (unnecesary) after solve problem with number of cards per set
+                    if(number < repository.setsWithCards.get(repository.sets.get(selectedSet).code).length && repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1] != null) {
+                        showCard(repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1]);
+                    }
+                    else {
+                        txv_oracle.setText("No se encontraron resultados");
+                    }
+                } catch (Exception e) {
+                    txv_oracle.setText("ERROR");
+                }
             }
         });
         btn_change_mode.setOnClickListener(new View.OnClickListener() {
@@ -143,49 +178,18 @@ public class OracleActivity extends AppCompatActivity {
         switch (mode) {
             case nameMode:
                 actv_search.setAdapter(nameAdapter);
-                actv_search.setCompletionHint("Introduce una carta en inglés");
+                actv_search.setHint("Introduce una carta en inglés");
                 actv_search.setText("");
                 actv_number.setVisibility(View.GONE);
                 btn_change_mode.setText("Cambiar a búsqueda por edición y número");
                 break;
             case setMode:
                 actv_search.setAdapter(setAdapter);
-                actv_search.setCompletionHint("Introduce una edición en inglés");
+                actv_search.setHint("Introduce una edición en inglés");
                 actv_search.setText("");
-                actv_number.setText("4");
-                actv_number.setVisibility(View.VISIBLE);
+                actv_number.setText("");
                 btn_change_mode.setText("Cambiar a búsqueda por nombre");
                 break;
-        }
-    }
-
-    public void searchSetAndNumber() {
-        try {
-            int number = Integer.parseInt(actv_number.getText().toString());
-            Pair<String,Integer> cardId = new Pair<>(actv_search.getText().toString(), number);
-            boolean found = false;
-            int index = 0;
-            Card card = new Card();
-            while(!found && index < cardnames.length) {
-                card = repository.cards.get(cardnames[index]);
-                int subIndex = 0;
-                while(!found && subIndex < card.printings.size()) {
-                    if(card.printings.get(subIndex) == cardId) {
-                        found = true;
-                    }
-                    subIndex++;
-                }
-                index++;
-            }
-            if(found) {
-                showCard(card.name);
-            }
-            else {
-                txv_oracle.setText("No se encontraron resultados");
-            }
-        }
-        catch (Exception e) {
-            e.getLocalizedMessage();
         }
     }
 }

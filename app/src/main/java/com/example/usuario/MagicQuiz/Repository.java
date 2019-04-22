@@ -1,6 +1,8 @@
 package com.example.usuario.MagicQuiz;
 
 import android.content.Context;
+import android.util.Log;
+import android.util.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,8 +29,8 @@ public class Repository {
 
     //Oracle
     public static HashMap<String, Card> cards;
-    public static ArrayList<Set> sets;
-    public static HashMap<String, String> setsMap;
+    public static HashMap<String, Set> sets;
+    public static HashMap<String, String[]> setsWithCards;
 
     //Documents
     public static Tree<TypedText> ComprehensiveRules;
@@ -47,7 +49,7 @@ public class Repository {
         repository = new Repository();
         cards = Read.loadCardDatabase(context);
         sets = Read.loadSets(context);
-        setsMap = Set.toHashMap(sets);
+        setsWithCards = linkCardsToSets();
         ComprehensiveRules = Read.readXMLDocument(context.getResources().getXml(R.xml.cr));
         JudgingAtRegular = Read.readXMLDocument(context.getResources().getXml(R.xml.jar));
         AnnotatedInfractionProcedureGuide = Read.readXMLDocument(context.getResources().getXml(R.xml.aipg));
@@ -61,5 +63,21 @@ public class Repository {
     //To get all loaded information
     public static Repository getInstance() {
         return repository;
+    }
+
+    private static HashMap<String, String[]> linkCardsToSets() {
+        HashMap<String, String[]> map = new HashMap<>();
+        for (String setName: sets.keySet()) {
+            map.put(sets.get(setName).code, new String[sets.get(setName).cards]);
+            //map.put(sets.get(setName).code, new String[999]);
+        }
+        for (String cardName: cards.keySet()) {
+            for (Pair<String,Integer> pair: cards.get(cardName).printings) {
+                if(map.containsKey(pair.first)) {
+                    map.get(pair.first)[pair.second-1] = cardName;
+                }
+            }
+        }
+        return map;
     }
 }

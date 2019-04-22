@@ -12,17 +12,17 @@ public class Set {
     public String code;
     @SerializedName("name")
     public String name;
+    @SerializedName("cards")
+    public int cards = 0;
 
     public Set (String code, String name) {
         this.code = code;
         this.name = name;
     }
 
-    public static HashMap<String, String> toHashMap(ArrayList<Set> sets) {
-        HashMap<String, String>  hashMap = new HashMap();
-        for (Set set: sets) {
-            hashMap.put(set.name + " | " + set.code, set.code);
-        }
-        return hashMap;
+    public Set (String code, String name, int cards) {
+        this.code = code;
+        this.name = name;
+        this.cards = cards;
     }
 }

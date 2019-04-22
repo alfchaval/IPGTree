@@ -26,8 +26,7 @@ public class TreeActivity extends AppCompatActivity {
     TextView tv_question;
     LinearLayout ll_answers;
     ScrollView scroll_answers;
-    ImageView imv_arrow_up;
-    ImageView imv_arrow_down;
+    ImageView imv_arrow_up, imv_arrow_down;
 
     ViewTreeObserver viewTreeObserver;
 
@@ -69,11 +68,37 @@ public class TreeActivity extends AppCompatActivity {
         setListeners();
 
         tv_question.setTextSize(TEXT_SIZE);
-        viewTreeObserver = scroll_answers.getViewTreeObserver();
 
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 4, 0, 4);
 
+        repository = Repository.getInstance();
+        loadQuiz(savedInstanceState);
+        showQuiz();
+    }
+
+    public void linkViews() {
+        ll_answers = findViewById(R.id.ll_points);
+        tv_question = findViewById(R.id.tv_question);
+        scroll_answers = findViewById(R.id.scroll_answers);
+        imv_arrow_up = findViewById(R.id.imv_arrow_up);
+        imv_arrow_down = findViewById(R.id.imv_arrow_down);
+        viewTreeObserver = scroll_answers.getViewTreeObserver();
+    }
+
+    public void setListeners() {
+        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_answers.fullScroll(View.FOCUS_UP);
+            }
+        });
+        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll_answers.fullScroll(View.FOCUS_DOWN);
+            }
+        });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //Arrows disapear when you full scroll to let you read the first/last question
             scroll_answers.setOnScrollChangeListener(new View.OnScrollChangeListener() {
@@ -104,33 +129,6 @@ public class TreeActivity extends AppCompatActivity {
                 }
             });
         }
-
-        repository = Repository.getInstance();
-        loadQuiz(savedInstanceState);
-        showQuiz();
-    }
-
-    public void linkViews() {
-        ll_answers = findViewById(R.id.ll_points);
-        tv_question = findViewById(R.id.tv_question);
-        scroll_answers = findViewById(R.id.scroll_answers);
-        imv_arrow_up = findViewById(R.id.imv_arrow_up);
-        imv_arrow_down = findViewById(R.id.imv_arrow_down);
-    }
-
-    public void setListeners() {
-        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_answers.fullScroll(View.FOCUS_UP);
-            }
-        });
-        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                scroll_answers.fullScroll(View.FOCUS_DOWN);
-            }
-        });
     }
 
     //You only have to read the XML the first time you start the app

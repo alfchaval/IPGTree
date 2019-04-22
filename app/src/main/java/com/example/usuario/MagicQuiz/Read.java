@@ -137,6 +137,8 @@ public class Read {
         return array;
     }
 
+    //*
+
     public static HashMap<String, Card> loadCardDatabase(Context context) {
         HashMap<String, Card> cards = new HashMap<>();
         Gson gson = new GsonBuilder().create();
@@ -160,8 +162,8 @@ public class Read {
         return cards;
     }
 
-    public static ArrayList<Set> loadSets(Context context) {
-        ArrayList<Set> sets = new ArrayList<>();
+    public static HashMap<String, Set> loadSets(Context context) {
+        HashMap<String, Set> sets = new HashMap<>();
         Gson gson = new GsonBuilder().create();
         Set set;
 
@@ -173,7 +175,7 @@ public class Read {
             while(reader.hasNext()) {
                 reader.nextName();
                 set = gson.fromJson(reader, Set.class);
-                sets.add(set);
+                sets.put(set.name + " | " + set.code, set);
             }
             reader.endObject();
             reader.close();
@@ -183,4 +185,6 @@ public class Read {
 
         return sets;
     }
+
+    //*/
 }
