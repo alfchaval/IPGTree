@@ -2,6 +2,7 @@ package mtg.judge.ipgtree;
 
 import android.content.Context;
 import android.content.res.XmlResourceParser;
+import android.os.Environment;
 import android.util.Log;
 
 import mtg.judge.ipgtree.R;
@@ -12,6 +13,8 @@ import com.google.gson.stream.JsonReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -134,26 +137,28 @@ public class Read {
         return array;
     }
 
-    //*
-
     public static HashMap<String, Card> loadCardDatabase(Context context) {
         HashMap<String, Card> cards = new HashMap<>();
         Gson gson = new GsonBuilder().create();
         Card card;
 
-        try {
-            InputStream inputStream = context.getResources().openRawResource(R.raw.oracle);
-            JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
+        String filename = Environment.getExternalStorageDirectory() + File.separator + "Ipgtree" + File.separator + "oracle.json";
 
-            reader.beginObject();
-            while(reader.hasNext()) {
-                reader.nextName();
-                card = gson.fromJson(reader, Card.class);
-                cards.put(card.name, card);
+        if(new File(filename).exists()) {
+            try {
+                FileInputStream inputStream = new FileInputStream(filename);
+                JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
+
+                reader.beginObject();
+                while(reader.hasNext()) {
+                    reader.nextName();
+                    card = gson.fromJson(reader, Card.class);
+                    cards.put(card.name, card);
+                }
+                reader.endObject();
+                reader.close();
+            } catch (Exception e) {
             }
-            reader.endObject();
-            reader.close();
-        } catch (Exception e) {
         }
 
         return cards;
@@ -164,24 +169,26 @@ public class Read {
         Gson gson = new GsonBuilder().create();
         Set set;
 
-        try {
-            InputStream inputStream = context.getResources().openRawResource(R.raw.sets);
-            JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
+        String filename = Environment.getExternalStorageDirectory() + File.separator + "Ipgtree" + File.separator + "sets.json";
 
-            reader.beginObject();
-            while(reader.hasNext()) {
-                reader.nextName();
-                set = gson.fromJson(reader, Set.class);
-                sets.put(set.name + " | " + set.code, set);
+        if(new File(filename).exists()) {
+            try {
+                FileInputStream inputStream = new FileInputStream(filename);
+                JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
+
+                reader.beginObject();
+                while (reader.hasNext()) {
+                    reader.nextName();
+                    set = gson.fromJson(reader, Set.class);
+                    sets.put(set.name + " | " + set.code, set);
+                }
+                reader.endObject();
+                reader.close();
+            } catch (Exception e) {
+                Log.d("ERROR", e.getLocalizedMessage());
             }
-            reader.endObject();
-            reader.close();
-        } catch (Exception e) {
-            Log.d("ERROR", e.getLocalizedMessage());
         }
 
         return sets;
     }
-
-    //*/
 }

@@ -10,7 +10,7 @@ import mtg.judge.ipgtree.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_documents, btn_oracle, btn_tree, btn_quiz, btn_decklist, btn_draft, btn_timer, btn_life, btn_about;
+    Button btn_documents, btn_oracle, btn_tree, btn_quiz, btn_decklist, btn_draft, btn_timer, btn_life, btn_settings;
     Intent intent;
 
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btn_draft = findViewById(R.id.btn_draft);
         btn_timer = findViewById(R.id.btn_timer);
         btn_life = findViewById(R.id.btn_life);
-        btn_about = findViewById(R.id.btn_about);
+        btn_settings = findViewById(R.id.btn_settings);
     }
 
     public void setListeners() {
@@ -91,10 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_about.setOnClickListener(new View.OnClickListener() {
+        btn_settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(MainActivity.this, AboutActivity.class);
+                intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });

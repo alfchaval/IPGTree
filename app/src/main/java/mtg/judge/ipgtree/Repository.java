@@ -1,9 +1,8 @@
 package mtg.judge.ipgtree;
 
 import android.content.Context;
+import android.util.Log;
 import android.util.Pair;
-
-import mtg.judge.ipgtree.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +10,10 @@ import java.util.HashMap;
 public class Repository {
 
     static Repository repository;
+
+    //URLs
+    public static final String URLCARDS = "https://mtgjson.com/json/AllCards.json";
+    public static final String URLSETS = "https://mtgjson.com/json/AllSets.json";
 
     //Keyboard codes
     public static final int Code0 = 0;
@@ -48,9 +51,7 @@ public class Repository {
     //Load everything
     public static void createRepository(Context context) {
         repository = new Repository();
-        cards = Read.loadCardDatabase(context);
-        sets = Read.loadSets(context);
-        setsWithCards = linkCardsToSets();
+        loadDatabase(context);
         ComprehensiveRules = Read.readXMLDocument(context.getResources().getXml(R.xml.cr));
         JudgingAtRegular = Read.readXMLDocument(context.getResources().getXml(R.xml.jar));
         AnnotatedInfractionProcedureGuide = Read.readXMLDocument(context.getResources().getXml(R.xml.aipg));
@@ -59,6 +60,12 @@ public class Repository {
         BannedAndRestricted = Read.readXMLDocument(context.getResources().getXml(R.xml.banned));
         IPGTree = Read.readXMLTree(context.getResources().getXml(R.xml.ipg_tree));
         Quiz = Read.readXMLQuiz(context.getResources().getXml(R.xml.quiz));
+    }
+
+    public static void loadDatabase(Context context) {
+        cards = Read.loadCardDatabase(context);
+        sets = Read.loadSets(context);
+        setsWithCards = linkCardsToSets();
     }
 
     //To get all loaded information
@@ -70,12 +77,14 @@ public class Repository {
         HashMap<String, String[]> map = new HashMap<>();
         for (String setName: sets.keySet()) {
             map.put(sets.get(setName).code, new String[sets.get(setName).cards]);
-            //map.put(sets.get(setName).code, new String[999]);
         }
         for (String cardName: cards.keySet()) {
             for (Pair<String,Integer> pair: cards.get(cardName).printings) {
                 if(map.containsKey(pair.first)) {
-                    map.get(pair.first)[pair.second-1] = cardName;
+                    //WC02 has an advertisment card numbered 0...
+                    if(pair.second > 0) {
+                        map.get(pair.first)[pair.second - 1] = cardName;
+                    }
                 }
             }
         }
