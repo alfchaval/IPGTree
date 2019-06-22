@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.usuario.MagicQuiz">
+    package="mtg.judge.ipgtree">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.usuario.MagicQuiz.Activities.LoadingActivity"
+            android:name="mtg.judge.ipgtree.Activities.LoadingActivity"
             android:screenOrientation="nosensor"
             >
             <intent-filter>
@@ -23,39 +23,39 @@
         </activity>
 
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="mtg.judge.ipgtree.Activities.MainActivity"
             />
         <activity
-            android:name=".Activities.DocumentsMenuActivity"
+            android:name="mtg.judge.ipgtree.Activities.DocumentsMenuActivity"
             />
         <activity
-            android:name=".Activities.OracleActivity"
+            android:name="mtg.judge.ipgtree.Activities.OracleActivity"
             />
         <activity
-            android:name=".Activities.DocumentActivity"
+            android:name="mtg.judge.ipgtree.Activities.DocumentActivity"
             />
         <activity
-            android:name=".Activities.TreeActivity"
+            android:name="mtg.judge.ipgtree.Activities.TreeActivity"
             />
         <activity
-            android:name=".Activities.QuizActivity"
+            android:name="mtg.judge.ipgtree.Activities.QuizActivity"
             />
         <activity
-            android:name=".Activities.DecklistActivity"
+            android:name="mtg.judge.ipgtree.Activities.DecklistActivity"
             />
         <activity
-            android:name=".Activities.DraftActivity"
+            android:name="mtg.judge.ipgtree.Activities.DraftActivity"
             />
         <activity
-            android:name=".Activities.TimerActivity"
+            android:name="mtg.judge.ipgtree.Activities.TimerActivity"
             android:screenOrientation="nosensor"
             />
         <activity
-            android:name=".Activities.LifeActivity"
+            android:name="mtg.judge.ipgtree.Activities.LifeActivity"
             android:screenOrientation="nosensor"
             />
         <activity
-            android:name=".Activities.AboutActivity"
+            android:name="mtg.judge.ipgtree.Activities.AboutActivity"
             />
     </application>
 

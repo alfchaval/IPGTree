@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.ipg_tree.usuario.tree"
+        applicationId "mtg.judge.ipgtree"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1

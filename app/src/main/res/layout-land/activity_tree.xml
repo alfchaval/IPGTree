@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.usuario.MagicQuiz.Activities.TreeActivity">
+    tools:context="mtg.judge.ipgtree.Activities.TreeActivity">
 
     <TextView
         android:id="@+id/tv_question"

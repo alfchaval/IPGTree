@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Listas de baneos">
     <point text="Standard">
+        <point text="Actualizado: 20-05-2019"></point>
         <title text="Baneadas"></title>
         <point text="Rampaging Ferocidon"></point>
     </point>
     <point text="Modern">
+        <point text="Actualizado: 20-05-2019"></point>
         <title text="Baneadas"></title>
         <point text="Ancient Den"></point>
         <point text="Birthing Pod"></point>
@@ -42,6 +44,7 @@
         <point text="Vault of Whispers"></point>
     </point>
     <point text="Legacy">
+        <point text="Actualizado: 20-05-2019"></point>
         <title text="Baneadas"></title>
         <point text="Las 25 cartas con el tipo Conspiracy"></point>
         <point text="Las 9 cartas que hacen referencia a apuestas"></point>
@@ -101,13 +104,14 @@
         <point text="Yawgmoth's Will"></point>
     </point>
     <point text="Vintage">
+        <point text="Actualizado: 20-05-2019"></point>
         <title text="Baneadas"></title>
         <point text="Las 25 cartas con el tipo Conspiracy"></point>
         <point text="Las 9 cartas que hacen referencia a apuestas"></point>
         <point text="Chaos Orb"></point>
         <point text="Falling Star"></point>
         <point text="Shahrazad"></point>
-        <point text="Restringidas"></point>
+        <title text="Restringidas"></title>
         <point text="Ancestral Recall"></point>
         <point text="Balance"></point>
         <point text="Black Lotus"></point>
@@ -156,13 +160,17 @@
         <point text="Yawgmoth's Will"></point>
     </point>
     <point text="Pauper MOL">
+        <point text="Actualizado: 20-05-2019"></point>
         <title text="Baneadas"></title>
         <point text="Cloud of Faeries"></point>
         <point text="Cloudpost"></point>
         <point text="Cranial Plating"></point>
+        <point text="Daze"></point>
         <point text="Empty the Warrens"></point>
         <point text="Frantic Search"></point>
+        <point text="Gitaxian Probe"></point>
         <point text="Grapeshot"></point>
+        <point text="Gush"></point>
         <point text="Invigorate"></point>
         <point text="Peregrine Drake"></point>
         <point text="Temporal Fissure"></point>
