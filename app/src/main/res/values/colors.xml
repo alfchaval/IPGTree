@@ -6,4 +6,6 @@
     <color name="colorText">#FFFFFF</color>
     <color name="colorBackground">#202020</color>
     <color name="colorTransparent">#00000000</color>
+    <color name="colorLightGreen">#99FF99</color>
+    <color name="colorLightRed">#FF9999</color>
 </resources>

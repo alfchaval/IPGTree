@@ -31,6 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/scrollview"
+        android:completionThreshold="1"
         android:hint="Nº"
         android:inputType="number"
         android:gravity="center"

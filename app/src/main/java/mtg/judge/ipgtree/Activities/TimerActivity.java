@@ -182,7 +182,9 @@ public class TimerActivity extends AppCompatActivity {
 
             @Override
             public void onTick(long millisUntilEnd) {
-                seconds--;
+                if(--seconds == 0) {
+                    txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
+                }
                 txv_time.setText(secondsToHoursFormat(seconds));
             }
 
@@ -195,6 +197,12 @@ public class TimerActivity extends AppCompatActivity {
 
     public void setStartingTime() {
         seconds = 60*Integer.parseInt(txv_starting_time.getText().toString());
+        if(seconds > 0) {
+            txv_time.setTextColor(getResources().getColor(R.color.colorLightGreen));
+        }
+        else {
+            txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
+        }
         txv_time.setText(secondsToHoursFormat(seconds));
     }
 

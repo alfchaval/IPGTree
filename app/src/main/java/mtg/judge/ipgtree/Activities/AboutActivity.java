@@ -31,14 +31,12 @@ public class AboutActivity extends AppCompatActivity {
 
     public void aboutText() {
         txv_about.setText(
-                "Actualizado: 23-04-2019, RNA.\n" +
+                "Actualizado: 23-06-2019, RNA.\n" +
                         "\n" +
                         "Código de la app: https://github.com/alfchaval/Tree.git\n" +
                         "Sugerencias: alfchaval@hotmail.com\n" +
                         "\n" +
                         "Cosas por venir:\n" +
-                        "- En la búsqueda por edición y número, que si una edición tiene 20 cartas, la carta número 3 sea la 03 y no la 0003.\n" +
-                        "- Contadores de veneno en el contador de vidas.\n" +
                         "- Añadir documentos: CR, AMTR, Proceso de descalificación, Anuncio del HJ, guía del WER, código del juez.\n" +
                         "- Opción de buscar por palabras en los documentos.\n" +
                         "- Añadir más preguntas al quiz y luego hacer que solo se carguen 10 preguntas al azar de un conjunto de preguntas mayor.\n" +
@@ -46,7 +44,6 @@ public class AboutActivity extends AppCompatActivity {
                         "- Que el temporizador continúe en marcha aunque salgas de ahí.\n" +
                         "- Añadir en cada documento la fecha de la última actualización del mismo.\n" +
                         "- Añadir sección de enlaces con recursos útiles como la dirección del foro o el email de certificaciones.\n" +
-                        "- Cambiar el color del tiempo del contador descendiente cuando se vaya a números negativos.\n" +
                         "- Añadir vista horizontal al temporizador."
         );
     }

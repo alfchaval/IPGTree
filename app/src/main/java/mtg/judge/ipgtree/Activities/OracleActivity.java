@@ -1,6 +1,11 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -43,31 +48,37 @@ public class OracleActivity extends AppCompatActivity {
         linkViews();
         setListeners();
 
-        repository = Repository.getInstance();
-        cardnames = repository.cards.keySet().toArray(new String[repository.cards.size()]);
-        setnames = repository.sets.keySet().toArray(new String[repository.sets.size()]);
-        nameAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, cardnames);
-        setAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, setnames);
-        changeMode(nameMode);
-
-        //TODO Find a way to set the adapter after selecting a set.
-        numbers = new String[9999];
-        for(int j = 1; j < 10000; j++) {
-            String s = "";
-            if(j < 10) {
-                s += "000";
-            }
-            else if (j < 100) {
-                s += "00";
-            }
-            else if (j < 1000) {
-                s += "0";
-            }
-            numbers[j-1] = s + j;
+        if(ContextCompat.checkSelfPermission(OracleActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            loadCards();
         }
-        numberAdapter = new ArrayAdapter<String>(OracleActivity.this, android.R.layout.simple_list_item_1, numbers);
-        actv_number.setAdapter(numberAdapter);
-        //
+        else {
+            ActivityCompat.requestPermissions(OracleActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
+        }
+    }
+
+    public void loadCards() {
+        repository = Repository.getInstance();
+        if(repository.cards.size() < 1) {
+            txv_oracle.setText("No tienes cartas en la base de datos local, puedes descargar la base de datos actualizada desde Opciones");
+        }
+        else {
+            cardnames = repository.cards.keySet().toArray(new String[repository.cards.size()]);
+            setnames = repository.sets.keySet().toArray(new String[repository.sets.size()]);
+            nameAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, cardnames);
+            setAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, setnames);
+            changeMode(nameMode);
+
+            //TODO Find a way to set the adapter after selecting a set.
+            numbers = new String[0];
+            numberAdapter = new ArrayAdapter<String>(OracleActivity.this, android.R.layout.simple_list_item_1, numbers);
+            actv_number.setAdapter(numberAdapter);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        loadCards();
     }
 
     public void linkViews() {
@@ -96,21 +107,8 @@ public class OracleActivity extends AppCompatActivity {
                         if(repository.sets.containsKey(actv_search.getText().toString())) {
                             selectedSet = actv_search.getText().toString();
                             txv_oracle.setText("Set seleccionado:\n" + selectedSet);
-                            /*
-                            numbers = new String[repository.sets.get(selectedSet).cards];
-                            for(int j = 1; j < repository.sets.get(selectedSet).cards; j++) {
-                                String s = "";
-                                if(j < 10) {
-                                    s += "00";
-                                }
-                                else if (j < 100) {
-                                    s += "0";
-                                }
-                                numbers[j-1] = s + j;
-                            }
-                            numberAdapter = new ArrayAdapter<String>(OracleActivity.this, android.R.layout.simple_list_item_1, numbers);
-                            actv_number.setAdapter(numberAdapter);
-                            */
+                            setNumbers();
+                            actv_number.setText("");
                             actv_number.setVisibility(View.VISIBLE);
                         }
                         break;
@@ -149,6 +147,21 @@ public class OracleActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void setNumbers() {
+        int aux = numbers.length;
+        numbers = new String[repository.sets.get(selectedSet).cards];
+        if(aux < numbers.length) {
+            for(int j = aux; j < numbers.length; j++) {
+                numberAdapter.add(j + "");
+            }
+        }
+        else {
+            for(int j = numbers.length; j < aux; j++) {
+                numberAdapter.remove(j + "");
+            }
+        }
     }
 
     public void showCard(String name) {
