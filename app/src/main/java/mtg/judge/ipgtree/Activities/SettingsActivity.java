@@ -209,6 +209,13 @@ public class SettingsActivity extends AppCompatActivity {
                                 case "loyalty":
                                     card.loyalty = reader.nextString();
                                     break;
+                                case "names":
+                                    reader.beginArray();
+                                    while(reader.hasNext()) {
+                                        card.sidenames.add(reader.nextString());
+                                    }
+                                    reader.endArray();
+                                    break;
                                 default:
                                     reader.skipValue();
                                     break;

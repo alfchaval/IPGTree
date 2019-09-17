@@ -45,6 +45,9 @@ public class Read {
                                 case "annotation":
                                     tree.getData().setType(TypedText.ANNOTATION);
                                     break;
+                                case "link":
+                                    tree.getData().setType(TypedText.LINK);
+                                    break;
                             }
                         }
                         else {

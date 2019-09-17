@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#CC400C</color>
     <color name="colorAccent">#FFFACD</color>
     <color name="colorText">#FFFFFF</color>
+    <color name="colorLink">#AAFFFF</color>
     <color name="colorBackground">#202020</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorLightGreen">#99FF99</color>

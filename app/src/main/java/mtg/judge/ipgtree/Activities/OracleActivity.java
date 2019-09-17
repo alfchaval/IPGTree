@@ -97,7 +97,7 @@ public class OracleActivity extends AppCompatActivity {
                 switch (mode) {
                     case nameMode:
                         if(repository.cards.containsKey(actv_search.getText().toString())){
-                            showCard(actv_search.getText().toString());
+                            showCardAndSides(actv_search.getText().toString());
                         }
                         else {
                             txv_oracle.setText("No se encontraron resultados");
@@ -124,7 +124,7 @@ public class OracleActivity extends AppCompatActivity {
                     int number = Integer.valueOf(actv_number.getText().toString());
                     //remove first check (unnecesary) after solve problem with number of cards per set
                     if(number < repository.setsWithCards.get(repository.sets.get(selectedSet).code).length && repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1] != null) {
-                        showCard(repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1]);
+                        showCardAndSides(repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1]);
                     }
                     else {
                         txv_oracle.setText("No se encontraron resultados");
@@ -164,28 +164,36 @@ public class OracleActivity extends AppCompatActivity {
         }
     }
 
-    public void showCard(String name) {
-        txv_oracle.setText(repository.cards.get(name).name + " ");
-        if(repository.cards.get(name).manaCost != null) {
-            txv_oracle.setText(txv_oracle.getText() + repository.cards.get(name).manaCost);
+    public void showCardAndSides(String name) {
+        String text = "";
+        text += showCard(name);
+        for(String s : repository.cards.get(name).sidenames) {
+            text +="\n\n////////////////////\n\n" + showCard(s);
         }
-        txv_oracle.setText(txv_oracle.getText() + "\n\n");
+        txv_oracle.setText(text);
+    }
+
+    public String showCard(String name) {
+        String text = "";
+        text += repository.cards.get(name).name + " ";
+        if(repository.cards.get(name).manaCost != null) {
+            text += repository.cards.get(name).manaCost;
+        }
+        text += "\n\n";
         //TODO indicador de color
         if(repository.cards.get(name).type != null) {
-            txv_oracle.setText(txv_oracle.getText() + repository.cards.get(name).type + "\n\n");
+            text += repository.cards.get(name).type + "\n\n";
         }
         if(repository.cards.get(name).text != null) {
-            txv_oracle.setText(txv_oracle.getText() + repository.cards.get(name).text + "\n\n");
+            text += repository.cards.get(name).text;
         }
-        if(repository.cards.get(name).power != null) {
-            txv_oracle.setText(txv_oracle.getText() + repository.cards.get(name).power + "/");
-        }
-        if(repository.cards.get(name).toughness != null) {
-            txv_oracle.setText(txv_oracle.getText() + repository.cards.get(name).toughness);
+        if(repository.cards.get(name).power != null && repository.cards.get(name).toughness != null) {
+            text += "\n\n" + repository.cards.get(name).power + "/" + repository.cards.get(name).toughness;
         }
         if(repository.cards.get(name).loyalty != null) {
-            txv_oracle.setText(txv_oracle.getText() + repository.cards.get(name).loyalty);
+            text += "\n\n" + repository.cards.get(name).loyalty;
         }
+        return text;
     }
 
     public void changeMode(int newMode) {

@@ -64,7 +64,7 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="AMTR (Próximamente)"
+        android:text="AMTR"
         />
 
     <Button
@@ -78,7 +78,7 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Proceso de descalificación (Próximamente)"
+        android:text="Proceso de descalificación"
         />
 
     <Button

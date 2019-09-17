@@ -1,16 +1,20 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
@@ -184,34 +188,83 @@ public class DocumentActivity extends AppCompatActivity {
                 addTextView(index);
             }
             branchs.get(index).setText(tree.getChild(index).getData().getText());
-            branchs.get(index).setVisibility(View.VISIBLE);
-            if(tree.getChild(index).getData().getType() == TypedText.EXAMPLE) {
-                branchs.get(index).setTypeface(null, Typeface.ITALIC);
-            }
-            else {
-                branchs.get(index).setTypeface(null, Typeface.NORMAL);
-            }
-            if(tree.getChild(index).getData().getType() == TypedText.TITLE) {
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-            }
-            else {
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-            }
-            if(tree.getChild(index).getData().getType() == TypedText.ANNOTATION) {
-                if(showNotes) {
-                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
-                }
-                else {
-                    branchs.get(index).setVisibility(View.GONE);
-                }
-            }
-            else if(tree.getChild(index).isLeaf()) {
-                branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-            }
-            else {
-                branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+            switch (tree.getChild(index).getData().getType()) {
+                case TypedText.NORMAL:
+                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                    branchs.get(index).setMovementMethod(null);
+                    branchs.get(index).setOnClickListener(null);
+                    if(tree.getChild(index).isLeaf()) {
+                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                    }
+                    else {
+                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                    }
+                    branchs.get(index).setVisibility(View.VISIBLE);
+                    break;
+                case TypedText.TITLE:
+                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
+                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+                    branchs.get(index).setMovementMethod(null);
+                    branchs.get(index).setOnClickListener(null);
+                    if(tree.getChild(index).isLeaf()) {
+                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                    }
+                    else {
+                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                    }
+                    branchs.get(index).setVisibility(View.VISIBLE);
+                    break;
+                case TypedText.EXAMPLE:
+                    branchs.get(index).setTypeface(null, Typeface.ITALIC);
+                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                    branchs.get(index).setMovementMethod(null);
+                    branchs.get(index).setOnClickListener(null);
+                    if(tree.getChild(index).isLeaf()) {
+                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                    }
+                    else {
+                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                    }
+                    branchs.get(index).setVisibility(View.VISIBLE);
+                    break;
+                case TypedText.ANNOTATION:
+                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                    branchs.get(index).setMovementMethod(null);
+                    branchs.get(index).setOnClickListener(null);
+                    if(showNotes) {
+                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
+                        branchs.get(index).setVisibility(View.VISIBLE);
+                    }
+                    else {
+                        branchs.get(index).setVisibility(View.GONE);
+                    }
+                    break;
+                case TypedText.LINK:
+                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorLink));
+                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                    branchs.get(index).setMovementMethod(LinkMovementMethod.getInstance());
+                    branchs.get(index).setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                            browserIntent.setData(Uri.parse(((TextView)v).getText().toString()));
+                            startActivity(browserIntent);
+                        }
+                    });
+                    if(tree.getChild(index).isLeaf()) {
+                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                    }
+                    else {
+                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                    }
+                    branchs.get(index).setVisibility(View.VISIBLE);
+                    break;
             }
             index++;
         }

@@ -9,6 +9,7 @@ public class TypedText implements Serializable {
     public static final int TITLE = 1;
     public static final int EXAMPLE = 2;
     public static final int ANNOTATION = 3;
+    public static final int LINK = 4;
 
     //region variables
 

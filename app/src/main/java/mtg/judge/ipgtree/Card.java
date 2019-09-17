@@ -25,6 +25,8 @@ public class Card {
     public String loyalty;
     @SerializedName("printings")
     public ArrayList<Pair<String,Integer>> printings = new ArrayList<>();
+    @SerializedName("sidenames")
+    public ArrayList<String> sidenames = new ArrayList<>();
 
     @Override
     public boolean equals(Object obj) {

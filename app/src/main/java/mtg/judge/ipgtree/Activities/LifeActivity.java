@@ -338,23 +338,23 @@ public class LifeActivity extends AppCompatActivity {
             public boolean onLongClick(View view) {
                 if(timerp1 != null) {
                     timerp1.cancel();
-                    if (mode == LIFE) {
-                        int newlife = Integer.parseInt(txv_p1life.getText().toString());
-                        if(p1life != newlife) {
-                            p1life = newlife;
-                            txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1life);
-                        }
-                        txv_p1setlife.setText(p1life + "");
+                }
+                if (mode == LIFE) {
+                    int newlife = Integer.parseInt(txv_p1life.getText().toString());
+                    if(p1life != newlife) {
+                        p1life = newlife;
+                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1life);
                     }
-                    else {
-                        String s = txv_p1life.getText().toString();
-                        int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                        if(p1poison != newlife) {
-                            p1poison = newlife;
-                            txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1poison + POISON);
-                        }
-                        txv_p1setlife.setText(p1poison + "" + POISON);
+                    txv_p1setlife.setText(p1life + "");
+                }
+                else {
+                    String s = txv_p1life.getText().toString();
+                    int newlife = Integer.parseInt(s.substring(0, s.length()-1));
+                    if(p1poison != newlife) {
+                        p1poison = newlife;
+                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1poison + POISON);
                     }
+                    txv_p1setlife.setText(p1poison + "" + POISON);
                 }
                 cly_p1life.setVisibility(View.INVISIBLE);
                 scroll_p1.setVisibility(View.GONE);
@@ -368,23 +368,23 @@ public class LifeActivity extends AppCompatActivity {
             public boolean onLongClick(View view) {
                 if(timerp2 != null) {
                     timerp2.cancel();
-                    if (mode == LIFE) {
-                        int newlife = Integer.parseInt(txv_p2life.getText().toString());
-                        if(p2life != newlife) {
-                            p2life = newlife;
-                            txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2life);
-                        }
-                        txv_p2setlife.setText(p2life + "");
+                }
+                if (mode == LIFE) {
+                    int newlife = Integer.parseInt(txv_p2life.getText().toString());
+                    if(p2life != newlife) {
+                        p2life = newlife;
+                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2life);
                     }
-                    else {
-                        String s = txv_p2life.getText().toString();
-                        int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                        if(p2poison != newlife) {
-                            p2poison = newlife;
-                            txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2poison + POISON);
-                        }
-                        txv_p2setlife.setText(p2poison + "" + POISON);
+                    txv_p2setlife.setText(p2life + "");
+                }
+                else {
+                    String s = txv_p2life.getText().toString();
+                    int newlife = Integer.parseInt(s.substring(0, s.length()-1));
+                    if(p2poison != newlife) {
+                        p2poison = newlife;
+                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2poison + POISON);
                     }
+                    txv_p2setlife.setText(p2poison + "" + POISON);
                 }
                 cly_p2life.setVisibility(View.INVISIBLE);
                 scroll_p2.setVisibility(View.GONE);

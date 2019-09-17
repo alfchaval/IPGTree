@@ -1,7 +1,6 @@
 package mtg.judge.ipgtree;
 
 import android.content.Context;
-import android.util.Log;
 import android.util.Pair;
 
 import java.util.ArrayList;
