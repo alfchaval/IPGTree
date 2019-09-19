@@ -14,7 +14,6 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
@@ -188,13 +187,13 @@ public class DocumentActivity extends AppCompatActivity {
                 addTextView(index);
             }
             branchs.get(index).setText(tree.getChild(index).getData().getText());
+            //There is duplicate code in the switch, but it's also clearer this way
             switch (tree.getChild(index).getData().getType()) {
                 case TypedText.NORMAL:
                     branchs.get(index).setTypeface(null, Typeface.NORMAL);
                     branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
                     branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
                     branchs.get(index).setMovementMethod(null);
-                    branchs.get(index).setOnClickListener(null);
                     if(tree.getChild(index).isLeaf()) {
                         branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
                     }
@@ -208,7 +207,6 @@ public class DocumentActivity extends AppCompatActivity {
                     branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
                     branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                     branchs.get(index).setMovementMethod(null);
-                    branchs.get(index).setOnClickListener(null);
                     if(tree.getChild(index).isLeaf()) {
                         branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
                     }
@@ -222,7 +220,6 @@ public class DocumentActivity extends AppCompatActivity {
                     branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
                     branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
                     branchs.get(index).setMovementMethod(null);
-                    branchs.get(index).setOnClickListener(null);
                     if(tree.getChild(index).isLeaf()) {
                         branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
                     }
@@ -236,7 +233,6 @@ public class DocumentActivity extends AppCompatActivity {
                     branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
                     branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
                     branchs.get(index).setMovementMethod(null);
-                    branchs.get(index).setOnClickListener(null);
                     if(showNotes) {
                         branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
                         branchs.get(index).setVisibility(View.VISIBLE);
@@ -250,13 +246,6 @@ public class DocumentActivity extends AppCompatActivity {
                     branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorLink));
                     branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
                     branchs.get(index).setMovementMethod(LinkMovementMethod.getInstance());
-                    branchs.get(index).setOnClickListener(new View.OnClickListener() {
-                        public void onClick(View v) {
-                            Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                            browserIntent.setData(Uri.parse(((TextView)v).getText().toString()));
-                            startActivity(browserIntent);
-                        }
-                    });
                     if(tree.getChild(index).isLeaf()) {
                         branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
                     }
@@ -283,13 +272,20 @@ public class DocumentActivity extends AppCompatActivity {
         textView.setPadding(8, 8, 8, 8);
 
         branchs.add(textView);
-        //Clicking an answer moves you to the next question if there is anyone
+        //Clicking an answer moves you to a web page or the next question if there is anyone
         branchs.get(index).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tree.existChild(index) && !tree.getChild(index).isLeaf()) {
-                    tree = tree.getChild(index);
-                    showList();
+                if(tree.existChild(index)) {
+                    if(tree.getChild(index).getData().getType() == TypedText.LINK) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(Uri.parse(((TextView)view).getText().toString()));
+                        startActivity(browserIntent);
+                    }
+                    else if (!tree.getChild(index).isLeaf()) {
+                        tree = tree.getChild(index);
+                        showList();
+                    }
                 }
             }
         });
