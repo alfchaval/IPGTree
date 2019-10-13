@@ -11,27 +11,27 @@ import mtg.judge.ipgtree.R;
 
 public class DraftActivity extends AppCompatActivity {
 
-    Button btn_mode, btn_select, btn_play, btn_reset, btn_last, btn_next;
-    TextView txv_status, txv_time;
+    private Button btn_mode, btn_select, btn_play, btn_reset, btn_last, btn_next;
+    private TextView txv_status, txv_time;
 
-    int[] normal = {40, 40, 35, 30, 25, 25, 20, 20, 15, 10, 10, 5, 5, 5};
-    int[] twohead = {50, 50, 45, 45, 40, 40, 30, 30, 20, 20, 10, 10, 5, 5};
-    int[] rochester = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+    private int[] normal = {40, 40, 35, 30, 25, 25, 20, 20, 15, 10, 10, 5, 5, 5};
+    private int[] twohead = {50, 50, 45, 45, 40, 40, 30, 30, 20, 20, 10, 10, 5, 5};
+    private int[] rochester = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
     private final int NORMAL = 0;
     private final int TWOHEADED = 1;
     private final int ROCHESTER = 2;
 
-    int selected_mode;
-    int pick;
-    int pack;
+    private int selected_mode;
+    private int pick;
+    private int pack;
 
-    boolean review = false;
-    boolean started = false;
-    boolean pause = false;
-    long last_time = 0;
+    private boolean review = false;
+    private boolean started = false;
+    private boolean pause = false;
+    private long last_time = 0;
 
-    CountDownTimer timer;
+    private CountDownTimer timer;
 
     private static final String KEY_MODE = "key_mode";
     private static final String KEY_PICK = "key_pick";

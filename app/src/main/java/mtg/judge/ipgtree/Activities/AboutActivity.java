@@ -13,11 +13,11 @@ import mtg.judge.ipgtree.R;
 
 public class AboutActivity extends AppCompatActivity {
 
-    ScrollView scroll_answers;
-    TextView txv_about;
-    ImageView imv_arrow_up, imv_arrow_down;
+    private ScrollView scroll_answers;
+    private TextView txv_about;
+    private ImageView imv_arrow_up, imv_arrow_down;
 
-    ViewTreeObserver viewTreeObserver;
+    private ViewTreeObserver viewTreeObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,20 +31,24 @@ public class AboutActivity extends AppCompatActivity {
 
     public void aboutText() {
         txv_about.setText(
-                "Actualizado: 23-06-2019, RNA.\n" +
+                "Actualizado: 13-10-2019, RNA.\n" +
                         "\n" +
                         "Código de la app: https://github.com/alfchaval/Tree.git\n" +
                         "Sugerencias: alfchaval@hotmail.com\n" +
                         "\n" +
+                        "Últimos cambios:\n" +
+                        "• El temporizador continua en marcha aunque salgas de ahí (pero no si cierras la app).\n" +
+                        "• Las vidas se guardan aunque salgas del contador de vidas (pero no si cierras la app).\n" +
+                        "• Arreglado un bug al pulsar múltiples botones.\n" +
+                        "• Añadida función de ocultar anotaciones en opciones.\n" +
+                        "\n" +
                         "Cosas por venir:\n" +
-                        "- Añadir documentos: CR, AMTR, Proceso de descalificación, Anuncio del HJ, guía del WER, código del juez.\n" +
-                        "- Opción de buscar por palabras en los documentos.\n" +
-                        "- Añadir más preguntas al quiz y luego hacer que solo se carguen 10 preguntas al azar de un conjunto de preguntas mayor.\n" +
-                        "- Expandir el tema de errores de comunicación en el árbol.\n" +
-                        "- Que el temporizador continúe en marcha aunque salgas de ahí.\n" +
-                        "- Añadir en cada documento la fecha de la última actualización del mismo.\n" +
-                        "- Añadir sección de enlaces con recursos útiles como la dirección del foro o el email de certificaciones.\n" +
-                        "- Añadir vista horizontal al temporizador."
+                        "• Añadir documentos: Anuncio del HJ, guía del WER, código del juez.\n" +
+                        "• Opción de buscar por palabras en los documentos.\n" +
+                        "• Añadir más preguntas al quiz.\n" +
+                        "\n" +
+                        "Bugs conocidos:\n" +
+                        "• La aplicación crashea si estando en algún documento, el quiz o el árbol te da por bloquear el móvil."
         );
     }
 

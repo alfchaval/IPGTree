@@ -17,11 +17,19 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
+
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -37,13 +45,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import mtg.judge.ipgtree.Card;
+import mtg.judge.ipgtree.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
 import mtg.judge.ipgtree.Set;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Button btn_update, btn_about;
+    private Button btn_update, btn_about, btn_saveftp, btn_unlockftp;
+    private CheckBox cb_anotations, cb_ftp;
+    private EditText edt_server, edt_user, edt_password, edt_codeftp;
+    private TextView txv_codeftp;
+    private LinearLayout ll_server_code, ll_server_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +64,43 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         linkViews();
+        loadRepositoryData();
         setListeners();
+        txv_codeftp.setText(Code.generateCode());
     }
 
     public void linkViews() {
         btn_update = findViewById(R.id.btn_update);
         btn_about = findViewById(R.id.btn_about);
+        btn_saveftp = findViewById(R.id.btn_saveftp);
+        btn_unlockftp = findViewById(R.id.btn_unlockftp);
+        cb_anotations = findViewById(R.id.cb_anotations);
+        cb_ftp = findViewById(R.id.cb_ftp);
+        edt_server = findViewById(R.id.edt_server);
+        edt_user = findViewById(R.id.edt_user);
+        edt_password = findViewById(R.id.edt_password);
+        edt_codeftp = findViewById(R.id.edt_codeftp);
+        txv_codeftp = findViewById(R.id.txv_codeftp);
+        ll_server_code = findViewById(R.id.ll_server_code);
+        ll_server_settings = findViewById(R.id.ll_server_settings);
+    }
+
+    public void loadRepositoryData() {
+        cb_anotations.setChecked(Repository.showAnnotations);
+        if(Repository.unlockedFTP) {
+            ll_server_code.setVisibility(View.GONE);
+            ll_server_settings.setVisibility(View.VISIBLE);
+            cb_ftp.setChecked(Repository.allowFTP);
+            if(Repository.ftpServer != null) {
+                edt_server.setText(Repository.ftpServer);
+            }
+            if(Repository.ftpUser != null) {
+                edt_user.setText(Repository.ftpUser);
+            }
+            if(Repository.ftpPassword != null) {
+                edt_password.setText(Repository.ftpPassword);
+            }
+        }
     }
 
     public void setListeners() {
@@ -79,12 +123,85 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_saveftp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET},2);
+                }
+                else {
+                    checkConnection();
+                }
+            }
+        });
+        btn_unlockftp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Code.check(txv_codeftp.getText().toString(), edt_codeftp.getText().toString())) {
+                    Repository.unlockedFTP = true;
+                    //TODO Guardar en preferences
+                    ll_server_settings.setVisibility(View.GONE);
+                    ll_server_code.setVisibility(View.VISIBLE);
+                }
+                else {
+                    txv_codeftp.setText(Code.generateCode());
+                }
+            }
+        });
+        cb_anotations.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Repository.showAnnotations = isChecked;
+                //TODO Guardar en preferences
+            }
+        });
+        cb_ftp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Repository.allowFTP = isChecked;
+                //TODO Guardar en preferences
+            }
+        });
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        askDownload();
+        switch (requestCode) {
+            case 1:
+                askDownload();
+                break;
+            case 2:
+                checkConnection();
+                break;
+        }
+    }
+
+    public void checkConnection() {
+        Repository.ftpServer = edt_server.getText().toString();
+        Repository.ftpUser = edt_user.getText().toString();
+        Repository.ftpPassword = edt_password.getText().toString();
+        //TODO Guardar en preferences
+        //TODO AsynTask crashea la app
+        AsyncTask< String, Integer, Boolean > task = new AsyncTask< String, Integer, Boolean >()
+        {
+            @Override
+            protected Boolean doInBackground( String... params )
+            {
+                try {
+                    FTPClient mFTP = new FTPClient();
+                    mFTP.connect(Repository.ftpServer, Repository.ftpPort);
+                    mFTP.login(Repository.ftpUser, Repository.ftpPassword);
+                    mFTP.logout();
+                    mFTP.disconnect();
+                    Toast.makeText(SettingsActivity.this,"Conexión exitosa", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    Toast.makeText(SettingsActivity.this,"Error de conexión", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            }
+        };
+        task.execute("");
     }
 
     public void askDownload() {

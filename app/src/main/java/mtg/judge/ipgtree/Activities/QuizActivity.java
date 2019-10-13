@@ -21,29 +21,27 @@ import java.util.Collections;
 
 public class QuizActivity extends AppCompatActivity {
 
-    ArrayList<Quiz> questions;
+    private ArrayList<Quiz> questions;
 
-    TextView tv_question;
-    TextView txv_question_number;
-    LinearLayout ll_answers;
-    ScrollView scroll_answers;
-    ImageView imv_arrow_up;
-    ImageView imv_arrow_down;
-    ImageView imv_arrow_left;
-    ImageView imv_arrow_right;
+    private TextView tv_question;
+    private TextView txv_question_number;
+    private LinearLayout ll_answers;
+    private ScrollView scroll_answers;
+    private ImageView imv_arrow_up;
+    private ImageView imv_arrow_down;
+    private ImageView imv_arrow_left;
+    private ImageView imv_arrow_right;
 
-    ViewTreeObserver viewTreeObserver;
+    private ViewTreeObserver viewTreeObserver;
 
-    ArrayList<TextView> answerTVs = new ArrayList<TextView>();
+    private ArrayList<TextView> answerTVs = new ArrayList<TextView>();
 
-    LinearLayout.LayoutParams layoutParams;
+    private LinearLayout.LayoutParams layoutParams;
 
-    Repository repository;
+    private final int TEXT_SIZE = 20;
 
-    final int TEXT_SIZE = 20;
-
-    boolean finished = false;
-    int questionNumber = 0;
+    private boolean finished = false;
+    private int questionNumber = 0;
 
     private static final String KEY_SERIALIZED_QUIZ = "key_serialized_quiz";
     private static final String KEY_FINISHED = "key_finished";
@@ -102,7 +100,6 @@ public class QuizActivity extends AppCompatActivity {
             });
         }
 
-        repository = Repository.getInstance();
         loadQuiz(savedInstanceState);
         showQuiz();
     }
@@ -155,7 +152,7 @@ public class QuizActivity extends AppCompatActivity {
             questionNumber = savedInstanceState.getInt(KEY_QUESTION_NUMBER);
         }
         else {
-            questions = repository.Quiz;
+            questions = Repository.Quiz;
             shuffleQuestionsAndAnswers();
         }
     }

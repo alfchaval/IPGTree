@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -26,25 +27,23 @@ import java.util.ArrayList;
 
 public class DocumentActivity extends AppCompatActivity {
 
-    Tree<TypedText> tree;
+    private Tree<TypedText> tree;
 
-    TextView tv_title;
-    LinearLayout ll_points;
-    ScrollView scroll_points;
-    ImageView imv_arrow_up;
-    ImageView imv_arrow_down;
+    private TextView tv_title;
+    private LinearLayout ll_points;
+    private ScrollView scroll_points;
+    private ImageView imv_arrow_up;
+    private ImageView imv_arrow_down;
 
-    ViewTreeObserver viewTreeObserver;
+    private ViewTreeObserver viewTreeObserver;
 
-    ArrayList<TextView> branchs = new ArrayList<TextView>();
+    private ArrayList<TextView> branchs = new ArrayList<TextView>();
 
-    LinearLayout.LayoutParams layoutParams;
+    private LinearLayout.LayoutParams layoutParams;
 
-    Repository repository;
+    private boolean showNotes = true;
 
-    boolean showNotes = true;
-
-    final int TEXT_SIZE = 20;
+    private final int TEXT_SIZE = 20;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 
@@ -64,6 +63,15 @@ public class DocumentActivity extends AppCompatActivity {
             tree = tree.getParent();
             showList();
         }
+    }
+
+    @Override
+    public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            super.onBackPressed();
+            return true;
+        }
+        return super.onKeyLongPress(keyCode, event);
     }
 
     @Override
@@ -109,7 +117,7 @@ public class DocumentActivity extends AppCompatActivity {
             });
         }
 
-        repository = Repository.getInstance();
+        showNotes = Repository.showAnnotations;
         loadPoints(savedInstanceState);
         showList();
 
@@ -154,22 +162,22 @@ public class DocumentActivity extends AppCompatActivity {
         else {
             switch (getIntent().getStringExtra("document")) {
                 case "cr":
-                    tree = repository.ComprehensiveRules;
+                    tree = Repository.ComprehensiveRules;
                     break;
                 case "jar":
-                    tree = repository.JudgingAtRegular;
+                    tree = Repository.JudgingAtRegular;
                     break;
                 case "aipg":
-                    tree = repository.AnnotatedInfractionProcedureGuide;
+                    tree = Repository.AnnotatedInfractionProcedureGuide;
                     break;
                 case "amtr":
-                    tree = repository.AnnotatedMagicTournamentRules;;
+                    tree = Repository.AnnotatedMagicTournamentRules;;
                     break;
                 case "dq":
-                    tree = repository.DisqualificationProcess;
+                    tree = Repository.DisqualificationProcess;
                     break;
                 case "banned":
-                    tree = repository.BannedAndRestricted;
+                    tree = Repository.BannedAndRestricted;
                     break;
                 default:
                     tree = new Tree<TypedText>(new TypedText("ERROR"));

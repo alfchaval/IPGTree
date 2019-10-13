@@ -25,9 +25,11 @@
 
         <activity
             android:name="mtg.judge.ipgtree.Activities.MainActivity"
+            android:screenOrientation="nosensor"
             />
         <activity
             android:name="mtg.judge.ipgtree.Activities.DocumentsMenuActivity"
+            android:screenOrientation="nosensor"
             />
         <activity
             android:name="mtg.judge.ipgtree.Activities.OracleActivity"
@@ -57,6 +59,7 @@
             />
         <activity
             android:name="mtg.judge.ipgtree.Activities.SettingsActivity"
+            android:screenOrientation="nosensor"
             />
         <activity
             android:name="mtg.judge.ipgtree.Activities.AboutActivity"

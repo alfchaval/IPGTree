@@ -4,6 +4,7 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -21,22 +22,20 @@ import java.util.ArrayList;
 
 public class TreeActivity extends AppCompatActivity {
 
-    Tree<Quiz> questionTree;
+    private Tree<Quiz> questionTree;
 
-    TextView tv_question;
-    LinearLayout ll_answers;
-    ScrollView scroll_answers;
-    ImageView imv_arrow_up, imv_arrow_down;
+    private TextView tv_question;
+    private LinearLayout ll_answers;
+    private ScrollView scroll_answers;
+    private ImageView imv_arrow_up, imv_arrow_down;
 
-    ViewTreeObserver viewTreeObserver;
+    private ViewTreeObserver viewTreeObserver;
 
-    ArrayList<TextView> answerTVs = new ArrayList<TextView>();
+    private ArrayList<TextView> answerTVs = new ArrayList<TextView>();
 
-    LinearLayout.LayoutParams layoutParams;
+    private LinearLayout.LayoutParams layoutParams;
 
-    Repository repository;
-
-    final int TEXT_SIZE = 20;
+    private final int TEXT_SIZE = 20;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 
@@ -60,6 +59,16 @@ public class TreeActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onKeyLongPress(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            super.onBackPressed();
+            return true;
+        }
+        return super.onKeyLongPress(keyCode, event);
+    }
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree);
@@ -72,7 +81,6 @@ public class TreeActivity extends AppCompatActivity {
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 4, 0, 4);
 
-        repository = Repository.getInstance();
         loadQuiz(savedInstanceState);
         showQuiz();
     }
@@ -137,7 +145,7 @@ public class TreeActivity extends AppCompatActivity {
             questionTree = (Tree<Quiz>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
-            questionTree = repository.IPGTree;
+            questionTree = Repository.IPGTree;
         }
     }
 

@@ -14,10 +14,10 @@ public class DecklistActivity extends AppCompatActivity {
 
     private static final String KEY_NUMBERS = "key_numbers";
 
-    ArrayList<Integer> numbers;
+    private ArrayList<Integer> numbers;
 
-    Button btn_reset, btn_undo, btn_add_1, btn_add_2, btn_add_3, btn_add_4;
-    TextView txv_total, txv_number_list;
+    private Button btn_reset, btn_undo, btn_add_1, btn_add_2, btn_add_3, btn_add_4;
+    private TextView txv_total, txv_number_list;
 
     @Override
     protected void onSaveInstanceState (Bundle outState) {

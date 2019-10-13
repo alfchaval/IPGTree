@@ -20,25 +20,23 @@ import mtg.judge.ipgtree.Repository;
 
 public class OracleActivity extends AppCompatActivity {
 
-    AutoCompleteTextView actv_search, actv_number;
-    TextView txv_oracle;
-    Button btn_change_mode;
+    private AutoCompleteTextView actv_search, actv_number;
+    private TextView txv_oracle;
+    private Button btn_change_mode;
 
-    String[] cardnames;
-    String[] setnames;
-    String[] numbers;
+    private String[] cardnames;
+    private String[] setnames;
+    private String[] numbers;
 
     private final int nameMode = 0;
     private final int setMode = 1;
 
-    ArrayAdapter<String> nameAdapter;
-    ArrayAdapter<String> setAdapter;
-    ArrayAdapter<String> numberAdapter;
+    private ArrayAdapter<String> nameAdapter;
+    private ArrayAdapter<String> setAdapter;
+    private ArrayAdapter<String> numberAdapter;
 
-    Repository repository;
-
-    String selectedSet;
-    int mode;
+    private String selectedSet;
+    private int mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +55,12 @@ public class OracleActivity extends AppCompatActivity {
     }
 
     public void loadCards() {
-        repository = Repository.getInstance();
-        if(repository.cards.size() < 1) {
+        if(Repository.cards.size() < 1) {
             txv_oracle.setText("No tienes cartas en la base de datos local, puedes descargar la base de datos actualizada desde Opciones");
         }
         else {
-            cardnames = repository.cards.keySet().toArray(new String[repository.cards.size()]);
-            setnames = repository.sets.keySet().toArray(new String[repository.sets.size()]);
+            cardnames = Repository.cards.keySet().toArray(new String[Repository.cards.size()]);
+            setnames = Repository.sets.keySet().toArray(new String[Repository.sets.size()]);
             nameAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, cardnames);
             setAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, setnames);
             changeMode(nameMode);
@@ -78,6 +75,7 @@ public class OracleActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Repository.loadDatabase(getApplicationContext());
         loadCards();
     }
 
@@ -96,7 +94,7 @@ public class OracleActivity extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(actv_search.getWindowToken(), 0);
                 switch (mode) {
                     case nameMode:
-                        if(repository.cards.containsKey(actv_search.getText().toString())){
+                        if(Repository.cards.containsKey(actv_search.getText().toString())){
                             showCardAndSides(actv_search.getText().toString());
                         }
                         else {
@@ -104,7 +102,7 @@ public class OracleActivity extends AppCompatActivity {
                         }
                         break;
                     case setMode:
-                        if(repository.sets.containsKey(actv_search.getText().toString())) {
+                        if(Repository.sets.containsKey(actv_search.getText().toString())) {
                             selectedSet = actv_search.getText().toString();
                             txv_oracle.setText("Set seleccionado:\n" + selectedSet);
                             setNumbers();
@@ -123,8 +121,8 @@ public class OracleActivity extends AppCompatActivity {
                 try {
                     int number = Integer.valueOf(actv_number.getText().toString());
                     //remove first check (unnecesary) after solve problem with number of cards per set
-                    if(number < repository.setsWithCards.get(repository.sets.get(selectedSet).code).length && repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1] != null) {
-                        showCardAndSides(repository.setsWithCards.get(repository.sets.get(selectedSet).code)[number-1]);
+                    if(number < Repository.setsWithCards.get(Repository.sets.get(selectedSet).code).length && Repository.setsWithCards.get(Repository.sets.get(selectedSet).code)[number-1] != null) {
+                        showCardAndSides(Repository.setsWithCards.get(Repository.sets.get(selectedSet).code)[number-1]);
                     }
                     else {
                         txv_oracle.setText("No se encontraron resultados");
@@ -151,7 +149,7 @@ public class OracleActivity extends AppCompatActivity {
 
     public void setNumbers() {
         int aux = numbers.length;
-        numbers = new String[repository.sets.get(selectedSet).cards];
+        numbers = new String[Repository.sets.get(selectedSet).cards];
         if(aux < numbers.length) {
             for(int j = aux; j < numbers.length; j++) {
                 numberAdapter.add(j + "");
@@ -167,7 +165,7 @@ public class OracleActivity extends AppCompatActivity {
     public void showCardAndSides(String name) {
         String text = "";
         text += showCard(name);
-        for(String s : repository.cards.get(name).sidenames) {
+        for(String s : Repository.cards.get(name).sidenames) {
             text +="\n\n////////////////////\n\n" + showCard(s);
         }
         txv_oracle.setText(text);
@@ -175,23 +173,23 @@ public class OracleActivity extends AppCompatActivity {
 
     public String showCard(String name) {
         String text = "";
-        text += repository.cards.get(name).name + " ";
-        if(repository.cards.get(name).manaCost != null) {
-            text += repository.cards.get(name).manaCost;
+        text += Repository.cards.get(name).name + " ";
+        if(Repository.cards.get(name).manaCost != null) {
+            text += Repository.cards.get(name).manaCost;
         }
         text += "\n\n";
         //TODO indicador de color
-        if(repository.cards.get(name).type != null) {
-            text += repository.cards.get(name).type + "\n\n";
+        if(Repository.cards.get(name).type != null) {
+            text += Repository.cards.get(name).type + "\n\n";
         }
-        if(repository.cards.get(name).text != null) {
-            text += repository.cards.get(name).text;
+        if(Repository.cards.get(name).text != null) {
+            text += Repository.cards.get(name).text;
         }
-        if(repository.cards.get(name).power != null && repository.cards.get(name).toughness != null) {
-            text += "\n\n" + repository.cards.get(name).power + "/" + repository.cards.get(name).toughness;
+        if(Repository.cards.get(name).power != null && Repository.cards.get(name).toughness != null) {
+            text += "\n\n" + Repository.cards.get(name).power + "/" + Repository.cards.get(name).toughness;
         }
-        if(repository.cards.get(name).loyalty != null) {
-            text += "\n\n" + repository.cards.get(name).loyalty;
+        if(Repository.cards.get(name).loyalty != null) {
+            text += "\n\n" + Repository.cards.get(name).loyalty;
         }
         return text;
     }

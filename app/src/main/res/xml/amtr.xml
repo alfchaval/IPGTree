@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Reglas de torneo anotadas">
+    <point text="Actualizado: 30-08-2019"></point>
     <point text="1. Fundamentos de torneos">
         <point text="1.1 Tipos de torneos">
             <point text="Los torneos oficiales sancionados se dividen en dos tipos: Premier y no Premier. Los torneos premier son organizados por Wizards of the Coast u Organizadores de torneos elegidos. Tienen nombres y características únicas. Los torneos no Premier son torneos que no son explícitamente Premier."></point>
@@ -46,16 +47,15 @@
             <annotation text="Los oficiales de torneo pueden jugar en torneos oficiales sancionados por la DCI en los cuales son oficiales del torneo sí (y solo sí) el torneo de alguno de los siguientes tipos:"></annotation>
             <point text="• Friday Night Magic"></point>
             <point text="• Presentación"></point>
-            <point text="• Launch Party"></point>
-            <point text="• Magic Game Day"></point>
+            <point text="• Magic Weekend"></point>
             <point text="• Otros torneos no-premier de Magic"></point>
             <point text="• Torneos en los cuales la hoja informativa oficial del torneo de Wizards of the Coast específicamente permita a los oficiales de ese torneo jugar en él."></point>
             <point text="Si uno o más oficiales del torneo juegan en él, debe ser organizado con Nivel de Imposición de Reglas Normal. Si hay oficiales del torneo jugando en él y el torneo no es uno de los mencionados arriba, el torneo será invalidado. Los oficiales del torneo deben oficiar los torneos de manera justa sin importar sus propios intereses."></point>
             <point text="Los propietarios de organizaciones que organizan torneos Premier no pueden jugar en esos torneos, incluso si el propietario no figura como un oficial del torneo (organizador, juez y/o administrador de resultados) para ese torneo."></point>
-            <point text="Los Eventos Premier incluyen los siguientes torneos: Magic: The Gathering World Championship, World Magic Cup, Nationals, Nationals Last Chance Qualifiers, Pro Tour, Regional Pro Tour Qualifiers, Regional Last Chance Qualifiers, Preliminary Pro Tour Qualifiers, Pro Tour Qualifiers, Grand Prix, Grand Prix Trials, WPN Premium Tournaments y WPN Premium Qualifiers."></point>
-            <point text="Algunos torneos tienen criterios adicionales de elegibilidad de jugadores y oficiales de torneo (por ejemplo, torneos por invitación, como los torneos Pro Tour)."></point>
-            <point text="La política de invitación de torneos premier define las reglas de elegibilidad específicas para ciertos tipos de torneos premier por invitación (por ejemplo Pro Tours)."></point>
-            <point text="Los individuos que tengan preguntas sobre la elegibilidad de torneo deberían contactar al Administrador de Políticas de la DCI (Scott.Larabee@wizards.com)."></point>
+            <point text="Los Eventos Premier incluyen los siguientes torneos: Magic: The Gathering World Championship, Magic Tabletop Mythic Championship, Players Tour, Players Tour Finals, WPN Qualifiers, WPN Preliminary Events, Players Tour Qualifiers, Magic Premier Series, Grand Prix, Grand Prix Trials, WPN Premium Tournaments y WPN Premium Qualifiers."></point>
+            <point text="Algunos torneos tienen criterios adicionales de elegibilidad de jugadores y oficiales de torneo (por ejemplo, torneos por invitación, como torneos Magic Tabletop Mythic Championship, Players Tour y Players Tour Finals)."></point>
+            <point text="La política de invitación de torneos premier define las reglas de elegibilidad específicas para ciertos tipos de torneos premier por invitación (por ejemplo Magic Tabletop Mythic Championship, Players Tour y Players Tour Finals)."></point>
+            <point text="Los individuos que tengan preguntas sobre la elegibilidad de torneo deberían contactar al Administrador de Políticas de la DCI (esports@wizards.com)."></point>
             <annotation text="Todos los eventos de Nivel de Imposición de Reglas Competitivo o Profesional requieren que jugadores y jueces sean personas distintas, por los potenciales problemas que puede causar. Si alguien estuviera jugando contra una persona que está de juez en un evento que da importantes premios, puede hacer que sienta desconfianza en la habilidad del juez para mantenerse imparcial, especialmente si necesita hacer una pregunta acerca de una carta en su mano."></annotation>
             <annotation text="Hace varios años atrás, incluso en los eventos de Nivel de Imposición de Reglas Normal se requería que los jugadores y jueces fueran distintas personas, lo que causaba que mucha gente no quisiera certificarse como juez, ya que significaba que sólo podría jugar en raras ocasiones. Por un tiempo también estuvo en efecto la “regla de los 3 jueces”, que significaba que si habían 3 jueces ellos podían jugar y participar como jueces, ya que siempre habría un juez no involucrado en una partida en la que fueran llamados."></annotation>
             <annotation text="Los “torneos en los cuales la hoja informativa oficial del torneo de Wizards of the Coast específicamente permite a los oficiales de ese torneo jugar en él” no tiene nada bajo esta categoría, pero es una opción para el futuro. La política general es que en todos los eventos de Nivel de Imposición de Reglas Normal un individuo puede jugar y actuar como Oficial de Torneo, y en Competitivo y Profesional no."></annotation>
@@ -256,7 +256,7 @@
             <annotation text="Este procedimiento de “tiempo extra” busca que todas las partidas lleguen a una conclusión natural y evitar que uno de los jugadores “abuse del reloj” para forzar un empate. Mientras que estos turnos adicionales técnicamente no tienen tiempo límite, se espera que los jugadores jueguen a un ritmo razonable, y aún están sujetos a penalizaciones por Juego Lento."></annotation>
             <point text="Esto normalmente significa que un jugador tomará tres turnos y el otro dos, pero que un jugador tome turnos adicionales pueden afectar esto."></point>
             <annotation text="Solo habrá cinco turnos adicionales durante la porción adicional de una partida (tener en cuenta IPG 3.3 — Juego Lento, en el cual se dan dos turnos adicionales como parte de la solución adicional). Circunstancias de juego (la activación de la tercera habilidad de Ral Zarek por ejemplo) pueden resultar en un solo jugador tomando los cinco turnos adicionales. Para más detalles acerca de turnos adicionales, ver CR 500.7."></annotation>
-            <point text="Si un jugador pasó prioridad en su paso final cuando se alcanza el límite de tiempo, se considera que están en el siguiente turno del oponente."></point>
+            <point text="Si el jugador activo ya indicó que quiere pasar el turno cuando se alcanza el límite de tiempo, se considera que están en el turno del oponente."></point>
             <point text="Los torneos en equipo con varios jugadores jugando juntos (como Gigante de dos cabezas) usan tres turnos en lugar de cinco."></point>
             <annotation text="Durante el final de la ronda el jugador activo típicamente recibe 2 turnos y el jugador no activo, 3 turnos. Como los jugadores toman sus turnos simultáneamente, 3 turnos adicionales en Gigante de Dos Cabezas cumplen con esto."></annotation>
             <point text="Una vez que finaliza el tiempo, no pueden comenzar nuevos juegos."></point>
@@ -291,7 +291,7 @@
             <annotation text="Esta regla es la que permite la existencia del Sleep in Special. Podemos permitir a los jugadores presentarse a un Grand Prix Limitado una ronda antes de la cual deberían de empezar a jugar para que puedan construir sus mazos con tiempo de sobra. En eventos construidos, los jugadores pueden entregar sus listas la noche anterior."></annotation>
             <point text="Los jugadores tienen el derecho de solicitar ver su hoja de registro de mazo entre partidas. Esos pedidos serán cumplidos mientras sea logísticamente posible."></point>
             <annotation text="Lo que constituya logísticamente posible depende de los jueces del evento. Algunos eventos tienen miles de hojas de registro de mazo recogidas al mismo tiempo, y tratar de encontrar una antes de que sean organizadas puede no ser posible. Si un jugador alertó a un juez acerca de un error antes de que pudiera ganar una ventaja, o antes de que el evento empiece, se debe tener en cuenta esta información en caso de no poder proveer al jugador su lista. Adicionalmente, los jugadores usualmente toman una fotografía de su hoja de registro de mazo una vez que la requirieron, para referencia futura."></annotation>
-            <point text="Generalmente, las hojas de registro de mazo no son información pública y no se comparten con otros jugadores durante el torneo. En torneos que se juegan a Nivel de Imposición de Reglas Profesional (Magic Tabletop Mythic Championship, World Championship y Grand Prix), se proveerán a los jugadores copias de las hojas de registro de mazo de los oponentes en las rondas de eliminación simple."></point>
+            <point text="Generalmente, las hojas de registro de mazo no son información pública y no se comparten con otros jugadores durante el torneo. En torneos que se juegan a Nivel de Imposición de Reglas Profesional (Magic Tabletop Mythic Championship, World Championship, Players Tour, Players Tour Finals y Grand Prix), se proveerán a los jugadores copias de las hojas de registro de mazo de los oponentes en las rondas de eliminación simple."></point>
             <annotation text="En rondas de eliminación simple en eventos limitados, las chances de que un oponente gane información acerca de otro mazo son mucho más pequeñas. Por ende, sólo se proveen hojas de mazo para eventos Construidos. Los Open Series de Star City Games también permiten a los jugadores del Top 8 ver las hojas de mazo de sus oponentes."></annotation>
             <annotation text="Nótese que mientras aunque se entreguen las listas de mazo, estas son consideradas notas tomadas fuera del juego, así que los jugadores solo pueden verlas entre juegos."></annotation>
         </point>
@@ -304,7 +304,7 @@
         <point text="2.9 Apelaciones al Juez Principal">
             <point text="Si un jugador no está de acuerdo con la decisión de un juez, puede apelar la decisión al juez principal."></point>
             <annotation text="El derecho a apelar es una de las protecciones garantizadas a los jugadores. Esta les permite tener una segunda opinión si no están de acuerdo con la decisión de un juez de piso, o si simplemente piensan que la penalización es muy severa."></annotation>
-            <point text="En torneos más grandes, de nivel Premier (como Grand Prix y Pro Tours), con aprobación previa, el Juez principal puede designar jueces de apelación adicionales que tienen el poder de escuchar apelaciones. Estarán usando el mismo uniforme que el Juez principal."></point>
+            <point text="En torneos más grandes, de nivel Premier (como Grand Prix, Players Tour, Players Tour Finals y Magic Tabletop Mythic Championships), con aprobación previa, el Juez principal puede designar jueces de apelación adicionales que tienen el poder de escuchar apelaciones. Estarán usando el mismo uniforme que el Juez principal."></point>
             <point text="Los jugadores no pueden apelar antes de que el juez de piso haya respondido completamente la duda de reglas. Las decisiones del Juez principal o de los jueces de apelación designados son finales."></point>
             <annotation text="Los jugadores deben mostrar respeto a los jueces, lo cual incluye permitirles terminar de explicar su decisión antes de demostrar que están en desacuerdo con ella. Los jugadores que apelan la decisión de un juez basados en sus percepciones del mismo, o creyendo saber cómo el juez dictaminará su decisión, socavan la autoridad del juez, y esto puede considerarse Conducta Antideportiva — Menor."></annotation>
         </point>
@@ -370,7 +370,7 @@
             <annotation text="En un Grand Prix, el equipo de cobertura usualmente se encuentra alrededor de 25 metros alejado de la partida que se está comentando, de manera que los jugadores no puedan escuchar al equipo hablar acerca de qué cartas se están robando, o qué líneas de juego están disponibles para los jugadores."></annotation>
             <point text="Los espectadores también pueden grabar las partidas siempre y cuando lo hagan sin molestar."></point>
             <annotation text="Los espectadores no pueden compartir notas con un jugador durante la partida. Hacerlo probablemente los haga incurrir en Ayuda Externa."></annotation>
-            <point text="El Juez principal de un World Championship, World Magic Cup, o un Pro Tour puede, a su entera discreción, usar una grabación de video para ayudarse al tomar una decisión de reglas durante una partida. Las grabaciones de video no pueden usarse para ayudar a tomar una decisión de reglas en otros torneos salvo World Championship, World Magic Cup, o un Pro Tour . Los jugadores no pueden solicitar a un juez que consulte una grabación de video. Las grabaciones de video pueden usarse también para investigaciones más adelante."></point>
+            <point text="El Juez principal de un World Championship, Players Tour, Players Tour Finals, o Magic Tabletop Mythic Championship puede, a su entera discreción, usar una grabación de video para ayudarse al tomar una decisión de reglas durante una partida. Las grabaciones de video no pueden usarse para ayudar a tomar una decisión de reglas en otros torneos salvo World Championship, Players Tour, Players Tour Finals o Magic Tabletop Mythic Championship. Los jugadores no pueden solicitar a un juez que consulte una grabación de video. Las grabaciones de video pueden usarse también para investigaciones más adelante."></point>
             <annotation text="Esto fue añadido en Agosto del 2015. Las grabaciones siempre fueron elementos que el Comité de Investigaciones puede utilizar libremente luego de un evento."></annotation>
             <annotation text="Hay muchas razones por la cual previamente no se podía utilizar repeticiones por video:"></annotation>
             <annotation text="• La gente que está siendo filmada podía ganar una ventaja adicional mientras estaba en cámara dada la opción de repetición por video."></annotation>
@@ -489,8 +489,7 @@
         </point>
         <point text="3.7 Nuevos lanzamientos">
             <point text="Las colecciones de cartas lanzadas son legales en torneos oficiales sancionados en las siguientes fechas:"></point>
-            <point text="• La guerra de la chispa™ 	03 de mayo de 2019"></point>
-            <point text="• Horizontes de Modern™ 	14 de junio de 2019"></point>
+            <point text="• El trono de Eldraine, 4 de octubre de 2019"></point>
             <annotation text="Las cartas de torneos de presentación, de spoiler y cartas robadas a Wizards of the Coast no son legales para su uso en torneos hasta que la colección en el que vienen sea lanzada oficialmente. Esta lista está constantemente actualizándose, y nos sorprenderemos si las MTR son el primer lugar en el que revisas las fechas."></annotation>
             <point text="Solo para los torneos presentación oficiales, las nuevas colecciones son legales para su uso antes de la fecha oficial para el formato. En estos casos, cualquier actualización de reglas anunciada estará en efecto en esos incluyendo explicaciones informales de nuevas reglas y mecánicas. Los jueces pueden aplicar reglas adicionales que creen han sido actualizadas."></point>
             <annotation text="Esta la única excepción. Los torneos de presentación son tratados como si la edición ya hubiera sido lanzada. Cualquier cambio a las reglas, ya sea grande o pequeño, entra en efecto en el torneo de presentación a pesar de que no haya sido puesto en efecto hasta el lanzamiento de la edición."></annotation>
@@ -503,10 +502,6 @@
             <annotation text="Los jugadores usualmente ponen objetos encima de sus mazos para evitar olvidarse de efectos como habilidades disparadas que ocurren en el mantenimiento, por ejemplo Rebote (Rebound), así como objetos encima de sus cementerios para no olvidar algún efecto continuo. “Pequeños” es un término muy subjetivo, y hasta hay historias de jugadores usando peceras, las cuales cubrían completamente sus respectivos mazos, con el fin de evitar robar una carta antes de recordar una habilidad disparada en el mantenimiento. Las reglas importantes aquí son que el objeto no puede ocultar las cartas, no puede hacer que sea difícil ver cartas que ya estén reveladas, y tampoco se puede usar una carta como dicho objeto."></annotation>
             <point text="Los jugadores que usen marcadores para representar componentes del juego (como permanentes) deben usar una manera clara de representar el estatus en juego, como por ejemplo si un permanente está girado."></point>
             <annotation text="Los jugadores suelen usar dados, piedritas, monedas u otros objetos similares para representar Fichas. Esto está perfectamente bien, pero deben ser capaces de demostrar si es que el objeto está girado o no."></annotation>
-            <point text="Los protectores (fundas) o reversos de cartas que parecen similares a los protectores de un jugador o a los reversos de las cartas de su mazo no pueden usarse como marcadores."></point>
-            <annotation text="Siempre tratamos de evitar que el estado de juego se vuelva innecesariamente confuso, así que tener algo que represente una Ficha, y que no sea obvio que es una Ficha es un problema. Como los protectores y los reversos de cartas pueden confundirse con cartas reales o por criaturas con Metamorfosis, su uso no está permitido si es que fueran a generar dicha confusión."></annotation>
-            <point text="Un oficial de torneo puede prohibir el uso de marcadores que causan confusión o que sean inapropiados u ofensivos."></point>
-            <annotation text="Siempre apuntamos a crear un ambiente acogedor en los eventos de Magic, y así como también ocurre con el comportamiento, alteraciones de cartas, camisetas, y a veces las Fichas personalizadas pueden cruzar esta línea. Si el juez cree que algo usado por el jugador puede generar disrupción o incomodidad, el juez también puede reforzar esto con una penalización de Conducta Antideportiva — Menor. Adicionalmente, si no está claro qué es lo que una Ficha representa, un juez puede requerir el uso de otro método para que la situación sea más clara. No hay ninguna línea estricta aquí, así que se utiliza el criterio de los Oficiales de Torneo."></annotation>
         </point>
         <point text="3.9 Barajado de cartas">
             <point text="Los mazos deben ser aleatorizados al comienzo de cada juego y siempre que una instrucción lo requiera. Aleatorizar se define como poner el mazo en un estado en el cual ningún jugador puede tener información del orden o posición de las cartas en ninguna parte del mazo."></point>
@@ -608,6 +603,7 @@
             <point text="• Totales de vidas"></point>
             <point text="• Contadores que un jugador tiene anexado."></point>
             <point text="• Efectos continuos sin una finalización definida dentro del juego que se aplican al jugador, como Monarca o la Bendición de la ciudad."></point>
+			<point text="• Maná no utilizado en la reserva de maná de un jugador."></point>
             <example text="Ejemplo: Si un jugador pregunta a su oponente por su total actual de vidas, el jugador debe responder directa y sinceramente. Respuestas como “Puedes figurártelo” o “Veinte” cuando el jugador está a diecisiete vidas son inaceptables."></example>
             <annotation text="Este tipo de información tiene que ser debidamente anunciada en cuando algún cambio ocurra."></annotation>
             <annotation text="Un método muy común de registrar las vidas o contadores en un jugador es con papel y lápiz."></annotation>
@@ -617,7 +613,6 @@
             <point text="• La cantidad y tipo de cualquier contador que no está definido como información de estado."></point>
             <point text="• El estado (si está girado, anexado a otro permanente, boca abajo, etc.) y la zona actual de cualquier objeto o jugador."></point>
             <point text="• La puntuación de juegos en la partida actual."></point>
-            <point text="• El contenido de la reserva de maná de cada jugador."></point>
             <point text="• El paso y/o fase actual y quién es el jugador activo."></point>
             <annotation text="Un jugador siempre tiene que proporcionar toda la información pública con exactitud cuando se lo requiera su oponente. Si no es posible deberían llamar a un juez para ayudar a aclarar la comunicación. Si un jugador involuntariamente presenta erróneamente información pública en un NIR Competitivo, puede resultar en una Violación de la política de comunicación."></annotation>
             <point text="La información derivada es aquella a la cual todos los jugadores pueden tener acceso, pero los oponentes no tienen la obligación de ayudar a determinarla y puede requerir cierta habilidad o cálculo para poder determinarla. La información derivada consiste en:"></point>
@@ -632,7 +627,7 @@
             <point text="• Los jugadores deben anunciar cualquier cambio en la información de estado sobre ellos mismos y deben representarla con algún registro físico."></point>
             <point text="• Si un jugador nota una discrepancia entre la información de estado anunciada y la registrada, se espera que lo notifique tan pronto como note esta discrepancia."></point>
             <point text="• Los jugadores deben responder completa y honestamente todas las preguntas que les sean hechas por un juez, sin importar el tipo de información que haya sido solicitada. Los jugadores pueden pedir alejarse de la partida para hacerlo."></point>
-            <point text="• Los jugadores no pueden representar incorrectamente información libre ni derivada."></point>
+            <point text="• Los jugadores no pueden representar incorrectamente información libre, derivada o de status."></point>
             <point text="• Los jugadores deben responder completa y honestamente cualquier pregunta específica relacionada con información libre."></point>
             <point text="• En los eventos de Nivel de Imposición de Reglas Normal, toda la información derivada se considera libre."></point>
             <point text="Se estimula a que los jueces ayuden a los jugadores a determinar información libre, pero deben evitar ayudarlos con información derivada sobre el estado del juego."></point>
@@ -675,8 +670,6 @@
             <point text="La segunda frase es relevante cuando se trata con criaturas que tienen una habilidad activada que aumenta su propia fuerza/resistencia (por ejemplo Shorecrasher Elemental); su controlador puede decir “aumento la resistencia de mi Shorecrasher seis veces” para acelerar el juego y, si su oponente quiere lanzar Mardu Charm en él eligiendo el modo de hacer 4 puntos de daño, puede hacerlo en cualquier momento intermedio. El oponente no puede argumentar que ha lanzado el Charm “en respuesta a las seis habilidades en la pila”, porque con la primera frase, se asume que cada habilidad se ha resuelto antes de añadir otra a la pila (porque no puede añadirse otra sin prioridad). Por lo tanto, si el oponente elige lanzar Mardu Charm en respuesta a la sexta activación, entonces la habilidad de Shorecrasher Elemental ya se ha resuelto cinco veces.[/alert]"></point>
             <point text="• Si un jugador agrega un grupo de objetos a la pila sin explícitamente retener prioridad, se asume que los agregó individualmente y permitió que se resolviera cada uno antes de agregar el siguiente. Si otro jugador desea tomar una acción en algún punto en el medio de esta secuencia, las acciones deberían revertirse hasta ese punto."></point>
             <annotation text="Esto es relevante cuando se trata con cartas que tiene una habilidad activada que con la que se hincha a sí misma (p.ej. Shorecrasher Elemental); su controlador puede simplemente decir “hincho la resistencia de mi Shorecrasher seis veces” para acelerar el juego, y si el oponente quiere lanzar un Mardu Charm sobre él eligiendo el modo para hacer cuatro puntos de daño, aun pueden hacerlo en cualquier momento. El oponente no puede argumentar que lanzaron el Charm “en respuesta a las seis habilidades en la pila”, ya que de acuerdo a la primer oración, se asume que cada habilidad resolvió antes de que la siguiente se agregue a la pila (porque eso no puede ocurrir sin prioridad). Por lo tanto, si el oponente elige lanzar Mardu Charm luego de la sexta activación, el Elemental ya habría sido hinchado exitosamente cinco veces."></annotation>
-            <point text="• Si un jugador lanza un hechizo o activa una habilidad con una X en su coste de maná sin especificar el valor de X, se asume que es por todo el maná actualmente disponible en su reserva de maná."></point>
-            <annotation text="Los jugadores frecuentemente lanzan hechizos y habilidades con X en el coste simplemente girando tierras e implicando el valor de X. Este atajo formaliza eso, así sus oponentes pueden actuar libremente con el conocimiento de que X es el máximo valor posible, evitando problemas de comunicación. Ejemplo: Norman está jugando con Aline, y al final del turno de Aline agrega 10 maná azules y lanza un Blue Sun’s Zenith haciéndose objetivo a sí mismo sin decir nada más, Aline puede actuar sabiendo que el valor de X es 7 sin necesidad de pedir confirmación."></annotation>
             <point text="• Si un jugador lanza un hechizo o activa una habilidad y anuncia elecciones para el mismo que no se harían normalmente hasta la resolución, el jugador debe adherirse a esas elecciones a menos que un oponente responda a ese hechizo o habilidad. Si un oponente pregunta sobre elecciones hechas durante la resolución, se asume que dicho jugador pasa prioridad y permite que ese hechizo o habilidad se resuelva."></point>
             <annotation text="Los jugadores a veces anuncian elecciones antes de tiempo cuando asumen que sus oponentes no tienen ninguna respuesta a sus acciones o cuando intentan sonsacar información. Este atajo evita que los jugadores anuncien elecciones antes de tiempo para engañar a sus oponentes o ganar información indebidamente y luego tomen una elección diferente en el momento en el que realmente debe tomarla. Pero si un oponente responde al hechizo o habilidad, su controlador puede hacer cualquier elección, sin importar cualquier anuncio anterior."></annotation>
             <example text="Ejemplo: Las únicas criaturas de Albert son 3 fichas de Lobo 2/2, y lanza Honor’s Reward, diciendo: “Ganaré 4 vidas y le pondré contadores a esta ficha. Norman responde diciendo “En respuesta, le lanzaré Murder”. Como la elección de la criatura a la que poner contadores se elige durante la resolución del hechizo, y Norman ha respondido a Honor’s Reward, Albert puede cambiar su elección a una ficha diferente cuando Honor’s Reward se resuelva. Además, nota que en este escenario, no cambiar la elección haría que la resolución del hechizo fuese ilegal, ya que sigue habiendo elecciones válidas en el campo de batalla cuando el hechizo se resuelve."></example>
@@ -689,7 +682,7 @@
             <annotation text="Esta interacción excepcional es suficientemente rara (y típicamente solo llevada a cabo por jugadores avanzados) que es razonable requerir a los jugadores que anuncien explícitamente cuándo quieren realizarla."></annotation>
             <point text="• Se asume que un jugador ataca a otro jugador con sus criaturas y no a cualesquier planeswalker que ese jugador pudiera controlar a menos que el jugador atacante especifique lo contrario."></point>
             <annotation text="Esto es cierto para todas las criaturas atacantes que el jugador controle, incluyendo cualquier criatura puesta en el campo de batalla atacando. El jugador atacante debe declarar explícitamente qué criaturas, si las hubiese, están atacando a algún planeswalker controlado por el jugador defensor como parte de la acción basada en el turno del paso de declarar atacantes (Regla 508.1b). Un jugador no puede esperar a saber cuáles de sus criaturas no son bloqueadas antes de declarar que están atacando a un planeswalker. Para criaturas puestas en el campo de batalla atacando, el jugador atacante debe declarar explícitamente si esas criaturas están atacando algún planeswalker controlado por el jugador defensor en cuando entren al campo de batalla (Regla 508.4)."></annotation>
-            <point text="• Un jugador que no adivina/escruta (o mira la primera carta de su biblioteca después de realizar un mulligan) cuando se le indica, se asume que eligió dejar las cartas en el mismo orden."></point>
+            <point text="• Un jugador que no adivina/escruta cuando se le indica, se asume que eligió dejar las cartas en el mismo orden."></point>
             <annotation text="Este atajo se aplica tanto cuando se adivina como parte de la resolución de un hechizo o habilidad como cuando se “adivina” tras hacer mulligan y quedarse la mano. Una gran parte del motivo de este cambio es no querer penalizar injustamente a un jugador por ignorar información a la que tienen acceso, pero no necesitan adquirir. Como al jugador normalmente no se le requiere acceder a esta información, tampoco queremos penalizar a su oponente. Filosóficamente, mirar la carta de la parte superior de la biblioteca después de hacer mulligan es funcionalmente equivalente a la mecánica Adivinar, por lo que encaja bien aquí."></annotation>
             <point text="• En el formato Gigante de dos cabezas, las criaturas atacantes se asume que  atacan a la cabeza del jugador defensor sentado directamente enfrente de su controlador, a menos que el controlador de la criatura especifique lo contrario."></point>
             <annotation text="Entonces, por ejemplo, Ana y Abril juegan contra Natalia y Nicolás, y Ana está sentada frente a Natalia y Abril está sentada frente a Nicolás. Si en el paso de declarar atacantes ni Ana ni Abril especifican a quién atacan, se supone que Anna está atacando a Natalia y Abril está atacando a Nicolás. Por lo tanto, si Ana ataca con un Ladrón de cordura sin decir a quién está atacando y no hay bloqueadores, cuando la habilidad disparada se resuelva, mirará las 3 primeras cartas de la biblioteca de Natalia y exiliará a una de ellas."></annotation>
@@ -749,8 +742,18 @@
             <point text="• Cada permanente enderezado debería estar mirando a su controlador. Los jugadores pueden brevemente girar una carta como recordatorio."></point>
             <annotation text="Si Luz de destierro exilia una carta, esa carta debería ser puesta debajo de Luz de destierro. Si un jugador exilia dos llanuras y un Osos pardos con Ashiok, urdidor de pesadillas, el Osos pardos debería ser puesto debajo de Ashiok."></annotation>
             <annotation text="La mesa de un jugador debe tener las criaturas adelante de las tierras. Los permanentes que no sean criatura cuyos usos principales sean para agregar maná pueden ser ubicados con las tierras o lejos de ellas. Las criaturas que son también tierras DEBEN ser ubicadas junto con las demás criaturas. Esto incluye Dríada enramada y tierras criatura animadas. Esto es para asegurar que se mantenga un estado de mesa claro y consistente, y que todos estén al tanto del mismo."></annotation>
-            <point text="Los oficiales de torneo pueden hacer excepciones o adiciones a estos lineamientos a su entera discreción para mantener clara la disposición del juego de cada jugador. Los jugadores en situaciones excepcionales (i.e. un jugador que juega un mazo sin tierras o un mazo que hace un uso intensivo del cementerio) pueden consultar con los oficiales de torneo para determinar otras excepciones que puedan realizarse."></point>
+            <point text="• Si una carta es exiliada por un permanente y ese permanente incluye una manera de realizar acciones adicionales con la carta exiliada, la asociación de ambas cartas debe ser clara. Se recomienda mantener ambas cartas juntas."></point>
+			<point text="Los oficiales de torneo pueden hacer excepciones o adiciones a estos lineamientos a su entera discreción para mantener clara la disposición del juego de cada jugador. Los jugadores en situaciones excepcionales (i.e. un jugador que juega un mazo sin tierras o un mazo que hace un uso intensivo del cementerio) pueden consultar con los oficiales de torneo para determinar otras excepciones que puedan realizarse."></point>
             <annotation text="Legacy, por ejemplo, tiene algunos mazos muy diferentes a la mayoría de los mazos de los demás formatos. Los jugadores de Dragar tendrán típicamente un cementerio desplegado en lo que normalmente sería el campo de batalla a causa de lo mucho que lo utilizan. Del mismo modo, “Oops, todos hechizos” y Belcher son mazos combos que juegan pocas o ninguna tierra."></annotation>
+        </point>
+		<point text="4.8 Revertir decisiones">
+            <point text="Se espera que los jugadores consideren sus opciones antes de realizar una acción y normalmente no se les permite volver atrás una acción que ha sido comunicada a sus oponentes, ya sea verbal o físicamente."></point>
+            <point text="A veces, un jugador se dará cuenta que tomó una decisión incorrecta después de realizar la jugada. Si ese jugador no ganó información desde que realizó la acción y desea tomar una decisión distinta, un juez puede permitir este cambio. Los jueces deben considerar cuidadosamente si el jugador ganó información o no desde que realizó la acción que afectó la decisión; en particular, los jugadores no pueden intentar usar las reacciones del oponente (o la falta de ellas) para ver si deberían modificar las acciones que realizaron. Si el juez no puede estar seguro de que no se ganó información, no deberían permitir que se cambie la acción."></point>
+            <point text="Un compañero de equipo que intervenga antes de que se haya ganado información es aceptable al considerar una vuelta atrás."></point>
+            <title text="Ejemplos:"></title>
+            <example text="1. Un jugador juega una Isla y, antes de que suceda nada más, dice “Perdón, quería jugar un Pantano.”"></example>
+            <example text="2. Un jugador dice “No bloqueo” e inmediatamente dice “Espera. Sí, bloqueo esta criatura.”"></example>
+            <example text="3. Un jugador dice “Paso. Un momento, tierra, paso.”"></example>
         </point>
     </point>
     <point text="5. Infracciones de torneo">
@@ -776,7 +779,7 @@
             <annotation text="A algunos Jueces Principales y Organizadores de Torneo les gusta sentar a los jugadores de cada partida aleatoriamente durante la última ronda, así las partidas más altas no están agrupadas juntas en las primeras mesas. Sentar aleatoriamente hace más difícil que los jugadores observen los resultados de las partidas con posiciones cercanas."></annotation>
             <point text="Los jugadores en rondas de eliminación simple de un torneo que ofrece efectivo, crédito de tienda, tickets de premio y/o producto cerrado como premio pueden, con permiso del Organizador del torneo, acordar dividir los premios parejos. Los jugadores pueden terminar el torneo en ese punto o continuar jugando. Todos los jugadores que todavía están en el torneo deben estar de acuerdo con esto."></point>
             <example text="Ejemplo: Antes de que comiencen las semifinales de un torneo (en el cual el primer lugar recibe 12 sobres, el segundo recibe 8 sobres y el 3ro y 4to reciben 4 sobres cada uno), los jugadores obtienen permiso del organizador de torneo para terminar el torneo, y cada jugador recibe 7 sobres."></example>
-            <example text="Ejemplo: En la final de un Magic Tabletop Mythic Qualifier que ofrece un premio en pasaje y una invitación al ganador, los dos finalistas pueden acordar dividir los premios del torneo, pero ese acuerdo no puede alterar el resultado de la partida. Un jugador debe abandonar el torneo, dejando el premio de viaje y la invitación al jugador que no abandonó el torneo. Ese jugador luego es libre de repartir el resto de los premios como lo acordaron. El pasaje y la invitación son un único ítem y no pueden separarse."></example>
+            <example text="Ejemplo: En la final de un Players Tour Qualifier que ofrece un premio en pasaje y una invitación al ganador, los dos finalistas pueden acordar dividir los premios del torneo, pero ese acuerdo no puede alterar el resultado de la partida. Un jugador debe abandonar el torneo, dejando el premio de viaje y la invitación al jugador que no abandonó el torneo. Ese jugador luego es libre de repartir el resto de los premios como lo acordaron. El pasaje y la invitación son un único ítem y no pueden separarse."></example>
             <annotation text="Nota que, para que un evento termine en este punto, los jugadores tienen que acordar quién de ellos abandona el torneo, y el resultado debe ser reportado como “Gana por abandono”, ya que no se jugó la partida. Un reparto de premios antes de la final solo está permitido cuando los premios son solo dinero y/o producto sellado. Si hay una invitación u otro premio que no sea monetario ni producto sellado, el premio no puede ser dividido antes de la final."></annotation>
         </point>
         <point text="5.3 Apuestas">
@@ -834,14 +837,15 @@
             <point text="• Colección básica 2019"></point>
             <point text="• Gremios de Rávnica"></point>
             <point text="• La lealtad de Rávnica"></point>
-            <point text="• La guerra de la chispa (desde el 03 de mayo de 2019)"></point>
+            <point text="• La guerra de la chispa"></point>
+            <point text="• Colección básica 2020 (desde el 12 de julio de 2019)"></point>
             <point text="* Global Deck Series: Jiang Yanggu &amp; Mu Yanling será legal en el formato Estándar solo en China. Dejará el formato Estándar junto con Dominaria."></point>
             <point text="Las cartas de los mazos de bienvenida de la Colección básica 2019 tienen el símbolo de expansión de la Colección básica 2019 y se consideran parte de la Colección básica 2019. Todas las cartas en los mazos de bienvenida de la Colección básica 2019 son legales para jugar en formato Estándar y rotan fuera del formato Estándar al mismo tiempo que la Colección básica 2019."></point>
             <point text="Los mazos de Planeswalker contienen diez (10) cartas que, aunque no aparecen en los sobres de la expansión, se consideran parte de la expansión lanzada al mismo tiempo que los mazos de Planeswalker. Estas cartas tienen el mismo símbolo de expansión que las cartas de esa expansión, y son legales para jugar en el formato Estándar, y rotan fuera del formato Estándar al mismo tiempo que la expansión."></point>
             <point text="Las cartas promocionales “Buy-a-Box”, aunque no aparezcan en sobres, se consideran parte de la expansión lanzada concurrentemente con esas cartas promocionales. Estas cartas tienen el mismo símbolo de expansión que las cartas de esa expansión, y son legales para jugar en el formato Estándar, y rotan fuera del formato Estándar al mismo tiempo que la expansión."></point>
             <annotation text="Si bien las cartas de los Mazos de Planeswalkers no pueden ser abiertas en booster packs, ellas aún son legales en el formato Standard. Tenga especial cuidado cuando verifiquen la legalidad de cartas como estas."></annotation>
             <point text="Las siguientes cartas están prohibidas en torneos Estándar."></point>
-            <point text="• Ferocidón impetuoso"></point>
+            <point text="No hay cartas baneadas en Estándar"></point>
         </point>
         <point text="6.4 Construcción de Mazos en Formato Modern">
             <annotation text="Estas son las colecciones válidas en Modern. Considera que se incluyen las fechas en que las colecciones entran en Modern, pero ninguna colección abandonara el formato. Esta sección se actualiza con cada lanzamiento de las MTR para así reflejar las nuevas colecciones."></annotation>
@@ -908,8 +912,9 @@
             <point text="• Colección básica Magic 2019"></point>
             <point text="• Gremios de Rávnica"></point>
             <point text="• La lealtad de Rávnica"></point>
-            <point text="• La guerra de la chispa (desde el 3 de mayo de 2019)"></point>
-            <point text="• Horizontes de Modern (desde el 14 de junio de 2019)"></point>
+            <point text="• La guerra de la chispa"></point>
+            <point text="• Horizontes de Modern"></point>
+            <point text="• Colección básica 2020 (desde el 12 de julio de 2019)"></point>
             <point text="Las siguientes cartas están prohibidas en torneos Modern:"></point>
             <point text="• Guarida antigua"></point>
             <point text="• Vaina de nacimiento"></point>
@@ -926,8 +931,9 @@
             <point text="• Troltumba golgari"></point>
             <point text="• Gran horno"></point>
             <point text="• Cenit del sol verde"></point>
+            <point text="• Hogaak, necrópolis resurgida"></point>
             <point text="• Hipergénesis"></point>
-            <point text="• Herrería del Clan Krark (desde el 25 de enero de 2019)"></point>
+            <point text="• Herrería del Clan Krark"></point>
             <point text="• Tropiezo mental"></point>
             <point text="• Reflexionar"></point>
             <point text="• Preordinar"></point>
@@ -939,7 +945,6 @@
             <point text="• Trompo adivinador del sensei"></point>
             <point text="• Engrampacráneos"></point>
             <point text="• Gemelo astillado"></point>
-            <point text="• Mística fragua de piedra"></point>
             <point text="• Floración estival"></point>
             <point text="• Crucero del tesoro"></point>
             <point text="• Árbol de los cuentos"></point>
@@ -967,11 +972,12 @@
             <point text="• Consulta Demoníaca"></point>
             <point text="• Tutor demoníaco"></point>
             <point text="• Hurgar en el tiempo"></point>
-            <point text="• Fastbond"></point>
             <point text="• Destello"></point>
             <point text="• Sonda gitáxica"></point>
+            <point text="• Troltumba golgar"></point>i
             <point text="• Borbotón"></point>
             <point text="• Imperial Seal"></point>
+            <point text="• Karn, el Gran Creador"></point>
             <point text="• Library of Alexandria"></point>
             <point text="• Diamante Ojo de León"></point>
             <point text="• Gólem de piedraimán"></point>
@@ -979,6 +985,7 @@
             <point text="• Cripta de maná"></point>
             <point text="• Cofre de maná"></point>
             <point text="• Jarra del recuerdo"></point>
+            <point text="• Tropiezo mental"></point>
             <point text="• Pergamino mercantil"></point>
             <point text="• Anhelo de la mente"></point>
             <point text="• Mentor del monasterio"></point>
@@ -988,6 +995,7 @@
             <point text="• Mox Ruby"></point>
             <point text="• Mox Sapphire"></point>
             <point text="• Tutor místico"></point>
+            <point text="• Forja mística"></point>
             <point text="• Necropotencia"></point>
             <point text="• Reflexionar"></point>
             <point text="• Anillo solar"></point>
@@ -1076,7 +1084,7 @@
             <annotation text="Una de las preguntas más frecuentes hechas por jugadores novatos es si tienen permitido jugar con más de cuatro copias de una carta en torneos Limitados. La respuesta es ¡sí! Haz mención de que por supuesto pueden jugar con esas cartas en su mazo principal, o que tienen permitido usar el resto en su sideboard. Una buena idea es comentarle de antemano esto a los jugadores que tengan más de cuatro copias de alguna carta particularmente buena. Esto puede ayudar a  prevenir potenciales acusaciones de estar haciendo trampa."></annotation>
         </point>
         <point text="7.2 Uso de cartas en torneos limitado">
-            <point text="Las cartas se deben recibir directo de oficiales de torneo. Este producto debe ser nuevo y no abierto anteriormente. Los torneos de Pro Tour, Grand Prix, World Magic Cup y World Championship pueden entregar sobres abiertos que fueron sellados. Cada jugador (o equipo) debe recibir exactamente la misma cantidad y tipo de producto que todos los otros participantes en el torneo. Por ejemplo, si un jugador recibe tres sobres de Magic Orígenes para un booster draft, todos los otros jugadores deben también recibir tres sobres de Magic Orígenes."></point>
+            <point text="Las cartas se deben recibir directo de oficiales de torneo. Este producto debe ser nuevo y no abierto anteriormente. Los torneos de Magic Tabletop Mythic Championship, Players Tour, Players Tour Finals, Grand Prix y World Championship pueden entregar sobres abiertos que fueron sellados. Cada jugador (o equipo) debe recibir exactamente la misma cantidad y tipo de producto que todos los otros participantes en el torneo. Por ejemplo, si un jugador recibe tres sobres de Magic Orígenes para un booster draft, todos los otros jugadores deben también recibir tres sobres de Magic Orígenes."></point>
             <point text="Solo las cartas de las expansiones de los sobres abiertos (y sólo las cartas abiertas en el conjunto de ese jugador) pueden ser usadas en el mazo de un jugador. Las siguientes son excepciones a esta regla:"></point>
             <point text="• Los jugadores pueden agregar cualquier cantidad de cartas llamadas Llanura, Isla, Pantano, Montaña o Bosque a sus mazos y sideboards. No pueden agregar cartas de tierra básica nevada (por ejemplo, Bosque nevado, etc.) o cartas de tierra básica Yermos, incluso en formatos en los cuales son legales."></point>
             <point text="• Las tierras no básicas de las expansiones Regreso a Rávnica e Intrusión están permitidas cuando son abiertas en sobres de Laberinto del Dragón."></point>
@@ -1126,7 +1134,7 @@
             <annotation text="Generalmente, los jugadores prefieren jugar contra personas de su misma mesa. Recuerda que un jugador que pierde contra alguien de una mesa distinta puede sentir que ha perdido contra fuerzas ajenas a su control."></annotation>
         </point>
         <point text="7.7 Procedimientos de Booster Draft">
-            <point text="Todos los jugadores deben abrir y elegir el mismo tipo de sobre al mismo tiempo. Los jugadores abren sus primer sobre y cuentan las cartas boca abajo, removiendo cartas de ficha, cartas de reglas o cualquier otra carta que no sea de juego. Los jugadores que reciban un número anormal de cartas en cualquier momento, deben informar a un juez de inmediato. Después de tomar el sobre, los jugadores deben quitar y quedarse cualquier carta de tierra básica Llanura, Isla, Pantano, Montaña o Bosque y/o cualquier otra carta que no sea legal para usar en el draft, a menos que el lugar de la tierra básica en el sobre pueda contener cartas seleccionables (como las tierras no básica y las cartas de listado en lugar de la tierra en la Colección básica 2019). Las cartas de tierra básica premium deberían quedar en el sobre y ser elegidas con las otras cartas. Los jugadores eligen una carta de su sobre actual y luego pasan las cartas restantes boca abajo al jugador de su izquierda hasta que todas las cartas hayan sido seleccionadas. Una vez que un jugador ha sacado una carta del sobre y puesto en el único montón boca abajo de cartas elegidas, se considera seleccionada y no se puede regresar al sobre."></point>
+            <point text="Todos los jugadores deben abrir y elegir el mismo tipo de sobre al mismo tiempo. Los jugadores abren sus primer sobre y cuentan las cartas boca abajo, removiendo cartas de ficha, cartas de reglas o cualquier otra carta que no sea de juego. Los jugadores que reciban un número anormal de cartas en cualquier momento, deben informar a un juez de inmediato. Los jugadores eligen una carta de su sobre actual y luego pasan las cartas restantes boca abajo al jugador de su izquierda hasta que todas las cartas hayan sido seleccionadas. Una vez que un jugador ha sacado una carta del sobre y puesto en el único montón boca abajo de cartas elegidas, se considera seleccionada y no se puede regresar al sobre."></point>
             <annotation text="Los jugadores que cambian de idea pueden causar problemas o ser cómplices de algún juego de manos. Es una buena idea que los jugadores ubiquen la ayuda/ficha/tierra básica boca arriba para evitar que las cartas no tierra sean accidentalmente removidas del sobre."></annotation>
             <point text="Los jugadores no pueden mostrar la cara frontal de sus cartas elegidas o el contenido de su sobre actual a otros participantes en el draft, y deben tomar los recaudos razonables para mantener esa información fuera de la vista de otros jugadores. No se permite a los jugadores revelar información oculta de ningún tipo a otros participantes del draft relacionadas a su elección de carta o a lo que quieren que otros elijan. (Excepción: Esto no se aplica a cartas de dos caras, cuyas ambas caras pueden estar mostradas durante un draft)."></point>
             <annotation text="Los drafteadores deberían sostener sus cartas de tal manera que solo ellos pudieran verlas. Puede que se les necesite recordar mantener sus cartas en posición vertical."></annotation>
@@ -1260,7 +1268,7 @@
             <point text="La cantidad recomendada de rondas para los torneos suizos se puede encontrar en el Apéndice E."></point>
         </point>
         <point text="10.3 Torneos sólo por invitación">
-            <point text="Los torneos sólo por invitación tienen criterios de clasificación adicionales para la participación de jugadores. La lista de invitación para los torneos Premier está definida en el documenton Magic: The Gathering Premier Event Invitation Policy. Los Organizadores de torneos pueden realizar y sancionar torneos no premier solo por invitación siempre que estén sancionados como WPN Premium Event."></point>
+            <point text="Los torneos sólo por invitación tienen criterios de clasificación adicionales para la participación de jugadores. La lista de invitación para los torneos Premier está definida en el documenton Magic: The Gathering Premier Event Invitation Policy. Los Organizadores de torneos pueden realizar y sancionar torneos no premier solo por invitación siempre que estén sancionados como WPN Premium Event o Magic Premier Series."></point>
         </point>
         <point text="10.4 Algoritmo de emparejamiento">
             <point text="A menos que se anuncie lo contrario, se asume que los torneos siguen el algoritmo de emparejamiento suizo. Algunos torneos pueden continuar con unas rondas de eliminación simple entre los mejores 2, 4 u 8 (u otro número) jugadores después de que terminan las rondas suizas. El algoritmo de parejas suizas está modificado para los torneos Booster Draft tal como se explica en la sección 7.6."></point>
@@ -1271,7 +1279,8 @@
             <point text="Usa un método aleatorio para sentar a los jugadores en la mesa de draft y realizar el draft."></point>
             <point text="Una vez terminado el draft, el jugador en la posición 1 juega contra el jugador en la posición 5, el jugador en la posición 2 juega contra el jugador en la posición 6, el jugador en la posición 3 juega contra el jugador en la posición 7 y el jugador en la posición 4 juega contra el jugador en la posición 8. Los ganadores de las partidas de los asientos 1/5 y 3/7 juegan entre ellos en la siguiente ronda de eliminación. Los ganadores de las partidas de los asientos 2/6 y 4/8 juegan entre ellos en la siguiente ronda de eliminación. Los jugadores restantes juegan en la última ronda de eliminatoria."></point>
             <point text="Para los Eventos Premier, las opciones mencionadas son requeridas, no opcionales."></point>
-            <point text="Los Eventos Premier incluyen los siguientes torneos: Magic: The Gathering World Championship, World Magic Cup, World Magic Cup Qualifiers, World Magic Cup Qualifier Last Chance Qualifiers, Pro Tour, Regional Pro Tour Qualifiers, Regional Last Chance Qualifiers, Preliminary Pro Tour Qualifiers, Grand Prix, Grand Prix Trials, WPN Premium Tournaments, and WPN Premium Qualifiers, Super Sunday Series Championship, Super Sunday Series Qualifiers."></point>
-        </point>
+            <point text="Los Eventos Premier incluyen los siguientes torneos: Magic: The Gathering World Championship, Magic Tabletop Mythic Championship, Players Tour, Players Tour Finals, WPN Qualifiers, WPN Preliminary Events, Players Tour Qualifiers, Magic Premier Series, Grand Prix, Grand Prix Trials, WPN Premium Tournaments, and WPN Premium Qualifiers."></point>
+			<point text="Excepción: Grand Prix Trials y Magic Tabletop Mythic Players Tour Qualifiers que se celebran en un evento de MagicFest tienen una estructura especial. Los participantes en Grand Prix Trials o Magic Tabletop Mythic Players Tour Qualifiers en eventos de MagicFest deberían consultar la hoja informativa del evento de MagicFest para informarse de la estructura de esos torneos."></point>
+		</point>
     </point>
 </point>

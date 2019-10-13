@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
@@ -13,31 +14,28 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import org.apache.commons.net.ftp.FTP;
+import org.apache.commons.net.ftp.FTPClient;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
 
 public class LifeActivity extends AppCompatActivity {
 
-    public final static char LIFE = '♥';
-    public final static char POISON = 'ϕ';
+    private Button btn_reset, btn_registry, btn_lifepoison;
+    private TextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
+    private TextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
+    private ConstraintLayout cly_p1life, cly_p1setlife, cly_p2life, cly_p2setlife;
+    private ScrollView scroll_p1, scroll_p2;
+    private Keyboard keyboard_p1, keyboard_p2;
+    private KeyboardView keyboardView_p1, keyboardView_p2;
+    private CountDownTimer timerp1 = null;
+    private CountDownTimer timerp2 = null;
 
-    Button btn_reset, btn_registry, btn_lifepoison;
-    TextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
-    TextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
-    ConstraintLayout cly_p1life, cly_p1setlife, cly_p2life, cly_p2setlife;
-    ScrollView scroll_p1, scroll_p2;
-    Keyboard keyboard_p1, keyboard_p2;
-    KeyboardView keyboardView_p1, keyboardView_p2;
-    CountDownTimer timerp1 = null;
-    CountDownTimer timerp2 = null;
-
-    int p1life = 0;
-    int p2life = 0;
-    int p1poison = 0;
-    int p2poison = 0;
-    char mode = LIFE;
-
-    static int waitUntilRegister = 4000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,11 @@ public class LifeActivity extends AppCompatActivity {
 
         linkViews();
         setListeners();
-        reset();
+
+        txv_p1life.setText(Repository.p1life + "");
+        txv_p1lifetrack.setText(Repository.p1log);
+        txv_p2life.setText(Repository.p2life + "");
+        txv_p2lifetrack.setText(Repository.p2log);
     }
 
     private void linkViews() {
@@ -82,6 +84,7 @@ public class LifeActivity extends AppCompatActivity {
         keyboardView_p2.setKeyboard(keyboard_p2);
         keyboardView_p1.setPreviewEnabled(false);
         keyboardView_p2.setPreviewEnabled(false);
+
     }
 
     private void setListeners() {
@@ -97,7 +100,7 @@ public class LifeActivity extends AppCompatActivity {
             @Override
             public void onKey(int i, int[] ints) {
                 String number = txv_p1setlife.getText().toString();
-                if(mode == POISON) {
+                if(Repository.mode == Repository.POISON) {
                     number = number.substring(0, number.length()-1);
                 }
                 switch (i) {
@@ -117,8 +120,8 @@ public class LifeActivity extends AppCompatActivity {
                         else {
                             txv_p1setlife.setText(i + "");
                         }
-                        if(mode == POISON) {
-                            txv_p1setlife.setText(txv_p1setlife.getText().toString() + POISON);
+                        if(Repository.mode == Repository.POISON) {
+                            txv_p1setlife.setText(txv_p1setlife.getText().toString() + Repository.POISON);
                         }
                         break;
                     case Repository.CodeSign:
@@ -130,8 +133,8 @@ public class LifeActivity extends AppCompatActivity {
                         else {
                             txv_p1setlife.setText(number.substring(1));
                         }
-                        if(mode == POISON) {
-                            txv_p1setlife.setText(txv_p1setlife.getText().toString() + POISON);
+                        if(Repository.mode == Repository.POISON) {
+                            txv_p1setlife.setText(txv_p1setlife.getText().toString() + Repository.POISON);
                         }
                         break;
                     case Repository.CodeDelete:
@@ -141,8 +144,8 @@ public class LifeActivity extends AppCompatActivity {
                         else {
                             txv_p1setlife.setText("0");
                         }
-                        if(mode == POISON) {
-                            txv_p1setlife.setText(txv_p1setlife.getText().toString() + POISON);
+                        if(Repository.mode == Repository.POISON) {
+                            txv_p1setlife.setText(txv_p1setlife.getText().toString() + Repository.POISON);
                         }
                         break;
                     case Repository.CodeCancel:
@@ -157,15 +160,21 @@ public class LifeActivity extends AppCompatActivity {
                         if(number.length() > 9) {
                             number = number.substring(0, 9);
                         }
-                        if(mode == LIFE) {
-                            p1life = Integer.parseInt(number);
-                            txv_p1life.setText(p1life + "");
-                            txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + number);
+                        if(Repository.mode == Repository.LIFE) {
+                            Repository.p1life = Integer.parseInt(number);
+                            txv_p1life.setText(Repository.p1life + "");
+                            SendFile( Repository.P1_LIFE_FILENAME, Repository.p1life + "");
+                            Repository.p1log += "\n" + number;
+                            txv_p1lifetrack.setText(Repository.p1log);
+                            SendFile( Repository.P1_LOG_FILENAME, txv_p1lifetrack.getText().toString());
                         }
                         else {
-                            p1poison = Integer.parseInt(number);
-                            txv_p1life.setText(p1poison + "" + POISON);
-                            txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + number + POISON);
+                            Repository.p1poison = Integer.parseInt(number);
+                            txv_p1life.setText(Repository.p1poison + "" + Repository.POISON);
+                            SendFile( Repository.P1_POISON_FILENAME, Repository.p1poison + "");
+                            Repository.p1log += "\n" + number + Repository.POISON;
+                            txv_p1lifetrack.setText(Repository.p1log);
+                            SendFile( Repository.P1_LOG_FILENAME, txv_p1lifetrack.getText().toString());
                         }
                         cly_p1life.setVisibility(View.VISIBLE);
                         cly_p1setlife.setVisibility(View.INVISIBLE);
@@ -209,7 +218,7 @@ public class LifeActivity extends AppCompatActivity {
             @Override
             public void onKey(int i, int[] ints) {
                 String number = txv_p2setlife.getText().toString();
-                if(mode == POISON) {
+                if(Repository.mode == Repository.POISON) {
                     number = number.substring(0, number.length()-1);
                 }
                 switch (i) {
@@ -229,8 +238,8 @@ public class LifeActivity extends AppCompatActivity {
                         else {
                             txv_p2setlife.setText(i + "");
                         }
-                        if(mode == POISON) {
-                            txv_p2setlife.setText(txv_p2setlife.getText().toString() + POISON);
+                        if(Repository.mode == Repository.POISON) {
+                            txv_p2setlife.setText(txv_p2setlife.getText().toString() + Repository.POISON);
                         }
                         break;
                     case Repository.CodeSign:
@@ -242,8 +251,8 @@ public class LifeActivity extends AppCompatActivity {
                         else {
                             txv_p2setlife.setText(number.substring(1));
                         }
-                        if(mode == POISON) {
-                            txv_p2setlife.setText(txv_p2setlife.getText().toString() + POISON);
+                        if(Repository.mode == Repository.POISON) {
+                            txv_p2setlife.setText(txv_p2setlife.getText().toString() + Repository.POISON);
                         }
                         break;
                     case Repository.CodeDelete:
@@ -253,8 +262,8 @@ public class LifeActivity extends AppCompatActivity {
                         else {
                             txv_p2setlife.setText("0");
                         }
-                        if(mode == POISON) {
-                            txv_p2setlife.setText(txv_p2setlife.getText().toString() + POISON);
+                        if(Repository.mode == Repository.POISON) {
+                            txv_p2setlife.setText(txv_p2setlife.getText().toString() + Repository.POISON);
                         }
                         break;
                     case Repository.CodeCancel:
@@ -269,15 +278,21 @@ public class LifeActivity extends AppCompatActivity {
                         if(number.length() > 9) {
                             number = number.substring(0, 9);
                         }
-                        if(mode == LIFE) {
-                            p2life = Integer.parseInt(number);
-                            txv_p2life.setText(p2life + "");
-                            txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + number);
+                        if(Repository.mode == Repository.LIFE) {
+                            Repository.p2life = Integer.parseInt(number);
+                            txv_p2life.setText(Repository.p2life + "");
+                            SendFile( Repository.P2_LIFE_FILENAME, Repository.p2life + "");
+                            Repository.p2log += "\n" + number;
+                            txv_p2lifetrack.setText(Repository.p2log);
+                            SendFile( Repository.P2_LOG_FILENAME, txv_p2lifetrack.getText().toString());
                         }
                         else {
-                            p2poison = Integer.parseInt(number);
-                            txv_p2life.setText(p2poison + "" + POISON);
-                            txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + number + POISON);
+                            Repository.p2poison = Integer.parseInt(number);
+                            txv_p2life.setText(Repository.p2poison + "" + Repository.POISON);
+                            SendFile( Repository.P2_LIFE_FILENAME, Repository.p2poison + "");
+                            Repository.p2log += "\n" + number + Repository.POISON;
+                            txv_p2lifetrack.setText(Repository.p2log);
+                            SendFile( Repository.P2_LOG_FILENAME, txv_p2lifetrack.getText().toString());
                         }
                         cly_p2life.setVisibility(View.VISIBLE);
                         cly_p2setlife.setVisibility(View.INVISIBLE);
@@ -339,22 +354,28 @@ public class LifeActivity extends AppCompatActivity {
                 if(timerp1 != null) {
                     timerp1.cancel();
                 }
-                if (mode == LIFE) {
+                if (Repository.mode == Repository.LIFE) {
                     int newlife = Integer.parseInt(txv_p1life.getText().toString());
-                    if(p1life != newlife) {
-                        p1life = newlife;
-                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1life);
+                    if(Repository.p1life != newlife) {
+                        Repository.p1life = newlife;
+                        SendFile( Repository.P1_LIFE_FILENAME, Repository.p1life + "");
+                        Repository.p1log += "\n" + Repository.p1life;
+                        txv_p1lifetrack.setText(Repository.p1log);
+                        SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
                     }
-                    txv_p1setlife.setText(p1life + "");
+                    txv_p1setlife.setText(Repository.p1life + "");
                 }
                 else {
                     String s = txv_p1life.getText().toString();
                     int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                    if(p1poison != newlife) {
-                        p1poison = newlife;
-                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1poison + POISON);
+                    if(Repository.p1poison != newlife) {
+                        Repository.p1poison = newlife;
+                        SendFile( Repository.P1_POISON_FILENAME, Repository.p1poison + "");
+                        Repository.p1log += "\n" + Repository.p1poison + Repository.POISON;
+                        txv_p1lifetrack.setText(Repository.p1log);
+                        SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
                     }
-                    txv_p1setlife.setText(p1poison + "" + POISON);
+                    txv_p1setlife.setText(Repository.p1poison + "" + Repository.POISON);
                 }
                 cly_p1life.setVisibility(View.INVISIBLE);
                 scroll_p1.setVisibility(View.GONE);
@@ -369,22 +390,28 @@ public class LifeActivity extends AppCompatActivity {
                 if(timerp2 != null) {
                     timerp2.cancel();
                 }
-                if (mode == LIFE) {
+                if (Repository.mode == Repository.LIFE) {
                     int newlife = Integer.parseInt(txv_p2life.getText().toString());
-                    if(p2life != newlife) {
-                        p2life = newlife;
-                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2life);
+                    if(Repository.p2life != newlife) {
+                        Repository.p2life = newlife;
+                        SendFile( Repository.P2_LIFE_FILENAME, Repository.p2life + "");
+                        Repository.p2log += "\n" + Repository.p2life;
+                        txv_p2lifetrack.setText(Repository.p2log);
+                        SendFile( Repository.P1_LOG_FILENAME, Repository.p2log);
                     }
-                    txv_p2setlife.setText(p2life + "");
+                    txv_p2setlife.setText(Repository.p2life + "");
                 }
                 else {
                     String s = txv_p2life.getText().toString();
                     int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                    if(p2poison != newlife) {
-                        p2poison = newlife;
-                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2poison + POISON);
+                    if(Repository.p2poison != newlife) {
+                        Repository.p2poison = newlife;
+                        SendFile( Repository.P2_POISON_FILENAME, Repository.p2poison + "");
+                        Repository.p2log += "\n" + Repository.p2poison + Repository.POISON;
+                        txv_p2lifetrack.setText(Repository.p2log);
+                        SendFile( Repository.P1_LOG_FILENAME, Repository.p2log);
                     }
-                    txv_p2setlife.setText(p2poison + "" + POISON);
+                    txv_p2setlife.setText(Repository.p2poison + "" + Repository.POISON);
                 }
                 cly_p2life.setVisibility(View.INVISIBLE);
                 scroll_p2.setVisibility(View.GONE);
@@ -429,71 +456,91 @@ public class LifeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(timerp1 != null) {
                     timerp1.cancel();
-                    if (mode == LIFE) {
+                    if (Repository.mode == Repository.LIFE) {
                         int newlife = Integer.parseInt(txv_p1life.getText().toString());
-                        if(p1life != newlife) {
-                            p1life = newlife;
-                            txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1life);
+                        if(Repository.p1life != newlife) {
+                            Repository.p1life = newlife;
+                            SendFile( Repository.P1_LIFE_FILENAME, Repository.p1life + "");
+                            Repository.p1log += "\n" + Repository.p1life;
+                            txv_p1lifetrack.setText(Repository.p1log);
+                            SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
                         }
                     }
                     else {
                         String s = txv_p1life.getText().toString();
                         int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                        if(p1poison != newlife) {
-                            p1poison = newlife;
-                            txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1poison + POISON);
+                        if(Repository.p1poison != newlife) {
+                            Repository.p1poison = newlife;
+                            SendFile( Repository.P1_POISON_FILENAME, Repository.p1poison + "");
+                            Repository.p1log += "\n" + Repository.p1poison + Repository.POISON;
+                            txv_p1lifetrack.setText(Repository.p1log);
+                            SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
                         }
                     }
                 }
                 if(timerp2 != null) {
                     timerp2.cancel();
-                    if (mode == LIFE) {
+                    if (Repository.mode == Repository.LIFE) {
                         int newlife = Integer.parseInt(txv_p2life.getText().toString());
-                        if(p2life != newlife) {
-                            p2life = newlife;
-                            txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2life);
+                        if(Repository.p2life != newlife) {
+                            Repository.p2life = newlife;
+                            SendFile( Repository.P2_LIFE_FILENAME, Repository.p2life + "");
+                            Repository.p2log += "\n" + Repository.p2life;
+                            txv_p2lifetrack.setText(Repository.p2log);
+                            SendFile( Repository.P2_LOG_FILENAME, Repository.p2log);
                         }
                     }
                     else {
                         String s = txv_p2life.getText().toString();
                         int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                        if(p2poison != newlife) {
-                            p2poison = newlife;
-                            txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2poison + POISON);
+                        if(Repository.p2poison != newlife) {
+                            Repository.p2poison = newlife;
+                            SendFile( Repository.P2_POISON_FILENAME, Repository.p2poison + "");
+                            Repository.p2log += "\n" + Repository.p2poison + Repository.POISON;
+                            txv_p2lifetrack.setText(Repository.p2log);
+                            SendFile( Repository.P2_LOG_FILENAME, Repository.p2log);
                         }
                     }
                 }
-                if(mode == LIFE) {
-                    mode = POISON;
-                    txv_p1life.setText(p1poison + "" + POISON);
-                    txv_p2life.setText(p2poison + "" + POISON);
-                    txv_p1setlife.setText(p1poison + "" + POISON);
-                    txv_p2setlife.setText(p2poison + "" + POISON);
+                if(Repository.mode == Repository.LIFE) {
+                    Repository.mode = Repository.POISON;
+                    txv_p1life.setText(Repository.p1poison + "" + Repository.POISON);
+                    txv_p2life.setText(Repository.p2poison + "" + Repository.POISON);
+                    txv_p1setlife.setText(Repository.p1poison + "" + Repository.POISON);
+                    txv_p2setlife.setText(Repository.p2poison + "" + Repository.POISON);
                 }
                 else {
-                    mode = LIFE;
-                    txv_p1life.setText(p1life + "");
-                    txv_p2life.setText(p2life + "");
-                    txv_p1setlife.setText(p1life + "");
-                    txv_p2setlife.setText(p2life + "");
+                    Repository.mode = Repository.LIFE;
+                    txv_p1life.setText(Repository.p1life + "");
+                    txv_p2life.setText(Repository.p2life + "");
+                    txv_p1setlife.setText(Repository.p1life + "");
+                    txv_p2setlife.setText(Repository.p2life + "");
                 }
-                btn_lifepoison.setText(mode + "");
+                btn_lifepoison.setText(Repository.mode + "");
             }
         });
 
     }
 
     public void reset() {
-        p1life = 20;
-        p2life = 20;
-        p1poison = 0;
-        p2poison = 0;
-        mode = LIFE;
-        btn_lifepoison.setText(mode + "");
-        txv_p1life.setText("20");
-        txv_p2life.setText("20");
-        txv_p1lifetrack.setText("20");
-        txv_p2lifetrack.setText("20");
+        Repository.p1life = 20;
+        Repository.p2life = 20;
+        Repository.p1poison = 0;
+        Repository.p2poison = 0;
+        Repository.p1log = "20";
+        Repository.p2log = "20";
+        SendFile( Repository.P1_LIFE_FILENAME, Repository.p1life + "");
+        SendFile( Repository.P1_POISON_FILENAME, Repository.p1poison+ "");
+        SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
+        SendFile( Repository.P2_LIFE_FILENAME, Repository.p1life + "");
+        SendFile( Repository.P2_POISON_FILENAME, Repository.p1poison+ "");
+        SendFile( Repository.P2_LOG_FILENAME, Repository.p2log);
+        Repository.mode = Repository.LIFE;
+        btn_lifepoison.setText(Repository.mode + "");
+        txv_p1life.setText(Repository.p1life + "");
+        txv_p2life.setText(Repository.p2life + "");
+        txv_p1lifetrack.setText(Repository.p1log);
+        txv_p2lifetrack.setText(Repository.p2log);
         cly_p1life.setVisibility(View.VISIBLE);
         cly_p2life.setVisibility(View.VISIBLE);
         scroll_p1.setVisibility(View.GONE);
@@ -506,9 +553,9 @@ public class LifeActivity extends AppCompatActivity {
         if(timerp1 != null) {
             timerp1.cancel();
         }
-        if(mode == LIFE) {
+        if(Repository.mode == Repository.LIFE) {
             txv_p1life.setText(Integer.parseInt(txv_p1life.getText().toString()) + value + "");
-            timerp1 = new CountDownTimer(waitUntilRegister, 100) {
+            timerp1 = new CountDownTimer(Repository.lifeDelay, 100) {
 
                 @Override
                 public void onTick(long millisUntilEnd) {
@@ -517,9 +564,12 @@ public class LifeActivity extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     int newlife = Integer.parseInt(txv_p1life.getText().toString());
-                    if(p1life != newlife) {
-                        p1life = newlife;
-                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1life);
+                    if(Repository.p1life != newlife) {
+                        Repository.p1life = newlife;
+                        SendFile( Repository.P1_LIFE_FILENAME, Repository.p1life + "");
+                        Repository.p1log += "\n" + Repository.p1life;
+                        txv_p1lifetrack.setText(Repository.p1log);
+                        SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
                         scroll_p1.fullScroll(View.FOCUS_DOWN);
                     }
                 }
@@ -528,8 +578,8 @@ public class LifeActivity extends AppCompatActivity {
         }
         else {
             String s = txv_p1life.getText().toString();
-            txv_p1life.setText(Integer.parseInt(s.substring(0, s.length()-1)) + value + "" + POISON);
-            timerp1 = new CountDownTimer(waitUntilRegister, 100) {
+            txv_p1life.setText(Integer.parseInt(s.substring(0, s.length()-1)) + value + "" + Repository.POISON);
+            timerp1 = new CountDownTimer(Repository.lifeDelay, 100) {
 
                 @Override
                 public void onTick(long millisUntilEnd) {
@@ -539,9 +589,12 @@ public class LifeActivity extends AppCompatActivity {
                 public void onFinish() {
                     String s = txv_p1life.getText().toString();
                     int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                    if(p1poison != newlife) {
-                        p1poison = newlife;
-                        txv_p1lifetrack.setText(txv_p1lifetrack.getText().toString() + "\n" + p1poison + POISON);
+                    if(Repository.p1poison != newlife) {
+                        Repository.p1poison = newlife;
+                        SendFile( Repository.P1_POISON_FILENAME, Repository.p1poison + "");
+                        Repository.p1log += "\n" + Repository.p1poison + Repository.POISON;
+                        txv_p1lifetrack.setText(Repository.p1log);
+                        SendFile( Repository.P1_LOG_FILENAME, Repository.p1log);
                         scroll_p1.fullScroll(View.FOCUS_DOWN);
                     }
                 }
@@ -554,9 +607,9 @@ public class LifeActivity extends AppCompatActivity {
         if(timerp2 != null) {
             timerp2.cancel();
         }
-        if(mode == LIFE) {
+        if(Repository.mode == Repository.LIFE) {
             txv_p2life.setText(Integer.parseInt(txv_p2life.getText().toString()) + value + "");
-            timerp2 = new CountDownTimer(waitUntilRegister, 100) {
+            timerp2 = new CountDownTimer(Repository.lifeDelay, 100) {
 
                 @Override
                 public void onTick(long millisUntilEnd) {
@@ -565,11 +618,13 @@ public class LifeActivity extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     int newlife = Integer.parseInt(txv_p2life.getText().toString());
-                    if(p2life != newlife) {
-                        p2life = newlife;
-                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2life);
+                    if(Repository.p2life != newlife) {
+                        Repository.p2life = newlife;
+                        SendFile( Repository.P2_LIFE_FILENAME, Repository.p2life + "");
+                        Repository.p2log += "\n" + Repository.p2life;
+                        txv_p2lifetrack.setText(Repository.p2log);
+                        SendFile( Repository.P2_LOG_FILENAME, Repository.p2log);
                         scroll_p2.fullScroll(View.FOCUS_DOWN);
-                        timerp2 = null;
                     }
                 }
             };
@@ -577,8 +632,8 @@ public class LifeActivity extends AppCompatActivity {
         }
         else {
             String s = txv_p2life.getText().toString();
-            txv_p2life.setText(Integer.parseInt(s.substring(0, s.length()-1)) + value + "" + POISON);
-            timerp2 = new CountDownTimer(waitUntilRegister, 100) {
+            txv_p2life.setText(Integer.parseInt(s.substring(0, s.length()-1)) + value + "" + Repository.POISON);
+            timerp2 = new CountDownTimer(Repository.lifeDelay, 100) {
 
                 @Override
                 public void onTick(long millisUntilEnd) {
@@ -588,14 +643,53 @@ public class LifeActivity extends AppCompatActivity {
                 public void onFinish() {
                     String s = txv_p2life.getText().toString();
                     int newlife = Integer.parseInt(s.substring(0, s.length()-1));
-                    if(p2poison != newlife) {
-                        p2poison = newlife;
-                        txv_p2lifetrack.setText(txv_p2lifetrack.getText().toString() + "\n" + p2poison + POISON);
+                    if(Repository.p2poison != newlife) {
+                        Repository.p2poison = newlife;
+                        SendFile(Repository.P2_POISON_FILENAME, Repository.p2poison + "");
+                        Repository.p2log += "\n" + Repository.p2life + Repository.POISON;
+                        txv_p2lifetrack.setText(Repository.p2log);
+                        SendFile(Repository.P2_LOG_FILENAME, Repository.p2log);
                         scroll_p2.fullScroll(View.FOCUS_DOWN);
                     }
                 }
             };
             timerp2.start();
+        }
+    }
+
+    public static void SendFile(String filename, String info) {
+        if(Repository.allowFTP) {
+            final String finalFilename = filename;
+            final String finalInfo = info;
+            AsyncTask< String, Integer, Boolean > task = new AsyncTask< String, Integer, Boolean >()
+            {
+                @Override
+                protected Boolean doInBackground( String... params )
+                {
+                    try {
+                        File textFile = new File(finalFilename);
+                        FileOutputStream fileOutputStream = new FileOutputStream(textFile);
+                        fileOutputStream.write(finalInfo.getBytes());
+                        fileOutputStream.close();
+
+                        FTPClient mFTP = new FTPClient();
+                        mFTP.setRemoteVerificationEnabled(false);
+                        mFTP.setBufferSize(1);
+                        mFTP.connect(Repository.ftpServer, Repository.ftpPort);
+                        mFTP.login(Repository.ftpUser, Repository.ftpPassword);
+                        mFTP.setFileType(FTP.BINARY_FILE_TYPE);
+                        mFTP.enterLocalPassiveMode();
+                        FileInputStream fileInputStream = new FileInputStream(textFile);
+                        mFTP.storeFile(finalFilename,fileInputStream);
+                        fileInputStream.close();
+                        mFTP.logout();
+                        mFTP.disconnect();
+                    }catch(Exception e) {
+                    }
+                    return true;
+                }
+            };
+            task.execute("");
         }
     }
 }

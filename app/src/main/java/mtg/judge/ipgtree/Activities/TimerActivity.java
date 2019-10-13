@@ -5,22 +5,25 @@ import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
 
 public class TimerActivity extends AppCompatActivity {
 
-    TextView txv_starting_time, txv_time;
-    Button btn_edit, btn_play;
-    Keyboard keyboard;
-    KeyboardView keyboardView;
+    private TextView txv_starting_time, txv_time;
+    private Button btn_edit, btn_play;
+    private Keyboard keyboard;
+    private KeyboardView keyboardView;
 
-    int seconds;
-    CountDownTimer timer;
+    private int seconds;
+    private CountDownTimer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +33,16 @@ public class TimerActivity extends AppCompatActivity {
         linkViews();
         setListeners();
 
-        seconds = 60*Integer.parseInt(txv_starting_time.getText().toString());
-        setStartingTime();
-        createTimer();
+        if(Repository.startedCountDown) {
+            btn_play.setText("Reiniciar");
+            setSavedTime();
+            createTimer();
+            timer.start();
+        }
+        else {
+            setStartingTime();
+            createTimer();
+        }
     }
 
     public void linkViews() {
@@ -206,6 +216,17 @@ public class TimerActivity extends AppCompatActivity {
         txv_time.setText(secondsToHoursFormat(seconds));
     }
 
+    public void setSavedTime() {
+        seconds = Repository.seconds - (int)((System.currentTimeMillis()-Repository.wentAway)/1000);
+        if(seconds > 0) {
+            txv_time.setTextColor(getResources().getColor(R.color.colorLightGreen));
+        }
+        else {
+            txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
+        }
+        txv_time.setText(secondsToHoursFormat(seconds));
+    }
+
     public String secondsToHoursFormat(int seconds) {
         int auxSeconds = seconds;
         String res = "";
@@ -225,5 +246,14 @@ public class TimerActivity extends AppCompatActivity {
         }
         res += auxSeconds;
         return res;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(Repository.startedCountDown = btn_play.getText().toString() == "Reiniciar") {
+            Repository.seconds = seconds;
+            Repository.wentAway = System.currentTimeMillis();
+        }
+        super.onBackPressed();
     }
 }
