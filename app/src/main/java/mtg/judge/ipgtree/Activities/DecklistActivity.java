@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
+import mtg.judge.ipgtree.Repository;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class DecklistActivity extends AppCompatActivity {
         setContentView(R.layout.activity_decklist);
 
         linkViews();
+        loadStrings();
         setListeners();
 
         if (savedInstanceState != null) {
@@ -42,7 +44,7 @@ public class DecklistActivity extends AppCompatActivity {
         WriteNumbers();
     }
 
-    public void linkViews() {
+    private void linkViews() {
         btn_reset = findViewById(R.id.btn_reset);
         btn_undo = findViewById(R.id.btn_undo);
         btn_add_1 = findViewById(R.id.btn_add_1);
@@ -53,7 +55,12 @@ public class DecklistActivity extends AppCompatActivity {
         txv_number_list = findViewById(R.id.txv_number_list);
     }
 
-    public void setListeners() {
+    private void loadStrings() {
+        btn_reset.setText(Repository.StringMap(1));
+        btn_undo.setText(Repository.StringMap(3));
+    }
+
+    private void setListeners() {
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,7 +114,7 @@ public class DecklistActivity extends AppCompatActivity {
             auxTotal += numbers.get(i);
             auxList += numbers.get(i) + " ";
         }
-        txv_total.setText("Total: " + auxTotal);
+        txv_total.setText(Repository.StringMap(2) + auxTotal);
         txv_number_list.setText(auxList);
     }
 }

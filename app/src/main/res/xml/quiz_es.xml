@@ -24,11 +24,4 @@
         <answer text="Unsporting Conduct - Theft of Tournament Material, Disqualification"></answer>
         <answer text="Unsporting Conduct - Minor, Match Loss"></answer>
     </question>
-    Pregunta 4
-    <question text="Un jugador cree que ya está vigente el London mulligan y hacer mulligan a 6 robando 7 y poniendo una en el fondo">
-        <answer text="GPE — Mulligan Procedure Error, el jugador elige si hacer mulligan a 5 o regresar la carta puesta en el fondo a su mano, revelarle la mano al oponente y que este elija una carta para barajarla en el mazo"></answer>
-        <answer text="GPE — Mulligan Procedure Error, el jugador hace mulligan a 5"></answer>
-        <answer text="GPE - Hidden Card Error, el jugador regresa la carta puesta en el fondo a su mano, le revelar la mano al oponente y este elige una carta para barajarla en el mazo"></answer>
-        <answer text="TE - Communication Policy Violation, Warning, hacemos backup y el jugador vuelve a hacer mulligan a 6"></answer>
-    </question>
 </quiz>

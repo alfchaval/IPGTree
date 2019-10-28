@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quiz>
+    Puedes añadir comentarios (como este) dentro de cualquier etiqueta, solo se interpretan los atributos.
+    Las respuestas deben estar en una sola línea, ya que un salto de línea en el xml se interpreta como un espacio, para añadir un salto de línea se usa \n
+    La respuesta correcta debe ser la primera
+    Pregunta 1
+    <question text="Near the end of the round, two players realize that they have swapped their seats and have been playing against the wrong opponent">
+        <answer text="Players in the wrong seat get TE - Tardiness, Match Loss"></answer>
+        <answer text="Players in the wrong seat get TE - Tardiness, Match Loss and are dropped"></answer>
+        <answer text="Players in the wrong seat get TE - Tardiness, Game Loss and play againt the correct opponent"></answer>
+        <answer text="Pairings are changed to reflect the played matches"></answer>
+    </question>
+    Pregunta 2
+    <question text="A player forget to discard in their clean up step with 8 cards in hand, and they notice it after drawing a card in their next draw step">
+        <answer text="GPE - Game Rule Violation, Warning, that player discard a card. The opponent get GPE - Failure to Maintain Game, Warning"></answer>
+        <answer text="GPE - Game Rule Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+        <answer text="GPE - Hidden Card Error, Warning, the player reveal their hand, the opponent choose what card discard"></answer>
+        <answer text="TE - Communication Policy Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+    </question>
+    Pregunta 3
+    <question text="A player draw another player's wallet">
+        <answer text="There is no penalty, but TO should remove them from tournament and should be reported to dci"></answer>
+        <answer text="There is no penalty, let the players manage the situation"></answer>
+        <answer text="Unsporting Conduct - Theft of Tournament Material, Disqualification"></answer>
+        <answer text="Unsporting Conduct - Minor, Match Loss"></answer>
+    </question>
+</quiz>

@@ -3,12 +3,13 @@
     package="mtg.judge.ipgtree">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/isperia"
+        android:icon="@drawable/urza"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -28,14 +29,12 @@
             android:screenOrientation="nosensor"
             />
         <activity
-            android:name="mtg.judge.ipgtree.Activities.DocumentsMenuActivity"
+            android:name="mtg.judge.ipgtree.Activities.OracleActivity"
             android:screenOrientation="nosensor"
             />
         <activity
-            android:name="mtg.judge.ipgtree.Activities.OracleActivity"
-            />
-        <activity
             android:name="mtg.judge.ipgtree.Activities.DocumentActivity"
+            android:screenOrientation="nosensor"
             />
         <activity
             android:name="mtg.judge.ipgtree.Activities.TreeActivity"
@@ -61,9 +60,12 @@
             android:name="mtg.judge.ipgtree.Activities.SettingsActivity"
             android:screenOrientation="nosensor"
             />
-        <activity
-            android:name="mtg.judge.ipgtree.Activities.AboutActivity"
+
+        <receiver
+            android:name=".TimerReceiver"
+            android:exported="true"
             />
+
     </application>
 
 </manifest>

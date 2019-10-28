@@ -19,7 +19,6 @@
         app:layout_constraintEnd_toStartOf="@+id/actv_number"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/scrollview"
-        android:hint="Introduce una carta en inglés"
         android:inputType="text"
         />
 

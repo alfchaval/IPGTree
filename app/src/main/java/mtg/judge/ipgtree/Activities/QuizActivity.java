@@ -219,15 +219,15 @@ public class QuizActivity extends AppCompatActivity {
             imv_arrow_right.setVisibility(View.INVISIBLE);
             txv_question_number.setText("");
             if (finished) {
-                tv_question.setText("Tu puntuación total es: " + totalPoints() + "\n\nPuedes ver las respuestas correctas desplazándote por las preguntas con las flechas");
+                tv_question.setText(Repository.StringMap(50) + totalPoints() + Repository.StringMap(49));
             }
             else {
-                tv_question.setText("No hay más preguntas, pulsa en finalizar para comprobar tus resultados... o puedes usar la flecha para volver y repasar tus respuestas");
+                tv_question.setText(Repository.StringMap(48));
                 if (answerTVs.size() < 1) {
                     addTextView(index);
                 }
                 answerTVs.get(index).setVisibility(View.VISIBLE);
-                answerTVs.get(index).setText("FINALIZAR");
+                answerTVs.get(index).setText(Repository.StringMap(47));
                 index++;
             }
         }

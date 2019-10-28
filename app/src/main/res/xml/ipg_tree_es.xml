@@ -18,8 +18,8 @@
                                     </answer>
                                     <answer text="Es una habilidad disparada retrasada que revierte un cambio de zona (incluyendo la creación de fichas) causada por el hechizo o habilidad que creó la habilidad disparada retrasada">
                                         <question text="Solución">
-                                            <question text="GPE - Misstrigger, Advertencia."></question>
-                                            <question text="El oponente elige si resolver la habilidad la próxima vez que un jugador fuera a recibir prioridad o cuando un jugador fuera a recibir prioridad al comienzo de la próxima fase."></question>
+                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                            <answer text="El oponente elige si resolver la habilidad la próxima vez que un jugador fuera a recibir prioridad o cuando un jugador fuera a recibir prioridad al comienzo de la próxima fase."></answer>
                                         </question>
                                     </answer>
                                     <answer text="Ninguna de las anteriores">
@@ -218,87 +218,104 @@
                                         </question>
                                     </answer>
                                     <answer text="No">
-										<question text="¿El oponente reconoció la acción o controla un efecto continuo que modifica la regla del juego que fue violada?">
+										<question text="¿El oponente reconoció la acción?">
 											<answer text="Si">
-											LOL
+												<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
+													<answer text="Si">
+														<question text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></question>
+														<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
+													</answer>
+													<answer text="No">
+														<question text="GPE - Game Rule Violation, Advertencia."></question>
+														<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
+													</answer>
+												</question>
 											</answer>
 											<answer text="No">
-												<question text="¿La infracción se produjo después del inicio del juego?">
+												<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
 													<answer text="Si">
-														<question text="¿La infracción implica una carta con metamorfosis?">
+														<question text="GPE - Game Rule Violation, Advertencia."></question>
+														<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
+													</answer>
+													<answer text="No">
+														<question text="¿La infracción se produjo después del inicio del juego?">
 															<answer text="Si">
-																<question text="Solución">
-																	<answer text="GPE - Hidden Card Error, Pérdida de juego."></answer>
-																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
-																</question>
-															</answer>
-															<answer text="No">
-																<question text="¿El conjunto de cartas que contenía el problema aún existe?">
+																<question text="¿La infracción implica una carta con metamorfosis?">
 																	<answer text="Si">
-																		<question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
+																		<question text="Solución">
+																			<answer text="GPE - Hidden Card Error, Pérdida de juego."></answer>
+																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																		</question>
+																	</answer>
+																	<answer text="No">
+																		<question text="¿El conjunto de cartas que contenía el problema aún existe?">
 																			<answer text="Si">
-																				<question text="Solución">
-																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																					<answer text="El jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto."></answer>
-																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
-																				</question>
-																			</answer>
-																			<answer text="No">
-																				<question text="¿El conjunto contiene más cartas de las que debería?">
+																				<question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
 																					<answer text="Si">
 																						<question text="Solución">
 																							<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																							<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles debieron ser reveladas por el efecto. Si esas cartas no pudieron ser reveladas por el efecto, trátalas como exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
+																							<answer text="El jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto."></answer>
 																							<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																						</question>
 																					</answer>
 																					<answer text="No">
-																						<question text="¿La infracción implica una o más cartas que no fueron reveladas?">
+																						<question text="¿El conjunto contiene más cartas de las que debería?">
 																							<answer text="Si">
 																								<question text="Solución">
 																									<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																									<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles son el exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
+																									<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles debieron ser reveladas por el efecto. Si esas cartas no pudieron ser reveladas por el efecto, trátalas como exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
 																									<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																								</question>
 																							</answer>
 																							<answer text="No">
-																								<question text="Solución">
-																									<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																									<answer text="i el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																								<question text="¿La infracción implica una o más cartas que no fueron reveladas?">
+																									<answer text="Si">
+																										<question text="Solución">
+																											<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																											<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles son el exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
+																											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																										</question>
+																									</answer>
+																									<answer text="No">
+																										<question text="Solución">
+																											<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																											<answer text="i el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																										</question>
+																									</answer>
 																								</question>
 																							</answer>
 																						</question>
 																					</answer>
 																				</question>
 																			</answer>
+																			<answer text="No">
+																				<question text="Solución">
+																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																				</question>
+																			</answer>
+																		</question>
+																	</answer>
+																</question>
+															</answer>
+															<answer text="No">
+																<question text="¿El jugador tiene cartas demás en mano?">
+																	<answer text="Si">
+																		<question text="Solución">
+																			<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
+																			<answer text="El jugador elige entre:"></answer>
+																			<answer text="- Hacer mulligan."></answer>
+																			<answer text="- Mostrar su mano, que su oponente elija qué cartas sobran y que esas se barajen en la biblioteca."></answer>
+																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																		</question>
 																	</answer>
 																	<answer text="No">
 																		<question text="Solución">
-																			<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																			<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
+																			<answer text="El jugador hace mulligan."></answer>
 																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																		</question>
 																	</answer>
-																</question>
-															</answer>
-														</question>
-													</answer>
-													<answer text="No">
-														<question text="¿El jugador tiene cartas demás en mano?">
-															<answer text="Si">
-																<question text="Solución">
-																	<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
-																	<answer text="El jugador elige entre:"></answer>
-																	<answer text="- Hacer mulligan."></answer>
-																	<answer text="- Mostrar su mano, que su oponente elija qué cartas sobran y que esas se barajen en la biblioteca."></answer>
-																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
-																</question>
-															</answer>
-															<answer text="No">
-																<question text="Solución">
-																	<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
-																	<answer text="El jugador hace mulligan."></answer>
-																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																</question>
 															</answer>
 														</question>
@@ -338,87 +355,104 @@
                 </question>
             </answer>
             <answer text="Un jugador ha cometido un error que no puede solucionarse solo con información pública">
-				<question text="¿El oponente reconoció la acción o controla un efecto continuo que modifica la regla del juego que fue violada?">
+				<question text="¿El oponente reconoció la acción?">
 					<answer text="Si">
-						LOL
+						<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
+							<answer text="Si">
+								<question text="GPE - Game Rule Violation, Advertencia."></question>
+								<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
+							</answer>
+							<answer text="No">
+								<question text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></question>
+								<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
+							</answer>
+						</question>
 					</answer>
 					<answer text="No">
-						<question text="¿La infracción se produjo después del inicio del juego?">
+						<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
 							<answer text="Si">
-								<question text="¿La infracción implica una carta con metamorfosis?">
+								<question text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></question>
+								<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
+							</answer>
+							<answer text="No">
+								<question text="¿La infracción se produjo después del inicio del juego?">
 									<answer text="Si">
-										<question text="Solución">
-											<answer text="GPE - Hidden Card Error, Pérdida de juego."></answer>
-											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
-										</question>
-									</answer>
-									<answer text="No">
-										<question text="¿El conjunto de cartas que contenía el problema aún existe?">
+										<question text="¿La infracción implica una carta con metamorfosis?">
 											<answer text="Si">
-												<question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
+												<question text="Solución">
+													<answer text="GPE - Hidden Card Error, Pérdida de juego."></answer>
+													<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+												</question>
+											</answer>
+											<answer text="No">
+												<question text="¿El conjunto de cartas que contenía el problema aún existe?">
 													<answer text="Si">
-														<question text="Solución">
-															<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-															<answer text="El jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto."></answer>
-															<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
-														</question>
-													</answer>
-													<answer text="No">
-														<question text="¿El conjunto contiene más cartas de las que debería?">
+														<question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
 															<answer text="Si">
 																<question text="Solución">
 																	<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																	<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles debieron ser reveladas por el efecto. Si esas cartas no pudieron ser reveladas por el efecto, trátalas como exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
+																	<answer text="El jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto."></answer>
 																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																</question>
 															</answer>
 															<answer text="No">
-																<question text="¿La infracción implica una o más cartas que no fueron reveladas?">
+																<question text="¿El conjunto contiene más cartas de las que debería?">
 																	<answer text="Si">
 																		<question text="Solución">
 																			<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																			<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles son el exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
+																			<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles debieron ser reveladas por el efecto. Si esas cartas no pudieron ser reveladas por el efecto, trátalas como exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
 																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 																		</question>
 																	</answer>
 																	<answer text="No">
-																		<question text="Solución">
-																			<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																			<answer text="i el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																		<question text="¿La infracción implica una o más cartas que no fueron reveladas?">
+																			<answer text="Si">
+																				<question text="Solución">
+																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																					<answer text="El jugador revela el conjunto de cartas que contiene el exceso y el oponente elige entre las cartas previamente desconocidas cuáles son el exceso. Devuelve el exceso a la ubicación correcta, si es la biblioteca deberían ser mezcladas en la parte aleatoria a menos que su propietario conociera previamente su identidad, en cuyo caso son puestas en la parte superior de la biblioteca."></answer>
+																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																				</question>
+																			</answer>	
+																			<answer text="No">
+																				<question text="Solución">
+																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																					<answer text="i el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																				</question>
+																			</answer>
 																		</question>
 																	</answer>
 																</question>
 															</answer>
 														</question>
 													</answer>
+													<answer text="No">
+														<question text="Solución">
+															<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+															<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+														</question>
+													</answer>
+												</question>
+											</answer>
+										</question>
+									</answer>
+									<answer text="No">
+										<question text="¿El jugador tiene cartas demás en mano?">
+											<answer text="Si">
+												<question text="Solución">
+													<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
+													<answer text="El jugador elige entre:"></answer>
+													<answer text="- Hacer mulligan."></answer>
+													<answer text="- Mostrar su mano, que su oponente elija qué cartas sobran y que esas se barajen en la biblioteca."></answer>
+													<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 												</question>
 											</answer>
 											<answer text="No">
 												<question text="Solución">
-													<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+													<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
+													<answer text="El jugador hace mulligan."></answer>
 													<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 												</question>
 											</answer>
-										</question>
-									</answer>
-								</question>
-							</answer>
-							<answer text="No">
-								<question text="¿El jugador tiene cartas demás en mano?">
-									<answer text="Si">
-										<question text="Solución">
-											<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
-											<answer text="El jugador elige entre:"></answer>
-											<answer text="- Hacer mulligan."></answer>
-											<answer text="- Mostrar su mano, que su oponente elija qué cartas sobran y que esas se barajen en la biblioteca."></answer>
-											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
-										</question>
-									</answer>
-									<answer text="No">
-										<question text="Solución">
-											<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
-											<answer text="El jugador hace mulligan."></answer>
-											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
 										</question>
 									</answer>
 								</question>

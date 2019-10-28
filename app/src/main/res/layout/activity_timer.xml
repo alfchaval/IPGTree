@@ -22,6 +22,7 @@
         android:gravity="center"
         android:textAlignment="gravity"
         android:textSize="40dp"
+        android:textColor="@color/colorLightGreen"
         />
 
     <Button
@@ -33,7 +34,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txv_time"
         app:layout_constraintBottom_toTopOf="@+id/txv_starting_time"
         android:background="@drawable/answer_background_parent"
-        android:text="Comenzar"
         />
 
     <TextView
@@ -45,7 +45,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_play"
         android:textAlignment="viewEnd"
         android:textSize="20dp"
-        android:text="Minutos: "
         android:layout_marginTop="80dp"
         />
 
@@ -70,7 +69,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/answer_background_parent"
-        android:text="Editar"
         />
 
     <android.inputmethodservice.KeyboardView

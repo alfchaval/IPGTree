@@ -22,7 +22,6 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Modo: Normal"
         />
 
     <Button
@@ -36,7 +35,6 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Reiniciar draft"
         />
 
     <TextView
@@ -50,7 +48,6 @@
         android:padding="8dp"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="ESTADO"
         android:gravity="center"
         />
 
@@ -65,7 +62,6 @@
         android:padding="8dp"
         android:textColor="@color/colorText"
         android:textSize="40dp"
-        android:text="TIEMPO"
         android:gravity="center"
         />
 
@@ -80,7 +76,6 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Comenzar"
         />
 
     <Button
@@ -94,7 +89,6 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Reiniciar actual"
         />
 
     <Button
@@ -108,7 +102,6 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Anterior"
         />
 
     <Button
@@ -122,7 +115,6 @@
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Siguiente"
         />
 
 </android.support.constraint.ConstraintLayout>

@@ -44,6 +44,7 @@ public class OracleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_oracle);
 
         linkViews();
+        loadStrings();
         setListeners();
 
         if(ContextCompat.checkSelfPermission(OracleActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
@@ -56,7 +57,7 @@ public class OracleActivity extends AppCompatActivity {
 
     public void loadCards() {
         if(Repository.cards.size() < 1) {
-            txv_oracle.setText("No tienes cartas en la base de datos local, puedes descargar la base de datos actualizada desde Opciones");
+            txv_oracle.setText(Repository.StringMap(44));
         }
         else {
             cardnames = Repository.cards.keySet().toArray(new String[Repository.cards.size()]);
@@ -79,14 +80,18 @@ public class OracleActivity extends AppCompatActivity {
         loadCards();
     }
 
-    public void linkViews() {
+    private void linkViews() {
         actv_search = findViewById(R.id.actv_search);
         actv_number = findViewById(R.id.actv_number);
         txv_oracle = findViewById(R.id.txv_oracle);
         btn_change_mode = findViewById(R.id.btn_change_mode);
     }
 
-    public void setListeners() {
+    private void loadStrings() {
+        actv_search.setHint(Repository.StringMap(39));
+    }
+
+    private void setListeners() {
         actv_search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -98,13 +103,13 @@ public class OracleActivity extends AppCompatActivity {
                             showCardAndSides(actv_search.getText().toString());
                         }
                         else {
-                            txv_oracle.setText("No se encontraron resultados");
+                            txv_oracle.setText(Repository.StringMap(43));
                         }
                         break;
                     case setMode:
                         if(Repository.sets.containsKey(actv_search.getText().toString())) {
                             selectedSet = actv_search.getText().toString();
-                            txv_oracle.setText("Set seleccionado:\n" + selectedSet);
+                            txv_oracle.setText(Repository.StringMap(45) + selectedSet);
                             setNumbers();
                             actv_number.setText("");
                             actv_number.setVisibility(View.VISIBLE);
@@ -125,10 +130,10 @@ public class OracleActivity extends AppCompatActivity {
                         showCardAndSides(Repository.setsWithCards.get(Repository.sets.get(selectedSet).code)[number-1]);
                     }
                     else {
-                        txv_oracle.setText("No se encontraron resultados");
+                        txv_oracle.setText(Repository.StringMap(43));
                     }
                 } catch (Exception e) {
-                    txv_oracle.setText("ERROR");
+                    txv_oracle.setText(Repository.StringMap(42));
                 }
             }
         });
@@ -199,17 +204,17 @@ public class OracleActivity extends AppCompatActivity {
         switch (mode) {
             case nameMode:
                 actv_search.setAdapter(nameAdapter);
-                actv_search.setHint("Introduce una carta en inglés");
+                actv_search.setHint(Repository.StringMap(39));
                 actv_search.setText("");
                 actv_number.setVisibility(View.GONE);
-                btn_change_mode.setText("Cambiar a búsqueda por edición y número");
+                btn_change_mode.setText(Repository.StringMap(41));
                 break;
             case setMode:
                 actv_search.setAdapter(setAdapter);
-                actv_search.setHint("Introduce una edición en inglés");
+                actv_search.setHint(Repository.StringMap(46));
                 actv_search.setText("");
                 actv_number.setText("");
-                btn_change_mode.setText("Cambiar a búsqueda por nombre");
+                btn_change_mode.setText(Repository.StringMap(40));
                 break;
         }
     }

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
+import mtg.judge.ipgtree.Repository;
 
 public class DraftActivity extends AppCompatActivity {
 
@@ -59,6 +60,7 @@ public class DraftActivity extends AppCompatActivity {
         setContentView(R.layout.activity_draft);
 
         linkViews();
+        loadStrings();
         setListeners();
 
         if (savedInstanceState != null) {
@@ -75,10 +77,10 @@ public class DraftActivity extends AppCompatActivity {
                     createTimer(last_time);
                     pause = savedInstanceState.getBoolean(KEY_PAUSE);
                     if(pause) {
-                        btn_play.setText("Reanudar");
+                        btn_play.setText(Repository.StringMap(18));
                     }
                     else {
-                        btn_play.setText("Pausar");
+                        btn_play.setText(Repository.StringMap(15));
                         timer.start();
                     }
                 }
@@ -95,7 +97,7 @@ public class DraftActivity extends AppCompatActivity {
         }
     }
 
-    public void linkViews() {
+    private void linkViews() {
         txv_status = findViewById(R.id.txv_status);
         txv_time = findViewById(R.id.txv_time);
         btn_mode = findViewById(R.id.btn_mode);
@@ -106,7 +108,16 @@ public class DraftActivity extends AppCompatActivity {
         btn_next = findViewById(R.id.btn_next);
     }
 
-    public void setListeners() {
+    private void loadStrings() {
+        btn_mode.setText(Repository.StringMap(12));
+        btn_select.setText(Repository.StringMap(17));
+        btn_play.setText(Repository.StringMap(20));
+        btn_reset.setText(Repository.StringMap(16));
+        btn_last.setText(Repository.StringMap(10));
+        btn_next.setText(Repository.StringMap(14));
+    }
+
+    private void setListeners() {
         btn_mode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,18 +136,18 @@ public class DraftActivity extends AppCompatActivity {
                 if(!started) {
                     timer.start();
                     started = true;
-                    btn_play.setText("Pausar");
+                    btn_play.setText(Repository.StringMap(15));
                 }
                 else if(last_time > 0) {
                     if(pause) {
                         createTimer(last_time);
                         timer.start();
-                        btn_play.setText("Pausar");
+                        btn_play.setText(Repository.StringMap(15));
                     }
                     else {
                         timer.cancel();
                         pause = true;
-                        btn_play.setText("Reanudar");
+                        btn_play.setText(Repository.StringMap(18));
                     }
                 }
             }
@@ -166,7 +177,7 @@ public class DraftActivity extends AppCompatActivity {
                     pick--;
                 }
                 setTimer();
-                btn_play.setText("Comenzar");
+                btn_play.setText(Repository.StringMap(20));
             }
         });
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -181,7 +192,7 @@ public class DraftActivity extends AppCompatActivity {
                     review = true;
                 }
                 setTimer();
-                btn_play.setText("Comenzar");
+                btn_play.setText(Repository.StringMap(20));
             }
         });
     }
@@ -197,15 +208,15 @@ public class DraftActivity extends AppCompatActivity {
         pack = 1;
         switch (mode) {
             case NORMAL:
-                btn_mode.setText("Modo: Normal");
+                btn_mode.setText(Repository.StringMap(12));
                 review = false;
                 break;
             case TWOHEADED:
-                btn_mode.setText("Modo: 2HG");
+                btn_mode.setText(Repository.StringMap(13));
                 review = false;
                 break;
             case ROCHESTER:
-                btn_mode.setText("Modo: Rochester");
+                btn_mode.setText(Repository.StringMap(19));
                 pack = 0;
                 review = true;
                 break;
@@ -218,7 +229,7 @@ public class DraftActivity extends AppCompatActivity {
             timer.cancel();
         }
         createTimer(showStatus()*1000);
-        btn_play.setText("Comenzar");
+        btn_play.setText(Repository.StringMap(20));
         started = false;
     }
 
@@ -248,21 +259,21 @@ public class DraftActivity extends AppCompatActivity {
         if(review) {
             switch (selected_mode) {
                 case NORMAL:
-                    txv_status.setText("Tiempo para revisar los picks");
+                    txv_status.setText(Repository.StringMap(9));
                     seconds = 60 + (30 * (pack-1));
                     break;
                 case TWOHEADED:
-                    txv_status.setText("Tiempo para revisar los picks");
+                    txv_status.setText(Repository.StringMap(9));
                     seconds = 60;
                     break;
                 case ROCHESTER:
-                    txv_status.setText("Tiempo para mirar el sobre");
+                    txv_status.setText(Repository.StringMap(11));
                     seconds = 20;
                     break;
             }
         }
         else {
-            txv_status.setText("Sobre: " + pack + "\nCarta: " + pick);
+            txv_status.setText(Repository.StringMap(7) + pack + Repository.StringMap(8) + pick);
             switch (selected_mode) {
                 case NORMAL:
                     seconds = normal[pick-1];

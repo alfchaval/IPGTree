@@ -11,23 +11,64 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     >
 
+    <LinearLayout
+        android:id="@+id/ll_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_en_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+            <Button
+                android:id="@+id/btn_en_language"
+                android:layout_width="64dp"
+                android:layout_height="43dp"
+                android:background="@drawable/en_flag"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_es_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+            <Button
+                android:id="@+id/btn_es_language"
+                android:layout_width="64dp"
+                android:layout_height="43dp"
+                android:background="@drawable/es_flag"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_update"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_language"
         app:layout_constraintBottom_toTopOf="@+id/ll_annotated"
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
-        android:text="Actualizar oracle"
         />
 
     <LinearLayout
         android:id="@+id/ll_annotated"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,17 +79,16 @@
         >
 
         <CheckBox
-            android:id="@+id/cb_anotations"
+            android:id="@+id/cb_annotations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mostrar anotaciones en AMTR Y AIPG"
             android:textColor="@color/colorText"
             android:layout_gravity="center"
             />
         <TextView
+            android:id="@+id/txv_annotations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(También pueden mostarse/ocultarse manteniendo pulsado en el título de la sección del documento)"
             android:textStyle="italic"
             android:textAlignment="center"
             />
@@ -62,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_annotated"
-        app:layout_constraintBottom_toTopOf="@+id/btn_about"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
         android:background="@drawable/borders"
         android:orientation="vertical"
         android:padding="10dp"
@@ -76,9 +116,9 @@
             >
 
             <TextView
+                android:id="@+id/txv_ftptitle_one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Servidor FTP"
                 android:textColor="@color/colorText"
                 android:textSize="20dp"
                 android:layout_gravity="center"
@@ -88,7 +128,6 @@
                 android:id="@+id/txv_codeftp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12345678"
                 android:textSize="20dp"
                 android:layout_gravity="center"
                 />
@@ -97,9 +136,8 @@
                 android:id="@+id/edt_codeftp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="código"
                 android:textAlignment="center"
-                android:maxLines="1"
+                android:singleLine="true"
                 />
 
             <Button
@@ -108,7 +146,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/answer_background_parent"
                 android:textColor="@color/colorText"
-                android:text="Desbloquear"
                 android:layout_gravity="center"
                 android:paddingHorizontal="4dp"
                 />
@@ -124,9 +161,9 @@
             >
 
             <TextView
+                android:id="@+id/txv_ftptitle_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Servidor FTP"
                 android:textColor="@color/colorText"
                 android:textSize="20dp"
                 android:layout_gravity="center"
@@ -136,7 +173,6 @@
                 android:id="@+id/cb_ftp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Activar envío de datos"
                 android:textColor="@color/colorText"
                 android:layout_gravity="center"
                 />
@@ -145,28 +181,26 @@
                 android:id="@+id/edt_server"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="192.168.0.X"
+                android:hint="@string/activity_settings_ip_hint"
                 android:textAlignment="center"
-                android:maxLines="1"
+                android:singleLine="true"
                 />
 
             <EditText
                 android:id="@+id/edt_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="usuario"
                 android:textAlignment="center"
-                android:maxLines="1"
+                android:singleLine="true"
                 />
 
             <EditText
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="contraseña"
                 android:textAlignment="center"
                 android:inputType="textPassword"
-                android:maxLines="1"
+                android:singleLine="true"
                 />
 
             <Button
@@ -175,7 +209,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/answer_background_parent"
                 android:textColor="@color/colorText"
-                android:text="Guardar"
                 android:layout_gravity="center"
                 android:paddingHorizontal="4dp"
                 />
@@ -185,17 +218,14 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_about"
-        android:layout_width="200dp"
+        android:id="@+id/btn_donate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_server"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/answer_background_parent"
-        android:textColor="@color/colorText"
-        android:textSize="20dp"
-        android:text="Información"
+        android:background="@drawable/donate"
         />
 
 </android.support.constraint.ConstraintLayout>

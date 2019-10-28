@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">IPGTree</string>
-    <string name="solution">Solución:</string>
     <string name="my_keyboard">MyKeyboard</string>
+    <string name="activity_settings_ip_hint">192.168.0.X</string>
+    <string name="activity_documents_menu_cr">CR</string>
+    <string name="activity_documents_menu_jar">JAR</string>
+    <string name="activity_documents_menu_aipg">AIPG</string>
+    <string name="activity_documents_menu_amtr">AMTR</string>
+    <string name="activity_loading">Loading</string>
 </resources>

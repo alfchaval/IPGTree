@@ -12,6 +12,8 @@ import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -34,6 +36,8 @@ public class DocumentActivity extends AppCompatActivity {
     private ScrollView scroll_points;
     private ImageView imv_arrow_up;
     private ImageView imv_arrow_down;
+    private EditText edt_search;
+    private Button btn_search;
 
     private ViewTreeObserver viewTreeObserver;
 
@@ -42,6 +46,7 @@ public class DocumentActivity extends AppCompatActivity {
     private LinearLayout.LayoutParams layoutParams;
 
     private boolean showNotes = true;
+    private boolean searching = false;
 
     private final int TEXT_SIZE = 20;
 
@@ -56,7 +61,13 @@ public class DocumentActivity extends AppCompatActivity {
     //When you press back you go to the previous point (if there is previous point)
     @Override
     public void onBackPressed() {
-        if(tree.isRoot()) {
+        if(searching) {
+            searching = false;
+            edt_search.setText("");
+            tv_title.setVisibility(View.VISIBLE);
+            showList();
+        }
+        else if(tree.isRoot()) {
             super.onBackPressed();
         }
         else {
@@ -77,9 +88,10 @@ public class DocumentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tree);
+        setContentView(R.layout.activity_document);
 
         linkViews();
+        loadStrings();
         setListeners();
 
         tv_title.setTextSize(TEXT_SIZE);
@@ -116,22 +128,27 @@ public class DocumentActivity extends AppCompatActivity {
                 }
             });
         }
-
         showNotes = Repository.showAnnotations;
         loadPoints(savedInstanceState);
         showList();
 
     }
 
-    public void linkViews() {
+    private void linkViews() {
         ll_points = findViewById(R.id.ll_points);
         scroll_points = findViewById(R.id.scroll_answers);
         tv_title = findViewById(R.id.tv_question);
         imv_arrow_up = findViewById(R.id.imv_arrow_up);;
         imv_arrow_down = findViewById(R.id.imv_arrow_down);
+        edt_search = findViewById(R.id.edt_search);
+        btn_search = findViewById(R.id.btn_search);
     }
 
-    public void setListeners() {
+    private void loadStrings() {
+        btn_search.setText(Repository.StringMap(68));
+    }
+
+    private void setListeners() {
         tv_title.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -152,6 +169,12 @@ public class DocumentActivity extends AppCompatActivity {
                 scroll_points.fullScroll(View.FOCUS_DOWN);
             }
         });
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search();
+            }
+        });
     }
 
     //You only have to read the XML the first time you start the app
@@ -163,6 +186,8 @@ public class DocumentActivity extends AppCompatActivity {
             switch (getIntent().getStringExtra("document")) {
                 case "cr":
                     tree = Repository.ComprehensiveRules;
+                    edt_search.setVisibility(View.VISIBLE);
+                    btn_search.setVisibility(View.VISIBLE);
                     break;
                 case "jar":
                     tree = Repository.JudgingAtRegular;
@@ -178,6 +203,9 @@ public class DocumentActivity extends AppCompatActivity {
                     break;
                 case "banned":
                     tree = Repository.BannedAndRestricted;
+                    break;
+                case "links":
+                    tree = Repository.Links;
                     break;
                 default:
                     tree = new Tree<TypedText>(new TypedText("ERROR"));
@@ -195,74 +223,7 @@ public class DocumentActivity extends AppCompatActivity {
                 addTextView(index);
             }
             branchs.get(index).setText(tree.getChild(index).getData().getText());
-            //There is duplicate code in the switch, but it's also clearer this way
-            switch (tree.getChild(index).getData().getType()) {
-                case TypedText.NORMAL:
-                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                    branchs.get(index).setMovementMethod(null);
-                    if(tree.getChild(index).isLeaf()) {
-                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                    }
-                    else {
-                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                    }
-                    branchs.get(index).setVisibility(View.VISIBLE);
-                    break;
-                case TypedText.TITLE:
-                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
-                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-                    branchs.get(index).setMovementMethod(null);
-                    if(tree.getChild(index).isLeaf()) {
-                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                    }
-                    else {
-                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                    }
-                    branchs.get(index).setVisibility(View.VISIBLE);
-                    break;
-                case TypedText.EXAMPLE:
-                    branchs.get(index).setTypeface(null, Typeface.ITALIC);
-                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                    branchs.get(index).setMovementMethod(null);
-                    if(tree.getChild(index).isLeaf()) {
-                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                    }
-                    else {
-                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                    }
-                    branchs.get(index).setVisibility(View.VISIBLE);
-                    break;
-                case TypedText.ANNOTATION:
-                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                    branchs.get(index).setMovementMethod(null);
-                    if(showNotes) {
-                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
-                        branchs.get(index).setVisibility(View.VISIBLE);
-                    }
-                    else {
-                        branchs.get(index).setVisibility(View.GONE);
-                    }
-                    break;
-                case TypedText.LINK:
-                    branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                    branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorLink));
-                    branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                    branchs.get(index).setMovementMethod(LinkMovementMethod.getInstance());
-                    if(tree.getChild(index).isLeaf()) {
-                        branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                    }
-                    else {
-                        branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                    }
-                    branchs.get(index).setVisibility(View.VISIBLE);
-                    break;
-            }
+            format(index, tree.getChild(index).getData().getType());
             index++;
         }
         //Hide void TextViews
@@ -286,11 +247,13 @@ public class DocumentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(tree.existChild(index)) {
                     if(tree.getChild(index).getData().getType() == TypedText.LINK) {
+                        ((TextView)view).setMovementMethod(LinkMovementMethod.getInstance());
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                         browserIntent.setData(Uri.parse(((TextView)view).getText().toString()));
                         startActivity(browserIntent);
                     }
                     else if (!tree.getChild(index).isLeaf()) {
+                        ((TextView)view).setMovementMethod(null);
                         tree = tree.getChild(index);
                         showList();
                     }
@@ -326,6 +289,115 @@ public class DocumentActivity extends AppCompatActivity {
         else {
             imv_arrow_up.setVisibility(View.INVISIBLE);
             imv_arrow_down.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void search() {
+        searching = true;
+        tv_title.setVisibility(View.GONE);
+        tree = tree.getRoot();
+        ArrayList<TypedText> results = treeSearch(edt_search.getText().toString());
+        if(results.size() == 0) {
+            results.add(new TypedText(Repository.StringMap(69)));
+        }
+        int index = 0;
+        while (index < results.size()) {
+            if (index >= branchs.size()) {
+                addTextView(index);
+            }
+            branchs.get(index).setText(results.get(index).getText());
+            format(index, results.get(index).getType());
+            index++;
+        }
+        while (index < branchs.size()) {
+            branchs.get(index).setVisibility(View.GONE);
+            index++;
+        }
+    }
+
+    private ArrayList<TypedText> treeSearch(String word) {
+        return treeSearch(word, new ArrayList<TypedText>());
+    }
+
+    private ArrayList<TypedText> treeSearch(String word, ArrayList<TypedText> list) {
+        ArrayList<TypedText> results = list;
+        int index = 0;
+        while (index < tree.getChildren().size()) {
+            tree = tree.getChild(index);
+            if(tree.getData().getText().contains(word)) {
+                results.add(tree.getData());
+            }
+            results = treeSearch(word, results);
+            tree = tree.getParent();
+            index++;
+
+        }
+        return results;
+    }
+
+    private void format(int index, int type) {
+        //There is duplicate code in the switch, but it's also clearer this way
+        switch (type) {
+            case TypedText.NORMAL:
+                branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                if(searching || tree.getChild(index).isLeaf()) {
+                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                }
+                else {
+                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                }
+                branchs.get(index).setVisibility(View.VISIBLE);
+                break;
+            case TypedText.TITLE:
+                branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+                if(searching || tree.getChild(index).isLeaf()) {
+                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                }
+                else {
+                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                }
+                branchs.get(index).setVisibility(View.VISIBLE);
+                break;
+            case TypedText.EXAMPLE:
+                branchs.get(index).setTypeface(null, Typeface.ITALIC);
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                if(searching || tree.getChild(index).isLeaf()) {
+                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                }
+                else {
+                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                }
+                branchs.get(index).setVisibility(View.VISIBLE);
+                break;
+            case TypedText.ANNOTATION:
+                branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                if(showNotes) {
+                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
+                    branchs.get(index).setVisibility(View.VISIBLE);
+                }
+                else {
+                    branchs.get(index).setVisibility(View.GONE);
+                }
+                break;
+            case TypedText.LINK:
+                branchs.get(index).setTypeface(null, Typeface.NORMAL);
+                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorLink));
+                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
+                if(searching || tree.getChild(index).isLeaf()) {
+                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+                }
+                else {
+                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                }
+                branchs.get(index).setVisibility(View.VISIBLE);
+                break;
         }
     }
 }

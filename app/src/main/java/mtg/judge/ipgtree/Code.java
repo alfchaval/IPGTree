@@ -20,16 +20,25 @@ public class Code {
     public static String generateAnswer(String code) {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder(code.length());
-        int lastPosition = (allowedChars.indexOf(code.charAt(0)) + allowedChars.indexOf(code.charAt(code.length()-1))) % allowedChars.length();
-        stringBuilder.append(allowedChars.charAt(lastPosition));
-        for (int i = 1; i < code.length(); i++) {
-            lastPosition = (allowedChars.indexOf(code.charAt(i)) + allowedChars.indexOf(code.charAt(i-1))) % allowedChars.length();
+        int index1 = allowedChars.indexOf(code.charAt(0));
+        int index2 = allowedChars.indexOf(code.charAt(code.length() - 1));
+        int lastPosition;
+        if(index1 >= 0 && index2 >= 0) {
+            lastPosition = (index1 + index2) % allowedChars.length();
             stringBuilder.append(allowedChars.charAt(lastPosition));
+        }
+        for (int i = 1; i < code.length(); i++) {
+            index1 = allowedChars.indexOf(code.charAt(i));
+            index2 = allowedChars.indexOf(code.charAt(i-1));
+            if(index1 >= 0 && index2 >= 0) {
+                lastPosition = (index1 + index2) % allowedChars.length();
+                stringBuilder.append(allowedChars.charAt(lastPosition));
+            }
         }
         return stringBuilder.toString();
     }
 
     public static boolean check(String code, String answer) {
-        return generateAnswer(code) == answer;
+        return generateAnswer(code).equals(answer);
     }
 }

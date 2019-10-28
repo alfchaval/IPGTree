@@ -141,7 +141,6 @@
         app:layout_constraintBottom_toTopOf="@+id/cly_p2setlife"
         android:background="@drawable/answer_background_parent"
         android:textSize="30dp"
-        android:text="REINICIAR"
         android:keepScreenOn="true"
         />
 
@@ -169,7 +168,6 @@
         app:layout_constraintBottom_toTopOf="@+id/cly_p2setlife"
         android:background="@drawable/answer_background_parent"
         android:textSize="30dp"
-        android:text="REGISTRO"
         />
 
     <ScrollView

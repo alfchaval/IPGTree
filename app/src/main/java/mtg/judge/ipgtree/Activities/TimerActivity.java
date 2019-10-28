@@ -1,29 +1,34 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Calendar;
-
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
+import mtg.judge.ipgtree.TimerReceiver;
 
 public class TimerActivity extends AppCompatActivity {
 
-    private TextView txv_starting_time, txv_time;
+    private TextView txv_starting_time_title, txv_starting_time, txv_time;
     private Button btn_edit, btn_play;
     private Keyboard keyboard;
     private KeyboardView keyboardView;
 
-    private int seconds;
     private CountDownTimer timer;
+    private AlarmManager alarmManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,21 +36,26 @@ public class TimerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_timer);
 
         linkViews();
+        loadStrings();
         setListeners();
 
+        alarmManager = (AlarmManager) getApplicationContext().getSystemService(ALARM_SERVICE);
+
+        txv_starting_time.setText(Repository.milliSeconds/60000 + "");
         if(Repository.startedCountDown) {
-            btn_play.setText("Reiniciar");
-            setSavedTime();
+            btn_play.setText(Repository.StringMap(1));
             createTimer();
             timer.start();
         }
         else {
+            btn_play.setText(Repository.StringMap(20));
             setStartingTime();
             createTimer();
         }
     }
 
-    public void linkViews() {
+    private void linkViews() {
+        txv_starting_time_title = findViewById(R.id.txv_starting_time_title);
         txv_starting_time = findViewById(R.id.txv_starting_time);
         txv_time = findViewById(R.id.txv_time);
         btn_edit = findViewById(R.id.btn_edit);
@@ -56,7 +66,12 @@ public class TimerActivity extends AppCompatActivity {
         keyboardView.setPreviewEnabled(false);
     }
 
-    public void setListeners() {
+    private void loadStrings() {
+        txv_starting_time_title.setText(Repository.StringMap(22));
+        btn_edit.setText(Repository.StringMap(21));
+    }
+
+    private void setListeners() {
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,25 +80,34 @@ public class TimerActivity extends AppCompatActivity {
             }
         });
         btn_play.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                //Checking the text is not the best way, I know
-                switch (btn_play.getText().toString()) {
-                    case "Comenzar":
-                        if(timer != null) {
-                            timer.start();
-                            btn_play.setText("Reiniciar");
-                        }
-                        break;
-                    case "Reiniciar":
-                        if(timer != null) {
-                            timer.cancel();
-                        }
-                        setStartingTime();
-                        createTimer();
-                        btn_play.setText("Comenzar");
-                        break;
+                Intent intent = new Intent(TimerActivity.this, TimerReceiver.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(TimerActivity.this, 1 , intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+                if(Repository.startedCountDown) {
+                    if(timer != null) {
+                        timer.cancel();
+                    }
+                    Repository.startedCountDown = false;
+                    setStartingTime();
+                    createTimer();
+                    btn_play.setText(Repository.StringMap(20));
+                    alarmManager.cancel(pendingIntent);
                 }
+                else {
+                    if(timer != null) {
+                        Repository.startingTime = System.currentTimeMillis();
+                        editor.putLong(Repository.KEY_STARTINGTIME, Repository.startingTime);
+                        Repository.startedCountDown = true;
+                        timer.start();
+                        btn_play.setText(Repository.StringMap(1));
+                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + Repository.milliSeconds, pendingIntent);
+                    }
+                }
+                editor.putBoolean(Repository.KEY_STARTEDCOUNTDOWN, Repository.startedCountDown);
+                editor.apply();
             }
         });
         keyboardView.setOnKeyboardActionListener(new KeyboardView.OnKeyboardActionListener() {
@@ -143,13 +167,13 @@ public class TimerActivity extends AppCompatActivity {
                             txv_starting_time.setText("0");
                         }
                         break;
-                    case Repository.CodeCancel:
-                        txv_starting_time.setText(seconds/60 + "");
-                        keyboardView.setVisibility(View.GONE);
-                        btn_edit.setVisibility(View.VISIBLE);
-                        break;
                     case Repository.CodeOk:
+                        Repository.milliSeconds = Integer.parseInt(txv_starting_time.getText().toString())*60000;
+                        SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+                        editor.putInt(Repository.KEY_MILLISECONDS, Repository.milliSeconds);
+                        editor.apply();
                         setStartingTime();
+                    case Repository.CodeCancel:
                         keyboardView.setVisibility(View.GONE);
                         btn_edit.setVisibility(View.VISIBLE);
                         break;
@@ -188,14 +212,15 @@ public class TimerActivity extends AppCompatActivity {
             timer.cancel();
         }
 
-        timer = new CountDownTimer(10000000, 1000) {
+        timer = new CountDownTimer(10000000, 100) {
 
             @Override
             public void onTick(long millisUntilEnd) {
-                if(--seconds == 0) {
+                int remaining = Repository.milliSeconds - (int)(System.currentTimeMillis() - Repository.startingTime);
+                if(remaining < 1) {
                     txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
                 }
-                txv_time.setText(secondsToHoursFormat(seconds));
+                txv_time.setText(secondsToHoursFormat(remaining));
             }
 
             @Override
@@ -206,29 +231,17 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     public void setStartingTime() {
-        seconds = 60*Integer.parseInt(txv_starting_time.getText().toString());
-        if(seconds > 0) {
+        if(Repository.milliSeconds > 0) {
             txv_time.setTextColor(getResources().getColor(R.color.colorLightGreen));
         }
         else {
             txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
         }
-        txv_time.setText(secondsToHoursFormat(seconds));
+        txv_time.setText(secondsToHoursFormat(Repository.milliSeconds));
     }
 
-    public void setSavedTime() {
-        seconds = Repository.seconds - (int)((System.currentTimeMillis()-Repository.wentAway)/1000);
-        if(seconds > 0) {
-            txv_time.setTextColor(getResources().getColor(R.color.colorLightGreen));
-        }
-        else {
-            txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
-        }
-        txv_time.setText(secondsToHoursFormat(seconds));
-    }
-
-    public String secondsToHoursFormat(int seconds) {
-        int auxSeconds = seconds;
+    public String secondsToHoursFormat(int milliSeconds) {
+        int auxSeconds = milliSeconds/1000;
         String res = "";
         if(auxSeconds < 0) {
             auxSeconds *= -1;
@@ -246,14 +259,5 @@ public class TimerActivity extends AppCompatActivity {
         }
         res += auxSeconds;
         return res;
-    }
-
-    @Override
-    public void onBackPressed() {
-        if(Repository.startedCountDown = btn_play.getText().toString() == "Reiniciar") {
-            Repository.seconds = seconds;
-            Repository.wentAway = System.currentTimeMillis();
-        }
-        super.onBackPressed();
     }
 }
