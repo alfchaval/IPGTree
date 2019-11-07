@@ -60,6 +60,10 @@
             android:name="mtg.judge.ipgtree.Activities.SettingsActivity"
             android:screenOrientation="nosensor"
             />
+        <activity
+            android:name="mtg.judge.ipgtree.Activities.AdvancedSettingsActivity"
+            android:screenOrientation="nosensor"
+            />
 
         <receiver
             android:name=".TimerReceiver"

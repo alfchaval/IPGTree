@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_update"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update_oracle"
         android:orientation="horizontal"
         android:gravity="center"
         >
@@ -54,12 +54,25 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_update_oracle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_language"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update_documents"
+        android:background="@drawable/answer_background_parent"
+        android:textColor="@color/colorText"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:id="@+id/btn_update_documents"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_oracle"
         app:layout_constraintBottom_toTopOf="@+id/ll_annotated"
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
@@ -72,8 +85,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_update"
-        app:layout_constraintBottom_toTopOf="@+id/ll_server"
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_documents"
+        app:layout_constraintBottom_toTopOf="@+id/ll_updates"
         android:orientation="vertical"
         android:paddingHorizontal="20dp"
         >
@@ -96,126 +109,39 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_server"
-        android:layout_width="wrap_content"
+        android:id="@+id/ll_updates"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_annotated"
-        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
-        android:background="@drawable/borders"
+        app:layout_constraintBottom_toTopOf="@+id/btn_advanced"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:paddingHorizontal="20dp"
         >
 
-        <LinearLayout
-            android:id="@+id/ll_server_code"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-
-            <TextView
-                android:id="@+id/txv_ftptitle_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorText"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:id="@+id/txv_codeftp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                />
-
-            <EditText
-                android:id="@+id/edt_codeftp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:singleLine="true"
-                />
-
-            <Button
-                android:id="@+id/btn_unlockftp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/answer_background_parent"
-                android:textColor="@color/colorText"
-                android:layout_gravity="center"
-                android:paddingHorizontal="4dp"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_server_settings"
+        <CheckBox
+            android:id="@+id/cb_update"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            >
-
-            <TextView
-                android:id="@+id/txv_ftptitle_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorText"
-                android:textSize="20dp"
-                android:layout_gravity="center"
-                />
-
-            <CheckBox
-                android:id="@+id/cb_ftp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorText"
-                android:layout_gravity="center"
-                />
-
-            <EditText
-                android:id="@+id/edt_server"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/activity_settings_ip_hint"
-                android:textAlignment="center"
-                android:singleLine="true"
-                />
-
-            <EditText
-                android:id="@+id/edt_user"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:singleLine="true"
-                />
-
-            <EditText
-                android:id="@+id/edt_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:inputType="textPassword"
-                android:singleLine="true"
-                />
-
-            <Button
-                android:id="@+id/btn_saveftp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/answer_background_parent"
-                android:textColor="@color/colorText"
-                android:layout_gravity="center"
-                android:paddingHorizontal="4dp"
-                />
-
-        </LinearLayout>
+            android:textColor="@color/colorText"
+            android:layout_gravity="center"
+            />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_advanced"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_updates"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
+        android:background="@drawable/answer_background_parent"
+        android:textColor="@color/colorText"
+        android:textSize="20dp"
+        />
 
     <Button
         android:id="@+id/btn_donate"
@@ -223,7 +149,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_server"
+        app:layout_constraintTop_toBottomOf="@+id/btn_advanced"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/donate"
         />

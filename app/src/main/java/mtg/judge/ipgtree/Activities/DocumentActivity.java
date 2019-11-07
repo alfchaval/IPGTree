@@ -185,27 +185,27 @@ public class DocumentActivity extends AppCompatActivity {
         else {
             switch (getIntent().getStringExtra("document")) {
                 case "cr":
-                    tree = Repository.ComprehensiveRules;
+                    //tree = Repository.ComprehensiveRules;
                     edt_search.setVisibility(View.VISIBLE);
                     btn_search.setVisibility(View.VISIBLE);
                     break;
                 case "jar":
-                    tree = Repository.JudgingAtRegular;
+                    //tree = Repository.JudgingAtRegular;
                     break;
                 case "aipg":
-                    tree = Repository.AnnotatedInfractionProcedureGuide;
+                    //tree = Repository.AnnotatedInfractionProcedureGuide;
                     break;
                 case "amtr":
-                    tree = Repository.AnnotatedMagicTournamentRules;;
+                    //tree = Repository.AnnotatedMagicTournamentRules;;
                     break;
                 case "dq":
-                    tree = Repository.DisqualificationProcess;
+                    //tree = Repository.DisqualificationProcess;
                     break;
                 case "banned":
-                    tree = Repository.BannedAndRestricted;
+                    //tree = Repository.BannedAndRestricted;
                     break;
                 case "links":
-                    tree = Repository.Links;
+                    //tree = Repository.Links;
                     break;
                 default:
                     tree = new Tree<TypedText>(new TypedText("ERROR"));

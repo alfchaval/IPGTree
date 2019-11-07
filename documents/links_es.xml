@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<point text="Enlaces">
+    <title text="Webs"></title>
+    <point text="Foro:"></point>
+    <link text ="https://apps.magicjudges.org/"></link>
+    <point text="Blog Iberia:"></point>
+    <link text ="https://blogs.magicjudges.org/iberia-es/"></link>
+    <point text="Judge academy:"></point>
+    <link text ="https://judgeacademy.com/"></link>
+    <title text="Documentos"></title>
+    <point text="Código del juez:"></point>
+    <link text ="https://blogs.magicjudges.org/translatedrules/files/2019/03/Magic-Judge-Code-Feb-2019_ES.pdf"></link>
+    <point text="Documento de acogida a L1s:"></point>
+    <link text ="https://apps.magicjudges.org/media/project_files/641/344454/DocumentoAcogidaL1%20V1804.pdf"></link>
+    <title text="Correos"></title>
+    <point text="Dudas de reglas: dudas@juecesmagic.com"></point>
+    <point text="Certificación nivel 1: certificacion@juecesmagic.com"></point>
+    <point text="Correo RC: rc@juecesmagic.com"></point>
+    <point text="Correo L3s: jueces@juecesmagic.com"></point>
+</point>

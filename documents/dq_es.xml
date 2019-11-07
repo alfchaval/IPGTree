@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<point text="Proceso de descalificación">
+    <title text="Remueve al jugador del torneo"></title>
+    <point text="1. Ve a la pestaña 'Penalizaciones' dentro del evento"></point>
+    <point text="2. Pulsa en el botón 'Nuevo' para que aparezca la ventana de penalizaciones"></point>
+    <point text="3. Selecciona al jugador que tienes que descalificar y en qué ronda descalificarlo"></point>
+    <point text="4. Rellena los otros campos"></point>
+    <point text="5. Pulsa en guardar"></point>
+    <point text="6. Pulsa en 'Si' para remover al jugador del evento"></point>
+    <title text="Envía un reporte a la WPN"></title>
+    <point text="1. Ve a:"></point>
+    <link text ="https://askwpn.wizards.com/es/signin"></link>
+    <point text="2. Loguéate con tu cuenta de Wizards"></point>
+    <point text="3. Pulsa en 'Envíanos un correo electrónico'"></point>
+    <point text="4. Selecciona formulario de descalificación"></point>
+    <point text="5. Rellena toda información del formulario (incluyendo el testimonio del jugador)"></point>
+    <point text="6. Pulsa en 'Enviar solicitud de ayuda'"></point>
+    <title text="Imprime las FAQs sobre descalificaciones"></title>
+    <point text="1. Lo puedes encontrar aquí:"></point>
+    <link text ="https://blogs.magicjudges.org/o/files/2015/02/PlayerDisqualificationFAQ-ES.pdf"></link>
+    <point text="2. Entrégaselo al jugador descalificado, que para eso lo has impreso."></point>
+</point>

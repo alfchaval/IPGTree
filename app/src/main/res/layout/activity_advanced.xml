@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    >
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/answer_background_parent"
+                android:textColor="@color/colorText"
+                android:layout_gravity="center_horizontal"
+                android:paddingHorizontal="4dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/borders"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <LinearLayout
+                    android:id="@+id/ll_server_code"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/txv_ftptitle_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorText"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/txv_codeftp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_codeftp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        />
+
+                    <Button
+                        android:id="@+id/btn_unlockftp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/answer_background_parent"
+                        android:textColor="@color/colorText"
+                        android:layout_gravity="center"
+                        android:paddingHorizontal="4dp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_server_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:id="@+id/txv_ftptitle_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorText"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        />
+
+                    <CheckBox
+                        android:id="@+id/cb_ftp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorText"
+                        android:layout_gravity="center"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_server"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/activity_settings_ip_hint"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:singleLine="true"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TableRow>
+
+                    <TextView
+                        android:text="AIPG_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_aipg_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="AMTR_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_amtr_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="BANNED_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_banned_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="CR_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_cr_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="DQ_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_dq_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="TREE_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_tree_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow >
+
+                    <TextView
+                        android:text="JAR_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_jar_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="LINKS_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_links_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="QUIZ_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_quiz_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="AIPG_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_aipg_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="AMTR_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_amtr_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow >
+
+                    <TextView
+                        android:text="BANNED_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_banned_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="CR_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_cr_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="DQ_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_dq_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="TREE_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_tree_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="JAR_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_jar_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="LINKS_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_links_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="QUIZ_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_quiz_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imv_arrow_up"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/arrow_up"
+        android:background="@color/colorTransparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imv_arrow_down"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:rotation="180"
+        android:src="@drawable/arrow_up"
+        android:background="@color/colorTransparent"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -7,37 +7,28 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -51,7 +42,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
 
 import mtg.judge.ipgtree.Card;
 import mtg.judge.ipgtree.Code;
@@ -61,11 +51,10 @@ import mtg.judge.ipgtree.Set;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Button btn_update, btn_saveftp, btn_unlockftp, btn_en_language, btn_es_language, btn_donate;
-    private CheckBox cb_annotations, cb_ftp;
-    private EditText edt_server, edt_user, edt_password, edt_codeftp;
-    private TextView txv_codeftp, txv_annotations, txv_ftptitle_one, txv_ftptitle_two;
-    private LinearLayout ll_server_code, ll_server_settings, ll_en_language, ll_es_language;
+    private Button btn_update_oracle, btn_update_documents, btn_en_language, btn_es_language, btn_donate, btn_advanced;
+    private CheckBox cb_annotations, cb_update;
+    private TextView txv_annotations;
+    private LinearLayout ll_en_language, ll_es_language;
 
     private String startingLanguage;
 
@@ -81,44 +70,29 @@ public class SettingsActivity extends AppCompatActivity {
         if(Repository.ftpCode == null) {
             Repository.ftpCode = Code.generateCode();
         }
-        txv_codeftp.setText(Repository.ftpCode);
     }
 
     private void linkViews() {
-        btn_update = findViewById(R.id.btn_update);
-        btn_saveftp = findViewById(R.id.btn_saveftp);
-        btn_unlockftp = findViewById(R.id.btn_unlockftp);
+        btn_update_oracle = findViewById(R.id.btn_update_oracle);
+        btn_update_documents = findViewById(R.id.btn_update_documents);
         btn_en_language = findViewById(R.id.btn_en_language);
         btn_es_language = findViewById(R.id.btn_es_language);
         btn_donate = findViewById(R.id.btn_donate);
+        btn_advanced = findViewById(R.id.btn_advanced);
         cb_annotations = findViewById(R.id.cb_annotations);
-        cb_ftp = findViewById(R.id.cb_ftp);
-        edt_server = findViewById(R.id.edt_server);
-        edt_user = findViewById(R.id.edt_user);
-        edt_password = findViewById(R.id.edt_password);
-        edt_codeftp = findViewById(R.id.edt_codeftp);
-        txv_codeftp = findViewById(R.id.txv_codeftp);
+        cb_update = findViewById(R.id.cb_update);
         txv_annotations = findViewById(R.id.txv_annotations);
-        txv_ftptitle_one = findViewById(R.id.txv_ftptitle_one);
-        txv_ftptitle_two = findViewById(R.id.txv_ftptitle_two);
-        ll_server_code = findViewById(R.id.ll_server_code);
-        ll_server_settings = findViewById(R.id.ll_server_settings);
         ll_en_language = findViewById(R.id.ll_en_language);
         ll_es_language = findViewById(R.id.ll_es_language);
     }
 
     private void loadStrings() {
-        btn_update.setText(Repository.StringMap(61));
+        btn_update_oracle.setText(Repository.StringMap(61));
+        btn_update_documents.setText(Repository.StringMap(71));
+        btn_advanced.setText(Repository.StringMap(72));
         cb_annotations.setText(Repository.StringMap(65));
         txv_annotations.setText(Repository.StringMap(66));
-        txv_ftptitle_one.setText(Repository.StringMap(60));
-        txv_ftptitle_two.setText(Repository.StringMap(60));
-        edt_codeftp.setHint(Repository.StringMap(52));
-        btn_unlockftp.setText(Repository.StringMap(51));
-        cb_ftp.setText(Repository.StringMap(64));
-        edt_user.setHint(Repository.StringMap(29));
-        edt_password.setHint(Repository.StringMap(62));
-        btn_saveftp.setText(Repository.StringMap(63));
+        cb_update.setText(Repository.StringMap(70));
     }
 
     private void loadRepositoryData() {
@@ -132,24 +106,11 @@ public class SettingsActivity extends AppCompatActivity {
         }
         startingLanguage = Repository.language;
         cb_annotations.setChecked(Repository.showAnnotations);
-        if(Repository.unlockedFTP) {
-            ll_server_code.setVisibility(View.GONE);
-            ll_server_settings.setVisibility(View.VISIBLE);
-            cb_ftp.setChecked(Repository.allowFTP);
-            if(Repository.ftpServer != null) {
-                edt_server.setText(Repository.ftpServer);
-            }
-            if(Repository.ftpUser != null) {
-                edt_user.setText(Repository.ftpUser);
-            }
-            if(Repository.ftpPassword != null) {
-                edt_password.setText(Repository.ftpPassword);
-            }
-        }
+        cb_update.setChecked(Repository.autoUpdate);
     }
 
     private void setListeners() {
-        btn_update.setOnClickListener(new View.OnClickListener() {
+        btn_update_oracle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
@@ -157,36 +118,21 @@ public class SettingsActivity extends AppCompatActivity {
                 && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     askDownload();
                 } else {
+                    enableButtons(false);
                     ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
                 }
             }
         });
-        btn_saveftp.setOnClickListener(new View.OnClickListener() {
+        btn_update_documents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
                         && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
                         && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    checkConnection();
-                }
-                else {
+                    new UpdateDocuments().execute();
+                } else {
+                    enableButtons(false);
                     ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);
-                }
-            }
-        });
-        btn_unlockftp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(Code.check(Repository.ftpCode, edt_codeftp.getText().toString())) {
-                    Repository.unlockedFTP = true;
-                    SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                    editor.putBoolean(Repository.KEY_UNLOCKEDFTP, Repository.unlockedFTP);
-                    editor.apply();
-                    ll_server_settings.setVisibility(View.VISIBLE);
-                    ll_server_code.setVisibility(View.GONE);
-                }
-                else {
-                    txv_codeftp.setText(Code.generateCode());
                 }
             }
         });
@@ -199,12 +145,12 @@ public class SettingsActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
-        cb_ftp.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cb_update.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Repository.allowFTP = isChecked;
+                Repository.autoUpdate = isChecked;
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                editor.putBoolean(Repository.KEY_ALLOWFTP, Repository.allowFTP);
+                editor.putBoolean(Repository.KEY_AUTOUPDATE, Repository.showAnnotations);
                 editor.apply();
             }
         });
@@ -238,8 +184,17 @@ public class SettingsActivity extends AppCompatActivity {
                 if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
                     donate();
                 } else {
+                    enableButtons(false);
                     ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET},3);
                 }
+            }
+        });
+        btn_advanced.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enableButtons(false);
+                Intent intent = new Intent(SettingsActivity.this, AdvancedSettingsActivity.class);
+                startActivityForResult(intent, 1);
             }
         });
     }
@@ -257,41 +212,13 @@ public class SettingsActivity extends AppCompatActivity {
                 askDownload();
                 break;
             case 2:
-                checkConnection();
+                new UpdateDocuments().execute();
                 break;
             case 3:
                 donate();
                 break;
         }
-    }
-
-    public void checkConnection() {
-        Repository.ftpServer = edt_server.getText().toString();
-        Repository.ftpUser = edt_user.getText().toString();
-        Repository.ftpPassword = edt_password.getText().toString();
-        SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-        editor.putString(Repository.KEY_FTPSERVER, Repository.ftpServer);
-        editor.putString(Repository.KEY_FTPUSER, Repository.ftpUser);
-        editor.putString(Repository.KEY_FTPPASSWORD, Repository.ftpPassword);
-        editor.apply();
-        //TODO Añadir confimación de conexión
-        AsyncTask< String, Integer, Boolean > task = new AsyncTask< String, Integer, Boolean >()
-        {
-            @Override
-            protected Boolean doInBackground( String... params )
-            {
-                try {
-                    FTPClient mFTP = new FTPClient();
-                    mFTP.connect(Repository.ftpServer, Repository.ftpPort);
-                    mFTP.login(Repository.ftpUser, Repository.ftpPassword);
-                    mFTP.logout();
-                    mFTP.disconnect();
-                } catch (Exception e) {
-                }
-                return true;
-            }
-        };
-        task.execute("");
+        enableButtons(true);
     }
 
     public void askDownload() {
@@ -302,7 +229,7 @@ public class SettingsActivity extends AppCompatActivity {
                 .setPositiveButton(Repository.StringMap(53), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        new Update().execute(Repository.URLCARDS, Repository.URLSETS);
+                        new UpdateOracle().execute();
                     }
                 })
                 .setNegativeButton(Repository.StringMap(59), null)
@@ -315,7 +242,7 @@ public class SettingsActivity extends AppCompatActivity {
         startActivity(browserIntent);
     }
 
-    private class Update extends AsyncTask<String, String, String> {
+    private class UpdateOracle extends AsyncTask<String, String, String> {
         private ProgressDialog progressDialog;
         private String folder;
 
@@ -339,16 +266,15 @@ public class SettingsActivity extends AppCompatActivity {
             String filenameSets;
             byte[] data;
             try {
-                //Crea la carpeta donde se almacena la base de datos
                 folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
                 File directory = new File(folder);
 
                 //Descarga la base de datos de cartas
-                url = new URL(Repository.URLCARDS);
+                url = new URL(Repository.URL_CARDS);
                 connection = url.openConnection();
                 connection.connect();
                 input = new BufferedInputStream(url.openStream(), 8192);
-                filenameCards = folder + File.separator + Repository.URLCARDS.substring(Repository.URLCARDS.lastIndexOf('/') + 1, Repository.URLCARDS.length());
+                filenameCards = folder + File.separator + Repository.URL_CARDS.substring(Repository.URL_CARDS.lastIndexOf('/') + 1, Repository.URL_CARDS.length());
                 output = new FileOutputStream(filenameCards);
                 data = new byte[1024];
                 while ((count = input.read(data)) != -1) {
@@ -360,11 +286,11 @@ public class SettingsActivity extends AppCompatActivity {
                 publishProgress("15");
 
                 //Descarga la base de datos de ediciones
-                url = new URL(Repository.URLSETS);
+                url = new URL(Repository.URL_SETS);
                 connection = url.openConnection();
                 connection.connect();
                 input = new BufferedInputStream(url.openStream(), 8192);
-                filenameSets = folder + File.separator + Repository.URLSETS.substring(Repository.URLSETS.lastIndexOf('/') + 1, Repository.URLSETS.length());
+                filenameSets = folder + File.separator + Repository.URL_SETS.substring(Repository.URL_SETS.lastIndexOf('/') + 1, Repository.URL_SETS.length());
                 output = new FileOutputStream(filenameSets);
                 data = new byte[1024];
                 while ((count = input.read(data)) != -1) {
@@ -575,7 +501,94 @@ public class SettingsActivity extends AppCompatActivity {
                 return Repository.StringMap(55) + folder;
 
             } catch (Exception e) {
-                Log.e("Error: ", e.getMessage());
+            }
+            return Repository.StringMap(57);
+        }
+
+        protected void onProgressUpdate(String... progress) {
+            progressDialog.setProgress(Integer.parseInt(progress[0]));
+        }
+
+
+        @Override
+        protected void onPostExecute(String message) {
+            this.progressDialog.dismiss();
+            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private class UpdateDocuments extends AsyncTask<String, String, String> {
+
+        private ProgressDialog progressDialog;
+        private String folder;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            this.progressDialog = new ProgressDialog(SettingsActivity.this);
+            this.progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            this.progressDialog.setCancelable(false);
+            this.progressDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
+            ArrayList<String> documents = new ArrayList<String>();
+            documents.add(preferences.getString(Repository.KEY_AIPG_EN, Repository.URL_AIPG_EN));
+            documents.add(preferences.getString(Repository.KEY_AMTR_EN, Repository.URL_AMTR_EN));
+            documents.add(preferences.getString(Repository.KEY_BANNED_EN, Repository.URL_BANNED_EN));
+            documents.add(preferences.getString(Repository.KEY_CR_EN, Repository.URL_CR_EN));
+            documents.add(preferences.getString(Repository.KEY_DQ_EN, Repository.URL_DQ_EN));
+            documents.add(preferences.getString(Repository.KEY_TREE_EN, Repository.URL_TREE_EN));
+            documents.add(preferences.getString(Repository.KEY_JAR_EN, Repository.URL_JAR_EN));
+            documents.add(preferences.getString(Repository.KEY_LINKS_EN, Repository.URL_LINKS_EN));
+            documents.add(preferences.getString(Repository.KEY_QUIZ_EN, Repository.URL_QUIZ_EN));
+            documents.add(preferences.getString(Repository.KEY_AIPG_ES, Repository.URL_AIPG_ES));
+            documents.add(preferences.getString(Repository.KEY_AMTR_ES, Repository.URL_AMTR_ES));
+            documents.add(preferences.getString(Repository.KEY_BANNED_ES, Repository.URL_BANNED_ES));
+            documents.add(preferences.getString(Repository.KEY_CR_ES, Repository.URL_CR_ES));
+            documents.add(preferences.getString(Repository.KEY_DQ_ES, Repository.URL_DQ_ES));
+            documents.add(preferences.getString(Repository.KEY_TREE_ES, Repository.URL_TREE_ES));
+            documents.add(preferences.getString(Repository.KEY_JAR_ES, Repository.URL_JAR_ES));
+            documents.add(preferences.getString(Repository.KEY_LINKS_ES, Repository.URL_LINKS_ES));
+            documents.add(preferences.getString(Repository.KEY_QUIZ_ES, Repository.URL_QUIZ_ES));
+            int count;
+            InputStream input;
+            OutputStream output;
+            URL url;
+            URLConnection connection;
+            String filename;
+            int percent = 0;
+            byte[] data;
+            try {
+                folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+                File directory = new File(folder);
+
+                for (String string: documents) {
+                    try {
+                        url = new URL(string);
+                        connection = url.openConnection();
+                        connection.connect();
+                        input = new BufferedInputStream(url.openStream(), 8192);
+                        filename = folder + File.separator + string.substring(string.lastIndexOf('/') + 1, string.length());
+                        output = new FileOutputStream(filename);
+                        data = new byte[1024];
+                        while ((count = input.read(data)) != -1) {
+                            output.write(data, 0, count);
+                        }
+                        output.flush();
+                        output.close();
+                        input.close();
+                        percent += 5;
+                        publishProgress(percent + "");
+                    }
+                    catch (Exception e) {
+                    }
+                }
+                return Repository.StringMap(55) + folder;
+            }
+            catch (Exception e) {
             }
             return Repository.StringMap(57);
         }
@@ -598,5 +611,17 @@ public class SettingsActivity extends AppCompatActivity {
             setResult(RESULT_OK);
         }
         super.onBackPressed();
+    }
+
+    public void enableButtons(Boolean state) {
+        btn_advanced.setEnabled(state);
+        btn_update_oracle.setEnabled(state);
+        btn_update_documents.setEnabled(state);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        enableButtons(true);
     }
 }

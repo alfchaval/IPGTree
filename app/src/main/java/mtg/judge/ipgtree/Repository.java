@@ -14,8 +14,26 @@ import static android.content.Context.MODE_PRIVATE;
 public class Repository {
 
     //URLs
-    public static final String URLCARDS = "https://mtgjson.com/json/AllCards.json";
-    public static final String URLSETS = "https://mtgjson.com/json/AllPrintings.json";
+    public static final String URL_CARDS = "https://mtgjson.com/json/AllCards.json";
+    public static final String URL_SETS = "https://mtgjson.com/json/AllPrintings.json";
+    public static final String URL_AIPG_EN = "http://alfchaval.epizy.com/ipgtree/files/aipg_en.xml";
+    public static final String URL_AMTR_EN = "http://alfchaval.epizy.com/ipgtree/files/amtr_en.xml";
+    public static final String URL_BANNED_EN = "http://alfchaval.epizy.com/ipgtree/files/banned_en.xml";
+    public static final String URL_CR_EN = "http://alfchaval.epizy.com/ipgtree/files/cr_en.xml";
+    public static final String URL_DQ_EN = "http://alfchaval.epizy.com/ipgtree/files/dq_en.xml";
+    public static final String URL_TREE_EN = "http://alfchaval.epizy.com/ipgtree/files/ipg_tree_en.xml";
+    public static final String URL_JAR_EN = "http://alfchaval.epizy.com/ipgtree/files/jar_en.xml";
+    public static final String URL_LINKS_EN = "http://alfchaval.epizy.com/ipgtree/files/links_en.xml";
+    public static final String URL_QUIZ_EN = "http://alfchaval.epizy.com/ipgtree/files/quiz_en.xml";
+    public static final String URL_AIPG_ES = "http://alfchaval.epizy.com/ipgtree/files/aipg_es.xml";
+    public static final String URL_AMTR_ES = "http://alfchaval.epizy.com/ipgtree/files/amtr_es.xml";
+    public static final String URL_BANNED_ES = "http://alfchaval.epizy.com/ipgtree/files/banned_es.xml";
+    public static final String URL_CR_ES = "http://alfchaval.epizy.com/ipgtree/files/cr_es.xml";
+    public static final String URL_DQ_ES = "http://alfchaval.epizy.com/ipgtree/files/dq_es.xml";
+    public static final String URL_TREE_ES = "http://alfchaval.epizy.com/ipgtree/files/ipg_tree_es.xml";
+    public static final String URL_JAR_ES = "http://alfchaval.epizy.com/ipgtree/files/jar_es.xml";
+    public static final String URL_LINKS_ES = "http://alfchaval.epizy.com/ipgtree/files/links_es.xml";
+    public static final String URL_QUIZ_ES = "http://alfchaval.epizy.com/ipgtree/files/quiz_es.xml";
 
     //File names
     public static final String P1_LIFE_FILENAME = "p1_life.txt";
@@ -58,6 +76,7 @@ public class Repository {
     public static final String KEY_P2LOG = "key_p2log";
     public static final String KEY_LANGUAGE = "key_language";
     public static final String KEY_ANNOTATION = "key_annotation";
+    public static final String KEY_AUTOUPDATE = "key_autoupdate";
     public static final String KEY_UNLOCKEDFTP = "key_unlockedftp";
     public static final String KEY_ALLOWFTP = "key_allowftp";
     public static final String KEY_FTPSERVER = "key_ftpserver";
@@ -75,20 +94,29 @@ public class Repository {
     public static final String KEY_LINKS = "key_links";
     public static final String KEY_TREE = "key_tree";
     public static final String KEY_QUIZ = "key_quiz";
+    public static final String KEY_AIPG_EN = "key_aipg_en";
+    public static final String KEY_AMTR_EN = "key_amtr_en";
+    public static final String KEY_BANNED_EN = "key_banned_en";
+    public static final String KEY_CR_EN = "key_cr_en";
+    public static final String KEY_DQ_EN = "key_dq_en";
+    public static final String KEY_TREE_EN = "key_tree_en";
+    public static final String KEY_JAR_EN = "key_jar_en";
+    public static final String KEY_LINKS_EN = "key_links_en";
+    public static final String KEY_QUIZ_EN = "key_quiz_en";
+    public static final String KEY_AIPG_ES = "key_aipg_es";
+    public static final String KEY_AMTR_ES = "key_amtr_es";
+    public static final String KEY_BANNED_ES = "key_banned_es";
+    public static final String KEY_CR_ES = "key_cr_s";
+    public static final String KEY_DQ_ES = "key_dq_es";
+    public static final String KEY_TREE_ES = "key_tree_es";
+    public static final String KEY_JAR_ES = "key_jar_es";
+    public static final String KEY_LINKS_ES = "key_links_es";
+    public static final String KEY_QUIZ_ES = "key_quiz_es";
 
     //Oracle
     public static HashMap<String, Card> cards;
     public static HashMap<String, Set> sets;
     public static HashMap<String, String[]> setsWithCards;
-
-    //Documents
-    public static Tree<TypedText> ComprehensiveRules;
-    public static Tree<TypedText> JudgingAtRegular;
-    public static Tree<TypedText> AnnotatedInfractionProcedureGuide;
-    public static Tree<TypedText> AnnotatedMagicTournamentRules;
-    public static Tree<TypedText> DisqualificationProcess;
-    public static Tree<TypedText> BannedAndRestricted;
-    public static Tree<TypedText> Links;
 
     //Others
     public static Tree<Quiz> IPGTree;
@@ -113,6 +141,7 @@ public class Repository {
     public static String language = ENGLISH;
     public static String ftpCode = null;
     public static boolean showAnnotations = true;
+    public static boolean autoUpdate = true;
     public static boolean unlockedFTP = false;
     public static boolean allowFTP = false;
     public static String ftpServer = null;
@@ -142,7 +171,7 @@ public class Repository {
         startingTime = preferences.getLong(KEY_STARTINGTIME, 0);
         startedCountDown = preferences.getBoolean(KEY_STARTEDCOUNTDOWN, false);
 
-        loadDocuments(context);
+        //loadDocuments(context);
 
         String folder = Environment.getExternalStorageDirectory() + File.separator + FOLDERNAME;
         File directory = new File(folder);
@@ -150,7 +179,7 @@ public class Repository {
             directory.mkdirs();
         }
     }
-
+    /*
     public static void loadDocuments(Context context) {
         switch (language) {
             case ENGLISH:
@@ -177,6 +206,7 @@ public class Repository {
                 break;
         }
     }
+    */
 
     public static void loadDatabase(Context context) {
         cards = Read.loadCardDatabase(context);
@@ -415,6 +445,15 @@ public class Repository {
                     case 69:
                         result = "No results found";
                         break;
+                    case 70:
+                        result = "Auto-Update";
+                        break;
+                    case 71:
+                        result = "Update documents";
+                        break;
+                    case 72:
+                        result = "Advanced settings";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -528,7 +567,7 @@ public class Repository {
                         result = "Oracle";
                         break;
                     case 37:
-                        result = "Opciones";
+                        result = "Ajustes";
                         break;
                     case 38:
                         result = "Temporizador";
@@ -625,6 +664,15 @@ public class Repository {
                         break;
                     case 69:
                         result = "No se encontraron resultados";
+                        break;
+                    case 70:
+                        result = "Actualización automática";
+                        break;
+                    case 71:
+                        result = "Actualizar documentos";
+                        break;
+                    case 72:
+                        result = "Ajustes avanzados";
                         break;
                 }
                 break;
