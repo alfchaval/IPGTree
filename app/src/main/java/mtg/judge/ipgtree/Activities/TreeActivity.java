@@ -17,6 +17,7 @@ import android.widget.TextView;
 import mtg.judge.ipgtree.Quiz;
 import mtg.judge.ipgtree.R;
 
+import mtg.judge.ipgtree.Read;
 import mtg.judge.ipgtree.Repository;
 import mtg.judge.ipgtree.Tree;
 
@@ -147,7 +148,7 @@ public class TreeActivity extends AppCompatActivity {
             questionTree = (Tree<Quiz>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
-            questionTree = Repository.IPGTree;
+            questionTree = Read.readXMLTree("ipg_tree_" + Repository.language + ".xml");
         }
     }
 

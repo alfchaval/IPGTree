@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
 
+import mtg.judge.ipgtree.Read;
 import mtg.judge.ipgtree.Repository;
 import mtg.judge.ipgtree.Tree;
 import mtg.judge.ipgtree.TypedText;
@@ -177,38 +178,16 @@ public class DocumentActivity extends AppCompatActivity {
         });
     }
 
-    //You only have to read the XML the first time you start the app
     private void loadPoints(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             tree = (Tree<TypedText>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
-            switch (getIntent().getStringExtra("document")) {
-                case "cr":
-                    //tree = Repository.ComprehensiveRules;
-                    edt_search.setVisibility(View.VISIBLE);
-                    btn_search.setVisibility(View.VISIBLE);
-                    break;
-                case "jar":
-                    //tree = Repository.JudgingAtRegular;
-                    break;
-                case "aipg":
-                    //tree = Repository.AnnotatedInfractionProcedureGuide;
-                    break;
-                case "amtr":
-                    //tree = Repository.AnnotatedMagicTournamentRules;;
-                    break;
-                case "dq":
-                    //tree = Repository.DisqualificationProcess;
-                    break;
-                case "banned":
-                    //tree = Repository.BannedAndRestricted;
-                    break;
-                case "links":
-                    //tree = Repository.Links;
-                    break;
-                default:
-                    tree = new Tree<TypedText>(new TypedText("ERROR"));
+            String document = getIntent().getStringExtra("document");
+            tree = Read.readXMLDocument(document + "_" + Repository.language + ".xml");
+            if(document.equals("cr")) {
+                edt_search.setVisibility(View.VISIBLE);
+                btn_search.setVisibility(View.VISIBLE);
             }
         }
     }

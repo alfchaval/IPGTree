@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -18,11 +19,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,6 +64,10 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             edt_aipg_es, edt_amtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es;
     private TextView txv_codeftp, txv_ftptitle_one, txv_ftptitle_two;
     private LinearLayout ll_server_code, ll_server_settings;
+    private ScrollView scroll;
+    private ImageView imv_arrow_down, imv_arrow_up;
+
+    private ViewTreeObserver viewTreeObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +82,36 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             Repository.ftpCode = Code.generateCode();
         }
         txv_codeftp.setText(Repository.ftpCode);
+
+        viewTreeObserver = scroll.getViewTreeObserver();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            //Arrows disapear when you full scroll to let you read the first/last question
+            scroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+                @Override
+                public void onScrollChange(View view, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                    showOrHideArrows();
+                }
+            });
+            //Also you don't want to see them if there aren't answers outside the screen
+            viewTreeObserver.addOnGlobalLayoutListener (new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    showOrHideArrows();
+                }
+            });
+        }
+        else {
+            //Older versions can't use OnScrollChangeListener, so instead of disapear, the arrows are semitransparent
+            imv_arrow_down.setAlpha(0.4f);
+            imv_arrow_up.setAlpha(0.4f);
+            //They still disapear if there aren't answers outside the screen
+            viewTreeObserver.addOnGlobalLayoutListener (new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    showOrHideArrowsOldDevices();
+                }
+            });
+        }
     }
 
     private void linkViews() {
@@ -107,6 +145,9 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_jar_es = findViewById(R.id.edt_jar_es);
         edt_links_es = findViewById(R.id.edt_links_es);
         edt_quiz_es = findViewById(R.id.edt_quiz_es);
+        scroll = findViewById(R.id.scroll);
+        imv_arrow_down = findViewById(R.id.imv_arrow_down);
+        imv_arrow_up = findViewById(R.id.imv_arrow_up);
     }
 
     private void loadStrings() {
@@ -114,6 +155,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         txv_ftptitle_two.setText(Repository.StringMap(60));
         edt_codeftp.setHint(Repository.StringMap(52));
         btn_unlockftp.setText(Repository.StringMap(51));
+        btn_save.setText(Repository.StringMap(63));
         cb_ftp.setText(Repository.StringMap(64));
         edt_user.setHint(Repository.StringMap(29));
         edt_password.setHint(Repository.StringMap(62));
@@ -214,6 +256,18 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
+        imv_arrow_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll.fullScroll(View.FOCUS_UP);
+            }
+        });
+        imv_arrow_down.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scroll.fullScroll(View.FOCUS_DOWN);
+            }
+        });
     }
 
     @Override
@@ -256,5 +310,34 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         };
         task.execute("");
         */
+    }
+
+    //Arrows disapear when you full scroll to let you read the first/last question
+    public void showOrHideArrows() {
+        if(scroll.canScrollVertically(-1)) {
+            imv_arrow_up.setVisibility(View.VISIBLE);
+        }
+        else {
+            imv_arrow_up.setVisibility(View.INVISIBLE);
+        }
+        if(scroll.canScrollVertically(1)) {
+            imv_arrow_down.setVisibility(View.VISIBLE);
+        }
+        else {
+            imv_arrow_down.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    //In older versions you can't hide an arrow after scrolling, so you always show both arrows
+    public void showOrHideArrowsOldDevices() {
+        //You really don't need the "canScrollVertically(-1)"
+        if(scroll.canScrollVertically(1)) {
+            imv_arrow_up.setVisibility(View.VISIBLE);
+            imv_arrow_down.setVisibility(View.VISIBLE);
+        }
+        else {
+            imv_arrow_up.setVisibility(View.INVISIBLE);
+            imv_arrow_down.setVisibility(View.INVISIBLE);
+        }
     }
 }

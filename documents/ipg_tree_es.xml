@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <question text="¿Qué ha ocurrido?">
-    Puedes añadir comentarios (como este) dentro de cualquier etiqueta, solo se interpretan los atributos.
-	Actualizado: 03-09-2019
     <answer text="Se ha producido un error de juego">
         <question text="¿Qué tipo de error?">
             <answer text="Un jugador ha olvidado una habilidad disparada">
@@ -640,14 +638,28 @@
                     <answer text="Si">
                         <question text="Solución">
                             <answer text="TE - Marked Cards, Pérdida de juego."></answer>
-                            <answer text="El jugador reemplaza la carta o protector por uno no marcado. Si la carta se marcó durante el torneo el HJ puede hacer un proxy. Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste), esto puede revertirse si luego se encuentra un reemplazo."></answer>
+                            <answer text="El jugador reemplaza la carta o protector por uno no marcado."></answer>
+							<answer text="Si la carta se marcó durante el torneo el HJ puede hacer un proxy."></answer>
+							<answer text="Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste) a elección del jugador, esto puede revertirse si luego se encuentra un reemplazo."></answer>
                         </question>
                     </answer>
                     <answer text="No">
-                        <question text="Solución">
-                            <answer text="TE - Marked Cards, Advertencia."></answer>
-                            <answer text="El jugador reemplaza la carta o protector por uno no marcado. Si la carta se marcó durante el torneo el HJ puede hacer un proxy. Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste), esto puede revertirse si luego se encuentra un reemplazo."></answer>
-                        </question>
+						<question text="¿Se marcó la carta durante el transcurso del torneo?">
+							<answer text="Si">
+								<question text="Solución">
+									<answer text="TE - Marked Cards, Advertencia."></answer>
+									<answer text="El jugador reemplaza la carta o protector por uno no marcado."></answer>
+									<answer text="El HJ puede hacer un proxy."></answer>
+								</question>
+							</answer>
+							<answer text="No">
+								<question text="Solución">
+									<answer text="TE - Marked Cards, Pérdida de juego."></answer>
+									<answer text="El jugador reemplaza la carta o protector por uno no marcado."></answer>
+									<answer text="Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste) a elección del jugador, esto puede revertirse si luego se encuentra un reemplazo."></answer>
+								</question>
+							</answer>
+						</question>
                     </answer>
                 </question>
             </answer>
@@ -664,8 +676,8 @@
                                 <question text="Solución">
                                     <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
                                     <answer text="Altera la lista y el mazo siguiendo estos pasos:"></answer>
-                                    <answer text="1 - Remueve cualquier carta que sea ilegal para el formato o viola el máximo de copias permitidas"></answer>
-                                    <answer text="2 - Si hay demasiadas cartas en el banquillo, remueve cartas a elección del jugador"></answer>
+                                    <answer text="1 - Remueve cualquier carta que sea ilegal para el formato o viola el máximo de copias permitidas."></answer>
+                                    <answer text="2 - Si hay demasiadas cartas en el banquillo, remueve cartas a elección del jugador."></answer>
                                     <answer text="3 - Si el mazo resultante tiene pocas cartas, agrega tierras básicas (ni nevadas ni Waste) a elección del jugador para alcanzar el mínimo de cartas; este cambio puede ser revertido si luego se encuentran reemplazos para las cartas perdidas."></answer>
                                 </question>
                             </answer>
@@ -690,7 +702,7 @@
 											<answer text="No">
 												<question text="Solución">
                                                     <answer text="TE - Deck Problem, Advertencia."></answer>
-                                                    <answer text="Quita las cartas incorrectas. Si faltan alguna carta en el mazo, el oponente elige cuál de esas cartas reemplaza cada carta incorrecta. Si se meten más que se quitan, las adicionales son barajadas en la parte aleatoria de la biblioteca. Si se quitan más de las que se sacan, reemplaza antes las que no estaban en la biblioteca. Si todavía hay cartas adicionales no en la biblioteca que deben ser reemplazadas, son reemplazadas por cartas aleatorias de la biblioteca."></answer>
+                                                    <answer text="Quita las cartas incorrectas. Si faltan alguna carta en el mazo, el oponente elige cuál de esas cartas reemplaza cada carta incorrecta. Si se meten más que se quitan, las adicionales son barajadas en la parte aleatoria de la biblioteca. Si se quitan más de las que se meten, reemplaza antes las que no estaban en la biblioteca. Si todavía hay cartas adicionales no en la biblioteca que deben ser reemplazadas, son reemplazadas por cartas aleatorias de la biblioteca."></answer>
                                                 </question>
                                             </answer>
                                         </question>
@@ -737,7 +749,7 @@
                                     <answer text="No">
                                         <question text="Solución">
                                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
                                 </question>
@@ -752,13 +764,13 @@
                     <answer text="Un jugador tiene cartas ilegales">
                         <question text="Solución">
                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                            <answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene más copias de una carta que el máximo de copias permitidas">
                         <question text="Solución">
                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                            <answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene demasiadas cartas en el banquillo">
@@ -834,7 +846,7 @@
                                     <answer text="No">
                                         <question text="Solución">
                                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
                                 </question>
@@ -876,7 +888,7 @@
                                     <answer text="No">
                                         <question text="Solución">
                                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
                                 </question>
@@ -918,7 +930,7 @@
                                     <answer text="No">
                                         <question text="Solución">
                                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
                                 </question>
@@ -933,13 +945,13 @@
                     <answer text="Un jugador tiene cartas ilegales">
                         <question text="Solución">
                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                            <answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene más copias de una carta que el máximo de copias permitidas">
                         <question text="Solución">
                             <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
-                            <answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene demasiadas cartas en el banquillo">
@@ -969,7 +981,7 @@
     <answer text="Hay un problema con el resultado de un juego/partida">
         <question text="¿Qué tipo de problema?">
             <answer text="Un jugador ha ofrecido a su oponente un método que no forma parte del juego actual para determinar el resultado de la partida">
-                <question text="¿Sabe el oponente que lo que ha hecho va en contra de las reglas?">
+                <question text="¿Sabe el jugador que lo que ha hecho va en contra de las reglas?">
                     <answer text="Si">
                         <question text="Solución">
                             <answer text="UC - Cheating, Descalificación."></answer>
@@ -995,7 +1007,7 @@
                         </question>
                     </answer>
                     <answer text="No, ha sido otro caso">
-                        <question text="¿Sabe el oponente que lo que ha hecho va en contra de las reglas?">
+                        <question text="¿Sabe el jugador que lo que ha hecho va en contra de las reglas?">
                             <answer text="Si">
                                 <question text="Solución">
                                     <answer text="UC - Cheating, Descalificación."></answer>
@@ -1011,7 +1023,7 @@
                 </question>
             </answer>
             <answer text="Una persona ha ofrecido hacer una apuesta relacionada con el torneo">
-                <question text="¿Sabe el oponente que lo que ha hecho va en contra de las reglas?">
+                <question text="¿Sabe el jugador que lo que ha hecho va en contra de las reglas?">
                     <answer text="Si">
                         <question text="Solución">
                             <answer text="UC - Cheating, Descalificación."></answer>
@@ -1028,7 +1040,7 @@
     </answer>
     <answer text="Hay un problema de comunicación">
         <question text="¿Qué tipo de problema?">
-            <answer text="Un jugador busca consejo sobre su partida o información oculta de personas fuera de su partida?">
+            <answer text="Un jugador busca consejo sobre su partida o información oculta de personas fuera de su partida">
                 <question text="Solución">
                     <answer text="TE - Outside Assistance, Pérdida de partida."></answer>
                 </question>

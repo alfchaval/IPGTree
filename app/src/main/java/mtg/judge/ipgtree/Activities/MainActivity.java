@@ -214,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
         enableButtons(true);
         if(resultCode == RESULT_OK) {
             loadStrings();
-            //Repository.loadDocuments(MainActivity.this);
         }
     }
 

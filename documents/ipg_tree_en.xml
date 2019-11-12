@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <question text="¿What happened?">
-    Puedes añadir comentarios (como este) dentro de cualquier etiqueta, solo se interpretan los atributos.
-	Actualizado: 03-09-2019
-	???<answer text="Translation in progress... enjoy the Spanglish"></answer>
     <answer text="There was a game error">
         <question text="¿What type of error?">
             <answer text="A player forgot a trigger ability">
@@ -564,7 +561,7 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="Ha pedido permiso para ausentarse de su partida y aún no ha vuelto">
+            <answer text="He has asked permission for a delay and has not yet returned">
                 <question text="Wait for 10 minutes of absence">
                     <answer text="10 minutes passed">
                         <question text="Solution">
@@ -578,14 +575,14 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="No hace avanzar el estado del juego">
-                ???<question text="¿Está jugando a un ritmo razonable?">
+            <answer text="The game state is not meaningfully changing">
+                <question text="Are they playing at a reasonable pace?">
                     <answer text="Yes">
-                       ??? <question text="¿Está ejecutando activamente un ciclo sin poder dar una cantidad exacta de veces que lo repetirá y el estado de juego resultante esperado?">
+						<question text="Is the player continuously executing a loop without being able to provide an exact number of iterations and the expected resulting game state?">
                             <answer text="Yes">
                                 <question text="Solution">
                                     <answer text="TE - Slow Play, Warning."></answer>
-                                   ??? <answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
+									<answer text="If the match isn't already in additional turns, two additional turns are added to the number of additional turns."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
@@ -596,7 +593,7 @@
                         </question>
                     </answer>
                     <answer text="No">
-                        ???<question text="¿Está jugando lento intencionadamente para sacar ventaja del límite de tiempo?">
+                        <question text="Is the player intentionally playing slowly to take advantage of a time limit?">
                             <answer text="Yes">
                                 <question text="Solution">
                                     <answer text="UC - Stalling, Disqualification."></answer>
@@ -607,7 +604,7 @@
                                     <answer text="Yes">
                                         <question text="Solution">
                                             <answer text="TE - Slow Play, Warning."></answer>
-                                            ???<answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
+                                            <answer text="If the match isn't already in additional turns, two additional turns are added to the number of additional turns."></answer>
                                         </question>
                                     </answer>
                                     <answer text="No">
@@ -621,7 +618,7 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="Está tardando mucho en hacer elecciones de draft">
+            <answer text="The player exceeds the amount of time allotted for a draft pick">
                 <question text="Solution">
                     <answer text="TE - Limited Procedure Violation, Warning."></answer>
                 </question>
@@ -633,56 +630,70 @@
             <answer text="It isn't sufficiently shuffled">
                 <question text="Solution">
                     <answer text="TE - Insufficient Shuffling, Warning."></answer>
-                    ???<answer text="El jugador baraja el mazo suficientemente."></answer>
+                    <answer text="The player shuffles the deck sufficiently."></answer>
                 </question>
             </answer>
-            ???<answer text="Tiene cartas marcadas (no se aplica al banquillo)">
-                ???<question text="¿Crees que el propietario podría notar el patrón y sacar ventaja de ello?">
+            <answer text="It has marked cards (it doesn't apply to cards in sideboard)">
+                <question text="Do you believe the player may notice the pattern and be able to gain substantial advantage?">
                     <answer text="Yes">
                         <question text="Solution">
                             <answer text="TE - Marked Cards, Game Loss."></answer>
-                            ???<answer text="El jugador reemplaza la carta o protector por uno no marcado. Si la carta se marcó durante el torneo el HJ puede hacer un proxy. Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste), esto puede revertirse si luego se encuentra un reemplazo."></answer>
+                            <answer text="The player replaces the card or sleeve with an unmarked one."></answer>
+							<answer text="If the card was marked during the tournament, the HJ can make a proxy."></answer>
+							<answer text="If a replacement for the card is not found, it is replaced by basic land (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
                     <answer text="No">
-                        <question text="Solution">
-                            <answer text="TE - Marked Cards, Warning."></answer>
-                            ???<answer text="El jugador reemplaza la carta o protector por uno no marcado. Si la carta se marcó durante el torneo el HJ puede hacer un proxy. Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste), esto puede revertirse si luego se encuentra un reemplazo."></answer>
-                        </question>
+                        <question text="Was the card marked during the course of the tournament?">
+							<answer text="Si">
+								<question text="Solution">
+									<answer text="TE - Marked Cards, Warning."></answer>
+									<answer text="The player replaces the card or sleeve with an unmarked one."></answer>
+									<answer text="The HJ can make a proxy."></answer>
+								</question>
+							</answer>
+							<answer text="No">
+								<question text="Solution">
+									<answer text="TE - Marked Cards, Game Loss."></answer>
+									<answer text="The player replaces the card or sleeve with an unmarked one."></answer>
+									<answer text="If a replacement for the card is not found, it is replaced by basic land (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>
+								</question>
+							</answer>
+						</question>
                     </answer>
                 </question>
             </answer>
-            ???<answer text="Hay un error descubierto durante un deckcheck">
+            <answer text="There is an error discovered during a deckcheck">
                 <question text="What's the problem?">
-                    ???<answer text="La lista del mazo está mal">
-                        ???<question text="¿Es un torneo de mazo cerrado y la lista la registró otro jugador?">
+                    <answer text="The decklist is incorrect">
+                        <question text="Is a sealed tournament and the decklist was made by other player?">
                             <answer text="Yes">
                                 <question text="Solution">
-                                    ???<answer text="Resuélvelo a tu discreción."></answer>
+                                    <answer text="Fix the problem at your discretion."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solution">
                                     <answer text="TE - Decklist Problem, Game Loss."></answer>
                                     <answer text="Alter the list and the deck by following these steps:"></answer>
-                                    ???<answer text="1 - Remueve cualquier carta que sea ilegal para el formato o viola el máximo de copias permitidas"></answer>
-                                    ???<answer text="2 - Si hay demasiadas cartas en el banquillo, remueve cartas a elección del jugador"></answer>
-                                    ???<answer text="3 - Si el mazo resultante tiene pocas cartas, agrega tierras básicas (ni nevadas ni Waste) a elección del jugador para alcanzar el mínimo de cartas; este cambio puede ser revertido si luego se encuentran reemplazos para las cartas perdidas."></answer>
-                                </question>
+                                    <answer text="1 - Remove illegal cards and cards that violate a maximum cards restriction."></answer>
+                                    <answer text="2 - If there are too many cards on the sideboard, remove cards at the player's choice."></answer>
+                                    <answer text="3 - If the resulting deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>			
+								</question>
                             </answer>
                         </question>
                     </answer>
-                    ???<answer text="La lista del mazo es correcta, pero el mazo o banquillo no coincide con ella">
-                        ???<question text="¿Qué ocurre con el mazo?">
-                            ???<answer text="Hay cartas incorrectas en el mazo">
-								???<question text="¿El oponente puede haber tomado decisiones estratégicas basadas en la presencia de una carta del banquillo?">
+                    <answer text="The decklist is correct, but the deck or sideboard doesn't match the decklist">
+                        <question text="What happens?">
+                            <answer text="There are wrong cards in the deck">
+								<question text="Their opponent may has taken an in-game action or chosen not to act based on the erroneous information">
 									<answer text="Yes">
 										<question text="Solution">
                                             <answer text="TE - Deck Problem, Game Loss."></answer>
                                         </question>
 									</answer>
 									<answer text="No">
-										???<question text="¿Ha comenzado el juego y hay en el mazo principal más copias de una carta que las registradas y no están todavía todas en la porción aleatoria de la biblioteca?">
+										<question text="Has the game started and there are more copies of a card in the main deck than the registered ones and they are not all in the random portion of the library?">
                                             <answer text="Yes">
 												<question text="Solution">
                                                     <answer text="TE - Deck Problem, Game Loss."></answer>
@@ -691,42 +702,42 @@
 											<answer text="No">
 												<question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                                    ???<answer text="Quita las cartas incorrectas. Si faltan alguna carta en el mazo, el oponente elige cuál de esas cartas reemplaza cada carta incorrecta. Si se meten más que se quitan, las adicionales son barajadas en la parte aleatoria de la biblioteca. Si se quitan más de las que se sacan, reemplaza antes las que no estaban en la biblioteca. Si todavía hay cartas adicionales no en la biblioteca que deben ser reemplazadas, son reemplazadas por cartas aleatorias de la biblioteca."></answer>
-                                                </question>
+                                                    <answer text="Remove the wrong cards. If any card is missing in the deck, the opponent chooses which of those cards replaces each incorrect card. If more cards are added than removed, the additional ones are shuffled in the random part of the library. If more cards are removed than added, replace first those that were not in the library. If there are still cards not in the library that must be replaced, they are replaced by random cards from the library."></answer>
+												</question>
                                             </answer>
                                         </question>
 									</answer>
 								</question>
                             </answer>
-                            ???<answer text="Faltan cartas en el mazo de un jugador">
-                                ???<question text="¿Pueden ubicarse esas cartas?">
+                            <answer text="There are missing cards in a deck">
+                                <question text="Can these cards be located?">
                                     <answer text="Yes">
                                         <question text="Where are the cards?">
-                                            ???<answer text="En el mazo del oponente actual">
+                                            <answer text="In their current opponent's deck">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning a ambos jugadores."></answer>
-													???<answer text="Baraja las cartas faltantes en la porción aleatoria de la biblioteca."></answer>
+													<answer text="Shuffle the missing cards in the random portion of the library."></answer>
                                                 </question>
                                             </answer>
-                                           ??? <answer text="Otro sitio">
-                                                ???<question text="¿Se ha descubierto el error al presentar el mazo al oponente o durante una verificación de mazo?">
+											<answer text="Other place">
+                                                <question text="Has the error been discovered when presenting the deck to the opponent or during a deck check?">
                                                     <answer text="Yes">
 														<question text="Solution">
 															<answer text="TE - Decklist Problem, Game Loss."></answer>
 														</question>
 													</answer>
                                                     <answer text="No">
-															???<question text="¿Es el segundo o tercer juego de la partida y las cartas faltantes están en el banquillo?">
+															<question text="Is it the second or third game of the game and the missing cards are on the sideboard?">
 															<answer text="Yes">
 																<question text="Solution">
 																	<answer text="TE - Decklist Problem, Warning."></answer>
-																	???<answer text="Baraja cartas al azar en la porción aleatoria de la biblioteca."></answer>
+																	<answer text="Shuffle random cards in the random portion of the library."></answer>
 																</question>
 															</answer>
 															<answer text="No">
 																<question text="Solution">
 																	<answer text="TE - Decklist Problem, Warning."></answer>
-																	???<answer text="Baraja las cartas faltantes en la porción aleatoria de la biblioteca."></answer>
+																	<answer text="Shuffle the missing cards in the random portion of the library."></answer>
 																</question>
 															</answer>
 														</question>
@@ -738,56 +749,56 @@
                                     <answer text="No">
                                         <question text="Solution">
                                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                                            ???<answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
-                                        </question>
+                                            <answer text="If the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>		
+										</question>
                                     </answer>
                                 </question>
                             </answer>
                         </question>
                     </answer>
-                    ???<answer text="Faltan cartas en el banquillo de un jugador">
+                    <answer text="There are missing cards in a sideboard">
                         <question text="Solution">
                             <answer text="Do nothing."></answer>
                         </question>
                     </answer>
-                    ???<answer text="Un jugador tiene cartas ilegales">
+                    <answer text="A player is playing illegal cards">
                         <question text="Solution">
                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                            ???<answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remove illegal cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
-                    ???<answer text="Un jugador tiene más copias de una carta que el máximo de copias permitidas">
+                    <answer text="A player is playing more copies of a card than the maximum allowed copies">
                         <question text="Solution">
                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                            ???<answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remove excess cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
-                    ???<answer text="Un jugador tiene demasiadas cartas en el banquillo">
+                    <answer text="A player has too many cards in their sideboard">
                         <question text="Solution">
                             <answer text="TE - Deck Problem, Game Loss."></answer>
-                            ???<answer text="Remueve las cartas que no deberían estar en el banquillo."></answer>
+                            <answer text="Remove the cards that shouldn't be there."></answer>
                         </question>
                     </answer>
                 </question>
             </answer>
-           ??? <answer text="Hay un error descubierto durante el desarrollo de la partida">
+			<answer text="Hay un error descubierto durante el desarrollo de la partida">
                 <question text="What's the problem?">
-                    ???<answer text="Un jugador descubre cartas incorrectas en su mazo">
-                        ???<question text="¿Cuándo se ha descubierto?">
-                            ???<answer text="Durante la presentación del mazo, antes de comenzar el juego">
+                    <answer text="A player discover wrong cards in their deck">
+                        <question text="When were the wrong cards discovered?">
+                            <answer text="During the presentation of the deck, before starting the game"">
                                 <question text="Solution">
                                     <answer text="TE - Deck Problem, Game Loss."></answer>
                                     <answer text="Fix the deck."></answer>
                                 </question>
                             </answer>
-                            ???<answer text="Al robar el jugador su mano inicial">
+                            <answer text="When the player draws their starting hand">
                                 <question text="Solution">
                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                    ???<answer text="Arregla el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)."></answer>
+                                    <answer text="Fix the deck, the player must take a mulligan (they can take more mulligans if they want)."></answer>
                                 </question>
                             </answer>
-                            ???<answer text="En mitad del juego">
-                                ???<question text="¿La carta ha sido revelada (o iba a ser revelada) en el momento en el que se descubrió el error?">
+                            <answer text="In the middle of the game">
+                                <question text="Has the card been revealed (or was it going to be revealed) at the time the error was discovered?">
                                     <answer text="Yes">
                                         <question text="Solution">
                                             <answer text="TE - Deck Problem, Game Loss."></answer>
@@ -795,7 +806,7 @@
                                         </question>
                                     </answer>
                                     <answer text="No">
-                                        ???<question text="¿El error es que hay más copias de una carta en el mazo principal de las que están registradas para el mismo y alguna de las copias ha abandonado la porción aleatoria de la biblioteca?">
+                                        <question text="Is the error that there are more copies of a card in the main deck than are registered for it and any of the copies have left the random portion of the library?">
                                             <answer text="Yes">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Game Loss."></answer>
@@ -805,7 +816,7 @@
                                             <answer text="No">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                                    ???<answer text="Arregla el mazo, sustituye la carta errónea por ninguna."></answer>
+                                                    <answer text="Fix the deck, replace the wrong card with none."></answer>
                                                 </question>
                                             </answer>
                                         </question>
@@ -814,13 +825,13 @@
                             </answer>
                         </question>
                     </answer>
-                    ???<answer text="Faltan cartas en el mazo de un jugador">
-                        ???<question text="¿Cuándo se ha descubierto?">
-                            ???<answer text="Durante la presentación del mazo, antes de comenzar el juego">
-                                ???<question text="¿Pueden ubicarse esas cartas?">
+                    <answer text="Missing cards in a deck">
+                        <question text="When has it been discovered?">
+                            <answer text="During the presentation of the deck, before starting the game">
+                                <question text="Can those cards be located?">
                                     <answer text="Yes">
                                         <question text="Where are the cards?">
-                                            ???<answer text="En el mazo del oponente actual">
+                                            <answer text="In the current opponent's deck">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Game Loss a ambos jugadores (no afecta al resultado de la partida)."></answer>
                                                 </question>
@@ -835,19 +846,19 @@
                                     <answer text="No">
                                         <question text="Solution">
                                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                                            ???<answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="If the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                                         </question>
                                     </answer>
                                 </question>
                             </answer>
-                            ???<answer text="Al robar el jugador su mano inicial">
-                                ???<question text="¿Pueden ubicarse esas cartas?">
+                            <answer text="When the player draws their starting hand">
+                                <question text="Can those cards be located?">
                                     <answer text="Yes">
                                         <question text="Where are the cards?">
-                                            ???<answer text="En el mazo del oponente actual">
+											<answer text="In the current opponent's deck">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning a ambos jugadores."></answer>
-                                                    ???<answer text="Arregla los mazos, los jugadores deben hacer un mulligan (pueden hacer más mulligans si quieren)."></answer>
+                                                    <answer text="Fix the decks, players must take a mulligan (they can take more mulligans if they want)."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="In the sideboard">
@@ -855,13 +866,13 @@
                                                     <answer text="Yes">
                                                         <question text="Solution">
                                                             <answer text="TE - Deck Problem, Warning."></answer>
-                                                            ???<answer text="Baraja las cartas en el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)."></answer>
+                                                            <answer text="Shuffle the cards in the deck, the player must take a mulligan (they can take more mulligans if they want)."></answer>
                                                         </question>
                                                     </answer>
                                                     <answer text="No">
                                                         <question text="Solution">
                                                             <answer text="TE - Deck Problem, Warning."></answer>
-                                                            ???<answer text="Elige cartas al azar del banquillo y barájalas en el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)."></answer>
+                                                            <answer text="Shuffle random cards from the sideboard in the deck, the player must take a mulligan (they can take more mulligans if they want)."></answer>
                                                         </question>
                                                     </answer>
                                                 </question>
@@ -869,7 +880,7 @@
                                             <answer text="Other place">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                                    ???<answer text="Baraja las cartas en el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)"></answer>
+                                                    <answer text="Shuffle the cards in the deck, the player must take a mulligan (they can take more mulligans if they want)"></answer>
                                                 </question>
                                             </answer>
                                         </question>
@@ -877,19 +888,19 @@
                                     <answer text="No">
                                         <question text="Solution">
                                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                                            ???<answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="If the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                                         </question>
                                     </answer>
                                 </question>
                             </answer>
-                            ???<answer text="En mitad del juego">
-                                ???<question text="¿Pueden ubicarse esas cartas?">
+                            <answer text="In the middle of the game">
+                                <question text="Can those cards be located?">
                                     <answer text="Yes">
                                         <question text="Where are the cards?">
-                                            ???<answer text="En el mazo del oponente actual">
+                                            <answer text="In the current opponent's deck">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning a ambos jugadores."></answer>
-                                                    ???<answer text="Baraja las cartas en el mazo del propietario."></answer>
+                                                    <answer text="Shuffle the cards in the owner's deck."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="In the sideboard">
@@ -903,7 +914,7 @@
                                                     <answer text="No">
                                                         <question text="Solution">
                                                             <answer text="TE - Deck Problem, Warning."></answer>
-                                                            ???<answer text="Elige cartas al azar del banquillo y barájalas en el mazo."></answer>
+                                                            <answer text="Choose random cards from the sideboard and shuffle them in the deck."></answer>
                                                         </question>
                                                     </answer>
                                                 </question>
@@ -919,46 +930,46 @@
                                     <answer text="No">
                                         <question text="Solution">
                                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                                            ???<answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                                            <answer text="If the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                                         </question>
                                     </answer>
                                 </question>
                             </answer>
                         </question>
                     </answer>
-                    ???<answer text="Faltan cartas en el banquillo de un jugador">
+                    <answer text="There are missing cards in a sideboard">
                         <question text="Solution">
                             <answer text="Do nothing."></answer>
                         </question>
                     </answer>
-                    ???<answer text="Un jugador tiene cartas ilegales">
+                    <answer text="A player is playing illegal cards">
                         <question text="Solution">
                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                            ???<answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remove illegal cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
-                    ???<answer text="Un jugador tiene más copias de una carta que el máximo de copias permitidas">
+                    <answer text="A player is playing more copies of a card than the maximum allowed copies">
                         <question text="Solution">
                             <answer text="TE - Decklist Problem, Game Loss."></answer>
-                            ???<answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador hasta llegar al mínimo necesario, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
+                            <answer text="Remove excess cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
-                    ???<answer text="Un jugador tiene demasiadas cartas en el banquillo">
+                    <answer text="A player has too many cards in their sideboardo">
                         <question text="Why?">
-                            ???<answer text="Ha registrado más de 15 cartas en el banquillo en su lista de mazo">
+                            <answer text="They have registered more than 15 cards on the sideboard in his decklist">
                                 <question text="Solution">
                                     <answer text="TE - Decklist Problem, Game Loss."></answer>
-                                    ???<answer text="Remueve el exceso de cartas a elección del jugador."></answer>
+                                    <answer text="Remove excess cards at the player's choice."></answer>
                                 </question>
                             </answer>
-                            ???<answer text="Está guardando cartas que no forman parte de su banquillo junto al mismo">
+                            <answer text="There are cards not from the sideboard stored with the sideboard">
                                 <question text="Solution">
                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                    ???<answer text="Las cartas en distintos protectores, las fichas y las cartas de dos caras para las cuales se están usando cartas de listado se ignoran al determinar la legalidad del mazo."></answer>
-                                    ???<answer text="Si hay cartas adicionales guardadas con el sideboard que podrían ser usadas en el mazo del jugador, deberían ser consideradas parte del banquillo, a menos que sean:"></answer>
-                                    ???<answer text="- Cartas promocionales que fueron entregadas como parte del torneo."></answer>
-                                    ???<answer text="- Cartas de dos caras representadas por cartas de listado en el mazo."></answer>
-                                    ???<answer text="- Cartas de dos caras usadas para representar el lado 'nocturno' de cartas en el mazo. Estas cartas no deben estar en fundas iguales a los del mazo principal y/o el banquillo."></answer>
+                                    <answer text="Cards in different sleeves, tokens, and double-faced cards for which checklists are being used are ignored when determining deck (not sideboard) legality."></answer>
+                                    <answer text="If there are extra cards stored with the sideboard that could conceivably be played in the player's deck, they will be considered a part of the sideboard unless they are:"></answer>
+                                    <answer text="- Promotional cards that have been handed out as part of the tournament."></answer>
+                                    <answer text="- Double-faced cards represented by checklist cards in the deck."></answer>
+                                    <answer text="- Double-faced cards being used to represent the back side of cards in the deck. These cards must not be sleeved in the same way as cards in the main deck and/or sideboard."></answer>
                                 </question>
                             </answer>
                         </question>
@@ -967,10 +978,10 @@
             </answer>
         </question>
     </answer>
-    ???<answer text="Hay un problema con el resultado de un juego/partida">
+    <answer text="There is a problem with the outcome of a game/match">
         <question text="What type of problem?">
-            ???<answer text="Un jugador ha ofrecido a su oponente un método que no forma parte del juego actual para determinar el resultado de la partida">
-                ???<question text="¿Sabe el oponente que lo que ha hecho va en contra de las reglas?">
+            <answer text="A player offered to use a method that is not part of the current game to determine the outcome of a game or match">
+                <question text="Does the player know that what he has done is against the rules?">
                     <answer text="Yes">
                         <question text="Solution">
                             <answer text="UC - Cheating, Disqualification."></answer>
@@ -983,20 +994,20 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="Un jugador ha ofrecido un incentivo a su oponente para cambiar el resultado de una partida o para que realice una acción dentro de la partida">
+            <answer text="A player offers an incentive to entice an opponent into changing the results of a match or to perform an action within the game">
                 <question text="Has any of this happened?">
-                    ???<answer text="En una porción de eliminación simple, un jugador ha propuesto que todos los jugadores se repartan los premios a partes iguales y no jueguen">
+                    <answer text="In a single elimination portion, a player has proposed that all players split the prizes equally and not play">
                         <question text="Solution">
-                            ???<answer text="Los jugadores en rondas de eliminación simple de un torneo que ofrece efectivo, crédito de tienda, tickets de premio y/o producto cerrado como premio pueden, con permiso del Organizador del torneo, acordar dividir los premios parejos. Los jugadores pueden terminar el torneo en ese punto o continuar jugando. Todos los jugadores que todavía están en el torneo deben estar de acuerdo con esto."></answer>
+                            <answer text="Players in the single-elimination rounds of a tournament offering only cash, store credit, prize tickets, and/or unopened product as prizes may, with the permission of the Tournament Organizer, agree to split the prizes evenly. The players may end the tournament at that point or continue to play. All players still in the tournament must agree to the arrangement."></answer>
                         </question>
                     </answer>
-                    ???<answer text="En la última ronda de una porción de eliminación simple, un jugador propone un reparto de premios a cambio de una concesión">
+                    <answer text="In the last round of a single elimination portion, a player proposes a prize distribution in exchange for a concession">
                         <question text="Solution">
-                            ???<answer text="Los jugadores de la última ronda anunciada de una porción de eliminación simple de un torneo pueden acordar dividir los premios del torneo como deseen. En ese caso, uno de los jugadores de cada mesa deben acordar abandonar el torneo. Los jugadores luego reciben premios de acuerdo a su posición final."></answer>
-                        </question>
+                            <answer text="Players in the announced last round of the single-elimination portion of a tournament may agree to a winner and how to divide the subsequent tournament prizes. In that case, one of the players at each table must agree to drop from the tournament. Players receive the prizes according to their final ranking."></answer>
+						</question>
                     </answer>
                     <answer text="No, it has been another case">
-                        ???<question text="¿Sabe el oponente que lo que ha hecho va en contra de las reglas?">
+                        <question text="Does the player know that what he has done is against the rules?">
                             <answer text="Yes">
                                 <question text="Solution">
                                     <answer text="UC - Cheating, Disqualification."></answer>
@@ -1011,8 +1022,8 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="Una persona ha ofrecido hacer una apuesta relacionada con el torneo">
-                ???<question text="¿Sabe el oponente que lo que ha hecho va en contra de las reglas?">
+            <answer text="One person has offered to place a bet related to the tournament">
+                <question text="Does the player know that what he has done is against the rules?">
                     <answer text="Yes">
                         <question text="Solution">
                             <answer text="UC - Cheating, Disqualification."></answer>
@@ -1029,56 +1040,56 @@
     </answer>
     <answer text="There is a communication problem">
         <question text="What type of problem?">
-            ???<answer text="Un jugador busca consejo sobre su partida o información oculta de personas fuera de su partida?">
+            <answer text="A player ask for advice or hidden information to people outside his game">
                 <question text="Solution">
                     <answer text="TE - Outside Assistance, Match Loss."></answer>
                 </question>
             </answer>
-            ???<answer text="Una persona ofrece consejo o información oculta a una persona que está jugando otra partida">
+            <answer text="A person offers advice or hidden information to a person who is playing another game">
                 <question text="Solution">
                     <answer text="TE - Outside Assistance, Match Loss."></answer>
-                    ???<answer text="Si la persona no está jugando se le puede pedir que abandone el lugar."></answer>
+                    <answer text="If the person who commit this infraction is not enrolled in the tournament, they may be asked to leave the venue."></answer>
                 </question>
             </answer>
-            ???<answer text="Un jugador se ha comunicado con otra persona durante un draft">
+            <answer text="A player has communicated with another person during a draft">
                 <question text="Solution">
                     <answer text="TE - Limited Procedure Violation, Warning."></answer>
                 </question>
             </answer>
-            ???<answer text="Un jugador representa incorrectamente información pública/derivada o no responde completamente una pregunta sobre información pública y su oponente actúa basándose en esa información">
+            <answer text="A player incorrectly represents public/derivate information or does not fully answer a question about public information and their opponent acts based on that information.">
                 <question text="Solution">
                     <answer text="TE - Communication Policy Violation, Warning."></answer>
-                    ???<answer text="Considera una vuelta atrás hasta el momento en el que el oponente actuó basándose en información errónea. Esta infracción no se aplica si la información no ha hecho que el oponente juegue de forma distinta a cómo hubiera jugado con la información correcta."></answer>
+                    <answer text="You may consider a backup to the point when the opponent took the action, not the erroneous communication. This infraction doesn't apply if the information has not caused the opponent to play differently than he would have played with the correct information."></answer>
                 </question>
             </answer>
-            ???<answer text="Durante un juego, un jugador mira notas (distintas de páginas del Oracle) tomadas antes del comienzo de la partida">
+            <answer text="During a game, a player refers to notes (other than Oracle™ pages) made before beginning of the current match">
                 <question text="Solution">
                     <answer text="TE - Outside Assistance, Match Loss."></answer>
                 </question>
             </answer>
         </question>
     </answer>
-    ???<answer text="Un jugador se está comportando de forma poco adecuada">
+    <answer text="A player is behaving inappropriately">
         <question text="What has the player done?">
-            ???<answer text="El jugador ha realizado una acción que es disruptiva para el torneo o sus participantes">
+            <answer text="The player has taken an action that is disruptive to the tournament or its participants">
                 <question text="Solution">
                     <answer text="UC - Minor, Warning."></answer>
                 </question>
             </answer>
-            ???<answer text="El jugador ha realizado una acción contra uno o más individuos que podría esperarse que cree el sentimiento de sentirse molestado, amenazado, intimidado o acosado">
-                ???<question text="¿Ha amenazado con usar violencia física?">
+            <answer text="The player has taken an action towards one or more individuals that could reasonably be expected to create a feeling of being harassed, threatened, bullied, or stalked">
+                <question text="Have they threatened to use physical violence?">
                     <answer text="Yes">
                         <question text="Solution">
                             <answer text="UC - Aggressive Behavior, Disqualification."></answer>
-                            ???<answer text="El organizador debería expulsarlo del local."></answer>
+                            <answer text="The offender should be asked to leave the venue by the organizer."></answer>
                         </question>
                     </answer>
                     <answer text="No">
-                        ???<question text="¿La ofensa fue cometida con mala intención, el jugador no muestra arrepentimiento o la ofensa ha sido repetida anteriormente?">
+                        <question text="Was the offense committed with malicious intent, the player displays no remorse, or the offense was repeated?">
                             <answer text="Yes">
                                 <question text="Solution">
                                     <answer text="UC - Major, Disqualification."></answer>
-                                    ???<answer text="El organizador debería expulsarlo del local."></answer>
+                                    <answer text="The offender should be asked to leave the venue by the organizer."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
@@ -1090,26 +1101,26 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="El jugador ha actuado de manera amenazante hacia otros o su propiedad">
+			<answer text="A player acted in a threatening way towards others or their property">
                 <question text="Solution">
                     <answer text="UC - Aggressive Behavior, Disqualification."></answer>
-                    ???<answer text="El organizador debería expulsarlo del local."></answer>
+                    <answer text="The offender should be asked to leave the venue by the organizer."></answer>
                 </question>
             </answer>
-            ???<answer text="El jugador ha robado material del evento">
+            <answer text="A player has stolen materials from the tournament">
                 <question text="Solution">
                     <answer text="UC - Theft of Tournament Material, Disqualification."></answer>
-                    ???<answer text="El organizador debería expulsarlo del local."></answer>
+                    <answer text="The offender should be asked to leave the venue by the organizer."></answer>
                 </question>
             </answer>
-            ???<answer text="El jugador no hace avanzar el estado del juego">
-                ???<question text="¿Está jugando a un ritmo razonable?">
+            <answer text="The game state is not meaningfully changing">
+                <question text="Are they playing at a reasonable pace?">
                     <answer text="Yes">
-                        ???<question text="¿Está ejecutando activamente un ciclo sin poder dar una cantidad exacta de veces que lo repetirá y el estado de juego resultante esperado?">
+                        <question text="Is the player continuously executing a loop without being able to provide an exact number of iterations and the expected resulting game state?">
                             <answer text="Yes">
                                 <question text="Solution">
                                     <answer text="TE - Slow Play, Warning."></answer>
-                                    ???<answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
+                                    <answer text="If the match isn't already in additional turns, two additional turns are added to the number of additional turns."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
@@ -1120,7 +1131,7 @@
                         </question>
                     </answer>
                     <answer text="No">
-                        ???<question text="¿Está jugando lento intencionadamente para sacar ventaja del límite de tiempo?">
+                        <question text="Are they intentionally playing slowly to take advantage of the time limit?">
                             <answer text="Yes">
                                 <question text="Solution">
                                     <answer text="UC - Stalling, Disqualification."></answer>
@@ -1131,7 +1142,7 @@
                                     <answer text="Yes">
                                         <question text="Solution">
                                             <answer text="TE - Slow Play, Warning."></answer>
-                                            ???<answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
+                                            <answer text="If the match isn't already in additional turns, two additional turns are added to the number of additional turns."></answer>
                                         </question>
                                     </answer>
                                     <answer text="No">
@@ -1145,8 +1156,8 @@
                     </answer>
                 </question>
             </answer>
-            ???<answer text="El jugador ha violado una regla intencionalmente, mentido a un oficial o ha notado una infracción cometida en su partida (o en la de un compañero de equipo) y no ha llamado la atención sobre ella">
-                ???<question text="¿Sabe el jugador que está haciendo algo ilegal e intenta obtener una ventaja de ello?">
+            <answer text="The player has broken a rule defined by the tournament documents, lied to a tournament official, or noticed an offense committed in their (or a teammate's) match and does not call attention to it">
+                <question text="¿Does the player know that he is doing something illegal and tries to gain an advantage from it?">
                     <answer text="Yes">
                         <question text="Solution">
                             <answer text="UC - Cheating, Disqualification."></answer>
@@ -1154,7 +1165,7 @@
                     </answer>
                     <answer text="No">
                         <question text="Solution">
-                            ???<answer text=" Educate the player by explaining that this goes against the rules and does not repeat it again."></answer>
+                            <answer text="Educate the player by explaining that this goes against the rules and does not repeat it again."></answer>
                         </question>
                     </answer>
                 </question>

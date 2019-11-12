@@ -14,6 +14,7 @@ import android.widget.TextView;
 import mtg.judge.ipgtree.Quiz;
 import mtg.judge.ipgtree.R;
 
+import mtg.judge.ipgtree.Read;
 import mtg.judge.ipgtree.Repository;
 
 import java.util.ArrayList;
@@ -152,7 +153,7 @@ public class QuizActivity extends AppCompatActivity {
             questionNumber = savedInstanceState.getInt(KEY_QUESTION_NUMBER);
         }
         else {
-            questions = Repository.Quiz;
+            questions = Read.readXMLQuiz("quiz_" + Repository.language + ".xml");
             shuffleQuestionsAndAnswers();
         }
     }
@@ -217,6 +218,7 @@ public class QuizActivity extends AppCompatActivity {
         }
         else {
             imv_arrow_right.setVisibility(View.INVISIBLE);
+            imv_arrow_left.setVisibility(View.VISIBLE);
             txv_question_number.setText("");
             if (finished) {
                 tv_question.setText(Repository.StringMap(50) + totalPoints() + Repository.StringMap(49));

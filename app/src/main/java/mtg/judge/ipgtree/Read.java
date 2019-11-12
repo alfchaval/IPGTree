@@ -12,22 +12,30 @@ import com.google.gson.stream.JsonReader;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 //This class transform the XML in a Tree
 public class Read {
 
-    public static Tree<TypedText> readXMLDocument(XmlResourceParser resource) {
+    public static Tree<TypedText> readXMLDocument(String filename) {
         Tree<TypedText> tree = null;
-        XmlPullParser xpp = resource;
         try {
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            factory.setNamespaceAware(true);
+            XmlPullParser xpp = factory.newPullParser();
+            File file = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + filename);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            xpp.setInput(new InputStreamReader(fileInputStream));
             int eventType = xpp.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 switch (eventType) {
@@ -65,15 +73,22 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            e.printStackTrace();
+            Tree<TypedText> errorTree = new Tree<TypedText>(new TypedText("Error"));
+            errorTree.addChild(new Tree<TypedText>(new TypedText(Repository.StringMap(73))));
+            return errorTree;
         }
         return tree;
     }
 
-    public static Tree<Quiz> readXMLTree(XmlResourceParser resource) {
+    public static Tree<Quiz> readXMLTree(String filename) {
         Tree<Quiz> tree = new Tree<Quiz>(new Quiz(null,new ArrayList<String>()));
-        XmlPullParser xpp = resource;
         try {
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            factory.setNamespaceAware(true);
+            XmlPullParser xpp = factory.newPullParser();
+            File file = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + filename);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            xpp.setInput(new InputStreamReader(fileInputStream));
             int eventType = xpp.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 switch (eventType) {
@@ -98,18 +113,25 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            e.printStackTrace();
+            Tree<Quiz> errorTree = new Tree<>(new Quiz("Error", new ArrayList<String>(Arrays.asList(Repository.StringMap(73)))));
+            errorTree.addChild(new Tree<Quiz>(new Quiz(null,new ArrayList<String>())));
+            return errorTree;
         }
         return tree;
     }
 
-    public static ArrayList<Quiz> readXMLQuiz (XmlResourceParser resource) {
+    public static ArrayList<Quiz> readXMLQuiz (String filename) {
         ArrayList<Quiz> array = new ArrayList<Quiz>();
         Quiz quiz;
         String question = null;
         ArrayList<String> answers = null;
-        XmlPullParser xpp = resource;
         try {
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            factory.setNamespaceAware(true);
+            XmlPullParser xpp = factory.newPullParser();
+            File file = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + filename);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            xpp.setInput(new InputStreamReader(fileInputStream));
             int eventType = xpp.getEventType();
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 switch (eventType) {
@@ -135,7 +157,9 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            e.printStackTrace();
+            ArrayList<Quiz> errorQuiz = new ArrayList<Quiz>(Arrays.asList(new Quiz("Error", new ArrayList<String>(Arrays.asList(Repository.StringMap(73),"","","")))));
+            errorQuiz.get(0).setCorrectAnswerPosition(0);
+            return errorQuiz;
         }
         return array;
     }

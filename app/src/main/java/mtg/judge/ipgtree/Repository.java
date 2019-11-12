@@ -16,24 +16,24 @@ public class Repository {
     //URLs
     public static final String URL_CARDS = "https://mtgjson.com/json/AllCards.json";
     public static final String URL_SETS = "https://mtgjson.com/json/AllPrintings.json";
-    public static final String URL_AIPG_EN = "http://alfchaval.epizy.com/ipgtree/files/aipg_en.xml";
-    public static final String URL_AMTR_EN = "http://alfchaval.epizy.com/ipgtree/files/amtr_en.xml";
-    public static final String URL_BANNED_EN = "http://alfchaval.epizy.com/ipgtree/files/banned_en.xml";
-    public static final String URL_CR_EN = "http://alfchaval.epizy.com/ipgtree/files/cr_en.xml";
-    public static final String URL_DQ_EN = "http://alfchaval.epizy.com/ipgtree/files/dq_en.xml";
-    public static final String URL_TREE_EN = "http://alfchaval.epizy.com/ipgtree/files/ipg_tree_en.xml";
-    public static final String URL_JAR_EN = "http://alfchaval.epizy.com/ipgtree/files/jar_en.xml";
-    public static final String URL_LINKS_EN = "http://alfchaval.epizy.com/ipgtree/files/links_en.xml";
-    public static final String URL_QUIZ_EN = "http://alfchaval.epizy.com/ipgtree/files/quiz_en.xml";
-    public static final String URL_AIPG_ES = "http://alfchaval.epizy.com/ipgtree/files/aipg_es.xml";
-    public static final String URL_AMTR_ES = "http://alfchaval.epizy.com/ipgtree/files/amtr_es.xml";
-    public static final String URL_BANNED_ES = "http://alfchaval.epizy.com/ipgtree/files/banned_es.xml";
-    public static final String URL_CR_ES = "http://alfchaval.epizy.com/ipgtree/files/cr_es.xml";
-    public static final String URL_DQ_ES = "http://alfchaval.epizy.com/ipgtree/files/dq_es.xml";
-    public static final String URL_TREE_ES = "http://alfchaval.epizy.com/ipgtree/files/ipg_tree_es.xml";
-    public static final String URL_JAR_ES = "http://alfchaval.epizy.com/ipgtree/files/jar_es.xml";
-    public static final String URL_LINKS_ES = "http://alfchaval.epizy.com/ipgtree/files/links_es.xml";
-    public static final String URL_QUIZ_ES = "http://alfchaval.epizy.com/ipgtree/files/quiz_es.xml";
+    public static final String URL_AIPG_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_en.xml";
+    public static final String URL_AMTR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_en.xml";
+    public static final String URL_BANNED_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_en.xml";
+    public static final String URL_CR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/cr_en.xml";
+    public static final String URL_DQ_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/dq_en.xml";
+    public static final String URL_TREE_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/ipg_tree_en.xml";
+    public static final String URL_JAR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/jar_en.xml";
+    public static final String URL_LINKS_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/links_en.xml";
+    public static final String URL_QUIZ_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_en.xml";
+    public static final String URL_AIPG_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_es.xml";
+    public static final String URL_AMTR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_es.xml";
+    public static final String URL_BANNED_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_es.xml";
+    public static final String URL_CR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/cr_es.xml";
+    public static final String URL_DQ_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/dq_es.xml";
+    public static final String URL_TREE_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/ipg_tree_es.xml";
+    public static final String URL_JAR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/jar_es.xml";
+    public static final String URL_LINKS_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/links_es.xml";
+    public static final String URL_QUIZ_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_es.xml";
 
     //File names
     public static final String P1_LIFE_FILENAME = "p1_life.txt";
@@ -62,8 +62,8 @@ public class Repository {
     //Values
     public final static char LIFE = '♥';
     public final static char POISON = 'ϕ';
-    public final static String ENGLISH = "EN";
-    public final static String SPANISH = "ES";
+    public final static String ENGLISH = "en";
+    public final static String SPANISH = "es";
     public final static String FOLDERNAME = "Ipgtree";
 
     //Preferences
@@ -85,15 +85,6 @@ public class Repository {
     public static final String KEY_MILLISECONDS = "key_milliseconds";
     public static final String KEY_STARTINGTIME = "key_startingtime";
     public static final String KEY_STARTEDCOUNTDOWN = "key_startedcountdown";
-    public static final String KEY_CR = "key_cr";
-    public static final String KEY_JAR = "key_jar";
-    public static final String KEY_AIPG = "key_aipg";
-    public static final String KEY_AMTR = "key_amtr";
-    public static final String KEY_DQ = "key_dq";
-    public static final String KEY_BANNED = "key_banned";
-    public static final String KEY_LINKS = "key_links";
-    public static final String KEY_TREE = "key_tree";
-    public static final String KEY_QUIZ = "key_quiz";
     public static final String KEY_AIPG_EN = "key_aipg_en";
     public static final String KEY_AMTR_EN = "key_amtr_en";
     public static final String KEY_BANNED_EN = "key_banned_en";
@@ -117,10 +108,6 @@ public class Repository {
     public static HashMap<String, Card> cards;
     public static HashMap<String, Set> sets;
     public static HashMap<String, String[]> setsWithCards;
-
-    //Others
-    public static Tree<Quiz> IPGTree;
-    public static ArrayList<Quiz> Quiz;
 
     //Variables contador
     public static int milliSeconds = 3000000;
@@ -171,42 +158,12 @@ public class Repository {
         startingTime = preferences.getLong(KEY_STARTINGTIME, 0);
         startedCountDown = preferences.getBoolean(KEY_STARTEDCOUNTDOWN, false);
 
-        //loadDocuments(context);
-
         String folder = Environment.getExternalStorageDirectory() + File.separator + FOLDERNAME;
         File directory = new File(folder);
         if (!directory.exists()) {
             directory.mkdirs();
         }
     }
-    /*
-    public static void loadDocuments(Context context) {
-        switch (language) {
-            case ENGLISH:
-                ComprehensiveRules = Read.readXMLDocument(context.getResources().getXml(R.xml.cr_en));
-                JudgingAtRegular = Read.readXMLDocument(context.getResources().getXml(R.xml.jar_en));
-                AnnotatedInfractionProcedureGuide = Read.readXMLDocument(context.getResources().getXml(R.xml.aipg_en));
-                AnnotatedMagicTournamentRules = Read.readXMLDocument(context.getResources().getXml(R.xml.amtr_en));
-                DisqualificationProcess = Read.readXMLDocument(context.getResources().getXml(R.xml.dq_en));
-                BannedAndRestricted = Read.readXMLDocument(context.getResources().getXml(R.xml.banned_en));
-                Links = Read.readXMLDocument(context.getResources().getXml(R.xml.links_en));
-                IPGTree = Read.readXMLTree(context.getResources().getXml(R.xml.ipg_tree_en));
-                Quiz = Read.readXMLQuiz(context.getResources().getXml(R.xml.quiz_en));
-                break;
-            case SPANISH:
-                ComprehensiveRules = Read.readXMLDocument(context.getResources().getXml(R.xml.cr_es));
-                JudgingAtRegular = Read.readXMLDocument(context.getResources().getXml(R.xml.jar_es));
-                AnnotatedInfractionProcedureGuide = Read.readXMLDocument(context.getResources().getXml(R.xml.aipg_es));
-                AnnotatedMagicTournamentRules = Read.readXMLDocument(context.getResources().getXml(R.xml.amtr_es));
-                DisqualificationProcess = Read.readXMLDocument(context.getResources().getXml(R.xml.dq_es));
-                BannedAndRestricted = Read.readXMLDocument(context.getResources().getXml(R.xml.banned_es));
-                Links = Read.readXMLDocument(context.getResources().getXml(R.xml.links_es));
-                IPGTree = Read.readXMLTree(context.getResources().getXml(R.xml.ipg_tree_es));
-                Quiz = Read.readXMLQuiz(context.getResources().getXml(R.xml.quiz_es));
-                break;
-        }
-    }
-    */
 
     public static void loadDatabase(Context context) {
         cards = Read.loadCardDatabase(context);
@@ -383,10 +340,10 @@ public class Repository {
                         result = "There are no more questions, you can press end to see your result or use the arrow to check your answers";
                         break;
                     case 49:
-                        result = "You can see the correct answers using the arrows";
+                        result = " You can see the correct answers using the arrows";
                         break;
                     case 50:
-                        result = "Your total score is: \"";
+                        result = "Your total score is: ";
                         break;
                     case 51:
                         result = "Unlock";
@@ -453,6 +410,9 @@ public class Repository {
                         break;
                     case 72:
                         result = "Advanced settings";
+                        break;
+                    case 73:
+                        result = "It looks like you don't have this document, you can download it from Settings menu";
                         break;
                 }
                 break;
@@ -603,7 +563,7 @@ public class Repository {
                         result = "No hay más preguntas, pulsa en finalizar para comprobar tus resultados... o puedes usar la flecha para volver y repasar tus respuestas";
                         break;
                     case 49:
-                        result = "Puedes ver las respuestas correctas desplazándote por las preguntas con las flechas";
+                        result = " Puedes ver las respuestas correctas desplazándote por las preguntas con las flechas";
                         break;
                     case 50:
                         result = "Tu puntuación total es: ";
@@ -673,6 +633,9 @@ public class Repository {
                         break;
                     case 72:
                         result = "Ajustes avanzados";
+                        break;
+                    case 73:
+                        result = "Parece que no tienes este documento, puedes descargarlo desde el menú Ajustes";
                         break;
                 }
                 break;
