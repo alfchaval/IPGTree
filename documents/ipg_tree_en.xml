@@ -785,7 +785,7 @@
                 <question text="What's the problem?">
                     <answer text="A player discover wrong cards in their deck">
                         <question text="When were the wrong cards discovered?">
-                            <answer text="During the presentation of the deck, before starting the game"">
+                            <answer text="During the presentation of the deck, before starting the game">
                                 <question text="Solution">
                                     <answer text="TE - Deck Problem, Game Loss."></answer>
                                     <answer text="Fix the deck."></answer>
