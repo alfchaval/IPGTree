@@ -59,7 +59,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
     private Button btn_save, btn_unlockftp;
     private CheckBox cb_ftp;
-    private EditText edt_server, edt_user, edt_password, edt_codeftp,
+    private EditText edt_server, edt_user, edt_password, edt_codeftp, edt_news,
             edt_aipg_en, edt_amtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en,
             edt_aipg_es, edt_amtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es;
     private TextView txv_codeftp, txv_ftptitle_one, txv_ftptitle_two;
@@ -127,6 +127,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         txv_ftptitle_two = findViewById(R.id.txv_ftptitle_two);
         ll_server_code = findViewById(R.id.ll_server_code);
         ll_server_settings = findViewById(R.id.ll_server_settings);
+        edt_news = findViewById(R.id.edt_news);
         edt_aipg_en = findViewById(R.id.edt_aipg_en);
         edt_amtr_en = findViewById(R.id.edt_amtr_en);
         edt_banned_en = findViewById(R.id.edt_banned_en);
@@ -160,6 +161,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_user.setHint(Repository.StringMap(29));
         edt_password.setHint(Repository.StringMap(62));
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
+        edt_news.setText(preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS));
         edt_aipg_en.setText(preferences.getString(Repository.KEY_AIPG_EN, Repository.URL_AIPG_EN));
         edt_amtr_en.setText(preferences.getString(Repository.KEY_AMTR_EN, Repository.URL_AMTR_EN));
         edt_banned_en.setText(preferences.getString(Repository.KEY_BANNED_EN, Repository.URL_BANNED_EN));
@@ -202,6 +204,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+                editor.putString(Repository.KEY_NEWS, edt_news.getText().toString());
                 editor.putString(Repository.KEY_AIPG_EN, edt_aipg_en.getText().toString());
                 editor.putString(Repository.KEY_AMTR_EN, edt_amtr_en.getText().toString());
                 editor.putString(Repository.KEY_BANNED_EN, edt_banned_en.getText().toString());

@@ -156,6 +156,19 @@
                 <TableRow>
 
                     <TextView
+                        android:text="NEWS"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_news"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
                         android:text="AIPG_EN"
                         />
 

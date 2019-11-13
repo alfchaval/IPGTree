@@ -1,13 +1,28 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
 import mtg.judge.ipgtree.R;
+import mtg.judge.ipgtree.Read;
 import mtg.judge.ipgtree.Repository;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         linkViews();
         loadStrings();
         setListeners();
+
+        if(Repository.autoUpdate) {
+            new checkForUpdates().execute();
+        }
     }
 
     private void linkViews() {
@@ -225,6 +244,67 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             super.onBackPressed();
+        }
+    }
+
+    public class checkForUpdates extends AsyncTask<String, String, String> {
+        private AlertDialog alertDialog;
+        private String folder;
+        private String message = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
+            int count;
+            InputStream input;
+            OutputStream output;
+            URL url;
+            URLConnection connection;
+            String filename;
+            byte[] data;
+            try {
+                folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+                File directory = new File(folder);
+                String string = preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS);
+                url = new URL(string);
+                connection = url.openConnection();
+                connection.connect();
+                input = new BufferedInputStream(url.openStream(), 8192);
+                filename = folder + File.separator + string.substring(string.lastIndexOf('/') + 1, string.length());
+                output = new FileOutputStream(filename);
+                data = new byte[1024];
+                while ((count = input.read(data)) != -1) {
+                    output.write(data, 0, count);
+                }
+                output.flush();
+                output.close();
+                input.close();
+
+                Pair<Integer, String> update =  Read.readNews(getApplicationContext());
+                if (update.first > Repository.lastNews) {
+                    message = update.second;
+                    preferences.edit().putInt(Repository.KEY_LASTNEWS, update.first).apply();
+                }
+            }
+            catch (Exception e) {
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            if(message != null) {
+                alertDialog.setTitle(Repository.StringMap(74));
+                alertDialog.setMessage("Descarga la actualización, coño");
+                alertDialog.show();
+            }
         }
     }
 }

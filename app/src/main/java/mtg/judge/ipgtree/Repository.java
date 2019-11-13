@@ -6,12 +6,14 @@ import android.os.Environment;
 import android.util.Pair;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
+
+    private static int appVersion = 20191110;
+    public static int lastNews;
 
     //URLs
     public static final String URL_CARDS = "https://mtgjson.com/json/AllCards.json";
@@ -34,6 +36,7 @@ public class Repository {
     public static final String URL_JAR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/jar_es.xml";
     public static final String URL_LINKS_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/links_es.xml";
     public static final String URL_QUIZ_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_es.xml";
+    public static final String URL_NEWS = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/news.txt";
 
     //File names
     public static final String P1_LIFE_FILENAME = "p1_life.txt";
@@ -85,6 +88,7 @@ public class Repository {
     public static final String KEY_MILLISECONDS = "key_milliseconds";
     public static final String KEY_STARTINGTIME = "key_startingtime";
     public static final String KEY_STARTEDCOUNTDOWN = "key_startedcountdown";
+    public static final String KEY_NEWS = "key_news";
     public static final String KEY_AIPG_EN = "key_aipg_en";
     public static final String KEY_AMTR_EN = "key_amtr_en";
     public static final String KEY_BANNED_EN = "key_banned_en";
@@ -103,6 +107,7 @@ public class Repository {
     public static final String KEY_JAR_ES = "key_jar_es";
     public static final String KEY_LINKS_ES = "key_links_es";
     public static final String KEY_QUIZ_ES = "key_quiz_es";
+    public static final String KEY_LASTNEWS = "key_lastnews";
 
     //Oracle
     public static HashMap<String, Card> cards;
@@ -157,6 +162,7 @@ public class Repository {
         milliSeconds = preferences.getInt(KEY_MILLISECONDS, 3000000);
         startingTime = preferences.getLong(KEY_STARTINGTIME, 0);
         startedCountDown = preferences.getBoolean(KEY_STARTEDCOUNTDOWN, false);
+        lastNews = preferences.getInt(KEY_LASTNEWS, appVersion);
 
         String folder = Environment.getExternalStorageDirectory() + File.separator + FOLDERNAME;
         File directory = new File(folder);
@@ -403,7 +409,7 @@ public class Repository {
                         result = "No results found";
                         break;
                     case 70:
-                        result = "Auto-Update";
+                        result = "Check for updates at start";
                         break;
                     case 71:
                         result = "Update documents";
@@ -413,6 +419,9 @@ public class Repository {
                         break;
                     case 73:
                         result = "It looks like you don't have this document, you can download it from Settings menu";
+                        break;
+                    case 74:
+                        result = "Available update";
                         break;
                 }
                 break;
@@ -626,7 +635,7 @@ public class Repository {
                         result = "No se encontraron resultados";
                         break;
                     case 70:
-                        result = "Actualización automática";
+                        result = "Buscar actualizaciones al iniciar";
                         break;
                     case 71:
                         result = "Actualizar documentos";
@@ -636,6 +645,9 @@ public class Repository {
                         break;
                     case 73:
                         result = "Parece que no tienes este documento, puedes descargarlo desde el menú Ajustes";
+                        break;
+                    case 74:
+                        result = "Actualización disponible";
                         break;
                 }
                 break;

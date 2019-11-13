@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.XmlResourceParser;
 import android.os.Environment;
 import android.util.Log;
+import android.util.Pair;
 
 import mtg.judge.ipgtree.R;
 import com.google.gson.Gson;
@@ -14,6 +15,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -169,7 +171,7 @@ public class Read {
         Gson gson = new GsonBuilder().create();
         Card card;
 
-        String filename = Environment.getExternalStorageDirectory() + File.separator + "Ipgtree" + File.separator + "oracle.json";
+        String filename = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "oracle.json";
 
         if(new File(filename).exists()) {
             try {
@@ -196,7 +198,7 @@ public class Read {
         Gson gson = new GsonBuilder().create();
         Set set;
 
-        String filename = Environment.getExternalStorageDirectory() + File.separator + "Ipgtree" + File.separator + "sets.json";
+        String filename = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "sets.json";
 
         if(new File(filename).exists()) {
             try {
@@ -217,5 +219,27 @@ public class Read {
         }
 
         return sets;
+    }
+
+    public static Pair<Integer, String> readNews(Context context) {
+        String filename = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "news.txt";
+        Pair<Integer, String> news;
+        String date = null;
+        String info = null;
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream (filename);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            date = bufferedReader.readLine();
+            info = bufferedReader.readLine();
+            news = new Pair<>(Integer.parseInt(date.trim()),info.trim());
+            fileInputStream.close();
+            bufferedReader.close();
+        }
+        catch(Exception e) {
+            news = new Pair<>(0, null);
+        }
+        return news;
     }
 }
