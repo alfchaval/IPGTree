@@ -16,6 +16,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
@@ -53,7 +54,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Button btn_update_oracle, btn_update_documents, btn_en_language, btn_es_language, btn_donate, btn_advanced;
     private CheckBox cb_annotations, cb_update;
-    private TextView txv_annotations;
+    private TextView txv_annotations, txv_web;
     private LinearLayout ll_en_language, ll_es_language;
 
     private String startingLanguage;
@@ -82,6 +83,7 @@ public class SettingsActivity extends AppCompatActivity {
         cb_annotations = findViewById(R.id.cb_annotations);
         cb_update = findViewById(R.id.cb_update);
         txv_annotations = findViewById(R.id.txv_annotations);
+        txv_web = findViewById(R.id.txv_web);
         ll_en_language = findViewById(R.id.ll_en_language);
         ll_es_language = findViewById(R.id.ll_es_language);
     }
@@ -195,6 +197,15 @@ public class SettingsActivity extends AppCompatActivity {
                 enableButtons(false);
                 Intent intent = new Intent(SettingsActivity.this, AdvancedSettingsActivity.class);
                 startActivityForResult(intent, 1);
+            }
+        });
+        txv_web.setMovementMethod(LinkMovementMethod.getInstance());
+        txv_web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse(((TextView)view).getText().toString()));
+                startActivity(browserIntent);
             }
         });
     }

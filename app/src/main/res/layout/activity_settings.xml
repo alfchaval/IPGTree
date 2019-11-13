@@ -137,10 +137,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_updates"
-        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
+        app:layout_constraintBottom_toTopOf="@+id/txv_web"
         android:background="@drawable/answer_background_parent"
         android:textColor="@color/colorText"
         android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/txv_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_advanced"
+        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
+        android:text="http://alfchaval.epizy.com/ipgtree/"
+        android:textColor="@color/colorLink"
         />
 
     <Button
@@ -149,7 +161,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_advanced"
+        app:layout_constraintTop_toBottomOf="@+id/txv_web"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/donate"
         />

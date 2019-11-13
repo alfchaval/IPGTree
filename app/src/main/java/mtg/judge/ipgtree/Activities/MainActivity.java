@@ -1,7 +1,6 @@
 package mtg.judge.ipgtree.Activities;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -302,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
             if(message != null) {
                 alertDialog.setTitle(Repository.StringMap(74));
-                alertDialog.setMessage("Descarga la actualización, coño");
+                alertDialog.setMessage(message);
                 alertDialog.show();
             }
         }
