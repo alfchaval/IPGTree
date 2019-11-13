@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         loadStrings();
         setListeners();
 
-        if(Repository.autoUpdate) {
+        if(Repository.downloadNews) {
             new checkForUpdates().execute();
         }
     }

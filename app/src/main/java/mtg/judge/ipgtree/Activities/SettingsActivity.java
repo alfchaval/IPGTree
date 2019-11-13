@@ -17,7 +17,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -108,7 +107,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
         startingLanguage = Repository.language;
         cb_annotations.setChecked(Repository.showAnnotations);
-        cb_update.setChecked(Repository.autoUpdate);
+        cb_update.setChecked(Repository.downloadNews);
     }
 
     private void setListeners() {
@@ -150,9 +149,9 @@ public class SettingsActivity extends AppCompatActivity {
         cb_update.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Repository.autoUpdate = isChecked;
+                Repository.downloadNews = isChecked;
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                editor.putBoolean(Repository.KEY_AUTOUPDATE, Repository.showAnnotations);
+                editor.putBoolean(Repository.KEY_DOWNLOADNEWS, Repository.downloadNews);
                 editor.apply();
             }
         });

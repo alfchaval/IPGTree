@@ -79,7 +79,7 @@ public class Repository {
     public static final String KEY_P2LOG = "key_p2log";
     public static final String KEY_LANGUAGE = "key_language";
     public static final String KEY_ANNOTATION = "key_annotation";
-    public static final String KEY_AUTOUPDATE = "key_autoupdate";
+    public static final String KEY_DOWNLOADNEWS = "key_downloadnews";
     public static final String KEY_UNLOCKEDFTP = "key_unlockedftp";
     public static final String KEY_ALLOWFTP = "key_allowftp";
     public static final String KEY_FTPSERVER = "key_ftpserver";
@@ -133,7 +133,7 @@ public class Repository {
     public static String language = ENGLISH;
     public static String ftpCode = null;
     public static boolean showAnnotations = true;
-    public static boolean autoUpdate = true;
+    public static boolean downloadNews = true;
     public static boolean unlockedFTP = false;
     public static boolean allowFTP = false;
     public static String ftpServer = null;

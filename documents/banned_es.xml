@@ -6,14 +6,15 @@
             <point text="Field of the Dead"></point>
     </point>
     <point text="Pioneer">
-        <point text="Updated: 05-11-2019"></point>
+        <point text="Updated: 11-11-2019"></point>
         <title text="Baneadas"></title>
             <point text="Bloodstained Mire"></point>
 			<point text="Felidar Guardian"></point>
             <point text="Flooded Strand"></point>
 			<point text="Leyline of Abundance"></point>
 			<point text="Oath of Nissa"></point>
-            <point text="Polluted Delta,"></point>
+            <point text="Polluted Delta"></point>
+			<point text="Veil of Summer"></point>
             <point text="Windswept Heath"></point>
             <point text="Wooded Foothills"></point>
     </point>
@@ -430,6 +431,12 @@
         <title text="Baneadas"></title>
             <point text="Sorcerous Spyglass"></point>
 			<point text="Oko, Thief of Crowns (solo en MTGArena)"></point>
+    </point>
+	<point text="2HG">
+        <point text="Actualizado: ???"></point>
+		<point text="Gigante de dos cabezas no es un formato por si mismo, sino una variación de otros formatos, por lo que las cartas de esta lista están baneadas en adición a las cartas baneadas en el formato."></point>
+        <title text="Baneadas"></title>
+            <point text="Erayo, Soratami Ascendant"></point>
     </point>
     <point text="Tiny Leaders">
         <point text="Actualizado: 07-06-2018"></point>
