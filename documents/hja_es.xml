@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<point text="Anuncio del Juez Principal">
+	<point text="● Bienvenidos al [nombre del torneo]"></point>
+	<point text="● Este torneo clasifica para el [nombre del torneo]"></point>
+	<point text="● Soy [nombre], y seré el juez principal del torneo"></point>
+	<point text="● Ayudándome hoy están los jueces: [nombres]"></point>
+	<point text="● Somos [número] jugadores y serán [número] rondas."></point>
+	<point text="● Este es un evento de nivel [normal/competitivo]"></point>
+	<point text="● Las rondas serán de 50 minutos"></point>
+	<point text="● Cuando terminéis la partida, llevad el talón de resultado a [lugar]"></point>
+	<point text="● No habrá descanso para comer / Habrá un descanso de [número] minutos tras la ronda [número]"></point>
+	<point text="● (Anuncios específicos del formato y cambios en la política)"></point>
+	<point text="● Si tenéis cualquier problema durante la partida, cualquier pregunta o lo que sea, simplemente levantad la mano y gritad ‘¡juez!’"></point>
+	<point text="● Cuando os levantéis del asiento, aseguraros de llevaros con vosotros todas vuestras cosas, eso incluye vuestro mazo, pero también el trozo de papel en el que habéis anotado las vidas y basura en general"></point>
+	<point text="● Y, por supuesto, ¡divertíos!"></point>
+</point>

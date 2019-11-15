@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
             btn_4.setText(getString(R.string.activity_documents_menu_amtr));
             btn_5.setText(Repository.StringMap(5));
             btn_6.setText(Repository.StringMap(4));
-            btn_7.setText(Repository.StringMap(6));
-            btn_8.setVisibility(View.GONE);
+            btn_7.setText(Repository.StringMap(75));
+            btn_8.setText(Repository.StringMap(6));
             btn_9.setVisibility(View.GONE);
         }
         else {
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
             btn_7.setText(Repository.StringMap(38));
             btn_8.setText(Repository.StringMap(35));
             btn_9.setText(Repository.StringMap(37));
-            btn_8.setVisibility(View.VISIBLE);
             btn_9.setVisibility(View.VISIBLE);
         }
     }
@@ -170,6 +169,10 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("document", "banned");
                     break;
                 case 7:
+                    intent = new Intent(MainActivity.this, DocumentActivity.class);
+                    intent.putExtra("document", "hja");
+                    break;
+                case 8:
                     intent = new Intent(MainActivity.this, DocumentActivity.class);
                     intent.putExtra("document", "links");
                     break;

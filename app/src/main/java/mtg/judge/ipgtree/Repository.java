@@ -18,6 +18,7 @@ public class Repository {
     //URLs
     public static final String URL_CARDS = "https://mtgjson.com/json/AllCards.json";
     public static final String URL_SETS = "https://mtgjson.com/json/AllPrintings.json";
+
     public static final String URL_AIPG_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_en.xml";
     public static final String URL_AMTR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_en.xml";
     public static final String URL_BANNED_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_en.xml";
@@ -27,6 +28,8 @@ public class Repository {
     public static final String URL_JAR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/jar_en.xml";
     public static final String URL_LINKS_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/links_en.xml";
     public static final String URL_QUIZ_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_en.xml";
+    public static final String URL_HJA_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/hja_en.xml";
+
     public static final String URL_AIPG_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_es.xml";
     public static final String URL_AMTR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_es.xml";
     public static final String URL_BANNED_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_es.xml";
@@ -36,6 +39,8 @@ public class Repository {
     public static final String URL_JAR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/jar_es.xml";
     public static final String URL_LINKS_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/links_es.xml";
     public static final String URL_QUIZ_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_es.xml";
+    public static final String URL_HJA_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/hja_es.xml";
+
     public static final String URL_NEWS = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/news.txt";
 
     //File names
@@ -423,6 +428,9 @@ public class Repository {
                     case 74:
                         result = "Available update";
                         break;
+                    case 75:
+                        result = "HJ Announcement";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -648,6 +656,9 @@ public class Repository {
                         break;
                     case 74:
                         result = "Actualización disponible";
+                        break;
+                    case 75:
+                        result = "Anuncio del HJ";
                         break;
                 }
                 break;

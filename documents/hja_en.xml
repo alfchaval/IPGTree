@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<point text="Head Judge Announcement">
+	<point text="● Welcome to [tournament name]"></point>
+	<point text="● This tournament qualify to [tournament name]"></point>
+	<point text="● I'm [name], I will be the head judge"></point>
+	<point text="● Helping me today are fellow awesome judges: [names]"></point>
+	<point text="● We have [number] players and will be playing [number] rounds."></point>
+	<point text="● This is a [regular/competitive] level event"></point>
+	<point text="● The rounds are 50 minutes long"></point>
+	<point text="● When you finish a match, bring your match slip to [place]"></point>
+	<point text="● There will be no break to eat / There will be a [number]-minute lunch break after round [number]"></point>
+	<point text="● (Format-specific and policy change announcements)"></point>
+	<point text="● If you have any issues while playing, questions, or something just doesn't feel right, just raise your hand and call ‘judge!’"></point>
+	<point text="● When you get up, make sure you have all your belongings with you, that includes your deck, but also the paper you used to keep the record of lives and other trash"></point>
+	<point text="● And, of course, have fun!"></point>
+</point>
