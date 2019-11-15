@@ -60,8 +60,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     private Button btn_save, btn_unlockftp;
     private CheckBox cb_ftp;
     private EditText edt_server, edt_user, edt_password, edt_codeftp, edt_news,
-            edt_aipg_en, edt_amtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en,
-            edt_aipg_es, edt_amtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es;
+            edt_aipg_en, edt_amtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en, edt_hja_en,
+            edt_aipg_es, edt_amtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es;
     private TextView txv_codeftp, txv_ftptitle_one, txv_ftptitle_two;
     private LinearLayout ll_server_code, ll_server_settings;
     private ScrollView scroll;
@@ -128,6 +128,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         ll_server_code = findViewById(R.id.ll_server_code);
         ll_server_settings = findViewById(R.id.ll_server_settings);
         edt_news = findViewById(R.id.edt_news);
+
         edt_aipg_en = findViewById(R.id.edt_aipg_en);
         edt_amtr_en = findViewById(R.id.edt_amtr_en);
         edt_banned_en = findViewById(R.id.edt_banned_en);
@@ -137,6 +138,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_jar_en = findViewById(R.id.edt_jar_en);
         edt_links_en = findViewById(R.id.edt_links_en);
         edt_quiz_en = findViewById(R.id.edt_quiz_en);
+        edt_hja_en = findViewById(R.id.edt_hja_en);
+
         edt_aipg_es = findViewById(R.id.edt_aipg_es);
         edt_amtr_es = findViewById(R.id.edt_amtr_es);
         edt_banned_es = findViewById(R.id.edt_banned_es);
@@ -146,6 +149,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_jar_es = findViewById(R.id.edt_jar_es);
         edt_links_es = findViewById(R.id.edt_links_es);
         edt_quiz_es = findViewById(R.id.edt_quiz_es);
+        edt_hja_es = findViewById(R.id.edt_hja_es);
+
         scroll = findViewById(R.id.scroll);
         imv_arrow_down = findViewById(R.id.imv_arrow_down);
         imv_arrow_up = findViewById(R.id.imv_arrow_up);
@@ -162,6 +167,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_password.setHint(Repository.StringMap(62));
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
         edt_news.setText(preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS));
+
         edt_aipg_en.setText(preferences.getString(Repository.KEY_AIPG_EN, Repository.URL_AIPG_EN));
         edt_amtr_en.setText(preferences.getString(Repository.KEY_AMTR_EN, Repository.URL_AMTR_EN));
         edt_banned_en.setText(preferences.getString(Repository.KEY_BANNED_EN, Repository.URL_BANNED_EN));
@@ -171,6 +177,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_jar_en.setText(preferences.getString(Repository.KEY_JAR_EN, Repository.URL_JAR_EN));
         edt_links_en.setText(preferences.getString(Repository.KEY_LINKS_EN, Repository.URL_LINKS_EN));
         edt_quiz_en.setText(preferences.getString(Repository.KEY_QUIZ_EN, Repository.URL_QUIZ_EN));
+        edt_hja_en.setText(preferences.getString(Repository.KEY_HJA_EN, Repository.URL_HJA_EN));
+
         edt_aipg_es.setText(preferences.getString(Repository.KEY_AIPG_ES, Repository.URL_AIPG_ES));
         edt_amtr_es.setText(preferences.getString(Repository.KEY_AMTR_ES, Repository.URL_AMTR_ES));
         edt_banned_es.setText(preferences.getString(Repository.KEY_BANNED_ES, Repository.URL_BANNED_ES));
@@ -180,6 +188,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_jar_es.setText(preferences.getString(Repository.KEY_JAR_ES, Repository.URL_JAR_ES));
         edt_links_es.setText(preferences.getString(Repository.KEY_LINKS_ES, Repository.URL_LINKS_ES));
         edt_quiz_es.setText(preferences.getString(Repository.KEY_QUIZ_ES, Repository.URL_QUIZ_ES));
+        edt_hja_es.setText(preferences.getString(Repository.KEY_HJA_ES, Repository.URL_HJA_ES));
     }
 
     private void loadRepositoryData() {
@@ -205,6 +214,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
                 editor.putString(Repository.KEY_NEWS, edt_news.getText().toString());
+
                 editor.putString(Repository.KEY_AIPG_EN, edt_aipg_en.getText().toString());
                 editor.putString(Repository.KEY_AMTR_EN, edt_amtr_en.getText().toString());
                 editor.putString(Repository.KEY_BANNED_EN, edt_banned_en.getText().toString());
@@ -214,6 +224,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 editor.putString(Repository.KEY_JAR_EN, edt_jar_en.getText().toString());
                 editor.putString(Repository.KEY_LINKS_EN, edt_links_en.getText().toString());
                 editor.putString(Repository.KEY_QUIZ_EN, edt_quiz_en.getText().toString());
+                editor.putString(Repository.KEY_HJA_EN, edt_hja_en.getText().toString());
+
                 editor.putString(Repository.KEY_AIPG_ES, edt_aipg_es.getText().toString());
                 editor.putString(Repository.KEY_AMTR_ES, edt_amtr_es.getText().toString());
                 editor.putString(Repository.KEY_BANNED_ES, edt_banned_es.getText().toString());
@@ -223,6 +235,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 editor.putString(Repository.KEY_JAR_ES, edt_jar_es.getText().toString());
                 editor.putString(Repository.KEY_LINKS_ES, edt_links_es.getText().toString());
                 editor.putString(Repository.KEY_QUIZ_ES, edt_quiz_es.getText().toString());
+                editor.putString(Repository.KEY_HJA_ES, edt_hja_es.getText().toString());
+
                 editor.apply();
                 if (ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
                         && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED

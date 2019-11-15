@@ -286,6 +286,19 @@
                 <TableRow>
 
                     <TextView
+                        android:text="HJA_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_hja_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
                         android:text="AIPG_ES"
                         />
 
@@ -395,6 +408,19 @@
 
                     <EditText
                         android:id="@+id/edt_quiz_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="HJA_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_hja_es"
                         android:layout_weight="1"
                         />
 

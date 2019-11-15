@@ -554,6 +554,8 @@ public class SettingsActivity extends AppCompatActivity {
             documents.add(preferences.getString(Repository.KEY_JAR_EN, Repository.URL_JAR_EN));
             documents.add(preferences.getString(Repository.KEY_LINKS_EN, Repository.URL_LINKS_EN));
             documents.add(preferences.getString(Repository.KEY_QUIZ_EN, Repository.URL_QUIZ_EN));
+            documents.add(preferences.getString(Repository.KEY_HJA_EN, Repository.URL_HJA_EN));
+
             documents.add(preferences.getString(Repository.KEY_AIPG_ES, Repository.URL_AIPG_ES));
             documents.add(preferences.getString(Repository.KEY_AMTR_ES, Repository.URL_AMTR_ES));
             documents.add(preferences.getString(Repository.KEY_BANNED_ES, Repository.URL_BANNED_ES));
@@ -563,6 +565,7 @@ public class SettingsActivity extends AppCompatActivity {
             documents.add(preferences.getString(Repository.KEY_JAR_ES, Repository.URL_JAR_ES));
             documents.add(preferences.getString(Repository.KEY_LINKS_ES, Repository.URL_LINKS_ES));
             documents.add(preferences.getString(Repository.KEY_QUIZ_ES, Repository.URL_QUIZ_ES));
+            documents.add(preferences.getString(Repository.KEY_HJA_ES, Repository.URL_HJA_ES));
             int count;
             InputStream input;
             OutputStream output;

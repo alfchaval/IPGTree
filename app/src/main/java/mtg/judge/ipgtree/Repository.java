@@ -76,24 +76,30 @@ public class Repository {
 
     //Preferences
     public static final String KEY_PREFERENCES = "key_preferences";
+
     public static final String KEY_P1LIFE = "key_p1life";
     public static final String KEY_P2LIFE = "key_p2life";
     public static final String KEY_P1POISON = "key_p1poison";
     public static final String KEY_P2POISON = "key_p2poison";
     public static final String KEY_P1LOG = "key_p1log";
     public static final String KEY_P2LOG = "key_p2log";
+
     public static final String KEY_LANGUAGE = "key_language";
     public static final String KEY_ANNOTATION = "key_annotation";
     public static final String KEY_DOWNLOADNEWS = "key_downloadnews";
+
     public static final String KEY_UNLOCKEDFTP = "key_unlockedftp";
     public static final String KEY_ALLOWFTP = "key_allowftp";
     public static final String KEY_FTPSERVER = "key_ftpserver";
     public static final String KEY_FTPUSER = "key_ftpuser";
     public static final String KEY_FTPPASSWORD = "key_ftppassword";
+
     public static final String KEY_MILLISECONDS = "key_milliseconds";
     public static final String KEY_STARTINGTIME = "key_startingtime";
     public static final String KEY_STARTEDCOUNTDOWN = "key_startedcountdown";
+
     public static final String KEY_NEWS = "key_news";
+
     public static final String KEY_AIPG_EN = "key_aipg_en";
     public static final String KEY_AMTR_EN = "key_amtr_en";
     public static final String KEY_BANNED_EN = "key_banned_en";
@@ -103,6 +109,8 @@ public class Repository {
     public static final String KEY_JAR_EN = "key_jar_en";
     public static final String KEY_LINKS_EN = "key_links_en";
     public static final String KEY_QUIZ_EN = "key_quiz_en";
+    public static final String KEY_HJA_EN = "key_hja_en";
+
     public static final String KEY_AIPG_ES = "key_aipg_es";
     public static final String KEY_AMTR_ES = "key_amtr_es";
     public static final String KEY_BANNED_ES = "key_banned_es";
@@ -112,6 +120,8 @@ public class Repository {
     public static final String KEY_JAR_ES = "key_jar_es";
     public static final String KEY_LINKS_ES = "key_links_es";
     public static final String KEY_QUIZ_ES = "key_quiz_es";
+    public static final String KEY_HJA_ES = "key_hja_es";
+
     public static final String KEY_LASTNEWS = "key_lastnews";
 
     //Oracle
