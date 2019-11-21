@@ -851,7 +851,10 @@
             <point text="“Buy-a-Box” promotional cards, while not appearing in expansion Booster Packs, are considered part of the expansion released concurrent with those promotional cards. These cards have the same expansion symbol as cards from that expansion, are legal for play in the Standard format, and rotate out of the Standard format at the same time as the expansion."></point>
             <annotation text="While cards in a Welcome Deck may not be opened in booster packs, they are still currently legal in standard.  Take extra care when verifying legality of cards such as these!"></annotation>
             <point text="When Snow-Covered Lands are not legal in Standard, they are treated as the equivalent basic lands. Players must replace them when discovered, but no infraction is committed."></point>
-            <point text="No hay cartas baneadas actualmente en Estándar"></point>
+            <point text="• Field of the Dead"></point>
+			<point text="• Oko, Thief of Crowns"></point>
+			<point text="• Once Upon a Time"></point>
+			<point text="• Veil of Summer"></point>
         </point>
         <point text="6.4 Modern Format Deck Construction">
             <annotation text="These are the sets legal in Modern. Note that these include dates where sets will rotate into Modern, but that no sets will ever rotate out. This section is updated with each release of the MTR to reflect the newest sets."></annotation>
@@ -1005,6 +1008,7 @@
 			<point text="• Mox Sapphire"></point>
 			<point text="• Mystical Tutor"></point>
 			<point text="• Mystic Forge"></point>
+			<point text="• Narset, Parter of Veils"></point>
 			<point text="• Necropotence"></point>
 			<point text="• Ponder"></point>
 			<point text="• Sol Ring"></point>
@@ -1082,6 +1086,7 @@
 			<point text="• Vampiric Tutor"></point>
 			<point text="• Wheel of Fortune"></point>
 			<point text="• Windfall"></point>
+			<point text="• Wrenn and Six"></point>
 			<point text="• Yawgmoth’s Bargain"></point>
 			<point text="• Yawgmoth’s Will"></point>
         </point>

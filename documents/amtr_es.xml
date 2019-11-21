@@ -851,7 +851,10 @@
             <point text="Las cartas promocionales “Buy-a-Box”, aunque no aparezcan en sobres, se consideran parte de la expansión lanzada concurrentemente con esas cartas promocionales. Estas cartas tienen el mismo símbolo de expansión que las cartas de esa expansión, y son legales para jugar en el formato Estándar, y rotan fuera del formato Estándar al mismo tiempo que la expansión."></point>
             <annotation text="Si bien las cartas de los Mazos de Bienvenida no pueden ser abiertas en booster packs, ellas aún son legales en el formato Standard. Tenga especial cuidado cuando verifiquen la legalidad de cartas como estas."></annotation>
             <point text="Cuando las tierras básicas nevadas no son legales en Estándar, se tratan como las tierras básicas equivalentes. Los jugadores deben reemplazarlas cuando son descubiertas, pero no se ha cometido una infracción."></point>
-            <point text="No hay cartas baneadas actualmente en Estándar"></point>
+            <point text="• Cañón de los muertos"></point>
+			<point text="• Oko, Ladrón de Coronas"></point>
+			<point text="• Había una vez"></point>
+			<point text="• Velo de verano"></point>
         </point>
         <point text="6.4 Construcción de Mazos en Formato Modern">
             <annotation text="Estas son las colecciones válidas en Modern. Considera que se incluyen las fechas en que las colecciones entran en Modern, pero ninguna colección abandonara el formato. Esta sección se actualiza con cada lanzamiento de las MTR para así reflejar las nuevas colecciones."></annotation>
@@ -1003,6 +1006,7 @@
             <point text="• Mox Pearl"></point>
             <point text="• Mox Ruby"></point>
             <point text="• Mox Sapphire"></point>
+			<point text="• Narset, Separadora de Velos"></point>
             <point text="• Tutor místico"></point>
             <point text="• Forja mística"></point>
             <point text="• Necropotencia"></point>
@@ -1082,6 +1086,7 @@
             <point text="• Tutor vampírico"></point>
             <point text="• Rueda de la fortuna"></point>
             <point text="• Ganga"></point>
+			<point text="• Wrenn y Seis"></point>
             <point text="• Oferta de Yawgmoth"></point>
             <point text="• Voluntad de Yawgmoth"></point>
         </point>

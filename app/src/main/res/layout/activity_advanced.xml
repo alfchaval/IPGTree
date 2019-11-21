@@ -23,6 +23,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/ll_scrollchild"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -36,6 +37,16 @@
                 android:textColor="@color/colorText"
                 android:layout_gravity="center_horizontal"
                 android:paddingHorizontal="4dp"
+                />
+
+            <TextView
+                android:id="@+id/txv_show_ftp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:text="SHOW/HIDE FTP"
                 />
 
             <LinearLayout
@@ -148,9 +159,21 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/txv_show_links"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="bold"
+                android:text="SHOW/HIDE LINKS"
+                />
+
             <TableLayout
+                android:id="@+id/tl_links"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 >
 
                 <TableRow>

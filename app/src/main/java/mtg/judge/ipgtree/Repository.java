@@ -12,7 +12,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    private static int appVersion = 20191113;
+    private static int appVersion = 20191115;
     public static int lastNews;
 
     //URLs
@@ -169,6 +169,7 @@ public class Repository {
         p2log = preferences.getString(KEY_P2LOG, "20");
         language = preferences.getString(KEY_LANGUAGE, ENGLISH);
         showAnnotations = preferences.getBoolean(KEY_ANNOTATION, true);
+        downloadNews = preferences.getBoolean(KEY_DOWNLOADNEWS, true);
         unlockedFTP = preferences.getBoolean(KEY_UNLOCKEDFTP, false);
         allowFTP = preferences.getBoolean(KEY_ALLOWFTP, false);
         ftpServer = preferences.getString(KEY_FTPSERVER, null);
@@ -441,6 +442,15 @@ public class Repository {
                     case 75:
                         result = "HJ Announcement";
                         break;
+                    case 76:
+                        result = "Show/Hide FTP Config";
+                        break;
+                    case 77:
+                        result = "Show/Hide Document links";
+                        break;
+                    case 78:
+                        result = "Saved to Clipboard";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -669,6 +679,15 @@ public class Repository {
                         break;
                     case 75:
                         result = "Anuncio del HJ";
+                        break;
+                    case 76:
+                        result = "Mostrar/Ocultar FTP";
+                        break;
+                    case 77:
+                        result = "Mostrar/Ocultar Links";
+                        break;
+                    case 78:
+                        result = "Copiado al Salvapapeles";
                         break;
                 }
                 break;

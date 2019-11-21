@@ -1,2 +1,2 @@
-20191115
-New update available, you can download it in the link in Settings menu. Details: HJ Announcement added, no more updates in the foreseeable future (Except updating documents, of course)
+20191121
+New update available, you can download it in the link in Settings menu. Details: Now you can copy text from the documents to the clipboard.

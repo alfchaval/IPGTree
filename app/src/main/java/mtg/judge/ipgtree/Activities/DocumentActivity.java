@@ -1,5 +1,8 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -18,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import mtg.judge.ipgtree.R;
 
@@ -237,6 +241,18 @@ public class DocumentActivity extends AppCompatActivity {
                         showList();
                     }
                 }
+            }
+        });
+        branchs.get(index).setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if(tree.existChild(index) && tree.getChild(index).isLeaf()) {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText(Repository.FOLDERNAME, tree.getChild(index).getData().getText());
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(DocumentActivity.this, Repository.StringMap(78), Toast.LENGTH_LONG).show();
+                }
+                return false;
             }
         });
         ll_points.addView(textView);

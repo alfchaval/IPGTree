@@ -1,14 +1,8 @@
 package mtg.judge.ipgtree.Activities;
 
 import android.Manifest;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,8 +10,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.util.Pair;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -27,33 +19,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.stream.JsonReader;
-
-import org.apache.commons.net.ftp.FTPClient;
-
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.HashMap;
 
-import mtg.judge.ipgtree.Card;
 import mtg.judge.ipgtree.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
-import mtg.judge.ipgtree.Set;
 
 public class AdvancedSettingsActivity extends AppCompatActivity {
 
@@ -62,12 +35,14 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     private EditText edt_server, edt_user, edt_password, edt_codeftp, edt_news,
             edt_aipg_en, edt_amtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en, edt_hja_en,
             edt_aipg_es, edt_amtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es;
-    private TextView txv_codeftp, txv_ftptitle_one, txv_ftptitle_two;
-    private LinearLayout ll_server_code, ll_server_settings;
+    private TextView txv_codeftp, txv_ftptitle_one, txv_ftptitle_two, txv_show_ftp, txv_show_links;
+    private LinearLayout ll_scrollchild, ll_server, ll_server_code, ll_server_settings;
+    private TableLayout tl_links;
     private ScrollView scroll;
     private ImageView imv_arrow_down, imv_arrow_up;
 
     private ViewTreeObserver viewTreeObserver;
+    private ShowHint showHint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,8 +100,16 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         txv_codeftp = findViewById(R.id.txv_codeftp);
         txv_ftptitle_one = findViewById(R.id.txv_ftptitle_one);
         txv_ftptitle_two = findViewById(R.id.txv_ftptitle_two);
+        txv_show_ftp = findViewById(R.id.txv_show_ftp);
+        txv_show_links = findViewById(R.id.txv_show_links);
+        ll_scrollchild = findViewById(R.id.ll_scrollchild);
+        ll_server = findViewById(R.id.ll_server);
+        ll_server.setVisibility(View.GONE);
         ll_server_code = findViewById(R.id.ll_server_code);
         ll_server_settings = findViewById(R.id.ll_server_settings);
+        tl_links = findViewById(R.id.tl_links);
+        tl_links.setVisibility(View.GONE);
+
         edt_news = findViewById(R.id.edt_news);
 
         edt_aipg_en = findViewById(R.id.edt_aipg_en);
@@ -166,6 +149,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_user.setHint(Repository.StringMap(29));
         edt_password.setHint(Repository.StringMap(62));
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
+
         edt_news.setText(preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS));
 
         edt_aipg_en.setText(preferences.getString(Repository.KEY_AIPG_EN, Repository.URL_AIPG_EN));
@@ -189,6 +173,33 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_links_es.setText(preferences.getString(Repository.KEY_LINKS_ES, Repository.URL_LINKS_ES));
         edt_quiz_es.setText(preferences.getString(Repository.KEY_QUIZ_ES, Repository.URL_QUIZ_ES));
         edt_hja_es.setText(preferences.getString(Repository.KEY_HJA_ES, Repository.URL_HJA_ES));
+
+        edt_news.setHint(Repository.URL_NEWS);
+
+        edt_aipg_en.setHint(Repository.URL_AIPG_EN);
+        edt_amtr_en.setHint(Repository.URL_AMTR_EN);
+        edt_banned_en.setHint(Repository.URL_BANNED_EN);
+        edt_cr_en.setHint(Repository.URL_CR_EN);
+        edt_dq_en.setHint(Repository.URL_DQ_EN);
+        edt_tree_en.setHint(Repository.URL_TREE_EN);
+        edt_jar_en.setHint(Repository.URL_JAR_EN);
+        edt_links_en.setHint(Repository.URL_LINKS_EN);
+        edt_quiz_en.setHint(Repository.URL_QUIZ_EN);
+        edt_hja_en.setHint(Repository.URL_HJA_EN);
+
+        edt_aipg_es.setHint(Repository.URL_AIPG_ES);
+        edt_amtr_es.setHint(Repository.URL_AMTR_ES);
+        edt_banned_es.setHint(Repository.URL_BANNED_ES);
+        edt_cr_es.setHint(Repository.URL_CR_ES);
+        edt_dq_es.setHint(Repository.URL_DQ_ES);
+        edt_tree_es.setHint(Repository.URL_TREE_ES);
+        edt_jar_es.setHint(Repository.URL_JAR_ES);
+        edt_links_es.setHint(Repository.URL_LINKS_ES);
+        edt_quiz_es.setHint(Repository.URL_QUIZ_ES);
+        edt_hja_es.setHint(Repository.URL_HJA_ES);
+
+        txv_show_ftp.setText(Repository.StringMap(76));
+        txv_show_links.setText(Repository.StringMap(77));
     }
 
     private void loadRepositoryData() {
@@ -213,6 +224,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+
                 editor.putString(Repository.KEY_NEWS, edt_news.getText().toString());
 
                 editor.putString(Repository.KEY_AIPG_EN, edt_aipg_en.getText().toString());
@@ -285,6 +297,54 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 scroll.fullScroll(View.FOCUS_DOWN);
             }
         });
+
+        showHint = new ShowHint();
+        edt_news.setOnLongClickListener(showHint);
+
+        edt_aipg_en.setOnLongClickListener(showHint);
+        edt_amtr_en.setOnLongClickListener(showHint);
+        edt_banned_en.setOnLongClickListener(showHint);
+        edt_cr_en.setOnLongClickListener(showHint);
+        edt_dq_en.setOnLongClickListener(showHint);
+        edt_tree_en.setOnLongClickListener(showHint);
+        edt_jar_en.setOnLongClickListener(showHint);
+        edt_links_en.setOnLongClickListener(showHint);
+        edt_quiz_en.setOnLongClickListener(showHint);
+        edt_hja_en.setOnLongClickListener(showHint);
+
+        edt_aipg_es.setOnLongClickListener(showHint);
+        edt_amtr_es.setOnLongClickListener(showHint);
+        edt_banned_es.setOnLongClickListener(showHint);
+        edt_cr_es.setOnLongClickListener(showHint);
+        edt_dq_es.setOnLongClickListener(showHint);
+        edt_tree_es.setOnLongClickListener(showHint);
+        edt_jar_es.setOnLongClickListener(showHint);
+        edt_links_es.setOnLongClickListener(showHint);
+        edt_quiz_es.setOnLongClickListener(showHint);
+        edt_hja_es.setOnLongClickListener(showHint);
+
+        txv_show_ftp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ll_server.getVisibility() == View.VISIBLE) {
+                    ll_server.setVisibility(View.GONE);
+                }
+                else {
+                    ll_server.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        txv_show_links.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(tl_links.getVisibility() == View.VISIBLE) {
+                    tl_links.setVisibility(View.GONE);
+                }
+                else {
+                    tl_links.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     @Override
@@ -355,6 +415,16 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         else {
             imv_arrow_up.setVisibility(View.INVISIBLE);
             imv_arrow_down.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    class ShowHint implements View.OnLongClickListener {
+        @Override
+        public boolean onLongClick(View view) {
+            if(view instanceof EditText && ((EditText) view).getText().toString().equals("")) {
+                ((EditText) view).setText(((EditText)view).getHint());
+            }
+            return false;
         }
     }
 }
