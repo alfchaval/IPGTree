@@ -13,10 +13,13 @@
         <title text="Baneadas"></title>
             <point text="Bloodstained Mire"></point>
 			<point text="Felidar Guardian"></point>
+			<point text="Field of the Dead"></point>
             <point text="Flooded Strand"></point>
 			<point text="Leyline of Abundance"></point>
 			<point text="Oath of Nissa"></point>
+			<point text="Once Upon a Time"></point>
             <point text="Polluted Delta"></point>
+			<point text="Smuggler's Copter"></point>
 			<point text="Veil of Summer"></point>
             <point text="Windswept Heath"></point>
             <point text="Wooded Foothills"></point>
@@ -299,7 +302,7 @@
                 <point text="Yawgmoth's Bargain"></point>
         </point>
         <point text="Duelcommander">
-            <point text="Actualizado: 30-08-2019"></point>
+            <point text="Actualizado: 26-11-2019"></point>
 			<link text="http://www.duelcommander.com/banlist"></link>
             <title text="Baneadas"></title>
                 <point text="Las 25 cartas con el tipo Conspiracy"></point>
@@ -344,6 +347,7 @@
                 <point text="Polymorph"></point>
                 <point text="Price of Progress"></point>
                 <point text="Protean Hulk"></point>
+				<point text="Scapeshift"></point>
                 <point text="Sensei’s Divning Top"></point>
                 <point text="Shahrazad"></point>
                 <point text="Sol Ring"></point>
@@ -363,6 +367,8 @@
                 <point text="Bruse Tarl, Boorish Herder"></point>
                 <point text="Derevi, Empyrial Tactician"></point>
                 <point text="Edgar Markov"></point>
+				<point text="Edric, Spymaster of Trest"></point>
+				<point text="Emry, Lurker of the Loch"></point>
                 <point text="Geist of Saint Traft"></point>
                 <point text="Jace, Vryn Prodigy"></point>
                 <point text="Marath, Will of the Wild"></point>

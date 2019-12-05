@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -27,10 +26,15 @@ import mtg.judge.ipgtree.Repository;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9;
+    private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_news_alert;
     private Intent intent;
 
     private boolean documentsMenu = false;
+
+    private String message = null;
+    private int date = 0;
+
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         linkViews();
         loadStrings();
         setListeners();
+
+        preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
 
         if(Repository.downloadNews) {
             new checkForUpdates().execute();
@@ -56,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         btn_7 = findViewById(R.id.btn_7);
         btn_8 = findViewById(R.id.btn_8);
         btn_9 = findViewById(R.id.btn_9);
+        btn_news_alert = findViewById(R.id.btn_news_alert);
     }
 
     private void loadStrings() {
@@ -82,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             btn_9.setText(Repository.StringMap(37));
             btn_9.setVisibility(View.VISIBLE);
         }
+        btn_news_alert.setVisibility(View.GONE);
     }
 
     private void setListeners() {
@@ -137,6 +145,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 move(9);
+            }
+        });
+        btn_news_alert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(message != null) {
+                    preferences.edit().putInt(Repository.KEY_LASTNEWS, date).apply();
+                    AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                    alertDialog.setTitle(Repository.StringMap(74));
+                    alertDialog.setMessage(message);
+                    alertDialog.show();
+                }
             }
         });
     }
@@ -251,19 +271,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class checkForUpdates extends AsyncTask<String, String, String> {
-        private AlertDialog alertDialog;
         private String folder;
-        private String message = null;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        }
 
         @Override
         protected String doInBackground(String... strings) {
-            SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
             int count;
             InputStream input;
             OutputStream output;
@@ -291,8 +302,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Pair<Integer, String> update =  Read.readNews(getApplicationContext());
                 if (update.first > Repository.lastNews) {
+                    date = update.first;
                     message = update.second;
-                    preferences.edit().putInt(Repository.KEY_LASTNEWS, update.first).apply();
                 }
             }
             catch (Exception e) {
@@ -304,9 +315,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             if(message != null) {
-                alertDialog.setTitle(Repository.StringMap(74));
-                alertDialog.setMessage(message);
-                alertDialog.show();
+                btn_news_alert.setVisibility(View.VISIBLE);
             }
         }
     }

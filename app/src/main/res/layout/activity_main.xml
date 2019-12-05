@@ -128,4 +128,16 @@
         android:textSize="20dp"
         />
 
+    <Button
+        android:id="@+id/btn_news_alert"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/answer_background_parent"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:text="!"
+        />
+
 </android.support.constraint.ConstraintLayout>

@@ -12,7 +12,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    private static int appVersion = 20191115;
+    private static int appVersion = 20191121;
     public static int lastNews;
 
     //URLs
@@ -148,7 +148,7 @@ public class Repository {
     public static String language = ENGLISH;
     public static String ftpCode = null;
     public static boolean showAnnotations = true;
-    public static boolean downloadNews = true;
+    public static boolean downloadNews = false;
     public static boolean unlockedFTP = false;
     public static boolean allowFTP = false;
     public static String ftpServer = null;
