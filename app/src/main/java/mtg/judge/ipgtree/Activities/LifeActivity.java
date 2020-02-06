@@ -9,11 +9,16 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
+import android.print.PrintAttributes;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -23,13 +28,14 @@ import org.apache.commons.net.ftp.FTPClient;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.Random;
 
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
 
 public class LifeActivity extends AppCompatActivity {
 
-    private Button btn_reset, btn_registry, btn_lifepoison;
+    private Button btn_reset, btn_registry, btn_lifepoison, btn_dice;
     private TextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
     private TextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
     private ConstraintLayout cly_p1life, cly_p1setlife, cly_p2life, cly_p2setlife;
@@ -38,6 +44,7 @@ public class LifeActivity extends AppCompatActivity {
     private KeyboardView keyboardView_p1, keyboardView_p2;
     private CountDownTimer timerp1 = null;
     private CountDownTimer timerp2 = null;
+    private Random random;
 
 
     @Override
@@ -47,8 +54,10 @@ public class LifeActivity extends AppCompatActivity {
 
         linkViews();
         loadStrings();
+        random = new Random();
         setListeners();
 
+        btn_dice.setText("D" + Repository.dice);
         txv_p1life.setText(Repository.p1life + "");
         txv_p1lifetrack.setText(Repository.p1log);
         txv_p2life.setText(Repository.p2life + "");
@@ -59,6 +68,7 @@ public class LifeActivity extends AppCompatActivity {
         btn_reset = findViewById(R.id.btn_reset);
         btn_registry = findViewById(R.id.btn_registry);
         btn_lifepoison = findViewById(R.id.btn_lifepoison);
+        btn_dice = findViewById(R.id.btn_dice);
 
         txv_p1minus = findViewById(R.id.txv_p1minus);
         txv_p1life = findViewById(R.id.txv_p1life);
@@ -486,9 +496,13 @@ public class LifeActivity extends AppCompatActivity {
                     scroll_p1.fullScroll(View.FOCUS_DOWN);
                     scroll_p2.setVisibility(View.VISIBLE);
                     scroll_p2.fullScroll(View.FOCUS_DOWN);
+                    txv_p1life.setTextSize(70);
+                    txv_p2life.setTextSize(70);
                 } else {
                     scroll_p1.setVisibility(View.GONE);
                     scroll_p2.setVisibility(View.GONE);
+                    txv_p1life.setTextSize(100);
+                    txv_p2life.setTextSize(100);
                 }
             }
         });
@@ -576,7 +590,19 @@ public class LifeActivity extends AppCompatActivity {
                 btn_lifepoison.setText(Repository.mode + "");
             }
         });
-
+        btn_dice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rollDice();
+            }
+        });
+        btn_dice.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                selectDice();
+                return false;
+            }
+        });
     }
 
     public void reset() {
@@ -612,6 +638,8 @@ public class LifeActivity extends AppCompatActivity {
         scroll_p2.setVisibility(View.GONE);
         cly_p1setlife.setVisibility(View.INVISIBLE);
         cly_p2setlife.setVisibility(View.INVISIBLE);
+        txv_p1life.setTextSize(100);
+        txv_p2life.setTextSize(100);
     }
 
     public void changep1life(int value) {
@@ -773,5 +801,41 @@ public class LifeActivity extends AppCompatActivity {
             };
             task.execute("");
         }
+    }
+
+    public void rollDice() {
+        int result = random.nextInt(Repository.dice) + 1;
+        AlertDialog alertDialog = new AlertDialog.Builder(LifeActivity.this)
+                .setTitle(Repository.StringMap(79) + Repository.dice)
+                .setMessage(""+result)
+                .show();
+        TextView textView = (TextView) alertDialog.findViewById(android.R.id.message);
+        textView.setTextSize(40);
+        textView.setGravity(Gravity.CENTER);
+    }
+
+    public void selectDice() {
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input.setGravity(Gravity.CENTER);
+        input.setMaxLines(1);
+        AlertDialog alertDialog = new AlertDialog.Builder(LifeActivity.this)
+                .setTitle(Repository.StringMap(80))
+                .setView(input)
+                .setPositiveButton(Repository.StringMap(81), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int number;
+                        try {
+                            number = Integer.parseInt(input.getText().toString());
+                            Repository.dice = number;
+                            btn_dice.setText("D" + number);
+                        } catch (Exception e) {
+
+                        }
+                    }
+                })
+                .setNegativeButton(Repository.StringMap(82), null)
+                .show();
     }
 }

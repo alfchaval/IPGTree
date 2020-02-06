@@ -3,8 +3,6 @@ package mtg.judge.ipgtree.Activities;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
@@ -14,7 +12,14 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
 
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
@@ -22,13 +27,18 @@ import mtg.judge.ipgtree.TimerReceiver;
 
 public class TimerActivity extends AppCompatActivity {
 
+    private LinearLayout ll_set_time, ll_saved_time;
     private TextView txv_starting_time_title, txv_starting_time, txv_time;
     private Button btn_edit, btn_play;
     private Keyboard keyboard;
     private KeyboardView keyboardView;
 
+
     private CountDownTimer timer;
     private AlarmManager alarmManager;
+
+    private LinearLayout.LayoutParams layoutParams;
+    private final int TEXT_SIZE = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +51,20 @@ public class TimerActivity extends AppCompatActivity {
 
         alarmManager = (AlarmManager) getApplicationContext().getSystemService(ALARM_SERVICE);
 
+        layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0, 4, 0, 4);
+
         txv_starting_time.setText(Repository.milliSeconds/60000 + "");
         if(Repository.startedCountDown) {
             btn_play.setText(Repository.StringMap(1));
             createTimer();
             timer.start();
+            for(int i = 0; i < Repository.savedTimes.length(); i++) {
+                try {
+                    addSavedTime(Repository.savedTimes.getInt(i));
+                } catch (JSONException e) {
+                }
+            }
         }
         else {
             btn_play.setText(Repository.StringMap(20));
@@ -55,6 +74,7 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     private void linkViews() {
+        ll_set_time = findViewById(R.id.ll_set_time);
         txv_starting_time_title = findViewById(R.id.txv_starting_time_title);
         txv_starting_time = findViewById(R.id.txv_starting_time);
         txv_time = findViewById(R.id.txv_time);
@@ -64,6 +84,7 @@ public class TimerActivity extends AppCompatActivity {
         keyboardView = findViewById(R.id.keyboard);
         keyboardView.setKeyboard(keyboard);
         keyboardView.setPreviewEnabled(false);
+        ll_saved_time = findViewById(R.id.ll_saved_time);
     }
 
     private void loadStrings() {
@@ -72,10 +93,18 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
+        txv_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(Repository.startedCountDown) {
+                    saveTime();
+                }
+            }
+        });
         btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keyboardView.setVisibility(View.VISIBLE);
+                ll_set_time.setVisibility(View.VISIBLE);
                 btn_edit.setVisibility(View.GONE);
             }
         });
@@ -95,6 +124,9 @@ public class TimerActivity extends AppCompatActivity {
                     createTimer();
                     btn_play.setText(Repository.StringMap(20));
                     alarmManager.cancel(pendingIntent);
+                    Repository.savedTimes = new JSONArray();
+                    editor.putString(Repository.KEY_SAVEDTIMES, Repository.savedTimes.toString());
+                    ll_saved_time.removeAllViews();
                 }
                 else {
                     if(timer != null) {
@@ -173,8 +205,13 @@ public class TimerActivity extends AppCompatActivity {
                         editor.putInt(Repository.KEY_MILLISECONDS, Repository.milliSeconds);
                         editor.apply();
                         setStartingTime();
+                        if(Repository.startedCountDown) {
+                            Intent intent = new Intent(TimerActivity.this, TimerReceiver.class);
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(TimerActivity.this, 1 , intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + Repository.milliSeconds, pendingIntent);
+                        }
                     case Repository.CodeCancel:
-                        keyboardView.setVisibility(View.GONE);
+                        ll_set_time.setVisibility(View.GONE);
                         btn_edit.setVisibility(View.VISIBLE);
                         break;
                 }
@@ -220,7 +257,7 @@ public class TimerActivity extends AppCompatActivity {
                 if(remaining < 1) {
                     txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
                 }
-                txv_time.setText(secondsToHoursFormat(remaining));
+                txv_time.setText(millisecondsToHoursFormat(remaining));
             }
 
             @Override
@@ -237,11 +274,11 @@ public class TimerActivity extends AppCompatActivity {
         else {
             txv_time.setTextColor(getResources().getColor(R.color.colorLightRed));
         }
-        txv_time.setText(secondsToHoursFormat(Repository.milliSeconds));
+        txv_time.setText(millisecondsToHoursFormat(Repository.milliSeconds));
     }
 
-    public String secondsToHoursFormat(int milliSeconds) {
-        int auxSeconds = milliSeconds/1000;
+    public String millisecondsToHoursFormat(int milliseconds) {
+        int auxSeconds = milliseconds/1000;
         String res = "";
         if(auxSeconds < 0) {
             auxSeconds *= -1;
@@ -259,5 +296,35 @@ public class TimerActivity extends AppCompatActivity {
         }
         res += auxSeconds;
         return res;
+    }
+
+    public void saveTime() {
+        int time = (int)System.currentTimeMillis();
+        Repository.savedTimes.put(time);
+        SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+        editor.putString(Repository.KEY_SAVEDTIMES, Repository.savedTimes.toString());
+        editor.apply();
+        addSavedTime(time);
+    }
+
+
+    public void addSavedTime(int time) {
+        TextView textView = new TextView(this);
+        textView.setLayoutParams(layoutParams);
+        textView.setTextSize(TEXT_SIZE);
+        textView.setPadding(8, 8, 8, 8);
+        String text = millisecondsToHoursFormat(Repository.milliSeconds - (time - (int)Repository.startingTime));
+        if(ll_saved_time.getChildCount() > 0) {
+            try {
+                int lastTime = Repository.savedTimes.getInt(ll_saved_time.getChildCount()-1);
+                text += " - " + millisecondsToHoursFormat(time - lastTime);
+            } catch (JSONException e) {
+            }
+        }
+        else {
+            text += " - " + millisecondsToHoursFormat(time - (int)Repository.startingTime);
+        }
+        textView.setText(text);
+        ll_saved_time.addView(textView);
     }
 }

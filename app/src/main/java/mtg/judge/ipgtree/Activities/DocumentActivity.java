@@ -49,11 +49,10 @@ public class DocumentActivity extends AppCompatActivity {
     private ArrayList<TextView> branchs = new ArrayList<TextView>();
 
     private LinearLayout.LayoutParams layoutParams;
+    private final int TEXT_SIZE = 20;
 
     private boolean showNotes = true;
     private boolean searching = false;
-
-    private final int TEXT_SIZE = 20;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 

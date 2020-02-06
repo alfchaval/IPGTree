@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.util.Pair;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.File;
 import java.util.HashMap;
 
@@ -12,7 +15,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    private static int appVersion = 20191121;
+    private static int appVersion = 20200206;
     public static int lastNews;
 
     //URLs
@@ -97,6 +100,7 @@ public class Repository {
     public static final String KEY_MILLISECONDS = "key_milliseconds";
     public static final String KEY_STARTINGTIME = "key_startingtime";
     public static final String KEY_STARTEDCOUNTDOWN = "key_startedcountdown";
+    public static final String KEY_SAVEDTIMES = "key_savedtimes";
 
     public static final String KEY_NEWS = "key_news";
 
@@ -133,6 +137,7 @@ public class Repository {
     public static int milliSeconds = 3000000;
     public static long startingTime = 0;
     public static boolean startedCountDown = false;
+    public static JSONArray savedTimes = new JSONArray();
 
     //Variables vida
     public static int p1life = 20;
@@ -143,6 +148,7 @@ public class Repository {
     public static String p2log = "20";
     public static char mode = LIFE;
     public static int lifeDelay = 4000;
+    public static int dice = 20;
 
     //Variables de configuración
     public static String language = ENGLISH;
@@ -178,6 +184,11 @@ public class Repository {
         milliSeconds = preferences.getInt(KEY_MILLISECONDS, 3000000);
         startingTime = preferences.getLong(KEY_STARTINGTIME, 0);
         startedCountDown = preferences.getBoolean(KEY_STARTEDCOUNTDOWN, false);
+        try {
+            JSONArray savedTimes = new JSONArray(preferences.getString(KEY_SAVEDTIMES, "[]"));
+        } catch (JSONException e) {
+            savedTimes = new JSONArray();
+        }
         lastNews = preferences.getInt(KEY_LASTNEWS, appVersion);
 
         String folder = Environment.getExternalStorageDirectory() + File.separator + FOLDERNAME;
@@ -451,6 +462,18 @@ public class Repository {
                     case 78:
                         result = "Saved to Clipboard";
                         break;
+                    case 79:
+                        result = "Result from D";
+                        break;
+                    case 80:
+                        result = "Choose number of sides";
+                        break;
+                    case 81:
+                        result = "Ok";
+                        break;
+                    case 82:
+                        result = "Cancel";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -688,6 +711,18 @@ public class Repository {
                         break;
                     case 78:
                         result = "Copiado al Salvapapeles";
+                        break;
+                    case 79:
+                        result = "Resultado de D";
+                        break;
+                    case 80:
+                        result = "Elige número de caras";
+                        break;
+                    case 81:
+                        result = "Aceptar";
+                        break;
+                    case 82:
+                        result = "Cancelar";
                         break;
                 }
                 break;
