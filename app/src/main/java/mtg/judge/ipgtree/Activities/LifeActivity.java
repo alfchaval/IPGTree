@@ -828,8 +828,10 @@ public class LifeActivity extends AppCompatActivity {
                         int number;
                         try {
                             number = Integer.parseInt(input.getText().toString());
-                            Repository.dice = number;
-                            btn_dice.setText("D" + number);
+                            if(number > 0) {
+                                Repository.dice = number;
+                                btn_dice.setText("D" + number);
+                            }
                         } catch (Exception e) {
 
                         }

@@ -18,22 +18,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btn_play"
+        app:layout_constraintBottom_toTopOf="@+id/scroll_time"
         android:gravity="center"
         android:textAlignment="gravity"
         android:textSize="40dp"
         android:textColor="@color/colorLightGreen"
-        />
-
-    <Button
-        android:id="@+id/btn_play"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txv_time"
-        app:layout_constraintBottom_toTopOf="@+id/scroll_time"
-        android:background="@drawable/answer_background_parent"
         />
 
     <ScrollView
@@ -42,8 +31,9 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_play"
+        app:layout_constraintTop_toBottomOf="@+id/txv_time"
         app:layout_constraintBottom_toTopOf="@+id/ll_bottom"
+        android:layout_marginVertical="5dp"
         android:scrollbars="none"
         >
 
@@ -69,12 +59,35 @@
         android:orientation="vertical"
         >
 
-        <Button
-            android:id="@+id/btn_edit"
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_buttons"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/answer_background_parent"
-            />
+            >
+
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_play"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/answer_background_parent"
+                />
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toEndOf="@+id/btn_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/answer_background_parent"
+                />
+
+        </android.support.constraint.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/ll_set_time"

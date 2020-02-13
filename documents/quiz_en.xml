@@ -1,27 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quiz>
-    Puedes añadir comentarios (como este) dentro de cualquier etiqueta, solo se interpretan los atributos.
-    Las respuestas deben estar en una sola línea, ya que un salto de línea en el xml se interpreta como un espacio, para añadir un salto de línea se usa \n
-    La respuesta correcta debe ser la primera
-    Pregunta 1
+	<question text="Nicky controls a Kataki, War's Wage (All artifacts have “At the beginning of your upkeep, sacrifice this artifact unless you pay {1}”), Alex controls an artifact, Alex's turn start and they draws the card of their draw step">
+        <answer text="GPE - Misstrigger, no penalty. Nicky chooses whether the triggered ability is added to the stack."></answer>
+		<answer text="GPE - Misstrigger, no penalty. Nicky chooses whether to resolve the ability now or at the start of the next phase."></answer>
+		<answer text="GPE - Misstrigger, Warning. Nicky chooses whether the triggered ability is added to the stack."></answer>
+		<answer text="GPE - Misstrigger, Warning. Nicky  chooses whether to resolve the ability now or at the start of the next phase."></answer>
+    </question>
+	<question text="Alex golpea su biblioteca por error haciendo que la carta de la parte superior se de la vuelta">
+        <answer text="GPE - Looking Extra Cards, Warning. Alex shuffle the card into the random portion of the library."></answer>
+		<answer text="GPE - Looking Extra Cards, Warning to both players. Alex shuffle the card into the random portion of the library."></answer>
+		<answer text="GPE - Looking Extra Cards, Warning. Return the card to the top of the library."></answer>
+		<answer text="GPE - Looking Extra Cards, Warning to both players. Return the card to the top of the library."></answer>
+    </question>
+	<question text="Alex forget to discard in their clean up step with 8 cards in hand, and they notice it after drawing a card in their next draw step">
+        <answer text="GPE - Game Rule Violation, Warning, Alex discards a card. Nicky get GPE - Failure to Maintain Game, Warning"></answer>
+        <answer text="GPE - Game Rule Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+        <answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand, Nicky chooses what card to discard"></answer>
+        <answer text="TE - Communication Policy Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+    </question>
+	<question text="Alex llega a su asiento cuando tras haber pasado 30 segundos desde el inicio de ronda (y la ronda anterior no terminó antes de tiempo)">
+        <answer text="TE - Tardiness, Warning, players are given a time extension corresponding to the length of the tardiness"></answer>
+		<answer text="TE - Tardiness, Warning, players are given a time extension corresponding to the length of the tardiness plus three minutes"></answer>
+		<answer text="TE - Tardiness, Game Loss, players are given a time extension corresponding to the length of the tardiness"></answer>
+		<answer text="TE - Tardiness, Game Loss"></answer>
+    </question>
+	<question text="Alex llega a su asiento cuando tras haber pasado 3 minutos desde el inicio de ronda (y la ronda anterior no terminó antes de tiempo)">
+        <answer text="TE - Tardiness, Game Loss, players are given a time extension corresponding to the length of the tardiness"></answer>
+		<answer text="TE - Tardiness, Game Loss, players are given a time extension corresponding to the length of the tardiness plus three minutes"></answer>
+		<answer text="TE - Tardiness, Warning, players are given a time extension corresponding to the length of the tardiness"></answer>
+		<answer text="TE - Tardiness, Game Loss"></answer>
+    </question>
+	<question text="Alex llega a su asiento cuando tras haber pasado 12 minutos desde el inicio de ronda (y la ronda anterior no terminó antes de tiempo)">
+        <answer text="TE - Tardiness, Match Loss, Alex will be dropped unless they report to the Head Judge or Scorekeeper before the end of the round"></answer>
+		<answer text="TE - Tardiness, Match Loss"></answer>
+		<answer text="TE - Tardiness, Game Loss, players are given a time extension corresponding to the length of the tardiness"></answer>
+		<answer text="TE - Tardiness, Game Loss, players are given a time extension corresponding to the length of the tardiness plus three minutes"></answer>
+    </question>
     <question text="Near the end of the round, two players realize that they have swapped their seats and have been playing against the wrong opponento">
         <answer text="Players in the wrong seat get TE - Tardiness, Match Loss"></answer>
         <answer text="Players in the wrong seat get TE - Tardiness, Match Loss and are dropped"></answer>
         <answer text="Players in the wrong seat get TE - Tardiness, Game Loss and play againt the correct opponent"></answer>
         <answer text="Pairings are changed to reflect the played matches"></answer>
     </question>
-    Pregunta 2
-    <question text="A player forget to discard in their clean up step with 8 cards in hand, and they notice it after drawing a card in their next draw step">
-        <answer text="GPE - Game Rule Violation, Warning, that player discard a card. The opponent get GPE - Failure to Maintain Game, Warning"></answer>
-        <answer text="GPE - Game Rule Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
-        <answer text="GPE - Hidden Card Error, Warning, the player reveal their hand, the opponent choose what card discard"></answer>
-        <answer text="TE - Communication Policy Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+	<question text="Alex puts a card on top of their draft pile, then pulls it back">
+        <answer text="TE - Limited Procedure Violation, Warning"></answer>
+		<answer text="TE - Limited Procedure Violation, Warning, Alex must pass that pack without choosing a card"></answer>
+		<answer text="GPE - Hidden Card Error, Warning, Alex reveals their draft pile, an opponent chooses one card of them and put in the pack Alex is drafting, Alex choose a card from the pack and put it in their draft pile"></answer>
+		<answer text="TE - Communication Policy Violation, Warning"></answer>
     </question>
-    Pregunta 3
-    <question text="A player draw another player's wallet">
+	<question text="(╯°□°)╯︵ ┻┻ Alex intentionally turns over a table">
+        <answer text="UC - Aggressive Behavior, Disqualification"></answer>
+		<answer text="UC - Major, Disqualification"></answer>
+		<answer text="UC - Major, Match Loss"></answer>
+		<answer text="There is no infraction, but we should report ir to the TO"></answer>
+    </question>
+	<question text="Alex likes the table number 69, so they put it in their backpack">
+        <answer text="UC - Theft of Tournament Material, Disqualification"></answer>
+		<answer text="UC - Theft of Tournament Material, Match Loss"></answer>
+		<answer text="UC - Minor, Warning"></answer>
+		<answer text="There is no infraction, but we should report ir to the TO"></answer>
+    </question>
+    <question text="Alex steals Nickys's wallet">
         <answer text="There is no penalty, but TO should remove them from tournament and should be reported to dci"></answer>
         <answer text="There is no penalty, let the players manage the situation"></answer>
         <answer text="Unsporting Conduct - Theft of Tournament Material, Disqualification"></answer>
         <answer text="Unsporting Conduct - Minor, Match Loss"></answer>
+    </question>
+	<question text="Alex is winning 1-0 and there is not much time left in the round, so they decides to flick the cards in their hand while thinking about the shopping list to waste time">
+        <answer text="UC - Stalling, Disqualification"></answer>
+		<answer text="TE - Slow Play, Warning, in the event that the match exceeds the time limit, two additional turns are added"></answer>
+		<answer text="TE - Slow Play, Warning"></answer>
+		<answer text="TE - Slow Play, Game Loss"></answer>
+    </question>
+	<question text="Alex roba en su paso de robar y más tarde se da cuenta de que en realidad ha robado dos, que las cartas estaban pegadas, pero no dice nada. Luego Nicky se da cuenta de que Alex tiene una carta demás">
+        <answer text="UC - Cheating, Disqualification"></answer>
+		<answer text="GPE - Hidden Card Error, Warning. Alex reveals their hand to Nicky, who chooses a card, that card is shuffled in the random portion of the library"></answer>
+		<answer text="GPE - Hidden Card Error, Warning. Alex put a card from their hand onto the top of their library"></answer>
+		<answer text="GPE - Hidden Card Error, Game Loss"></answer>
     </question>
 </quiz>

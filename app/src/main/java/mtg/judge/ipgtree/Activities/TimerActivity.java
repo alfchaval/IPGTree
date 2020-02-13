@@ -2,13 +2,16 @@ package mtg.judge.ipgtree.Activities;
 
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +35,7 @@ public class TimerActivity extends AppCompatActivity {
     private Button btn_edit, btn_play;
     private Keyboard keyboard;
     private KeyboardView keyboardView;
+    private ConstraintLayout cl_buttons;
 
 
     private CountDownTimer timer;
@@ -85,6 +89,7 @@ public class TimerActivity extends AppCompatActivity {
         keyboardView.setKeyboard(keyboard);
         keyboardView.setPreviewEnabled(false);
         ll_saved_time = findViewById(R.id.ll_saved_time);
+        cl_buttons = findViewById(R.id.cl_buttons);
     }
 
     private void loadStrings() {
@@ -105,41 +110,30 @@ public class TimerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ll_set_time.setVisibility(View.VISIBLE);
-                btn_edit.setVisibility(View.GONE);
+                cl_buttons.setVisibility(View.GONE);
             }
         });
         btn_play.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TimerActivity.this, TimerReceiver.class);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(TimerActivity.this, 1 , intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
                 if(Repository.startedCountDown) {
-                    if(timer != null) {
-                        timer.cancel();
-                    }
-                    Repository.startedCountDown = false;
-                    setStartingTime();
-                    createTimer();
-                    btn_play.setText(Repository.StringMap(20));
-                    alarmManager.cancel(pendingIntent);
-                    Repository.savedTimes = new JSONArray();
-                    editor.putString(Repository.KEY_SAVEDTIMES, Repository.savedTimes.toString());
-                    ll_saved_time.removeAllViews();
+                    new AlertDialog.Builder(TimerActivity.this)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .setTitle(Repository.StringMap(84))
+                            .setMessage(Repository.StringMap(83))
+                            .setPositiveButton(Repository.StringMap(28), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    stopTimer();
+                                }
+                            })
+                            .setNegativeButton(Repository.StringMap(23), null)
+                            .show();
                 }
                 else {
-                    if(timer != null) {
-                        Repository.startingTime = System.currentTimeMillis();
-                        editor.putLong(Repository.KEY_STARTINGTIME, Repository.startingTime);
-                        Repository.startedCountDown = true;
-                        timer.start();
-                        btn_play.setText(Repository.StringMap(1));
-                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + Repository.milliSeconds, pendingIntent);
-                    }
+                    startTimer();
                 }
-                editor.putBoolean(Repository.KEY_STARTEDCOUNTDOWN, Repository.startedCountDown);
-                editor.apply();
             }
         });
         keyboardView.setOnKeyboardActionListener(new KeyboardView.OnKeyboardActionListener() {
@@ -212,7 +206,7 @@ public class TimerActivity extends AppCompatActivity {
                         }
                     case Repository.CodeCancel:
                         ll_set_time.setVisibility(View.GONE);
-                        btn_edit.setVisibility(View.VISIBLE);
+                        cl_buttons.setVisibility(View.VISIBLE);
                         break;
                 }
             }
@@ -326,5 +320,44 @@ public class TimerActivity extends AppCompatActivity {
         }
         textView.setText(text);
         ll_saved_time.addView(textView);
+    }
+
+    public void startTimer() {
+        if(timer != null) {
+            Intent intent = new Intent(TimerActivity.this, TimerReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(TimerActivity.this, 1 , intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+
+            Repository.startingTime = System.currentTimeMillis();
+            editor.putLong(Repository.KEY_STARTINGTIME, Repository.startingTime);
+            Repository.startedCountDown = true;
+            timer.start();
+            btn_play.setText(Repository.StringMap(1));
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + Repository.milliSeconds, pendingIntent);
+
+            editor.putBoolean(Repository.KEY_STARTEDCOUNTDOWN, Repository.startedCountDown);
+            editor.apply();
+        }
+    }
+
+    public void stopTimer() {
+        Intent intent = new Intent(TimerActivity.this, TimerReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(TimerActivity.this, 1 , intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+
+        if(timer != null) {
+            timer.cancel();
+        }
+        Repository.startedCountDown = false;
+        setStartingTime();
+        createTimer();
+        btn_play.setText(Repository.StringMap(20));
+        alarmManager.cancel(pendingIntent);
+        Repository.savedTimes = new JSONArray();
+        editor.putString(Repository.KEY_SAVEDTIMES, Repository.savedTimes.toString());
+        ll_saved_time.removeAllViews();
+
+        editor.putBoolean(Repository.KEY_STARTEDCOUNTDOWN, Repository.startedCountDown);
+        editor.apply();
     }
 }

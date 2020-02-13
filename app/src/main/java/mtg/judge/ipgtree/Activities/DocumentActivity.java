@@ -176,7 +176,15 @@ public class DocumentActivity extends AppCompatActivity {
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search();
+                String word = edt_search.getText().toString();
+                if(word.length() > 2) {
+                    search(word);
+                }
+                else {
+                    searching = false;
+                    tv_title.setVisibility(View.VISIBLE);
+                    showList();
+                }
             }
         });
     }
@@ -227,7 +235,7 @@ public class DocumentActivity extends AppCompatActivity {
         branchs.get(index).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(tree.existChild(index)) {
+                if(!searching && tree.existChild(index)) {
                     if(tree.getChild(index).getData().getType() == TypedText.LINK) {
                         ((TextView)view).setMovementMethod(LinkMovementMethod.getInstance());
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW);
@@ -286,11 +294,11 @@ public class DocumentActivity extends AppCompatActivity {
         }
     }
 
-    private void search() {
+    private void search(String word) {
         searching = true;
         tv_title.setVisibility(View.GONE);
         tree = tree.getRoot();
-        ArrayList<TypedText> results = treeSearch(edt_search.getText().toString());
+        ArrayList<TypedText> results = treeSearch(word);
         if(results.size() == 0) {
             results.add(new TypedText(Repository.StringMap(69)));
         }
@@ -310,7 +318,7 @@ public class DocumentActivity extends AppCompatActivity {
     }
 
     private ArrayList<TypedText> treeSearch(String word) {
-        return treeSearch(word, new ArrayList<TypedText>());
+        return treeSearch(word.toLowerCase(), new ArrayList<TypedText>());
     }
 
     private ArrayList<TypedText> treeSearch(String word, ArrayList<TypedText> list) {
@@ -318,7 +326,7 @@ public class DocumentActivity extends AppCompatActivity {
         int index = 0;
         while (index < tree.getChildren().size()) {
             tree = tree.getChild(index);
-            if(tree.getData().getText().contains(word)) {
+            if(tree.getData().getText().toLowerCase().contains(word)) {
                 results.add(tree.getData());
             }
             results = treeSearch(word, results);

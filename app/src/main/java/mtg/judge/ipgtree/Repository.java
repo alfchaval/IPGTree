@@ -15,7 +15,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    private static int appVersion = 20200206;
+    private static int appVersion = 20200213;
     public static int lastNews;
 
     //URLs
@@ -474,6 +474,12 @@ public class Repository {
                     case 82:
                         result = "Cancel";
                         break;
+                    case 83:
+                        result = "Do you really want to reset?";
+                        break;
+                    case 84:
+                        result = "Reset timer";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -723,6 +729,12 @@ public class Repository {
                         break;
                     case 82:
                         result = "Cancelar";
+                        break;
+                    case 83:
+                        result = "¿Seguro que quieres reiniciar el temporizador?";
+                        break;
+                    case 84:
+                        result = "Reiniciar temporizador";
                         break;
                 }
                 break;

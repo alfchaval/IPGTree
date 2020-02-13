@@ -43,6 +43,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private boolean finished = false;
     private int questionNumber = 0;
+    private int maxQuestions = 10;
 
     private static final String KEY_SERIALIZED_QUIZ = "key_serialized_quiz";
     private static final String KEY_FINISHED = "key_finished";
@@ -156,6 +157,9 @@ public class QuizActivity extends AppCompatActivity {
             questions = Read.readXMLQuiz("quiz_" + Repository.language + ".xml");
             shuffleQuestionsAndAnswers();
         }
+        if (questions.size() < maxQuestions) {
+            maxQuestions = questions.size();
+        }
     }
 
     //The name explains the method
@@ -172,7 +176,7 @@ public class QuizActivity extends AppCompatActivity {
     //Load the question and answers
     public void showQuiz() {
         int index = 0;
-        if(questionNumber < questions.size()) {
+        if(questionNumber < maxQuestions) {
             if(questionNumber == 0) {
                 imv_arrow_left.setVisibility(View.INVISIBLE);
             }
@@ -255,14 +259,22 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!finished) {
                     if(questionNumber < questions.size()) {
-                        questions.get(questionNumber).setChosenAnswerPosition(index);
-                        for(int i = 0; i < questions.get(questionNumber).getAnswers().size(); i++) {
-                            if(i == index) {
-                                answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+                        if(questions.get(questionNumber).getChosenAnswerPosition() == index) {
+                            questions.get(questionNumber).setNoChosenAnswer();
+                            answerTVs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                        }
+                        else {
+                            questions.get(questionNumber).setChosenAnswerPosition(index);
+                            for(int i = 0; i < questions.get(questionNumber).getAnswers().size(); i++) {
+                                if(i == index) {
+                                    answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_selected));
+                                }
+                                else {
+                                    answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                                }
                             }
-                            else {
-                                answerTVs.get(i).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                            }
+                            questionNumber++;
+                            showQuiz();
                         }
                     }
                     else {
