@@ -39,4 +39,27 @@ public class Card {
         }
         return false;
     }
+
+    public String showCard() {
+        String text = "";
+        text += this.name + " ";
+        if(this.manaCost != null) {
+            text += this.manaCost;
+        }
+        text += "\n\n";
+        //TODO indicador de color
+        if(this.type != null) {
+            text += this.type + "\n\n";
+        }
+        if(this.text != null) {
+            text += this.text;
+        }
+        if(this.power != null && this.toughness != null) {
+            text += "\n\n" + this.power + "/" + this.toughness;
+        }
+        if(this.loyalty != null) {
+            text += "\n\n" + this.loyalty;
+        }
+        return text;
+    }
 }

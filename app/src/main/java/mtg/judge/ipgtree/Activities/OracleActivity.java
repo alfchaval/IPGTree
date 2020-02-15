@@ -169,34 +169,11 @@ public class OracleActivity extends AppCompatActivity {
 
     public void showCardAndSides(String name) {
         String text = "";
-        text += showCard(name);
+        text += Repository.cards.get(name).showCard();
         for(String s : Repository.cards.get(name).sidenames) {
-            text +="\n\n////////////////////\n\n" + showCard(s);
+            text +="\n\n////////////////////\n\n" + Repository.cards.get(s).showCard();
         }
         txv_oracle.setText(text);
-    }
-
-    public String showCard(String name) {
-        String text = "";
-        text += Repository.cards.get(name).name + " ";
-        if(Repository.cards.get(name).manaCost != null) {
-            text += Repository.cards.get(name).manaCost;
-        }
-        text += "\n\n";
-        //TODO indicador de color
-        if(Repository.cards.get(name).type != null) {
-            text += Repository.cards.get(name).type + "\n\n";
-        }
-        if(Repository.cards.get(name).text != null) {
-            text += Repository.cards.get(name).text;
-        }
-        if(Repository.cards.get(name).power != null && Repository.cards.get(name).toughness != null) {
-            text += "\n\n" + Repository.cards.get(name).power + "/" + Repository.cards.get(name).toughness;
-        }
-        if(Repository.cards.get(name).loyalty != null) {
-            text += "\n\n" + Repository.cards.get(name).loyalty;
-        }
-        return text;
     }
 
     public void changeMode(int newMode) {

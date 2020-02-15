@@ -126,6 +126,7 @@ public class Read {
         ArrayList<Quiz> array = new ArrayList<Quiz>();
         Quiz quiz;
         String question = null;
+        String resource = null;
         ArrayList<String> answers = null;
         try {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -141,14 +142,18 @@ public class Read {
                         if (xpp.getName().equals("question")) {
                             question = xpp.getAttributeValue(0);
                             answers = new ArrayList<String>();
+                            resource = null;
                         }
                         else if (xpp.getName().equals("answer")) {
                             answers.add(xpp.getAttributeValue(0));
                         }
+                        else if (xpp.getName().equals("resource")) {
+                            resource = xpp.getAttributeValue(0);
+                        }
                         break;
                     case XmlPullParser.END_TAG:
                         if (xpp.getName().equals("question")) {
-                            quiz = new Quiz(question, answers);
+                            quiz = new Quiz(question, answers, resource);
                             quiz.setCorrectAnswerPosition(0);
                             array.add(quiz);
                         }

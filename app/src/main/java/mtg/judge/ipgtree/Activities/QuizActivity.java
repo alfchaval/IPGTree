@@ -185,7 +185,7 @@ public class QuizActivity extends AppCompatActivity {
             }
             imv_arrow_right.setVisibility(View.VISIBLE);
             //Show the question
-            tv_question.setText(questions.get(questionNumber).getQuestion());
+            tv_question.setText(questions.get(questionNumber).getQuestion() + showResource());
             //Show the answers
             while (index < questions.get(questionNumber).getAnswers().size()) {
                 //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
@@ -242,6 +242,20 @@ public class QuizActivity extends AppCompatActivity {
             answerTVs.get(index).setVisibility(View.GONE);
             index++;
         }
+    }
+
+    public String showResource() {
+        String text = "";
+        String name = questions.get(questionNumber).getResource();
+        if(name != null) {
+            try{
+                text +="\n\n////////////////////\n\n" + Repository.cards.get(name).showCard();
+                for(String s : Repository.cards.get(name).sidenames) {
+                    text +="\n\n////////////////////\n\n" + Repository.cards.get(s).showCard();
+                }
+            } catch (Exception e) {}
+        }
+        return text;
     }
 
     //Create a TextView

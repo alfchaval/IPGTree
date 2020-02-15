@@ -10,6 +10,7 @@ public class Quiz {
     private ArrayList<String> answers;
     private int correctAnswerPosition;
     private int chosenAnswerPosition = -1;
+    private String resource = null;
 
     //endregion
 
@@ -41,6 +42,38 @@ public class Quiz {
         this.answers = answers;
         this.correctAnswerPosition = correctAnswerPosition;;
         this.chosenAnswerPosition = defaultAnswerPosition;
+    }
+
+    public Quiz(String question, ArrayList<String> answers, String resource) {
+        this.question = question;
+        this.answers = answers;
+        this.setNoCorrectAnswer();
+        this.setNoChosenAnswer();
+        this.resource = resource;
+    }
+
+    public Quiz(String question, int correctAnswerPosition, ArrayList<String> answers, String resource) {
+        this.question = question;
+        this.answers = answers;
+        this.correctAnswerPosition = correctAnswerPosition;
+        this.setNoChosenAnswer();
+        this.resource = resource;
+    }
+
+    public Quiz(String question, ArrayList<String> answers, int defaultAnswerPosition, String resource) {
+        this.question = question;
+        this.answers = answers;
+        this.setNoCorrectAnswer();
+        this.chosenAnswerPosition = defaultAnswerPosition;
+        this.resource = resource;
+    }
+
+    public Quiz(String question, int correctAnswerPosition, ArrayList<String> answers, int defaultAnswerPosition, String resource) {
+        this.question = question;
+        this.answers = answers;
+        this.correctAnswerPosition = correctAnswerPosition;;
+        this.chosenAnswerPosition = defaultAnswerPosition;
+        this.resource = resource;
     }
 
     //endregion
@@ -131,6 +164,14 @@ public class Quiz {
 
     public void setNoChosenAnswer() {
         this.chosenAnswerPosition = -1;
+    }
+
+    public String getResource() {
+        return this.resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
     }
 
     //endregion
