@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quiz>
-	<question text="???">
-        <answer text="V"></answer>
-		<answer text=""></answer>
-		<answer text=""></answer>
-		<answer text=""></answer>
-    </question>
 	<question text="Alex controls an Avaricious Dragon and they has no cards in their hand, Alex pass the turn, after untapping in their untap step, Nicky's notice Alex didn't demonstrate awareness of the ability">
         <answer text="There is no infraction"></answer>
 		<answer text="GPE - Misstrigger, Warning"></answer>

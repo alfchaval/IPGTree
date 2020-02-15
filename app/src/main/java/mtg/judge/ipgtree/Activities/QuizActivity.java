@@ -1,5 +1,7 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -118,6 +120,12 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void setListeners() {
+        tv_question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showResource();
+            }
+        });
         imv_arrow_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -185,7 +193,7 @@ public class QuizActivity extends AppCompatActivity {
             }
             imv_arrow_right.setVisibility(View.VISIBLE);
             //Show the question
-            tv_question.setText(questions.get(questionNumber).getQuestion() + showResource());
+            tv_question.setText(questions.get(questionNumber).getQuestion());
             //Show the answers
             while (index < questions.get(questionNumber).getAnswers().size()) {
                 //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
@@ -244,18 +252,16 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-    public String showResource() {
-        String text = "";
-        String name = questions.get(questionNumber).getResource();
-        if(name != null) {
+    public void showResource() {
+        String resource = questions.get(questionNumber).getResource();
+        if(resource != null) {
             try{
-                text +="\n\n////////////////////\n\n" + Repository.cards.get(name).showCard();
-                for(String s : Repository.cards.get(name).sidenames) {
-                    text +="\n\n////////////////////\n\n" + Repository.cards.get(s).showCard();
-                }
+                String cardtext = Repository.cards.get(resource).showCard();
+                new AlertDialog.Builder(QuizActivity.this)
+                        .setMessage(cardtext)
+                        .show();
             } catch (Exception e) {}
         }
-        return text;
     }
 
     //Create a TextView
