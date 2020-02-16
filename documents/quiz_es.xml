@@ -1,151 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quiz>
+	The first answer inside a question is the correct one.
+	Alex = Active Player
+	Nicky = Non Active Player
+	Sam, Stef = Spectator
+	??? - A triggered ability that requires its controller to choose targets
+	??? - A triggered ability that causes a change in the visible game state
+	??? - A triggered ability that changes the rules of the game
+	??? - A triggered ability that affects the game state in non-visible ways
+	??? - Triggered abilities that do nothing except create delayed triggered abilities automatically resolve
+	??? - Triggered abilities that do nothing except create one or more copies of a spell or ability (such as storm or cipher) automatically resolve without requiring acknowledgment
 	<question text="Alex controla un Avaricious Dragon y no tiene cartas en su mano, Alex pasa el turno, tras enderezar en su paso de enderezar, Nicky se da cuenta de que Alex no demostró conocimiento de la habilidad">
-        <answer text="No hay infracción"></answer>
-		<answer text="GPE - Misstrigger, Warning"></answer>
-		<answer text="GPE - Misstrigger, no hay penalización"></answer>
-		<answer text="TE - Communication Policy Violation, Warning"></answer>
+		<answer text="No hay infracción"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia"></answer>
 		<resource text="Avaricious Dragon"></resource>
     </question>
 	<question text="Alex resuelve un Waterknot y pasa el turno a Nicky sin señalar su habilidad disparada">
-        <answer text="GPE - Misstrigger, no hay penalización, resuelve la habilidad de inmediato"></answer>
-		<answer text="GPE - Misstrigger, Warning, resuelve la habilidad de inmediato"></answer>
-		<answer text="GPE - Misstrigger, no hay penalización, Nicky elige si la habilidad se pone en la pila"></answer>
-		<answer text="GPE - Misstrigger, Warning, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, resuelve la habilidad de inmediato"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, resuelve la habilidad de inmediato"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad se pone en la pila"></answer>
 		<resource text="Waterknot"></resource>
     </question>
 	<question text="Alex resuelve un Cocoon y pasa el turno a Nicky sin señalar su habilidad disparada">
-        <answer text="GPE - Misstrigger, no hay penalización, Nicky elige si la habilidad se pone en la pila"></answer>
-		<answer text="GPE - Misstrigger, Warning, Nicky elige si la habilidad se pone en la pila"></answer>
-		<answer text="GPE - Misstrigger, no hay penalización, resuelve la habilidad de inmediato"></answer>
-		<answer text="GPE - Misstrigger, Warning, resuelve la habilidad de inmediato"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, resuelve la habilidad de inmediato"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, resuelve la habilidad de inmediato"></answer>
 		<resource text="Cocoon"></resource>
     </question>
+	<question text="En su fase principa, Alex exilia una de sus tierras con la habilidad disparada de Flickerwisp, más tarde, en el turno de Nicky, se da cuenta de que no ha regresado la tierra al campo de batalla">
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad es puesta en la pila"></answer>
+		<resource text="Flickerwisp"></resource>
+    </question>
+	<question text="Alex ataca con Geist of Saint Traft, creando una ficha de ángel atacando, luego juega una tierra en su segunda fase principal y Nicky señala que Alex no ha exiliado la ficha">
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad es puesta en la pila"></answer>
+		<resource text="Geist of Saint Traft"></resource>
+    </question>
 	<question text="Nicky controla un Kataki, War's Wage, Alex controla un artefacto, empieza su turno y roba la carta de su paso de robar">
-        <answer text="GPE - Misstrigger, sin penalización. Nicky elige si la habilidad es puesta en la pila."></answer>
-		<answer text="GPE - Misstrigger, sin penalización. Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase."></answer>
-		<answer text="GPE - Misstrigger, Warning. Nicky elige si la habilidad es puesta en la pila."></answer>
-		<answer text="GPE - Misstrigger, Warning. Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase."></answer>
+		<answer text="GPE - Disparo Olvidado, sin penalización. Nicky elige si la habilidad es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, sin penalización. Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia. Nicky elige si la habilidad es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia. Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
 		<resource text="Kataki, War's Wage"></resource>
     </question>
+	??? - Casting a spell in response to a trigger ability without choosing targets for the ability
 	<question text="Alex golpea su biblioteca por error haciendo que la carta de la parte superior se de la vuelta">
-        <answer text="GPE - Looking Extra Cards, Warning. Alex baraja la carta en la porción aleatoria de la biblioteca."></answer>
-		<answer text="GPE - Looking Extra Cards, Warning para ambos jugadores. Alex baraja la carta en la porción aleatoria de la biblioteca."></answer>
-		<answer text="GPE - Looking Extra Cards, Warning. Regresa la carta a la parte superior de la biblioteca."></answer>
-		<answer text="GPE - Looking Extra Cards, Warning para ambos jugadores. Regresa la carta a la parte superior de la biblioteca."></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia. Alex baraja la carta en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia para ambos jugadores. Alex baraja la carta en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia. Regresa la carta a la parte superior de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia para ambos jugadores. Regresa la carta a la parte superior de la biblioteca"></answer>
     </question>
+	??? - HCE, In cases where the infraction was immediately followed by moving a card from the affected set to a known location, such as by discarding, putting cards on top of the library, or playing a land, a simple backup to the point just after the error may be performed
+	??? - HCE, If the set of cards that contained the problem no longer exists, there is no remedy to be applied
+	??? - HCE, If the error put cards into a set prematurely and other operations involving cards in the set should have been performed first
+	??? - HCE, If the error involves one or more cards that were supposed to be revealed
 	<question text="Alex destruye una criatura boca abajo que controla Nicky, al poner la carta en el cementerio se dan cuenta de que no tiene la habilidad de metamorfosis (y fue lanzada boca abajo como si lo tuviera)">
-        <answer text="GPE - Hidden Card Error, Game Loss"></answer>
-		<answer text="GPE - Hidden Card Error, Game Loss, si Nicky tiene una carta con metamorfosis en mano y no ha agregado cartas previamente desconocidas a su mano desde que lanzó la carta boca abajo, puede intercambiar las cartas y la penalización es Warning"></answer>
-		<answer text="GPE - Game Rule Violation, Warning, no hay remedio aplicable"></answer>
-		<answer text="GPE - Game Rule Violation, Warning, podemos considerar una vuelta atrás o dejar el estado del juego como está"></answer>
+		<answer text="GPE - Error de Carta Oculta, Pérdida de juego"></answer>
+		<answer text="GPE - Error de Carta Oculta, Pérdida de juego, si Nicky tiene una carta con metamorfosis en mano y no ha agregado cartas previamente desconocidas a su mano desde que lanzó la carta boca abajo, puede intercambiar las cartas y la penalización es Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, no hay remedio aplicable"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, podemos considerar una vuelta atrás o dejar el estado del juego como está"></answer>
     </question>
-	<question text="Alex roba la carta de su paso de robar sin haber enderezado sus permanentes en el paso de enderezar">
-        <answer text="GPE - Game Rule Violation, Warning, Alex endereza sus permanentes"></answer>
-		<answer text="GPE - Game Rule Violation, Warning, los permanentes permanecen girados"></answer>
-		<answer text="GPE - Game Rule Violation, Warning, hacemos una vuelta atrás hasta el paso de enderezar poniendo una carta al azar de la mano de Alex en la parte superior de su biblioteca"></answer>
-		<answer text="No hay infracción, Alex endereza sus permanentes"></answer>
+	<question text="Alex gana el primer juego de la partida y recoge sus cartas, tras eso, Nicky señala que Alex no mostró si la criatura que lanzó boca abajo tenía metamorfosis">
+		<answer text="GPE - Violación de Regla de Juego, Advertencia"></answer>
+		<answer text="GPE - Error de Carta Oculta, Pérdida de juego"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia. Nicky tiene GPE - Failure to Maintain Game, Advertencia"></answer>
     </question>
+	<question text="Alex pone en el campo de batalla una Leyline of the Void antes de que Nicky diga si va a quedarse la mano">
+		<answer text="No hay infracción"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás regresando Leyline of the Void a la mano de Alex"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia"></answer>
+		<resource text="Leyline of the Void"></resource>
+    </question>
+	<question text="Alex hace su primer mulligan y exilia con la habilidad de Serum Powder las 7 cartas que acaba de robar, en ese momento Nicky te llama">
+		<answer text="No hay infracción, Alex pone una de esas cartas en el fondo de su biblioteca"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex debe hacer mulligan"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás regresando las cartas exiliadas a la mano de Alex"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex pone una de esas cartas en el fondo de su biblioteca"></answer>
+		<resource text="Serum Powder"></resource>
+    </question>
+	<question text="Alex hace su primer mulligan y exilia con la habilidad de Serum Powder las 7 cartas que acaba de robar, luego roba 7 cartas y pone una de ellas en el fondo de su biblioteca, en ese momento Nicky te llama">
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex debe hacer mulligan"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex elige entre hacer mulligan o revelar su mano a Nicky, quién elegirá una carta que será barajada en la biblioteca"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quién elegirá una carta que será barajada en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás barajando las cartas de la mano en la biblioteca y regresando las cartas exiliadas a la mano de Alex"></answer>
+		<resource text="Serum Powder"></resource>
+    </question>
+	<question text="Alex roba su mano inicial y se da cuenta en ese instante de que ha robado 8 cartas">
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex debe hacer mulligan"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex elige entre hacer mulligan o revelar su mano a Nicky, quién elegirá una carta que será barajada en la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia, Alex baraja una carta al azar en la biblioteca"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quién elegirá una carta que será barajada en la biblioteca"></answer>
+    </question>
+	<question text="Alex, en su primer turno, juega una tierra y luego se da cuenta de que se quedó una mano con una carta más de las que debería tener">
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quién elegirá una carta que será barajada en la biblioteca"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex baraja una carta al azar en su biblioteca"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex revela su mano a Nicky, quién elegirá una carta que será barajada en la biblioteca"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, hacemos una vuelta atrás y luego Alex debe hacer un mulligan"></answer>
+    </question>
+	<question text="Alex, en su primer turno, juega una tierra y luego se da cuenta de que se quedó una mano con una carta menos de las que debería tener">
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex roba una carta"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex roba una carta"></answer>
+		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia"></answer>
+    </question>
+	<question text="Alex endereza sus permanentes en el paso de enderezar, pero olvida enderezar una de sus criaturas, se da cuenta de ello tras lanzar varios hechizos">
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex endereza su criatura"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, la criatura permanece girada"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, podemos considerar una vuelta atrás hasta el paso de enderezar o dejar el estado del juego como está"></answer>
+		<answer text="No hay infracción, Alex endereza su criatura"></answer>
+    </question>
+	<question text="Alex roba la carta de su paso de robar y luego endereza sus permanentes">
+		<answer text="No hay infracción"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, los permanentes permanecen girados"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás hasta el paso de enderezar poniendo una carta al azar de la mano de Alex en la parte superior de su biblioteca"></answer>
+    </question>
+	??? - If a player made an illegal choice (including no choice where required) for a static ability generating a continuous effect still on the battlefield, that player makes a legal choice
+	??? - If a player failed to draw cards, that player does so
 	<question text="Alex no descarta en su paso final teniendo 8 cartas en mano, se da cuenta de ello tras robar carta en su siguiente turno">
-        <answer text="GPE - Game Rule Violation, Warning, Alex descarta una carta. Nicky tiene GPE - Failure to Maintain Game, Warning"></answer>
-        <answer text="GPE - Game Rule Violation, Warning, no hay solución, es demasiado tarde para hacer un backup"></answer>
-        <answer text="GPE - Hidden Card Error, Warning, Alex revela su mano a Nicky, quien elige qué carta descarta"></answer>
-        <answer text="TE - Communication Policy Violation, Warning, no hay solución, es demasiado tarde para hacer un backup"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex descarta una carta. Nicky tiene GPE - Failure to Maintain Game, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, no hay solución, es demasiado tarde para hacer un backup"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quien elige qué carta descarta"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, no hay solución, es demasiado tarde para hacer un backup"></answer>
     </question>
+	??? - If a player failed to return cards from their hand to another zone, that player does so
+	??? - If an object is in an incorrect zone either due to a required zone change being missed or due to being put into the wrong zone during a zone change, the exact object is still known to all players, and it can be moved with only Menor disruption to the current state of the game, put the object in the correct zone
+	??? - If damage assignment order has not been declared, the appropriate player chooses that order
+	??? - Doble GRV, Narset
+	??? - Doble GRV, Path to Exile
+	??? - Other GRV
 	<question text="Alex llega a su asiento tras haber pasado 30 segundos desde el inicio de ronda (y la ronda anterior no terminó antes de tiempo)">
-        <answer text="TE - Tardiness, Warning, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
-		<answer text="TE - Tardiness, Warning, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza más tres minutos"></answer>
-		<answer text="TE - Tardiness, Game Loss, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
-		<answer text="TE - Tardiness, Game Loss"></answer>
+		<answer text="TE - Tardanza, Advertencia, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
+		<answer text="TE - Tardanza, Advertencia, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza más tres minutos"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego"></answer>
     </question>
 	<question text="Alex llega a su asiento tras haber pasado 3 minutos desde el inicio de ronda (y la ronda anterior no terminó antes de tiempo)">
-        <answer text="TE - Tardiness, Game Loss, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
-		<answer text="TE - Tardiness, Game Loss, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza más tres minutos"></answer>
-		<answer text="TE - Tardiness, Warning, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
-		<answer text="TE - Tardiness, Game Loss"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza más tres minutos"></answer>
+		<answer text="TE - Tardanza, Advertencia, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego"></answer>
     </question>
 	<question text="Alex llega a su asiento tras haber pasado 12 minutos desde el inicio de ronda (y la ronda anterior no terminó antes de tiempo)">
-        <answer text="TE - Tardiness, Match Loss, Alex se eliminará del torneo a menos que se presente con el Juez principal o el Administrador de resultados antes del final de la ronda"></answer>
-		<answer text="TE - Tardiness, Match Loss"></answer>
-		<answer text="TE - Tardiness, Game Loss, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
-		<answer text="TE - Tardiness, Game Loss, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza más tres minutos"></answer>
+		<answer text="TE - Tardanza, Pérdida de partida, Alex se eliminará del torneo a menos que se presente con el Juez principal o el Administrador de resultados antes del final de la ronda"></answer>
+		<answer text="TE - Tardanza, Pérdida de partida"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza"></answer>
+		<answer text="TE - Tardanza, Pérdida de juego, los jugadores reciben una extensión de tiempo correspondiente con la duración de la tardanza más tres minutos"></answer>
     </question>
 	<question text="Cerca del fin de la ronda, dos jugadores se dan cuenta de que se han intercambiado el asiento y están jugando contra el oponente incorrecto">
-        <answer text="Los jugadores sentados en la mesa equivocada obtienen TE - Tardiness, Match Loss"></answer>
-        <answer text="Los jugadores sentados en la mesa equivocada obtienen TE - Tardiness, Match Loss y se les dropea del torneo"></answer>
-        <answer text="Los jugadores sentados en la mesa equivocada obtienen TE - Tardiness, Game Loss y que se pongan a jugar contra el oponente correcto"></answer>
-        <answer text="Se rehacen los emparejamientos para que cuadren con las partidas jugadas"></answer>
+		<answer text="Los jugadores sentados en la mesa equivocada obtienen TE - Tardanza, Pérdida de partida"></answer>
+		<answer text="Los jugadores sentados en la mesa equivocada obtienen TE - Tardanza, Pérdida de partida y se les dropea del torneo"></answer>
+		<answer text="Los jugadores sentados en la mesa equivocada obtienen TE - Tardanza, Pérdida de juego y que se pongan a jugar contra el oponente correcto"></answer>
+		<answer text="Se rehacen los emparejamientos para que cuadren con las partidas jugadas"></answer>
     </question>
+	<question text="Alex roba su mano inicial y pregunta a Sam si se quedaría una mano como esa">
+		<answer text="TE - Ayuda Externa, Pérdida de partida"></answer>
+		<answer text="TE - Ayuda Externa, Pérdida de juego"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Pérdida de partida"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Pérdida de juego"></answer>
+    </question>
+	<question text="Alex lanza un Lightning Bolt a una criatura de Nicky, y Sam dice “¿por qué no se lo lanzas a Nicky, que está a 2 vidas?”">
+		<answer text="TE - Ayuda Externa, Pérdida de partida"></answer>
+		<answer text="TE - Ayuda Externa, Pérdida de juego"></answer>
+		<answer text="TE - Ayuda Externa, no hay penalización"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, no hay penalización"></answer>
+		<resource text="Lightning Bolt"></resource>
+    </question>
+	??? - OA information between games
+	??? - Juego Lento 1
+	??? - Juego Lento 2
+	??? - Play Illegal Cards
+	??? - 16 cards sideboard decklist
+	??? - Not enough cards in decklist
+	??? - There is a card in the deck that it's not in the decklist
+	??? - Limited, wrong basic lands
+	??? - Legendary truncated name
+	??? - Missing cards in sideboard
+	??? - Too much cards in sideboard
+	??? - Missing card is in their current opponent deck
+	??? - Missing card is in their last opponent deck
+	??? - There is a card in the deck that shouldn't be there
+	??? - Opponent made strategic decissions based in the presence of a sideboard card
+	??? - If an error resulted in more copies of a main deck card being played than were registered and this was discovered after the game had begun, the penalty is a Pérdida de juego unless all copies of the card are still in the random portion of the library
+    ??? - A player passes a booster to their left when it is supposed to go to their right
 	<question text="Alex pone una carta en su montón de draft, y luego la toma nuevamente">
-        <answer text="TE - Limited Procedure Violation, Warning"></answer>
-		<answer text="TE - Limited Procedure Violation, Warning, Alex debe pasar el sobre sin elegir una carta"></answer>
-		<answer text="GPE - Hidden Card Error, Warning, Alex revela su montón de draft, un oponente elige una carta de allí y la pone en el sobre que Alex está drafteando, Alex elige una carta del sobre y la pone en su montón de draft"></answer>
-		<answer text="TE - Communication Policy Violation, Warning"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Advertencia"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Advertencia, Alex debe pasar el sobre sin elegir una carta"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su montón de draft, un oponente elige una carta de allí y la pone en el sobre que Alex está drafteando, Alex elige una carta del sobre y la pone en su montón de draft"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia"></answer>
     </question>
 	<question text="Alex mira sin querer  las cartas que Nicky está drafteando">
-		<answer text="TE - Limited Procedure Violation, Warning"></answer>
-		<answer text="TE - Limited Procedure Violation, Game Loss"></answer>
-        <answer text="UC - Cheating, Disqualification"></answer>
-		<answer text="GPE - Looking Extra Cards, Warning"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Advertencia"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Pérdida de juego"></answer>
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia"></answer>
     </question>
-	<question text="Alex retira la silla de debajo de Nicky, haciendo que caiga al suelo">
-        <answer text="UC - Aggressive Behavior, Disqualification"></answer>
-		<answer text="UC - Major, Match Loss"></answer>
-		<answer text="UC - Major, Warning"></answer>
-		<answer text="UC - Theft of Tournament Material, Disqualification, la silla se considera material de torneo"></answer>
-	</question>
-	<question text="Alex parte por la mitad una carta de Nicky">
-        <answer text="UC - Aggressive Behavior, Disqualification"></answer>
-		<answer text="UC - Aggressive Behavior, Match Loss"></answer>
-		<answer text="UC - Major, Match Loss"></answer>
-		<answer text="UC - Cheating, Disqualification"></answer>
-    </question>
-	<question text="(╯°□°)╯︵ ┻┻ Alex intencionalmente vuelca una mesa">
-        <answer text="UC - Aggressive Behavior, Disqualification"></answer>
-		<answer text="UC - Major, Disqualification"></answer>
-		<answer text="UC - Major, Match Loss"></answer>
-		<answer text="No hay infracción, pero deberíamos reportarlo al TO"></answer>
-    </question>
-	<question text="A Alex le hace gracia el número de mesa 69, así que se lo guarda en la mochila">
-        <answer text="UC - Theft of Tournament Material, Disqualification"></answer>
-		<answer text="UC - Theft of Tournament Material, Match Loss"></answer>
-		<answer text="UC - Minor, Warning"></answer>
-		<answer text="No hay infracción, pero deberíamos reportarlo al TO"></answer>
-    </question>
-    <question text="Alex roba la tarjeta de crédito de Nicky">
-        <answer text="No hay infracción, sin embargo el TO debería removerlo del torneo y deberías reportarlo a la dci"></answer>
-        <answer text="No hay infracción, que se apañen los jugadores"></answer>
-        <answer text="Unsporting Conduct - Theft of Tournament Material, Disqualification"></answer>
-        <answer text="Unsporting Conduct - Minor, Match Loss"></answer>
-    </question>
-	<question text="Alex va ganando 1-0 y como queda poco tiempo de ronda decide mover las cartas de su mano mientras piensa la lista de la compra para gastar tiempo">
-        <answer text="UC - Stalling, Disqualification"></answer>
-		<answer text="TE - Slow Play, Warning, en el caso de que la partida exceda el límite de tiempo, se agregan dos turnos adicionales"></answer>
-		<answer text="TE - Slow Play, Warning"></answer>
-		<answer text="TE - Slow Play, Game Loss"></answer>
-    </question>
-	<question text="Alex pierde 0-2, pero anota 2-0 en el talón de resultados y lo firma antes de entregárselo a Nicky con la esperanza de que no se percate">
-        <answer text="UC - Cheating, Disqualification"></answer>
-		<answer text="TE - Communication Policy Violation, Disqualification"></answer>
-		<answer text="TE - Communication Policy Violation, Match Loss"></answer>
+	??? - Wrong power, error, CPV
+	??? - Wrong power, not error, not CPV
+	<question text="Alex ataca con un 3/1, Nicky bloquea con una Dryad Arbor, Alex dice que no había visto esa Dryad Arbor porque estaba junto a otras tierras y que si la hubiera visto no habría atacado">
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, podemos considerar una vuelta atrás hasta la declaración de atacantes o dejar el estado del juego como está"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, Nicky no puede bloquear con Dryad Arbor"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, el 3/1 permanece bloqueado"></answer>
 		<answer text="No hay infracción"></answer>
     </question>
+	??? - Marked Sleeves
+	??? - Curved foils
+	??? - Transparent and doublefaced
+	??? - Player can't find replacement
+	??? - Insufficient Shuffling
+	??? - A player uses excessively vulgar and profane language.
+	??? - A player inappropriately demands to a judge that their opponent receive a penalty.
+	??? - A player appeals to the Head Judge before waiting for the floor judge to issue a ruling.
+	??? - A player throws their deck on the ground after losing a game.
+	??? - A player leaves excessive trash in the play area after leaving the table.
+	??? - A player fails to follow the request of a tournament official to leave the play area.
+	??? - A player takes inappropriate photos of another player without express permission.
+	??? - A player asks a spectator for a date, is denied, and continues to press the issue.
+	??? - A player purposefully obstructs another player with the intent of inducing physical contact.
+	??? - A spectator uses social media to bully another player
+	??? - If the offense was committed with malicious intent, the player displays no remorse, or the offense is repeated at a later time, the penalty is Descalificación and removal from the venue.
+	??? - As time is called, two players about to draw roll a die to determine the winner.
+	??? - Two players reveal cards from the top of their libraries to see “who would win” after extra turns.
+	??? - A player says “Oh no, we’re going to draw, that’s terrible for us. If only there were something we could do about it.
+	??? - A player asks for a concession in exchange for a prize split
+	??? - Top 8 split
+	??? - Final split in top
+	<question text="Sam y Stef apuestan por quién ganará una partida sin saber que las apuestas están prohibidas">
+		<answer text="UC - Soborno y Apuestas, Pérdida de partida"></answer>
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="UC - Soborno y Apuestas, Descalificación"></answer>
+		<answer text="UC - Soborno y Apuestas, Pérdida de juego"></answer>
+    </question>
+	<question text="Sam y Stef apuestan por quién ganará una partida sabiendo que las apuestas están prohibidas">
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="UC - Soborno y Apuestas, Pérdida de partida"></answer>
+		<answer text="UC - Soborno y Apuestas, Descalificación"></answer>
+		<answer text="UC - Soborno y Apuestas, Pérdida de juego"></answer>
+    </question>
+	??? - A player threatens to hit another player who won’t concede to them.
+	<question text="Alex retira la silla de debajo de Nicky, haciendo que caiga al suelo">
+		<answer text="UC - Comportamiento Agresivo, Descalificación"></answer>
+		<answer text="UC - Mayor, Pérdida de partida"></answer>
+		<answer text="UC - Mayor, Advertencia"></answer>
+		<answer text="UC - Robo de Material de Torneo, Descalificación, la silla se considera material de torneo"></answer>
+	</question>
+	??? - A player makes threats against a judge after receiving a ruling.
+	<question text="Alex parte por la mitad una carta de Nicky">
+		<answer text="UC - Comportamiento Agresivo, Descalificación"></answer>
+		<answer text="UC - Comportamiento Agresivo, Pérdida de partida"></answer>
+		<answer text="UC - Mayor, Pérdida de partida"></answer>
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+    </question>
+	<question text="(╯°□°)╯︵ ┻┻ Alex intencionalmente vuelca una mesa">
+		<answer text="UC - Comportamiento Agresivo, Descalificación"></answer>
+		<answer text="UC - Mayor, Descalificación"></answer>
+		<answer text="UC - Mayor, Pérdida de partida"></answer>
+		<answer text="No hay infracción, pero deberíamos reportarlo al TO"></answer>
+    </question>
+	??? - A player steals cards from the sideboard of their opponent.
+	<question text="A Alex le hace gracia el número de mesa 69, así que se lo guarda en la mochila">
+		<answer text="UC - Robo de Material de Torneo, Descalificación"></answer>
+		<answer text="UC - Robo de Material de Torneo, Pérdida de partida"></answer>
+		<answer text="UC - Menor, Advertencia"></answer>
+		<answer text="No hay infracción, pero deberíamos reportarlo al TO"></answer>
+    </question>
+	??? - A player realizes they have a previous opponent’s card, but they hide it instead of telling a tournament official.
+	<question text="Alex roba la tarjeta de crédito de Nicky">
+		<answer text="No hay infracción, sin embargo el TO debería removerlo del torneo y deberías reportarlo a la dci"></answer>
+		<answer text="No hay infracción, que se apañen los jugadores"></answer>
+		<answer text="UC - Robo de Material de Torneo, Descalificación"></answer>
+		<answer text="UC - Menor, Pérdida de partida"></answer>
+    </question>
+	<question text="Alex va ganando 1-0 y como queda poco tiempo de ronda decide mover las cartas de su mano mientras piensa la lista de la compra para gastar tiempo">
+		<answer text="UC - Demorar la Partida, Descalificación"></answer>
+		<answer text="TE - Juego Lento, Advertencia, en el caso de que la partida exceda el límite de tiempo, se agregan dos turnos adicionales"></answer>
+		<answer text="TE - Juego Lento, Advertencia"></answer>
+		<answer text="TE - Juego Lento, Pérdida de juego"></answer>
+    </question>
+	<question text="Alex pierde 0-2, pero anota 2-0 en el talón de resultados y lo firma antes de entregárselo a Nicky con la esperanza de que no se percate">
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Descalificación"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Pérdida de partida"></answer>
+		<answer text="No hay infracción"></answer>
+    </question>
+	??? - A player lies to a tournament official about what happened in a game to make their case stronger.
+	<question text="Alex ataca con un 3/3, Nicky dice que no bloquea y se anota 4 vidas menos, Alex ve que Nicky se ha quitado 4 vidas y apunta las mismas vidas">
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, corrige el total de vidas de Nicky"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, si el error se descubre antes de terminar la misma fase del turno en el siguiente turno, corrige el total de vidas de Nicky, sino deja las vidas como están"></answer>
+		<answer text="GRV - Violación de Regla de Juego, Advertencia para ambos jugadores, puedes considerar una vuelta atrás o dejar el estado del juego como está"></answer>
+    </question>
 	<question text="Alex intencionadamente mira las cartas que Nicky está drafteando">
-        <answer text="UC - Cheating, Disqualification"></answer>
-		<answer text="GPE - Looking Extra Cards, Warning"></answer>
-		<answer text="TE - Limited Procedure Violation, Warning"></answer>
-		<answer text="TE - Limited Procedure Violation, Game Loss"></answer>
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Advertencia"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Pérdida de juego"></answer>
     </question>
 	<question text="Alex añade a su mazo de sellado cartas que no ha recibido en ese evento">
-        <answer text="UC - Cheating, Disqualification"></answer>
-		<answer text="TE - Limited Procedure Violation, Disqualification"></answer>
-		<answer text="TE - Limited Procedure Violation, Match Loss"></answer>
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Descalificación"></answer>
+		<answer text="TE - Violación del Procedimiento de Limitado, Pérdida de partida"></answer>
 		<answer text="No hay infracción"></answer>
     </question>
 	<question text="Alex roba en su paso de robar y más tarde se da cuenta de que en realidad ha robado dos, que las cartas estaban pegadas, pero no dice nada. Luego Nicky se da cuenta de que Alex tiene una carta demás">
-        <answer text="UC - Cheating, Disqualification"></answer>
-		<answer text="GPE - Hidden Card Error, Warning. Alex revela su mano a Nicky, quien elige una carta, esa carta es barajada en la porción aleatoria de la biblioteca"></answer>
-		<answer text="GPE - Hidden Card Error, Warning. Alex pone una carta de su mano en la parte superior de su biblioteca"></answer>
-		<answer text="GPE - Hidden Card Error, Game Loss"></answer>
+		<answer text="UC - Hacer Trampa, Descalificación"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia. Alex revela su mano a Nicky, quien elige una carta, esa carta es barajada en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia. Alex pone una carta de su mano en la parte superior de su biblioteca"></answer>
+		<answer text="GPE - Error de Carta Oculta, Pérdida de juego"></answer>
     </question>
 </quiz>

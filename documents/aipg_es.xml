@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Guía anotada de procedimientos e infracciones">
-    <point text="Actualizado: 12-07-2019"></point>
+    <point text="Actualizado: 26-01-2020"></point>
 	<point text="Introducción y marco del documento">
 		<title text="Introducción"></title>
 		<point text="La Guía de procedimientos de infracciones de Magic da a los jueces las penalizaciones y procedimientos adecuados para manejar violaciones de reglas que ocurren durante un torneo realizado a Nivel de Imposición de Reglas (NIR) Competitivo o Profesional, así como la filosofía que respalda su implementación. Existe para proteger a los jugadores de potenciales abusos y para proteger la integridad del mismo torneo. Las violaciones de reglas normalmente requieren de una penalización o no se puede hacer que se cumplan. Los torneos organizados a NIR Normal usan el documento Juzgando en NIR Normal."></point>
@@ -409,9 +409,7 @@
 			<annotation text="Tenga en cuenta que contar las cartas boca abajo en la mesa no cuenta como robar, fomenta esta práctica de contar las cartas antes de robar, de modo que cualquier carta adicional contada en la mesa se pueda devolver a la parte superior de la biblioteca."></annotation>
             <title text="Solución Adicional"></title>
             <point text="El jugador realiza un mulligan adicional."></point>
-            <annotation text="Si el error fueron ejemplos C o D, el jugador tiene el número correcto de cartas en la mano, por lo que la única opción para el jugador es volver a mulligan. Los otros ejemplos darán como resultado demasiadas cartas, por lo que el jugador puede elegir qué remedios tomar. Las dos opciones son bastante sencillas: revelar su mano y hacer que el oponente elija el exceso de cartas para barajar, o tomar otro mulligan."></annotation>
-			<annotation text="Esto se explica por sí solo, el jugador baraja su mano y vuelve a robar, lo que significa que regresará una carta adicional al fondo de la biblioteca."></annotation>
-        </point>
+		</point>
         <point text="2.5 Violación de Regla de Juego">
             <title text="Penalización"></title>
             <point text="Advertencia"></point>

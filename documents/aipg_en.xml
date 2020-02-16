@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Annotated Infraction Procedure Guide">
-    <point text="Updated: 12-07-2019"></point>
+    <point text="Updated: 26-01-2020"></point>
 	<point text="Introduction and Framework of this document">
 	<title text="Introduction"></title>
 		<point text="The Magic™ Infraction Procedure Guide provides judges the appropriate penalties and procedures to handle rules violations that occur during a tournament held at Competitive or Professional Rules Enforcement Level (REL), as well as the underlying philosophy that guides their implementation. It exists to protect players from potential misconduct and to protect the integrity of the tournament itself. Rules violations usually require a penalty or they are unenforceable. Tournaments run at Regular REL use the Judging at Regular REL document."></point>
@@ -409,9 +409,7 @@
             <annotation text="Note that counting cards face down onto the table does not count as drawing, encourage this practice to count the cards before drawing, so any extra cards counted onto the table can be returned to the top of the library."></annotation>
 			<title text="Additional Remedy"></title>
             <point text="The player takes an additional mulligan."></point>
-            <annotation text="If the error were examples C or D, the player does have the correct number of cards in hand, so the only option for the player is to mulligan again. The other examples will result in too many cards, so the player can choose which of the remedies to take. The two options are pretty straightforward: reveal their hand and have the opponent choose the excess cards to shuffle back, or take another mulligan."></annotation>
-		    <annotation text="This is self explanatory, the player shuffles their hand and redraws, which means they will be returning an additional card to the bottom of the library."></annotation>
-        </point>
+		</point>
         <point text="2.5 Game Rule Violation">
             <title text="Penalty"></title>
             <point text="Warning"></point>

@@ -10,13 +10,13 @@
                                 <question text="¿En qué categoría encaja?">
                                     <answer text="Es una habilidad disparada de un aura que se dispara al entrar al campo de batalla, solo afecta al permanente encantado y causa un cambio visible en este">
                                         <question text="Solución">
-                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                             <answer text="Resuelve la habilidad."></answer>
                                         </question>
                                     </answer>
                                     <answer text="Es una habilidad disparada retrasada que revierte un cambio de zona (incluyendo la creación de fichas) causada por el hechizo o habilidad que creó la habilidad disparada retrasada">
                                         <question text="Solución">
-                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                             <answer text="El oponente elige si resolver la habilidad la próxima vez que un jugador fuera a recibir prioridad o cuando un jugador fuera a recibir prioridad al comienzo de la próxima fase."></answer>
                                         </question>
                                     </answer>
@@ -24,14 +24,14 @@
                                         <question text="¿La duración del efecto de la habilidad ha expirado?">
                                             <answer text="Si">
                                                 <question text="Solución">
-                                                    <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                    <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="No">
                                                 <question text="¿La habilidad fue olvidada antes de la fase actual del turno anterior?">
                                                     <answer text="Si">
                                                         <question text="Solución">
-                                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                         </question>
                                                     </answer>
                                                     <answer text="No">
@@ -40,13 +40,13 @@
                                                                 <question text="¿Hay un lugar en la pila adecuado para la habilidad?">
                                                                     <answer text="Si">
                                                                         <question text="Solución">
-                                                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                                             <answer text="Pon la habilidad en el lugar adecuado."></answer>
                                                                         </question>
                                                                     </answer>
                                                                     <answer text="No">
                                                                         <question text="Solución">
-                                                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                                             <answer text="Pon la habilidad en el fondo de la pila."></answer>
                                                                         </question>
                                                                     </answer>
@@ -54,7 +54,7 @@
                                                             </answer>
                                                             <answer text="No">
                                                                 <question text="Solución">
-                                                                    <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                                    <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                                 </question>
                                                             </answer>
                                                         </question>
@@ -128,13 +128,13 @@
                                 <question text="¿En qué categoría encaja?">
                                     <answer text="Es una habilidad disparada de un aura que se dispara al entrar al campo de batalla, solo afecta al permanente encantado y causa un cambio visible en este">
                                         <question text="Solución">
-                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                             <answer text="Resuelve la habilidad."></answer>
                                         </question>
                                     </answer>
                                     <answer text="Es una habilidad disparada retrasada que revierte un cambio de zona (incluyendo la creación de fichas) causada por el hechizo o habilidad que creó la habilidad disparada retrasada">
                                         <question text="Solución">
-                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                             <answer text="El oponente elige si resolver la habilidad la próxima vez que un jugador fuera a recibir prioridad o cuando un jugador fuera a recibir prioridad al comienzo de la próxima fase."></answer>
                                         </question>
                                     </answer>
@@ -142,14 +142,14 @@
                                         <question text="¿La duración del efecto de la habilidad ha expirado?">
                                             <answer text="Si">
                                                 <question text="Solución">
-                                                    <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                    <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="No">
                                                 <question text="¿La habilidad fue olvidada antes de la fase actual del turno anterior?">
                                                     <answer text="Si">
                                                         <question text="Solución">
-                                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                         </question>
                                                     </answer>
                                                     <answer text="No">
@@ -158,13 +158,13 @@
                                                                 <question text="¿Hay un lugar en la pila adecuado para la habilidad?">
                                                                     <answer text="Si">
                                                                         <question text="Solución">
-                                                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                                             <answer text="Pon la habilidad en el lugar adecuado."></answer>
                                                                         </question>
                                                                     </answer>
                                                                     <answer text="No">
                                                                         <question text="Solución">
-                                                                            <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                                            <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                                             <answer text="Pon la habilidad en el fondo de la pila"></answer>
                                                                         </question>
                                                                     </answer>
@@ -172,7 +172,7 @@
                                                             </answer>
                                                             <answer text="No">
                                                                 <question text="Solución">
-                                                                    <answer text="GPE - Misstrigger, Advertencia."></answer>
+                                                                    <answer text="GPE - Disparo Olvidado, Advertencia."></answer>
                                                                 </question>
                                                             </answer>
                                                         </question>
@@ -202,15 +202,15 @@
                                         <question text="¿Son ambos jugadores igualmente responsables del error?">
                                             <answer text="Si">
                                                 <question text="Solución">
-                                                    <answer text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></answer>
+                                                    <answer text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></answer>
                                                     <answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="No">
                                                 <question text="Solución">
-                                                    <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                                                    <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
                                                     <answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
-                                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                                                 </question>
                                             </answer>
                                         </question>
@@ -220,11 +220,11 @@
 											<answer text="Si">
 												<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
 													<answer text="Si">
-														<question text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></question>
+														<question text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></question>
 														<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
 													</answer>
 													<answer text="No">
-														<question text="GPE - Game Rule Violation, Advertencia."></question>
+														<question text="GPE - Violación de Regla de Juego, Advertencia."></question>
 														<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
 													</answer>
 												</question>
@@ -232,7 +232,7 @@
 											<answer text="No">
 												<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
 													<answer text="Si">
-														<question text="GPE - Game Rule Violation, Advertencia."></question>
+														<question text="GPE - Violación de Regla de Juego, Advertencia."></question>
 														<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
 													</answer>
 													<answer text="No">
@@ -241,8 +241,8 @@
 																<question text="¿La infracción implica una carta con metamorfosis?">
 																	<answer text="Si">
 																		<question text="Solución">
-																			<answer text="GPE - Hidden Card Error, Pérdida de juego."></answer>
-																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																			<answer text="GPE - Error de Carta Oculta, Pérdida de juego."></answer>
+																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																		</question>
 																	</answer>
 																	<answer text="No">
@@ -251,33 +251,33 @@
 																				<question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
 																					<answer text="Si">
 																						<question text="Solución">
-																							<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																							<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
 																							<answer text="El jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto."></answer>
-																							<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																							<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																						</question>
 																					</answer>
 																					<answer text="No">
 																						<question text="¿El conjunto contiene más cartas de las que debería?">
 																							<answer text="Si">
 																								<question text="Solución">
-																									<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																									<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
 																									<answer text="El jugador muestra el grupo de cartas que contiene el excedente y su oponente elige una cantidad de cartas previamente desconocidas suficiente para reducir el grupo al tamaño correcto. Estas cartas excedentes vuelven a la ubicación correcta. Si esa ubicación es la biblioteca, deberían ser barajadas en la parte aleatoria a menos que su propietario conociera previamente la identidad de la o las cartas movidas ilegalmente; esas cartas, elegidas por el oponente, regresan a su ubicación original."></answer>
-																									<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																									<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																								</question>
 																							</answer>
 																							<answer text="No">
 																								<question text="¿La infracción implica una o más cartas que no fueron reveladas?">
 																									<answer text="Si">
 																										<question text="Solución">
-																											<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																											<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
 																											<answer text="El jugador muestra el grupo de cartas que contiene las cartas no mostradas y su oponente elige esa cantidad de cartas antes desconocidas. Trata esas cartas cartas como si fueran las ‘mostradas’ y regrésalas al grupo del cual se estaba eligiendo; el jugador luego repite la acción. Si recrear la elección original y repetir la acción sería demasiado disruptivo, deja las cartas elegidas en la mano."></answer>
-																											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																										</question>
 																									</answer>
 																									<answer text="No">
 																										<question text="Solución">
-																											<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																											<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
+																											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																										</question>
 																									</answer>
 																								</question>
@@ -288,8 +288,8 @@
 																			</answer>
 																			<answer text="No">
 																				<question text="Solución">
-																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																					<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
+																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																				</question>
 																			</answer>
 																		</question>
@@ -298,9 +298,9 @@
 															</answer>
 															<answer text="No">
 																<question text="Solución">
-																	<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
+																	<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia."></answer>
 																	<answer text="El jugador hace mulligan."></answer>
-																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																</question>
 															</answer>
 														</question>
@@ -315,15 +315,15 @@
                                 <question text="¿Son ambos jugadores igualmente responsables del error?">
                                     <answer text="Si">
                                         <question text="Solución">
-                                            <answer text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></answer>
+                                            <answer text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></answer>
                                             <answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
                                         </question>
                                     </answer>
                                     <answer text="No">
                                         <question text="Solución">
-                                            <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                                            <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
                                             <answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
-                                            <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                                            <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                                         </question>
                                     </answer>
                                 </question>
@@ -332,9 +332,9 @@
                     </answer>
                     <answer text="No">
                         <question text="Solución">
-                            <answer text="GPE - Looking Extra cards, Advertencia."></answer>
+                            <answer text="GPE - Mirar Cartas Adicionales, Advertencia."></answer>
                             <answer text="Si la cartas estaban en la biblioteca, baraja cualquier carta desconocida de un mazo de regreso en la parte aleatoria de la biblioteca, y luego coloca las cartas conocidas de antemano de regreso en su ubicación correcta."></answer>
-                            <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                            <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                         </question>
                     </answer>
                 </question>
@@ -344,11 +344,11 @@
 					<answer text="Si">
 						<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
 							<answer text="Si">
-								<question text="GPE - Game Rule Violation, Advertencia."></question>
+								<question text="GPE - Violación de Regla de Juego, Advertencia."></question>
 								<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
 							</answer>
 							<answer text="No">
-								<question text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></question>
+								<question text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></question>
 								<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
 							</answer>
 						</question>
@@ -356,7 +356,7 @@
 					<answer text="No">
 						<question text="¿El oponente controla un efecto continuo que modifica la regla del juego que fue violada?">
 							<answer text="Si">
-								<question text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></question>
+								<question text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></question>
 								<answer text="Puedes considerar una vuelta atrás o dejar el estado del juego como está."></answer>
 							</answer>
 							<answer text="No">
@@ -365,8 +365,8 @@
 										<question text="¿La infracción implica una carta con metamorfosis?">
 											<answer text="Si">
 												<question text="Solución">
-													<answer text="GPE - Hidden Card Error, Pérdida de juego."></answer>
-													<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+													<answer text="GPE - Error de Carta Oculta, Pérdida de juego."></answer>
+													<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 												</question>
 											</answer>
 											<answer text="No">
@@ -375,33 +375,33 @@
 														<question text="¿Es la infracción un procedimiento realizado en orden incorrecto?">
 															<answer text="Si">
 																<question text="Solución">
-																	<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																	<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
 																	<answer text="El jugador revela el conjunto de cartas que contiene el exceso y su oponente escoge esa misma cantidad de cartas previamente desconocidas. Pon esas cartas aparte hasta el momento en el que deberían haber sido agregadas legalmente, luego devuélvelas al conjunto."></answer>
-																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																	<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																</question>
 															</answer>
 															<answer text="No">
 																<question text="¿El conjunto contiene más cartas de las que debería?">
 																	<answer text="Si">
 																		<question text="Solución">
-																			<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																			<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
 																			<answer text="El jugador muestra el grupo de cartas que contiene el excedente y su oponente elige una cantidad de cartas previamente desconocidas suficiente para reducir el grupo al tamaño correcto. Estas cartas excedentes vuelven a la ubicación correcta. Si esa ubicación es la biblioteca, deberían ser barajadas en la parte aleatoria a menos que su propietario conociera previamente la identidad de la o las cartas movidas ilegalmente; esas cartas, elegidas por el oponente, regresan a su ubicación original."></answer>
-																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																			<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																		</question>
 																	</answer>
 																	<answer text="No">
 																		<question text="¿La infracción implica una o más cartas que no fueron reveladas?">
 																			<answer text="Si">
 																				<question text="Solución">
-																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
+																					<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
 																					<answer text="El jugador muestra el grupo de cartas que contiene las cartas no mostradas y su oponente elige esa cantidad de cartas antes desconocidas. Trata esas cartas cartas como si fueran las ‘mostradas’ y regrésalas al grupo del cual se estaba eligiendo; el jugador luego repite la acción. Si recrear la elección original y repetir la acción sería demasiado disruptivo, deja las cartas elegidas en la mano."></answer>
-																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																				</question>
 																			</answer>	
 																			<answer text="No">
 																				<question text="Solución">
-																					<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+																					<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
+																					<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 																				</question>
 																			</answer>
 																		</question>
@@ -412,8 +412,8 @@
 													</answer>
 													<answer text="No">
 														<question text="Solución">
-															<answer text="GPE - Hidden Card Error, Advertencia."></answer>
-															<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+															<answer text="GPE - Error de Carta Oculta, Advertencia."></answer>
+															<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 														</question>
 													</answer>
 												</question>
@@ -422,9 +422,9 @@
 									</answer>
 									<answer text="No">
 										<question text="Solución">
-											<answer text="GPE - Mulligan Procedure Error, Advertencia."></answer>
+											<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia."></answer>
 											<answer text="El jugador hace mulligan."></answer>
-											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+											<answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
 										</question>
 									</answer>
 								</question>
@@ -437,7 +437,7 @@
                 <question text="¿Qué tipo de error?">
 					<answer text="Un jugador olvidó enderezar uno o más permanentes al comienzo de su turno y todavía es el mismo turno">
 						<question text="Solution">
-							<answer text="GPE - Game Rule Violation, Advertencia."></answer>
+							<answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
 							<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
 							<answer text="El jugador endereza esos permanentes, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
 						</question>
@@ -446,17 +446,17 @@
                         <question text="¿Son ambos jugadores igualmente responsables del error?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></answer>
 									<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
                                     <answer text="El jugador realiza una elección legal, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
                                     <answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
 									<answer text="El jugador realiza una elección legal, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
-                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                                 </question>
                             </answer>
                         </question>
@@ -465,17 +465,17 @@
                         <question text="¿Son ambos jugadores igualmente responsables del error?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></answer>
 									<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
                                     <answer text="El jugador hace lo que ha olvidado hacer, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
 									<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
                                     <answer text="El jugador hace lo que ha olvidado hacer, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
-                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                                 </question>
                             </answer>
                         </question>
@@ -484,42 +484,42 @@
                         <question text="¿Son ambos jugadores igualmente responsables del error?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></answer>
 									<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
                                     <answer text="Muévelo a la zona correcta, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
 									<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
                                     <answer text="Muévelo a la zona correcta, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
-                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                                 </question>
                             </answer>
                         </question>
                     </answer>
                     <answer text="Algún jugador ha olvidado indicar el orden de asignación del daño">
                         <question text="Solución">
-                            <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                            <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
 							<answer text="Considera una simple vuelta atrás, si no es suficiente..."></answer>
                             <answer text="El jugador indica el orden de asignación del daño, puede realizarse además una simple vuelta atrás antes de esto si mejora la solución."></answer>
-                            <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                            <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                         </question>
                     </answer>
                     <answer text="Ninguno de los anteriores">
                         <question text="¿Son ambos jugadores igualmente responsables del error?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia para ambos jugadores."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia para ambos jugadores."></answer>
                                     <answer text="El juez principal puede considerar una vuelta atrás o dejar el estado del juego como está."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="GPE - Game Rule Violation, Advertencia."></answer>
+                                    <answer text="GPE - Violación de Regla de Juego, Advertencia."></answer>
                                     <answer text="El juez principal puede considerar una vuelta atrás o dejar el estado del juego como está."></answer>
-                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - Failure to Maintain Game State, Advertencia."></answer>
+                                    <answer text="Si el oponente no señaló el error de inmediato, ha cometido GPE - No Mantener el Estado de Juego, Advertencia."></answer>
                                 </question>
                             </answer>
                         </question>
@@ -541,19 +541,19 @@
                         <question text="Espera a que el jugador llegue o pasen 10 minutos del inicio de la ronda">
                             <answer text="El jugador apareció antes de 1 minuto de ronda">
                                 <question text="Solución">
-                                    <answer text="TE - Tardiness, Advertencia."></answer>
+                                    <answer text="TE - Tardanza, Advertencia."></answer>
                                     <answer text="Da a los jugadores una extensión de tiempo igual al tiempo perdido."></answer>
                                 </question>
                             </answer>
 							<answer text="El jugador apareció antes de los 10 minutos de ronda">
                                 <question text="Solución">
-                                    <answer text="TE - Tardiness, Pérdida de juego."></answer>
+                                    <answer text="TE - Tardanza, Pérdida de juego."></answer>
                                     <answer text="Da a los jugadores una extensión de tiempo igual al tiempo perdido."></answer>
                                 </question>
                             </answer>
 							<answer text="El jugador no ha aparecido antes de los 10 minutos de ronda">
                                 <question text="Solución">
-                                    <answer text="TE - Tardiness, Pérdida de partida."></answer>
+                                    <answer text="TE - Tardanza, Pérdida de partida."></answer>
                                     <answer text="El jugador será dropeado a menos que se presente ante el HJ o SK antes del final de la ronda."></answer>
                                 </question>
                             </answer>
@@ -565,7 +565,7 @@
                 <question text="Espera a que pasen 10 minutos de la ausencia">
                     <answer text="Han pasado 10 minutos">
                         <question text="Solución">
-                            <answer text="TE - Tardiness, Pérdida de partida."></answer>
+                            <answer text="TE - Tardanza, Pérdida de partida."></answer>
                         </question>
                     </answer>
                     <answer text="El jugado ha vuelto antes de los 10 minutos">
@@ -581,7 +581,7 @@
                         <question text="¿Está ejecutando activamente un ciclo sin poder dar una cantidad exacta de veces que lo repetirá y el estado de juego resultante esperado?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="TE - Slow Play, Advertencia."></answer>
+                                    <answer text="TE - Juego Lento, Advertencia."></answer>
                                     <answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
                                 </question>
                             </answer>
@@ -596,14 +596,14 @@
                         <question text="¿Está jugando lento intencionadamente para sacar ventaja del límite de tiempo?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="UC - Stalling, Descalificación."></answer>
+                                    <answer text="UC - Demorar la Partida, Descalificación."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="¿Le has dicho anteriormente al jugador que juegue más rápido?">
                                     <answer text="Si">
                                         <question text="Solución">
-                                            <answer text="TE - Slow Play, Advertencia."></answer>
+                                            <answer text="TE - Juego Lento, Advertencia."></answer>
                                             <answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
                                         </question>
                                     </answer>
@@ -620,7 +620,7 @@
             </answer>
             <answer text="Está tardando mucho en hacer elecciones de draft">
                 <question text="Solución">
-                    <answer text="TE - Limited Procedure Violation, Advertencia."></answer>
+                    <answer text="TE - Violación del Procedimiento de Limitado, Advertencia."></answer>
                 </question>
             </answer>
         </question>
@@ -629,7 +629,7 @@
         <question text="¿Qué tipo de problema?">
             <answer text="No está suficientemente barajado">
                 <question text="Solución">
-                    <answer text="TE - Insufficient Shuffling, Advertencia."></answer>
+                    <answer text="TE - Barajar insuficientemente, Advertencia."></answer>
                     <answer text="El jugador baraja el mazo suficientemente."></answer>
                 </question>
             </answer>
@@ -637,7 +637,7 @@
                 <question text="¿Crees que el propietario podría notar el patrón y sacar ventaja de ello?">
                     <answer text="Si">
                         <question text="Solución">
-                            <answer text="TE - Marked Cards, Pérdida de juego."></answer>
+                            <answer text="TE - Cartas marcadas, Pérdida de juego."></answer>
                             <answer text="El jugador reemplaza la carta o protector por uno no marcado."></answer>
 							<answer text="Si la carta se marcó durante el torneo el HJ puede hacer un proxy."></answer>
 							<answer text="Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste) a elección del jugador, esto puede revertirse si luego se encuentra un reemplazo."></answer>
@@ -647,14 +647,14 @@
 						<question text="¿Se marcó la carta durante el transcurso del torneo?">
 							<answer text="Si">
 								<question text="Solución">
-									<answer text="TE - Marked Cards, Advertencia."></answer>
+									<answer text="TE - Cartas marcadas, Advertencia."></answer>
 									<answer text="El jugador reemplaza la carta o protector por uno no marcado."></answer>
 									<answer text="El HJ puede hacer un proxy."></answer>
 								</question>
 							</answer>
 							<answer text="No">
 								<question text="Solución">
-									<answer text="TE - Marked Cards, Pérdida de juego."></answer>
+									<answer text="TE - Cartas marcadas, Pérdida de juego."></answer>
 									<answer text="El jugador reemplaza la carta o protector por uno no marcado."></answer>
 									<answer text="Si no se encuentra un reemplazo para la carta, se reemplaza por tierras básicas (ni nevadas ni Waste) a elección del jugador, esto puede revertirse si luego se encuentra un reemplazo."></answer>
 								</question>
@@ -674,7 +674,7 @@
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                                    <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                                     <answer text="Altera la lista y el mazo siguiendo estos pasos:"></answer>
                                     <answer text="1 - Remueve cualquier carta que sea ilegal para el formato o viola el máximo de copias permitidas."></answer>
                                     <answer text="2 - Si hay demasiadas cartas en el banquillo, remueve cartas a elección del jugador."></answer>
@@ -689,19 +689,19 @@
 								<question text="¿El oponente puede haber tomado decisiones estratégicas basadas en la presencia de una carta del banquillo?">
 									<answer text="Si">
 										<question text="Solución">
-                                            <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                                            <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                                         </question>
 									</answer>
 									<answer text="No">
 										<question text="¿Ha comenzado el juego y hay en el mazo principal más copias de una carta que las registradas y no están todavía todas en la porción aleatoria de la biblioteca?">
                                             <answer text="Si">
 												<question text="Solución">
-                                                    <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                                                    <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                                                 </question>
                                             </answer>
 											<answer text="No">
 												<question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                     <answer text="Quita las cartas incorrectas. Si faltan alguna carta en el mazo, el oponente elige cuál de esas cartas reemplaza cada carta incorrecta. Si se meten más que se quitan, las adicionales son barajadas en la parte aleatoria de la biblioteca. Si se quitan más de las que se meten, reemplaza antes las que no estaban en la biblioteca. Si todavía hay cartas adicionales no en la biblioteca que deben ser reemplazadas, son reemplazadas por cartas aleatorias de la biblioteca."></answer>
                                                 </question>
                                             </answer>
@@ -715,7 +715,7 @@
                                         <question text="¿Dónde están las cartas?">
                                             <answer text="En el mazo del oponente actual">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia a ambos jugadores."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia a ambos jugadores."></answer>
 													<answer text="Baraja las cartas faltantes en la porción aleatoria de la biblioteca."></answer>
                                                 </question>
                                             </answer>
@@ -723,20 +723,20 @@
                                                 <question text="¿Se ha descubierto el error al presentar el mazo al oponente o durante una verificación de mazo?">
                                                     <answer text="Si">
 														<question text="Solución">
-															<answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+															<answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
 														</question>
 													</answer>
                                                     <answer text="No">
 															<question text="¿Es el segundo o tercer juego de la partida y las cartas faltantes están en el banquillo?">
 															<answer text="Si">
 																<question text="Solución">
-																	<answer text="TE - Decklist Problem, Advertencia."></answer>
+																	<answer text="TE - Problema de lista de mazo, Advertencia."></answer>
 																	<answer text="Baraja cartas al azar en la porción aleatoria de la biblioteca."></answer>
 																</question>
 															</answer>
 															<answer text="No">
 																<question text="Solución">
-																	<answer text="TE - Decklist Problem, Advertencia."></answer>
+																	<answer text="TE - Problema de lista de mazo, Advertencia."></answer>
 																	<answer text="Baraja las cartas faltantes en la porción aleatoria de la biblioteca."></answer>
 																</question>
 															</answer>
@@ -748,7 +748,7 @@
                                     </answer>
                                     <answer text="No">
                                         <question text="Solución">
-                                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                                             <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
@@ -763,19 +763,19 @@
                     </answer>
                     <answer text="Un jugador tiene cartas ilegales">
                         <question text="Solución">
-                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                             <answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene más copias de una carta que el máximo de copias permitidas">
                         <question text="Solución">
-                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                             <answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene demasiadas cartas en el banquillo">
                         <question text="Solución">
-                            <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                            <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                             <answer text="Remueve las cartas que no deberían estar en el banquillo."></answer>
                         </question>
                     </answer>
@@ -787,13 +787,13 @@
                         <question text="¿Cuándo se ha descubierto?">
                             <answer text="Durante la presentación del mazo, antes de comenzar el juego">
                                 <question text="Solución">
-                                    <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                                    <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                                     <answer text="Arregla el mazo."></answer>
                                 </question>
                             </answer>
                             <answer text="Al robar el jugador su mano inicial">
                                 <question text="Solución">
-                                    <answer text="TE - Deck Problem, Advertencia."></answer>
+                                    <answer text="TE - Problema de mazo, Advertencia."></answer>
                                     <answer text="Arregla el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)."></answer>
                                 </question>
                             </answer>
@@ -801,7 +801,7 @@
                                 <question text="¿La carta ha sido revelada (o iba a ser revelada) en el momento en el que se descubrió el error?">
                                     <answer text="Si">
                                         <question text="Solución">
-                                            <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                                            <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                                             <answer text="Arregla el mazo."></answer>
                                         </question>
                                     </answer>
@@ -809,13 +809,13 @@
                                         <question text="¿El error es que hay más copias de una carta en el mazo principal de las que están registradas para el mismo y alguna de las copias ha abandonado la porción aleatoria de la biblioteca?">
                                             <answer text="Si">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                                                    <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                                                     <answer text="Arregla el mazo."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="No">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                     <answer text="Arregla el mazo, sustituye la carta errónea por ninguna."></answer>
                                                 </question>
                                             </answer>
@@ -833,19 +833,19 @@
                                         <question text="¿Dónde están las cartas?">
                                             <answer text="En el mazo del oponente actual">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Pérdida de juego a ambos jugadores (no afecta al resultado de la partida)."></answer>
+                                                    <answer text="TE - Problema de mazo, Pérdida de juego a ambos jugadores (no afecta al resultado de la partida)."></answer>
                                                 </question>
                                             </answer>
                                             <answer text="Otro sitio">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Pérdida de juego."></answer>
+                                                    <answer text="TE - Problema de mazo, Pérdida de juego."></answer>
                                                 </question>
                                             </answer>
                                         </question>
                                     </answer>
                                     <answer text="No">
                                         <question text="Solución">
-                                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                                             <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
@@ -857,7 +857,7 @@
                                         <question text="¿Dónde están las cartas?">
                                             <answer text="En el mazo del oponente actual">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia a ambos jugadores."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia a ambos jugadores."></answer>
                                                     <answer text="Arregla los mazos, los jugadores deben hacer un mulligan (pueden hacer más mulligans si quieren)."></answer>
                                                 </question>
                                             </answer>
@@ -865,13 +865,13 @@
                                                 <question text="¿Es el primer juego de la partida?">
                                                     <answer text="Si">
                                                         <question text="Solución">
-                                                            <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                            <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                             <answer text="Baraja las cartas en el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)."></answer>
                                                         </question>
                                                     </answer>
                                                     <answer text="No">
                                                         <question text="Solución">
-                                                            <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                            <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                             <answer text="Elige cartas al azar del banquillo y barájalas en el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)."></answer>
                                                         </question>
                                                     </answer>
@@ -879,7 +879,7 @@
                                             </answer>
                                             <answer text="Otro sitio">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                     <answer text="Baraja las cartas en el mazo, el jugador debe hacer un mulligan (puede hacer más mulligans si quiere)"></answer>
                                                 </question>
                                             </answer>
@@ -887,7 +887,7 @@
                                     </answer>
                                     <answer text="No">
                                         <question text="Solución">
-                                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                                             <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
@@ -899,7 +899,7 @@
                                         <question text="¿Dónde están las cartas?">
                                             <answer text="En el mazo del oponente actual">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia a ambos jugadores."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia a ambos jugadores."></answer>
                                                     <answer text="Baraja las cartas en el mazo del propietario."></answer>
                                                 </question>
                                             </answer>
@@ -907,13 +907,13 @@
                                                 <question text="¿Es el primer juego de la partida?">
                                                     <answer text="Si">
                                                         <question text="Solución">
-                                                            <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                            <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                             <answer text="Baraja las cartas en el mazo."></answer>
                                                         </question>
                                                     </answer>
                                                     <answer text="No">
                                                         <question text="Solución">
-                                                            <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                            <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                             <answer text="Elige cartas al azar del banquillo y barájalas en el mazo."></answer>
                                                         </question>
                                                     </answer>
@@ -921,7 +921,7 @@
                                             </answer>
                                             <answer text="Otro sitio">
                                                 <question text="Solución">
-                                                    <answer text="TE - Deck Problem, Advertencia."></answer>
+                                                    <answer text="TE - Problema de mazo, Advertencia."></answer>
                                                     <answer text="Baraja las cartas en el mazo."></answer>
                                                 </question>
                                             </answer>
@@ -929,7 +929,7 @@
                                     </answer>
                                     <answer text="No">
                                         <question text="Solución">
-                                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                                             <answer text="Si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                                         </question>
                                     </answer>
@@ -944,13 +944,13 @@
                     </answer>
                     <answer text="Un jugador tiene cartas ilegales">
                         <question text="Solución">
-                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                             <answer text="Remueve las cartas ilegales, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
                     <answer text="Un jugador tiene más copias de una carta que el máximo de copias permitidas">
                         <question text="Solución">
-                            <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                            <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                             <answer text="Remueve las copias sobrantes, luego si el mazo tiene menos cartas de las necesarias añade tierras básicas (ni nevadas ni Waste) a elección del jugador, modifica la lista para que refleje los cambios, esta modificación puede revertirse más tarde."></answer>
                         </question>
                     </answer>
@@ -958,13 +958,13 @@
                         <question text="¿Por qué?">
                             <answer text="Ha registrado más de 15 cartas en el banquillo en su lista de mazo">
                                 <question text="Solución">
-                                    <answer text="TE - Decklist Problem, Pérdida de juego."></answer>
+                                    <answer text="TE - Problema de lista de mazo, Pérdida de juego."></answer>
                                     <answer text="Remueve el exceso de cartas a elección del jugador."></answer>
                                 </question>
                             </answer>
                             <answer text="Está guardando cartas que no forman parte de su banquillo junto al mismo">
                                 <question text="Solución">
-                                    <answer text="TE - Deck Problem, Advertencia."></answer>
+                                    <answer text="TE - Problema de mazo, Advertencia."></answer>
                                     <answer text="Las cartas en distintos protectores, las fichas y las cartas de dos caras para las cuales se están usando cartas de listado se ignoran al determinar la legalidad del mazo."></answer>
                                     <answer text="Si hay cartas adicionales guardadas con el sideboard que podrían ser usadas en el mazo del jugador, deberían ser consideradas parte del banquillo, a menos que sean:"></answer>
                                     <answer text="- Cartas promocionales que fueron entregadas como parte del torneo."></answer>
@@ -984,12 +984,12 @@
                 <question text="¿Sabe el jugador que lo que ha hecho va en contra de las reglas?">
                     <answer text="Si">
                         <question text="Solución">
-                            <answer text="UC - Cheating, Descalificación."></answer>
+                            <answer text="UC - Hacer Trampa, Descalificación."></answer>
                         </question>
                     </answer>
                     <answer text="No">
                         <question text="Solución">
-                            <answer text="UC - Improperly Determining a Winner, Pérdida de partida."></answer>
+                            <answer text="UC - Determinar Incorrectamente un Ganador, Pérdida de partida."></answer>
                         </question>
                     </answer>
                 </question>
@@ -1010,12 +1010,12 @@
                         <question text="¿Sabe el jugador que lo que ha hecho va en contra de las reglas?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="UC - Cheating, Descalificación."></answer>
+                                    <answer text="UC - Hacer Trampa, Descalificación."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="UC - Bribery and Wagering, Pérdida de partida."></answer>
+                                    <answer text="UC - Soborno y Apuestas, Pérdida de partida."></answer>
                                 </question>
                             </answer>
                         </question>
@@ -1026,12 +1026,12 @@
                 <question text="¿Sabe el jugador que lo que ha hecho va en contra de las reglas?">
                     <answer text="Si">
                         <question text="Solución">
-                            <answer text="UC - Cheating, Descalificación."></answer>
+                            <answer text="UC - Hacer Trampa, Descalificación."></answer>
                         </question>
                     </answer>
                     <answer text="No">
                         <question text="Solución">
-                            <answer text="UC - Bribery and Wagering, Pérdida de partida."></answer>
+                            <answer text="UC - Soborno y Apuestas, Pérdida de partida."></answer>
                         </question>
                     </answer>
                 </question>
@@ -1042,29 +1042,29 @@
         <question text="¿Qué tipo de problema?">
             <answer text="Un jugador busca consejo sobre su partida o información oculta de personas fuera de su partida">
                 <question text="Solución">
-                    <answer text="TE - Outside Assistance, Pérdida de partida."></answer>
+                    <answer text="TE - Ayuda Externa, Pérdida de partida."></answer>
                 </question>
             </answer>
             <answer text="Una persona ofrece consejo o información oculta a una persona que está jugando otra partida">
                 <question text="Solución">
-                    <answer text="TE - Outside Assistance, Pérdida de partida."></answer>
+                    <answer text="TE - Ayuda Externa, Pérdida de partida."></answer>
                     <answer text="Si la persona no está jugando se le puede pedir que abandone el lugar."></answer>
                 </question>
             </answer>
             <answer text="Un jugador se ha comunicado con otra persona durante un draft">
                 <question text="Solución">
-                    <answer text="TE - Limited Procedure Violation, Advertencia."></answer>
+                    <answer text="TE - Violación del Procedimiento de Limitado, Advertencia."></answer>
                 </question>
             </answer>
             <answer text="Un jugador representa incorrectamente información pública/derivada o no responde completamente una pregunta sobre información pública y su oponente actúa basándose en esa información">
                 <question text="Solución">
-                    <answer text="TE - Communication Policy Violation, Advertencia."></answer>
+                    <answer text="TE - Violación de la Política de Comunicación, Advertencia."></answer>
                     <answer text="Considera una vuelta atrás hasta el momento en el que el oponente actuó basándose en información errónea. Esta infracción no se aplica si la información no ha hecho que el oponente juegue de forma distinta a cómo hubiera jugado con la información correcta."></answer>
                 </question>
             </answer>
             <answer text="Durante un juego, un jugador mira notas (distintas de páginas del Oracle) tomadas antes del comienzo de la partida">
                 <question text="Solución">
-                    <answer text="TE - Outside Assistance, Pérdida de partida."></answer>
+                    <answer text="TE - Ayuda Externa, Pérdida de partida."></answer>
                 </question>
             </answer>
         </question>
@@ -1073,14 +1073,14 @@
         <question text="¿Qué ha hecho el jugador?">
             <answer text="El jugador ha realizado una acción que es disruptiva para el torneo o sus participantes">
                 <question text="Solución">
-                    <answer text="UC - Minor, Advertencia."></answer>
+                    <answer text="UC - Menor, Advertencia."></answer>
                 </question>
             </answer>
             <answer text="El jugador ha realizado una acción contra uno o más individuos que podría esperarse que cree el sentimiento de sentirse molestado, amenazado, intimidado o acosado">
                 <question text="¿Ha amenazado con usar violencia física?">
                     <answer text="Si">
                         <question text="Solución">
-                            <answer text="UC - Aggressive Behavior, Descalificación."></answer>
+                            <answer text="UC - Comportamiento Agresivo, Descalificación."></answer>
                             <answer text="El organizador debería expulsarlo del local."></answer>
                         </question>
                     </answer>
@@ -1088,13 +1088,13 @@
                         <question text="¿La ofensa fue cometida con mala intención, el jugador no muestra arrepentimiento o la ofensa ha sido repetida anteriormente?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="UC - Major, Descalificación."></answer>
+                                    <answer text="UC - Mayor, Descalificación."></answer>
                                     <answer text="El organizador debería expulsarlo del local."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="Solución">
-                                    <answer text="UC - Major, Pérdida de partida."></answer>
+                                    <answer text="UC - Mayor, Pérdida de partida."></answer>
                                 </question>
                             </answer>
                         </question>
@@ -1103,13 +1103,13 @@
             </answer>
             <answer text="El jugador ha actuado de manera amenazante hacia otros o su propiedad">
                 <question text="Solución">
-                    <answer text="UC - Aggressive Behavior, Descalificación."></answer>
+                    <answer text="UC - Comportamiento Agresivo, Descalificación."></answer>
                     <answer text="El organizador debería expulsarlo del local."></answer>
                 </question>
             </answer>
             <answer text="El jugador ha robado material del evento">
                 <question text="Solución">
-                    <answer text="UC - Theft of Tournament Material, Descalificación."></answer>
+                    <answer text="UC - Robo de Material de Torneo, Descalificación."></answer>
                     <answer text="El organizador debería expulsarlo del local."></answer>
                 </question>
             </answer>
@@ -1119,7 +1119,7 @@
                         <question text="¿Está ejecutando activamente un ciclo sin poder dar una cantidad exacta de veces que lo repetirá y el estado de juego resultante esperado?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="TE - Slow Play, Advertencia."></answer>
+                                    <answer text="TE - Juego Lento, Advertencia."></answer>
                                     <answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
                                 </question>
                             </answer>
@@ -1134,14 +1134,14 @@
                         <question text="¿Está jugando lento intencionadamente para sacar ventaja del límite de tiempo?">
                             <answer text="Si">
                                 <question text="Solución">
-                                    <answer text="UC - Stalling, Descalificación."></answer>
+                                    <answer text="UC - Demorar la Partida, Descalificación."></answer>
                                 </question>
                             </answer>
                             <answer text="No">
                                 <question text="¿Le has dicho anteriormente al jugador que juegue más rápido?">
                                     <answer text="Si">
                                         <question text="Solución">
-                                            <answer text="TE - Slow Play, Advertencia."></answer>
+                                            <answer text="TE - Juego Lento, Advertencia."></answer>
                                             <answer text="Si la partida no está ya en turnos, da un par de turnos adicionales en caso de que la partida llegue a turnos."></answer>
                                         </question>
                                     </answer>
@@ -1160,7 +1160,7 @@
                 <question text="¿Sabe el jugador que está haciendo algo ilegal e intenta obtener una ventaja de ello?">
                     <answer text="Si">
                         <question text="Solución">
-                            <answer text="UC - Cheating, Descalificación."></answer>
+                            <answer text="UC - Hacer Trampa, Descalificación."></answer>
                         </question>
                     </answer>
                     <answer text="No">
@@ -1172,14 +1172,14 @@
             </answer>
             <answer text="El jugador te ha ofrecido un incentivo para ir en contra de las reglas">
                 <question text="Solución">
-                    <answer text="UC - Cheating, Descalificación."></answer>
+                    <answer text="UC - Hacer Trampa, Descalificación."></answer>
                 </question>
             </answer>
         </question>
     </answer>
     <answer text="Un jugador no ha seguido correctamente los procedimientos del draft">
         <question text="Solución">
-            <answer text="TE - Limited Procedure Violation, Advertencia."></answer>
+            <answer text="TE - Violación del Procedimiento de Limitado, Advertencia."></answer>
             <answer text="Ejemplos:"></answer>
             <answer text="- Un jugador pasa un sobre a su izquierda cuando debería hacerlo a la derecha."></answer>
             <answer text="- Un jugador se excede en el tiempo para realizar su elección de draft."></answer>
