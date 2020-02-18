@@ -4,11 +4,37 @@
 	Alex = Active Player
 	Nicky = Non Active Player
 	Sam, Stef = Spectator
-	??? - A triggered ability that requires its controller to choose targets
+	<question text="Alex resuelve un Viashino Pyromancer e inmediatamente después lanza un instantáneo. Nicky te llama porque Alex no ha elegido el objetivo de la habilidad de Viashino Pyromancer">
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<resource text="Viashino Pyromancer"></resource>
+    </question>
+	<question text="Alex resuelve un Tidehollow Sculler e inmediatamente después lanza un instantáneo. Nicky te llama porque Alex no ha elegido el objetivo de la habilidad de Tidehollow Sculler">
+		<answer text="No hay infracción"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad se pone en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, resuelve la habilidad de inmediato"></answer>
+		<resource text="Tidehollow Sculler"></resource>
+    </question>
 	??? - A triggered ability that causes a change in the visible game state
 	??? - A triggered ability that changes the rules of the game
 	??? - A triggered ability that affects the game state in non-visible ways
-	??? - Triggered abilities that do nothing except create delayed triggered abilities automatically resolve
+	<question text="Una criatura entra al campo de batalla desde el cementerio bajo el control de Alex en su fase principal, luego, en su paso final, regresa Prized Amalgam al campo de batalla. Nicky te llama porque Alex no señaló la habilidad disparada al entrar la otra criatura al campo de batalla">
+		<answer text="No hay infracción"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad se pone en la pila, en cuyo caso Prized Amalgam entrará al campo de batalla en el paso final de Nicky"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, aún así Prized Amalgam regresa al campo de batalla"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, realizamos una vuelta atrás regresando Prized Amalgam al cementerio"></answer>
+		<resource text="Prized Amalgam"></resource>
+    </question>
+	<question text="Una criatura entra al campo de batalla desde el cementerio bajo el control de Alex en su fase principal, Alex señala la habilidad de su Prized Amalgam, pero olvida regresarla al campo de batalla cuando llega su paso final, se da cuenta en la fase de combate de Nicky">
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si la habilidad se pone en la pila, en cuyo caso Prized Amalgam entrará al campo de batalla en el paso final de Nicky"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, resuelve la habilidad de inmediato"></answer>
+		<answer text="GPE - Disparo Olvidado, no hay penalización, Prized Amalgam permanece en el cementerio"></answer>
+		<resource text="Prized Amalgam"></resource>
+    </question>
 	??? - Triggered abilities that do nothing except create one or more copies of a spell or ability (such as storm or cipher) automatically resolve without requiring acknowledgment
 	<question text="Alex controla un Avaricious Dragon y no tiene cartas en su mano, Alex pasa el turno, tras enderezar en su paso de enderezar, Nicky se da cuenta de que Alex no demostró conocimiento de la habilidad">
 		<answer text="No hay infracción"></answer>
@@ -46,18 +72,25 @@
 		<resource text="Geist of Saint Traft"></resource>
     </question>
 	<question text="Nicky controla un Kataki, War's Wage, Alex controla un artefacto, empieza su turno y roba la carta de su paso de robar">
-		<answer text="GPE - Disparo Olvidado, sin penalización. Nicky elige si la habilidad es puesta en la pila"></answer>
-		<answer text="GPE - Disparo Olvidado, sin penalización. Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
-		<answer text="GPE - Disparo Olvidado, Advertencia. Nicky elige si la habilidad es puesta en la pila"></answer>
-		<answer text="GPE - Disparo Olvidado, Advertencia. Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, sin penalización, Nicky elige si la habilidad es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, sin penalización, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si resolver la habilidad ahora o al comienzo de la siguiente fase"></answer>
 		<resource text="Kataki, War's Wage"></resource>
     </question>
 	??? - Casting a spell in response to a trigger ability without choosing targets for the ability
+	<question text="Alex controla un Shah of Naar Isle que entró al campo de batalla bajo su control en su anterior turno. Alex roba la carta de su paso de robar sin señalar la habilidad disparada de Shah of Naar Isle">
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad de robar hasta 3 cartas es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad Echo es puesta en la pila"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si resolver la habilidad ahora con su opción por defecto (sacrificar la criatura)"></answer>
+		<answer text="GPE - Disparo Olvidado, Advertencia, Nicky elige si la habilidad de Echo se resuelve ahora o al comienzo de la siguiente fase"></answer>
+		<resource text="Shah of Naar Isle"></resource>
+    </question>
 	<question text="Alex golpea su biblioteca por error haciendo que la carta de la parte superior se de la vuelta">
-		<answer text="GPE - Mirar Cartas Adicionales, Advertencia. Alex baraja la carta en la porción aleatoria de la biblioteca"></answer>
-		<answer text="GPE - Mirar Cartas Adicionales, Advertencia para ambos jugadores. Alex baraja la carta en la porción aleatoria de la biblioteca"></answer>
-		<answer text="GPE - Mirar Cartas Adicionales, Advertencia. Regresa la carta a la parte superior de la biblioteca"></answer>
-		<answer text="GPE - Mirar Cartas Adicionales, Advertencia para ambos jugadores. Regresa la carta a la parte superior de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia, Alex baraja la carta en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia para ambos jugadores, Alex baraja la carta en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia, Regresa la carta a la parte superior de la biblioteca"></answer>
+		<answer text="GPE - Mirar Cartas Adicionales, Advertencia para ambos jugadores, Regresa la carta a la parte superior de la biblioteca"></answer>
     </question>
 	??? - HCE, In cases where the infraction was immediately followed by moving a card from the affected set to a known location, such as by discarding, putting cards on top of the library, or playing a land, a simple backup to the point just after the error may be performed
 	??? - HCE, If the set of cards that contained the problem no longer exists, there is no remedy to be applied
@@ -73,7 +106,7 @@
 		<answer text="GPE - Violación de Regla de Juego, Advertencia"></answer>
 		<answer text="GPE - Error de Carta Oculta, Pérdida de juego"></answer>
 		<answer text="TE - Violación de la Política de Comunicación, Advertencia"></answer>
-		<answer text="GPE - Violación de Regla de Juego, Advertencia. Nicky tiene GPE - Failure to Maintain Game, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
     </question>
 	<question text="Alex pone en el campo de batalla una Leyline of the Void antes de que Nicky diga si va a quedarse la mano">
 		<answer text="No hay infracción"></answer>
@@ -126,15 +159,27 @@
 		<answer text="GPE - Violación de Regla de Juego, Advertencia, los permanentes permanecen girados"></answer>
 		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás hasta el paso de enderezar poniendo una carta al azar de la mano de Alex en la parte superior de su biblioteca"></answer>
     </question>
-	??? - If a player made an illegal choice (including no choice where required) for a static ability generating a continuous effect still on the battlefield, that player makes a legal choice
+	<question text="Alex lanza Haktos the Unscarred, y al resolverse elige 2. Varios turnos más tarde Alex se da cuenta de que el número debería haber sido elegido al azar">
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex elige un número al azar entre 2, 3 y 4. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, es demasiado tarde para hacer una vuelta atrás, el número elegido es 2. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, es demasiado tarde para hacer una vuelta atrás, no habrá número elegido. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, realizamos una vuelta atrás hasta el momento en el que debió elegirse un número al azar. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<resource text="Haktos the Unscarred"></resource>
+    </question>
 	??? - If a player failed to draw cards, that player does so
 	<question text="Alex no descarta en su paso final teniendo 8 cartas en mano, se da cuenta de ello tras robar carta en su siguiente turno">
-		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex descarta una carta. Nicky tiene GPE - Failure to Maintain Game, Advertencia"></answer>
-		<answer text="GPE - Violación de Regla de Juego, Advertencia, no hay solución, es demasiado tarde para hacer un backup"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex descarta una carta. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, es demasiado tarde para realizar una vuelta atrás, dejamos el estado del juego como está"></answer>
 		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quien elige qué carta descarta"></answer>
-		<answer text="TE - Violación de la Política de Comunicación, Advertencia, no hay solución, es demasiado tarde para hacer un backup"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, es demasiado tarde para realizar una vuelta atrás, dejamos el estado del juego como está"></answer>
     </question>
-	??? - If a player failed to return cards from their hand to another zone, that player does so
+	<question text="Alex resuelve un Brainstorm en su fase principal precombate, robando 3 cartas, luego ataca con varias criaturas, y en su fase principal poscombate se da cuenta de que no regresó no regresó cartas a la parte superior de su biblioteca">
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, Alex pone 2 cartas de su mano en la parte superior de su biblioteca. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, realizamos una vuelta atrás hasta la resolución de Brainstorm. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, es demasiado tarde para realizar una vuelta atrás, dejamos el estado del juego como está. Nicky tiene GPE - No Mantener el Estado de Juego, Advertencia"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quién elegirá qué 2 cartas serán puestas en la parte superior de la biblioteca de Alex"></answer>
+		<resource text="Brainstorm"></resource>
+    </question>
 	??? - If an object is in an incorrect zone either due to a required zone change being missed or due to being put into the wrong zone during a zone change, the exact object is still known to all players, and it can be moved with only Menor disruption to the current state of the game, put the object in the correct zone
 	??? - If damage assignment order has not been declared, the appropriate player chooses that order
 	??? - Doble GRV, Narset
@@ -184,8 +229,24 @@
 	??? - 16 cards sideboard decklist
 	??? - Not enough cards in decklist
 	??? - There is a card in the deck that it's not in the decklist
-	??? - Limited, wrong basic lands
-	??? - Legendary truncated name
+	<question text="Durante una revisión de mazos en un torneo de sellado, descubres que la lista tiene marcadas 8 Llanuras y 8 Islas, cuando en realidad está jugando 8 Islas y 8 Pantanos, el resto de la lista es correcta">
+		<answer text="TE - Problema de Lista de Mazo, no hay penalización, arreglamos la lista de mazo para reflejar lo que está jugando"></answer>
+		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, arreglamos la lista de mazo para reflejar lo que está jugando"></answer>
+		<answer text="TE - Problema de Lista de Mazo, Advertencia, arreglamos la lista de mazo para reflejar lo que está jugando"></answer>
+		<answer text="No hay infracción, arreglamos la lista de mazo para reflejar lo que está jugando"></answer>
+    </question>
+	<question text="En un torneo de standard, miras una partida y descubres que Alex está jugando una Isla nevada, su lista de mazo muestra esa Isla nevada, el resto de cartas que juega son legales en standard">
+		<answer text="No hay infracción, pero Alex debe reemplazarla por una Isla"></answer>
+		<answer text="TE - Problema de Lista de Mazo, Advertencia, Alex debe reemplazarla por una Isla"></answer>
+		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, Alex debe reemplazarla por una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
+		<answer text="TE - Problema de Mazo, Pérdida de juego, Alex debe reemplazarla por una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
+    </question>
+	<question text="Durante una revisión de mazos en un torneo de modern, descubres que la lista tiene apuntada “4 Tasigurs”, pudiendo referirse tanto a “Tasigur, the Golden Fang” como a “Tasigur's Cruelty”, el jugador está jugando “Tasigur, the Golden Fang”">
+		<answer text="No hay infracción"></answer>
+		<answer text="TE - Problema de Lista de Mazo, Advertencia, corrige la lista del mazo para que refleje la carta jugada"></answer>
+		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, corrige la lista del mazo para que refleje la carta jugada"></answer>
+		<answer text="TE - Problema de Lista de Mazo, no hay penalización, corrige la lista del mazo para que refleje la carta jugada"></answer>
+    </question>
 	??? - Missing cards in sideboard
 	??? - Too much cards in sideboard
 	??? - Missing card is in their current opponent deck
@@ -206,13 +267,26 @@
 		<answer text="UC - Hacer Trampa, Descalificación"></answer>
 		<answer text="GPE - Mirar Cartas Adicionales, Advertencia"></answer>
     </question>
-	??? - Wrong power, error, CPV
-	??? - Wrong power, not error, not CPV
+	<question text="Alex controla un Dusk Charger, juega un tierra en su fase principal precombate obteniendo la bendición de la ciudad y luego ataca con Dusk Charger. Nicky pregunta cuál es la fuerza de Dusk Charger, Alex dice “5”, y Nicky te llama porque Alex no ha dicho que tenía la bendición de la ciudad">
+		<answer text="No hay infracción"></answer>
+		<answer text="GPE - Violación de Regla de Juego, Advertencia, podemos considerar una vuelta atrás hasta después de jugar la tierra o dejar el estado del juego como está"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, realizamos una vuelta atrás hasta después de jugar la tierra"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, no hay penalización"></answer>
+		<resource text="Dusk Charger"></resource>
+    </question>
+	<question text="Alex controla un Dusk Charger, juega un tierra en su fase principal precombate obteniendo la bendición de la ciudad y luego ataca con Dusk Charger. Nicky bloquea con un 4/4, Alex dice que el 4/4 muere, y Nicky te llama porque Alex no ha dicho que tenía la bendición de la ciudad">
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, realizamos una vuelta atrás hasta la declaración de bloqueadores"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, realizamos una vuelta atrás hasta después de jugar la tierra"></answer>
+		<answer text="TE - Violación de la Política de Comunicación, Advertencia, Dusk Charger permanece bloqueado"></answer>
+		<answer text="No hay infracción"></answer>
+		<resource text="Dusk Charger"></resource>
+    </question>
 	<question text="Alex ataca con un 3/1, Nicky bloquea con una Dryad Arbor, Alex dice que no había visto esa Dryad Arbor porque estaba junto a otras tierras y que si la hubiera visto no habría atacado">
 		<answer text="TE - Violación de la Política de Comunicación, Advertencia, podemos considerar una vuelta atrás hasta la declaración de atacantes o dejar el estado del juego como está"></answer>
 		<answer text="TE - Violación de la Política de Comunicación, Advertencia, Nicky no puede bloquear con Dryad Arbor"></answer>
 		<answer text="TE - Violación de la Política de Comunicación, Advertencia, el 3/1 permanece bloqueado"></answer>
 		<answer text="No hay infracción"></answer>
+		<resource text="Dryad Arbor"></resource>
     </question>
 	??? - Marked Sleeves
 	??? - Curved foils
@@ -234,6 +308,12 @@
 	??? - Two players reveal cards from the top of their libraries to see “who would win” after extra turns.
 	??? - A player says “Oh no, we’re going to draw, that’s terrible for us. If only there were something we could do about it.
 	??? - A player asks for a concession in exchange for a prize split
+	<question text="Alex te llama y te pregunta delante de Nicky cómo puede de forma legal ofrecerle parte de sus premios a Nicky a cambio de una concesión">
+		<answer text="UC - Determinar Incorrectamente un Ganador, Pérdida de partida"></answer>
+		<answer text="UC - Determinar Incorrectamente un Ganador, Descalificación"></answer>
+		<answer text="No hay infracción, explicamos a los jugadores que hacer eso sería ilegal"></answer>
+		<answer text="No hay infracción, explicamos que Nicky puede conceder a Alex y que luego nada impide que Alex le da parte de sus premios por algún otro motivo"></answer>
+    </question>
 	??? - Top 8 split
 	??? - Final split in top
 	<question text="Sam y Stef apuestan por quién ganará una partida sin saber que las apuestas están prohibidas">
@@ -315,8 +395,8 @@
     </question>
 	<question text="Alex roba en su paso de robar y más tarde se da cuenta de que en realidad ha robado dos, que las cartas estaban pegadas, pero no dice nada. Luego Nicky se da cuenta de que Alex tiene una carta demás">
 		<answer text="UC - Hacer Trampa, Descalificación"></answer>
-		<answer text="GPE - Error de Carta Oculta, Advertencia. Alex revela su mano a Nicky, quien elige una carta, esa carta es barajada en la porción aleatoria de la biblioteca"></answer>
-		<answer text="GPE - Error de Carta Oculta, Advertencia. Alex pone una carta de su mano en la parte superior de su biblioteca"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex revela su mano a Nicky, quien elige una carta, esa carta es barajada en la porción aleatoria de la biblioteca"></answer>
+		<answer text="GPE - Error de Carta Oculta, Advertencia, Alex pone una carta de su mano en la parte superior de su biblioteca"></answer>
 		<answer text="GPE - Error de Carta Oculta, Pérdida de juego"></answer>
     </question>
 </quiz>

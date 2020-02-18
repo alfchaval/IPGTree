@@ -4,11 +4,37 @@
 	Alex = Active Player
 	Nicky = Non Active Player
 	Sam, Stef = Spectator
-	??? - A triggered ability that requires its controller to choose targets
+	<question text="Alex resolves a Viashino Pyromancer and immediately afterwards cast an instant spell. Nicky calls you because Alex hasn't chosen the target of Viashino Pyromancer's ability">
+		<answer text="GPE - Misstrigger, there is no penalty, Nicky chooses whether the triggered ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the triggered ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
+		<resource text="Viashino Pyromancer"></resource>
+    </question>
+	<question text="Alex resolves a Tidehollow Sculler and immediately afterwards cast an instant spell. Nicky calls you because Alex hasn't chosen the target of Tidehollow Sculler's ability">
+		<answer text="There is no infraction"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, Nicky chooses whether the triggered ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the triggered ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, resolve the ability immediately"></answer>
+		<resource text="Tidehollow Sculler"></resource>
+    </question>
 	??? - A triggered ability that causes a change in the visible game state
 	??? - A triggered ability that changes the rules of the game
 	??? - A triggered ability that affects the game state in non-visible ways
-	??? - Triggered abilities that do nothing except create delayed triggered abilities automatically resolve
+	<question text="A creature enters the battlefield from graveyard under Alex control in their main phase, later, in their end step, Alex returns Prized Amalgam to the battlefield. Nicky calls you because Alex didn't point the trigger ability when the other creature entered the battlefield">
+		<answer text="There is no infraction"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, Nicky chooses whether the triggered ability is added to the stack, in which case Prized Amalgam would enter the battlefield in Nicky's end step"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, Prized Amalgam still returns to the battlefield"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, we perform a back up returning Prized Amalgam to Alex's graveyard"></answer>
+		<resource text="Prized Amalgam"></resource>
+    </question>
+	<question text="A creature enters the battlefield from graveyard under Alex control in their main phase, Alex point the trigger ability of Prized Amalgam, but they forget to return it to the battlefield later in their end step, Alex notice it in Nicky's combat step">
+		<answer text="GPE - Misstrigger, there is no penalty, Nicky chooses whether the triggered ability is added to the stack, in which case Prized Amalgam would enter the battlefield in Nicky's end step"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, resolve the ability immediately"></answer>
+		<answer text="GPE - Misstrigger, there is no penalty, Prized Amalgam remains in the graveyard"></answer>
+		<resource text="Prized Amalgam"></resource>
+    </question>
 	??? - Triggered abilities that do nothing except create one or more copies of a spell or ability (such as storm or cipher) automatically resolve without requiring acknowledgment
 	<question text="Alex controls an Avaricious Dragon and they has no cards in their hand, Alex pass the turn, after untapping in their untap step, Nicky's notice Alex didn't demonstrate awareness of the ability">
 		<answer text="There is no infraction"></answer>
@@ -46,18 +72,25 @@
 		<resource text="Geist of Saint Traft"></resource>
     </question>
 	<question text="Nicky controls a Kataki, War's Wage, Alex controls an artifact, Alex's turn start and they draws the card of their draw step">
-		<answer text="GPE - Misstrigger, no penalty. Nicky chooses whether the triggered ability is added to the stack"></answer>
-		<answer text="GPE - Misstrigger, no penalty. Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
-		<answer text="GPE - Misstrigger, Warning. Nicky chooses whether the triggered ability is added to the stack"></answer>
-		<answer text="GPE - Misstrigger, Warning. Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
+		<answer text="GPE - Misstrigger, no penalty, Nicky chooses whether the triggered ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, no penalty, Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the triggered ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
 		<resource text="Kataki, War's Wage"></resource>
     </question>
 	??? - Casting a spell in response to a trigger ability without choosing targets for the ability
+	<question text="Alex controls a Shah of Naar Isle that entered the battlefield under their control their last turn. Alex draws the card from their draw step without pointing at Shah of Naar Isle's trigger ability">
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the ability of drawing 3 cards is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the Echo ability is added to the stack"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether to resolve the ability now with his default option (sacrifice the creature)"></answer>
+		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether to resolve the Echo the ability now or at the start of the next phase"></answer>
+		<resource text="Shah of Naar Isle"></resource>
+    </question>
 	<question text="Alex hits their library by mistake making the top card turn around">
-		<answer text="GPE - Looking Extra Cards, Warning. Alex shuffle the card into the random portion of the library"></answer>
-		<answer text="GPE - Looking Extra Cards, Warning to both players. Alex shuffle the card into the random portion of the library"></answer>
-		<answer text="GPE - Looking Extra Cards, Warning. Return the card to the top of the library"></answer>
-		<answer text="GPE - Looking Extra Cards, Warning to both players. Return the card to the top of the library"></answer>
+		<answer text="GPE - Looking Extra Cards, Warning, Alex shuffle the card into the random portion of the library"></answer>
+		<answer text="GPE - Looking Extra Cards, Warning to both players, Alex shuffle the card into the random portion of the library"></answer>
+		<answer text="GPE - Looking Extra Cards, Warning, Return the card to the top of the library"></answer>
+		<answer text="GPE - Looking Extra Cards, Warning to both players, Return the card to the top of the library"></answer>
     </question>
 	??? - HCE, In cases where the infraction was immediately followed by moving a card from the affected set to a known location, such as by discarding, putting cards on top of the library, or playing a land, a simple backup to the point just after the error may be performed
 	??? - HCE, If the set of cards that contained the problem no longer exists, there is no remedy to be applied
@@ -73,7 +106,7 @@
 		<answer text="GPE - Game Rule Violation, Warning"></answer>
 		<answer text="GPE - Hidden Card Error, Game Loss"></answer>
 		<answer text="TE - Communication Policy Violation, Warning"></answer>
-		<answer text="GPE - Game Rule Violation, Warning. Nicky get GPE - Failure to Maintain Game, Warning"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
     </question>
 	<question text="Alex puts a Leyline of the Void on the battlefield before Nicky says if they is going to keep their hand">
 		<answer text="There is no infraction"></answer>
@@ -126,15 +159,27 @@
 		<answer text="GPE - Game Rule Violation, Warning, the permanents remain tapped"></answer>
 		<answer text="GPE - Game Rule Violation, Warning, we perform a back up to the untap step putting a random card from Alex's hand on the top of their library"></answer>
     </question>
-	??? - If a player made an illegal choice (including no choice where required) for a static ability generating a continuous effect still on the battlefield, that player makes a legal choice
+	<question text="Alex cast Haktos the Unscarred, and they chooses 2 when resolves. Some turns later Alex realizes that the number should have been chosen at random">
+		<answer text="GPE - Game Rule Violation, Warning, Alex chooses a number at random between 2, 3 and 4. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, it's too late to perform a back up, the number choosen is 2. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, it's too late to perform a back up, there will be no chosen number. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, we perform a back up to when the random number had to be chosen. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<resource text="Haktos the Unscarred"></resource>
+    </question>
 	??? - If a player failed to draw cards, that player does so
 	<question text="Alex forget to discard in their clean up step with 8 cards in hand, and they notice it after drawing a card in their next draw step">
-		<answer text="GPE - Game Rule Violation, Warning, Alex discards a card. Nicky get GPE - Failure to Maintain Game, Warning"></answer>
-		<answer text="GPE - Game Rule Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, Alex discards a card. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, it's too late to perform a backup, we leave the game state as is"></answer>
 		<answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand, Nicky chooses what card to discard"></answer>
-		<answer text="TE - Communication Policy Violation, Warning, there is no solution, it's too late to perform a backup"></answer>
+		<answer text="TE - Communication Policy Violation, Warning, it's too late to perform a backup, we leave the game state as is"></answer>
     </question>
-	??? - If a player failed to return cards from their hand to another zone, that player does so
+	<question text="Alex resolves a Brainstorm in their precombat main phase, drawing 3 cards, then attack with some creatures, and in their postcombat main phase they notice that they didn't return cards to the top of their library">
+		<answer text="GPE - ame Rule Violation, Warning, Alex puts 2 cards from their hand on the top of their library. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - ame Rule Violation, Warning, we perform a back up to when Brainstorm was resolving. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - ame Rule Violation, Warning, it's too late to perform a back up, we leave the game state as is. Nicky get GPE - Failure to Maintain Game State, Warning"></answer>
+		<answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand to Nicky, who chooses 2 cards to be put on top of Alex's library"></answer>
+		<resource text="Brainstorm"></resource>
+    </question>
 	??? - If an object is in an incorrect zone either due to a required zone change being missed or due to being put into the wrong zone during a zone change, the exact object is still known to all players, and it can be moved with only minor disruption to the current state of the game, put the object in the correct zone
 	??? - If damage assignment order has not been declared, the appropriate player chooses that order
 	??? - Doble GRV, Narset
@@ -184,8 +229,24 @@
 	??? - 16 cards sideboard decklist
 	??? - Not enough cards in decklist
 	??? - There is a card in the deck that it's not in the decklist
-	??? - Limited, wrong basic lands
-	??? - Legendary truncated name
+	<question text="During a deck check in a sealed tournament, you discover that the list has marked 8 Plains and 8 Islands, when the player is playing 8 Islands and 8 Swamps, the rest of the list is correct">
+		<answer text="TE - Decklist Problem, there is no penalty, We fix the decklist to reflect what they are playing"></answer>
+		<answer text="TE - Decklist Problem, Game Loss, We fix the decklist to reflect what they are playing"></answer>
+		<answer text="TE - Decklist Problem, Warning, We fix the decklist to reflect what they are playing"></answer>
+		<answer text="There is no infraction, We fix the decklist to reflect what they are playing"></answer>
+    </question>
+	<question text="In a standard tournament, you see a game and discover that Alex is playing a Snow-Covered Island, their decklist shows that Snow-Covered Island, the rest of the cards they plays are legal in standard">
+		<answer text="There is no infraction, but Alex must replace it with a Island"></answer>
+		<answer text="TE - Decklist Problem, Warning, Alex must replace it with a Island"></answer>
+		<answer text="TE - Decklist Problem, Game Loss, Alex must replace it with a Plains, Island, Swamp, Mountain or Forest"></answer>
+		<answer text="TE - Deck Problem, Game Loss, Alex must replace it with a Plains, Island, Swamp, Mountain or Forest"></answer>
+    </question>
+	<question text="During a deck check in a modern tournament, you discover that the list has “4 Tasigurs”, which can refer to both “Tasigur, the Golden Fang” and “Tasigur's Cruelty”, the player is playing “Tasigur, the Golden Fang”">
+		<answer text="There is no infraction"></answer>
+		<answer text="TE - Decklist Problem, Warning, alter the decklist to reflect the played card"></answer>
+		<answer text="TE - Decklist Problem, Game Loss, alter the decklist to reflect the played card"></answer>
+		<answer text="TE - Decklist Problem, alter the decklist to reflect the played card"></answer>
+    </question>
 	??? - Missing cards in sideboard
 	??? - Too much cards in sideboard
 	??? - Missing card is in their current opponent deck
@@ -206,8 +267,20 @@
 		<answer text="UC - Cheating, Disqualification"></answer>
 		<answer text="GPE - Looking Extra Cards, Warning"></answer>
     </question>
-	??? - Wrong power, error, CPV
-	??? - Wrong power, not error, not CPV
+	<question text="Alex controls a Dusk Charger, they plays a land in their precombat main phase getting the city's blessing and then attacks with Dusk Charger. Nicky ask what's the Dusk Charger power, Alex sais “5”, and Nicky calls you because Alex didn't say they have the city's blessing">
+		<answer text="There is no infraction"></answer>
+		<answer text="GPE - Game Rule Violation, Warning, Advertencia, we can consider a back up to after playing the land or leaving the game state as is"></answer>
+		<answer text="TE - Communication Policy Violation, Warning, we perform a back up to after playing the land"></answer>
+		<answer text="TE - Communication Policy Violation, there is no penalty"></answer>
+		<resource text="Dusk Charger"></resource>
+    </question>
+	<question text="Alex controls a Dusk Charger, they plays a land in their precombat main phase getting the city's blessing and then attacks with Dusk Charger. Nicky blocks with a 4/4, Alex sais that the 4/4 dies, and Nicky calls you because Alex didn't say they have the city's blessing">
+		<answer text="TE - Communication Policy Violation, Warning, we perform a back up to declaring blockers"></answer>
+		<answer text="TE - Communication Policy Violation, Warning, we perform a back up to after playing the land"></answer>
+		<answer text="TE - Communication Policy Violation, Warning, Dusk Charger remains blocked"></answer>
+		<answer text="There is no infraction"></answer>
+		<resource text="Dusk Charger"></resource>
+    </question>
 	<question text="Alex attacks with a 3/1, Nicky blocks with a Dryad Arbor, Alex says that they had not seen that Dryad Arbor because it was next to other lands and that if they had seen it they would not have attacked">
 		<answer text="TE - Communication Policy Violation, Warning, we can consider a back up to the declaration of attackers or leaving the game state as is"></answer>
 		<answer text="TE - Communication Policy Violation, Warning, Nicky can't block with Dryad Arbor"></answer>
@@ -235,6 +308,12 @@
 	??? - Two players reveal cards from the top of their libraries to see “who would win” after extra turns.
 	??? - A player says “Oh no, we’re going to draw, that’s terrible for us. If only there were something we could do about it.
 	??? - A player asks for a concession in exchange for a prize split
+	<question text="Alex calls you and asks you in front of Nicky how they can legally offer Nicky part of his prizes in exchange for a concession">
+		<answer text="UC - Improperly Determining a Winner, Match Loss"></answer>
+		<answer text="UC - Improperly Determining a Winner, Disqualification"></answer>
+		<answer text="There is no infraction, we explain to the players that doing that would be illegal"></answer>
+		<answer text="There is no infraction, we explain that Nicky can concede to Alex and then nothing prevents Alex from giving them part of his prizes for some other reason"></answer>
+    </question>
 	??? - Top 8 split
 	??? - Final split in top
 	<question text="Sam and Stef place a bet on who will win a match without knowing that bets are prohibited">
@@ -316,8 +395,8 @@
     </question>
 	<question text="Alex draws the card of their draw step, later they notices that they has actually draw two cards, the cards were stuck together, but they says nothing. Then Nicky realizes that Alex has one extra card">
 		<answer text="UC - Cheating, Disqualification"></answer>
-		<answer text="GPE - Hidden Card Error, Warning. Alex reveals their hand to Nicky, who chooses a card, that card is shuffled in the random portion of the library"></answer>
-		<answer text="GPE - Hidden Card Error, Warning. Alex put a card from their hand onto the top of their library"></answer>
+		<answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand to Nicky, who chooses a card, that card is shuffled in the random portion of the library"></answer>
+		<answer text="GPE - Hidden Card Error, Warning, Alex put a card from their hand onto the top of their library"></answer>
 		<answer text="GPE - Hidden Card Error, Game Loss"></answer>
     </question>
 </quiz>
