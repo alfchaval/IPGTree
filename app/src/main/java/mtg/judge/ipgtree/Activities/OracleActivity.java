@@ -43,6 +43,10 @@ public class OracleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oracle);
 
+        if(!Repository.loaded) {
+            Repository.createRepository(getApplicationContext());
+        }
+
         linkViews();
         loadStrings();
         setListeners();

@@ -76,6 +76,10 @@ public class TreeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_document);
 
+        if(!Repository.loaded) {
+            Repository.createRepository(getApplicationContext());
+        }
+
         linkViews();
         setListeners();
 

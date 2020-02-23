@@ -52,6 +52,10 @@ public class LifeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life);
 
+        if(!Repository.loaded) {
+            Repository.createRepository(getApplicationContext());
+        }
+
         linkViews();
         loadStrings();
         random = new Random();

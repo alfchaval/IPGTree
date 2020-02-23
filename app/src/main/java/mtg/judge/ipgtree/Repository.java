@@ -3,6 +3,7 @@ package mtg.judge.ipgtree;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
+import android.util.Log;
 import android.util.Pair;
 
 import org.json.JSONArray;
@@ -15,7 +16,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    private static int appVersion = 20200214;
+    private static final int appVersion = 20200222 ;
     public static int lastNews;
 
     //URLs
@@ -162,6 +163,9 @@ public class Repository {
     public static String ftpPassword = null;
     public static int ftpPort = 50505;
 
+    //Varible de carga
+    public static boolean loaded = false;
+
     //Load everything
     public static void createRepository(Context context) {
         loadDatabase(context);
@@ -196,6 +200,8 @@ public class Repository {
         if (!directory.exists()) {
             directory.mkdirs();
         }
+
+        loaded = true;
     }
 
     public static void loadDatabase(Context context) {

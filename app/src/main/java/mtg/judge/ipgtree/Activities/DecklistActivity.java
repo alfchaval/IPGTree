@@ -31,6 +31,10 @@ public class DecklistActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_decklist);
 
+        if(!Repository.loaded) {
+            Repository.createRepository(getApplicationContext());
+        }
+
         linkViews();
         loadStrings();
         setListeners();

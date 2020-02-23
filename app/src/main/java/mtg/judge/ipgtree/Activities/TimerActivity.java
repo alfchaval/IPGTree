@@ -49,6 +49,10 @@ public class TimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
+        if(!Repository.loaded) {
+            Repository.createRepository(getApplicationContext());
+        }
+
         linkViews();
         loadStrings();
         setListeners();
