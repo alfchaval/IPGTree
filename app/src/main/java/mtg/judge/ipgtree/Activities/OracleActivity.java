@@ -44,7 +44,7 @@ public class OracleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_oracle);
 
         if(!Repository.repositoryLoaded) {
-            Repository.createRepository(getApplicationContext());
+            finish();
         }
 
         linkViews();
@@ -68,13 +68,13 @@ public class OracleActivity extends AppCompatActivity {
             setnames = Repository.sets.keySet().toArray(new String[Repository.sets.size()]);
             nameAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, cardnames);
             setAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, setnames);
-            changeMode(nameMode);
 
             //TODO Find a way to set the adapter after selecting a set.
             numbers = new String[0];
             numberAdapter = new ArrayAdapter<String>(OracleActivity.this, android.R.layout.simple_list_item_1, numbers);
             actv_number.setAdapter(numberAdapter);
         }
+        changeMode(nameMode);
     }
 
     @Override

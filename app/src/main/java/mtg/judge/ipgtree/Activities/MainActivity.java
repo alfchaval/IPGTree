@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -204,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     documentsMenu = true;
                     loadStrings();
-                    enableButtons(true);
+
                     break;
                 case 2:
                     if(Repository.databaseLoaded) {
@@ -234,7 +235,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
-        if (intent != null) {
+        if (intent == null) {
+            enableButtons(true);
+        }
+        else {
             startActivityForResult(intent,1);
         }
     }

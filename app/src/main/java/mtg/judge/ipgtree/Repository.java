@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.Log;
 import android.util.Pair;
 
 import org.json.JSONArray;
@@ -204,6 +205,7 @@ public class Repository {
     }
 
     public static synchronized void loadDatabase(Context context) {
+        Log.d("loaded", databaseLoaded+"");
         if (!databaseLoaded) {
             cards = Read.loadCardDatabase(context);
             sets = Read.loadSets(context);
@@ -372,7 +374,7 @@ public class Repository {
                         result = "Selected set: ";
                         break;
                     case 46:
-                        result = ">Enter a set name";
+                        result = "Enter a set name";
                         break;
                     case 47:
                         result = "END";
