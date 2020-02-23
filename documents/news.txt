@@ -1,2 +1,2 @@
-20200205
-New update available, you can download it in the link in Settings menu. Details: You can click in the remaining time in the timer to save the current time and see how much time have you spend in a call, also there is a dice in the life counter.
+20200223
+23-02-2020 update available, you can download it in the link in Settings menu. Details: basically improvements in application performance, also the splash screen has been removed because it's no longer necessary

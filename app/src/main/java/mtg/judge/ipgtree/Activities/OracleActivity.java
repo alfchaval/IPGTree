@@ -43,7 +43,7 @@ public class OracleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oracle);
 
-        if(!Repository.loaded) {
+        if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
         }
 

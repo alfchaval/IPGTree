@@ -59,7 +59,7 @@ public class DraftActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draft);
 
-        if(!Repository.loaded) {
+        if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
         }
 

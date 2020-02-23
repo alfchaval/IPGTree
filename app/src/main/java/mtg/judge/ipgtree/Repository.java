@@ -2,8 +2,8 @@ package mtg.judge.ipgtree;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Environment;
-import android.util.Log;
 import android.util.Pair;
 
 import org.json.JSONArray;
@@ -16,7 +16,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    private static final int appVersion = 20200222 ;
+    public static final int appVersion = 20200223;
     public static int lastNews;
 
     //URLs
@@ -127,8 +127,6 @@ public class Repository {
     public static final String KEY_QUIZ_ES = "key_quiz_es";
     public static final String KEY_HJA_ES = "key_hja_es";
 
-    public static final String KEY_LASTNEWS = "key_lastnews";
-
     //Oracle
     public static HashMap<String, Card> cards;
     public static HashMap<String, Set> sets;
@@ -163,13 +161,12 @@ public class Repository {
     public static String ftpPassword = null;
     public static int ftpPort = 50505;
 
-    //Varible de carga
-    public static boolean loaded = false;
+    //Varibles de carga
+    public static boolean repositoryLoaded = false;
+    public static boolean databaseLoaded = false;
 
     //Load everything
-    public static void createRepository(Context context) {
-        loadDatabase(context);
-
+    public static void createRepository(final Context context) {
         SharedPreferences preferences = context.getSharedPreferences(KEY_PREFERENCES, MODE_PRIVATE);
         p1life = preferences.getInt(KEY_P1LIFE, 20);
         p2life = preferences.getInt(KEY_P2LIFE, 20);
@@ -193,21 +190,26 @@ public class Repository {
         } catch (JSONException e) {
             savedTimes = new JSONArray();
         }
-        lastNews = preferences.getInt(KEY_LASTNEWS, appVersion);
-
         String folder = Environment.getExternalStorageDirectory() + File.separator + FOLDERNAME;
         File directory = new File(folder);
         if (!directory.exists()) {
             directory.mkdirs();
         }
-
-        loaded = true;
+        repositoryLoaded = true;
+        new Thread(new Runnable() {
+            public void run() {
+                loadDatabase(context);
+            }
+        }).start();
     }
 
-    public static void loadDatabase(Context context) {
-        cards = Read.loadCardDatabase(context);
-        sets = Read.loadSets(context);
-        setsWithCards = linkCardsToSets();
+    public static synchronized void loadDatabase(Context context) {
+        if (!databaseLoaded) {
+            cards = Read.loadCardDatabase(context);
+            sets = Read.loadSets(context);
+            setsWithCards = linkCardsToSets();
+            databaseLoaded = true;
+        }
     }
 
     private static HashMap<String, String[]> linkCardsToSets() {

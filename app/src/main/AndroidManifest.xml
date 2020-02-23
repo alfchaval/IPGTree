@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="mtg.judge.ipgtree.Activities.LoadingActivity"
+            android:name="mtg.judge.ipgtree.Activities.MainActivity"
             android:screenOrientation="nosensor"
             >
             <intent-filter>
@@ -24,10 +24,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="mtg.judge.ipgtree.Activities.MainActivity"
-            android:screenOrientation="nosensor"
-            />
         <activity
             android:name="mtg.judge.ipgtree.Activities.OracleActivity"
             android:screenOrientation="nosensor"

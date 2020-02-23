@@ -16,13 +16,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-
-import java.util.ArrayList;
 
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Repository;
@@ -49,7 +46,7 @@ public class TimerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
-        if(!Repository.loaded) {
+        if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
         }
 

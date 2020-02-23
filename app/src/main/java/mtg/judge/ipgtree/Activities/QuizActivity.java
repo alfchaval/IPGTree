@@ -1,7 +1,6 @@
 package mtg.judge.ipgtree.Activities;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -64,7 +63,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        if(!Repository.loaded) {
+        if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
         }
 

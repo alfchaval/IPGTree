@@ -9,11 +9,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
-import android.print.PrintAttributes;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -52,7 +50,7 @@ public class LifeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_life);
 
-        if(!Repository.loaded) {
+        if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
         }
 

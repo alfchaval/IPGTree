@@ -27,12 +27,10 @@ import mtg.judge.ipgtree.Repository;
 public class MainActivity extends AppCompatActivity {
 
     private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_news_alert;
-    private Intent intent;
 
     private boolean documentsMenu = false;
 
-    private String message = null;
-    private int date = 0;
+    private Pair<Integer, String> update;
 
     private SharedPreferences preferences;
 
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(!Repository.loaded) {
+        if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
         }
 
@@ -51,9 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
 
-        if(Repository.downloadNews) {
-            new checkForUpdates().execute();
-        }
+        new checkForUpdates().execute();
     }
 
     private void linkViews() {
@@ -154,11 +150,10 @@ public class MainActivity extends AppCompatActivity {
         btn_news_alert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(message != null) {
-                    preferences.edit().putInt(Repository.KEY_LASTNEWS, date).apply();
+                if(update != null && update.second != null) {
                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                     alertDialog.setTitle(Repository.StringMap(74));
-                    alertDialog.setMessage(message);
+                    alertDialog.setMessage(update.second);
                     alertDialog.show();
                 }
             }
@@ -167,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void move(int buttonId) {
         enableButtons(false);
+        Intent intent = null;
         if(documentsMenu) {
             switch (buttonId) {
                 case 1:
@@ -211,7 +207,9 @@ public class MainActivity extends AppCompatActivity {
                     enableButtons(true);
                     break;
                 case 2:
-                    intent = new Intent(MainActivity.this, OracleActivity.class);
+                    if(Repository.databaseLoaded) {
+                        intent = new Intent(MainActivity.this, OracleActivity.class);
+                    }
                     break;
                 case 3:
                     intent = new Intent(MainActivity.this, TreeActivity.class);
@@ -256,7 +254,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        intent = null;
         enableButtons(true);
         if(resultCode == RESULT_OK) {
             loadStrings();
@@ -279,38 +276,37 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            int count;
-            InputStream input;
-            OutputStream output;
-            URL url;
-            URLConnection connection;
-            String filename;
-            byte[] data;
-            try {
-                folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
-                File directory = new File(folder);
-                String string = preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS);
-                url = new URL(string);
-                connection = url.openConnection();
-                connection.connect();
-                input = new BufferedInputStream(url.openStream(), 8192);
-                filename = folder + File.separator + string.substring(string.lastIndexOf('/') + 1, string.length());
-                output = new FileOutputStream(filename);
-                data = new byte[1024];
-                while ((count = input.read(data)) != -1) {
-                    output.write(data, 0, count);
-                }
-                output.flush();
-                output.close();
-                input.close();
+            update = Read.readNews(getApplicationContext());
+            if(Repository.downloadNews) {
+                int count;
+                InputStream input;
+                OutputStream output;
+                URL url;
+                URLConnection connection;
+                String filename;
+                byte[] data;
+                try {
+                    folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+                    File directory = new File(folder);
+                    String string = preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS);
+                    url = new URL(string);
+                    connection = url.openConnection();
+                    connection.connect();
+                    input = new BufferedInputStream(url.openStream(), 8192);
+                    filename = folder + File.separator + string.substring(string.lastIndexOf('/') + 1, string.length());
+                    output = new FileOutputStream(filename);
+                    data = new byte[1024];
+                    while ((count = input.read(data)) != -1) {
+                        output.write(data, 0, count);
+                    }
+                    output.flush();
+                    output.close();
+                    input.close();
 
-                Pair<Integer, String> update =  Read.readNews(getApplicationContext());
-                if (update.first > Repository.lastNews) {
-                    date = update.first;
-                    message = update.second;
+                    update = Read.readNews(getApplicationContext());
                 }
-            }
-            catch (Exception e) {
+                catch (Exception e) {
+                }
             }
             return null;
         }
@@ -318,7 +314,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if(message != null) {
+            if(update != null && update.first > Repository.appVersion) {
                 btn_news_alert.setVisibility(View.VISIBLE);
             }
         }
