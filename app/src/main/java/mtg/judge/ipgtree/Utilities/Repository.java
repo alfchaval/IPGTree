@@ -1,8 +1,7 @@
-package mtg.judge.ipgtree;
+package mtg.judge.ipgtree.Utilities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 import android.util.Pair;
@@ -12,6 +11,10 @@ import org.json.JSONException;
 
 import java.io.File;
 import java.util.HashMap;
+
+import mtg.judge.ipgtree.POJO.Card;
+import mtg.judge.ipgtree.POJO.Set;
+import mtg.judge.ipgtree.Utilities.Read;
 
 import static android.content.Context.MODE_PRIVATE;
 

@@ -1,12 +1,16 @@
-package mtg.judge.ipgtree;
+package mtg.judge.ipgtree.Utilities;
 
 import android.content.Context;
-import android.content.res.XmlResourceParser;
 import android.os.Environment;
 import android.util.Log;
 import android.util.Pair;
 
-import mtg.judge.ipgtree.R;
+import mtg.judge.ipgtree.POJO.Card;
+import mtg.judge.ipgtree.POJO.Quiz;
+import mtg.judge.ipgtree.POJO.Tree;
+import mtg.judge.ipgtree.POJO.Set;
+import mtg.judge.ipgtree.POJO.TypedText;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
@@ -19,9 +23,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

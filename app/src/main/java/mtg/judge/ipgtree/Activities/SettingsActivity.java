@@ -43,11 +43,11 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import mtg.judge.ipgtree.Card;
-import mtg.judge.ipgtree.Code;
+import mtg.judge.ipgtree.POJO.Card;
+import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
-import mtg.judge.ipgtree.Repository;
-import mtg.judge.ipgtree.Set;
+import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.POJO.Set;
 
 public class SettingsActivity extends AppCompatActivity {
 

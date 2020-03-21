@@ -29,7 +29,7 @@ import java.io.FileOutputStream;
 import java.util.Random;
 
 import mtg.judge.ipgtree.R;
-import mtg.judge.ipgtree.Repository;
+import mtg.judge.ipgtree.Utilities.Repository;
 
 public class LifeActivity extends AppCompatActivity {
 

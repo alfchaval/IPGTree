@@ -1,4 +1,4 @@
-package mtg.judge.ipgtree;
+package mtg.judge.ipgtree.Utilities;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

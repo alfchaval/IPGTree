@@ -27,7 +27,7 @@
             <point text="Wooded Foothills"></point>
     </point>
     <point text="Modern">
-        <point text="Actualizado: 13-01-2020"></point>
+        <point text="Actualizado: 09-03-2020"></point>
         <title text="Baneadas"></title>
             <point text="Ancient Den"></point>
             <point text="Birthing Pod"></point>
@@ -52,6 +52,7 @@
 			<point text="Mox Opal"></point>
 			<point text="Mycosynth Lattice"></point>
 			<point text="Oko, Thief of Crowns"></point>
+			<point text="Once Upon a Time"></point>
             <point text="Ponder"></point>
             <point text="Preordain"></point>
             <point text="Punishing Fire"></point>
@@ -69,7 +70,7 @@
             <point text="Vault of Whispers"></point>
     </point>
     <point text="Legacy">
-        <point text="Actualizado: 18-11-2019"></point>
+        <point text="Actualizado: 09-03-2020"></point>
         <title text="Baneadas"></title>
             <point text="Las 25 cartas con el tipo Conspiracy"></point>
             <point text="Las 9 cartas que hacen referencia a apuestas"></point>
@@ -123,6 +124,7 @@
             <point text="Tolarian Academy"></point>
             <point text="Treasure Cruise"></point>
             <point text="Vampiric Tutor"></point>
+			<point text="Underworld Breach"></point>
             <point text="Wheel of Fortune"></point>
             <point text="Windfall"></point>
 			<point text="Wrenn and Six"></point>
@@ -307,12 +309,13 @@
                 <point text="Yawgmoth's Bargain"></point>
         </point>
         <point text="Duelcommander">
-            <point text="Actualizado: 26-11-2019"></point>
+            <point text="Actualizado: 24-02-2020"></point>
 			<link text="http://www.duelcommander.com/banlist"></link>
             <title text="Baneadas"></title>
                 <point text="Las 25 cartas con el tipo Conspiracy"></point>
                 <point text="Las 9 cartas que hacen referencia a apuestas"></point>
                 <point text="Ancestral Recall"></point>
+				<point text="Ancient Tomb"></point>
                 <point text="Back to Basics"></point>
                 <point text="Black Lotus"></point>
                 <point text="Channel"></point>
@@ -342,6 +345,7 @@
                 <point text="Mox Diamond"></point>
                 <point text="Mox Emerald"></point>
                 <point text="Mox Jet"></point>
+				<point text="Mox Opal"></point>
                 <point text="Mox Pearl"></point>
                 <point text="Mox Ruby"></point>
                 <point text="Mox Sapphire"></point>
@@ -357,7 +361,7 @@
                 <point text="Shahrazad"></point>
                 <point text="Sol Ring"></point>
                 <point text="Strip Mine"></point>
-                <point text="Sulfuric Vortex"></point>
+				<point text="Thassa’s Oracle"></point>
                 <point text="The Tabernacle at Pendrell Vale"></point>
                 <point text="Time Vault"></point>
                 <point text="Time Walk"></point>
@@ -442,19 +446,73 @@
 				<point text="Yawgmoth’s Bargain"></point>
         </point>
     </point>
-    <point text="Brawl">
-        <point text="Actualizado: 18-11-2019"></point>
+	<point text="Canadian Highlander">
+        <point text="Actualizado: 02-03-2020"></point>
+		<link text="https://canadianhighlander.wordpress.com/rules-the-points-list-and-deck-construction/"></link>
         <title text="Baneadas"></title>
+            <point text="Las 25 cartas con el tipo Conspiracy"></point>
+			<point text="Las 9 cartas que hacen referencia a apuestas"></point>
+			<point text="Chaos Orb"></point>
+			<point text="Shahrazad"></point>
+		<title text="Puntos"></title>
+			<point text="Ancestral Recall – 7"></point>
+			<point text="Balance – 1"></point>
+			<point text="Birthing Pod – 2"></point>
+			<point text="Black Lotus – 7"></point>
+			<point text="Crop Rotation – 1"></point>
+			<point text="Demonic Tutor – 4"></point>
+			<point text="Dig Through Time – 1"></point>
+			<point text="Flash – 6"></point>
+			<point text="Gifts Ungiven – 2"></point>
+			<point text="Imperial Seal – 1"></point>
+			<point text="Intuition – 1"></point>
+			<point text="Library of Alexandria – 1"></point>
+			<point text="Mana Crypt – 4"></point>
+			<point text="Mana Drain – 1"></point>
+			<point text="Mana Vault – 1"></point>
+			<point text="Merchant Scroll – 1"></point>
+			<point text="Mind Twist – 1"></point>
+			<point text="Mox Emerald – 3"></point>
+			<point text="Mox Jet – 3"></point>
+			<point text="Mox Pearl – 3"></point>
+			<point text="Mox Ruby – 3"></point>
+			<point text="Mox Sapphire – 3"></point>
+			<point text="Mystical Tutor – 2"></point>
+			<point text="Natural Order – 4"></point>
+			<point text="Price of Progress – 1"></point>
+			<point text="Protean Hulk – 3"></point>
+			<point text="Sol Ring – 4"></point>
+			<point text="Spellseeker – 1"></point>
+			<point text="Strip Mine – 3"></point>
+			<point text="Summoner’s Pact – 1"></point>
+			<point text="Survival of the Fittest – 2"></point>
+			<point text="Time Vault – 7"></point>
+			<point text="Time Walk – 7"></point>
+			<point text="Tinker – 3"></point>
+			<point text="Tolarian Academy – 1"></point>
+			<point text="Transmute Artifact – 1"></point>
+			<point text="Treasure Cruise – 1"></point>
+			<point text="True-Name Nemesis – 1"></point>
+			<point text="Umezawa’s Jitte – 2"></point>
+			<point text="Underworld Breach – 1"></point>
+			<point text="Vampiric Tutor – 2"></point>
+			<point text="Wishclaw Talisman – 1"></point>
+			<point text="Yawgmoth’s Will – 2"></point>
+    </point>
+    <point text="Brawl">
+        <point text="Actualizado: 09-03-2020"></point>
+        <title text="Baneadas"></title>
+		<point text="Golos, Tireless Pilgrim "></point>
             <point text="Sorcerous Spyglass"></point>
 			<point text="Oko, Thief of Crowns"></point>
     </point>
 	<point text="Historic">
-        <point text="Actualizado: 10-12-19"></point>
-		<title text="Suspendidas"></title>
-            <point text="Field of the Dead"></point>
+        <point text="Actualizado: 09-03-2020"></point>
+		<title text="Baneadas"></title>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Veil of Summer"></point>
+		<title text="Suspendidas"></title>
     </point>
 	<point text="2HG">
         <point text="Actualizado: ???"></point>

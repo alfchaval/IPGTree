@@ -62,7 +62,7 @@
             />
 
         <receiver
-            android:name=".TimerReceiver"
+            android:name=".Utilities.TimerReceiver"
             android:exported="true"
             />
 

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +21,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import mtg.judge.ipgtree.R;
-import mtg.judge.ipgtree.Read;
-import mtg.judge.ipgtree.Repository;
+import mtg.judge.ipgtree.Utilities.Read;
+import mtg.judge.ipgtree.Utilities.Repository;
 
 public class MainActivity extends AppCompatActivity {
 

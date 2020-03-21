@@ -24,9 +24,9 @@ import android.widget.TextView;
 
 import java.io.File;
 
-import mtg.judge.ipgtree.Code;
+import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
-import mtg.judge.ipgtree.Repository;
+import mtg.judge.ipgtree.Utilities.Repository;
 
 public class AdvancedSettingsActivity extends AppCompatActivity {
 

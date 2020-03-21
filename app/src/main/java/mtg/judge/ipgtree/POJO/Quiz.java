@@ -1,4 +1,4 @@
-package mtg.judge.ipgtree;
+package mtg.judge.ipgtree.POJO;
 
 import java.util.ArrayList;
 

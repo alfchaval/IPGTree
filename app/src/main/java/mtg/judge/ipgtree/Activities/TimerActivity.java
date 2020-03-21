@@ -22,8 +22,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import mtg.judge.ipgtree.R;
-import mtg.judge.ipgtree.Repository;
-import mtg.judge.ipgtree.TimerReceiver;
+import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.TimerReceiver;
 
 public class TimerActivity extends AppCompatActivity {
 

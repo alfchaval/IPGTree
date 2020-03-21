@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
-import mtg.judge.ipgtree.Repository;
+import mtg.judge.ipgtree.Utilities.Repository;
 
 import java.util.ArrayList;
 

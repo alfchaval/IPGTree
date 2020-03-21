@@ -25,10 +25,10 @@ import android.widget.Toast;
 
 import mtg.judge.ipgtree.R;
 
-import mtg.judge.ipgtree.Read;
-import mtg.judge.ipgtree.Repository;
-import mtg.judge.ipgtree.Tree;
-import mtg.judge.ipgtree.TypedText;
+import mtg.judge.ipgtree.Utilities.Read;
+import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.POJO.Tree;
+import mtg.judge.ipgtree.POJO.TypedText;
 
 import java.util.ArrayList;
 
