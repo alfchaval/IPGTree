@@ -262,7 +262,7 @@
                 <point text="Zur the Enchanter"></point>
         </point>
         <point text="Mtgcommander">
-            <point text="Updated: 08-06-2019"></point>
+            <point text="Updated: 13-04-2020"></point>
 			<link text="http://mtgcommander.net/rules.php"></link>
             <title text="Banned"></title>
                 <point text="The 25 cards with the Card Type “Conspiracy”."></point>
@@ -284,6 +284,7 @@
                 <point text="Leovold, Emissary of Trest"></point>
                 <point text="Library of Alexandria"></point>
                 <point text="Limited Resources"></point>
+				<point text="Lutri, the Spellchaser"></point>
                 <point text="Mox Emerald"></point>
                 <point text="Mox Jet"></point>
                 <point text="Mox Pearl"></point>
@@ -500,9 +501,10 @@
 			<point text="Yawgmoth’s Will – 2"></point>
     </point>
     <point text="Brawl">
-        <point text="Updated: 09-03-2020"></point>
+        <point text="Updated: 13-04-2020"></point>
         <title text="Banned"></title>
 			<point text="Golos, Tireless Pilgrim "></point>
+			<point text="Lutri, the Spellchaser"></point>
             <point text="Sorcerous Spyglass"></point>
 			<point text="Oko, Thief of Crowns"></point>
     </point>
