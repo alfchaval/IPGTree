@@ -507,6 +507,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                     publishProgress("90");
 
+                    Repository.databaseLoaded = false;
                     Repository.loadDatabase(getApplicationContext());
 
                 } catch (Exception e){

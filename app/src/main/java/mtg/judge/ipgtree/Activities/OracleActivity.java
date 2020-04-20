@@ -80,8 +80,9 @@ public class OracleActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Repository.databaseLoaded = false;
         Repository.loadDatabase(getApplicationContext());
-        loadCards();
+        this.finish();
     }
 
     private void linkViews() {

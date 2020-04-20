@@ -54,10 +54,16 @@ public class Repository {
     //File names
     public static final String P1_LIFE_FILENAME = "p1_life.txt";
     public static final String P2_LIFE_FILENAME = "p2_life.txt";
+    public static final String P3_LIFE_FILENAME = "p3_life.txt";
+    public static final String P4_LIFE_FILENAME = "p4_life.txt";
     public static final String P1_POISON_FILENAME = "p1_poison.txt";
     public static final String P2_POISON_FILENAME = "p2_poison.txt";
+    public static final String P3_POISON_FILENAME = "p3_poison.txt";
+    public static final String P4_POISON_FILENAME = "p4_poison.txt";
     public static final String P1_LOG_FILENAME = "p1_log.txt";
     public static final String P2_LOG_FILENAME = "p2_log.txt";
+    public static final String P3_LOG_FILENAME = "p3_log.txt";
+    public static final String P4_LOG_FILENAME = "p4_log.txt";
 
     //Keyboard codes
     public static final int Code0 = 0;
@@ -87,10 +93,16 @@ public class Repository {
 
     public static final String KEY_P1LIFE = "key_p1life";
     public static final String KEY_P2LIFE = "key_p2life";
+    public static final String KEY_P3LIFE = "key_p3life";
+    public static final String KEY_P4LIFE = "key_p4life";
     public static final String KEY_P1POISON = "key_p1poison";
     public static final String KEY_P2POISON = "key_p2poison";
+    public static final String KEY_P3POISON = "key_p3poison";
+    public static final String KEY_P4POISON = "key_p4poison";
     public static final String KEY_P1LOG = "key_p1log";
     public static final String KEY_P2LOG = "key_p2log";
+    public static final String KEY_P3LOG = "key_p3log";
+    public static final String KEY_P4LOG = "key_p4log";
 
     public static final String KEY_LANGUAGE = "key_language";
     public static final String KEY_ANNOTATION = "key_annotation";
@@ -145,10 +157,16 @@ public class Repository {
     //Variables vida
     public static int p1life = 20;
     public static int p2life = 20;
+    public static int p3life = 20;
+    public static int p4life = 20;
     public static int p1poison = 0;
     public static int p2poison = 0;
+    public static int p3poison = 0;
+    public static int p4poison = 0;
     public static String p1log = "20";
     public static String p2log = "20";
+    public static String p3log = "20";
+    public static String p4log = "20";
     public static char mode = LIFE;
     public static int lifeDelay = 4000;
     public static int dice = 20;
@@ -174,10 +192,16 @@ public class Repository {
         SharedPreferences preferences = context.getSharedPreferences(KEY_PREFERENCES, MODE_PRIVATE);
         p1life = preferences.getInt(KEY_P1LIFE, 20);
         p2life = preferences.getInt(KEY_P2LIFE, 20);
+        p3life = preferences.getInt(KEY_P3LIFE, 20);
+        p4life = preferences.getInt(KEY_P4LIFE, 20);
         p1poison = preferences.getInt(KEY_P1POISON, 0);
         p2poison = preferences.getInt(KEY_P2POISON, 0);
+        p3poison = preferences.getInt(KEY_P3POISON, 0);
+        p4poison = preferences.getInt(KEY_P4POISON, 0);
         p1log = preferences.getString(KEY_P1LOG, "20");
         p2log = preferences.getString(KEY_P2LOG, "20");
+        p3log = preferences.getString(KEY_P3LOG, "20");
+        p4log = preferences.getString(KEY_P4LOG, "20");
         language = preferences.getString(KEY_LANGUAGE, ENGLISH);
         showAnnotations = preferences.getBoolean(KEY_ANNOTATION, true);
         downloadNews = preferences.getBoolean(KEY_DOWNLOADNEWS, true);
@@ -208,7 +232,6 @@ public class Repository {
     }
 
     public static synchronized void loadDatabase(Context context) {
-        Log.d("loaded", databaseLoaded+"");
         if (!databaseLoaded) {
             cards = Read.loadCardDatabase(context);
             sets = Read.loadSets(context);
@@ -237,7 +260,7 @@ public class Repository {
 
     //Yes, I know I can change localice and have a strings.xml for each language
     public static String StringMap(int index) {
-        String result = "ERROR";
+        String result = "";
         switch (language) {
             case ENGLISH:
                 switch (index) {
@@ -751,6 +774,16 @@ public class Repository {
                         break;
                 }
                 break;
+            default:
+                if(index == 37)
+                {
+                    result = "Select language";
+                }
+                else
+                {
+                    result = "---";
+                }
+            break;
         }
         return result;
     }
