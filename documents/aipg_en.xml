@@ -662,6 +662,7 @@
             <annotation text="If sideboard cards are wrong or inaccurate, a penalty may be merited due to the potential for advantage. Conversely, losing sideboard cards cannot provide an advantage – in fact, it is a disadvantage – so we do not need to add insult to injury by applying a penalty as well. Players can’t spend unreasonable amounts of time searching for replacement sideboard cards, but “found” sideboard cards after this measure has been implemented may be added back into the deck."></annotation>
             <annotation text="Note that often times in limited events, players trade, throw away, or file in with the rest of their collections all cards from their pool that are not in their main deck. This behavior should not be penalized but rather handled by the above instructions."></annotation>
             <point text="The discovery of a card that violates a companion restriction is a Deck Problem if the player does not wish to modify their decklist to accommodate the companion restriction."></point>
+			<annotation text="If the player wish to modify their decklist, it's Decklist Problem, as always as you have to modify the list"></annotation>
 			<title text="Examples"></title>
             <example text="- A. A player has 59 cards in their deck, but 60 listed on their decklist."></example>
             <example text="- B. A player has a Pacifism in their deck from a previous opponent."></example>

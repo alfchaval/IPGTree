@@ -662,7 +662,7 @@
             <annotation text="Si las cartas del banquillo están equivocadas o son imprecisas, esto amerita una infracción por la potencial ventaja que puede dar. En contraposición, perder cartas del banquillo no provee ventaja alguna, sino más bien una desventaja, por lo que no debemos agravar la falta aplicando una penalización. Los jugadores no deben desperdiciar demasiado tiempo buscando reemplazos para las cartas, pero cartas del banquillo “encontradas” después de anotar el faltante pueden ser agregadas nuevamente al mazo."></annotation>
             <annotation text="Debe notarse que en torneos de formato Limitado, los jugadores cambian, botan o guardan todas las cartas que no fueron usadas en su mazo. Este comportamiento no debe ser penalizado, sino tratado con las instrucciones mencionadas anteriormente."></annotation>
             <point text="El descubrimiento de una carta que viola una restricción de compañero es un Problema de mazo si el jugador no desea modificar la lista de mazo para acomodar la restricción del compañero."></point>
-			<annotation text="Si el jugador desea modificar la lista de mazo, entonces es Problema de lista de mazo, como siempre que se modifica la lista por alguna razón"></point>
+			<annotation text="Si el jugador desea modificar la lista de mazo, entonces es Problema de lista de mazo, como siempre que se modifica la lista por alguna razón"></annotation>
 			<title text="Ejemplos"></title>
             <example text="- A. Un jugador tiene 59 cartas en su mazo, pero 60 anotadas en su lista de mazo."></example>
             <example text="- B. Un jugador tiene un Pacifismo en su mazo de un oponente anterior."></example>
