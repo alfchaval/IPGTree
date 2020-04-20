@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Annotated Magic Tournament Rules">
-    <point text="Updated: 26-01-2020"></point>
+    <point text="Updated: 17-04-2020"></point>
 	<point text="Introduction">
 		<point text="The DCI is a worldwide organization dedicated to organized play. It promotes, enforces, and develops rules and policies using the goals and philosophies defined in this document, the Magic: The Gathering Infraction Procedure Guide, and the Judging at Regular Rules Enforcement Level document. It constantly reviews these rules and policies to ensure its goals are met."></point>
 		<point text="There are two types of sanctioned Magic tournament: rated and casual. Rated tournaments offer Planeswalker Points for each win, draw, or bye a player earns. Casual tournaments offer a single Planeswalker Point for participation."></point>
@@ -499,7 +499,8 @@
         </point>
         <point text="3.7 New Releases">
             <point text="Newly released card sets become tournament legal for sanctioned, rated tournaments on the following dates:"></point>
-            <point text="• Theros Beyond Death™ January 24, 2020"></point>
+            <point text="• Ikoria: Lair of Behemoths™ April 17, 2020 (Japan, Korea, China, Taiwan, and Hong Kong)"></point>
+			<point text="• Ikoria: Lair of Behemoths™ May 15, 2020 (all other countries)"></point>
             <annotation text="Cards from Prerelease tournaments, spoiler cards, and cards stolen from Wizards of the Coast headquarters in grand heists are not legal for use in tournaments until the set they are from is officially released. This list is constantly updating, and we’d be surprised if the MTR is the first place you go to look for these dates."></annotation>
             <point text="For official Prerelease tournaments only, new sets are legal for use before the official format legal date. In these cases, any announced rules updates shall be in effect at these tournaments, including informal explanations of new rules and mechanics. Judges may apply additional rules that they believe will be updated."></point>
             <annotation text="This is the one obvious exception. Prerelease tournaments are treated as though the set was already released. Any changes to the rule, whether big or small, are in effect at the Prerelease tournament even though they aren’t officially brought into effect until the release of the set."></annotation>
@@ -846,6 +847,7 @@
             <point text="• War of the Spark"></point>
             <point text="• Core Set 2020"></point>
 			<point text="• Throne of Eldraine"></point>
+			<point text="• Ikoria: Lair of Behemoths"></point>
             <point text="Cards from Core 2020 Welcome Decks, Spellslinger Starter Kits, and Theme boosters have a Core 2020 expansion symbol and are considered part of the Core 2020 expansion. All cards in Core 2020 Welcome Decks are legal for play in the Standard format and rotate out of the Standard format at the same time as Core 2020."></point>
 			<point text="Cards from Throne of Eldraine Brawl Decks have a Throne of Eldraine expansion symbol and are considered part of the Throne of Eldraine expansion. All cards in Throne of Eldraine Brawl Decks are legal for play in the Standard format and rotate out of the Standard format at the same time as Throne of Eldraine."></point>
             <point text="Planeswalker Decks contain cards that, while not appearing in expansion Booster Packs, are considered part of the expansion released concurrent with those Planeswalker Decks. These cards have the same expansion symbol as cards from that expansion, are legal for play in the Standard format, and rotate out of the Standard format at the same time as the expansion."></point>
@@ -926,6 +928,7 @@
 			<point text="• Modern Horizons"></point>
 			<point text="• Core Set 2020"></point>
 			<point text="• Throne of Eldraine"></point>
+			<point text="• Ikoria: Lair of Behemoths"></point>
 			<point text="The following cards are banned in Modern tournaments:"></point>
             <point text="• Ancient Den"></point>
 			<point text="• Birthing Pod"></point>
@@ -1084,12 +1087,61 @@
 			<point text="• Tinker"></point>
 			<point text="• Tolarian Academy"></point>
 			<point text="• Treasure Cruise"></point>
+			<point text="• Underworld Breach"></point>
 			<point text="• Vampiric Tutor"></point>
 			<point text="• Wheel of Fortune"></point>
 			<point text="• Windfall"></point>
 			<point text="• Wrenn and Six"></point>
 			<point text="• Yawgmoth’s Bargain"></point>
 			<point text="• Yawgmoth’s Will"></point>
+        </point>
+		<point text="6.7 Pioneer Format Deck Construction">
+			<point text="The following card sets are permitted in Pioneer tournaments:"></point>
+			<point text="• Return to Ravnica"></point>
+			<point text="• Gatecrash"></point>
+			<point text="• Dragon’s Maze"></point>
+			<point text="• Magic 2014 core set"></point>
+			<point text="• Theros"></point>
+			<point text="• Born of the Gods"></point>
+			<point text="• Journey Into Nyx"></point>
+			<point text="• Magic 2015 core set"></point>
+			<point text="• Khans of Tarkir"></point>
+			<point text="• Fate Reforged"></point>
+			<point text="• Dragons of Tarkir"></point>
+			<point text="• Magic Origins"></point>
+			<point text="• Battle for Zendikar"></point>
+			<point text="• Oath of the Gatewatch"></point>
+			<point text="• Shadows over Innistrad"></point>
+			<point text="• Eldritch Moon"></point>
+			<point text="• Kaladesh"></point>
+			<point text="• Aether Revolt"></point>
+			<point text="• Amonkhet"></point>
+			<point text="• Hour of Devastation"></point>
+			<point text="• Ixalan"></point>
+			<point text="• Rivals of Ixalan"></point>
+			<point text="• Dominaria"></point>
+			<point text="• Core 2019"></point>
+			<point text="• Guilds of Ravnica"></point>
+			<point text="• Ravnica Allegiance"></point>
+			<point text="• War of the Spark"></point>
+			<point text="• Core Set 2020"></point>
+			<point text="• Throne of Eldraine"></point>
+			<point text="• Ikoria: Lair of Behemoths"></point>
+			<point text="The following cards are banned in Pioneer tournaments:"></point>
+			<point text="• Bloodstained Mire"></point>
+			<point text="• Felidar Guardian"></point>
+			<point text="• Field of the Dead"></point>
+			<point text="• Flooded Strand"></point>
+			<point text="• Leyline of Abundance"></point>
+			<point text="• Nexus of Fate"></point>
+			<point text="• Oath of Nissa"></point>
+			<point text="• Oko, Thief of Crowns"></point>
+			<point text="• Once Upon a Time"></point>
+			<point text="• Polluted Delta"></point>
+			<point text="• Smuggler’s Copter"></point>
+			<point text="• Veil of Summer"></point>
+			<point text="• Windswept Heath"></point>
+			<point text="• Wooded Foothills"></point>
         </point>
     </point>
     <point text="7. Limited Tournament Rules">

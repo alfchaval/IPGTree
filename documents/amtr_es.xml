@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Reglas de torneo anotadas">
-    <point text="Actualizado: 26-01-2020"></point>
+    <point text="Actualizado: 17-04-2020"></point>
 	<point text="Introducción">
 		<point text="La DCI es una organización mundial dedicada al juego organizado. Promociona, desarrolla y hace cumplir reglas y políticas usando los objetivos y filosofías definidos en este documento, en la Guía de procedimientos de infracciones de Magic: The Gathering y el documento Juzgando a Nivel de Imposición de Reglas Normal. Constantemente revisa estas reglas y políticas para asegurarse de cumplir sus objetivos."></point>
 		<point text="Hay dos tipos de torneos de Magic sancionados: casuales y oficiales. Los torneos oficiales ofrecen Puntos Planeswalker por cada victoria, empate o ronda libre que obtenga un jugador. Los torneos casuales ofrecen un único Punto Planeswalker por participar."></point>
@@ -499,7 +499,8 @@
         </point>
         <point text="3.7 Nuevos lanzamientos">
             <point text="Las colecciones de cartas lanzadas son legales en torneos oficiales sancionados en las siguientes fechas:"></point>
-            <point text="• Theros Más Allá De La Muerte, 24 de enero de 2020"></point>
+			<point text="• Ikoria: Mundo de Behemoths™ 17 de abril de 2020 (Japón, Korea, China, Taiwan y Hong Kong)"></point>
+			<point text="• Ikoria: Lair of Behemoths™ 15 de mayo de 2020 (todos los otros países)"></point>
             <annotation text="Las cartas de torneos de presentación, de spoiler y cartas robadas a Wizards of the Coast no son legales para su uso en torneos hasta que la colección en el que vienen sea lanzada oficialmente. Esta lista está constantemente actualizándose, y nos sorprenderemos si las MTR son el primer lugar en el que revisas las fechas."></annotation>
             <point text="Solo para los torneos presentación oficiales, las nuevas colecciones son legales para su uso antes de la fecha oficial para el formato. En estos casos, cualquier actualización de reglas anunciada estará en efecto en esos incluyendo explicaciones informales de nuevas reglas y mecánicas. Los jueces pueden aplicar reglas adicionales que creen han sido actualizadas."></point>
             <annotation text="Esta la única excepción. Los torneos de presentación son tratados como si la edición ya hubiera sido lanzada. Cualquier cambio a las reglas, ya sea grande o pequeño, entra en efecto en el torneo de presentación a pesar de que no haya sido puesto en efecto hasta el lanzamiento de la edición."></annotation>
@@ -846,6 +847,7 @@
             <point text="• La guerra de la chispa"></point>
             <point text="• Colección básica 2020"></point>
 			<point text="• Trono de Eldraine"></point>
+			<point text="• Ikoria: Lair of Behemoths"></point>
 			<point text="Las cartas de los mazos de Brawl de Trono de Eldraine tienen el símbolo de colección de Trono de Eldraine y se consideran parte de la colección de Trono de Eldraine. Todas las cartas de los mazos de Brawl de Trono de Eldraine son legales en el formato Estándar y rotan fuera de Estándar en el mismo momento que Trono de Eldraine."></point>
             <point text="Las cartas de los mazos de bienvenida de la Colección básica 2020 tienen el símbolo de expansión de la Colección básica 2020 y se consideran parte de la Colección básica 2020. Todas las cartas en los mazos de bienvenida de la Colección básica 2020 son legales para jugar en formato Estándar y rotan fuera del formato Estándar al mismo tiempo que la Colección básica 2020."></point>
             <point text="Los mazos de Planeswalker contienen diez (10) cartas que, aunque no aparecen en los sobres de la expansión, se consideran parte de la expansión lanzada al mismo tiempo que los mazos de Planeswalker. Estas cartas tienen el mismo símbolo de expansión que las cartas de esa expansión, y son legales para jugar en el formato Estándar, y rotan fuera del formato Estándar al mismo tiempo que la expansión."></point>
@@ -926,6 +928,7 @@
             <point text="• Horizontes de Modern"></point>
             <point text="• Colección básica 2020"></point>
 			<point text="• Trono de Eldraine"></point>
+			<point text="• Ikoria: Lair of Behemoths"></point>
             <point text="Las siguientes cartas están prohibidas en torneos Modern:"></point>
             <point text="• Guarida antigua"></point>
             <point text="• Vaina de nacimiento"></point>
@@ -1084,12 +1087,61 @@
             <point text="• Hojalatera"></point>
             <point text="• Academia tolariana"></point>
             <point text="• Crucero del tesoro"></point>
+			<point text="• Brecha al Inframundo"></point>
             <point text="• Tutor vampírico"></point>
             <point text="• Rueda de la fortuna"></point>
             <point text="• Ganga"></point>
 			<point text="• Wrenn y Seis"></point>
             <point text="• Oferta de Yawgmoth"></point>
             <point text="• Voluntad de Yawgmoth"></point>
+        </point>
+		<point text="6.7 Construcción de Mazos en Formato Pioneer">
+			<point text="Las siguientes colecciones de cartas están permitidas en torneos Pioneer:"></point>
+			<point text="• Regreso a Rávnica"></point>
+            <point text="• Intrusión"></point>
+            <point text="• Laberinto del Dragón"></point>
+            <point text="• Colección básica Magic 2014"></point>
+            <point text="• Theros"></point>
+            <point text="• Nacidos de los dioses"></point>
+            <point text="• Travesía hacia Nyx"></point>
+            <point text="• Colección básica Magic 2015"></point>
+            <point text="• Kans de Tarkir"></point>
+            <point text="• Destino reescrito"></point>
+            <point text="• Dragones de Tarkir"></point>
+            <point text="• Magic Orígenes"></point>
+            <point text="• La batalla por Zendikar"></point>
+            <point text="• El juramento de los Guardianes"></point>
+            <point text="• Sombras sobre Innistrad"></point>
+            <point text="• Luna de horrores"></point>
+            <point text="• Kaladesh"></point>
+            <point text="• La revuelta del éter"></point>
+            <point text="• Amonkhet"></point>
+            <point text="• La hora de la devastación"></point>
+            <point text="• Ixalan"></point>
+            <point text="• Rivales de Ixalan"></point>
+            <point text="• Dominaria"></point>
+            <point text="• Colección básica Magic 2019"></point>
+            <point text="• Gremios de Rávnica"></point>
+            <point text="• La lealtad de Rávnica"></point>
+            <point text="• La guerra de la chispa"></point>
+            <point text="• Colección básica 2020"></point>
+			<point text="• Trono de Eldraine"></point>
+			<point text="• Ikoria: Lair of Behemoths"></point>
+			<point text="Las siguientes cartas están prohibidas en torneos Pioneer:"></point>
+			<point text="• Cenagal ensangrentado"></point>
+			<point text="• Felidar guardián"></point>
+			<point text="• Cañón de los muertos"></point>
+			<point text="• Playa anegada"></point>
+			<point text="• Línea mística de la abundancia"></point>
+			<point text="• Nexo del destino"></point>
+			<point text="• Juramento de Nissa"></point>
+			<point text="• Oko, Ladrón de Coronas"></point>
+			<point text="• Había una vez"></point>
+			<point text="• Delta contaminado"></point>
+			<point text="• Cóptero de contrabandista"></point>
+			<point text="• Velo del verano"></point>
+			<point text="• Brezal azotado por el viento"></point>
+			<point text="• Estribaciones boscosas"></point>
         </point>
     </point>
     <point text="7. Reglas de torneos Limitados">
