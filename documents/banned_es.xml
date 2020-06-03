@@ -3,7 +3,9 @@
     <point text="Standard">
         <point text="Actualizado: 18-11-2019"></point>
         <title text="Baneadas"></title>
+            <point text="Agent of Treachery"></point>
             <point text="Field of the Dead"></point>
+			<point text="Fires of Invention"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Veil of Summer"></point>
@@ -95,7 +97,7 @@
             <point text="Hermit Druid"></point>
             <point text="Imperial Seal"></point>
             <point text="Library of Alexandria"></point>
-			<point text="Lurrus of the Dream-Den"></point>
+			<point text="Lurrus of the Dream Den"></point>
             <point text="Mana Crypt"></point>
             <point text="Mana Drain"></point>
             <point text="Mana Vault"></point>
@@ -140,7 +142,7 @@
             <point text="Las 9 cartas que hacen referencia a apuestas"></point>
             <point text="Chaos Orb"></point>
             <point text="Falling Star"></point>
-			<point text="Lurrus of the Dream-Den"></point>
+			<point text="Lurrus of the Dream Den"></point>
             <point text="Shahrazad"></point>
         <title text="Restringidas"></title>
             <point text="Ancestral Recall"></point>
@@ -522,6 +524,8 @@
 			<point text="Once Upon a Time"></point>
 			<point text="Veil of Summer"></point>
 		<title text="Suspendidas"></title>
+			<point text="Agent of Treachery"></point>
+			<point text="Fires of Invention"></point>
     </point>
 	<point text="2HG">
         <point text="Actualizado: ???"></point>

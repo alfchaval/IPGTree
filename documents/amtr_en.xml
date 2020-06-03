@@ -854,7 +854,9 @@
             <point text="“Buy-a-Box” promotional cards, while not appearing in expansion Booster Packs, are considered part of the expansion released concurrent with those promotional cards. These cards have the same expansion symbol as cards from that expansion, are legal for play in the Standard format, and rotate out of the Standard format at the same time as the expansion."></point>
             <annotation text="While cards in a Welcome Deck may not be opened in booster packs, they are still currently legal in standard.  Take extra care when verifying legality of cards such as these!"></annotation>
             <point text="When Snow-Covered Lands are not legal in Standard, they are treated as the equivalent basic lands. Players must replace them when discovered, but no infraction is committed."></point>
-            <point text="• Field of the Dead"></point>
+            <point text="• Agent of Treachery"></point>
+			<point text="• Field of the Dead"></point>
+			<point text="• Fires of Invention"></point>
 			<point text="• Oko, Thief of Crowns"></point>
 			<point text="• Once Upon a Time"></point>
 			<point text="• Veil of Summer"></point>
@@ -998,6 +1000,7 @@
 			<point text="• Lion’s Eye Diamond"></point>
 			<point text="• Lodestone Golem"></point>
 			<point text="• Lotus Petal"></point>
+			<point text="• Lurrus of the Dream Den"></point>
 			<point text="• Mana Crypt"></point>
 			<point text="• Mana Vault"></point>
 			<point text="• Memory Jar"></point>
@@ -1059,6 +1062,7 @@
 			<point text="• Hermit Druid"></point>
 			<point text="• Imperial Seal"></point>
 			<point text="• Library of Alexandria"></point>
+			<point text="• Lurrus of the Dream Den"></point>
 			<point text="• Mana Crypt"></point>
 			<point text="• Mana Drain"></point>
 			<point text="• Mana Vault"></point>
@@ -1094,6 +1098,7 @@
 			<point text="• Wrenn and Six"></point>
 			<point text="• Yawgmoth’s Bargain"></point>
 			<point text="• Yawgmoth’s Will"></point>
+			<point text="• Zirda, the Dawnwaker"></point>
         </point>
 		<point text="6.7 Pioneer Format Deck Construction">
 			<point text="The following card sets are permitted in Pioneer tournaments:"></point>
