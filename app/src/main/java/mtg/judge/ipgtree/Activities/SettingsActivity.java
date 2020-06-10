@@ -552,6 +552,8 @@ public class SettingsActivity extends AppCompatActivity {
             ArrayList<String> documents = new ArrayList<String>();
             documents.add(preferences.getString(Repository.KEY_AIPG_EN, Repository.URL_AIPG_EN));
             documents.add(preferences.getString(Repository.KEY_AMTR_EN, Repository.URL_AMTR_EN));
+            documents.add(preferences.getString(Repository.KEY_ADIPG_EN, Repository.URL_ADIPG_EN));
+            documents.add(preferences.getString(Repository.KEY_ADMTR_EN, Repository.URL_ADMTR_EN));
             documents.add(preferences.getString(Repository.KEY_BANNED_EN, Repository.URL_BANNED_EN));
             documents.add(preferences.getString(Repository.KEY_CR_EN, Repository.URL_CR_EN));
             documents.add(preferences.getString(Repository.KEY_DQ_EN, Repository.URL_DQ_EN));
@@ -563,6 +565,8 @@ public class SettingsActivity extends AppCompatActivity {
 
             documents.add(preferences.getString(Repository.KEY_AIPG_ES, Repository.URL_AIPG_ES));
             documents.add(preferences.getString(Repository.KEY_AMTR_ES, Repository.URL_AMTR_ES));
+            documents.add(preferences.getString(Repository.KEY_ADIPG_ES, Repository.URL_ADIPG_ES));
+            documents.add(preferences.getString(Repository.KEY_ADMTR_ES, Repository.URL_ADMTR_ES));
             documents.add(preferences.getString(Repository.KEY_BANNED_ES, Repository.URL_BANNED_ES));
             documents.add(preferences.getString(Repository.KEY_CR_ES, Repository.URL_CR_ES));
             documents.add(preferences.getString(Repository.KEY_DQ_ES, Repository.URL_DQ_ES));
@@ -598,7 +602,7 @@ public class SettingsActivity extends AppCompatActivity {
                         output.flush();
                         output.close();
                         input.close();
-                        percent += 5;
+                        percent += 4;
                         publishProgress(percent + "");
                     }
                     catch (Exception e) {

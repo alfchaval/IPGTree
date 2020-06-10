@@ -6,5 +6,7 @@
     <string name="activity_documents_menu_jar">JAR</string>
     <string name="activity_documents_menu_aipg">AIPG</string>
     <string name="activity_documents_menu_amtr">AMTR</string>
+    <string name="activity_documents_menu_adipg">MDIPG</string>
+    <string name="activity_documents_menu_admtr">MDMTR</string>
     <string name="activity_loading">Loading</string>
 </resources>

@@ -26,7 +26,7 @@ import mtg.judge.ipgtree.Utilities.Repository;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_news_alert;
+    private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_10, btn_news_alert;
 
     private boolean documentsMenu = false;
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         btn_7 = findViewById(R.id.btn_7);
         btn_8 = findViewById(R.id.btn_8);
         btn_9 = findViewById(R.id.btn_9);
+        btn_10 = findViewById(R.id.btn_10);
         btn_news_alert = findViewById(R.id.btn_news_alert);
     }
 
@@ -71,11 +72,13 @@ public class MainActivity extends AppCompatActivity {
             btn_2.setText(getString(R.string.activity_documents_menu_jar));
             btn_3.setText(getString(R.string.activity_documents_menu_aipg));
             btn_4.setText(getString(R.string.activity_documents_menu_amtr));
-            btn_5.setText(Repository.StringMap(5));
-            btn_6.setText(Repository.StringMap(4));
-            btn_7.setText(Repository.StringMap(75));
-            btn_8.setText(Repository.StringMap(6));
-            btn_9.setVisibility(View.GONE);
+            btn_5.setText(getString(R.string.activity_documents_menu_adipg));
+            btn_6.setText(getString(R.string.activity_documents_menu_admtr));
+            btn_7.setText(Repository.StringMap(5));
+            btn_8.setText(Repository.StringMap(4));
+            btn_9.setText(Repository.StringMap(75));
+            btn_10.setText(Repository.StringMap(6));
+            btn_10.setVisibility(View.VISIBLE);
         }
         else {
             btn_1.setText(Repository.StringMap(31));
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             btn_7.setText(Repository.StringMap(38));
             btn_8.setText(Repository.StringMap(35));
             btn_9.setText(Repository.StringMap(37));
-            btn_9.setVisibility(View.VISIBLE);
+            btn_10.setVisibility(View.GONE);
         }
         btn_news_alert.setVisibility(View.GONE);
     }
@@ -147,6 +150,12 @@ public class MainActivity extends AppCompatActivity {
                 move(9);
             }
         });
+        btn_10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                move(10);
+            }
+        });
         btn_news_alert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,17 +192,25 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 5:
                     intent = new Intent(MainActivity.this, DocumentActivity.class);
-                    intent.putExtra("document", "dq");
+                    intent.putExtra("document", "adipg");
                     break;
                 case 6:
                     intent = new Intent(MainActivity.this, DocumentActivity.class);
-                    intent.putExtra("document", "banned");
+                    intent.putExtra("document", "admtr");
                     break;
                 case 7:
                     intent = new Intent(MainActivity.this, DocumentActivity.class);
-                    intent.putExtra("document", "hja");
+                    intent.putExtra("document", "dq");
                     break;
                 case 8:
+                    intent = new Intent(MainActivity.this, DocumentActivity.class);
+                    intent.putExtra("document", "banned");
+                    break;
+                case 9:
+                    intent = new Intent(MainActivity.this, DocumentActivity.class);
+                    intent.putExtra("document", "hja");
+                    break;
+                case 10:
                     intent = new Intent(MainActivity.this, DocumentActivity.class);
                     intent.putExtra("document", "links");
                     break;
@@ -204,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     documentsMenu = true;
                     loadStrings();
-
                     break;
                 case 2:
                     if(Repository.databaseLoaded) {
@@ -252,6 +268,7 @@ public class MainActivity extends AppCompatActivity {
         btn_7.setEnabled(state);
         btn_8.setEnabled(state);
         btn_9.setEnabled(state);
+        btn_10.setEnabled(state);
     }
 
     @Override

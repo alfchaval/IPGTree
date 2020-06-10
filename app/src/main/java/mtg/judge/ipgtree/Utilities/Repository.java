@@ -29,6 +29,8 @@ public class Repository {
 
     public static final String URL_AIPG_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_en.xml";
     public static final String URL_AMTR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_en.xml";
+    public static final String URL_ADIPG_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/adipg_en.xml";
+    public static final String URL_ADMTR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/admtr_en.xml";
     public static final String URL_BANNED_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_en.xml";
     public static final String URL_CR_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/cr_en.xml";
     public static final String URL_DQ_EN = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/dq_en.xml";
@@ -40,6 +42,8 @@ public class Repository {
 
     public static final String URL_AIPG_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_es.xml";
     public static final String URL_AMTR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_es.xml";
+    public static final String URL_ADIPG_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/adipg_es.xml";
+    public static final String URL_ADMTR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/admtr_es.xml";
     public static final String URL_BANNED_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_es.xml";
     public static final String URL_CR_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/cr_es.xml";
     public static final String URL_DQ_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/dq_es.xml";
@@ -123,6 +127,8 @@ public class Repository {
 
     public static final String KEY_AIPG_EN = "key_aipg_en";
     public static final String KEY_AMTR_EN = "key_amtr_en";
+    public static final String KEY_ADIPG_EN = "key_adipg_en";
+    public static final String KEY_ADMTR_EN = "key_admtr_en";
     public static final String KEY_BANNED_EN = "key_banned_en";
     public static final String KEY_CR_EN = "key_cr_en";
     public static final String KEY_DQ_EN = "key_dq_en";
@@ -134,6 +140,8 @@ public class Repository {
 
     public static final String KEY_AIPG_ES = "key_aipg_es";
     public static final String KEY_AMTR_ES = "key_amtr_es";
+    public static final String KEY_ADIPG_ES = "key_adipg_es";
+    public static final String KEY_ADMTR_ES = "key_admtr_es";
     public static final String KEY_BANNED_ES = "key_banned_es";
     public static final String KEY_CR_ES = "key_cr_s";
     public static final String KEY_DQ_ES = "key_dq_es";
