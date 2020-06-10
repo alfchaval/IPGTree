@@ -1,2 +1,2 @@
-20200223
-23-02-2020 update available, you can download it in the link in Settings menu. Details: basically improvements in application performance, also the splash screen has been removed because it's no longer necessary
+20200610
+10-06-2020 update available, you can download it in the link in Settings menu. Details: added support for two new documents

@@ -20,7 +20,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    public static final int appVersion = 20200223;
+    public static final int appVersion = 20200610;
     public static int lastNews;
 
     //URLs
