@@ -47,7 +47,13 @@ public class Card {
             text += this.manaCost;
         }
         text += "\n\n";
-        //TODO indicador de color
+        if(colorIndicator != null) {
+            text += "Color indicator: ";
+            for (String s: colorIndicator) {
+                text += s;
+            }
+            text += "\n\n";
+        }
         if(this.type != null) {
             text += this.type + "\n\n";
         }

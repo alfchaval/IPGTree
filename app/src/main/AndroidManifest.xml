@@ -49,8 +49,12 @@
             android:screenOrientation="nosensor"
             />
         <activity
-            android:name="mtg.judge.ipgtree.Activities.LifeActivity"
+            android:name="mtg.judge.ipgtree.Activities.Life2Activity"
             android:screenOrientation="nosensor"
+            />
+        <activity
+            android:name="mtg.judge.ipgtree.Activities.Life4Activity"
+            android:screenOrientation="landscape"
             />
         <activity
             android:name="mtg.judge.ipgtree.Activities.SettingsActivity"

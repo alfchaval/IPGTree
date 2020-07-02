@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Guía anotada de procedimientos e infracciones">
-    <point text="Actualizado: 17-04-2020"></point>
+    <point text="Actualizado: 03-07-2020"></point>
 	<point text="Introducción y marco del documento">
 		<title text="Introducción"></title>
 		<point text="La Guía de procedimientos de infracciones de Magic da a los jueces las penalizaciones y procedimientos adecuados para manejar violaciones de reglas que ocurren durante un torneo realizado a Nivel de Imposición de Reglas (NIR) Competitivo o Profesional, así como la filosofía que respalda su implementación. Existe para proteger a los jugadores de potenciales abusos y para proteger la integridad del mismo torneo. Las violaciones de reglas normalmente requieren de una penalización o no se puede hacer que se cumplan. Los torneos organizados a NIR Normal usan el documento Juzgando en NIR Normal."></point>
@@ -662,7 +662,7 @@
             <annotation text="Si las cartas del banquillo están equivocadas o son imprecisas, esto amerita una infracción por la potencial ventaja que puede dar. En contraposición, perder cartas del banquillo no provee ventaja alguna, sino más bien una desventaja, por lo que no debemos agravar la falta aplicando una penalización. Los jugadores no deben desperdiciar demasiado tiempo buscando reemplazos para las cartas, pero cartas del banquillo “encontradas” después de anotar el faltante pueden ser agregadas nuevamente al mazo."></annotation>
             <annotation text="Debe notarse que en torneos de formato Limitado, los jugadores cambian, botan o guardan todas las cartas que no fueron usadas en su mazo. Este comportamiento no debe ser penalizado, sino tratado con las instrucciones mencionadas anteriormente."></annotation>
             <point text="El descubrimiento de una carta que viola una restricción de compañero es un Problema de mazo si el jugador no desea modificar la lista de mazo para acomodar la restricción del compañero."></point>
-			<annotation text="Si el jugador desea modificar la lista de mazo, entonces es Problema de lista de mazo, como siempre que se modifica la lista por alguna razón"></annotation>
+			<annotation text="Si el jugador desea modificar la lista de mazo, entonces es Problema de lista de mazo, como siempre que se modifica la lista por alguna razón."></annotation>
 			<title text="Ejemplos"></title>
             <example text="- A. Un jugador tiene 59 cartas en su mazo, pero 60 anotadas en su lista de mazo."></example>
             <example text="- B. Un jugador tiene un Pacifismo en su mazo de un oponente anterior."></example>

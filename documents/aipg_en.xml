@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Annotated Infraction Procedure Guide">
-    <point text="Updated: 17-04-2020"></point>
+    <point text="Updated: 03-07-2020"></point>
 	<point text="Introduction and Framework of this document">
-	<title text="Introduction"></title>
+		<title text="Introduction"></title>
 		<point text="The Magic™ Infraction Procedure Guide provides judges the appropriate penalties and procedures to handle rules violations that occur during a tournament held at Competitive or Professional Rules Enforcement Level (REL), as well as the underlying philosophy that guides their implementation. It exists to protect players from potential misconduct and to protect the integrity of the tournament itself. Rules violations usually require a penalty or they are unenforceable. Tournaments run at Regular REL use the Judging at Regular REL document."></point>
 		<title text="Framework of this document"></title>
 		<point text="This document is divided into two major parts: General Definitions and Philosophy (section 1), and Infractions (sections 2-4). Infractions are broken down into general classes (Game Play Errors, Tournament Errors, and Unsporting Conduct), and further into subclasses for specific infractions."></point>
 		<point text="See the Magic Tournament Rules for further definitions of terms in this document."></point>
 		<point text="This document is published in multiple languages. If a discrepancy exists between the English version and a non-English version of this document, tournament participants must refer to the English version to settle disputes concerning interpretations of the Infraction Procedure Guide."></point>
 		<point text="This document is updated periodically. Please obtain the most current version at"></point>
-		<link text="http://www.wizards.com/wpn/Events/Rules.aspx."></link>
+		 
 		<title text="Annotated IPG"></title>
 		<point text="The Annotated IPG is a line by line deconstruction of each sentence in the IPG. The IPG is a very dense document with very few extraneous words. Each sentence has meaning, and it’s the AIPG’s goal to call attention to the finer details hidden in those sentences. It can be used as a study guide for L2, a refresher for judges coming back, or to settle judge nerd-fights, but its primary focus is education"></point>
 		<annotation text="Annotated IPG content appears in blue panels like this. Notice that this project has been discontinued and annotations may be obsolete or wrong, I will erase them as I find errors."></annotation>
@@ -662,7 +662,7 @@
             <annotation text="If sideboard cards are wrong or inaccurate, a penalty may be merited due to the potential for advantage. Conversely, losing sideboard cards cannot provide an advantage – in fact, it is a disadvantage – so we do not need to add insult to injury by applying a penalty as well. Players can’t spend unreasonable amounts of time searching for replacement sideboard cards, but “found” sideboard cards after this measure has been implemented may be added back into the deck."></annotation>
             <annotation text="Note that often times in limited events, players trade, throw away, or file in with the rest of their collections all cards from their pool that are not in their main deck. This behavior should not be penalized but rather handled by the above instructions."></annotation>
             <point text="The discovery of a card that violates a companion restriction is a Deck Problem if the player does not wish to modify their decklist to accommodate the companion restriction."></point>
-			<annotation text="If the player wish to modify their decklist, it's Decklist Problem, as always as you have to modify the list"></annotation>
+			<annotation text="If the player wish to modify their decklist, it's Decklist Problem, as always as you have to modify the list."></annotation>
 			<title text="Examples"></title>
             <example text="- A. A player has 59 cards in their deck, but 60 listed on their decklist."></example>
             <example text="- B. A player has a Pacifism in their deck from a previous opponent."></example>

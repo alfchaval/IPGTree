@@ -95,6 +95,7 @@ public class Repository {
     //Preferences
     public static final String KEY_PREFERENCES = "key_preferences";
 
+    public static final String KEY_PLAYERS = "key_players";
     public static final String KEY_P1LIFE = "key_p1life";
     public static final String KEY_P2LIFE = "key_p2life";
     public static final String KEY_P3LIFE = "key_p3life";
@@ -163,6 +164,7 @@ public class Repository {
     public static JSONArray savedTimes = new JSONArray();
 
     //Variables vida
+    public static int players = 2;
     public static int p1life = 20;
     public static int p2life = 20;
     public static int p3life = 20;
@@ -198,6 +200,7 @@ public class Repository {
     //Load everything
     public static void createRepository(final Context context) {
         SharedPreferences preferences = context.getSharedPreferences(KEY_PREFERENCES, MODE_PRIVATE);
+        players = preferences.getInt(KEY_PLAYERS, 2);
         p1life = preferences.getInt(KEY_P1LIFE, 20);
         p2life = preferences.getInt(KEY_P2LIFE, 20);
         p3life = preferences.getInt(KEY_P3LIFE, 20);
@@ -524,6 +527,27 @@ public class Repository {
                     case 84:
                         result = "Reset timer";
                         break;
+                    case 85:
+                        result = "Comprehensive Rules";
+                        break;
+                    case 86:
+                        result = "JAR";
+                        break;
+                    case 87:
+                        result = "Annotated IPG";
+                        break;
+                    case 88:
+                        result = "Annotated MTR";
+                        break;
+                    case 89:
+                        result = "Digital IPG";
+                        break;
+                    case 90:
+                        result = "Digital MTR";
+                        break;
+                    case 91:
+                        result = "Players in life counter";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -779,6 +803,27 @@ public class Repository {
                         break;
                     case 84:
                         result = "Reiniciar temporizador";
+                        break;
+                    case 85:
+                        result = "Reglas completas";
+                        break;
+                    case 86:
+                        result = "JAR";
+                        break;
+                    case 87:
+                        result = "IPG anotadas";
+                        break;
+                    case 88:
+                        result = "MTR anotadas";
+                        break;
+                    case 89:
+                        result = "IPG digital";
+                        break;
+                    case 90:
+                        result = "MTR digital";
+                        break;
+                    case 91:
+                        result = "Jugadores en el contador de vida";
                         break;
                 }
                 break;

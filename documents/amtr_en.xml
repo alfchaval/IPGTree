@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Annotated Magic Tournament Rules">
-    <point text="Updated: 17-04-2020"></point>
+    <point text="Updated: 03-07-2020"></point>
 	<point text="Introduction">
 		<point text="The DCI is a worldwide organization dedicated to organized play. It promotes, enforces, and develops rules and policies using the goals and philosophies defined in this document, the Magic: The Gathering Infraction Procedure Guide, and the Judging at Regular Rules Enforcement Level document. It constantly reviews these rules and policies to ensure its goals are met."></point>
-		<point text="There are two types of sanctioned Magic tournament: rated and casual. Rated tournaments offer Planeswalker Points for each win, draw, or bye a player earns. Casual tournaments offer a single Planeswalker Point for participation."></point>
+		<point text="There are two types of sanctioned Magic tournament: rated and casual."></point>
 		<point text="The purpose of this document is to provide the infrastructure used to run Magic: The Gathering (“Magic”) tournaments by defining appropriate rules, responsibilities, and procedures to be followed in all DCI-sanctioned Magic tournaments. "></point>
 		<point text="DCI-sanctioned tournaments are to be run consistently regardless of their location. This ensures equal treatment of players in different regions and enables their smooth transition to international tournaments. All players are treated equally and share responsibilities according to the Rules Enforcement Level (REL) of the tournament. Both players and officials should cooperate to achieve their common goal of running a proper DCI-sanctioned tournament. Players and officials must treat each other in a fair and respectful manner, following both the rules and the spirit in which those rules were created. They are responsible for following the most current version of the Magic Tournament Rules and Magic: The Gathering Comprehensive Rules. Spectators have their own set of responsibilities. Individuals violating DCI rules are subject to penalties defined by the appropriate document for the tournament’s Rules Enforcement Level."></point>
 		<point text="Information in this document may contradict (or have information not contained in) the Comprehensive Rules. In such cases, this document takes precedence."></point>
@@ -77,7 +77,7 @@
         <point text="1.5 DCI Numbers">
             <point text="Tournament participants must provide their DCI number to the Scorekeeper during registration."></point>
             <annotation text="It is worth mentioning that just because the scorekeeping software allows someone to be entered with no trouble, that does not necessarily mean they are eligible. Wizards Event Reporter currently does not keep an active, up to date registry of the suspended players list. Judges, Tournament Organizers, and Scorekeepers are encouraged to check the list regularly to be aware of potentially suspended players in their area."></annotation>
-            <annotation text="The DCI number also helps keeps tabs on what events people play in for Planeswalker Points, and helps uniquely identify players in an event where multiple people can have the same name."></annotation>
+            <annotation text="The DCI number also helps uniquely identify players in an event where multiple people can have the same name."></annotation>
             <point text=" Players without a DCI number should obtain one from https://accounts.wizards.com/ before attending an event. If a player does not obtain a DCI number before the event, the Tournament Organizer of the event can provide one. Players are only allowed one DCI membership number, and players with multiple DCI numbers should contact Wizards of the Coast to have the information for two or more DCI numbers combined."></point>
             <annotation text="Players without a DCI number should obtain one from https://accounts.wizards.com/ before attending an event. If a player does not obtain a DCI number before the event, the Tournament Organizer of the event can provide one. Players are only allowed one DCI membership number, and players with multiple DCI numbers should contact Wizards of the Coast to have the information for two or more DCI numbers combined."></annotation>
             <annotation text="If a player ends up with more than one DCI number, they can merge memberships online. Nevertheless, players may not intentionally maintain multiple memberships (e.g., in order to play while their main number is suspended). Players are also required to use their real names, that they use in real life. Their registered names don’t have to be their full legal names; a player may register as “Mike” instead of Michael but can’t register as “Roflcopter McGee.” The registered name should be what the player identifies as their name."></annotation>
@@ -155,17 +155,16 @@
             <annotation text="Judges can’t be everywhere all the time, so players are encouraged to cooperate in maintaining a legal and clear game. Any rules and/or policy infraction should be pointed out to any judge as soon as noticed. This way we can all enjoy of a healthy and correct game! Failing to notice mistakes quickly may lead to Warnings (see IPG 2.6), and intentionally ignoring them can be much worse (see IPG 4.8)."></annotation>
             <point text="• Bringing to a judge’s attention any discrepancies in their tournament match record."></point>
             <annotation text="This is a very important responsibility. Players are required to inform a judge immediately if they are offered a bribe, or asked to record an improper game result. Failing to do so may result in a severe penalty for both the player offering and the player who did not call attention to the illegal action. Additionally, any errors that have been made in results entry should be brought to a Tournament Official’s attention as soon as they are noticed."></annotation>
-            <point text="• Informing the DCI of any discrepancies in their overall match history, rankings, or Planeswalker Points as soon as they become aware of it. If players believe there is an anomaly in their match history, ranking, or Planeswalker Points they should refer to the Magic: The Gathering Event Appeals Policy, located at:"></point>
+            <point text="• Informing the DCI of any discrepancies in their overall match history or rankings as soon as they become aware of it. If players believe there is an anomaly in their match history or ranking they should refer to the Magic: The Gathering Event Appeals Policy, located at:"></point>
             <link text="http://wpn.wizards.com/document/magic-event-appeals-policy"></link>
-			<annotation text="Sometimes the Planeswalker Points or the ranking system gets flooded with information or due to a malfunction may show the incorrect position and/or quantity of points. If this should happen, any player may report the mistake or the malfunction in order to correct it. Wizards of the Coast and the DCI are always looking forward to feedback from the community."></annotation>
+			<annotation text="Sometimes the ranking system gets flooded with information or due to a malfunction may show the incorrect position and/or quantity of points. If this should happen, any player may report the mistake or the malfunction in order to correct it. Wizards of the Coast and the DCI are always looking forward to feedback from the community."></annotation>
             <point text="• Having a single DCI membership number. Individuals holding more than one number must contact Wizards of the Coast Customer Service at http://www.wizards.com/customerservice so that their numbers can be merged."></point>
             <annotation text="The DCI membership number is a player’s identity for tournaments and organized Magic: The Gathering events. Without one, a player can’t get registered in any DCI-sanctioned event. Also, every result and every point earned will go the account linked to that membership number. That is why it’s important to have only one DCI number."></annotation>
             <point text="• Refraining from enrolling in tournaments in which they are not allowed by policy to participate."></point>
             <annotation text="Some tournaments award invitations to other events or have participation restrictions based on level, players’ invitation history, or other factors. Players are required to be aware of their eligibility and should not intentionally enter events they are ineligible for."></annotation>
             <point text="• Being familiar with the rules contained within this document."></point>
             <annotation text="Yes, judges do know how to handle rules and how to interpret them. But players are responsible for at least know something about the rules contained in the game. After all, if they don’t know how to play Magic, why would they go to a Magic tournament? Notice, this is stated in the MTR, but not in the IPG. We expect players to know and adhere to Tournament Rules, but they don’t need to know what infraction or penalties are. Some violations of the MTR, such as Bribery, Collusion, and Improperly Determining a Winner, all involve penalties that will be applied whether or not the players know the relevant rules."></annotation>
-            <point text="• Being physically present for the tournament. Players are not permitted to register for a tournament solely to collect participation Planeswalker Points."></point>
-            <annotation text="Every player must be physically present at the time of the tournament to be counted as a participant, because grinding Planeswalker Points implies playing those events in which one is registered."></annotation>
+            <point text="• Being physically present for the tournament."></point>
             <point text="A player must bring the following items to a tournament in order to participate:"></point>
             <point text="• A physical, visible, and reliable method to maintain and record game information (tokens, score counters, pen and paper, and so on)."></point>
             <annotation text="Players are responsible for maintaining a clear and legal game state. Therefore players must bring items that help keep a clear game state — e.g., pen and paper for life totals, dice for counters and actual mana pool, tokens, etc."></annotation>
@@ -224,8 +223,7 @@
             <annotation text="If the round has ended and the result is 1-1 or 1-1-1 then the match is a draw."></annotation>
             <point text="The Tournament Organizer may change the required number of games to be won for any portion of the tournament as long as this choice is announced before the tournament begins."></point>
             <annotation text="For example, the Pro Tour finals are played until one player wins three games. This is commonly known as “best of five,” though if games are drawn there can be more than 5 games. Note that this is typically not done outside of the Pro Tour or specially advertised events."></annotation>
-            <point text="Match results, not individual game results, are reported to the DCI for inclusion in Planeswalker Points."></point>
-            <annotation text="The results of the match are recorded for Planeswalker points. A win is worth 3 points, a draw is worth 1, and a loss is worth 0. Multipliers may factor in depending on the type of event. Casual tournaments you only receive participation points at, as match results are not reported. For more information check the information at the Planeswalker Points page."></annotation>
+            <point text="Match results, not individual game results, are reported to the DCI."></point>
         </point>
         <point text="2.2 Play/Draw Rule">
             <point text="For the first game of a match, a designated player - the winner of a random method (such as a die roll or coin toss) during Swiss rounds, or the player ranked higher at the end of Swiss rounds during playoff matches - chooses either to play first or to play second."></point>
@@ -327,8 +325,8 @@
             <annotation text="Players are required to be respectful to judges, which includes letting them finish their ruling before disagreeing with them. Players appealing a judge based on perception of the Judge or how they think the judge is going to rule undermines that judge’s authority, and can be considered Unsporting Conduct — Minor."></annotation>
         </point>
         <point text="2.10 Dropping from a Tournament">
-            <point text="Players may drop from a tournament at any time. If a player drops from a tournament before the first round of play has started, they are considered to have not participated in the tournament and will not be listed in the finish order nor receive participation Planeswalker Points."></point>
-            <annotation text="They are also not considered to have contributed to the attendance total for the event. This can matter for participation bonus for Planeswalker Points, for additional prize support at events like Grand Prix, and for records set at that event."></annotation>
+            <point text="Players may drop from a tournament at any time. If a player drops from a tournament before the first round of play has started, they are considered to have not participated in the tournament and will not be listed in the finish order."></point>
+            <annotation text="They are also not considered to have contributed to the attendance total for the event. This can matter for additional prize support at events like Magic Fest, and for records set at that event."></annotation>
             <point text="Players choosing to drop from a tournament must inform the Scorekeeper by the means provided for that tournament before the pairings for the next round are generated."></point>
             <annotation text="Especially at larger events, there is a flurry of activity once pairings are generated since getting players playing quickly makes everyone happy. If a player tries to drop while pairing are being posted, they are already paired for the round."></annotation>
             <point text="Players wanting to drop after the Scorekeeper begins pairing for the next round will be paired for that round."></point>
@@ -421,18 +419,8 @@
             <annotation text="MTR Section 7 covers Limited Tournament Rules, and Sealed Deck is explained more there."></annotation>
             <point text="• Booster Draft (individual and Two-Headed Giant only)"></point>
             <annotation text="MTR Sections 7.6 and 7.7 cover Draft Pod Assembly and Booster Draft Procedures, respectively. Additionally, section 9.7 covers Two-Headed Giant Booster Draft procedures."></annotation>
-            <point text="- Rochester Draft (three-person team only)"></point>
+            <point text="• Rochester Draft (three-person team only)"></point>
             <annotation text="MTR Section 8.5 covers the details on this format."></annotation>
-            <point text="Wizards of the Coast maintains the following Planeswalker Points rating categories:"></point>
-            <point text="• Lifetime"></point>
-            <annotation text="Total points accrued at all sanctioned Magic events, both Casual and Competitive."></annotation>
-            <point text="• Yearly"></point>
-            <annotation text="Points accrued during the Planeswalker Points year, measured from June-May. This does not include points from Casual events. Yearly Planeswalker Points are used to determine byes earned at Grand Prix. One bye is awarded for 1300 points, two byes for 2250 points. Achieving the threshold will earn byes for the remainder of the season, and the following season."></annotation>
-            <point text="• Professional"></point>
-            <annotation text="Pro points earned at Grand Prix, Pro Tours, World Magic Cup, and Magic World Championship."></annotation>
-            <point text="A player that is disqualified from a tournament does not receive Planeswalker Points for that tournament."></point>
-            <point text="For complete information about Planeswalker Points, visit the Planeswalker Points website at:"></point>
-			<link text="http://www.wizards.com/Magic/PlaneswalkerPoints."></link>
         </point>
         <point text="3.3 Cartas Permitidas">
             <point text="Players may use any Authorized Game Cards from Magic: The Gathering expansions, core sets, special sets, supplements, and promotional printings. Authorized Game Cards are cards that, unaltered, meet the following conditions:"></point>
@@ -499,8 +487,8 @@
         </point>
         <point text="3.7 New Releases">
             <point text="Newly released card sets become tournament legal for sanctioned, rated tournaments on the following dates:"></point>
-            <point text="• Ikoria: Lair of Behemoths™ April 17, 2020 (Japan, Korea, China, Taiwan, and Hong Kong)"></point>
-			<point text="• Ikoria: Lair of Behemoths™ May 15, 2020 (all other countries)"></point>
+            <point text="• Core Set 2021 - July 3, 2020"></point>
+			<point text="• Jumpstart - July 17, 2020 (Eternal Formats Only)"></point>
             <annotation text="Cards from Prerelease tournaments, spoiler cards, and cards stolen from Wizards of the Coast headquarters in grand heists are not legal for use in tournaments until the set they are from is officially released. This list is constantly updating, and we’d be surprised if the MTR is the first place you go to look for these dates."></annotation>
             <point text="For official Prerelease tournaments only, new sets are legal for use before the official format legal date. In these cases, any announced rules updates shall be in effect at these tournaments, including informal explanations of new rules and mechanics. Judges may apply additional rules that they believe will be updated."></point>
             <annotation text="This is the one obvious exception. Prerelease tournaments are treated as though the set was already released. Any changes to the rule, whether big or small, are in effect at the Prerelease tournament even though they aren’t officially brought into effect until the release of the set."></annotation>
@@ -781,7 +769,7 @@
             <point text="It is not bribery when players share prizes they have not yet received in the current tournament and they may agree to such before or during their match, as long as any such sharing does not occur in exchange for any game or match result or the dropping of a player from the tournament."></point>
             <point text="It is not bribery when players in the announced last round of the single-elimination portion of a tournament agree to a winner and how to divide the subsequent tournament prizes. In that case, one of the players at each table must agree to drop from the tournament. Players receive the prizes according to their final ranking."></point>
             <annotation text="Players in the Swiss rounds, for example, are allowed to split the prizes they will receive evenly. They may also agree to distributions like “the loser receives their entry back,” assuming that the prizes received will at least cover that amount."></annotation>
-            <annotation text="The rules for discussing a split change during the announced final round of a single elimination playoff. If players wish to split the prizes, players must agree who is dropping from the event in order to divide prizes the way they want. It’s not a player actually conceding the match, but rather dropping, because a “win by drop” (the option that shows on WER) does not award any Planeswalker Points."></annotation>
+            <annotation text="The rules for discussing a split change during the announced final round of a single elimination playoff. If players wish to split the prizes, players must agree who is dropping from the event in order to divide prizes the way they want. It’s not a player actually conceding the match, but rather dropping."></annotation>
             <point text="The result of a match or game may not be randomly or arbitrarily determined through any means other than the normal progress of the game in play. Examples include (but are not limited to) rolling a die, flipping a coin, arm wrestling, or playing any other game."></point>
             <annotation text="The result of a Magic game or match should be determined only by playing Magic. No other method is allowed. This often happens near the end of a round when drawing would knock both players out of playoff contention but a concession by one would allow the other to advance. Many inexperienced players do not even realize that randomly determining a winner is illegal; being proactive with Head Judge announcements and late-round vigilance can help judges avoid giving Match Losses to players who otherwise might not know about this rule. See IPG 4.3."></annotation>
             <annotation text="For example, if a judge sees two players who are about to draw without any obvious win conditions on the board, they might simply remind the players that they cannot flip a coin or make any offers to their opponents to induce a concession. The judge might also remind them that they must report the game as a draw unless one of them wins or concedes. This proactive approach provides a better player experience than waiting for a player to say something unfortunate and avoids an unpleasant outcome for everyone."></annotation>
@@ -848,6 +836,7 @@
             <point text="• Core Set 2020"></point>
 			<point text="• Throne of Eldraine"></point>
 			<point text="• Ikoria: Lair of Behemoths"></point>
+			<point text="• Core Set 2021"></point>
             <point text="Cards from Core 2020 Welcome Decks, Spellslinger Starter Kits, and Theme boosters have a Core 2020 expansion symbol and are considered part of the Core 2020 expansion. All cards in Core 2020 Welcome Decks are legal for play in the Standard format and rotate out of the Standard format at the same time as Core 2020."></point>
 			<point text="Cards from Throne of Eldraine Brawl Decks have a Throne of Eldraine expansion symbol and are considered part of the Throne of Eldraine expansion. All cards in Throne of Eldraine Brawl Decks are legal for play in the Standard format and rotate out of the Standard format at the same time as Throne of Eldraine."></point>
             <point text="Planeswalker Decks contain cards that, while not appearing in expansion Booster Packs, are considered part of the expansion released concurrent with those Planeswalker Decks. These cards have the same expansion symbol as cards from that expansion, are legal for play in the Standard format, and rotate out of the Standard format at the same time as the expansion."></point>
@@ -931,6 +920,7 @@
 			<point text="• Core Set 2020"></point>
 			<point text="• Throne of Eldraine"></point>
 			<point text="• Ikoria: Lair of Behemoths"></point>
+			<point text="• Core Set 2021"></point>
 			<point text="The following cards are banned in Modern tournaments:"></point>
             <point text="• Ancient Den"></point>
 			<point text="• Birthing Pod"></point>
@@ -977,7 +967,9 @@
             <point text="The following cards are banned in Vintage tournaments:"></point>
             <point text="• All cards with the card type “Conspiracy” (25 cards)"></point>
             <point text="• All cards that reference “playing for ante” (9 cards)"></point>
-            <point text="• Chaos Orb"></point>
+			<point text="• Cards whose art, text, name, or combination thereof that are racially or culturally offensive are banned in all formats. This list is a work in progress. Click here for the list:"></point>
+            <link text="https://magic.wizards.com/en/articles/archive/news/depictions-racism-magic-2020-06-10"></link>
+			<point text="• Chaos Orb"></point>
             <point text="• Falling Star"></point>
             <point text="• Shahrazad"></point>
             <point text="The following cards are restricted in Vintage tournaments:"></point>
@@ -1041,6 +1033,8 @@
             <point text="The following cards are banned in Legacy tournaments:"></point>
             <point text="• All cards with the card type “Conspiracy” (25 cards)"></point>
 			<point text="• All cards that reference “playing for ante” (9 cards)"></point>
+			<point text="• Cards whose art, text, name, or combination thereof that are racially or culturally offensive are banned in all formats. This list is a work in progress. Click here for the list:"></point>
+            <link text="https://magic.wizards.com/en/articles/archive/news/depictions-racism-magic-2020-06-10"></link>
 			<point text="• Ancestral Recall"></point>
 			<point text="• Balance"></point>
 			<point text="• Bazaar of Baghdad"></point>
@@ -1132,6 +1126,7 @@
 			<point text="• Core Set 2020"></point>
 			<point text="• Throne of Eldraine"></point>
 			<point text="• Ikoria: Lair of Behemoths"></point>
+			<point text="• Core Set 2021"></point>
 			<point text="The following cards are banned in Pioneer tournaments:"></point>
 			<point text="• Bloodstained Mire"></point>
 			<point text="• Felidar Guardian"></point>
@@ -1329,13 +1324,13 @@
             <point text="Participation minimums for a tournament to be sanctioned as a rated tournament are as follows:"></point>
             <point text="• For individual tournaments, a minimum of eight (8) players must participate."></point>
             <point text="• For team and Two-Headed Giant tournaments, a minimum of four (4) teams must participate."></point>
-            <point text="If the participation minimum is not met, the tournament is no longer DCI-sanctioned and will not provide Planeswalker Points. If participation minimums are not met for any DCI-sanctioned tournament, the Tournament Organizer should report the tournament as “Did Not Occur.”"></point>
+            <point text="If the participation minimum is not met, the tournament is no longer DCI-sanctioned. If participation minimums are not met for any DCI-sanctioned tournament, the Tournament Organizer should report the tournament as “Did Not Occur.”"></point>
         </point>
         <point text="10.2 Number of Rounds">
             <point text="The minimum number of rounds required for a tournament to be sanctioned as a rated tournament is as follows:"></point>
             <point text="• For individual tournaments, a minimum of three (3) rounds."></point>
             <point text="• For team and Two-Headed Giant tournaments, a minimum of two (2) rounds."></point>
-            <point text="If the minimum number of rounds is not met, the tournament is no longer DCI-sanctioned and will not provide Planeswalker Points. If the minimum number of rounds is not met for any DCI-sanctioned, rated tournament, the Tournament Organizer should report the tournament as “Did Not Occur.”"></point>
+            <point text="If the minimum number of rounds is not met, the tournament is no longer DCI-sanctioned. If the minimum number of rounds is not met for any DCI-sanctioned, rated tournament, the Tournament Organizer should report the tournament as “Did Not Occur.”"></point>
             <point text="The number of rounds should be announced at or before the beginning of the first round; once announced, it cannot be changed. A variable number of rounds can be announced instead, with specific criteria for ending the tournament. For example, a tournament with 20 players can be announced as five rounds unless only one player has four match wins after four rounds."></point>
             <point text="The recommended number of rounds for Swiss tournaments can be found in Appendix E."></point>
         </point>

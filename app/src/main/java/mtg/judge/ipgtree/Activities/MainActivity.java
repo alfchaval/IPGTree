@@ -68,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadStrings() {
         if(documentsMenu) {
-            btn_1.setText(getString(R.string.activity_documents_menu_cr));
-            btn_2.setText(getString(R.string.activity_documents_menu_jar));
-            btn_3.setText(getString(R.string.activity_documents_menu_aipg));
-            btn_4.setText(getString(R.string.activity_documents_menu_amtr));
-            btn_5.setText(getString(R.string.activity_documents_menu_adipg));
-            btn_6.setText(getString(R.string.activity_documents_menu_admtr));
+            btn_1.setText(Repository.StringMap(85));
+            btn_2.setText(Repository.StringMap(86));
+            btn_3.setText(Repository.StringMap(87));
+            btn_4.setText(Repository.StringMap(88));
+            btn_5.setText(Repository.StringMap(89));
+            btn_6.setText(Repository.StringMap(90));
             btn_7.setText(Repository.StringMap(5));
             btn_8.setText(Repository.StringMap(4));
             btn_9.setText(Repository.StringMap(75));
@@ -243,7 +243,13 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, TimerActivity.class);
                     break;
                 case 8:
-                    intent = new Intent(MainActivity.this, LifeActivity.class);
+                    if(Repository.players == 4) {
+                        intent = new Intent(MainActivity.this, Life4Activity.class);
+                    }
+                    else
+                    {
+                        intent = new Intent(MainActivity.this, Life2Activity.class);
+                    }
                     break;
                 case 9:
                     intent = new Intent(MainActivity.this, SettingsActivity.class);

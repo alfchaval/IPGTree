@@ -31,17 +31,17 @@ import java.util.Random;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
 
-public class LifeActivity extends AppCompatActivity {
+public class Life4Activity extends AppCompatActivity {
 
     private Button btn_reset, btn_registry, btn_lifepoison, btn_dice;
     private TextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
     private TextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
     private TextView txv_p3minus, txv_p3life, txv_p3add, txv_p3lifetrack, txv_p3setlife;
     private TextView txv_p4minus, txv_p4life, txv_p4add, txv_p4lifetrack, txv_p4setlife;
-    private ConstraintLayout cly_p1life, cly_p1setlife, cly_p1block;
-    private ConstraintLayout cly_p2life, cly_p2setlife, cly_p2block;
-    private ConstraintLayout cly_p3life, cly_p3setlife, cly_p3block;
-    private ConstraintLayout cly_p4life, cly_p4setlife, cly_p4block;
+    private ConstraintLayout cly_p1life, cly_p1setlife;
+    private ConstraintLayout cly_p2life, cly_p2setlife;
+    private ConstraintLayout cly_p3life, cly_p3setlife;
+    private ConstraintLayout cly_p4life, cly_p4setlife;
     private ScrollView scroll_p1, scroll_p2, scroll_p3, scroll_p4;
     private Keyboard keyboard_p1, keyboard_p2, keyboard_p3, keyboard_p4;
     private KeyboardView keyboardView_p1, keyboardView_p2, keyboardView_p3, keyboardView_p4;
@@ -50,17 +50,14 @@ public class LifeActivity extends AppCompatActivity {
     private CountDownTimer timerp3 = null;
     private CountDownTimer timerp4 = null;
     private Random random;
-    private boolean longPressing = false;
-
-    private final int lifeFontSize2pLarge = 100;
-    private final int lifeFontSize2pSmall = 70;
-    private final int lifeFontSize4pLarge = 60;
-    private final int lifeFontSize4pSmall = 40;
+    
+    private final int lifeFontSizeLarge = 60;
+    private final int lifeFontSizeSmall = 40;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_life);
+        setContentView(R.layout.activity_life4);
 
         if(!Repository.repositoryLoaded) {
             Repository.createRepository(getApplicationContext());
@@ -74,16 +71,16 @@ public class LifeActivity extends AppCompatActivity {
         btn_dice.setText("D" + Repository.dice);
         txv_p1life.setText(Repository.p1life + "");
         txv_p1lifetrack.setText(Repository.p1log);
+        txv_p1life.setTextSize(lifeFontSizeLarge);
         txv_p2life.setText(Repository.p2life + "");
         txv_p2lifetrack.setText(Repository.p2log);
+        txv_p2life.setTextSize(lifeFontSizeLarge);
         txv_p3life.setText(Repository.p3life + "");
         txv_p3lifetrack.setText(Repository.p3log);
+        txv_p3life.setTextSize(lifeFontSizeLarge);
         txv_p4life.setText(Repository.p4life + "");
         txv_p4lifetrack.setText(Repository.p4log);
-        txv_p1life.setTextSize(lifeFontSize2pLarge);
-        txv_p2life.setTextSize(lifeFontSize2pLarge);
-        txv_p3life.setTextSize(lifeFontSize4pLarge);
-        txv_p4life.setTextSize(lifeFontSize4pLarge);
+        txv_p4life.setTextSize(lifeFontSizeLarge);
     }
 
     private void linkViews() {
@@ -116,19 +113,15 @@ public class LifeActivity extends AppCompatActivity {
         txv_p4lifetrack = findViewById(R.id.txv_p4lifetrack);
         txv_p4setlife = findViewById(R.id.txv_p4setlife);
 
-        cly_p1block = findViewById(R.id.cly_p1block);
         cly_p1life = findViewById(R.id.cly_p1life);
         cly_p1setlife = findViewById(R.id.cly_p1setlife);
 
-        cly_p2block = findViewById(R.id.cly_p2block);
         cly_p2life = findViewById(R.id.cly_p2life);
         cly_p2setlife = findViewById(R.id.cly_p2setlife);
 
-        cly_p3block = findViewById(R.id.cly_p3block);
         cly_p3life = findViewById(R.id.cly_p3life);
         cly_p3setlife = findViewById(R.id.cly_p3setlife);
 
-        cly_p4block = findViewById(R.id.cly_p4block);
         cly_p4life = findViewById(R.id.cly_p4life);
         cly_p4setlife = findViewById(R.id.cly_p4setlife);
 
@@ -137,21 +130,24 @@ public class LifeActivity extends AppCompatActivity {
         scroll_p3 = findViewById(R.id.scroll_p3);
         scroll_p4 = findViewById(R.id.scroll_p4);
 
-        keyboard_p1 = new Keyboard(LifeActivity.this, R.xml.life_keyboard);
-        keyboard_p2 = new Keyboard(LifeActivity.this, R.xml.life_keyboard);
-        keyboard_p3 = new Keyboard(LifeActivity.this, R.xml.life_keyboard);
-        keyboard_p4 = new Keyboard(LifeActivity.this, R.xml.life_keyboard);
+        keyboard_p1 = new Keyboard(Life4Activity.this, R.xml.life_keyboard);
         keyboardView_p1 = findViewById(R.id.keyboardView_p1);
-        keyboardView_p2 = findViewById(R.id.keyboardView_p2);
-        keyboardView_p3 = findViewById(R.id.keyboardView_p3);
-        keyboardView_p4 = findViewById(R.id.keyboardView_p4);
         keyboardView_p1.setKeyboard(keyboard_p1);
-        keyboardView_p2.setKeyboard(keyboard_p2);
-        keyboardView_p3.setKeyboard(keyboard_p3);
-        keyboardView_p4.setKeyboard(keyboard_p4);
         keyboardView_p1.setPreviewEnabled(false);
+
+        keyboard_p2 = new Keyboard(Life4Activity.this, R.xml.life_keyboard);
+        keyboardView_p2 = findViewById(R.id.keyboardView_p2);
+        keyboardView_p2.setKeyboard(keyboard_p2);
         keyboardView_p2.setPreviewEnabled(false);
+
+        keyboard_p3 = new Keyboard(Life4Activity.this, R.xml.life_keyboard);
+        keyboardView_p3 = findViewById(R.id.keyboardView_p3);
+        keyboardView_p3.setKeyboard(keyboard_p3);
         keyboardView_p3.setPreviewEnabled(false);
+
+        keyboard_p4 = new Keyboard(Life4Activity.this, R.xml.life_keyboard);
+        keyboardView_p4 = findViewById(R.id.keyboardView_p4);
+        keyboardView_p4.setKeyboard(keyboard_p4);
         keyboardView_p4.setPreviewEnabled(false);
     }
 
@@ -890,7 +886,7 @@ public class LifeActivity extends AppCompatActivity {
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(LifeActivity.this)
+                new AlertDialog.Builder(Life4Activity.this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setTitle(Repository.StringMap(27))
                         .setMessage(Repository.StringMap(26))
@@ -907,85 +903,30 @@ public class LifeActivity extends AppCompatActivity {
         btn_registry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(longPressing)
-                {
-                    longPressing = false;
+                if (scroll_p1.getVisibility() == View.GONE || scroll_p2.getVisibility() == View.GONE || scroll_p3.getVisibility() == View.GONE || scroll_p4.getVisibility() == View.GONE) {
+                    scroll_p1.setVisibility(View.VISIBLE);
+                    scroll_p2.setVisibility(View.VISIBLE);
+                    scroll_p3.setVisibility(View.VISIBLE);
+                    scroll_p4.setVisibility(View.VISIBLE);
+                    scroll_p1.fullScroll(View.FOCUS_DOWN);
+                    scroll_p2.fullScroll(View.FOCUS_DOWN);
+                    scroll_p3.fullScroll(View.FOCUS_DOWN);
+                    scroll_p4.fullScroll(View.FOCUS_DOWN);
+                    txv_p1life.setTextSize(lifeFontSizeSmall);
+                    txv_p2life.setTextSize(lifeFontSizeSmall);
+                    txv_p3life.setTextSize(lifeFontSizeSmall);
+                    txv_p4life.setTextSize(lifeFontSizeSmall);
+
+                } else {
+                    scroll_p1.setVisibility(View.GONE);
+                    scroll_p2.setVisibility(View.GONE);
+                    scroll_p3.setVisibility(View.GONE);
+                    scroll_p4.setVisibility(View.GONE);
+                    txv_p1life.setTextSize(lifeFontSizeLarge);
+                    txv_p2life.setTextSize(lifeFontSizeLarge);
+                    txv_p3life.setTextSize(lifeFontSizeLarge);
+                    txv_p4life.setTextSize(lifeFontSizeLarge);
                 }
-                else
-                {
-                    if (scroll_p1.getVisibility() == View.GONE || scroll_p2.getVisibility() == View.GONE || scroll_p3.getVisibility() == View.GONE || scroll_p4.getVisibility() == View.GONE) {
-                        scroll_p1.setVisibility(View.VISIBLE);
-                        scroll_p1.fullScroll(View.FOCUS_DOWN);
-                        scroll_p2.setVisibility(View.VISIBLE);
-                        scroll_p2.fullScroll(View.FOCUS_DOWN);
-                        scroll_p3.setVisibility(View.VISIBLE);
-                        scroll_p3.fullScroll(View.FOCUS_DOWN);
-                        scroll_p4.setVisibility(View.VISIBLE);
-                        scroll_p4.fullScroll(View.FOCUS_DOWN);
-                        if(cly_p3block.getVisibility() == View.VISIBLE || cly_p4block.getVisibility() == View.VISIBLE)
-                        {
-                            txv_p1life.setTextSize(lifeFontSize4pSmall);
-                            txv_p2life.setTextSize(lifeFontSize4pSmall);
-                            txv_p3life.setTextSize(lifeFontSize4pSmall);
-                            txv_p4life.setTextSize(lifeFontSize4pSmall);
-                        }
-                        else
-                        {
-                            txv_p1life.setTextSize(lifeFontSize2pSmall);
-                            txv_p2life.setTextSize(lifeFontSize2pSmall);
-                            txv_p3life.setTextSize(lifeFontSize2pSmall);
-                            txv_p4life.setTextSize(lifeFontSize2pSmall);
-                        }
-                    } else {
-                        scroll_p1.setVisibility(View.GONE);
-                        scroll_p2.setVisibility(View.GONE);
-                        scroll_p3.setVisibility(View.GONE);
-                        scroll_p4.setVisibility(View.GONE);
-                        if(cly_p3block.getVisibility() == View.VISIBLE || cly_p4block.getVisibility() == View.VISIBLE)
-                        {
-                            txv_p1life.setTextSize(lifeFontSize4pLarge);
-                            txv_p2life.setTextSize(lifeFontSize4pLarge);
-                            txv_p3life.setTextSize(lifeFontSize4pLarge);
-                            txv_p4life.setTextSize(lifeFontSize4pLarge);
-                        }
-                        else
-                        {
-                            txv_p1life.setTextSize(lifeFontSize2pLarge);
-                            txv_p2life.setTextSize(lifeFontSize2pLarge);
-                            txv_p3life.setTextSize(lifeFontSize2pLarge);
-                            txv_p4life.setTextSize(lifeFontSize2pLarge);
-                        }
-                    }
-                }
-            }
-        });
-        btn_registry.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                scroll_p1.setVisibility(View.GONE);
-                scroll_p2.setVisibility(View.GONE);
-                scroll_p3.setVisibility(View.GONE);
-                scroll_p4.setVisibility(View.GONE);
-                if(cly_p3block.getVisibility() == View.VISIBLE || cly_p4block.getVisibility() == View.VISIBLE)
-                {
-                    //cly_p1block.setRotation(180);
-                    //cly_p2block.setRotation(0);
-                    cly_p3block.setVisibility(View.GONE);
-                    cly_p4block.setVisibility(View.GONE);
-                    txv_p1life.setTextSize(lifeFontSize2pLarge);
-                    txv_p2life.setTextSize(lifeFontSize2pLarge);
-                }
-                else
-                {
-                    //cly_p1block.setRotation(270);
-                    //cly_p2block.setRotation(270);
-                    cly_p3block.setVisibility(View.VISIBLE);
-                    cly_p4block.setVisibility(View.VISIBLE);
-                    txv_p1life.setTextSize(lifeFontSize4pLarge);
-                    txv_p2life.setTextSize(lifeFontSize4pLarge);
-                }
-                longPressing = true;
-                return false;
             }
         });
         btn_lifepoison.setOnClickListener(new View.OnClickListener() {
@@ -1220,18 +1161,10 @@ public class LifeActivity extends AppCompatActivity {
         cly_p2setlife.setVisibility(View.INVISIBLE);
         cly_p3setlife.setVisibility(View.INVISIBLE);
         cly_p4setlife.setVisibility(View.INVISIBLE);
-        if(cly_p3block.getVisibility() == View.VISIBLE || cly_p4block.getVisibility() == View.VISIBLE)
-        {
-            txv_p1life.setTextSize(lifeFontSize4pLarge);
-            txv_p2life.setTextSize(lifeFontSize4pLarge);
-            txv_p3life.setTextSize(lifeFontSize4pLarge);
-            txv_p4life.setTextSize(lifeFontSize4pLarge);
-        }
-        else
-        {
-            txv_p1life.setTextSize(lifeFontSize2pLarge);
-            txv_p2life.setTextSize(lifeFontSize2pLarge);
-        }
+        txv_p1life.setTextSize(lifeFontSizeLarge);
+        txv_p2life.setTextSize(lifeFontSizeLarge);
+        txv_p3life.setTextSize(lifeFontSizeLarge);
+        txv_p4life.setTextSize(lifeFontSizeLarge);
     }
 
     public void changep1life(int value) {
@@ -1518,7 +1451,7 @@ public class LifeActivity extends AppCompatActivity {
 
     public void rollDice() {
         int result = random.nextInt(Repository.dice) + 1;
-        AlertDialog alertDialog = new AlertDialog.Builder(LifeActivity.this)
+        AlertDialog alertDialog = new AlertDialog.Builder(Life4Activity.this)
                 .setTitle(Repository.StringMap(79) + Repository.dice)
                 .setMessage(""+result)
                 .show();
@@ -1532,7 +1465,7 @@ public class LifeActivity extends AppCompatActivity {
         input.setInputType(InputType.TYPE_CLASS_NUMBER);
         input.setGravity(Gravity.CENTER);
         input.setMaxLines(1);
-        AlertDialog alertDialog = new AlertDialog.Builder(LifeActivity.this)
+        AlertDialog alertDialog = new AlertDialog.Builder(Life4Activity.this)
                 .setTitle(Repository.StringMap(80))
                 .setView(input)
                 .setPositiveButton(Repository.StringMap(81), new DialogInterface.OnClickListener() {
