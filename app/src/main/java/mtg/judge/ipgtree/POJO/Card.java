@@ -47,7 +47,7 @@ public class Card {
             text += this.manaCost;
         }
         text += "\n\n";
-        if(colorIndicator != null) {
+        if(colorIndicator.size() > 1) {
             text += "Color indicator: ";
             for (String s: colorIndicator) {
                 text += s;
