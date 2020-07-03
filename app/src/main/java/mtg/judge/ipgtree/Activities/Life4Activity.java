@@ -3,6 +3,9 @@ package mtg.judge.ipgtree.Activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.AsyncTask;
@@ -28,20 +31,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Random;
 
+import mtg.judge.ipgtree.Components.OutlineTextView;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
 
 public class Life4Activity extends AppCompatActivity {
 
     private Button btn_reset, btn_registry, btn_lifepoison, btn_dice;
-    private TextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
-    private TextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
-    private TextView txv_p3minus, txv_p3life, txv_p3add, txv_p3lifetrack, txv_p3setlife;
-    private TextView txv_p4minus, txv_p4life, txv_p4add, txv_p4lifetrack, txv_p4setlife;
-    private ConstraintLayout cly_p1life, cly_p1setlife;
-    private ConstraintLayout cly_p2life, cly_p2setlife;
-    private ConstraintLayout cly_p3life, cly_p3setlife;
-    private ConstraintLayout cly_p4life, cly_p4setlife;
+    private OutlineTextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
+    private OutlineTextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
+    private OutlineTextView txv_p3minus, txv_p3life, txv_p3add, txv_p3lifetrack, txv_p3setlife;
+    private OutlineTextView txv_p4minus, txv_p4life, txv_p4add, txv_p4lifetrack, txv_p4setlife;
+    private ConstraintLayout cly_p1life, cly_p1setlife, cly_p1block;
+    private ConstraintLayout cly_p2life, cly_p2setlife, cly_p2block;
+    private ConstraintLayout cly_p3life, cly_p3setlife, cly_p3block;
+    private ConstraintLayout cly_p4life, cly_p4setlife, cly_p4block;
     private ScrollView scroll_p1, scroll_p2, scroll_p3, scroll_p4;
     private Keyboard keyboard_p1, keyboard_p2, keyboard_p3, keyboard_p4;
     private KeyboardView keyboardView_p1, keyboardView_p2, keyboardView_p3, keyboardView_p4;
@@ -67,6 +71,32 @@ public class Life4Activity extends AppCompatActivity {
         loadStrings();
         random = new Random();
         setListeners();
+
+        File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg1.png");
+        if(bg1.exists()) {
+            Log.d("FOUND", "FOUND");
+            Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
+            cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
+        }
+
+        File bg2 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg2.png");
+        if(bg2.exists()) {
+            Bitmap bitmap2 = BitmapFactory.decodeFile(bg2.getAbsolutePath());
+            cly_p2block.setBackground(new BitmapDrawable(getResources(), bitmap2));
+        }
+
+        File bg3 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg3.png");
+        if(bg3.exists()) {
+            Log.d("FOUND", "FOUND");
+            Bitmap bitmap3 = BitmapFactory.decodeFile(bg3.getAbsolutePath());
+            cly_p3block.setBackground(new BitmapDrawable(getResources(), bitmap3));
+        }
+
+        File bg4 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg4.png");
+        if(bg4.exists()) {
+            Bitmap bitmap4 = BitmapFactory.decodeFile(bg4.getAbsolutePath());
+            cly_p4block.setBackground(new BitmapDrawable(getResources(), bitmap4));
+        }
 
         btn_dice.setText("D" + Repository.dice);
         txv_p1life.setText(Repository.p1life + "");
@@ -115,15 +145,19 @@ public class Life4Activity extends AppCompatActivity {
 
         cly_p1life = findViewById(R.id.cly_p1life);
         cly_p1setlife = findViewById(R.id.cly_p1setlife);
+        cly_p1block = findViewById(R.id.cly_p1block);
 
         cly_p2life = findViewById(R.id.cly_p2life);
         cly_p2setlife = findViewById(R.id.cly_p2setlife);
+        cly_p2block = findViewById(R.id.cly_p2block);
 
         cly_p3life = findViewById(R.id.cly_p3life);
         cly_p3setlife = findViewById(R.id.cly_p3setlife);
+        cly_p3block = findViewById(R.id.cly_p3block);
 
         cly_p4life = findViewById(R.id.cly_p4life);
         cly_p4setlife = findViewById(R.id.cly_p4setlife);
+        cly_p4block = findViewById(R.id.cly_p4block);
 
         scroll_p1 = findViewById(R.id.scroll_p1);
         scroll_p2 = findViewById(R.id.scroll_p2);

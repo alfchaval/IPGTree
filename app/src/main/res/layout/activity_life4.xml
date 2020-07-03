@@ -35,13 +35,13 @@
             android:visibility="gone"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p1lifetrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
                 android:textAlignment="textEnd"
                 android:textSize="30dp"
-                android:background="@color/colorTransparent"
                 />
 
         </ScrollView>
@@ -50,16 +50,18 @@
             android:id="@+id/cly_p1life"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toEndOf="@+id/scroll_p1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p1minus"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p1life"
                 app:layout_constraintTop_toTopOf="parent"
@@ -71,10 +73,11 @@
                 android:text="-"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p1life"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p1minus"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p1add"
                 app:layout_constraintTop_toTopOf="parent"
@@ -86,10 +89,11 @@
                 android:text="20"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p1add"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p1life"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -107,6 +111,7 @@
             android:id="@+id/cly_p1setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -114,10 +119,11 @@
             android:visibility="invisible"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p1setlife"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -163,13 +169,13 @@
             android:visibility="gone"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p2lifetrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
                 android:textAlignment="textEnd"
                 android:textSize="30dp"
-                android:background="@color/colorTransparent"
                 />
 
         </ScrollView>
@@ -178,16 +184,18 @@
             android:id="@+id/cly_p2life"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toEndOf="@+id/scroll_p2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p2minus"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p2life"
                 app:layout_constraintTop_toTopOf="parent"
@@ -199,10 +207,11 @@
                 android:text="-"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p2life"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p2minus"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p2add"
                 app:layout_constraintTop_toTopOf="parent"
@@ -214,10 +223,11 @@
                 android:text="20"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p2add"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p2life"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -235,6 +245,7 @@
             android:id="@+id/cly_p2setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -242,10 +253,11 @@
             android:visibility="invisible"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p2setlife"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -345,13 +357,13 @@
             android:visibility="gone"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p3lifetrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
                 android:textAlignment="textEnd"
                 android:textSize="30dp"
-                android:background="@color/colorTransparent"
                 />
 
         </ScrollView>
@@ -360,16 +372,18 @@
             android:id="@+id/cly_p3life"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toEndOf="@+id/scroll_p3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p3minus"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p3life"
                 app:layout_constraintTop_toTopOf="parent"
@@ -381,10 +395,11 @@
                 android:text="-"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p3life"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p3minus"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p3add"
                 app:layout_constraintTop_toTopOf="parent"
@@ -396,10 +411,11 @@
                 android:text="20"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p3add"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p3life"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -417,6 +433,7 @@
             android:id="@+id/cly_p3setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -424,10 +441,11 @@
             android:visibility="invisible"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p3setlife"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -473,13 +491,13 @@
             android:visibility="gone"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p4lifetrack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
                 android:textAlignment="textEnd"
                 android:textSize="30dp"
-                android:background="@color/colorTransparent"
                 />
 
         </ScrollView>
@@ -488,16 +506,18 @@
             android:id="@+id/cly_p4life"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toEndOf="@+id/scroll_p4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p4minus"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p4life"
                 app:layout_constraintTop_toTopOf="parent"
@@ -509,10 +529,11 @@
                 android:text="-"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p4life"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p4minus"
                 app:layout_constraintEnd_toStartOf="@+id/txv_p4add"
                 app:layout_constraintTop_toTopOf="parent"
@@ -524,10 +545,11 @@
                 android:text="20"
                 />
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p4add"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toEndOf="@+id/txv_p4life"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -545,6 +567,7 @@
             android:id="@+id/cly_p4setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/colorTransparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -552,10 +575,11 @@
             android:visibility="invisible"
             >
 
-            <TextView
+            <mtg.judge.ipgtree.Components.OutlineTextView
                 android:id="@+id/txv_p4setlife"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@color/colorTransparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
