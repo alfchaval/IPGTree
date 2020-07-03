@@ -47,6 +47,7 @@ public class DocumentActivity extends AppCompatActivity {
     private ViewTreeObserver viewTreeObserver;
 
     private ArrayList<TextView> branchs = new ArrayList<TextView>();
+    ArrayList<TypedText> results;
 
     private LinearLayout.LayoutParams layoutParams;
     private final int TEXT_SIZE = 20;
@@ -257,7 +258,14 @@ public class DocumentActivity extends AppCompatActivity {
         branchs.get(index).setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if(tree.existChild(index) && tree.getChild(index).isLeaf()) {
+                if(searching)
+                {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText(Repository.FOLDERNAME, results.get(index).getText());
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(DocumentActivity.this, Repository.StringMap(78), Toast.LENGTH_LONG).show();
+                }
+                else if(tree.existChild(index) && tree.getChild(index).isLeaf()) {
                     ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clip = ClipData.newPlainText(Repository.FOLDERNAME, tree.getChild(index).getData().getText());
                     clipboard.setPrimaryClip(clip);
@@ -302,7 +310,7 @@ public class DocumentActivity extends AppCompatActivity {
         searching = true;
         tv_title.setVisibility(View.GONE);
         tree = tree.getRoot();
-        ArrayList<TypedText> results = treeSearch(word);
+        results = treeSearch(word);
         if(results.size() == 0) {
             results.add(new TypedText(Repository.StringMap(69)));
         }
@@ -342,7 +350,7 @@ public class DocumentActivity extends AppCompatActivity {
     }
 
     private void format(int index, int type) {
-        //There is duplicate code in the switch, but it's also clearer this way
+        //There is some duplicate code in the switch, but it's also clearer this way
         switch (type) {
             case TypedText.NORMAL:
                 branchs.get(index).setTypeface(null, Typeface.NORMAL);
