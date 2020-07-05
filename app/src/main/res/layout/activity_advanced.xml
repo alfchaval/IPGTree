@@ -5,10 +5,6 @@
     android:id="@+id/activity_about"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     >
 
     <ScrollView
@@ -29,20 +25,82 @@
             android:orientation="vertical"
             >
 
-            <Button
-                android:id="@+id/btn_save"
-                android:layout_width="200dp"
+            <TextView
+                android:id="@+id/txv_show_life"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/answer_background_parent"
-                android:textColor="@color/colorText"
+                android:background="@drawable/borders"
+                android:padding="2dp"
+                android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal"
-                android:paddingHorizontal="4dp"
+                android:textStyle="bold"
+                android:text="SHOW/HIDE LIFECOUNTER"
                 />
+
+            <LinearLayout
+                android:id="@+id/ll_life"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/txv_life"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" />
+
+                <RadioGroup
+                    android:id="@+id/rg_players"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_0players"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:checked="false"
+                        android:text="\?"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/rb_2players"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:checked="false"
+                        android:text="2"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/rb_4players"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="4"
+                        />
+
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/cb_reverse_life"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorText"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/txv_show_ftp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/borders"
+                android:padding="2dp"
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
@@ -163,10 +221,22 @@
                 android:id="@+id/txv_show_links"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/borders"
+                android:padding="2dp"
                 android:layout_margin="10dp"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
                 android:text="SHOW/HIDE LINKS"
+                />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/answer_background_parent"
+                android:textColor="@color/colorText"
+                android:layout_gravity="center_horizontal"
+                android:paddingHorizontal="4dp"
                 />
 
             <TableLayout
@@ -210,6 +280,32 @@
 
                     <EditText
                         android:id="@+id/edt_amtr_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="ADIPG_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_adipg_en"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="ADMTR_EN"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_admtr_en"
                         android:layout_weight="1"
                         />
 
@@ -340,6 +436,32 @@
 
                     <EditText
                         android:id="@+id/edt_amtr_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="ADIPG_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_adipg_es"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="ADMTR_ES"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_admtr_es"
                         android:layout_weight="1"
                         />
 

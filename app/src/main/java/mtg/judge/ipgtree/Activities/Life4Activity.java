@@ -72,9 +72,14 @@ public class Life4Activity extends AppCompatActivity {
         random = new Random();
         setListeners();
 
+        if(Repository.reverseLife)
+        {
+            cly_p2block.setRotation(180);
+            cly_p3block.setRotation(180);
+        }
+
         File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg1.png");
         if(bg1.exists()) {
-            Log.d("FOUND", "FOUND");
             Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
             cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
         }
@@ -87,7 +92,6 @@ public class Life4Activity extends AppCompatActivity {
 
         File bg3 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg3.png");
         if(bg3.exists()) {
-            Log.d("FOUND", "FOUND");
             Bitmap bitmap3 = BitmapFactory.decodeFile(bg3.getAbsolutePath());
             cly_p3block.setBackground(new BitmapDrawable(getResources(), bitmap3));
         }

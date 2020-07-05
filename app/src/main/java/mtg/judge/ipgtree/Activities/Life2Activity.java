@@ -38,7 +38,6 @@ import mtg.judge.ipgtree.Utilities.Repository;
 public class Life2Activity extends AppCompatActivity {
 
     private Button btn_reset, btn_registry, btn_lifepoison, btn_dice;
-    //private TextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
     private OutlineTextView txv_p1minus, txv_p1life, txv_p1add, txv_p1lifetrack, txv_p1setlife;
     private OutlineTextView txv_p2minus, txv_p2life, txv_p2add, txv_p2lifetrack, txv_p2setlife;
     private ConstraintLayout cly_p1life, cly_p1setlife, cly_p1block;
@@ -67,9 +66,13 @@ public class Life2Activity extends AppCompatActivity {
         random = new Random();
         setListeners();
 
+        if(Repository.reverseLife)
+        {
+            cly_p2block.setRotation(180);
+        }
+
         File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg1.png");
         if(bg1.exists()) {
-            Log.d("FOUND", "FOUND");
             Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
             cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
         }

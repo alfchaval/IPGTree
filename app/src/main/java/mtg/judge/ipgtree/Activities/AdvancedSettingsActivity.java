@@ -18,6 +18,8 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -33,13 +35,16 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     private Button btn_save, btn_unlockftp;
     private CheckBox cb_ftp;
     private EditText edt_server, edt_user, edt_password, edt_codeftp, edt_news,
-            edt_aipg_en, edt_amtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en, edt_hja_en,
-            edt_aipg_es, edt_amtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es;
-    private TextView txv_codeftp, txv_ftptitle_one, txv_ftptitle_two, txv_show_ftp, txv_show_links;
-    private LinearLayout ll_scrollchild, ll_server, ll_server_code, ll_server_settings;
+            edt_aipg_en, edt_amtr_en, edt_adipg_en, edt_admtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en, edt_hja_en,
+            edt_aipg_es, edt_amtr_es, edt_adipg_es, edt_admtr_es,edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es;
+    private TextView txv_life, txv_codeftp, txv_ftptitle_one, txv_ftptitle_two, txv_show_life, txv_show_ftp, txv_show_links;
+    private LinearLayout ll_scrollchild, ll_life, ll_server, ll_server_code, ll_server_settings;
     private TableLayout tl_links;
     private ScrollView scroll;
     private ImageView imv_arrow_down, imv_arrow_up;
+    private RadioGroup rg_players;
+    private RadioButton rb_0players, rb_2players, rb_4players;
+    CheckBox cb_reverse_life;
 
     private ViewTreeObserver viewTreeObserver;
     private ShowHint showHint;
@@ -94,6 +99,11 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     }
 
     private void linkViews() {
+        rg_players = findViewById(R.id.rg_players);
+        rb_0players = findViewById(R.id.rb_0players);
+        rb_2players = findViewById(R.id.rb_2players);
+        rb_4players = findViewById(R.id.rb_4players);
+
         btn_save = findViewById(R.id.btn_save);
         btn_unlockftp = findViewById(R.id.btn_unlockftp);
         cb_ftp = findViewById(R.id.cb_ftp);
@@ -101,23 +111,30 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_user = findViewById(R.id.edt_user);
         edt_password = findViewById(R.id.edt_password);
         edt_codeftp = findViewById(R.id.edt_codeftp);
+        txv_life = findViewById(R.id.txv_life);
         txv_codeftp = findViewById(R.id.txv_codeftp);
         txv_ftptitle_one = findViewById(R.id.txv_ftptitle_one);
         txv_ftptitle_two = findViewById(R.id.txv_ftptitle_two);
+        txv_show_life = findViewById(R.id.txv_show_life);
         txv_show_ftp = findViewById(R.id.txv_show_ftp);
         txv_show_links = findViewById(R.id.txv_show_links);
         ll_scrollchild = findViewById(R.id.ll_scrollchild);
+        ll_life = findViewById(R.id.ll_life);
+        ll_life.setVisibility(View.GONE);
         ll_server = findViewById(R.id.ll_server);
         ll_server.setVisibility(View.GONE);
         ll_server_code = findViewById(R.id.ll_server_code);
         ll_server_settings = findViewById(R.id.ll_server_settings);
         tl_links = findViewById(R.id.tl_links);
         tl_links.setVisibility(View.GONE);
+        cb_reverse_life = findViewById(R.id.cb_reverse_life);
 
         edt_news = findViewById(R.id.edt_news);
 
         edt_aipg_en = findViewById(R.id.edt_aipg_en);
         edt_amtr_en = findViewById(R.id.edt_amtr_en);
+        edt_adipg_en = findViewById(R.id.edt_adipg_en);
+        edt_admtr_en = findViewById(R.id.edt_admtr_en);
         edt_banned_en = findViewById(R.id.edt_banned_en);
         edt_cr_en = findViewById(R.id.edt_cr_en);
         edt_dq_en = findViewById(R.id.edt_dq_en);
@@ -129,6 +146,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
         edt_aipg_es = findViewById(R.id.edt_aipg_es);
         edt_amtr_es = findViewById(R.id.edt_amtr_es);
+        edt_adipg_es = findViewById(R.id.edt_adipg_es);
+        edt_admtr_es = findViewById(R.id.edt_admtr_es);
         edt_banned_es = findViewById(R.id.edt_banned_es);
         edt_cr_es = findViewById(R.id.edt_cr_es);
         edt_dq_es = findViewById(R.id.edt_dq_es);
@@ -152,12 +171,17 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         cb_ftp.setText(Repository.StringMap(64));
         edt_user.setHint(Repository.StringMap(29));
         edt_password.setHint(Repository.StringMap(62));
+        txv_life.setText(Repository.StringMap(91));
+        cb_reverse_life.setText(Repository.StringMap(94));
+
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
 
         edt_news.setText(preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS));
 
         edt_aipg_en.setText(preferences.getString(Repository.KEY_AIPG_EN, Repository.URL_AIPG_EN));
         edt_amtr_en.setText(preferences.getString(Repository.KEY_AMTR_EN, Repository.URL_AMTR_EN));
+        edt_adipg_en.setText(preferences.getString(Repository.KEY_ADIPG_EN, Repository.URL_ADIPG_EN));
+        edt_admtr_en.setText(preferences.getString(Repository.KEY_ADMTR_EN, Repository.URL_ADMTR_EN));
         edt_banned_en.setText(preferences.getString(Repository.KEY_BANNED_EN, Repository.URL_BANNED_EN));
         edt_cr_en.setText(preferences.getString(Repository.KEY_CR_EN, Repository.URL_CR_EN));
         edt_dq_en.setText(preferences.getString(Repository.KEY_DQ_EN, Repository.URL_DQ_EN));
@@ -169,6 +193,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
         edt_aipg_es.setText(preferences.getString(Repository.KEY_AIPG_ES, Repository.URL_AIPG_ES));
         edt_amtr_es.setText(preferences.getString(Repository.KEY_AMTR_ES, Repository.URL_AMTR_ES));
+        edt_adipg_es.setText(preferences.getString(Repository.KEY_ADIPG_ES, Repository.URL_ADIPG_ES));
+        edt_admtr_es.setText(preferences.getString(Repository.KEY_ADMTR_ES, Repository.URL_ADMTR_ES));
         edt_banned_es.setText(preferences.getString(Repository.KEY_BANNED_ES, Repository.URL_BANNED_ES));
         edt_cr_es.setText(preferences.getString(Repository.KEY_CR_ES, Repository.URL_CR_ES));
         edt_dq_es.setText(preferences.getString(Repository.KEY_DQ_ES, Repository.URL_DQ_ES));
@@ -182,6 +208,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
         edt_aipg_en.setHint(Repository.URL_AIPG_EN);
         edt_amtr_en.setHint(Repository.URL_AMTR_EN);
+        edt_adipg_en.setHint(Repository.URL_ADIPG_EN);
+        edt_admtr_en.setHint(Repository.URL_ADMTR_EN);
         edt_banned_en.setHint(Repository.URL_BANNED_EN);
         edt_cr_en.setHint(Repository.URL_CR_EN);
         edt_dq_en.setHint(Repository.URL_DQ_EN);
@@ -193,6 +221,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
         edt_aipg_es.setHint(Repository.URL_AIPG_ES);
         edt_amtr_es.setHint(Repository.URL_AMTR_ES);
+        edt_adipg_es.setHint(Repository.URL_ADIPG_ES);
+        edt_admtr_es.setHint(Repository.URL_ADMTR_ES);
         edt_banned_es.setHint(Repository.URL_BANNED_ES);
         edt_cr_es.setHint(Repository.URL_CR_ES);
         edt_dq_es.setHint(Repository.URL_DQ_ES);
@@ -202,6 +232,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_quiz_es.setHint(Repository.URL_QUIZ_ES);
         edt_hja_es.setHint(Repository.URL_HJA_ES);
 
+        txv_show_life.setText(Repository.StringMap(93));
         txv_show_ftp.setText(Repository.StringMap(76));
         txv_show_links.setText(Repository.StringMap(77));
     }
@@ -221,6 +252,18 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 edt_password.setText(Repository.ftpPassword);
             }
         }
+        cb_reverse_life.setChecked(Repository.reverseLife);
+        switch (Repository.players) {
+            case 0:
+                rb_0players.setChecked(true);
+                break;
+            case 2:
+                rb_2players.setChecked(true);
+                break;
+            case 4:
+                rb_4players.setChecked(true);;
+                break;
+        }
     }
 
     private void setListeners() {
@@ -233,6 +276,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
                 editor.putString(Repository.KEY_AIPG_EN, edt_aipg_en.getText().toString());
                 editor.putString(Repository.KEY_AMTR_EN, edt_amtr_en.getText().toString());
+                editor.putString(Repository.KEY_ADIPG_EN, edt_adipg_en.getText().toString());
+                editor.putString(Repository.KEY_ADMTR_EN, edt_admtr_en.getText().toString());
                 editor.putString(Repository.KEY_BANNED_EN, edt_banned_en.getText().toString());
                 editor.putString(Repository.KEY_CR_EN, edt_cr_en.getText().toString());
                 editor.putString(Repository.KEY_DQ_EN, edt_dq_en.getText().toString());
@@ -244,6 +289,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
                 editor.putString(Repository.KEY_AIPG_ES, edt_aipg_es.getText().toString());
                 editor.putString(Repository.KEY_AMTR_ES, edt_amtr_es.getText().toString());
+                editor.putString(Repository.KEY_ADIPG_ES, edt_adipg_es.getText().toString());
+                editor.putString(Repository.KEY_ADMTR_ES, edt_admtr_es.getText().toString());
                 editor.putString(Repository.KEY_BANNED_ES, edt_banned_es.getText().toString());
                 editor.putString(Repository.KEY_CR_ES, edt_cr_es.getText().toString());
                 editor.putString(Repository.KEY_DQ_ES, edt_dq_es.getText().toString());
@@ -307,6 +354,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
         edt_aipg_en.setOnLongClickListener(showHint);
         edt_amtr_en.setOnLongClickListener(showHint);
+        edt_adipg_en.setOnLongClickListener(showHint);
+        edt_admtr_en.setOnLongClickListener(showHint);
         edt_banned_en.setOnLongClickListener(showHint);
         edt_cr_en.setOnLongClickListener(showHint);
         edt_dq_en.setOnLongClickListener(showHint);
@@ -318,6 +367,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
 
         edt_aipg_es.setOnLongClickListener(showHint);
         edt_amtr_es.setOnLongClickListener(showHint);
+        edt_adipg_es.setOnLongClickListener(showHint);
+        edt_admtr_es.setOnLongClickListener(showHint);
         edt_banned_es.setOnLongClickListener(showHint);
         edt_cr_es.setOnLongClickListener(showHint);
         edt_dq_es.setOnLongClickListener(showHint);
@@ -327,6 +378,17 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_quiz_es.setOnLongClickListener(showHint);
         edt_hja_es.setOnLongClickListener(showHint);
 
+        txv_show_life.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(ll_life.getVisibility() == View.VISIBLE) {
+                    ll_life.setVisibility(View.GONE);
+                }
+                else {
+                    ll_life.setVisibility(View.VISIBLE);
+                }
+            }
+        });
         txv_show_ftp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -343,10 +405,42 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(tl_links.getVisibility() == View.VISIBLE) {
                     tl_links.setVisibility(View.GONE);
+                    btn_save.setVisibility(View.GONE);
                 }
                 else {
                     tl_links.setVisibility(View.VISIBLE);
+                    btn_save.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        rg_players.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.rb_0players:
+                        Repository.players = 0;
+                        break;
+                    case R.id.rb_2players:
+                        Repository.players = 2;
+                        break;
+                    case R.id.rb_4players:
+                        Repository.players = 4;
+                        break;
+                }
+                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+                editor.putInt(Repository.KEY_PLAYERS, Repository.players);
+                editor.apply();
+            }
+        });
+
+        cb_reverse_life.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Repository.reverseLife = isChecked;
+                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+                editor.putBoolean(Repository.KEY_REVERSELIFE, Repository.reverseLife);
+                editor.apply();
             }
         });
     }

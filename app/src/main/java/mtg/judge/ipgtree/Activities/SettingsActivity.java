@@ -23,8 +23,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,10 +53,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Button btn_update_oracle, btn_update_documents, btn_en_language, btn_es_language, btn_donate, btn_advanced;
     private CheckBox cb_annotations, cb_update;
-    private TextView txv_annotations, txv_web, txv_life;
+    private TextView txv_annotations, txv_web;
     private LinearLayout ll_en_language, ll_es_language;
-    private RadioGroup rg_players;
-    private RadioButton rb_2players, rb_4players;
+
 
     private String startingLanguage;
 
@@ -91,12 +88,9 @@ public class SettingsActivity extends AppCompatActivity {
         cb_update = findViewById(R.id.cb_update);
         txv_annotations = findViewById(R.id.txv_annotations);
         txv_web = findViewById(R.id.txv_web);
-        txv_life = findViewById(R.id.txv_life);
         ll_en_language = findViewById(R.id.ll_en_language);
         ll_es_language = findViewById(R.id.ll_es_language);
-        rg_players = findViewById(R.id.rg_players);
-        rb_2players = findViewById(R.id.rb_2players);
-        rb_4players = findViewById(R.id.rb_4players);
+
     }
 
     private void loadStrings() {
@@ -106,7 +100,6 @@ public class SettingsActivity extends AppCompatActivity {
         cb_annotations.setText(Repository.StringMap(65));
         txv_annotations.setText(Repository.StringMap(66));
         cb_update.setText(Repository.StringMap(70));
-        txv_life.setText(Repository.StringMap(91));
     }
 
     private void loadRepositoryData() {
@@ -121,14 +114,6 @@ public class SettingsActivity extends AppCompatActivity {
         startingLanguage = Repository.language;
         cb_annotations.setChecked(Repository.showAnnotations);
         cb_update.setChecked(Repository.downloadNews);
-        switch (Repository.players) {
-            case 2:
-                rb_2players.setChecked(true);
-                break;
-            case 4:
-                rb_4players.setChecked(true);;
-                break;
-        }
     }
 
     private void setListeners() {
@@ -226,22 +211,6 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(((TextView)view).getText().toString()));
                 startActivity(browserIntent);
-            }
-        });
-        rg_players.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.rb_2players:
-                        Repository.players = 2;
-                        break;
-                    case R.id.rb_4players:
-                        Repository.players = 4;
-                        break;
-                }
-                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                editor.putInt(Repository.KEY_PLAYERS, Repository.players);
-                editor.apply();
             }
         });
     }

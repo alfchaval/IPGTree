@@ -20,7 +20,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    public static final int appVersion = 20200704;
+    public static final int appVersion = 20200705;
     public static int lastNews;
 
     //URLs
@@ -95,7 +95,6 @@ public class Repository {
     //Preferences
     public static final String KEY_PREFERENCES = "key_preferences";
 
-    public static final String KEY_PLAYERS = "key_players";
     public static final String KEY_P1LIFE = "key_p1life";
     public static final String KEY_P2LIFE = "key_p2life";
     public static final String KEY_P3LIFE = "key_p3life";
@@ -125,6 +124,9 @@ public class Repository {
     public static final String KEY_SAVEDTIMES = "key_savedtimes";
 
     public static final String KEY_NEWS = "key_news";
+
+    public static final String KEY_PLAYERS = "key_players";
+    public static final String KEY_REVERSELIFE = "key_reverselife";
 
     public static final String KEY_AIPG_EN = "key_aipg_en";
     public static final String KEY_AMTR_EN = "key_amtr_en";
@@ -164,7 +166,6 @@ public class Repository {
     public static JSONArray savedTimes = new JSONArray();
 
     //Variables vida
-    public static int players = 2;
     public static int p1life = 20;
     public static int p2life = 20;
     public static int p3life = 20;
@@ -186,6 +187,8 @@ public class Repository {
     public static String ftpCode = null;
     public static boolean showAnnotations = true;
     public static boolean downloadNews = false;
+    public static int players = 0;
+    public static boolean reverseLife = true;
     public static boolean unlockedFTP = false;
     public static boolean allowFTP = false;
     public static String ftpServer = null;
@@ -200,7 +203,6 @@ public class Repository {
     //Load everything
     public static void createRepository(final Context context) {
         SharedPreferences preferences = context.getSharedPreferences(KEY_PREFERENCES, MODE_PRIVATE);
-        players = preferences.getInt(KEY_PLAYERS, 2);
         p1life = preferences.getInt(KEY_P1LIFE, 20);
         p2life = preferences.getInt(KEY_P2LIFE, 20);
         p3life = preferences.getInt(KEY_P3LIFE, 20);
@@ -216,6 +218,8 @@ public class Repository {
         language = preferences.getString(KEY_LANGUAGE, ENGLISH);
         showAnnotations = preferences.getBoolean(KEY_ANNOTATION, true);
         downloadNews = preferences.getBoolean(KEY_DOWNLOADNEWS, true);
+        players = preferences.getInt(KEY_PLAYERS, 0);
+        reverseLife = preferences.getBoolean(KEY_REVERSELIFE, true);
         unlockedFTP = preferences.getBoolean(KEY_UNLOCKEDFTP, false);
         allowFTP = preferences.getBoolean(KEY_ALLOWFTP, false);
         ftpServer = preferences.getString(KEY_FTPSERVER, null);
@@ -548,6 +552,15 @@ public class Repository {
                     case 91:
                         result = "Players in life counter";
                         break;
+                    case 92:
+                        result = "Number of players";
+                        break;
+                    case 93:
+                        result = "Show/Hide Lifecounter";
+                        break;
+                    case 94:
+                        result = "Inverse upper life";
+                        break;
                 }
                 break;
             case SPANISH:
@@ -824,6 +837,15 @@ public class Repository {
                         break;
                     case 91:
                         result = "Jugadores en el contador de vida";
+                        break;
+                    case 92:
+                        result = "Número de jugadores";
+                        break;
+                    case 93:
+                        result = "Mostrar/Ocultar Contador de vida";
+                        break;
+                    case 94:
+                        result = "Invertir vida superior";
                         break;
                 }
                 break;

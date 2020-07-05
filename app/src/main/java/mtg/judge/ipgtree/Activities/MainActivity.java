@@ -1,6 +1,7 @@
 package mtg.judge.ipgtree.Activities;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private Pair<Integer, String> update;
 
     private SharedPreferences preferences;
+
+    private Intent intent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void move(int buttonId) {
         enableButtons(false);
-        Intent intent = null;
+        intent = null;
         if(documentsMenu) {
             switch (buttonId) {
                 case 1:
@@ -243,12 +246,36 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(MainActivity.this, TimerActivity.class);
                     break;
                 case 8:
-                    if(Repository.players == 4) {
-                        intent = new Intent(MainActivity.this, Life4Activity.class);
-                    }
-                    else
+                    switch (Repository.players)
                     {
-                        intent = new Intent(MainActivity.this, Life2Activity.class);
+                        case 0:
+                            new AlertDialog.Builder(MainActivity.this)
+                                    .setIcon(android.R.drawable.ic_menu_add)
+                                    .setMessage("Número de jugadores")
+                                    .setPositiveButton("4", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            enableButtons(false);
+                                            intent = new Intent(MainActivity.this, Life4Activity.class);
+                                            startActivityForResult(intent,1);
+                                        }
+                                    })
+                                    .setNegativeButton("2",  new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            enableButtons(false);
+                                            intent = new Intent(MainActivity.this, Life2Activity.class);
+                                            startActivityForResult(intent,1);
+                                        }
+                                    })
+                                    .show();
+                            break;
+                        case 2:
+                            intent = new Intent(MainActivity.this, Life2Activity.class);
+                            break;
+                        case 4:
+                            intent = new Intent(MainActivity.this, Life4Activity.class);
+                            break;
                     }
                     break;
                 case 9:
