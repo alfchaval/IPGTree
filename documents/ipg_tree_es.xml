@@ -781,7 +781,7 @@
                     </answer>
                 </question>
             </answer>
-            <answer text="Hay un error descubierto durante el desarrollo de la partida">
+            <answer text="Hay un error descubierto durante un juego">
                 <question text="¿Cuál es el problema?">
                     <answer text="Un jugador descubre cartas incorrectas en su mazo">
                         <question text="¿Cuándo se ha descubierto?">

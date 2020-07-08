@@ -8,7 +8,7 @@
 		<point text="Information in this document may contradict (or have information not contained in) the Comprehensive Rules. In such cases, this document takes precedence."></point>
 		<point text="This document is meant to be the default rule set for digital tournaments. Tournament Organizers may have Official fact sheets for specific tournaments which may define alternative or additional policies or procedures. If a contradiction exists between this document and an official fact sheet, the information in the fact sheet takes precedence."></point>
 		<point text="Wizards of the Coast reserves the right to alter these rules, as well as the right to interpret, modify, clarify, or otherwise issue official changes to these rules without prior notice."></point>
-		<point text="Updates will be made to this document as necessary. The dates for updates to the legality of individual cards in formats contained in this document will be communicated with at least one week’s notice. Other updates not involving changes to face legality may occur without prior announcement."></point>
+		<point text="Updates will be made to this document as necessary. The dates for updates to the legality of individual cards in formats contained in this document will be communicated with at least one week’s notice. Other updates not involving changes to card legality may occur without prior announcement."></point>
 		<point text="This document is intended to be a supplement to the Magic Tournament Rules published here:"></point>
 		<link text="http://wpn.wizards.com/document/magic-gathering-tournament-rules"></link>
 	</point>
@@ -201,7 +201,7 @@
 			<point text="Players must begin each match with the deck and sideboard in their original compositions."></point>
 			<point text="Restrictions on the composition and use of a sideboard can be found in the deck construction rules for a particular format type."></point>
 			<point text="If a penalty causes a player to lose the first game in a match before that game has begun, or the first game is intentionally drawn before any cards are played, players may use cards from their sideboard for the next game in the match."></point>
-			<point text="Certain cards refer to “a (face or cards) from outside the game.” In tournament play, these are cards in that player’s sideboard."></point>
+			<point text="Certain cards refer to “a (card or cards) from outside the game.” In tournament play, these are cards in that player’s sideboard."></point>
 		</point>
 		<point text="3.5 Public and Private Information">
 			<point text="For Digital events, there are only two types of information: Public and Private."></point>
@@ -268,13 +268,13 @@
 	<point text="6. Constructed Tournament Rules">
 		<point text="6.1 Deck Construction Restrictions">
 			<point text="Constructed decks must contain a minimum of sixty cards. There is no maximum deck size. If a player chooses to use a sideboard, it may not contain more than fifteen cards."></point>
-			<point text="Except for cards with the basic supertype or cards with text that specifies otherwise, a player’s combined deck and sideboard may not contain more than four of any individual face, based on its English face title."></point>
+			<point text="Except for cards with the basic supertype or cards with text that specifies otherwise, a player’s combined deck and sideboard may not contain more than four of any individual card, based on its English card title."></point>
 		</point>
 		<point text="6.2 Card Legality">
-			<point text="A face may only be used in a particular format if the face is from a set that is legal in that format or has the same name as a face from a set that is legal in that format. Cards banned in a specific format may not be used in decks for that format. Cards restricted in a specific format may only have one copy in a deck, including sideboard."></point>
+			<point text="A card may only be used in a particular format if the card is from a set that is legal in that format or has the same name as a card from a set that is legal in that format. Cards banned in a specific format may not be used in decks for that format. Cards restricted in a specific format may only have one copy in a deck, including sideboard."></point>
 		</point>
 		<point text="6.3 Standard Format Deck Construction">
-			<point text="The following face sets are currently permitted in Standard tournaments:"></point>
+			<point text="The following card sets are currently permitted in Standard tournaments:"></point>
 			<point text="• Guilds of Ravnica"></point>
 			<point text="• Ravnica Allegiance"></point>
 			<point text="• War of the Spark"></point>
