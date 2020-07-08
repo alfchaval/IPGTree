@@ -333,9 +333,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toEndOf="@+id/btn_reset"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cly_p4block"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cly_p4block"
+        app:layout_constraintBottom_toTopOf="@+id/cly_p6block"
         >
 
         <ScrollView
@@ -463,13 +463,147 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/cly_p4block"
+        android:id="@+id/cly_p6block"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintStart_toEndOf="@+id/btn_reset"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cly_p5block"
         app:layout_constraintTop_toBottomOf="@+id/cly_p3block"
         app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ScrollView
+            android:id="@+id/scroll_p6"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:background="@color/colorSemiTransparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cly_p6life"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scrollbars="none"
+            android:visibility="gone"
+            >
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p6lifetrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:textAlignment="textEnd"
+                android:textSize="30dp"
+                />
+
+        </ScrollView>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cly_p6life"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparent"
+            app:layout_constraintStart_toEndOf="@+id/scroll_p6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p6minus"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txv_p6life"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"
+                android:text="-"
+                />
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p6life"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toEndOf="@+id/txv_p6minus"
+                app:layout_constraintEnd_toStartOf="@+id/txv_p6add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="60dp"
+                android:text="20"
+                />
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p6add"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toEndOf="@+id/txv_p6life"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"
+                android:text="+"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cly_p6setlife"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="invisible"
+            >
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p6setlife"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/keyboardView_p6"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"
+                />
+
+            <android.inputmethodservice.KeyboardView
+                android:id="@+id/keyboardView_p6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txv_p6setlife"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cly_p4block"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@+id/cly_p3block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/cly_p6block"
         >
 
         <ScrollView
@@ -590,6 +724,140 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txv_p4setlife"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cly_p5block"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@+id/cly_p6block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cly_p4block"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ScrollView
+            android:id="@+id/scroll_p5"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:background="@color/colorSemiTransparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cly_p5life"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scrollbars="none"
+            android:visibility="gone"
+            >
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p5lifetrack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTransparent"
+                android:textAlignment="textEnd"
+                android:textSize="30dp"
+                />
+
+        </ScrollView>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cly_p5life"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparent"
+            app:layout_constraintStart_toEndOf="@+id/scroll_p5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p5minus"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/txv_p5life"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"
+                android:text="-"
+                />
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p5life"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toEndOf="@+id/txv_p5minus"
+                app:layout_constraintEnd_toStartOf="@+id/txv_p5add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="60dp"
+                android:text="20"
+                />
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p5add"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toEndOf="@+id/txv_p5life"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"
+                android:text="+"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cly_p5setlife"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="invisible"
+            >
+
+            <mtg.judge.ipgtree.Components.OutlineTextView
+                android:id="@+id/txv_p5setlife"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorTransparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/keyboardView_p5"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textSize="40dp"
+                />
+
+            <android.inputmethodservice.KeyboardView
+                android:id="@+id/keyboardView_p5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txv_p5setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
         </android.support.constraint.ConstraintLayout>

@@ -17,6 +17,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import mtg.judge.ipgtree.POJO.Card;
+import mtg.judge.ipgtree.POJO.Face;
 import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
@@ -321,61 +323,71 @@ public class SettingsActivity extends AppCompatActivity {
                 HashMap<String, Card> cards = new HashMap<>();
                 Gson gson = new GsonBuilder().create();
                 Card card;
+                Face face;
+
                 try {
                     FileInputStream inputStream = new FileInputStream(filenameCards);
                     JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
 
                     reader.beginObject();
-
                     while (reader.hasNext()) {
-                        reader.nextName();
-                        card = new Card();
-                        reader.beginObject();
-                        while (reader.hasNext()) {
-                            switch (reader.nextName()) {
-                                case "name":
-                                    card.name = reader.nextString();
-                                    break;
-                                case "manaCost":
-                                    card.manaCost = reader.nextString();
-                                    break;
-                                case "colorIndicator":
+                        switch (reader.nextName()) {
+                            case "data":
+                                reader.beginObject();
+                                while (reader.hasNext()) {
+                                    card = new Card();
+                                    card.name = reader.nextName();
                                     reader.beginArray();
-                                    while(reader.hasNext()) {
-                                        card.colorIndicator.add(reader.nextString());
+                                    while (reader.hasNext()) {
+                                        face = new Face();
+                                        reader.beginObject();
+                                        while (reader.hasNext()) {
+                                            switch (reader.nextName()) {
+                                                case "faceName":
+                                                    face.faceName = reader.nextString();
+                                                    break;
+                                                case "manaCost":
+                                                    face.manaCost = reader.nextString();
+                                                    break;
+                                                case "colorIndicator":
+                                                    reader.beginArray();
+                                                    while(reader.hasNext()) {
+                                                        face.colorIndicator.add(reader.nextString());
+                                                    }
+                                                    reader.endArray();
+                                                    break;
+                                                case "type":
+                                                    face.type = reader.nextString();
+                                                    break;
+                                                case "text":
+                                                    face.text = reader.nextString();
+                                                    break;
+                                                case "power":
+                                                    face.power = reader.nextString();
+                                                    break;
+                                                case "toughness":
+                                                    face.toughness = reader.nextString();
+                                                    break;
+                                                case "loyalty":
+                                                    face.loyalty = reader.nextString();
+                                                    break;
+                                                default:
+                                                    reader.skipValue();
+                                                    break;
+                                            }
+                                        }
+                                        reader.endObject();
+                                        card.faces.add(face);
                                     }
                                     reader.endArray();
-                                    break;
-                                case "type":
-                                    card.type = reader.nextString();
-                                    break;
-                                case "text":
-                                    card.text = reader.nextString();
-                                    break;
-                                case "power":
-                                    card.power = reader.nextString();
-                                    break;
-                                case "toughness":
-                                    card.toughness = reader.nextString();
-                                    break;
-                                case "loyalty":
-                                    card.loyalty = reader.nextString();
-                                    break;
-                                case "names":
-                                    reader.beginArray();
-                                    while(reader.hasNext()) {
-                                        card.sidenames.add(reader.nextString());
-                                    }
-                                    reader.endArray();
-                                    break;
-                                default:
-                                    reader.skipValue();
-                                    break;
-                            }
+                                    cards.put(card.name, card);
+                                }
+                                reader.endObject();
+                                break;
+                            default:
+                                reader.skipValue();
+                                break;
                         }
-                        card.sidenames.remove(card.name);
-                        reader.endObject();
-                        cards.put(card.name,card);
                     }
                     reader.close();
                 } catch (Exception e) {
@@ -395,70 +407,80 @@ public class SettingsActivity extends AppCompatActivity {
                     JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
 
                     reader.beginObject();
-
                     while (reader.hasNext()) {
-                        reader.nextName();
-                        reader.beginObject();
-                        code = "";
-                        int maxNumber = 0;
-                        while (reader.hasNext()) {
-                            switch (reader.nextName()) {
-                                case "code":
-                                    code = reader.nextString();
-                                    break;
-                                case "name":
-                                    setName = reader.nextString();
-                                    break;
-                                case "cards":
-                                    numbers = new ArrayList<>();
-                                    reader.beginArray();
-                                    while(reader.hasNext()) {
-                                        reader.beginObject();
-                                        while(reader.hasNext()) {
-                                            switch (reader.nextName()) {
-                                                case "name":
-                                                    cardName = reader.nextString();
-                                                    break;
-                                                case "number":
-                                                    try{
-                                                        //some allcards have special numbers... I also don't want these allcards
-                                                        number = Integer.parseInt(reader.nextString());
-                                                        if(number > maxNumber) {
-                                                            maxNumber = number;
+                        switch (reader.nextName()) {
+                            case "data":
+                                reader.beginObject();
+                                while (reader.hasNext()) {
+                                    reader.nextName();
+                                    code = "";
+                                    int maxNumber = 0;
+                                    reader.beginObject();
+                                    while (reader.hasNext()) {
+                                        switch (reader.nextName()) {
+                                            case "code":
+                                                code = reader.nextString();
+                                                break;
+                                            case "name":
+                                                setName = reader.nextString();
+                                                break;
+                                            case "cards":
+                                                numbers = new ArrayList<>();
+                                                reader.beginArray();
+                                                while(reader.hasNext()) {
+                                                    reader.beginObject();
+                                                    while(reader.hasNext()) {
+                                                        switch (reader.nextName()) {
+                                                            case "name":
+                                                                cardName = reader.nextString();
+                                                                break;
+                                                            case "number":
+                                                                try{
+                                                                    //some allcards have special numbers... I also don't want these allcards
+                                                                    number = Integer.parseInt(reader.nextString());
+                                                                    if(number > maxNumber) {
+                                                                        maxNumber = number;
+                                                                    }
+                                                                    add = true;
+                                                                } catch (Exception e) {
+                                                                    add = false;
+                                                                }
+                                                                break;
+                                                            default:
+                                                                reader.skipValue();
+                                                                break;
                                                         }
-                                                        add = true;
-                                                    } catch (Exception e) {
-                                                        add = false;
                                                     }
-                                                    break;
-                                                default:
-                                                    reader.skipValue();
-                                                    break;
-                                            }
-                                        }
-                                        reader.endObject();
-                                        if(add) {
-                                            numbers.add(new Pair<String, Integer>(cardName, number));
+                                                    reader.endObject();
+                                                    if(add) {
+                                                        numbers.add(new Pair<String, Integer>(cardName, number));
+                                                    }
+                                                }
+                                                reader.endArray();
+                                                break;
+                                            default:
+                                                reader.skipValue();
+                                                break;
                                         }
                                     }
-                                    reader.endArray();
-                                    break;
-                                default:
-                                    reader.skipValue();
-                                    break;
-                            }
-                        }
-                        if(code != "") {
-                            for (Pair<String, Integer> p: numbers) {
-                                if(cards.containsKey(p.first)) {
-                                    cards.get(p.first).printings.add(new Pair<String, Integer>(code, p.second));
+                                    reader.endObject();
+                                    if(code != "") {
+                                        for (Pair<String, Integer> p: numbers) {
+                                            if(cards.containsKey(p.first)) {
+                                                cards.get(p.first).printings.add(new Pair<String, Integer>(code, p.second));
+                                            }
+                                        }
+                                        Set set = new Set(code, setName);
+                                        set.cards = maxNumber;
+                                        sets.add(set);
+                                    }
                                 }
-                            }
-                            Set set = new Set(code, setName);
-                            set.cards = maxNumber;
-                            sets.add(set);
+                                reader.endObject();
+                                break;
+                            default:
+                                reader.skipValue();
+                                break;
                         }
-                        reader.endObject();
                     }
                     reader.close();
                 } catch (Exception e) {
@@ -513,6 +535,7 @@ public class SettingsActivity extends AppCompatActivity {
                     Repository.loadDatabase(getApplicationContext());
 
                 } catch (Exception e){
+                    Log.d("ERROR", e.getLocalizedMessage());
                 }
 
                 return Repository.StringMap(55) + folder;
@@ -608,11 +631,13 @@ public class SettingsActivity extends AppCompatActivity {
                         publishProgress(percent + "");
                     }
                     catch (Exception e) {
+                        Log.d("ERROR", "5");
                     }
                 }
                 return Repository.StringMap(55) + folder;
             }
             catch (Exception e) {
+                Log.d("ERROR", "6");
             }
             return Repository.StringMap(57);
         }

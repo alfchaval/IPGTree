@@ -21,7 +21,7 @@
             android:id="@+id/scroll_p2"
             android:layout_width="80dp"
             android:layout_height="0dp"
-            android:background="@color/colorTransparent"
+            android:background="@color/colorSemiTransparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cly_p2life"
             app:layout_constraintTop_toTopOf="parent"
@@ -145,7 +145,7 @@
     <Button
         android:id="@+id/btn_reset"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_dice"
         app:layout_constraintTop_toBottomOf="@+id/cly_p2block"
@@ -158,7 +158,7 @@
     <Button
         android:id="@+id/btn_dice"
         android:layout_width="60dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toEndOf="@+id/btn_reset"
         app:layout_constraintEnd_toStartOf="@+id/btn_lifepoison"
         app:layout_constraintTop_toBottomOf="@+id/cly_p2block"
@@ -172,7 +172,7 @@
     <Button
         android:id="@+id/btn_lifepoison"
         android:layout_width="60dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toEndOf="@+id/btn_dice"
         app:layout_constraintEnd_toStartOf="@+id/btn_registry"
         app:layout_constraintTop_toBottomOf="@+id/cly_p2block"
@@ -186,7 +186,7 @@
     <Button
         android:id="@+id/btn_registry"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toEndOf="@+id/btn_lifepoison"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cly_p2block"
@@ -209,7 +209,7 @@
             android:id="@+id/scroll_p1"
             android:layout_width="80dp"
             android:layout_height="0dp"
-            android:background="@color/colorTransparent"
+            android:background="@color/colorSemiTransparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cly_p1life"
             app:layout_constraintTop_toTopOf="parent"

@@ -327,7 +327,7 @@ public class Life2Activity extends AppCompatActivity {
                     case Repository.CodeCancel:
                         cly_p2life.setVisibility(View.VISIBLE);
                         cly_p2setlife.setVisibility(View.INVISIBLE);
-                        if(scroll_p1.getVisibility() == View.VISIBLE) {
+                        if(scroll_p2.getVisibility() == View.VISIBLE) {
                             scroll_p2.setVisibility(View.VISIBLE);
                             scroll_p2.fullScroll(View.FOCUS_DOWN);
                         }
@@ -351,7 +351,7 @@ public class Life2Activity extends AppCompatActivity {
                         else {
                             Repository.p2poison = Integer.parseInt(number);
                             SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                            editor.putInt(Repository.KEY_P1POISON, Repository.p1poison);
+                            editor.putInt(Repository.KEY_P2POISON, Repository.p2poison);
                             txv_p2life.setText(Repository.p2poison + "" + Repository.POISON);
                             SendFile(Repository.P2_LIFE_FILENAME, Repository.p2poison + "");
                             Repository.p2log += "\n" + number + Repository.POISON;
@@ -362,7 +362,7 @@ public class Life2Activity extends AppCompatActivity {
                         }
                         cly_p2life.setVisibility(View.VISIBLE);
                         cly_p2setlife.setVisibility(View.INVISIBLE);
-                        if(scroll_p1.getVisibility() == View.VISIBLE) {
+                        if(scroll_p2.getVisibility() == View.VISIBLE) {
                             scroll_p2.setVisibility(View.VISIBLE);
                             scroll_p2.fullScroll(View.FOCUS_DOWN);
                         }
@@ -476,7 +476,7 @@ public class Life2Activity extends AppCompatActivity {
                         editor.putString(Repository.KEY_P2LOG, Repository.p2log);
                         editor.apply();
                         txv_p2lifetrack.setText(Repository.p2log);
-                        SendFile(Repository.P1_LOG_FILENAME, Repository.p2log);
+                        SendFile(Repository.P2_LOG_FILENAME, Repository.p2log);
                     }
                     txv_p2setlife.setText(Repository.p2life + "");
                 }
@@ -486,13 +486,13 @@ public class Life2Activity extends AppCompatActivity {
                     if(Repository.p2poison != newlife) {
                         Repository.p2poison = newlife;
                         SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                        editor.putInt(Repository.KEY_P1POISON, Repository.p1poison);
+                        editor.putInt(Repository.KEY_P2POISON, Repository.p2poison);
                         SendFile(Repository.P2_POISON_FILENAME, Repository.p2poison + "");
                         Repository.p2log += "\n" + Repository.p2poison + Repository.POISON;
                         editor.putString(Repository.KEY_P2LOG, Repository.p2log);
                         editor.apply();
                         txv_p2lifetrack.setText(Repository.p2log);
-                        SendFile(Repository.P1_LOG_FILENAME, Repository.p2log);
+                        SendFile(Repository.P2_LOG_FILENAME, Repository.p2log);
                     }
                     txv_p2setlife.setText(Repository.p2poison + "" + Repository.POISON);
                 }
@@ -594,7 +594,7 @@ public class Life2Activity extends AppCompatActivity {
                         if(Repository.p2poison != newlife) {
                             Repository.p2poison = newlife;
                             SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                            editor.putInt(Repository.KEY_P1POISON, Repository.p1poison);
+                            editor.putInt(Repository.KEY_P2POISON, Repository.p2poison);
                             SendFile(Repository.P2_POISON_FILENAME, Repository.p2poison + "");
                             Repository.p2log += "\n" + Repository.p2poison + Repository.POISON;
                             editor.putString(Repository.KEY_P2LOG, Repository.p2log);
@@ -654,8 +654,8 @@ public class Life2Activity extends AppCompatActivity {
         SendFile(Repository.P1_LIFE_FILENAME, Repository.p1life + "");
         SendFile(Repository.P1_POISON_FILENAME, Repository.p1poison+ "");
         SendFile(Repository.P1_LOG_FILENAME, Repository.p1log);
-        SendFile(Repository.P2_LIFE_FILENAME, Repository.p1life + "");
-        SendFile(Repository.P2_POISON_FILENAME, Repository.p1poison+ "");
+        SendFile(Repository.P2_LIFE_FILENAME, Repository.p2life + "");
+        SendFile(Repository.P2_POISON_FILENAME, Repository.p2poison+ "");
         SendFile(Repository.P2_LOG_FILENAME, Repository.p2log);
         Repository.mode = Repository.LIFE;
         btn_lifepoison.setText(Repository.mode + "");
@@ -781,7 +781,7 @@ public class Life2Activity extends AppCompatActivity {
                     if(Repository.p2poison != newlife) {
                         Repository.p2poison = newlife;
                         SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                        editor.putInt(Repository.KEY_P1POISON, Repository.p1poison);
+                        editor.putInt(Repository.KEY_P2POISON, Repository.p2poison);
                         SendFile(Repository.P2_POISON_FILENAME, Repository.p2poison + "");
                         Repository.p2log += "\n" + Repository.p2life + Repository.POISON;
                         editor.putString(Repository.KEY_P2LOG, Repository.p2log);

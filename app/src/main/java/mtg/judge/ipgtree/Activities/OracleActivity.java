@@ -105,7 +105,7 @@ public class OracleActivity extends AppCompatActivity {
                 switch (mode) {
                     case nameMode:
                         if(Repository.cards.containsKey(actv_search.getText().toString())){
-                            showCardAndSides(actv_search.getText().toString());
+                            txv_oracle.setText(Repository.cards.get(actv_search.getText().toString()).showCard());
                         }
                         else {
                             txv_oracle.setText(Repository.StringMap(43));
@@ -132,7 +132,7 @@ public class OracleActivity extends AppCompatActivity {
                     int number = Integer.valueOf(actv_number.getText().toString());
                     //remove first check (unnecesary) after solve problem with number of cards per set
                     if(number < Repository.setsWithCards.get(Repository.sets.get(selectedSet).code).length && Repository.setsWithCards.get(Repository.sets.get(selectedSet).code)[number-1] != null) {
-                        showCardAndSides(Repository.setsWithCards.get(Repository.sets.get(selectedSet).code)[number-1]);
+                        txv_oracle.setText(Repository.cards.get(Repository.setsWithCards.get(Repository.sets.get(selectedSet).code)[number-1]).showCard());
                     }
                     else {
                         txv_oracle.setText(Repository.StringMap(43));
@@ -170,15 +170,6 @@ public class OracleActivity extends AppCompatActivity {
                 numberAdapter.remove(j + "");
             }
         }
-    }
-
-    public void showCardAndSides(String name) {
-        String text = "";
-        text += Repository.cards.get(name).showCard();
-        for(String s : Repository.cards.get(name).sidenames) {
-            text +="\n\n////////////////////\n\n" + Repository.cards.get(s).showCard();
-        }
-        txv_oracle.setText(text);
     }
 
     public void changeMode(int newMode) {

@@ -1,2 +1,2 @@
-20200610
-10-06-2020 update available, you can download it in the link in Settings menu. Details: added support for two new documents
+20200708
+08-07-2020 New update available (mandatory if you want to be able to update the oracle), you can download it in the link in Settings menu.

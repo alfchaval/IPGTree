@@ -1,7 +1,6 @@
 package mtg.judge.ipgtree.Activities;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -10,8 +9,10 @@ import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Pair;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -249,32 +250,57 @@ public class MainActivity extends AppCompatActivity {
                     switch (Repository.players)
                     {
                         case 0:
-                            new AlertDialog.Builder(MainActivity.this)
-                                    .setIcon(android.R.drawable.ic_menu_add)
-                                    .setMessage("Número de jugadores")
-                                    .setPositiveButton("4", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            enableButtons(false);
-                                            intent = new Intent(MainActivity.this, Life4Activity.class);
-                                            startActivityForResult(intent,1);
-                                        }
-                                    })
-                                    .setNegativeButton("2",  new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            enableButtons(false);
-                                            intent = new Intent(MainActivity.this, Life2Activity.class);
-                                            startActivityForResult(intent,1);
-                                        }
-                                    })
-                                    .show();
+                            LayoutInflater layoutInflater = LayoutInflater.from(this);
+                            View view = layoutInflater.inflate(R.layout.dialog_buttons, null);
+
+                            final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+
+                            TextView txv_title = view.findViewById(R.id.txv_title);
+                            Button btn2 = view.findViewById(R.id.btn2);
+                            Button btn4 = view.findViewById(R.id.btn4);
+                            Button btn6 = view.findViewById(R.id.btn6);
+
+                            txv_title.setText(Repository.StringMap(92));
+
+                            btn2.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    enableButtons(false);
+                                    intent = new Intent(MainActivity.this, Life2Activity.class);
+                                    startActivityForResult(intent,1);
+                                    alertDialog.cancel();
+                                }
+                            });
+                            btn4.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    enableButtons(false);
+                                    intent = new Intent(MainActivity.this, Life4Activity.class);
+                                    startActivityForResult(intent,1);
+                                    alertDialog.cancel();
+                                }
+                            });
+                            btn6.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    enableButtons(false);
+                                    intent = new Intent(MainActivity.this, Life6Activity.class);
+                                    startActivityForResult(intent,1);
+                                    alertDialog.cancel();
+                                }
+                            });
+
+                            alertDialog.setView(view);
+                            alertDialog.show();
                             break;
                         case 2:
                             intent = new Intent(MainActivity.this, Life2Activity.class);
                             break;
                         case 4:
                             intent = new Intent(MainActivity.this, Life4Activity.class);
+                            break;
+                        case 6:
+                            intent = new Intent(MainActivity.this, Life6Activity.class);
                             break;
                     }
                     break;

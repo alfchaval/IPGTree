@@ -194,6 +194,7 @@ public class Read {
                 reader.endObject();
                 reader.close();
             } catch (Exception e) {
+                Log.d("ERROR", e.getLocalizedMessage());
             }
         }
 

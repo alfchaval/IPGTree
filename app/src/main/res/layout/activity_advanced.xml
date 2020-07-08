@@ -79,8 +79,17 @@
                         android:id="@+id/rb_4players"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
                         android:checked="false"
                         android:text="4"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/rb_6players"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="6"
                         />
 
                 </RadioGroup>

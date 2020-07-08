@@ -467,7 +467,7 @@
 		<answer text="TE - Problema de Mazo, Pérdida de juego para Alex"></answer>
 		<answer text="UC - Robo de Material de Torneo, Advertencia, baraja la carta en la porción aleatoria de la biblioteca de Nicky, Alex roba otra carta"></answer>
     </question>
-	??? - Opponent made strategic decissions based in the presence of a sideboard card
+	??? - Opponent made strategic decissions based in the presence of a sideboard face
 	<question text="Durante una revisión de mazos, descubres que Alex juega 3 copias de una carta en su mazo principal y otras 2 copias de esa carta en su banquillo">
 		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, Alex elige si remover una copia de la carta de su mazo principal o de su banquillo, si tras removerla de su mazo principal este no tiene suficientes cartas, debe añadir una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, Alex elige si remover una copia de la carta de su mazo principal o de su banquillo, si la remueve del mazo principal debe añadir una Llanura, Isla, Pantano, Montaña o Bosque"></answer>

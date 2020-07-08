@@ -238,7 +238,7 @@
 													<answer text="No">
 														<question text="Did the mulligan process already ended?">
 															<answer text="Yes">
-																<question text="Does the infraction involve a card with morph?">
+																<question text="Does the infraction involve a face with morph?">
 																	<answer text="Yes">
 																		<question text="Solution">
 																			<answer text="GPE - Hidden Card Error, Game Loss."></answer>
@@ -261,7 +261,7 @@
 																							<answer text="Yes">
 																								<question text="Solution">
 																									<answer text="GPE - Hidden Card Error, Warning."></answer>
-																									<answer text="The player reveals the set of cards that contains the excess and their opponent chooses a number of previously unknown cards sufficient to reduce the set to the correct size. These excess cards are returned to the correct location. If that location is the library, they should be shuffled into the random portion unless the owner previously knew the identity of the card/cards illegally moved; that many cards, chosen by the opponent, are returned to the original location instead."></answer>																																																									
+																									<answer text="The player reveals the set of cards that contains the excess and their opponent chooses a number of previously unknown cards sufficient to reduce the set to the correct size. These excess cards are returned to the correct location. If that location is the library, they should be shuffled into the random portion unless the owner previously knew the identity of the face/cards illegally moved; that many cards, chosen by the opponent, are returned to the original location instead."></answer>
 																									<answer text="If the opponent didn't point the error within a time that a player could reasonably be expected to notice, the opponent receive GPE - Failure to Maintain Game State, Warning."></answer>
 																								</question>
 																							</answer>
@@ -362,7 +362,7 @@
 							<answer text="No">
 								<question text="Did the mulligan process already ended?">
 									<answer text="Yes">
-										<question text="Does the infraction involve a card with morph?">
+										<question text="Does the infraction involve a face with morph?">
 											<answer text="Yes">
 												<question text="Solution">
 													<answer text="GPE - Hidden Card Error, Game Loss."></answer>
@@ -385,7 +385,7 @@
 																	<answer text="Yes">
 																		<question text="Solution">
 																			<answer text="GPE - Hidden Card Error, Warning."></answer>
-																			<answer text="The player reveals the set of cards that contains the excess and their opponent chooses a number of previously unknown cards sufficient to reduce the set to the correct size. These excess cards are returned to the correct location. If that location is the library, they should be shuffled into the random portion unless the owner previously knew the identity of the card/cards illegally moved; that many cards, chosen by the opponent, are returned to the original location instead."></answer>																																																									
+																			<answer text="The player reveals the set of cards that contains the excess and their opponent chooses a number of previously unknown cards sufficient to reduce the set to the correct size. These excess cards are returned to the correct location. If that location is the library, they should be shuffled into the random portion unless the owner previously knew the identity of the face/cards illegally moved; that many cards, chosen by the opponent, are returned to the original location instead."></answer>
 																			<answer text="If the opponent didn't point the error within a time that a player could reasonably be expected to notice, the opponent receive GPE - Failure to Maintain Game State, Warning."></answer>
 																		</question>
 																	</answer>
@@ -638,25 +638,25 @@
                     <answer text="Yes">
                         <question text="Solution">
                             <answer text="TE - Marked Cards, Game Loss."></answer>
-                            <answer text="The player replaces the card or sleeve with an unmarked one."></answer>
-							<answer text="If the card was marked during the tournament, the HJ can make a proxy."></answer>
-							<answer text="If a replacement for the card is not found, it is replaced by basic land (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>
+                            <answer text="The player replaces the face or sleeve with an unmarked one."></answer>
+							<answer text="If the face was marked during the tournament, the HJ can make a proxy."></answer>
+							<answer text="If a replacement for the face is not found, it is replaced by basic land (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
                     <answer text="No">
-                        <question text="Was the card marked during the course of the tournament?">
+                        <question text="Was the face marked during the course of the tournament?">
 							<answer text="Si">
 								<question text="Solution">
 									<answer text="TE - Marked Cards, Warning."></answer>
-									<answer text="The player replaces the card or sleeve with an unmarked one."></answer>
+									<answer text="The player replaces the face or sleeve with an unmarked one."></answer>
 									<answer text="The HJ can make a proxy."></answer>
 								</question>
 							</answer>
 							<answer text="No">
 								<question text="Solution">
 									<answer text="TE - Marked Cards, Game Loss."></answer>
-									<answer text="The player replaces the card or sleeve with an unmarked one."></answer>
-									<answer text="If a replacement for the card is not found, it is replaced by basic land (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>
+									<answer text="The player replaces the face or sleeve with an unmarked one."></answer>
+									<answer text="If a replacement for the face is not found, it is replaced by basic land (neither Snow nor Waste) at the player’s choice, this can be reversed if a replacement is found later."></answer>
 								</question>
 							</answer>
 						</question>
@@ -693,7 +693,7 @@
                                         </question>
 									</answer>
 									<answer text="No">
-										<question text="Has the game started and there are more copies of a card in the main deck than the registered ones and they are not all in the random portion of the library?">
+										<question text="Has the game started and there are more copies of a face in the main deck than the registered ones and they are not all in the random portion of the library?">
                                             <answer text="Yes">
 												<question text="Solution">
                                                     <answer text="TE - Deck Problem, Game Loss."></answer>
@@ -702,7 +702,7 @@
 											<answer text="No">
 												<question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                                    <answer text="Remove the wrong cards. If any card is missing in the deck, the opponent chooses which of those cards replaces each incorrect card. If more cards are added than removed, the additional ones are shuffled in the random part of the library. If more cards are removed than added, replace first those that were not in the library. If there are still cards not in the library that must be replaced, they are replaced by random cards from the library."></answer>
+                                                    <answer text="Remove the wrong cards. If any face is missing in the deck, the opponent chooses which of those cards replaces each incorrect face. If more cards are added than removed, the additional ones are shuffled in the random part of the library. If more cards are removed than added, replace first those that were not in the library. If there are still cards not in the library that must be replaced, they are replaced by random cards from the library."></answer>
 												</question>
                                             </answer>
                                         </question>
@@ -767,7 +767,7 @@
                             <answer text="Remove illegal cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
-                    <answer text="A player is playing more copies of a card than the maximum allowed copies">
+                    <answer text="A player is playing more copies of a face than the maximum allowed copies">
                         <question text="Solution">
                             <answer text="TE - Decklist Problem, Game Loss."></answer>
                             <answer text="Remove excess cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
@@ -798,7 +798,7 @@
                                 </question>
                             </answer>
                             <answer text="In the middle of the game">
-                                <question text="Has the card been revealed (or was it going to be revealed) at the time the error was discovered?">
+                                <question text="Has the face been revealed (or was it going to be revealed) at the time the error was discovered?">
                                     <answer text="Yes">
                                         <question text="Solution">
                                             <answer text="TE - Deck Problem, Game Loss."></answer>
@@ -806,7 +806,7 @@
                                         </question>
                                     </answer>
                                     <answer text="No">
-                                        <question text="Is the error that there are more copies of a card in the main deck than are registered for it and any of the copies have left the random portion of the library?">
+                                        <question text="Is the error that there are more copies of a face in the main deck than are registered for it and any of the copies have left the random portion of the library?">
                                             <answer text="Yes">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Game Loss."></answer>
@@ -816,7 +816,7 @@
                                             <answer text="No">
                                                 <question text="Solution">
                                                     <answer text="TE - Deck Problem, Warning."></answer>
-                                                    <answer text="Fix the deck, replace the wrong card with none."></answer>
+                                                    <answer text="Fix the deck, replace the wrong face with none."></answer>
                                                 </question>
                                             </answer>
                                         </question>
@@ -948,7 +948,7 @@
                             <answer text="Remove illegal cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
                         </question>
                     </answer>
-                    <answer text="A player is playing more copies of a card than the maximum allowed copies">
+                    <answer text="A player is playing more copies of a face than the maximum allowed copies">
                         <question text="Solution">
                             <answer text="TE - Decklist Problem, Game Loss."></answer>
                             <answer text="Remove excess cards, then if the deck doesn't have enough cards, add basic lands (neither Snow nor Waste) at the player’s choice, modify the decklist to reflect the changes, this can be reversed if a replacement is found later."></answer>
@@ -1183,7 +1183,7 @@
             <answer text="Examples:"></answer>
             <answer text="- A player passes a booster to their left when it is supposed to go to their right."></answer>
             <answer text="- A player exceeds the amount of time allotted for a draft pick."></answer>
-            <answer text="- A player puts a card on top of their draft pile, then pulls it back."></answer>
+            <answer text="- A player puts a face on top of their draft pile, then pulls it back."></answer>
             <answer text="- A player moves their head to the side at inappropriate times."></answer>
         </question>
     </answer>

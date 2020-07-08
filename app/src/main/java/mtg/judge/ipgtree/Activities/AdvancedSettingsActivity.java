@@ -43,7 +43,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     private ScrollView scroll;
     private ImageView imv_arrow_down, imv_arrow_up;
     private RadioGroup rg_players;
-    private RadioButton rb_0players, rb_2players, rb_4players;
+    private RadioButton rb_0players, rb_2players, rb_4players, rb_6players;
     CheckBox cb_reverse_life;
 
     private ViewTreeObserver viewTreeObserver;
@@ -103,6 +103,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         rb_0players = findViewById(R.id.rb_0players);
         rb_2players = findViewById(R.id.rb_2players);
         rb_4players = findViewById(R.id.rb_4players);
+        rb_6players = findViewById(R.id.rb_6players);
 
         btn_save = findViewById(R.id.btn_save);
         btn_unlockftp = findViewById(R.id.btn_unlockftp);
@@ -262,6 +263,9 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 break;
             case 4:
                 rb_4players.setChecked(true);;
+                break;
+            case 6:
+                rb_6players.setChecked(true);;
                 break;
         }
     }
@@ -426,6 +430,9 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                         break;
                     case R.id.rb_4players:
                         Repository.players = 4;
+                        break;
+                    case R.id.rb_6players:
+                        Repository.players = 6;
                         break;
                 }
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
