@@ -11,14 +11,13 @@
 			<point text="Veil of Summer"></point>
     </point>
     <point text="Pioneer">
-        <point text="Actualizado: 16-12-2019"></point>
+        <point text="Actualizado: 13-07-2020"></point>
         <title text="Baneadas"></title>
             <point text="Bloodstained Mire"></point>
 			<point text="Felidar Guardian"></point>
 			<point text="Field of the Dead"></point>
             <point text="Flooded Strand"></point>
 			<point text="Leyline of Abundance"></point>
-			<point text="Oath of Nissa"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Nexus of Fate"></point>
@@ -32,6 +31,7 @@
         <point text="Actualizado: 09-03-2020"></point>
         <title text="Baneadas"></title>
             <point text="Ancient Den"></point>
+			<point text="Arcum's Astrolabe"></point>
             <point text="Birthing Pod"></point>
             <point text="Blazing Shoal"></point>
             <point text="Chrome Mox"></point>
@@ -199,7 +199,7 @@
             <point text="Yawgmoth's Will"></point>
     </point>
     <point text="Pauper">
-        <point text="Actualizado: 21-10-2019"></point>
+        <point text="Actualizado: 13-07-2020"></point>
         <title text="Baneadas"></title>
             <point text="Arcum's Astrolabe"></point>
             <point text="Cloud of Faeries"></point>
@@ -207,6 +207,7 @@
             <point text="Cranial Plating"></point>
             <point text="Daze"></point>
             <point text="Empty the Warrens"></point>
+			<point text="Expedition Map"></point>
             <point text="Frantic Search"></point>
             <point text="Gitaxian Probe"></point>
             <point text="Grapeshot"></point>
@@ -214,6 +215,7 @@
             <point text="High Tide"></point>
             <point text="Hymn to Tourach"></point>
             <point text="Invigorate"></point>
+			<point text="Mystic Sanctuary"></point>
             <point text="Peregrine Drake"></point>
             <point text="Sinkhole"></point>
             <point text="Temporal Fissure"></point>
@@ -522,15 +524,17 @@
 			<point text="Winota, Joiner of Forces"></point>
     </point>
 	<point text="Historic">
-        <point text="Actualizado: 09-03-2020"></point>
+        <point text="Actualizado: 13-07-2020"></point>
 		<title text="Baneadas"></title>
+			<point text="Agent of Treachery"></point>
+			<point text="Fires of Invention"></point>
+			<point text="Nexus of Fate"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Veil of Summer"></point>
-		<title text="Suspendidas"></title>
-			<point text="Agent of Treachery"></point>
-			<point text="Fires of Invention"></point>
 			<point text="Winota, Joiner of Forces"></point>
+		<title text="Suspendidas"></title>
+			<point text="Burning-Tree Emissary"></point>
     </point>
 	<point text="2HG">
         <point text="Actualizado: ???"></point>
@@ -596,7 +600,7 @@
             <point text="Derevi, Empyrial Tactician"></point>
     </point>
 	<point text="Premodern">
-		<point text="Actualizado: 20-08-2019"></point>
+		<point text="Actualizado: 13-07-2020"></point>
 		<link text="https://premodernmagic.com/Baneadas-watched"></link>
 		<title text="Baneadas"></title>
 			<point text="Amulet of Quoz"></point>

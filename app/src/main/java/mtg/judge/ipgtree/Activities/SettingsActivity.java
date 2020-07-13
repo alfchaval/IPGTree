@@ -499,7 +499,6 @@ public class SettingsActivity extends AppCompatActivity {
                         oracleWriter.append("\"" + cardlist.get(i).name.replace("\"", "") + "\":");
                         s = gson.toJson(cardlist.get(i));
                         oracleWriter.append(s+",");
-
                     }
                     oracleWriter.append("\"" + cardlist.get(cardlist.size()-1).name.replace("\"", "") + "\":");
                     s = gson.toJson(cardlist.get(cardlist.size()-1));
