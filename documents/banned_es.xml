@@ -1,29 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Listas de baneos">
     <point text="Standard">
-        <point text="Actualizado: 18-11-2019"></point>
+        <point text="Actualizado: 03-08-2020"></point>
         <title text="Baneadas"></title>
             <point text="Agent of Treachery"></point>
+			<point text="Cauldron Familiar"></point>
             <point text="Field of the Dead"></point>
 			<point text="Fires of Invention"></point>
+			<point text="Growth Spiral"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
+			<point text="Teferi, Time Raveler"></point>
 			<point text="Veil of Summer"></point>
+			<point text="Wilderness Reclamation"></point>
     </point>
     <point text="Pioneer">
-        <point text="Actualizado: 13-07-2020"></point>
+        <point text="Actualizado: 03-08-2020"></point>
         <title text="Baneadas"></title>
             <point text="Bloodstained Mire"></point>
 			<point text="Felidar Guardian"></point>
 			<point text="Field of the Dead"></point>
             <point text="Flooded Strand"></point>
+			<point text="Inverter of Truth"></point>
+			<point text="Kethis, the Hidden Hand"></point>
 			<point text="Leyline of Abundance"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Nexus of Fate"></point>
             <point text="Polluted Delta"></point>
 			<point text="Smuggler's Copter"></point>
+			<point text="Underworld Breach"></point>
 			<point text="Veil of Summer"></point>
+			<point text="Walking Ballista"></point>
             <point text="Windswept Heath"></point>
             <point text="Wooded Foothills"></point>
     </point>
@@ -514,17 +522,18 @@
 			<point text="Yawgmoth’s Will – 2"></point>
     </point>
     <point text="Brawl">
-        <point text="Actualizado: 18-05-2020"></point>
+        <point text="Actualizado: 03-08-2020"></point>
         <title text="Baneadas"></title>
 			<point text="Drannith Magistrate"></point>
 			<point text="Golos, Tireless Pilgrim"></point>
 			<point text="Lutri, the Spellchaser"></point>
             <point text="Sorcerous Spyglass"></point>
+			<point text="Teferi, Time Raveler"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Winota, Joiner of Forces"></point>
     </point>
 	<point text="Historic">
-        <point text="Actualizado: 13-07-2020"></point>
+        <point text="Actualizado: 03-08-2020"></point>
 		<title text="Baneadas"></title>
 			<point text="Agent of Treachery"></point>
 			<point text="Fires of Invention"></point>
@@ -535,6 +544,8 @@
 			<point text="Winota, Joiner of Forces"></point>
 		<title text="Suspendidas"></title>
 			<point text="Burning-Tree Emissary"></point>
+			<point text="Teferi, Time Raveler"></point>
+			<point text="Wilderness Reclamation"></point>
     </point>
 	<point text="2HG">
         <point text="Actualizado: ???"></point>
