@@ -1315,7 +1315,7 @@
 			<point text="610.4b Si un hechizo o habilidad activada resolviéndose crea el efecto que no se repite inicial que causa que el permanente salga de fase, y el evento especificado ha ocurrido antes de que ese efecto que no se repite fuese a ocurrir pero después de que ese hechizo o habilidad se pusiera en la pila, el permanente no sale de fase."></point>
 			<point text="610.4c Si una habilidad disparada resolviéndose crea el efecto que no se repite inicial que causa que el permanente salga de fase, y el evento especificado ha ocurrido antes de que ese efecto que no se repite fuese a ocurrir pero después de que esa habilidad se disparó, el objeto no sale de fase."></point>
 			<point text="610.4d Si varios efectos que no se repiten son creados de esta manera inmediatamente después de uno o más eventos simultáneos, esos efectos que no se repiten también son simultáneos."></point>
-			<example text="Ejemplo: Dos Sacerdotisas desterradoras han exiliado una carta cada una. Todas las criaturas son destruidas al mismo tiempo por un Día del juicio final. Las dos criaturas exiliadas regresan al campo de batalla al mismo tiempo."></point>
+			<example text="Ejemplo: Dos Sacerdotisas desterradoras han exiliado una carta cada una. Todas las criaturas son destruidas al mismo tiempo por un Día del juicio final. Las dos criaturas exiliadas regresan al campo de batalla al mismo tiempo."></example>
 		</point>
 		<point text="611. Efectos continuos">
 			<point text="611.1. Un efecto continuo es un efecto que modifica las características de los objetos, modifica el control de los objetos, o afecta a los jugadores o las reglas de juego, por un período de tiempo fijo o indefinido."></point>
