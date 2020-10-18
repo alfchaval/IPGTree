@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Banlists">
     <point text="Standard">
-        <point text="Updated: 03-08-2020"></point>
+        <point text="Updated: 12-10-2020"></point>
         <title text="Banned"></title>
 			<point text="Cauldron Familiar"></point>
+			<point text="Escape to the Wilds"></point>
 			<point text="Fires of Invention"></point>
+			<point text="Lucky Clover"></point>
 			<point text="Oko, Thief of Crowns"></point>
+			<point text="Omnath, Locus of Creation"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Uro, Titan of Nature's Wrath"></point>
     </point>
@@ -517,7 +520,7 @@
 			<point text="Yawgmoth’s Will – 2"></point>
     </point>
     <point text="Brawl">
-        <point text="Updated: 03-08-2020"></point>
+        <point text="Updated: 12-10-2020"></point>
         <title text="Banned"></title>
 			<point text="Drannith Magistrate"></point>
 			<point text="Gideon's Intervention (Historic Brawl)"></point>
@@ -526,22 +529,25 @@
             <point text="Sorcerous Spyglass"></point>
 			<point text="Teferi, Time Raveler"></point>
 			<point text="Oko, Thief of Crowns"></point>
+			<point text="Omnath, Locus of Creation"></point>
 			<point text="Runed Halo"></point>
 			<point text="Winota, Joiner of Forces"></point>
     </point>
 	<point text="Historic">
-        <point text="Updated: 03-08-2020"></point>
+        <point text="Updated: 12-10-2020"></point>
 		<title text="Banned"></title>
 			<point text="Agent of Treachery"></point>
 			<point text="Field of the Dead"></point>
 			<point text="Fires of Invention"></point>
 			<point text="Nexus of Fate"></point>
 			<point text="Oko, Thief of Crowns"></point>
+			<point text="Omnath, Locus of Creation"></point>
 			<point text="Once Upon a Time"></point>
+			<point text="Teferi, Time Raveler"></point>
 			<point text="Veil of Summer"></point>
+			<point text="Wilderness Reclamation"></point>
 			<point text="Winota, Joiner of Forces"></point>
 		<title text="Suspended"></title>
-			<point text="Burning-Tree Emissary"></point>
 			<point text="Teferi, Time Raveler"></point>
 			<point text="Wilderness Reclamation"></point>
 	</point>
