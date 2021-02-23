@@ -13,8 +13,9 @@
 			<point text="Uro, Titan of Nature's Wrath"></point>
     </point>
     <point text="Pioneer">
-        <point text="Updated: 03-08-2020"></point>
+        <point text="Updated: 15-02-2021"></point>
         <title text="Banned"></title>
+            <point text="Balustrade Spy"></point>
             <point text="Bloodstained Mire"></point>
 			<point text="Felidar Guardian"></point>
 			<point text="Field of the Dead"></point>
@@ -26,15 +27,19 @@
 			<point text="Once Upon a Time"></point>
 			<point text="Nexus of Fate"></point>
             <point text="Polluted Delta"></point>
+			<point text="Teferi, Time Raveler"></point>
 			<point text="Smuggler's Copter"></point>
+			<point text="Undercity Informer"></point>
 			<point text="Underworld Breach"></point>
+			<point text="Uro, Titan of Nature's Wrath"></point>
 			<point text="Veil of Summer"></point>
 			<point text="Walking Ballista"></point>
+			<point text="Wilderness Reclamation"></point>
             <point text="Windswept Heath"></point>
             <point text="Wooded Foothills"></point>
     </point>
     <point text="Modern">
-        <point text="Updated: 09-03-2020"></point>
+        <point text="Updated: 15-02-2021"></point>
         <title text="Banned"></title>
             <point text="Ancient Den"></point>
 			<point text="Arcum's Astrolabe"></point>
@@ -48,6 +53,7 @@
             <point text="Dread Return"></point>
             <point text="Eye of Ugin"></point>
             <point text="Faithless Looting"></point>
+			<point text="Field of the Dead"></point>
             <point text="Gitaxian Probe"></point>
             <point text="Glimpse of Nature"></point>
             <point text="Golgari Grave-Troll"></point>
@@ -59,6 +65,7 @@
             <point text="Mental Misstep"></point>
 			<point text="Mox Opal"></point>
 			<point text="Mycosynth Lattice"></point>
+			<point text="Mystic Sanctuary"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Once Upon a Time"></point>
             <point text="Ponder"></point>
@@ -69,21 +76,25 @@
             <point text="Second Sunrise"></point>
             <point text="Seething Song"></point>
             <point text="Sensei's Divining Top"></point>
+			<point text="Simian Spirit"></point>
             <point text="Skullclamp"></point>
             <point text="Splinter Twin"></point>
             <point text="Summer Bloom"></point>
+			<point text="Tibalt's Trickery"></point>
             <point text="Treasure Cruise"></point>
             <point text="Tree of Tales"></point>
             <point text="Umezawa's Jitte"></point>
+			<point text="Uro, Titan of Nature's Wrath"></point>
             <point text="Vault of Whispers"></point>
     </point>
     <point text="Legacy">
-        <point text="Updated: 18-05-2020"></point>
+        <point text="Updated: 15-02-2021"></point>
         <title text="Banned"></title>
             <point text="The 25 cards with the Card Type “Conspiracy”."></point>
             <point text="The 9 cards that reference “playing for ante”."></point>
 			<point text="The “racist cards” (Cleanse, Crusade, Imprison, Invoke Prejudice, Jihad, Pradesh Gypsies, Stone-Throwing Devils)."></point>
             <point text="Ancestral Recall"></point>
+			<point text="Arcum's Astrolabe"></point>
             <point text="Balance"></point>
             <point text="Bazaar of Baghdad"></point>
             <point text="Black Lotus"></point>
@@ -93,6 +104,7 @@
             <point text="Demonic Consultation"></point>
             <point text="Demonic Tutor"></point>
             <point text="Dig Through Time"></point>
+			<point text="Dreadhorde Arcanist"></point>
             <point text="Earthcraft"></point>
             <point text="Falling Star"></point>
             <point text="Fastbond"></point>
@@ -121,6 +133,7 @@
             <point text="Mystical Tutor"></point>
             <point text="Necropotence"></point>
             <point text="Oath of Druids"></point>
+			<point text="Oko, Thief of Crowns"></point>
             <point text="Sensei's Divining Top"></point>
             <point text="Shahrazad"></point>
             <point text="Skullclamp"></point>
@@ -143,14 +156,13 @@
 			<point text="Zirda, the Dawnwaker"></point>
     </point>
     <point text="Vintage">
-        <point text="Updated: 18-05-2020"></point>
+        <point text="Updated: 15-02-2021"></point>
         <title text="Banned"></title>
             <point text="The 25 cards with the Card Type “Conspiracy”."></point>
             <point text="The 9 cards that reference “playing for ante”."></point>
 			<point text="The “racist cards” (Cleanse, Crusade, Imprison, Invoke Prejudice, Jihad, Pradesh Gypsies, Stone-Throwing Devils)."></point>
             <point text="Chaos Orb"></point>
             <point text="Falling Star"></point>
-			<point text="Lurrus of the Dream Den"></point>
             <point text="Shahrazad"></point>
         <title text="Restricted"></title>
             <point text="Ancestral Recall"></point>
@@ -205,7 +217,7 @@
             <point text="Yawgmoth's Will"></point>
     </point>
     <point text="Pauper">
-        <point text="Updated: 13-07-2020"></point>
+        <point text="Updated: 14-01-2021"></point>
         <title text="Banned"></title>
             <point text="Arcum's Astrolabe"></point>
             <point text="Cloud of Faeries"></point>
@@ -214,6 +226,7 @@
             <point text="Daze"></point>
             <point text="Empty the Warrens"></point>
 			<point text="Expedition Map"></point>
+			<point text="Fall from Favor"></point>
             <point text="Frantic Search"></point>
             <point text="Gitaxian Probe"></point>
             <point text="Grapeshot"></point>
@@ -417,6 +430,7 @@
             <title text="Banned"></title>
                 <point text="The 25 cards with the Card Type “Conspiracy”."></point>
 				<point text="The 9 cards that reference “playing for ante”."></point>
+				<point text="The “racist cards” (Cleanse, Crusade, Imprison, Invoke Prejudice, Jihad, Pradesh Gypsies, Stone-Throwing Devils)."></point>
 				<point text="Ad Nauseam"></point>
 				<point text="Ancestral Recall"></point>
 				<point text="Balance"></point>
@@ -433,6 +447,7 @@
 				<point text="Gifts Ungiven"></point>
 				<point text="Griselbrand"></point>
 				<point text="High Tide"></point>
+				<point text="Jeweled Lotus"></point>
 				<point text="Library of Alexandria"></point>
 				<point text="Limited Resources"></point>
 				<point text="Lion’s Eye Diamond"></point>
@@ -453,7 +468,6 @@
 				<point text="Shahrazad"></point>
 				<point text="Sol Ring"></point>
 				<point text="Sundering Titan"></point>
-				<point text="Sway of the Stars"></point>
 				<point text="Sylvan Primordial"></point>
 				<point text="Time Vault"></point>
 				<point text="Time Walk"></point>
@@ -618,7 +632,7 @@
 			<point text="Winota, Joiner of Forces"></point>
     </point>
 	<point text="Historic">
-        <point text="Updated: 12-10-2020"></point>
+        <point text="Updated: 15-02-2021"></point>
 		<title text="Banned"></title>
 			<point text="Agent of Treachery"></point>
 			<point text="Field of the Dead"></point>
@@ -628,12 +642,11 @@
 			<point text="Omnath, Locus of Creation"></point>
 			<point text="Once Upon a Time"></point>
 			<point text="Teferi, Time Raveler"></point>
+			<point text="Uro, Titan of Nature's Wrath"></point>
 			<point text="Veil of Summer"></point>
 			<point text="Wilderness Reclamation"></point>
 			<point text="Winota, Joiner of Forces"></point>
 		<title text="Suspended"></title>
-			<point text="Teferi, Time Raveler"></point>
-			<point text="Wilderness Reclamation"></point>
 	</point>
 	<point text="2HG">
         <point text="Actualizado: ???"></point>
