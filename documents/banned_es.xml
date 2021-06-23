@@ -618,21 +618,23 @@
 			<point text="Yawgmoth’s Will – 2"></point>
     </point>
     <point text="Brawl">
-        <point text="Actualizado: 12-10-2020"></point>
+        <point text="Actualizado: 16-06-2020"></point>
         <title text="Baneadas"></title>
+			<point text="Channel"></point>
+			<point text="Demonic Tutor"></point>
 			<point text="Drannith Magistrate"></point>
 			<point text="Gideon's Intervention (Historic Brawl)"></point>
-			<point text="Golos, Tireless Pilgrim"></point>
 			<point text="Lutri, the Spellchaser"></point>
             <point text="Sorcerous Spyglass"></point>
 			<point text="Teferi, Time Raveler"></point>
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Omnath, Locus of Creation"></point>
+			<point text="Natural Order"></point>
 			<point text="Runed Halo"></point>
-			<point text="Winota, Joiner of Forces"></point>
+			<point text="Tainted Pact"></point>
     </point>
 	<point text="Historic">
-        <point text="Actualizado: 15-02-2021"></point>
+        <point text="Actualizado: 09-06-2021"></point>
 		<title text="Baneadas"></title>
 			<point text="Agent of Treachery"></point>
 			<point text="Field of the Dead"></point>
@@ -641,7 +643,9 @@
 			<point text="Oko, Thief of Crowns"></point>
 			<point text="Omnath, Locus of Creation"></point>
 			<point text="Once Upon a Time"></point>
+			<point text="Thassa's Oracle"></point>
 			<point text="Teferi, Time Raveler"></point>
+			<point text="Time Warp"></point>
 			<point text="Uro, Titan of Nature's Wrath"></point>
 			<point text="Veil of Summer"></point>
 			<point text="Wilderness Reclamation"></point>
