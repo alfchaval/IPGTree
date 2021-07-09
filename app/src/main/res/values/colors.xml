@@ -5,6 +5,7 @@
     <color name="colorAccent">#FFFACD</color>
     <color name="colorText">#FFFFFF</color>
     <color name="colorLink">#AAFFFF</color>
+    <color name="colorSelected">#00699E</color>
     <color name="colorBackground">#202020</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorSemiTransparent">#33FFFFFF</color>

@@ -4,14 +4,22 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -23,14 +31,19 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import mtg.judge.ipgtree.POJO.TreeIterator;
 import mtg.judge.ipgtree.R;
 
+import mtg.judge.ipgtree.Utilities.CustomMovementMethod;
+import mtg.judge.ipgtree.Utilities.CustomSpan;
 import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.POJO.Tree;
 import mtg.judge.ipgtree.POJO.TypedText;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DocumentActivity extends AppCompatActivity {
 
@@ -52,10 +65,15 @@ public class DocumentActivity extends AppCompatActivity {
     private LinearLayout.LayoutParams layoutParams;
     private final int TEXT_SIZE = 20;
 
+    private String document = "";
     private boolean showNotes = true;
     private boolean searching = false;
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
+
+    private static final Pattern RULE_PATTERN = Pattern.compile("\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
+    private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
+    private Pattern searchTextPattern = null;
 
     @Override
     protected void onSaveInstanceState (Bundle outState) {
@@ -199,7 +217,7 @@ public class DocumentActivity extends AppCompatActivity {
             tree = (Tree<TypedText>) savedInstanceState.getSerializable(KEY_SERIALIZED_TREE);
         }
         else {
-            String document = getIntent().getStringExtra("document");
+            document = getIntent().getStringExtra("document");
             tree = Read.readXMLDocument(document + "_" + Repository.language + ".xml");
             if(document.equals("cr")) {
                 edt_search.setVisibility(View.VISIBLE);
@@ -217,8 +235,7 @@ public class DocumentActivity extends AppCompatActivity {
             if (index >= branchs.size()) {
                 addTextView(index);
             }
-            branchs.get(index).setText(tree.getChild(index).getData().getText());
-            format(index, tree.getChild(index).getData().getType());
+            setTextView(index, tree.getChild(index).getData(), "");
             index++;
         }
         //Hide void TextViews
@@ -234,24 +251,17 @@ public class DocumentActivity extends AppCompatActivity {
         textView.setLayoutParams(layoutParams);
         textView.setTextSize(TEXT_SIZE);
         textView.setPadding(8, 8, 8, 8);
+        textView.setTextColor(getResources().getColor(R.color.colorText));
+        textView.setMovementMethod(CustomMovementMethod.getInstance());
 
         branchs.add(textView);
         //Clicking an answer moves you to a web page or the next question if there is anyone
         branchs.get(index).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!searching && tree.existChild(index)) {
-                    if(tree.getChild(index).getData().getType() == TypedText.LINK) {
-                        ((TextView)view).setMovementMethod(LinkMovementMethod.getInstance());
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                        browserIntent.setData(Uri.parse(((TextView)view).getText().toString()));
-                        startActivity(browserIntent);
-                    }
-                    else if (!tree.getChild(index).isLeaf()) {
-                        ((TextView)view).setMovementMethod(null);
-                        tree = tree.getChild(index);
-                        showList();
-                    }
+                if(!searching && tree.existChild(index) && !tree.getChild(index).isLeaf()) {
+                    tree = tree.getChild(index);
+                    showList();
                 }
             }
         });
@@ -308,6 +318,7 @@ public class DocumentActivity extends AppCompatActivity {
 
     private void search(String word) {
         searching = true;
+        searchTextPattern = Pattern.compile(Pattern.quote(word), Pattern.CASE_INSENSITIVE);
         tv_title.setVisibility(View.GONE);
         tree = tree.getRoot();
         results = treeSearch(word);
@@ -319,8 +330,7 @@ public class DocumentActivity extends AppCompatActivity {
             if (index >= branchs.size()) {
                 addTextView(index);
             }
-            branchs.get(index).setText(results.get(index).getText());
-            format(index, results.get(index).getType());
+            setTextView(index, results.get(index), word);
             index++;
         }
         while (index < branchs.size()) {
@@ -344,74 +354,106 @@ public class DocumentActivity extends AppCompatActivity {
             results = treeSearch(word, results);
             tree = tree.getParent();
             index++;
-
         }
         return results;
     }
 
-    private void format(int index, int type) {
-        //There is some duplicate code in the switch, but it's also clearer this way
-        switch (type) {
-            case TypedText.NORMAL:
-                branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                if(searching || tree.getChild(index).isLeaf()) {
-                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+    private void ruleSearch(String rule)
+    {
+        boolean found = false;
+        TreeIterator treeIterator = new TreeIterator(tree);
+        Tree<TypedText> node = treeIterator.next();
+        while (!found && node != null)
+        {
+            if(node.getData().getText().substring(0, rule.length()).equals(rule))
+            {
+               found = true;
+               if(node.isLeaf())
+               {
+                   tree = node.getParent();
+               }
+               else
+               {
+                   tree = node;
+               }
+            }
+            else
+            {
+                node = treeIterator.next();
+            }
+        }
+        showList();
+    }
+
+    private void setTextView(int index, TypedText typedText, String word) {
+        TextView textView = branchs.get(index);
+        String text = typedText.getText();
+        Spannable spannable = new SpannableString(text);
+        if(document.equals("cr") && (searching || tree.getChild(index).isLeaf()))
+        {
+            Matcher ruleMatcher = RULE_PATTERN.matcher(text);
+            while (ruleMatcher.find()) {
+                spannable.setSpan(
+                        new CustomSpan(getResources().getColor(R.color.colorLink), text.substring(ruleMatcher.start(), ruleMatcher.end())) {
+                            @Override
+                            public void onClick(@NonNull View widget) {
+                                ruleSearch(GetRule());
+                            }
+                        }, ruleMatcher.start(), ruleMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+
+            Matcher exampleMatcher = EXAMPLE_PATTERN.matcher(text);
+            if (exampleMatcher.find()) {
+                spannable.setSpan(new StyleSpan(Typeface.ITALIC), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+
+            if(searching)
+            {
+                Matcher searchTextMatcher = searchTextPattern.matcher(text);
+                while (searchTextMatcher.find()) {
+                    spannable.setSpan(new BackgroundColorSpan(getResources().getColor(R.color.colorSelected)), searchTextMatcher.start(), searchTextMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
                 }
-                else {
-                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                }
-                branchs.get(index).setVisibility(View.VISIBLE);
-                break;
-            case TypedText.TITLE:
-                branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorAccent));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-                if(searching || tree.getChild(index).isLeaf()) {
-                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                }
-                else {
-                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                }
-                branchs.get(index).setVisibility(View.VISIBLE);
-                break;
-            case TypedText.EXAMPLE:
-                branchs.get(index).setTypeface(null, Typeface.ITALIC);
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                if(searching || tree.getChild(index).isLeaf()) {
-                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                }
-                else {
-                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                }
-                branchs.get(index).setVisibility(View.VISIBLE);
-                break;
-            case TypedText.ANNOTATION:
-                branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorText));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                if(showNotes) {
-                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
-                    branchs.get(index).setVisibility(View.VISIBLE);
-                }
-                else {
-                    branchs.get(index).setVisibility(View.GONE);
-                }
-                break;
-            case TypedText.LINK:
-                branchs.get(index).setTypeface(null, Typeface.NORMAL);
-                branchs.get(index).setTextColor(ContextCompat.getColor(this, R.color.colorLink));
-                branchs.get(index).setPaintFlags(branchs.get(index).getPaintFlags() & (~ Paint.UNDERLINE_TEXT_FLAG));
-                if(searching || tree.getChild(index).isLeaf()) {
-                    branchs.get(index).setBackgroundColor(getResources().getColor(R.color.colorTransparent));
-                }
-                else {
-                    branchs.get(index).setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
-                }
-                branchs.get(index).setVisibility(View.VISIBLE);
-                break;
+            }
+
+        }
+        else
+        {
+            Matcher linkMatcher = android.util.Patterns.WEB_URL.matcher(text);;
+            while (linkMatcher.find()) {
+                CustomSpan linkSpan = new CustomSpan(getResources().getColor(R.color.colorLink), Uri.parse(text.substring(linkMatcher.start(), linkMatcher.end()))) {
+                    @Override
+                    public void onClick(@NonNull View widget) {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                        browserIntent.setData(GetUri());
+                        startActivity(browserIntent);
+                    }
+                };
+                spannable.setSpan(linkSpan, linkMatcher.start(), linkMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+        }
+
+        if (typedText.getType() == TypedText.ANNOTATION) {
+            if (showNotes) {
+                textView.setBackground(getResources().getDrawable(R.drawable.answer_background_annotation));
+                textView.setText(spannable);
+                textView.setVisibility(View.VISIBLE);
+            } else {
+                textView.setVisibility(View.GONE);
+                textView.setText(spannable);
+            }
+        } else {
+            if(typedText.getType() == TypedText.TITLE)
+            {
+                spannable.setSpan(new UnderlineSpan(), 0, text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+                spannable.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent)), 0, text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+            textView.setText(spannable);
+            if (searching || tree.getChild(index).isLeaf()) {
+                textView.setBackgroundColor(getResources().getColor(R.color.colorTransparent));
+            } else {
+                textView.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+            }
+            textView.setVisibility(View.VISIBLE);
         }
     }
 }
