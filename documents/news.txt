@@ -1,2 +1,2 @@
-20200708
-08-07-2020 New update available (mandatory if you want to be able to update the oracle), you can download it in the link in Settings menu.
+20210709
+09-07-2021 New update available, minor changes, you can download it in the link in Settings menu.

@@ -51,14 +51,8 @@ public class Read {
                                 case "title":
                                     tree.getData().setType(TypedText.TITLE);
                                     break;
-                                case "example":
-                                    tree.getData().setType(TypedText.EXAMPLE);
-                                    break;
                                 case "annotation":
                                     tree.getData().setType(TypedText.ANNOTATION);
-                                    break;
-                                case "link":
-                                    tree.getData().setType(TypedText.LINK);
                                     break;
                             }
                         }

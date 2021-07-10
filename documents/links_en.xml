@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Enlaces">
     <title text="Webs"></title>
-    <point text="Forum:"></point>
-    <link text ="https://apps.magicjudges.org/"></link>
-    <point text="Blogs:"></point>
-    <link text ="https://blogs.magicjudges.org/"></link>
-    <point text="Judge academy:"></point>
-    <link text ="https://judgeacademy.com/"></link>
-    <point text="Rules chats:"></point>
-    <link text ="https://chat.magicjudges.org/mtgrules/"></link>
-    <link text ="https://chat.magicjudges.org/mtgjudge/"></link>
+    <point text="Forum: https://apps.magicjudges.org/"></point>
+    <point text="Blogs: https://blogs.magicjudges.org/"></point>
+    <point text="Judge academy: https://judgeacademy.com/"></point>
+    <point text="Rules chat: https://chat.magicjudges.org/mtgrules/"></link>
+    <link text ="Judge chat: https://chat.magicjudges.org/mtgjudge/"></link>
     <title text="Documents"></title>
-    <point text="Magic judge code (outdated):"></point>
-    <link text ="https://blogs.magicjudges.org/conduct/magic-judge-code/"></link>
+    <point text="Magic judge code (outdated): https://blogs.magicjudges.org/conduct/magic-judge-code/"></point>
 </point>

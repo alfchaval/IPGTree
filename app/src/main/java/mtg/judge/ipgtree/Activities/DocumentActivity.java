@@ -71,7 +71,8 @@ public class DocumentActivity extends AppCompatActivity {
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 
-    private static final Pattern RULE_PATTERN = Pattern.compile("\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
+    private static final Pattern URI_PATTERN = Pattern.compile("https?://(www\\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#()?&//=]*)");
+    private static final Pattern RULE_PATTERN = Pattern.compile("(?<!^)\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
     private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
     private Pattern searchTextPattern = null;
 
@@ -418,7 +419,7 @@ public class DocumentActivity extends AppCompatActivity {
         }
         else
         {
-            Matcher linkMatcher = android.util.Patterns.WEB_URL.matcher(text);;
+            Matcher linkMatcher = URI_PATTERN.matcher(text);
             while (linkMatcher.find()) {
                 CustomSpan linkSpan = new CustomSpan(getResources().getColor(R.color.colorLink), Uri.parse(text.substring(linkMatcher.start(), linkMatcher.end()))) {
                     @Override
