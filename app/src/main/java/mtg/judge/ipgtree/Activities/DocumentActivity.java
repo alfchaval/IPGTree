@@ -13,13 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
 import android.text.style.BackgroundColorSpan;
-import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -27,10 +24,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import mtg.judge.ipgtree.Components.CustomScrollView;
 import mtg.judge.ipgtree.POJO.TreeIterator;
 import mtg.judge.ipgtree.R;
 
@@ -51,7 +48,7 @@ public class DocumentActivity extends AppCompatActivity {
 
     private TextView tv_title;
     private LinearLayout ll_points;
-    private ScrollView scroll_points;
+    private CustomScrollView scroll_points;
     private ImageView imv_arrow_up;
     private ImageView imv_arrow_down;
     private EditText edt_search;
@@ -73,6 +70,7 @@ public class DocumentActivity extends AppCompatActivity {
 
     private static final Pattern URI_PATTERN = Pattern.compile("https?://(www\\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#()?&//=]*)");
     private static final Pattern RULE_PATTERN = Pattern.compile("(?<!^)\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
+    private static final Pattern SEARCHING_RULE_PATTERN = Pattern.compile("\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
     private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
     private Pattern searchTextPattern = null;
 
@@ -119,6 +117,7 @@ public class DocumentActivity extends AppCompatActivity {
         }
 
         linkViews();
+        scroll_points.textViews = branchs;
         loadStrings();
         setListeners();
 
@@ -338,6 +337,7 @@ public class DocumentActivity extends AppCompatActivity {
             branchs.get(index).setVisibility(View.GONE);
             index++;
         }
+        scroll_points.fullScroll(View.FOCUS_UP);
     }
 
     private ArrayList<TypedText> treeSearch(String word) {
@@ -361,9 +361,16 @@ public class DocumentActivity extends AppCompatActivity {
 
     private void ruleSearch(String rule)
     {
+        if(searching) {
+            searching = false;
+            edt_search.setText("");
+            tv_title.setVisibility(View.VISIBLE);
+        }
         boolean found = false;
+        Tree<TypedText> startingTree = tree;
+        Tree<TypedText> node;
         TreeIterator treeIterator = new TreeIterator(tree);
-        Tree<TypedText> node = treeIterator.next();
+        node = treeIterator.next();
         while (!found && node != null)
         {
             if(node.getData().getText().substring(0, rule.length()).equals(rule))
@@ -372,10 +379,23 @@ public class DocumentActivity extends AppCompatActivity {
                if(node.isLeaf())
                {
                    tree = node.getParent();
+                   if(tree.equals(startingTree))
+                   {
+                       int viewIndex = node.getParent().getChildren().indexOf(node);
+                       scroll_points.smoothScrollTo(0, branchs.get(viewIndex).getTop());
+                       SpannableString spannable = (SpannableString)branchs.get(viewIndex).getText();
+                       spannable.setSpan(new BackgroundColorSpan(getResources().getColor(R.color.colorSelected)), 0, rule.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+                   }
+                   else
+                   {
+                       scroll_points.viewIndex = node.getParent().getChildren().indexOf(node);
+                       scroll_points.textLength = rule.length();
+                   }
                }
                else
                {
                    tree = node;
+                   scroll_points.fullScroll(View.FOCUS_UP);
                }
             }
             else
@@ -383,7 +403,14 @@ public class DocumentActivity extends AppCompatActivity {
                 node = treeIterator.next();
             }
         }
-        showList();
+        if(node == null)
+        {
+            tree = startingTree;
+        }
+        else
+        {
+            showList();
+        }
     }
 
     private void setTextView(int index, TypedText typedText, String word) {
@@ -392,7 +419,7 @@ public class DocumentActivity extends AppCompatActivity {
         Spannable spannable = new SpannableString(text);
         if(document.equals("cr") && (searching || tree.getChild(index).isLeaf()))
         {
-            Matcher ruleMatcher = RULE_PATTERN.matcher(text);
+            Matcher ruleMatcher = searching ? SEARCHING_RULE_PATTERN.matcher(text) : RULE_PATTERN.matcher(text);
             while (ruleMatcher.find()) {
                 spannable.setSpan(
                         new CustomSpan(getResources().getColor(R.color.colorLink), text.substring(ruleMatcher.start(), ruleMatcher.end())) {

@@ -54,7 +54,7 @@
         android:background="@color/colorPrimary"
         />
 
-    <ScrollView
+    <mtg.judge.ipgtree.Components.CustomScrollView
         android:id="@+id/scroll_answers"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -74,7 +74,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </mtg.judge.ipgtree.Components.CustomScrollView>
 
     <ImageView
         android:id="@+id/imv_arrow_up"
