@@ -379,6 +379,7 @@ public class DocumentActivity extends AppCompatActivity {
                if(node.isLeaf())
                {
                    tree = node.getParent();
+                   showList();
                    if(tree.equals(startingTree))
                    {
                        int viewIndex = node.getParent().getChildren().indexOf(node);
@@ -395,7 +396,16 @@ public class DocumentActivity extends AppCompatActivity {
                else
                {
                    tree = node;
-                   scroll_points.fullScroll(View.FOCUS_UP);
+                   showList();
+                   if(tree.equals(startingTree))
+                   {
+                       scroll_points.fullScroll(View.FOCUS_UP);
+                   }
+                   else
+                   {
+                       scroll_points.viewIndex = 0;
+                       scroll_points.textLength = 0;
+                   }
                }
             }
             else
@@ -406,10 +416,6 @@ public class DocumentActivity extends AppCompatActivity {
         if(node == null)
         {
             tree = startingTree;
-        }
-        else
-        {
-            showList();
         }
     }
 
