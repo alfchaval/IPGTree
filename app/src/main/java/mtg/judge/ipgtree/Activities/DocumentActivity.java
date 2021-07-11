@@ -425,6 +425,12 @@ public class DocumentActivity extends AppCompatActivity {
         Spannable spannable = new SpannableString(text);
         if(document.equals("cr") && (searching || tree.getChild(index).isLeaf()))
         {
+            Matcher exampleMatcher = EXAMPLE_PATTERN.matcher(text);
+            if (exampleMatcher.find()) {
+                spannable.setSpan(new StyleSpan(Typeface.ITALIC), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+                spannable.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorExample)), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+
             Matcher ruleMatcher = searching ? SEARCHING_RULE_PATTERN.matcher(text) : RULE_PATTERN.matcher(text);
             while (ruleMatcher.find()) {
                 spannable.setSpan(
@@ -434,11 +440,6 @@ public class DocumentActivity extends AppCompatActivity {
                                 ruleSearch(GetRule());
                             }
                         }, ruleMatcher.start(), ruleMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            }
-
-            Matcher exampleMatcher = EXAMPLE_PATTERN.matcher(text);
-            if (exampleMatcher.find()) {
-                spannable.setSpan(new StyleSpan(Typeface.ITALIC), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
             }
 
             if(searching)
