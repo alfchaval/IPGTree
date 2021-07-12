@@ -1,10 +1,14 @@
 package mtg.judge.ipgtree.Activities;
 
 import android.app.AlertDialog;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -12,15 +16,18 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import mtg.judge.ipgtree.POJO.Card;
 import mtg.judge.ipgtree.POJO.Quiz;
 import mtg.judge.ipgtree.R;
 
 import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Symbols;
 import mtg.judge.ipgtree.Utilities.Translation;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.regex.Matcher;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -262,7 +269,7 @@ public class QuizActivity extends AppCompatActivity {
             try{
                 String cardtext = Repository.cards.get(resource).showCard();
                 new AlertDialog.Builder(QuizActivity.this)
-                        .setMessage(cardtext)
+                        .setMessage(CardSpan(cardtext))
                         .show();
             } catch (Exception e) {}
         }
@@ -360,5 +367,21 @@ public class QuizActivity extends AppCompatActivity {
             }
         }
         return (float)(100*points)/(4* maxNumberOfQuestions);
+    }
+
+    private Spannable CardSpan(String s)
+    {
+        Spannable spannable = new SpannableString(s);
+
+        Matcher symbolMatcher = Symbols.SYMBOL_PATTERN.matcher(s);
+        while(symbolMatcher.find()) {
+            Drawable symbol = Symbols.getSymbol(symbolMatcher.group(), getApplicationContext());
+            if (symbol != null) {
+                symbol.setBounds(0, 0, symbol.getIntrinsicWidth()/2, symbol.getIntrinsicHeight()/2);
+                ImageSpan span = new ImageSpan(symbol, ImageSpan.ALIGN_BASELINE);
+                spannable.setSpan(span, symbolMatcher.start(), symbolMatcher.end(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+        }
+        return spannable;
     }
 }

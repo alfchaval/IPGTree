@@ -459,7 +459,7 @@ public class DocumentActivity extends AppCompatActivity {
             while(symbolMatcher.find()) {
                 Drawable symbol = Symbols.getSymbol(symbolMatcher.group(), getApplicationContext());
                 if (symbol != null) {
-                    symbol.setBounds(0, 0, symbol.getIntrinsicWidth()/2, symbol.getIntrinsicHeight()/2);
+                    symbol.setBounds(0, 0, (int)(symbol.getIntrinsicWidth()/1.8), (int)(symbol.getIntrinsicHeight()/1.8));
                     ImageSpan span = new ImageSpan(symbol, ImageSpan.ALIGN_BASELINE);
                     spannable.setSpan(span, symbolMatcher.start(), symbolMatcher.end(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
                 }
