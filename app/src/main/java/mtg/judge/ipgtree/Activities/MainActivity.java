@@ -25,6 +25,7 @@ import java.net.URLConnection;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,28 +73,28 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadStrings() {
         if(documentsMenu) {
-            btn_1.setText(Repository.StringMap(85));
-            btn_2.setText(Repository.StringMap(86));
-            btn_3.setText(Repository.StringMap(87));
-            btn_4.setText(Repository.StringMap(88));
-            btn_5.setText(Repository.StringMap(89));
-            btn_6.setText(Repository.StringMap(90));
-            btn_7.setText(Repository.StringMap(5));
-            btn_8.setText(Repository.StringMap(4));
-            btn_9.setText(Repository.StringMap(75));
-            btn_10.setText(Repository.StringMap(6));
+            btn_1.setText(Translation.StringMap(85));
+            btn_2.setText(Translation.StringMap(86));
+            btn_3.setText(Translation.StringMap(87));
+            btn_4.setText(Translation.StringMap(88));
+            btn_5.setText(Translation.StringMap(89));
+            btn_6.setText(Translation.StringMap(90));
+            btn_7.setText(Translation.StringMap(5));
+            btn_8.setText(Translation.StringMap(4));
+            btn_9.setText(Translation.StringMap(75));
+            btn_10.setText(Translation.StringMap(6));
             btn_10.setVisibility(View.VISIBLE);
         }
         else {
-            btn_1.setText(Repository.StringMap(31));
-            btn_2.setText(Repository.StringMap(36));
-            btn_3.setText(Repository.StringMap(34));
-            btn_4.setText(Repository.StringMap(33));
-            btn_5.setText(Repository.StringMap(30));
-            btn_6.setText(Repository.StringMap(32));
-            btn_7.setText(Repository.StringMap(38));
-            btn_8.setText(Repository.StringMap(35));
-            btn_9.setText(Repository.StringMap(37));
+            btn_1.setText(Translation.StringMap(31));
+            btn_2.setText(Translation.StringMap(36));
+            btn_3.setText(Translation.StringMap(34));
+            btn_4.setText(Translation.StringMap(33));
+            btn_5.setText(Translation.StringMap(30));
+            btn_6.setText(Translation.StringMap(32));
+            btn_7.setText(Translation.StringMap(38));
+            btn_8.setText(Translation.StringMap(35));
+            btn_9.setText(Translation.StringMap(37));
             btn_10.setVisibility(View.GONE);
         }
         btn_news_alert.setVisibility(View.GONE);
@@ -165,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(update != null && update.second != null) {
                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                    alertDialog.setTitle(Repository.StringMap(74));
+                    alertDialog.setTitle(Translation.StringMap(74));
                     alertDialog.setMessage(update.second);
                     alertDialog.show();
                 }
@@ -260,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
                             Button btn4 = view.findViewById(R.id.btn4);
                             Button btn6 = view.findViewById(R.id.btn6);
 
-                            txv_title.setText(Repository.StringMap(92));
+                            txv_title.setText(Translation.StringMap(92));
 
                             btn2.setOnClickListener(new View.OnClickListener() {
                                 @Override

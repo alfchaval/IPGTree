@@ -29,6 +29,7 @@ import java.io.File;
 import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 public class AdvancedSettingsActivity extends AppCompatActivity {
 
@@ -164,16 +165,16 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        txv_ftptitle_one.setText(Repository.StringMap(60));
-        txv_ftptitle_two.setText(Repository.StringMap(60));
-        edt_codeftp.setHint(Repository.StringMap(52));
-        btn_unlockftp.setText(Repository.StringMap(51));
-        btn_save.setText(Repository.StringMap(63));
-        cb_ftp.setText(Repository.StringMap(64));
-        edt_user.setHint(Repository.StringMap(29));
-        edt_password.setHint(Repository.StringMap(62));
-        txv_life.setText(Repository.StringMap(91));
-        cb_reverse_life.setText(Repository.StringMap(94));
+        txv_ftptitle_one.setText(Translation.StringMap(60));
+        txv_ftptitle_two.setText(Translation.StringMap(60));
+        edt_codeftp.setHint(Translation.StringMap(52));
+        btn_unlockftp.setText(Translation.StringMap(51));
+        btn_save.setText(Translation.StringMap(63));
+        cb_ftp.setText(Translation.StringMap(64));
+        edt_user.setHint(Translation.StringMap(29));
+        edt_password.setHint(Translation.StringMap(62));
+        txv_life.setText(Translation.StringMap(91));
+        cb_reverse_life.setText(Translation.StringMap(94));
 
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
 
@@ -233,9 +234,9 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_quiz_es.setHint(Repository.URL_QUIZ_ES);
         edt_hja_es.setHint(Repository.URL_HJA_ES);
 
-        txv_show_life.setText(Repository.StringMap(93));
-        txv_show_ftp.setText(Repository.StringMap(76));
-        txv_show_links.setText(Repository.StringMap(77));
+        txv_show_life.setText(Translation.StringMap(93));
+        txv_show_ftp.setText(Translation.StringMap(76));
+        txv_show_links.setText(Translation.StringMap(77));
     }
 
     private void loadRepositoryData() {

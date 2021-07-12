@@ -5,6 +5,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.ImageSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import android.view.KeyEvent;
@@ -37,6 +39,8 @@ import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.POJO.Tree;
 import mtg.judge.ipgtree.POJO.TypedText;
+import mtg.judge.ipgtree.Utilities.Symbols;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -72,6 +76,7 @@ public class DocumentActivity extends AppCompatActivity {
     private static final Pattern RULE_PATTERN = Pattern.compile("(?<!^)\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
     private static final Pattern SEARCHING_RULE_PATTERN = Pattern.compile("\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
     private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
+
     private Pattern searchTextPattern = null;
 
     @Override
@@ -172,7 +177,7 @@ public class DocumentActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        btn_search.setText(Repository.StringMap(68));
+        btn_search.setText(Translation.StringMap(68));
     }
 
     private void setListeners() {
@@ -273,13 +278,13 @@ public class DocumentActivity extends AppCompatActivity {
                     ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clip = ClipData.newPlainText(Repository.FOLDERNAME, results.get(index).getText());
                     clipboard.setPrimaryClip(clip);
-                    Toast.makeText(DocumentActivity.this, Repository.StringMap(78), Toast.LENGTH_LONG).show();
+                    Toast.makeText(DocumentActivity.this, Translation.StringMap(78), Toast.LENGTH_LONG).show();
                 }
                 else if(tree.existChild(index) && tree.getChild(index).isLeaf()) {
                     ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                     ClipData clip = ClipData.newPlainText(Repository.FOLDERNAME, tree.getChild(index).getData().getText());
                     clipboard.setPrimaryClip(clip);
-                    Toast.makeText(DocumentActivity.this, Repository.StringMap(78), Toast.LENGTH_LONG).show();
+                    Toast.makeText(DocumentActivity.this, Translation.StringMap(78), Toast.LENGTH_LONG).show();
                 }
                 return false;
             }
@@ -323,7 +328,7 @@ public class DocumentActivity extends AppCompatActivity {
         tree = tree.getRoot();
         results = treeSearch(word);
         if(results.size() == 0) {
-            results.add(new TypedText(Repository.StringMap(69)));
+            results.add(new TypedText(Translation.StringMap(69)));
         }
         int index = 0;
         while (index < results.size()) {
@@ -450,6 +455,15 @@ public class DocumentActivity extends AppCompatActivity {
                 }
             }
 
+            Matcher symbolMatcher = Symbols.SYMBOL_PATTERN.matcher(text);
+            while(symbolMatcher.find()) {
+                Drawable symbol = Symbols.getSymbol(symbolMatcher.group(), getApplicationContext());
+                if (symbol != null) {
+                    symbol.setBounds(0, 0, symbol.getIntrinsicWidth()/2, symbol.getIntrinsicHeight()/2);
+                    ImageSpan span = new ImageSpan(symbol, ImageSpan.ALIGN_BASELINE);
+                    spannable.setSpan(span, symbolMatcher.start(), symbolMatcher.end(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+                }
+            }
         }
         else
         {

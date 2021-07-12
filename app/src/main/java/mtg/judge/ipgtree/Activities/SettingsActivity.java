@@ -50,6 +50,7 @@ import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.POJO.Set;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -96,12 +97,12 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        btn_update_oracle.setText(Repository.StringMap(61));
-        btn_update_documents.setText(Repository.StringMap(71));
-        btn_advanced.setText(Repository.StringMap(72));
-        cb_annotations.setText(Repository.StringMap(65));
-        txv_annotations.setText(Repository.StringMap(66));
-        cb_update.setText(Repository.StringMap(70));
+        btn_update_oracle.setText(Translation.StringMap(61));
+        btn_update_documents.setText(Translation.StringMap(71));
+        btn_advanced.setText(Translation.StringMap(72));
+        cb_annotations.setText(Translation.StringMap(65));
+        txv_annotations.setText(Translation.StringMap(66));
+        cb_update.setText(Translation.StringMap(70));
     }
 
     private void loadRepositoryData() {
@@ -242,15 +243,15 @@ public class SettingsActivity extends AppCompatActivity {
     public void askDownload() {
         new AlertDialog.Builder(SettingsActivity.this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle(Repository.StringMap(56))
-                .setMessage(Repository.StringMap(54))
-                .setPositiveButton(Repository.StringMap(53), new DialogInterface.OnClickListener() {
+                .setTitle(Translation.StringMap(56))
+                .setMessage(Translation.StringMap(54))
+                .setPositiveButton(Translation.StringMap(53), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         new UpdateOracle().execute();
                     }
                 })
-                .setNegativeButton(Repository.StringMap(59), null)
+                .setNegativeButton(Translation.StringMap(59), null)
                 .show();
     }
 
@@ -537,11 +538,11 @@ public class SettingsActivity extends AppCompatActivity {
                     Log.d("ERROR", e.getLocalizedMessage());
                 }
 
-                return Repository.StringMap(55) + folder;
+                return Translation.StringMap(55) + folder;
 
             } catch (Exception e) {
             }
-            return Repository.StringMap(57);
+            return Translation.StringMap(57);
         }
 
         protected void onProgressUpdate(String... progress) {
@@ -633,12 +634,12 @@ public class SettingsActivity extends AppCompatActivity {
                         Log.d("ERROR", "5");
                     }
                 }
-                return Repository.StringMap(55) + folder;
+                return Translation.StringMap(55) + folder;
             }
             catch (Exception e) {
                 Log.d("ERROR", "6");
             }
-            return Repository.StringMap(57);
+            return Translation.StringMap(57);
         }
 
         protected void onProgressUpdate(String... progress) {

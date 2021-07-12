@@ -34,6 +34,7 @@ import java.util.Random;
 import mtg.judge.ipgtree.Components.OutlineTextView;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 public class Life6Activity extends AppCompatActivity {
 
@@ -247,8 +248,8 @@ public class Life6Activity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        btn_reset.setText(Repository.StringMap(25));
-        btn_registry.setText(Repository.StringMap(24));
+        btn_reset.setText(Translation.StringMap(25));
+        btn_registry.setText(Translation.StringMap(24));
     }
     
     //POR AQUI
@@ -1347,15 +1348,15 @@ public class Life6Activity extends AppCompatActivity {
             public void onClick(View view) {
                 new AlertDialog.Builder(Life6Activity.this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle(Repository.StringMap(27))
-                        .setMessage(Repository.StringMap(26))
-                        .setPositiveButton(Repository.StringMap(28), new DialogInterface.OnClickListener() {
+                        .setTitle(Translation.StringMap(27))
+                        .setMessage(Translation.StringMap(26))
+                        .setPositiveButton(Translation.StringMap(28), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 reset();
                             }
                         })
-                        .setNegativeButton(Repository.StringMap(23), null)
+                        .setNegativeButton(Translation.StringMap(23), null)
                         .show();
             }
         });
@@ -2147,7 +2148,7 @@ public class Life6Activity extends AppCompatActivity {
     public void rollDice() {
         int result = random.nextInt(Repository.dice) + 1;
         AlertDialog alertDialog = new AlertDialog.Builder(Life6Activity.this)
-                .setTitle(Repository.StringMap(79) + Repository.dice)
+                .setTitle(Translation.StringMap(79) + Repository.dice)
                 .setMessage(""+result)
                 .show();
         TextView textView = (TextView) alertDialog.findViewById(android.R.id.message);
@@ -2161,9 +2162,9 @@ public class Life6Activity extends AppCompatActivity {
         input.setGravity(Gravity.CENTER);
         input.setMaxLines(1);
         AlertDialog alertDialog = new AlertDialog.Builder(Life6Activity.this)
-                .setTitle(Repository.StringMap(80))
+                .setTitle(Translation.StringMap(80))
                 .setView(input)
-                .setPositiveButton(Repository.StringMap(81), new DialogInterface.OnClickListener() {
+                .setPositiveButton(Translation.StringMap(81), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int number;
@@ -2178,7 +2179,7 @@ public class Life6Activity extends AppCompatActivity {
                         }
                     }
                 })
-                .setNegativeButton(Repository.StringMap(82), null)
+                .setNegativeButton(Translation.StringMap(82), null)
                 .show();
     }
 }

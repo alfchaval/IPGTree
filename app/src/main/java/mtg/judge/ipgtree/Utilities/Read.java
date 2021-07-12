@@ -72,7 +72,7 @@ public class Read {
             }
         } catch (XmlPullParserException|IOException e) {
             Tree<TypedText> errorTree = new Tree<TypedText>(new TypedText("Error"));
-            errorTree.addChild(new Tree<TypedText>(new TypedText(Repository.StringMap(73))));
+            errorTree.addChild(new Tree<TypedText>(new TypedText(Translation.StringMap(73))));
             return errorTree;
         }
         return tree;
@@ -111,7 +111,7 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            Tree<Quiz> errorTree = new Tree<>(new Quiz("Error", new ArrayList<String>(Arrays.asList(Repository.StringMap(73)))));
+            Tree<Quiz> errorTree = new Tree<>(new Quiz("Error", new ArrayList<String>(Arrays.asList(Translation.StringMap(73)))));
             errorTree.addChild(new Tree<Quiz>(new Quiz(null,new ArrayList<String>())));
             return errorTree;
         }
@@ -160,7 +160,7 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            ArrayList<Quiz> errorQuiz = new ArrayList<Quiz>(Arrays.asList(new Quiz("Error", new ArrayList<String>(Arrays.asList(Repository.StringMap(73),"","","")))));
+            ArrayList<Quiz> errorQuiz = new ArrayList<Quiz>(Arrays.asList(new Quiz("Error", new ArrayList<String>(Arrays.asList(Translation.StringMap(73),"","","")))));
             errorQuiz.get(0).setCorrectAnswerPosition(0);
             return errorQuiz;
         }

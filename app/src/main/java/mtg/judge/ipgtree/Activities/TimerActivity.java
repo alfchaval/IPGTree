@@ -24,6 +24,7 @@ import org.json.JSONException;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.Utilities.TimerReceiver;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 public class TimerActivity extends AppCompatActivity {
 
@@ -61,7 +62,7 @@ public class TimerActivity extends AppCompatActivity {
 
         txv_starting_time.setText(Repository.milliSeconds/60000 + "");
         if(Repository.startedCountDown) {
-            btn_play.setText(Repository.StringMap(1));
+            btn_play.setText(Translation.StringMap(1));
             createTimer();
             timer.start();
             for(int i = 0; i < Repository.savedTimes.length(); i++) {
@@ -72,7 +73,7 @@ public class TimerActivity extends AppCompatActivity {
             }
         }
         else {
-            btn_play.setText(Repository.StringMap(20));
+            btn_play.setText(Translation.StringMap(20));
             setStartingTime();
             createTimer();
         }
@@ -94,8 +95,8 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        txv_starting_time_title.setText(Repository.StringMap(22));
-        btn_edit.setText(Repository.StringMap(21));
+        txv_starting_time_title.setText(Translation.StringMap(22));
+        btn_edit.setText(Translation.StringMap(21));
     }
 
     private void setListeners() {
@@ -121,15 +122,15 @@ public class TimerActivity extends AppCompatActivity {
                 if(Repository.startedCountDown) {
                     new AlertDialog.Builder(TimerActivity.this)
                             .setIcon(android.R.drawable.ic_dialog_alert)
-                            .setTitle(Repository.StringMap(84))
-                            .setMessage(Repository.StringMap(83))
-                            .setPositiveButton(Repository.StringMap(28), new DialogInterface.OnClickListener() {
+                            .setTitle(Translation.StringMap(84))
+                            .setMessage(Translation.StringMap(83))
+                            .setPositiveButton(Translation.StringMap(28), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     stopTimer();
                                 }
                             })
-                            .setNegativeButton(Repository.StringMap(23), null)
+                            .setNegativeButton(Translation.StringMap(23), null)
                             .show();
                 }
                 else {
@@ -333,7 +334,7 @@ public class TimerActivity extends AppCompatActivity {
             editor.putLong(Repository.KEY_STARTINGTIME, Repository.startingTime);
             Repository.startedCountDown = true;
             timer.start();
-            btn_play.setText(Repository.StringMap(1));
+            btn_play.setText(Translation.StringMap(1));
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + Repository.milliSeconds, pendingIntent);
 
             editor.putBoolean(Repository.KEY_STARTEDCOUNTDOWN, Repository.startedCountDown);
@@ -352,7 +353,7 @@ public class TimerActivity extends AppCompatActivity {
         Repository.startedCountDown = false;
         setStartingTime();
         createTimer();
-        btn_play.setText(Repository.StringMap(20));
+        btn_play.setText(Translation.StringMap(20));
         alarmManager.cancel(pendingIntent);
         Repository.savedTimes = new JSONArray();
         editor.putString(Repository.KEY_SAVEDTIMES, Repository.savedTimes.toString());

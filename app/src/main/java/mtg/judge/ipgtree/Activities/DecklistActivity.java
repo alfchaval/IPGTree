@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 import java.util.ArrayList;
 
@@ -60,8 +61,8 @@ public class DecklistActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        btn_reset.setText(Repository.StringMap(1));
-        btn_undo.setText(Repository.StringMap(3));
+        btn_reset.setText(Translation.StringMap(1));
+        btn_undo.setText(Translation.StringMap(3));
     }
 
     private void setListeners() {
@@ -118,7 +119,7 @@ public class DecklistActivity extends AppCompatActivity {
             auxTotal += numbers.get(i);
             auxList += numbers.get(i) + " ";
         }
-        txv_total.setText(Repository.StringMap(2) + auxTotal);
+        txv_total.setText(Translation.StringMap(2) + auxTotal);
         txv_number_list.setText(auxList);
     }
 }

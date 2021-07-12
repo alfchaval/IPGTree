@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 public class DraftActivity extends AppCompatActivity {
 
@@ -81,10 +82,10 @@ public class DraftActivity extends AppCompatActivity {
                     createTimer(last_time);
                     pause = savedInstanceState.getBoolean(KEY_PAUSE);
                     if(pause) {
-                        btn_play.setText(Repository.StringMap(18));
+                        btn_play.setText(Translation.StringMap(18));
                     }
                     else {
-                        btn_play.setText(Repository.StringMap(15));
+                        btn_play.setText(Translation.StringMap(15));
                         timer.start();
                     }
                 }
@@ -113,12 +114,12 @@ public class DraftActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        btn_mode.setText(Repository.StringMap(12));
-        btn_select.setText(Repository.StringMap(17));
-        btn_play.setText(Repository.StringMap(20));
-        btn_reset.setText(Repository.StringMap(16));
-        btn_last.setText(Repository.StringMap(10));
-        btn_next.setText(Repository.StringMap(14));
+        btn_mode.setText(Translation.StringMap(12));
+        btn_select.setText(Translation.StringMap(17));
+        btn_play.setText(Translation.StringMap(20));
+        btn_reset.setText(Translation.StringMap(16));
+        btn_last.setText(Translation.StringMap(10));
+        btn_next.setText(Translation.StringMap(14));
     }
 
     private void setListeners() {
@@ -140,18 +141,18 @@ public class DraftActivity extends AppCompatActivity {
                 if(!started) {
                     timer.start();
                     started = true;
-                    btn_play.setText(Repository.StringMap(15));
+                    btn_play.setText(Translation.StringMap(15));
                 }
                 else if(last_time > 0) {
                     if(pause) {
                         createTimer(last_time);
                         timer.start();
-                        btn_play.setText(Repository.StringMap(15));
+                        btn_play.setText(Translation.StringMap(15));
                     }
                     else {
                         timer.cancel();
                         pause = true;
-                        btn_play.setText(Repository.StringMap(18));
+                        btn_play.setText(Translation.StringMap(18));
                     }
                 }
             }
@@ -181,7 +182,7 @@ public class DraftActivity extends AppCompatActivity {
                     pick--;
                 }
                 setTimer();
-                btn_play.setText(Repository.StringMap(20));
+                btn_play.setText(Translation.StringMap(20));
             }
         });
         btn_next.setOnClickListener(new View.OnClickListener() {
@@ -196,7 +197,7 @@ public class DraftActivity extends AppCompatActivity {
                     review = true;
                 }
                 setTimer();
-                btn_play.setText(Repository.StringMap(20));
+                btn_play.setText(Translation.StringMap(20));
             }
         });
     }
@@ -212,15 +213,15 @@ public class DraftActivity extends AppCompatActivity {
         pack = 1;
         switch (mode) {
             case NORMAL:
-                btn_mode.setText(Repository.StringMap(12));
+                btn_mode.setText(Translation.StringMap(12));
                 review = false;
                 break;
             case TWOHEADED:
-                btn_mode.setText(Repository.StringMap(13));
+                btn_mode.setText(Translation.StringMap(13));
                 review = false;
                 break;
             case ROCHESTER:
-                btn_mode.setText(Repository.StringMap(19));
+                btn_mode.setText(Translation.StringMap(19));
                 pack = 0;
                 review = true;
                 break;
@@ -233,7 +234,7 @@ public class DraftActivity extends AppCompatActivity {
             timer.cancel();
         }
         createTimer(showStatus()*1000);
-        btn_play.setText(Repository.StringMap(20));
+        btn_play.setText(Translation.StringMap(20));
         started = false;
     }
 
@@ -263,21 +264,21 @@ public class DraftActivity extends AppCompatActivity {
         if(review) {
             switch (selected_mode) {
                 case NORMAL:
-                    txv_status.setText(Repository.StringMap(9));
+                    txv_status.setText(Translation.StringMap(9));
                     seconds = 60 + (30 * (pack-1));
                     break;
                 case TWOHEADED:
-                    txv_status.setText(Repository.StringMap(9));
+                    txv_status.setText(Translation.StringMap(9));
                     seconds = 60;
                     break;
                 case ROCHESTER:
-                    txv_status.setText(Repository.StringMap(11));
+                    txv_status.setText(Translation.StringMap(11));
                     seconds = 20;
                     break;
             }
         }
         else {
-            txv_status.setText(Repository.StringMap(7) + pack + Repository.StringMap(8) + pick);
+            txv_status.setText(Translation.StringMap(7) + pack + Translation.StringMap(8) + pick);
             switch (selected_mode) {
                 case NORMAL:
                     seconds = normal[pick-1];

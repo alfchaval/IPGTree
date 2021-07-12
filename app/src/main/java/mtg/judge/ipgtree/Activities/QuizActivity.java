@@ -17,6 +17,7 @@ import mtg.judge.ipgtree.R;
 
 import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -236,15 +237,15 @@ public class QuizActivity extends AppCompatActivity {
             imv_arrow_left.setVisibility(View.VISIBLE);
             txv_question_number.setText("");
             if (finished) {
-                tv_question.setText(Repository.StringMap(50) + totalPoints() + Repository.StringMap(49));
+                tv_question.setText(Translation.StringMap(50) + totalPoints() + Translation.StringMap(49));
             }
             else {
-                tv_question.setText(Repository.StringMap(48));
+                tv_question.setText(Translation.StringMap(48));
                 if (answerTVs.size() < 1) {
                     addTextView(index);
                 }
                 answerTVs.get(index).setVisibility(View.VISIBLE);
-                answerTVs.get(index).setText(Repository.StringMap(47));
+                answerTVs.get(index).setText(Translation.StringMap(47));
                 index++;
             }
         }
