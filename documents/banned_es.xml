@@ -242,7 +242,7 @@
     </point>
     <point text="Commander">
 		<point text="Mtgcommander">
-            <point text="Actualizado: 20-04-2020"></point>
+            <point text="Actualizado: 12-07-2021"></point>
 			<link text="http://mtgcommander.net/rules.php"></link>
             <title text="Baneadas"></title>
                 <point text="Las 25 cartas con el tipo Conspiracy"></point>
@@ -261,6 +261,7 @@
 				<point text="Flash"></point>
                 <point text="Gifts Ungiven"></point>
                 <point text="Griselbrand"></point>
+				<point text="Hullbreacher"></point>
                 <point text="Iona, Shield of Emeria is Baneadas"></point>
                 <point text="Karakas"></point>
                 <point text="Leovold, Emissary of Trest"></point>

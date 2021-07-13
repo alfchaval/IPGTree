@@ -242,7 +242,7 @@
     </point>
     <point text="Commander">
         <point text="Mtgcommander">
-            <point text="Updated: 20-04-2020"></point>
+            <point text="Updated: 12-07-2021"></point>
 			<link text="http://mtgcommander.net/rules.php"></link>
             <title text="Banned"></title>
                 <point text="The 25 cards with the Card Type “Conspiracy”."></point>
@@ -261,6 +261,7 @@
 				<point text="Flash"></point>
                 <point text="Gifts Ungiven"></point>
                 <point text="Griselbrand"></point>
+				<point text="Hullbreacher"></point>
                 <point text="Iona, Shield of Emeria is banned"></point>
                 <point text="Karakas"></point>
                 <point text="Leovold, Emissary of Trest"></point>
