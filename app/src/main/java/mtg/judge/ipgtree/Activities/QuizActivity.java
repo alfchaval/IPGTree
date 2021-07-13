@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import mtg.judge.ipgtree.POJO.Card;
 import mtg.judge.ipgtree.POJO.Quiz;
 import mtg.judge.ipgtree.R;
 
@@ -26,6 +25,7 @@ import mtg.judge.ipgtree.Utilities.Symbols;
 import mtg.judge.ipgtree.Utilities.Translation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.regex.Matcher;
 
@@ -174,6 +174,15 @@ public class QuizActivity extends AppCompatActivity {
         }
         else {
             questions = Read.readXMLQuiz("quiz_" + Repository.language + ".xml");
+            if(questions == null && !Repository.language.equals("en"))
+            {
+                questions = Read.readXMLQuiz("quiz_en.xml");
+            }
+            if(questions == null)
+            {
+                questions = new ArrayList<Quiz>(Arrays.asList(new Quiz("Error", new ArrayList<String>(Arrays.asList(Translation.StringMap(73),"","","")))));
+                questions.get(0).setCorrectAnswerPosition(0);
+            }
             shuffleQuestionsAndAnswers();
         }
         if (questions.size() < maxNumberOfQuestions) {

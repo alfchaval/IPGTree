@@ -18,8 +18,10 @@ import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.POJO.Tree;
+import mtg.judge.ipgtree.Utilities.Translation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TreeActivity extends AppCompatActivity {
 
@@ -151,6 +153,15 @@ public class TreeActivity extends AppCompatActivity {
         }
         else {
             questionTree = Read.readXMLTree("ipg_tree_" + Repository.language + ".xml");
+            if(questionTree == null && !Repository.language.equals("en"))
+            {
+                questionTree = Read.readXMLTree("ipg_tree_en.xml");
+            }
+            if(questionTree == null)
+            {
+                questionTree = new Tree<>(new Quiz("Error", new ArrayList<String>(Arrays.asList(Translation.StringMap(73)))));
+                questionTree.addChild(new Tree<Quiz>(new Quiz(null,new ArrayList<String>())));
+            }
         }
     }
 

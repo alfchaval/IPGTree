@@ -25,7 +25,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 //This class transform the XML in a Tree
@@ -71,9 +70,7 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            Tree<TypedText> errorTree = new Tree<TypedText>(new TypedText("Error"));
-            errorTree.addChild(new Tree<TypedText>(new TypedText(Translation.StringMap(73))));
-            return errorTree;
+            return null;
         }
         return tree;
     }
@@ -111,9 +108,7 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            Tree<Quiz> errorTree = new Tree<>(new Quiz("Error", new ArrayList<String>(Arrays.asList(Translation.StringMap(73)))));
-            errorTree.addChild(new Tree<Quiz>(new Quiz(null,new ArrayList<String>())));
-            return errorTree;
+            return null;
         }
         return tree;
     }
@@ -160,9 +155,7 @@ public class Read {
                 eventType = xpp.next();
             }
         } catch (XmlPullParserException|IOException e) {
-            ArrayList<Quiz> errorQuiz = new ArrayList<Quiz>(Arrays.asList(new Quiz("Error", new ArrayList<String>(Arrays.asList(Translation.StringMap(73),"","","")))));
-            errorQuiz.get(0).setCorrectAnswerPosition(0);
-            return errorQuiz;
+            return null;
         }
         return array;
     }

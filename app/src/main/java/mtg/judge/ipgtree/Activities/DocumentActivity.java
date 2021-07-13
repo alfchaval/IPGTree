@@ -224,7 +224,16 @@ public class DocumentActivity extends AppCompatActivity {
         else {
             document = getIntent().getStringExtra("document");
             tree = Read.readXMLDocument(document + "_" + Repository.language + ".xml");
-            if(document.equals("cr")) {
+            if(tree == null && !Repository.language.equals("en"))
+            {
+                tree = Read.readXMLDocument(document + "_en.xml");
+            }
+            if(tree == null)
+            {
+                tree = new Tree<TypedText>(new TypedText("Error"));
+                tree.addChild(new Tree<TypedText>(new TypedText(Translation.StringMap(73))));
+            }
+            else if(document.equals("cr")) {
                 edt_search.setVisibility(View.VISIBLE);
                 btn_search.setVisibility(View.VISIBLE);
             }
