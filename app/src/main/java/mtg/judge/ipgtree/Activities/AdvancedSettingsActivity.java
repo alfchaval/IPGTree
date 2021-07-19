@@ -26,21 +26,22 @@ import android.widget.TextView;
 
 import java.io.File;
 
-import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.Utilities.Translation;
 
 public class AdvancedSettingsActivity extends AppCompatActivity {
 
-    private Button btn_save, btn_unlockftp;
+    private Button btn_save_life, btn_save_links;
     private CheckBox cb_ftp;
-    private EditText edt_server, edt_user, edt_password, edt_codeftp, edt_news,
+    private EditText edt_p1_background, edt_p2_background, edt_p3_background, edt_p4_background, edt_p5_background, edt_p6_background,
+            edt_server, edt_user, edt_password, edt_news,
             edt_aipg_en, edt_amtr_en, edt_adipg_en, edt_admtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en, edt_hja_en,
             edt_aipg_es, edt_amtr_es, edt_adipg_es, edt_admtr_es,edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es;
-    private TextView txv_life, txv_codeftp, txv_ftptitle_one, txv_ftptitle_two, txv_show_life, txv_show_ftp, txv_show_links;
-    private LinearLayout ll_scrollchild, ll_life, ll_server, ll_server_code, ll_server_settings;
-    private TableLayout tl_links;
+    private TextView txv_life, txv_background_life, txv_ftptitle, txv_show_life, txv_show_ftp, txv_show_links,
+            txv_p1_background, txv_p2_background, txv_p3_background, txv_p4_background, txv_p5_background, txv_p6_background;
+    private LinearLayout ll_scrollchild, ll_life, ll_server, ll_server_settings;
+    private TableLayout tl_player_backgrounds, tl_links;
     private ScrollView scroll;
     private ImageView imv_arrow_down, imv_arrow_up;
     private RadioGroup rg_players;
@@ -63,10 +64,6 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         loadStrings();
         loadRepositoryData();
         setListeners();
-        if(Repository.ftpCode == null) {
-            Repository.ftpCode = Code.generateCode();
-        }
-        txv_codeftp.setText(Repository.ftpCode);
 
         viewTreeObserver = scroll.getViewTreeObserver();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -100,23 +97,33 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     }
 
     private void linkViews() {
+        btn_save_life = findViewById(R.id.btn_save_life);
         rg_players = findViewById(R.id.rg_players);
         rb_0players = findViewById(R.id.rb_0players);
         rb_2players = findViewById(R.id.rb_2players);
         rb_4players = findViewById(R.id.rb_4players);
         rb_6players = findViewById(R.id.rb_6players);
+        txv_background_life = findViewById(R.id.txv_background_life);
+        txv_p1_background = findViewById(R.id.txv_p1_background);
+        txv_p2_background = findViewById(R.id.txv_p2_background);
+        txv_p3_background = findViewById(R.id.txv_p3_background);
+        txv_p4_background = findViewById(R.id.txv_p4_background);
+        txv_p5_background = findViewById(R.id.txv_p5_background);
+        txv_p6_background = findViewById(R.id.txv_p6_background);
+        edt_p1_background = findViewById(R.id.edt_p1_background);
+        edt_p2_background = findViewById(R.id.edt_p2_background);
+        edt_p3_background = findViewById(R.id.edt_p3_background);
+        edt_p4_background = findViewById(R.id.edt_p4_background);
+        edt_p5_background = findViewById(R.id.edt_p5_background);
+        edt_p6_background = findViewById(R.id.edt_p6_background);
 
-        btn_save = findViewById(R.id.btn_save);
-        btn_unlockftp = findViewById(R.id.btn_unlockftp);
+
         cb_ftp = findViewById(R.id.cb_ftp);
         edt_server = findViewById(R.id.edt_server);
         edt_user = findViewById(R.id.edt_user);
         edt_password = findViewById(R.id.edt_password);
-        edt_codeftp = findViewById(R.id.edt_codeftp);
         txv_life = findViewById(R.id.txv_life);
-        txv_codeftp = findViewById(R.id.txv_codeftp);
-        txv_ftptitle_one = findViewById(R.id.txv_ftptitle_one);
-        txv_ftptitle_two = findViewById(R.id.txv_ftptitle_two);
+        txv_ftptitle = findViewById(R.id.txv_ftptitle);
         txv_show_life = findViewById(R.id.txv_show_life);
         txv_show_ftp = findViewById(R.id.txv_show_ftp);
         txv_show_links = findViewById(R.id.txv_show_links);
@@ -125,14 +132,15 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         ll_life.setVisibility(View.GONE);
         ll_server = findViewById(R.id.ll_server);
         ll_server.setVisibility(View.GONE);
-        ll_server_code = findViewById(R.id.ll_server_code);
         ll_server_settings = findViewById(R.id.ll_server_settings);
+        tl_player_backgrounds = findViewById(R.id.tl_player_backgrounds);
         tl_links = findViewById(R.id.tl_links);
         tl_links.setVisibility(View.GONE);
         cb_reverse_life = findViewById(R.id.cb_reverse_life);
 
+        btn_save_links = findViewById(R.id.btn_save_links);
+        btn_save_links.setVisibility(View.GONE);
         edt_news = findViewById(R.id.edt_news);
-
         edt_aipg_en = findViewById(R.id.edt_aipg_en);
         edt_amtr_en = findViewById(R.id.edt_amtr_en);
         edt_adipg_en = findViewById(R.id.edt_adipg_en);
@@ -165,18 +173,36 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     }
 
     private void loadStrings() {
-        txv_ftptitle_one.setText(Translation.StringMap(60));
-        txv_ftptitle_two.setText(Translation.StringMap(60));
-        edt_codeftp.setHint(Translation.StringMap(52));
-        btn_unlockftp.setText(Translation.StringMap(51));
-        btn_save.setText(Translation.StringMap(63));
+        txv_ftptitle.setText(Translation.StringMap(60));
+        btn_save_life.setText(Translation.StringMap(63));
+        btn_save_links.setText(Translation.StringMap(63));
         cb_ftp.setText(Translation.StringMap(64));
         edt_user.setHint(Translation.StringMap(29));
         edt_password.setHint(Translation.StringMap(62));
         txv_life.setText(Translation.StringMap(91));
         cb_reverse_life.setText(Translation.StringMap(94));
+        txv_background_life.setText(Translation.StringMap(52));
+        txv_p1_background.setText(Translation.StringMap(51) + " 1");
+        txv_p2_background.setText(Translation.StringMap(51) + " 2");
+        txv_p3_background.setText(Translation.StringMap(51) + " 3");
+        txv_p4_background.setText(Translation.StringMap(51) + " 4");
+        txv_p5_background.setText(Translation.StringMap(51) + " 5");
+        txv_p6_background.setText(Translation.StringMap(51) + " 6");
+        edt_p1_background.setHint(Translation.StringMap(95));
+        edt_p2_background.setHint(Translation.StringMap(95));
+        edt_p3_background.setHint(Translation.StringMap(95));
+        edt_p4_background.setHint(Translation.StringMap(95));
+        edt_p5_background.setHint(Translation.StringMap(95));
+        edt_p6_background.setHint(Translation.StringMap(95));
 
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
+
+        edt_p1_background.setText(preferences.getString(Repository.KEY_P1BG, null));
+        edt_p2_background.setText(preferences.getString(Repository.KEY_P2BG, null));
+        edt_p3_background.setText(preferences.getString(Repository.KEY_P3BG, null));
+        edt_p4_background.setText(preferences.getString(Repository.KEY_P4BG, null));
+        edt_p5_background.setText(preferences.getString(Repository.KEY_P5BG, null));
+        edt_p6_background.setText(preferences.getString(Repository.KEY_P6BG, null));
 
         edt_news.setText(preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS));
 
@@ -240,19 +266,15 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     }
 
     private void loadRepositoryData() {
-        if(Repository.unlockedFTP) {
-            ll_server_code.setVisibility(View.GONE);
-            ll_server_settings.setVisibility(View.VISIBLE);
-            cb_ftp.setChecked(Repository.allowFTP);
-            if(Repository.ftpServer != null) {
-                edt_server.setText(Repository.ftpServer);
-            }
-            if(Repository.ftpUser != null) {
-                edt_user.setText(Repository.ftpUser);
-            }
-            if(Repository.ftpPassword != null) {
-                edt_password.setText(Repository.ftpPassword);
-            }
+        cb_ftp.setChecked(Repository.allowFTP);
+        if(Repository.ftpServer != null) {
+            edt_server.setText(Repository.ftpServer);
+        }
+        if(Repository.ftpUser != null) {
+            edt_user.setText(Repository.ftpUser);
+        }
+        if(Repository.ftpPassword != null) {
+            edt_password.setText(Repository.ftpPassword);
         }
         cb_reverse_life.setChecked(Repository.reverseLife);
         switch (Repository.players) {
@@ -272,7 +294,22 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
-        btn_save.setOnClickListener(new View.OnClickListener() {
+        btn_save_life.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+
+                editor.putString(Repository.KEY_P1BG, edt_p1_background.getText().toString());
+                editor.putString(Repository.KEY_P2BG, edt_p2_background.getText().toString());
+                editor.putString(Repository.KEY_P3BG, edt_p3_background.getText().toString());
+                editor.putString(Repository.KEY_P4BG, edt_p4_background.getText().toString());
+                editor.putString(Repository.KEY_P5BG, edt_p5_background.getText().toString());
+                editor.putString(Repository.KEY_P6BG, edt_p6_background.getText().toString());
+
+                editor.apply();
+            }
+        });
+        btn_save_links.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
@@ -313,22 +350,6 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 }
                 else {
                     ActivityCompat.requestPermissions(AdvancedSettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                }
-            }
-        });
-        btn_unlockftp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(Code.check(Repository.ftpCode, edt_codeftp.getText().toString())) {
-                    Repository.unlockedFTP = true;
-                    SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                    editor.putBoolean(Repository.KEY_UNLOCKEDFTP, Repository.unlockedFTP);
-                    editor.apply();
-                    ll_server_settings.setVisibility(View.VISIBLE);
-                    ll_server_code.setVisibility(View.GONE);
-                }
-                else {
-                    txv_codeftp.setText(Code.generateCode());
                 }
             }
         });
@@ -410,11 +431,11 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(tl_links.getVisibility() == View.VISIBLE) {
                     tl_links.setVisibility(View.GONE);
-                    btn_save.setVisibility(View.GONE);
+                    btn_save_links.setVisibility(View.GONE);
                 }
                 else {
                     tl_links.setVisibility(View.VISIBLE);
-                    btn_save.setVisibility(View.VISIBLE);
+                    btn_save_links.setVisibility(View.VISIBLE);
                 }
             }
         });

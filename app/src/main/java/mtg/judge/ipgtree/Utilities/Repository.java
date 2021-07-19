@@ -18,7 +18,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    public static final int appVersion = 20210709;
+    public static final int appVersion = 20210719;
     public static int lastNews;
 
     //URLs
@@ -117,12 +117,17 @@ public class Repository {
     public static final String KEY_P4LOG = "key_p4log";
     public static final String KEY_P5LOG = "key_p5log";
     public static final String KEY_P6LOG = "key_p6log";
+    public static final String KEY_P1BG = "key_p1bg";
+    public static final String KEY_P2BG = "key_p2bg";
+    public static final String KEY_P3BG = "key_p3bg";
+    public static final String KEY_P4BG = "key_p4bg";
+    public static final String KEY_P5BG = "key_p5bg";
+    public static final String KEY_P6BG = "key_p6bg";
 
     public static final String KEY_LANGUAGE = "key_language";
     public static final String KEY_ANNOTATION = "key_annotation";
     public static final String KEY_DOWNLOADNEWS = "key_downloadnews";
 
-    public static final String KEY_UNLOCKEDFTP = "key_unlockedftp";
     public static final String KEY_ALLOWFTP = "key_allowftp";
     public static final String KEY_FTPSERVER = "key_ftpserver";
     public static final String KEY_FTPUSER = "key_ftpuser";
@@ -194,18 +199,22 @@ public class Repository {
     public static String p4log = "20";
     public static String p5log = "20";
     public static String p6log = "20";
+    public static String p1bg = null;
+    public static String p2bg = null;
+    public static String p3bg = null;
+    public static String p4bg = null;
+    public static String p5bg = null;
+    public static String p6bg = null;
     public static char mode = LIFE;
     public static int lifeDelay = 4000;
     public static int dice = 20;
 
     //Variables de configuración
     public static String language = ENGLISH;
-    public static String ftpCode = null;
     public static boolean showAnnotations = true;
     public static boolean downloadNews = false;
     public static int players = 0;
     public static boolean reverseLife = true;
-    public static boolean unlockedFTP = false;
     public static boolean allowFTP = false;
     public static String ftpServer = null;
     public static String ftpUser = null;
@@ -237,12 +246,17 @@ public class Repository {
         p4log = preferences.getString(KEY_P4LOG, "20");
         p5log = preferences.getString(KEY_P5LOG, "20");
         p6log = preferences.getString(KEY_P6LOG, "20");
+        p1bg = preferences.getString(KEY_P1BG, null);
+        p2bg = preferences.getString(KEY_P2BG, null);
+        p3bg = preferences.getString(KEY_P3BG, null);
+        p4bg = preferences.getString(KEY_P4BG, null);
+        p5bg = preferences.getString(KEY_P5BG, null);
+        p6bg = preferences.getString(KEY_P6BG, null);
         language = preferences.getString(KEY_LANGUAGE, ENGLISH);
         showAnnotations = preferences.getBoolean(KEY_ANNOTATION, true);
         downloadNews = preferences.getBoolean(KEY_DOWNLOADNEWS, true);
         players = preferences.getInt(KEY_PLAYERS, 0);
         reverseLife = preferences.getBoolean(KEY_REVERSELIFE, true);
-        unlockedFTP = preferences.getBoolean(KEY_UNLOCKEDFTP, false);
         allowFTP = preferences.getBoolean(KEY_ALLOWFTP, false);
         ftpServer = preferences.getString(KEY_FTPSERVER, null);
         ftpUser = preferences.getString(KEY_FTPUSER, null);

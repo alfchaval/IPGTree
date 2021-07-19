@@ -86,40 +86,64 @@ public class Life6Activity extends AppCompatActivity {
             cly_p4block.setRotation(180);
         }
 
-        File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg1.png");
+        File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p1bg);
         if(bg1.exists()) {
-            Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
-            cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
+            try {
+                Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
+                cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
+            } catch (Exception e) {
+
+            }
         }
 
-        File bg2 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg2.png");
+        File bg2 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p2bg);
         if(bg2.exists()) {
-            Bitmap bitmap2 = BitmapFactory.decodeFile(bg2.getAbsolutePath());
-            cly_p2block.setBackground(new BitmapDrawable(getResources(), bitmap2));
+            try {
+                Bitmap bitmap2 = BitmapFactory.decodeFile(bg2.getAbsolutePath());
+                cly_p2block.setBackground(new BitmapDrawable(getResources(), bitmap2));
+            } catch (Exception e) {
+
+            }
         }
 
-        File bg3 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg3.png");
+        File bg3 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p3bg);
         if(bg3.exists()) {
-            Bitmap bitmap3 = BitmapFactory.decodeFile(bg3.getAbsolutePath());
-            cly_p3block.setBackground(new BitmapDrawable(getResources(), bitmap3));
+            try {
+                Bitmap bitmap3 = BitmapFactory.decodeFile(bg3.getAbsolutePath());
+                cly_p3block.setBackground(new BitmapDrawable(getResources(), bitmap3));
+            } catch (Exception e) {
+
+            }
         }
 
-        File bg4 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg4.png");
+        File bg4 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p4bg);
         if(bg4.exists()) {
-            Bitmap bitmap4 = BitmapFactory.decodeFile(bg4.getAbsolutePath());
-            cly_p4block.setBackground(new BitmapDrawable(getResources(), bitmap4));
+            try {
+                Bitmap bitmap4 = BitmapFactory.decodeFile(bg4.getAbsolutePath());
+                cly_p4block.setBackground(new BitmapDrawable(getResources(), bitmap4));
+            } catch (Exception e) {
+
+            }
         }
 
-        File bg5 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg5.png");
+        File bg5 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p5bg);
         if(bg5.exists()) {
-            Bitmap bitmap5 = BitmapFactory.decodeFile(bg5.getAbsolutePath());
-            cly_p5block.setBackground(new BitmapDrawable(getResources(), bitmap5));
+            try {
+                Bitmap bitmap5 = BitmapFactory.decodeFile(bg5.getAbsolutePath());
+                cly_p5block.setBackground(new BitmapDrawable(getResources(), bitmap5));
+            } catch (Exception e) {
+
+            }
         }
 
-        File bg6 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg6.png");
+        File bg6 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p6bg);
         if(bg6.exists()) {
-            Bitmap bitmap6 = BitmapFactory.decodeFile(bg6.getAbsolutePath());
-            cly_p6block.setBackground(new BitmapDrawable(getResources(), bitmap6));
+            try {
+                Bitmap bitmap6 = BitmapFactory.decodeFile(bg6.getAbsolutePath());
+                cly_p6block.setBackground(new BitmapDrawable(getResources(), bitmap6));
+            } catch (Exception e) {
+
+            }
         }
 
         btn_dice.setText("D" + Repository.dice);

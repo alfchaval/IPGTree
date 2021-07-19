@@ -158,10 +158,10 @@ public class Translation {
                         result = "Your total score is: ";
                         break;
                     case 51:
-                        result = "Unlock";
+                        result = "Player";
                         break;
                     case 52:
-                        result = "code";
+                        result = "BACKGROUNDS";
                         break;
                     case 53:
                         result = "Continue";
@@ -288,6 +288,9 @@ public class Translation {
                         break;
                     case 94:
                         result = "Inverse upper life";
+                        break;
+                    case 95:
+                        result = "Example.png";
                         break;
                 }
                 break;
@@ -444,10 +447,10 @@ public class Translation {
                         result = "Tu puntuación total es: ";
                         break;
                     case 51:
-                        result = "Desbloquear";
+                        result = "Jugador";
                         break;
                     case 52:
-                        result = "código";
+                        result = "FONDOS";
                         break;
                     case 53:
                         result = "Continuar";
@@ -574,6 +577,9 @@ public class Translation {
                         break;
                     case 94:
                         result = "Invertir vida superior";
+                        break;
+                    case 95:
+                        result = "Ejemplo.png";
                         break;
                 }
                 break;

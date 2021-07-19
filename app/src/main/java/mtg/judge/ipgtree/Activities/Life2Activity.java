@@ -72,16 +72,24 @@ public class Life2Activity extends AppCompatActivity {
             cly_p2block.setRotation(180);
         }
 
-        File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg1.png");
+        File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p1bg);
         if(bg1.exists()) {
-            Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
-            cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
+            try {
+                Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
+                cly_p1block.setBackground(new BitmapDrawable(getResources(), bitmap1));
+            } catch (Exception e) {
+
+            }
         }
 
-        File bg2 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "bg2.png");
+        File bg2 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p2bg);
         if(bg2.exists()) {
-            Bitmap bitmap2 = BitmapFactory.decodeFile(bg2.getAbsolutePath());
-            cly_p2block.setBackground(new BitmapDrawable(getResources(), bitmap2));
+            try {
+                Bitmap bitmap2 = BitmapFactory.decodeFile(bg2.getAbsolutePath());
+                cly_p2block.setBackground(new BitmapDrawable(getResources(), bitmap2));
+            } catch (Exception e) {
+
+            }
         }
 
         btn_dice.setText("D" + Repository.dice);

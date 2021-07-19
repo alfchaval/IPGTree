@@ -35,6 +35,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
                 android:text="SHOW/HIDE LIFECOUNTER"
+                android:textColor="@color/colorAccent"
                 />
 
             <LinearLayout
@@ -43,6 +44,16 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
+
+                <Button
+                    android:id="@+id/btn_save_life"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/answer_background_parent"
+                    android:textColor="@color/colorText"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingHorizontal="4dp"
+                    />
 
                 <TextView
                     android:id="@+id/txv_life"
@@ -102,6 +113,101 @@
                     android:layout_gravity="center"
                     />
 
+                <TextView
+                    android:id="@+id/txv_background_life"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    />
+
+                <TableLayout
+                    android:id="@+id/tl_player_backgrounds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/txv_p1_background"
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_p1_background"
+                            android:layout_weight="1"
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/txv_p2_background"
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_p2_background"
+                            android:layout_weight="1"
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/txv_p3_background"
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_p3_background"
+                            android:layout_weight="1"
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/txv_p4_background"
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_p4_background"
+                            android:layout_weight="1"
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/txv_p5_background"
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_p5_background"
+                            android:layout_weight="1"
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            android:id="@+id/txv_p6_background"
+                            />
+
+                        <EditText
+                            android:id="@+id/edt_p6_background"
+                            android:layout_weight="1"
+                            />
+
+                    </TableRow>
+
+                </TableLayout>
+
             </LinearLayout>
 
             <TextView
@@ -114,6 +220,7 @@
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
                 android:text="SHOW/HIDE FTP"
+                android:textColor="@color/colorAccent"
                 />
 
             <LinearLayout
@@ -128,59 +235,14 @@
                 >
 
                 <LinearLayout
-                    android:id="@+id/ll_server_code"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-
-                    <TextView
-                        android:id="@+id/txv_ftptitle_one"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/colorText"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        />
-
-                    <TextView
-                        android:id="@+id/txv_codeftp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:layout_gravity="center"
-                        />
-
-                    <EditText
-                        android:id="@+id/edt_codeftp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:singleLine="true"
-                        />
-
-                    <Button
-                        android:id="@+id/btn_unlockftp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/answer_background_parent"
-                        android:textColor="@color/colorText"
-                        android:layout_gravity="center"
-                        android:paddingHorizontal="4dp"
-                        />
-
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/ll_server_settings"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone"
                     >
 
                     <TextView
-                        android:id="@+id/txv_ftptitle_two"
+                        android:id="@+id/txv_ftptitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/colorText"
@@ -236,10 +298,11 @@
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold"
                 android:text="SHOW/HIDE LINKS"
+                android:textColor="@color/colorAccent"
                 />
 
             <Button
-                android:id="@+id/btn_save"
+                android:id="@+id/btn_save_links"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/answer_background_parent"
