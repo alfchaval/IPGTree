@@ -1,5 +1,6 @@
 package mtg.judge.ipgtree.Activities;
 
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -13,6 +14,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
@@ -46,6 +48,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
 public class DocumentActivity extends AppCompatActivity {
 
     private Tree<TypedText> tree;
@@ -72,10 +75,11 @@ public class DocumentActivity extends AppCompatActivity {
 
     private static final String KEY_SERIALIZED_TREE = "key_serialized_tree";
 
-    private static final Pattern URI_PATTERN = Pattern.compile("https?://(www\\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#()?&//=]*)");
+    private static final Pattern CARD_PATTERN = Pattern.compile("\\[CARD\\|(.*?)]");
+    private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
     private static final Pattern RULE_PATTERN = Pattern.compile("(?<!^)\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
     private static final Pattern SEARCHING_RULE_PATTERN = Pattern.compile("\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
-    private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
+    private static final Pattern URI_PATTERN = Pattern.compile("https?://(www\\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#()?&/=]*)");
 
     private Pattern searchTextPattern = null;
 
@@ -435,59 +439,33 @@ public class DocumentActivity extends AppCompatActivity {
 
     private void setTextView(int index, TypedText typedText, String word) {
         TextView textView = branchs.get(index);
-        String text = typedText.getText();
-        Spannable spannable = new SpannableString(text);
-        if(document.equals("cr") && (searching || tree.getChild(index).isLeaf()))
+        Spannable spannable;
+        String text;
+
+        if(document.equals("banned"))
         {
-            Matcher exampleMatcher = EXAMPLE_PATTERN.matcher(text);
-            if (exampleMatcher.find()) {
-                spannable.setSpan(new StyleSpan(Typeface.ITALIC), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-                spannable.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorExample)), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            }
-
-            Matcher ruleMatcher = searching ? SEARCHING_RULE_PATTERN.matcher(text) : RULE_PATTERN.matcher(text);
-            while (ruleMatcher.find()) {
-                spannable.setSpan(
-                        new CustomSpan(getResources().getColor(R.color.colorLink), text.substring(ruleMatcher.start(), ruleMatcher.end())) {
-                            @Override
-                            public void onClick(@NonNull View widget) {
-                                ruleSearch(GetRule());
-                            }
-                        }, ruleMatcher.start(), ruleMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-            }
-
-            if(searching)
-            {
-                Matcher searchTextMatcher = searchTextPattern.matcher(text);
-                while (searchTextMatcher.find()) {
-                    spannable.setSpan(new BackgroundColorSpan(getResources().getColor(R.color.colorSelected)), searchTextMatcher.start(), searchTextMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-                }
-            }
-
-            Matcher symbolMatcher = Symbols.SYMBOL_PATTERN.matcher(text);
-            while(symbolMatcher.find()) {
-                Drawable symbol = Symbols.getSymbol(symbolMatcher.group(), getApplicationContext());
-                if (symbol != null) {
-                    symbol.setBounds(0, 0, (int)(symbol.getIntrinsicWidth()/1.8), (int)(symbol.getIntrinsicHeight()/1.8));
-                    ImageSpan span = new ImageSpan(symbol, ImageSpan.ALIGN_BASELINE);
-                    spannable.setSpan(span, symbolMatcher.start(), symbolMatcher.end(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
-                }
-            }
+            spannable = SpannableWithCards(typedText.getText());
+            text = spannable.toString();
         }
         else
         {
-            Matcher linkMatcher = URI_PATTERN.matcher(text);
-            while (linkMatcher.find()) {
-                CustomSpan linkSpan = new CustomSpan(getResources().getColor(R.color.colorLink), Uri.parse(text.substring(linkMatcher.start(), linkMatcher.end()))) {
-                    @Override
-                    public void onClick(@NonNull View widget) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-                        browserIntent.setData(GetUri());
-                        startActivity(browserIntent);
-                    }
-                };
-                spannable.setSpan(linkSpan, linkMatcher.start(), linkMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            spannable = new SpannableString(typedText.getText());
+            text = typedText.getText();
+        }
+
+        if(document.equals("cr") && (searching || tree.getChild(index).isLeaf()))
+        {
+            MatchExample(spannable, text, getApplicationContext());
+            MatchRule(spannable, text);
+            if(searching)
+            {
+                MatchSearch(spannable, text);
             }
+           MatchSymbols(spannable, text, 0.55f);
+        }
+        else
+        {
+            MatchURL(spannable, text);
         }
 
         if (typedText.getType() == TypedText.ANNOTATION) {
@@ -512,6 +490,107 @@ public class DocumentActivity extends AppCompatActivity {
                 textView.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
             }
             textView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public SpannableStringBuilder SpannableWithCards(String text) {
+        int index = 0;
+        String cardWithTag;
+        String cardName;
+        SpannableStringBuilder spannableBuilder = new SpannableStringBuilder();
+        Matcher cardMatcher = CARD_PATTERN.matcher(text);
+        while (cardMatcher.find()) {
+            if(index < cardMatcher.start())
+            {
+                spannableBuilder.append(text.substring(index, cardMatcher.start()));
+            }
+            cardWithTag = cardMatcher.group();
+            cardName = cardWithTag.substring(6, cardWithTag.length() - 1);
+            spannableBuilder.append(cardName);
+            spannableBuilder.setSpan(new CustomSpan(getResources().getColor(R.color.colorLink), cardName) {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    try{
+                        String cardtext = Repository.cards.get(GetRule()).showCard();
+                        new AlertDialog.Builder(DocumentActivity.this)
+                                .setMessage(SpannableWithSymbols(cardtext, 0.5f))
+                                .show();
+                    } catch (Exception e) {}
+                }
+            }, spannableBuilder.length() - cardName.length(), spannableBuilder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            index = cardMatcher.end();
+        }
+        if(index < text.length()-1)
+        {
+            spannableBuilder.append(text.substring(index));
+        }
+        return spannableBuilder;
+    }
+
+    public Spannable SpannableWithSymbols(String text, float symbolSize)
+    {
+        Spannable spannable = new SpannableString(text);
+        MatchSymbols(spannable, text, symbolSize);
+        return spannable;
+    }
+
+    public void MatchSymbols(Spannable spannable, String text, float symbolSize)
+    {
+        Matcher symbolMatcher = Symbols.SYMBOL_PATTERN.matcher(text);
+        while(symbolMatcher.find()) {
+            Drawable symbol = Symbols.getSymbol(symbolMatcher.group(), getApplicationContext());
+            if (symbol != null) {
+                symbol.setBounds(0, 0, (int)(symbol.getIntrinsicWidth()*symbolSize), (int)(symbol.getIntrinsicHeight()*symbolSize));
+                ImageSpan span = new ImageSpan(symbol, ImageSpan.ALIGN_BASELINE);
+                spannable.setSpan(span, symbolMatcher.start(), symbolMatcher.end(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
+        }
+    }
+
+    public void MatchRule(Spannable spannable, String text)
+    {
+        Matcher ruleMatcher = searching ? SEARCHING_RULE_PATTERN.matcher(text) : RULE_PATTERN.matcher(text);
+        while (ruleMatcher.find()) {
+            spannable.setSpan(
+                    new CustomSpan(getResources().getColor(R.color.colorLink), text.substring(ruleMatcher.start(), ruleMatcher.end())) {
+                        @Override
+                        public void onClick(@NonNull View widget) {
+                            ruleSearch(GetRule());
+                        }
+                    }, ruleMatcher.start(), ruleMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        }
+    }
+
+    public void MatchExample(Spannable spannable, String text, Context context)
+    {
+        Matcher exampleMatcher = EXAMPLE_PATTERN.matcher(text);
+        if (exampleMatcher.find()) {
+            spannable.setSpan(new StyleSpan(Typeface.ITALIC), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            spannable.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.colorExample)), exampleMatcher.start(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        }
+    }
+
+    public void MatchSearch(Spannable spannable, String text)
+    {
+        Matcher searchTextMatcher = searchTextPattern.matcher(text);
+        while (searchTextMatcher.find()) {
+            spannable.setSpan(new BackgroundColorSpan(getResources().getColor(R.color.colorSelected)), searchTextMatcher.start(), searchTextMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        }
+    }
+
+    public void MatchURL(Spannable spannable, String text)
+    {
+        Matcher linkMatcher = URI_PATTERN.matcher(text);
+        while (linkMatcher.find()) {
+            CustomSpan linkSpan = new CustomSpan(getResources().getColor(R.color.colorLink), Uri.parse(text.substring(linkMatcher.start(), linkMatcher.end()))) {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                    browserIntent.setData(GetUri());
+                    startActivity(browserIntent);
+                }
+            };
+            spannable.setSpan(linkSpan, linkMatcher.start(), linkMatcher.end(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         }
     }
 }

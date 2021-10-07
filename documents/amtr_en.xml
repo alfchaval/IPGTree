@@ -74,21 +74,13 @@
             <annotation text="Several years ago, even Regular Rules Enforcement Level required judges and players to be separate, which caused many people to not want to become judges at all, as it then meant they could only rarely play. For a while there was also a “3 Judge Rule” which meant if there were 3 judges, they could play and judge since there would always be a judge not involved in the match that could be called."></annotation>
             <annotation text="The “tournaments in which the official Wizards of the Coast tournament fact sheet specifically permits officials of that tournament to play” does not have anything under that category, but is an option for the future. The general policy is that all Regular Rules Enforcement Level events someone can both play and act as a Tournament Official, for Competitive and Professional they cannot."></annotation>
         </point>
-        <point text="1.5 DCI Numbers">
-            <point text="Tournament participants must provide their DCI number to the Scorekeeper during registration."></point>
-            <annotation text="It is worth mentioning that just because the scorekeeping software allows someone to be entered with no trouble, that does not necessarily mean they are eligible. Wizards Event Reporter currently does not keep an active, up to date registry of the suspended players list. Judges, Tournament Organizers, and Scorekeepers are encouraged to check the list regularly to be aware of potentially suspended players in their area."></annotation>
-            <annotation text="The DCI number also helps uniquely identify players in an event where multiple people can have the same name."></annotation>
-            <point text=" Players without a DCI number should obtain one from https://accounts.wizards.com/ before attending an event. If a player does not obtain a DCI number before the event, the Tournament Organizer of the event can provide one. Players are only allowed one DCI membership number, and players with multiple DCI numbers should contact Wizards of the Coast to have the information for two or more DCI numbers combined."></point>
-            <annotation text="Players without a DCI number should obtain one from https://accounts.wizards.com/ before attending an event. If a player does not obtain a DCI number before the event, the Tournament Organizer of the event can provide one. Players are only allowed one DCI membership number, and players with multiple DCI numbers should contact Wizards of the Coast to have the information for two or more DCI numbers combined."></annotation>
-            <annotation text="If a player ends up with more than one DCI number, they can merge memberships online. Nevertheless, players may not intentionally maintain multiple memberships (e.g., in order to play while their main number is suspended). Players are also required to use their real names, that they use in real life. Their registered names don’t have to be their full legal names; a player may register as “Mike” instead of Michael but can’t register as “Roflcopter McGee.” The registered name should be what the player identifies as their name."></annotation>
-            <point text="Results containing temporary player numbers, temporary player names, or placeholders should not be reported to the DCI."></point>
-            <annotation text="Fake player accounts and incorrect names cannot exist in the results sent to the DCI. An example of this would be Grand Prix events with “Sleep in special” offers made to players with Byes. Since the players won’t be at the player meeting, scorekeepers often change their name to “zzzzzLastName, FirstNamezzzz” so that person is sat at the end of the list for the player meeting, so there are no gaps in the players actually there."></annotation>
-            <annotation text="Some Tournament Organizers may add a fake player in order to sanction an event with 7 players. This is strictly prohibited. If only 7 people show up for an event, players can still play, but the event must be run as an unsanctioned event. See MTR 10.1 for more information on participation minimums."></annotation>
-        </point>
+        <point text="1.5 Registration">
+            <point text="In order to participate in Magic: The Gathering tournaments, players must be able to provide the necessary and appropriate identifying information to participate in the tournament."></point>
+            <point text="For tournaments run using the Eventlink tournament management software, players must provide a Wizards Account and/or a first and last name."></point>
+			<point text="For tournaments run using the Wizards Large Tournament Reporter (WLTR), player must provide a DCI number and first/last name. Players without a DCI number should obtain one from https://accounts.wizards.com/ before attending an event."></point>
+		</point>
         <point text="1.6 Tournament Organizer">
             <point text="The Tournament Organizer of a tournament is responsible for all tournament logistics including:"></point>
-            <point text="• Securing a sanctioning number from the DCI."></point>
-            <annotation text="This is obtained by sanctioning the event in Wizards Event Reporter, through the creation of the event. Each event has a unique sanctioning number."></annotation>
             <point text="• Providing a site for the tournament that meets the tournament’s expected needs."></point>
             <annotation text="To ensure a smooth running event, the tournament organizer must provide a play space that will allow the event to have space required for the expected number of players. This may range from the store they run having enough room for their FNM, or renting out a room in a hotel or convention center to make adequate space."></annotation>
             <point text="• Advertising the tournament in advance of the tournament date."></point>
@@ -97,7 +89,7 @@
             <annotation text="Tournament Organizers need to ensure that they have properly qualified tournament officials to staff the event. For example, Grand Prix Trials require at least one Level 1 judge staffing the event, and Preliminary Pro Tour Qualifiers require at least one Level 2 judge. Additional staff may be needed for the event to run efficiently and at a reasonable pace."></annotation>
             <point text="• Providing all materials necessary to operate the tournament (e.g. product for Limited format tournaments)."></point>
             <annotation text="Tournament Organizers need to ensure that sealed product and other required materials are available for limited format tournaments and that deck list sheets available for constructed tournaments. Those are pretty straightforward. The Tournament Organizer is also responsible for providing a lot of other things that players may take for granted — e.g., a computer and printer to take results and print pairings, tape, places to post pairings, round clock, and scissors/paper cutter to cut results slips. Some of these aren’t required but make the event go smoother, and typical Tournament Organizers will provide these. Some may find alternate ways to do some of the tasks these are used for, such as using a large TV to display pairings."></annotation>
-            <point text="• Reporting the tournament results to the DCI."></point>
+            <point text="• Reporting the tournament results."></point>
             <point text="• Saving match result slips from each tournament for a period of 6 months (to aid in match appeals)."></point>
         </point>
         <point text="1.7 Head Judge">
@@ -158,8 +150,6 @@
             <point text="• Informing the DCI of any discrepancies in their overall match history or rankings as soon as they become aware of it. If players believe there is an anomaly in their match history or ranking they should refer to the Magic: The Gathering Event Appeals Policy, located at:"></point>
             <link text="http://wpn.wizards.com/document/magic-event-appeals-policy"></link>
 			<annotation text="Sometimes the ranking system gets flooded with information or due to a malfunction may show the incorrect position and/or quantity of points. If this should happen, any player may report the mistake or the malfunction in order to correct it. Wizards of the Coast and the DCI are always looking forward to feedback from the community."></annotation>
-            <point text="• Having a single DCI membership number. Individuals holding more than one number must contact Wizards of the Coast Customer Service at http://www.wizards.com/customerservice so that their numbers can be merged."></point>
-            <annotation text="The DCI membership number is a player’s identity for tournaments and organized Magic: The Gathering events. Without one, a player can’t get registered in any DCI-sanctioned event. Also, every result and every point earned will go the account linked to that membership number. That is why it’s important to have only one DCI number."></annotation>
             <point text="• Refraining from enrolling in tournaments in which they are not allowed by policy to participate."></point>
             <annotation text="Some tournaments award invitations to other events or have participation restrictions based on level, players’ invitation history, or other factors. Players are required to be aware of their eligibility and should not intentionally enter events they are ineligible for."></annotation>
             <point text="• Being familiar with the rules contained within this document."></point>
@@ -168,8 +158,6 @@
             <point text="A player must bring the following items to a tournament in order to participate:"></point>
             <point text="• A physical, visible, and reliable method to maintain and record game information (tokens, score counters, pen and paper, and so on)."></point>
             <annotation text="Players are responsible for maintaining a clear and legal game state. Therefore players must bring items that help keep a clear game state — e.g., pen and paper for life totals, dice for counters and actual mana pool, tokens, etc."></annotation>
-            <point text="• A valid DCI membership number registered in the participant’s name. New players may register for DCI membership when enrolling in the tournament."></point>
-            <annotation text="The DCI number identifies players at events, so every player must have their DCI number registration. It’s not necessary to have the card physically at hand for tournament enrolling, but it is also helpful."></annotation>
             <point text="• Any materials specifically required for a particular tournament format, such as assembled decks and/or decklists for constructed tournaments."></point>
             <annotation text="Some tournaments require players to have certain items in order to play, e.g., a decklists and constructed decks. Decklists help maintain an event’s integrity and provide information about the decks played at the tournament and their legality."></annotation>
             <point text="Players retain their responsibilities even if a judge provides them with extra assistance. "></point>
@@ -260,7 +248,7 @@
             <annotation text="Players can also agree to draw only a specific game, which must be accurately reported to the Scorekeeper (e.g., 2-1-1) for tiebreaker purposes."></annotation>
             <point text="A match is considered complete once the result slip is filled out or, if match slips are not being used, a player leaves the table after game play is finished."></point>
             <annotation text="This rule is here to prevent players from needing to be precise in how they determine a winner. If a player has defeated, or is about to defeat their opponent they may still concede as long as the slip has not been filled out or turned in. This allows players to concede at any time without committing tournament fraud."></annotation>
-            <point text="Until that point, either player may concede to or draw with the other, though if the conceding player won a game in the match, the match must be reported as 2-1. Intentional draws where no games were played are always reported as 0-0-3 or by using the “draw” button (0-0) in Wizards Event Reporter (WER)."></point>
+            <point text="Until that point, either player may concede to or draw with the other, though if the conceding player won a game in the match, the match must be reported as 2-1. Intentional draws where no games were played are always reported as 0-0-3 in Eventlink."></point>
             <annotation text="All games actually played must be recorded accurately, as some tournament tiebreakers are dependent on games won and lost. The note for intentional draws codifies and standardizes the scorekeeping practice."></annotation>
             <point text="Players may not agree to a concession or draw in exchange for any reward or incentive. Doing so will be considered Bribery (see section 5.2)."></point>
             <annotation text="Ignorance of this rule is not a defense for having committed it, and doing so carries a penalty of Disqualification (see IPG 4.4: Bribery and Wagering). A player who is offered any reward or incentive must alert a judge immediately."></annotation>
@@ -272,7 +260,7 @@
             <annotation text="This “overtime” procedure is in place to allow all matches a chance to come to a natural conclusion and prevent one player from “milking the clock” and forcing a draw. While these additional turns are technically untimed, players are still expected to play at a reasonable pace, and are liable for slow play penalties."></annotation>
             <point text="This usually means that one player takes three turns and the other two, but a player taking extra turns may affect this."></point>
             <annotation text="There will only be five turns in the additional turn portion of the round. (But see IPG 3.3 — Slow Play, where two additional turns are added as an additional remedy.) Game circumstances (e.g., the activation of Ral Zarek’s third ability) may result in one player being entitled to all five turns. For more details on extra turns, see CR 500.7."></annotation>
-            <point text="If the active player has already indicated that they’d like to pass the turn when the time limit is reached, that is considered to be in the next turn."></point>
+            <point text="If the active player has already indicated that they would like to pass the turn when the time limit is reached, that is considered to be in the next turn."></point>
             <point text="Team tournaments featuring multiple players playing together (such as Two-Headed Giant) use three turns instead of five."></point>
             <annotation text="During end of round the active player typically receives 2 turns and the non active player three turns. As players take their turns simultaneously, 3 extra turns in Two-Headed Giant accomplishes this ideal."></annotation>
             <point text="Once time is called, no new games should begin."></point>
@@ -369,14 +357,10 @@
             <point text="The Head Judge is the final arbiter on what cards and notes are acceptable for a tournament."></point>
         </point>
         <point text="2.12 Electronic Devices.">
-            <point text="At Competitive and Professional Rules Enforcement Level during drafting, deck construction, and playing of matches, players may not use electronic devices capable of taking and storing notes, communicating with other people, or accessing the internet (except for taking brief personal calls with the opponent's permission)."></point>
-            <annotation text="With advances in technology, we can’t check what is and what is not on players’ phones. Since it is possible to exchange information with everyone instantly through electronic devices, there was only one solution: ban any kind of electronic devices that can communicate with anything else at Competitive Rules Enforcement Level events. And so players are not allowed to use those kind of devices at Competitive or Professional Rules Enforcement Level events."></annotation>
-            <annotation text="The previous incarnation of this rule banned all electronic devices, but was relaxed to only those that are capable of taking and storing notes, communicating with others, or accessing the internet. This allows dumb calculators as life keepers, people can have pace makers, Brian Kibler can sit and listen to music while shuffling, etc."></annotation>
-            <point text="At Regular Rules Enforcement Level, electronic devices are permitted, but players may not use them to access information that contains substantial strategic advice or information about an opponent's deck."></point>
-            <annotation text="Regular Rules Enforcement Level has an exception since it’s a more relaxed atmosphere, and many players use things like their cell phones to keep track of life. Players are still not allowed to access any kind of forbidden materials (like strategy articles) through their devices."></annotation>
-            <point text="Device use during a match other than brief personal calls must be visible to all players. Players wishing to view information privately on electronic devices during matches must request permission from a judge."></point>
-            <annotation text="That first part of this paragraph applies only for Regular Rules Enforcement Level. If a player is tracking life totals on their mobile phone, they should make sure it’s visible for every player as well. Any kind of usage devices in private should be made after receiving permission from a judge."></annotation>
-            <point text="The Head Judge or Tournament Organizer of a tournament may further restrict or forbid the use of electronic devices during matches."></point>
+            <point text="Electronic devices are permitted, but players may not use them to access information that contains substantial strategic advice or information about an opponent's deck. Device use during a match other than brief personal calls must be visible to all players. Players wishing to view information privately on electronic devices during matches must request permission from a judge."></point>
+            <annotation text="If a player is tracking life totals on their mobile phone, they should make sure it’s visible for every player as well. Any kind of usage devices in private should be made after receiving permission from a judge."></annotation>
+            <point text="At Competitive and Professional Rules Enforcement Level during drafting and deck construction, players may not use electronic devices capable of taking and storing notes, communicating with other people, or accessing the internet."></point>
+			<point text="The Head Judge or Tournament Organizer of a tournament may further restrict or forbid the use of electronic devices during matches."></point>
             <annotation text="EThe Head Judge, as always, has final authority on what is allowed, and can forbid players from being able to use electronic devices if they see fit."></annotation>
         </point>
         <point text="2.13 Video Coverage">
@@ -431,9 +415,7 @@
             <annotation text="Artist proofs are published by Wizards of the Coast, but do not have a standard Magic back. They are, therefore, not usable in tournament play."></annotation>
             <point text="• The card does not have squared corners."></point>
             <annotation text="Collectors’ Edition cards have black borders on the face, but square corners and a gold border on the back. These are not legal for tournament use. Also, uncut sheets of cards are sometimes cut for use. It is important that these cards have the same corners as all other cards."></annotation>
-            <point text="• Silver-bordered cards may only be used in casual events and only when the format explicitly permits them."></point>
-			<annotation text="Cards from Unglued, Unhinged, and Unstable all have silver borders with a standard Magic back. These are only legal to play in their specific formats. Gold bordered cards also exist, though they do not have a standard Magic back."></annotation>
-			<point text="• The card is not a token card."></point>
+            <point text="• The card is not a token card."></point>
             <annotation text="Tokens are used to represent objects that don’t exist as normal Magic cards. While some official tokens exist, it is not required that they be used during tournament play."></annotation>
             <point text="• The card is not damaged or modified in a way that might make it marked."></point>
             <annotation text="Significantly creased cards can be distinguished from other cards in a deck, even sleeved. Also, altered cards may be thicker than the other cards in the deck, depending on the method used to alter the card. If any cards can be distinguished from the other cards in the deck without viewing its front face, then those cards are marked and not legal for tournament play."></annotation>
@@ -445,7 +427,10 @@
             <annotation text="Any card that does not meet the above criteria, including homemade proxies, may not be used in a tournament that is sanctioned by a WPN store. While some events exist that allow proxies (usually for Vintage, Legacy and Commander events), those events must not be run as a sanctioned event with WER reporting software."></annotation>
             <point text="Players may use cards from the Alpha printing only if the deck is in opaque sleeves."></point>
             <annotation text="Cards from the Alpha printing have corners that are significantly more rounded than all cards from the Beta printing onward. They are easily distinguished from any other card in the deck if the sleeves can be seen through."></annotation>
-            <point text="Players may use otherwise-legal non-English and/or misprinted cards provided they are not using them to create an advantage by using misleading text or pictures. Official promotional textless spells are allowed in sanctioned Magic tournaments in which they would otherwise be legal."></point>
+            <point text="Silver-bordered cards may only be used in casual events and only when the format explicitly permits them."></point>
+			<annotation text="Cards from Unglued, Unhinged, and Unstable all have silver borders with a standard Magic back. These are only legal to play in their specific formats. Gold bordered cards also exist, though they do not have a standard Magic back."></annotation>
+			<point text="Dungeons are a special type of nontraditional card. Players are considered to have copies of Dungeon cards at all times, even if they are not currently in possession of the physical card. Any represetantion of the Dungeon card is acceptable, provided it does not cause disruption to the play area or tournament and does not misrepresent the correct progression of the Dungeon card. Multiple players may simultaneously make use of the same Dungeon as long as the representation of each player's marker is clear."></point>
+			<point text="Players may use otherwise-legal non-English and/or misprinted cards provided they are not using them to create an advantage by using misleading text or pictures. Official promotional textless spells are allowed in sanctioned Magic tournaments in which they would otherwise be legal."></point>
             <annotation text="It is not required that players play with cards that are printed in the native language of the area in which the tournament is being run. If a player needs to know what a card does, either because it is in a language they cannot read, or it is a textless printing, they may call for a judge and ask for the Oracle text."></annotation>
             <annotation text="There are some famous misprints whose art is from a different card. For example, the German-language printing of Revised had a Forest (Wald) with Plains art. These cards, while an interesting curiosity, create an ambiguous and confusing game state and should not be used in tournament play."></annotation>
             <point text="Artistic modifications are acceptable in sanctioned tournaments, provided that the modifications do not make the card art unrecognizable, contain substantial strategic advice, or contain offensive images. Artistic modifications also may not cover or change the mana cost or name of the card."></point>
@@ -488,7 +473,9 @@
         </point>
         <point text="3.7 New Releases">
             <point text="Newly released card sets become tournament legal for sanctioned, rated tournaments on the following dates:"></point>
-            <point text="• Zendikar Rising - September 25, 2020"></point>
+            <point text="• Adventures in the Forgotten Realms - July 23, 2021"></point>
+			<point text="• Innistrad: Midnight Hunt - September 24, 2021"></point>
+			<point text="• Innistrad: Crimson Vow - November 19, 2021"></point>
             <annotation text="Cards from Prerelease tournaments, spoiler cards, and cards stolen from Wizards of the Coast headquarters in grand heists are not legal for use in tournaments until the set they are from is officially released. This list is constantly updating, and we’d be surprised if the MTR is the first place you go to look for these dates."></annotation>
             <point text="For official Prerelease tournaments only, new sets are legal for use before the official format legal date. In these cases, any announced rules updates shall be in effect at these tournaments, including informal explanations of new rules and mechanics. Judges may apply additional rules that they believe will be updated."></point>
             <annotation text="This is the one obvious exception. Prerelease tournaments are treated as though the set was already released. Any changes to the rule, whether big or small, are in effect at the Prerelease tournament even though they aren’t officially brought into effect until the release of the set."></annotation>
@@ -501,7 +488,12 @@
             <point text="Small items (e.g. glass beads) may be used as markers and placed on top of a player’s own library or graveyard as a reminder for in-game effects. These markers may not disguise the number of cards remaining in that zone nor completely obscure any card."></point>
             <annotation text="Players will often put something on top of their deck in order to remind them of an upkeep trigger, such as rebound, and occasionally players will put something on top of their graveyard in order to remind them of some continuous effect. “Small” is very subjective, and there are stories of a player using a plastic fishbowl to completely cover their own deck to prevent them from drawing a card before remembering the upkeep trigger. The key rules are that the item can’t obscure the cards, can’t make it difficult to see any revealed cards, and can’t be a card itself."></annotation>
         </point>
-        <point text="3.9 Card Shuffling">
+		<point text="3.9 Die Rolling">
+			<point text="Some game actions use a die roll to determine their outcome. Any method may be used to simulate this as long as all results have an equal chance of occurring. For example, using a 20-sided die to simulate a 6-sided die by diving by 3 and rounding up (rerolling on 19 or 20) is acceptable. Dice with similar numbers clumped together (such as a spindown life tracker) may not be used for these actions."></point>
+			<point text="Dice must have clear and easy to read values, and not be so large as to be disruptive when rolled. They must be rolled from a discernable height. Dice that leave the playing surface after landing, become mixed with similar dice, or do not land flat are ignored and rerolled."></point>
+			<point text="Players are expected to be clear about why they are rolling a die. A player who wishes to respond to a die roll is expected to the prevent the rolling player from taking action, but the rolling player cannot rush through to preempt responses. A die roll is complete once the result is visible to the opponent."></point>
+        </point>
+        <point text="3.10 Card Shuffling">
             <point text="Decks must be randomized at the start of every game and whenever an instruction requires it. Randomization is defined as bringing the deck to a state where no player can have any information regarding the order or position of cards in any portion of the deck."></point>
             <annotation text="The phrase “order or position” is key. A deck that is “mana-weaved” is not random; even though the player may have no information about the location of a specific card, they have information about the cards’ order (that is, land-spell-spell, land-spell-spell). Also key is that a player shouldn’t know any information on where a card is, not even which half of the deck it is in."></annotation>
             <point text="Pile shuffling may not be performed other than once each at the beginning of a game to count the cards in the deck."></point>
@@ -518,7 +510,7 @@
             <annotation text="In some cultures, asking to shuffle an opponent’s deck would be considered an insult. The requirement to shuffle an opponent’s deck is intended to prevent cheaters from taking advantage of these cultural norms."></annotation>
             <annotation text="Because a deck presented to an opponent should be random, this additional shuffle does not need to be thorough. However, simply cutting the deck is often not sufficient to meet this requirement."></annotation>
         </point>
-        <point text="3.10 Sleeves">
+        <point text="3.11 Sleeves">
             <point text="Players may use plastic card sleeves or other protective devices on cards."></point>
             <annotation text="Often players will be using card sleeves to protect their cards from the dirt and friction they would otherwise be exposed to through repeated usage. Provided that they do not interfere with shuffling, or could be considered offensive, they will be allowed with the following conditions."></annotation>
             <point text="If a player chooses to use card sleeves, all sleeves must be identical and all cards in their deck must be placed in the sleeves in an identical manner."></point>
@@ -542,7 +534,7 @@
             <annotation text="In the event that a player is using double-faced cards with in their deck rather than a substitute card, the sleeve must not allow any indication that a double-faced card is within. Often the easiest way to observe this is by looking at the back of the sleeve in various angles in light to determine opaqueness. If the sleeves prove ineffective at preventing the nature of the double-faced card from being revealed the player will either need to use appropriate substitute cards, or use new, suitable sleeves. The infraction Marked Cards may also apply."></annotation>
             <point text="The Head Judge is the final authority on what sleeves are allowed."></point>
         </point>
-        <point text="3.11 Marked Cards">
+        <point text="3.12 Marked Cards">
             <point text="Players are responsible for ensuring that their cards and/or card sleeves are not marked during the tournament. A card or sleeve is considered marked if it bears something that makes it possible to identify the card without seeing its face, including (but not limited to) scratches, discoloration, and bends."></point>
             <annotation text="Cards must stand out when in the deck to be considered marked. If you have to bend the card and look at it from funny angles to get the light to hit it just right, it is not marked."></annotation>
             <point text="If a player’s cards are sleeved, the cards must be examined while in the sleeves to determine if they are marked. Players should use care when sleeving their decks and should randomize their decks prior to sleeving them to reduce the possibility of cards becoming marked with a pattern. Players should also keep in mind that cards or sleeves may become worn and potentially marked through play during a tournament."></point>
@@ -550,25 +542,25 @@
             <point text="The Head Judge has the authority to determine if a card in a player’s deck is marked. Judges may request that a player remove their current sleeves or replace any of the deck’s current sleeves immediately, or before the next round."></point>
             <annotation text="If the sleeves are marked enough that you are giving a Warning at Competitive Rules Enforcement Level, instruct the player to replace them between rounds. If their round runs late, give them a reasonable time extension in the following round to facilitate re-sleeving. If the penalty is being upgraded to a Game Loss, the player needs to replace the sleeves immediately. Judges are often tasked with assisting the player to expedite the process. Make sure to follow-up with players after instructing them to replace sleeves to ensure that they have done so."></annotation>
         </point>
-        <point text="3.12 Hidden Information">
+        <point text="3.13 Hidden Information">
             <point text="Hidden information refers to the faces of cards and other objects at which the rules of the game and format do not allow you to look."></point>
             <annotation text="Cards in the library, cards in the opponent’s hand, cards exiled face down (such as from Pyxis of Pandemonium), and cards other players are drafting, are all examples of hidden information."></annotation>
             <point text="Throughout the match, a draft, and pregame procedures, players are responsible for keeping their cards above the level of the playing surface and for making reasonable efforts to prevent hidden information from being revealed. However, players may choose to reveal their hands or any other hidden information available to them, unless specifically prohibited by the rules. Players must not actively attempt to gain information hidden from them but are not required to inform opponents who are accidentally revealing hidden information."></point>
             <annotation text="Players can show their opponent any information that that player is allowed to see. This means they cannot show the opponent the contents of their deck unless they are currently allowed to see it (i.e. searching). Players cannot try to look at the opponent’s hand, but if the opponent has it revealed they don’t need to inform them."></annotation>
         </point>
-        <point text="3.13 Tapped/Flipped Cards">
+        <point text="3.14 Tapped/Flipped Cards">
             <point text="If a card must be tapped or flipped, it must be turned approximately 90 degrees (tapped) or 180 degrees (flipped), whichever is appropriate."></point>
             <annotation text="Flipped cards were introduced, and currently only in, Kamigawa Block. They consist of a card with two rules boxes, and have a condition to flip them from their original characteristics to alternate characteristics."></annotation>
             <annotation text="Whether a card is tapped or flipped is a status of the game, and needs to be clearly communicated with the opponent, and visual standards are very helpful in this regard."></annotation>
         </point>
-        <point text="3.14 Graveyard Order">
-            <point text="In formats involving only cards from Urza’s Saga™ and later, players may change the order of their graveyard at any time."></point>
+        <point text="3.15 Graveyard Order">
+            <point text="In formats involving only cards from Urza’s Saga and later, players may change the order of their graveyard at any time."></point>
             <annotation text="The set Stronghold has the last cards that care about graveyard order. Urza’s Saga is the set following that, so in any format that only includes later sets players may change the order of their graveyard."></annotation>
             <annotation text="The most common formats for which players cannot change a graveyard’s order are Legacy &amp; Vintage."></annotation>
             <point text="A player may not change the order of an opponent’s graveyard."></point>
             <annotation text="A player may look through an opponent’s graveyard whenever they like. Players should always ask for the owner’s permission before touching cards that do not belong to them, as a courtesy. If a player is looking through a graveyard extra care should be taken to not mix any of the cards with their hand."></annotation>
         </point>
-        <point text="3.15 Sideboard">
+        <point text="3.16 Sideboard">
             <point text="A sideboard is a group of additional cards the player may use to modify their deck between games of a match. The player may use these cards in their main deck during all games after the first one in a match."></point>
             <annotation text="It is advisable for a player to have their sideboard sleeved in the same manner as their main deck in order to quickly swap cards."></annotation>
             <point text="Before each game begins, players must present their sideboard (if any) face down. Opponents may count the number of cards in their opponent’s sideboard at any time. Players are not required to reveal how many cards they have swapped from their main deck to their sideboard and do not have to swap one for one."></point>
@@ -603,6 +595,7 @@
             <point text="• Counters a player has attached to them."></point>
             <point text="• Continuous effects with no defined expiration within the game that apply to that player, such as Monarch or City’s Blessing."></point>
 			<point text="• Unspent mana in a player’s mana pool."></point>
+			<point text="• Location in a dungeon."></point>
             <annotation text="Example: If a player asks their opponent for their current life total, that player is required to respond truthfully and directly. Answers like, “You can figure it out” or “Twenty” when the player is actually at seventeen life are unacceptable."></annotation>
             <annotation text="These types of information need to be immediately pointed out when the change occurs."></annotation>
             <annotation text="A very common method of tracking life or counters on a player is with pencil/paper."></annotation>
@@ -830,25 +823,30 @@
         <point text="6.3 Standard Format Deck Construction">
             <annotation text="These are the sets legal in Standard. Note that these include dates where sets will rotate in and out of Standard."></annotation>
             <point text="The following card sets are permitted in Standard tournaments:"></point>
-            <point text="• Guilds of Ravnica"></point>
-            <point text="• Ravnica Allegiance"></point>
-            <point text="• War of the Spark"></point>
-            <point text="• Core Set 2020"></point>
-			<point text="• Throne of Eldraine"></point>
-			<point text="• Ikoria: Lair of Behemoths"></point>
-			<point text="• Core Set 2021"></point>
+			<point text="• Throne of Eldraine (until September 24, 2021)"></point>
+			<point text="• Theros Beyond Death (until September 24, 2021)"></point>
+			<point text="• Ikoria: Lair of Behemoths (until September 24, 2021)"></point>
+			<point text="• Core Set 2021 (until September 24, 2021)"></point>
+            <point text="• Zendikar Rising"></point>
+            <point text="• Kaldheim"></point>
+			<point text="• Strixhaven: School of Mages"></point>
+			<point text="• Adventures in the Forgotten Realms"></point>
+			<point text="• Innistrad: Midnight Hunt (effective September 24, 2021)"></point>
+			<point text="• Innistrad: Crimson Vow (effective November 19, 2021)"></point>
             <point text="Cards from Core 2020 Welcome Decks, Spellslinger Starter Kits, and Theme boosters have a Core 2020 expansion symbol and are considered part of the Core 2020 expansion. All cards in Core 2020 Welcome Decks are legal for play in the Standard format and rotate out of the Standard format at the same time as Core 2020."></point>
 			<point text="Cards from Throne of Eldraine Brawl Decks have a Throne of Eldraine expansion symbol and are considered part of the Throne of Eldraine expansion. All cards in Throne of Eldraine Brawl Decks are legal for play in the Standard format and rotate out of the Standard format at the same time as Throne of Eldraine."></point>
             <point text="Planeswalker Decks contain cards that, while not appearing in expansion Booster Packs, are considered part of the expansion released concurrent with those Planeswalker Decks. These cards have the same expansion symbol as cards from that expansion, are legal for play in the Standard format, and rotate out of the Standard format at the same time as the expansion."></point>
             <point text="“Buy-a-Box” promotional cards, while not appearing in expansion Booster Packs, are considered part of the expansion released concurrent with those promotional cards. These cards have the same expansion symbol as cards from that expansion, are legal for play in the Standard format, and rotate out of the Standard format at the same time as the expansion."></point>
             <annotation text="While cards in a Welcome Deck may not be opened in booster packs, they are still currently legal in standard.  Take extra care when verifying legality of cards such as these!"></annotation>
             <point text="When Snow-Covered Lands are not legal in Standard, they are treated as the equivalent basic lands. Players must replace them when discovered, but no infraction is committed."></point>
-            <point text="• Agent of Treachery"></point>
-			<point text="• Field of the Dead"></point>
+            <point text="• Cauldron Familiar"></point>
+			<point text="• Escape to the Wilds"></point>
 			<point text="• Fires of Invention"></point>
+			<point text="• Lucky Clover"></point>
 			<point text="• Oko, Thief of Crowns"></point>
+			<point text="• Omnath, Locus of Creation"></point>
 			<point text="• Once Upon a Time"></point>
-			<point text="• Veil of Summer"></point>
+			<point text="• Uro, Titan of Nature’s Wrath"></point>
         </point>
         <point text="6.4 Modern Format Deck Construction">
             <annotation text="These are the sets legal in Modern. Note that these include dates where sets will rotate into Modern, but that no sets will ever rotate out. This section is updated with each release of the MTR to reflect the newest sets."></annotation>
@@ -921,8 +919,16 @@
 			<point text="• Throne of Eldraine"></point>
 			<point text="• Ikoria: Lair of Behemoths"></point>
 			<point text="• Core Set 2021"></point>
+            <point text="• Zendikar Rising"></point>
+            <point text="• Kaldheim"></point>
+			<point text="• Strixhaven: School of Mages"></point>
+			<point text="• Modern Horizons 2"></point>
+			<point text="• Adventures in the Forgotten Realms"></point>
+			<point text="• Innistrad: Midnight Hunt (effective September 24, 2021)"></point>
+			<point text="• Innistrad: Crimson Vow (effective November 19, 2021)"></point>
 			<point text="The following cards are banned in Modern tournaments:"></point>
             <point text="• Ancient Den"></point>
+			<point text="• Arcum’s Astrolabe"></point>
 			<point text="• Birthing Pod"></point>
 			<point text="• Blazing Shoal"></point>
 			<point text="• Bridge from Below"></point>
@@ -934,6 +940,7 @@
 			<point text="• Dread Return"></point>
 			<point text="• Eye of Ugin"></point>
 			<point text="• Faithless Looting"></point>
+			<point text="• Field of the Dead"></point>
 			<point text="• Gitaxian Probe"></point>
 			<point text="• Glimpse of Nature"></point>
 			<point text="• Golgari Grave-Troll"></point>
@@ -943,6 +950,11 @@
 			<point text="• Hypergenesis"></point>
 			<point text="• Krark-Clan Ironworks"></point>
 			<point text="• Mental Misstep"></point>
+			<point text="• Mox Opal"></point>
+			<point text="• Mycosynth Lattice"></point>
+			<point text="• Mystic Sanctuary"></point>
+			<point text="• Oko, Thief of Crowns"></point>
+			<point text="• Once Upon a Time"></point>
 			<point text="• Ponder"></point>
 			<point text="• Preordain"></point>
 			<point text="• Punishing Fire"></point>
@@ -951,12 +963,15 @@
 			<point text="• Second Sunrise"></point>
 			<point text="• Seething Song"></point>
 			<point text="• Sensei’s Divining Top"></point>
+			<point text="• Simian Spirit Guide"></point>
 			<point text="• Skullclamp"></point>
 			<point text="• Splinter Twin"></point>
 			<point text="• Summer Bloom"></point>
+			<point text="• Tibalt’s Trickery"></point>
 			<point text="• Treasure Cruise"></point>
 			<point text="• Tree of Tales"></point>
 			<point text="• Umezawa’s Jitte"></point>
+			<point text="• Uro, Titan of Nature’s Wrath"></point>
 			<point text="• Vault of Whispers"></point>
         </point>
         <point text="6.5 Vintage Format Deck Construction">
@@ -967,7 +982,7 @@
             <point text="The following cards are banned in Vintage tournaments:"></point>
             <point text="• All cards with the card type “Conspiracy” (25 cards)"></point>
             <point text="• All cards that reference “playing for ante” (9 cards)"></point>
-			<point text="• Cards whose art, text, name, or combination thereof that are racially or culturally offensive are banned in all formats. This list is a work in progress. Click here for the list:"></point>
+			<point text="• Cards whose art, text, name, or combination thereof that are racially or culturally offensive are banned in all formats. (Cleanse, Crusade, Imprison, Invoke Prejudice, Jihad, Pradesh Gypsies, Stone-Throwing Devils)"></point>
             <link text="https://magic.wizards.com/en/articles/archive/news/depictions-racism-magic-2020-06-10"></link>
 			<point text="• Chaos Orb"></point>
             <point text="• Falling Star"></point>
@@ -992,7 +1007,6 @@
 			<point text="• Lion’s Eye Diamond"></point>
 			<point text="• Lodestone Golem"></point>
 			<point text="• Lotus Petal"></point>
-			<point text="• Lurrus of the Dream Den"></point>
 			<point text="• Mana Crypt"></point>
 			<point text="• Mana Vault"></point>
 			<point text="• Memory Jar"></point>
@@ -1033,9 +1047,10 @@
             <point text="The following cards are banned in Legacy tournaments:"></point>
             <point text="• All cards with the card type “Conspiracy” (25 cards)"></point>
 			<point text="• All cards that reference “playing for ante” (9 cards)"></point>
-			<point text="• Cards whose art, text, name, or combination thereof that are racially or culturally offensive are banned in all formats. This list is a work in progress. Click here for the list:"></point>
+			<point text="• Cards whose art, text, name, or combination thereof that are racially or culturally offensive are banned in all formats. (Cleanse, Crusade, Imprison, Invoke Prejudice, Jihad, Pradesh Gypsies, Stone-Throwing Devils)"></point>
             <link text="https://magic.wizards.com/en/articles/archive/news/depictions-racism-magic-2020-06-10"></link>
 			<point text="• Ancestral Recall"></point>
+			<point text="• Arcum’s Astrolabe"></point>
 			<point text="• Balance"></point>
 			<point text="• Bazaar of Baghdad"></point>
 			<point text="• Black Lotus"></point>
@@ -1045,6 +1060,7 @@
 			<point text="• Demonic Consultation"></point>
 			<point text="• Demonic Tutor"></point>
 			<point text="• Dig Through Time"></point>
+			<point text="• Dreadhorde Arcanist"></point>
 			<point text="• Earthcraft"></point>
 			<point text="• Falling Star"></point>
 			<point text="• Fastbond"></point>
@@ -1073,6 +1089,7 @@
 			<point text="• Mystical Tutor"></point>
 			<point text="• Necropotence"></point>
 			<point text="• Oath of Druids"></point>
+			<point text="• Oko, Thief of Crowns"></point>
 			<point text="• Sensei’s Divining Top"></point>
 			<point text="• Shahrazad"></point>
 			<point text="• Skullclamp"></point>
@@ -1127,19 +1144,33 @@
 			<point text="• Throne of Eldraine"></point>
 			<point text="• Ikoria: Lair of Behemoths"></point>
 			<point text="• Core Set 2021"></point>
+			<point text="• Zendikar Rising"></point>
+            <point text="• Kaldheim"></point>
+			<point text="• Strixhaven: School of Mages"></point>
+			<point text="• Adventures in the Forgotten Realms"></point>
+			<point text="• Innistrad: Midnight Hunt (effective September 24, 2021)"></point>
+			<point text="• Innistrad: Crimson Vow (effective November 19, 2021)"></point>
 			<point text="The following cards are banned in Pioneer tournaments:"></point>
+			<point text="• Balustrade Spy"></point>
 			<point text="• Bloodstained Mire"></point>
 			<point text="• Felidar Guardian"></point>
 			<point text="• Field of the Dead"></point>
 			<point text="• Flooded Strand"></point>
+			<point text="• Inverter of Truth"></point>
+			<point text="• Kethis, the Hidden Hand"></point>
 			<point text="• Leyline of Abundance"></point>
-			<point text="• Nexus of Fate"></point>
-			<point text="• Oath of Nissa"></point>
+			<point text="• Nexus of Fate"></point>	
 			<point text="• Oko, Thief of Crowns"></point>
 			<point text="• Once Upon a Time"></point>
 			<point text="• Polluted Delta"></point>
 			<point text="• Smuggler’s Copter"></point>
+			<point text="• Teferi, Time Raveler"></point>
+			<point text="• Undercity Informer"></point>
+			<point text="• Underworld Breach"></point>
+			<point text="• Uro, Titan of Nature’s Wrath"></point>
 			<point text="• Veil of Summer"></point>
+			<point text="• Walking Ballista"></point>
+			<point text="• Wilderness Reclamation"></point>
 			<point text="• Windswept Heath"></point>
 			<point text="• Wooded Foothills"></point>
         </point>

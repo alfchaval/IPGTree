@@ -4,10 +4,13 @@ import android.app.AlertDialog;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.style.ImageSpan;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -19,6 +22,8 @@ import android.widget.TextView;
 import mtg.judge.ipgtree.POJO.Quiz;
 import mtg.judge.ipgtree.R;
 
+import mtg.judge.ipgtree.Utilities.CustomMovementMethod;
+import mtg.judge.ipgtree.Utilities.CustomSpan;
 import mtg.judge.ipgtree.Utilities.Read;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.Utilities.Symbols;
@@ -28,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -58,6 +64,8 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_FINISHED = "key_finished";
     private static final String KEY_QUESTION_NUMBER = "key_question_number";
 
+    private static final Pattern CARD_PATTERN = Pattern.compile("\\[CARD\\|(.*?)]");
+
     @Override
     protected void onSaveInstanceState (Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -79,6 +87,7 @@ public class QuizActivity extends AppCompatActivity {
         setListeners();
 
         tv_question.setTextSize(TEXT_SIZE);
+        tv_question.setMovementMethod(CustomMovementMethod.getInstance());
         viewTreeObserver = scroll_answers.getViewTreeObserver();
 
         layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,  LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -131,12 +140,6 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void setListeners() {
-        tv_question.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showResource();
-            }
-        });
         imv_arrow_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -213,7 +216,7 @@ public class QuizActivity extends AppCompatActivity {
             }
             imv_arrow_right.setVisibility(View.VISIBLE);
             //Show the question
-            tv_question.setText(questions.get(questionNumber).getQuestion());
+            tv_question.setText(SpannableWithCards(questions.get(questionNumber).getQuestion()));
             //Show the answers
             while (index < questions.get(questionNumber).getAnswers().size()) {
                 //Create new TextViews when needed, you never have more TextViews that the maximum number of answers
@@ -269,18 +272,6 @@ public class QuizActivity extends AppCompatActivity {
         while (index < answerTVs.size()) {
             answerTVs.get(index).setVisibility(View.GONE);
             index++;
-        }
-    }
-
-    public void showResource() {
-        String resource = questions.get(questionNumber).getResource();
-        if(resource != null) {
-            try{
-                String cardtext = Repository.cards.get(resource).showCard();
-                new AlertDialog.Builder(QuizActivity.this)
-                        .setMessage(CardSpan(cardtext))
-                        .show();
-            } catch (Exception e) {}
         }
     }
 
@@ -378,19 +369,58 @@ public class QuizActivity extends AppCompatActivity {
         return (float)(100*points)/(4* maxNumberOfQuestions);
     }
 
-    private Spannable CardSpan(String s)
-    {
-        Spannable spannable = new SpannableString(s);
+    public SpannableStringBuilder SpannableWithCards(String text) {
+        int index = 0;
+        String cardWithTag;
+        String cardName;
+        SpannableStringBuilder spannableBuilder = new SpannableStringBuilder();
+        Matcher cardMatcher = CARD_PATTERN.matcher(text);
+        while (cardMatcher.find()) {
+            if(index < cardMatcher.start())
+            {
+                spannableBuilder.append(text.substring(index, cardMatcher.start()));
+            }
+            cardWithTag = cardMatcher.group();
+            cardName = cardWithTag.substring(6, cardWithTag.length() - 1);
+            spannableBuilder.append(cardName);
+            spannableBuilder.setSpan(new CustomSpan(getResources().getColor(R.color.colorLink), cardName) {
+                @Override
+                public void onClick(@NonNull View widget) {
+                    try{
+                        String cardtext = Repository.cards.get(GetRule()).showCard();
+                        new AlertDialog.Builder(QuizActivity.this)
+                                .setMessage(SpannableWithSymbols(cardtext, 0.5f))
+                                .show();
+                    } catch (Exception e) {
+                    }
+                }
+            }, spannableBuilder.length() - cardName.length(), spannableBuilder.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            index = cardMatcher.end();
+        }
+        if(index < text.length()-1)
+        {
+            spannableBuilder.append(text.substring(index));
+        }
+        return spannableBuilder;
+    }
 
-        Matcher symbolMatcher = Symbols.SYMBOL_PATTERN.matcher(s);
+    public Spannable SpannableWithSymbols(String text, float symbolSize)
+    {
+        Spannable spannable = new SpannableString(text);
+        MatchSymbols(spannable, text, symbolSize);
+        return spannable;
+    }
+
+    public void MatchSymbols(Spannable spannable, String text, float symbolSize)
+    {
+        Matcher symbolMatcher = Symbols.SYMBOL_PATTERN.matcher(text);
         while(symbolMatcher.find()) {
             Drawable symbol = Symbols.getSymbol(symbolMatcher.group(), getApplicationContext());
             if (symbol != null) {
-                symbol.setBounds(0, 0, symbol.getIntrinsicWidth()/2, symbol.getIntrinsicHeight()/2);
+                symbol.setBounds(0, 0, (int)(symbol.getIntrinsicWidth()*symbolSize), (int)(symbol.getIntrinsicHeight()*symbolSize));
                 ImageSpan span = new ImageSpan(symbol, ImageSpan.ALIGN_BASELINE);
                 spannable.setSpan(span, symbolMatcher.start(), symbolMatcher.end(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
             }
         }
-        return spannable;
     }
 }
