@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_life"
@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     >
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_p2block"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -41,7 +41,7 @@
 
         </ScrollView>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p2life"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -100,9 +100,9 @@
                 android:text="+"
                 />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p2setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -137,11 +137,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/txv_p2setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_p1block"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -175,7 +175,7 @@
 
         </ScrollView>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p1life"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -234,9 +234,9 @@
                 android:text="+"
                 />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p1setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -271,9 +271,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/txv_p1setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/btn_registry"
@@ -328,7 +328,7 @@
         android:keepScreenOn="true"
         />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_p3block"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -362,7 +362,7 @@
 
         </ScrollView>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p3life"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -421,9 +421,9 @@
                 android:text="+"
                 />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p3setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -458,11 +458,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/txv_p3setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_p6block"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -496,7 +496,7 @@
 
         </ScrollView>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p6life"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -555,9 +555,9 @@
                 android:text="+"
                 />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p6setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -592,11 +592,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/txv_p6setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_p4block"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -630,7 +630,7 @@
 
         </ScrollView>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p4life"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -689,9 +689,9 @@
                 android:text="+"
                 />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p4setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -726,11 +726,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/txv_p4setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cly_p5block"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -764,7 +764,7 @@
 
         </ScrollView>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p5life"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -823,9 +823,9 @@
                 android:text="+"
                 />
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_p5setlife"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -860,8 +860,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/txv_p5setlife"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

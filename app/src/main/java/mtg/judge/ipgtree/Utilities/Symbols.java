@@ -2,7 +2,7 @@ package mtg.judge.ipgtree.Utilities;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.regex.Pattern;
 

@@ -10,8 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -77,8 +77,8 @@ public class DocumentActivity extends AppCompatActivity {
 
     private static final Pattern CARD_PATTERN = Pattern.compile("\\[CARD\\|(.*?)]");
     private static final Pattern EXAMPLE_PATTERN = Pattern.compile("^((Example)|(Ejemplo)):", Pattern.MULTILINE);
-    private static final Pattern RULE_PATTERN = Pattern.compile("(?<!^)\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
-    private static final Pattern SEARCHING_RULE_PATTERN = Pattern.compile("\\b(?<rule>\\d{3})(?:\\.(?<subRule>\\d+)(?<letter>[a-z])?)?\\b");
+    private static final Pattern RULE_PATTERN = Pattern.compile("(?<!^)\\b(\\d{3})(?:\\.(\\d+)([a-z])?)?\\b");
+    private static final Pattern SEARCHING_RULE_PATTERN = Pattern.compile("\\b(\\d{3})(?:\\.(\\d+)([a-z])?)?\\b");
     private static final Pattern URI_PATTERN = Pattern.compile("https?://(www\\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_+.~#()?&/=]*)");
 
     private Pattern searchTextPattern = null;

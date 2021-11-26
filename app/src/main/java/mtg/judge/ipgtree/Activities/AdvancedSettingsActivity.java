@@ -6,10 +6,10 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
@@ -37,7 +37,8 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     private EditText edt_p1_background, edt_p2_background, edt_p3_background, edt_p4_background, edt_p5_background, edt_p6_background,
             edt_server, edt_user, edt_password, edt_news,
             edt_aipg_en, edt_amtr_en, edt_adipg_en, edt_admtr_en, edt_banned_en, edt_cr_en, edt_dq_en, edt_tree_en, edt_jar_en, edt_links_en, edt_quiz_en, edt_hja_en,
-            edt_aipg_es, edt_amtr_es, edt_adipg_es, edt_admtr_es,edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es;
+            edt_aipg_es, edt_amtr_es, edt_adipg_es, edt_admtr_es, edt_banned_es, edt_cr_es, edt_dq_es, edt_tree_es, edt_jar_es, edt_links_es, edt_quiz_es, edt_hja_es,
+            edt_aipg_fr, edt_amtr_fr, edt_adipg_fr, edt_admtr_fr, edt_banned_fr, edt_cr_fr, edt_dq_fr, edt_tree_fr, edt_jar_fr, edt_links_fr, edt_quiz_fr, edt_hja_fr;
     private TextView txv_life, txv_background_life, txv_ftptitle, txv_show_life, txv_show_ftp, txv_show_links,
             txv_p1_background, txv_p2_background, txv_p3_background, txv_p4_background, txv_p5_background, txv_p6_background;
     private LinearLayout ll_scrollchild, ll_life, ll_server, ll_server_settings;
@@ -141,6 +142,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         btn_save_links = findViewById(R.id.btn_save_links);
         btn_save_links.setVisibility(View.GONE);
         edt_news = findViewById(R.id.edt_news);
+
         edt_aipg_en = findViewById(R.id.edt_aipg_en);
         edt_amtr_en = findViewById(R.id.edt_amtr_en);
         edt_adipg_en = findViewById(R.id.edt_adipg_en);
@@ -166,6 +168,19 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_links_es = findViewById(R.id.edt_links_es);
         edt_quiz_es = findViewById(R.id.edt_quiz_es);
         edt_hja_es = findViewById(R.id.edt_hja_es);
+
+        edt_aipg_fr = findViewById(R.id.edt_aipg_fr);
+        edt_amtr_fr = findViewById(R.id.edt_amtr_fr);
+        edt_adipg_fr = findViewById(R.id.edt_adipg_fr);
+        edt_admtr_fr = findViewById(R.id.edt_admtr_fr);
+        edt_banned_fr = findViewById(R.id.edt_banned_fr);
+        edt_cr_fr = findViewById(R.id.edt_cr_fr);
+        edt_dq_fr = findViewById(R.id.edt_dq_fr);
+        edt_tree_fr = findViewById(R.id.edt_tree_fr);
+        edt_jar_fr = findViewById(R.id.edt_jar_fr);
+        edt_links_fr = findViewById(R.id.edt_links_fr);
+        edt_quiz_fr = findViewById(R.id.edt_quiz_fr);
+        edt_hja_fr = findViewById(R.id.edt_hja_fr);
 
         scroll = findViewById(R.id.scroll);
         imv_arrow_down = findViewById(R.id.imv_arrow_down);
@@ -232,6 +247,19 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_quiz_es.setText(preferences.getString(Repository.KEY_QUIZ_ES, Repository.URL_QUIZ_ES));
         edt_hja_es.setText(preferences.getString(Repository.KEY_HJA_ES, Repository.URL_HJA_ES));
 
+        edt_aipg_fr.setText(preferences.getString(Repository.KEY_AIPG_FR, Repository.URL_AIPG_FR));
+        edt_amtr_fr.setText(preferences.getString(Repository.KEY_AMTR_FR, Repository.URL_AMTR_FR));
+        edt_adipg_fr.setText(preferences.getString(Repository.KEY_ADIPG_FR, Repository.URL_ADIPG_FR));
+        edt_admtr_fr.setText(preferences.getString(Repository.KEY_ADMTR_FR, Repository.URL_ADMTR_FR));
+        edt_banned_fr.setText(preferences.getString(Repository.KEY_BANNED_FR, Repository.URL_BANNED_FR));
+        edt_cr_fr.setText(preferences.getString(Repository.KEY_CR_FR, Repository.URL_CR_FR));
+        edt_dq_fr.setText(preferences.getString(Repository.KEY_DQ_FR, Repository.URL_DQ_FR));
+        edt_tree_fr.setText(preferences.getString(Repository.KEY_TREE_FR, Repository.URL_TREE_FR));
+        edt_jar_fr.setText(preferences.getString(Repository.KEY_JAR_FR, Repository.URL_JAR_FR));
+        edt_links_fr.setText(preferences.getString(Repository.KEY_LINKS_FR, Repository.URL_LINKS_FR));
+        edt_quiz_fr.setText(preferences.getString(Repository.KEY_QUIZ_FR, Repository.URL_QUIZ_FR));
+        edt_hja_fr.setText(preferences.getString(Repository.KEY_HJA_FR, Repository.URL_HJA_FR));
+
         edt_news.setHint(Repository.URL_NEWS);
 
         edt_aipg_en.setHint(Repository.URL_AIPG_EN);
@@ -259,6 +287,19 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_links_es.setHint(Repository.URL_LINKS_ES);
         edt_quiz_es.setHint(Repository.URL_QUIZ_ES);
         edt_hja_es.setHint(Repository.URL_HJA_ES);
+
+        edt_aipg_fr.setHint(Repository.URL_AIPG_FR);
+        edt_amtr_fr.setHint(Repository.URL_AMTR_FR);
+        edt_adipg_fr.setHint(Repository.URL_ADIPG_FR);
+        edt_admtr_fr.setHint(Repository.URL_ADMTR_FR);
+        edt_banned_fr.setHint(Repository.URL_BANNED_FR);
+        edt_cr_fr.setHint(Repository.URL_CR_FR);
+        edt_dq_fr.setHint(Repository.URL_DQ_FR);
+        edt_tree_fr.setHint(Repository.URL_TREE_FR);
+        edt_jar_fr.setHint(Repository.URL_JAR_FR);
+        edt_links_fr.setHint(Repository.URL_LINKS_FR);
+        edt_quiz_fr.setHint(Repository.URL_QUIZ_FR);
+        edt_hja_fr.setHint(Repository.URL_HJA_FR);
 
         txv_show_life.setText(Translation.StringMap(93));
         txv_show_ftp.setText(Translation.StringMap(76));
@@ -342,6 +383,19 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 editor.putString(Repository.KEY_QUIZ_ES, edt_quiz_es.getText().toString());
                 editor.putString(Repository.KEY_HJA_ES, edt_hja_es.getText().toString());
 
+                editor.putString(Repository.KEY_AIPG_FR, edt_aipg_fr.getText().toString());
+                editor.putString(Repository.KEY_AMTR_FR, edt_amtr_fr.getText().toString());
+                editor.putString(Repository.KEY_ADIPG_FR, edt_adipg_fr.getText().toString());
+                editor.putString(Repository.KEY_ADMTR_FR, edt_admtr_fr.getText().toString());
+                editor.putString(Repository.KEY_BANNED_FR, edt_banned_fr.getText().toString());
+                editor.putString(Repository.KEY_CR_FR, edt_cr_fr.getText().toString());
+                editor.putString(Repository.KEY_DQ_FR, edt_dq_fr.getText().toString());
+                editor.putString(Repository.KEY_TREE_FR, edt_tree_fr.getText().toString());
+                editor.putString(Repository.KEY_JAR_FR, edt_jar_fr.getText().toString());
+                editor.putString(Repository.KEY_LINKS_FR, edt_links_fr.getText().toString());
+                editor.putString(Repository.KEY_QUIZ_FR, edt_quiz_fr.getText().toString());
+                editor.putString(Repository.KEY_HJA_FR, edt_hja_fr.getText().toString());
+
                 editor.apply();
                 if (ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
                         && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
@@ -403,6 +457,19 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         edt_links_es.setOnLongClickListener(showHint);
         edt_quiz_es.setOnLongClickListener(showHint);
         edt_hja_es.setOnLongClickListener(showHint);
+
+        edt_aipg_fr.setOnLongClickListener(showHint);
+        edt_amtr_fr.setOnLongClickListener(showHint);
+        edt_adipg_fr.setOnLongClickListener(showHint);
+        edt_admtr_fr.setOnLongClickListener(showHint);
+        edt_banned_fr.setOnLongClickListener(showHint);
+        edt_cr_fr.setOnLongClickListener(showHint);
+        edt_dq_fr.setOnLongClickListener(showHint);
+        edt_tree_fr.setOnLongClickListener(showHint);
+        edt_jar_fr.setOnLongClickListener(showHint);
+        edt_links_fr.setOnLongClickListener(showHint);
+        edt_quiz_fr.setOnLongClickListener(showHint);
+        edt_hja_fr.setOnLongClickListener(showHint);
 
         txv_show_life.setOnClickListener(new View.OnClickListener() {
             @Override

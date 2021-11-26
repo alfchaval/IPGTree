@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 
-public class OutlineTextView extends android.support.v7.widget.AppCompatTextView {
+public class OutlineTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     public OutlineTextView(Context context) {
         super(context);

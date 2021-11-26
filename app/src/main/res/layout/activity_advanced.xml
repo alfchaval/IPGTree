@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_about"
@@ -642,6 +642,162 @@
                         />
 
                 </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="AIPG_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_aipg_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="AMTR_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_amtr_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="ADIPG_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_adipg_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="ADMTR_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_admtr_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow >
+
+                    <TextView
+                        android:text="BANNED_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_banned_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="CR_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_cr_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="DQ_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_dq_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="TREE_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_tree_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="JAR_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_jar_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="LINKS_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_links_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="QUIZ_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_quiz_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:text="HJA_FR"
+                        />
+
+                    <EditText
+                        android:id="@+id/edt_hja_fr"
+                        android:layout_weight="1"
+                        />
+
+                </TableRow>
             </TableLayout>
         </LinearLayout>
 
@@ -668,4 +824,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

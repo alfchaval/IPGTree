@@ -51,6 +51,19 @@ public class Repository {
     public static final String URL_QUIZ_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_es.xml";
     public static final String URL_HJA_ES = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/hja_es.xml";
 
+    public static final String URL_AIPG_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/aipg_fr.xml";
+    public static final String URL_AMTR_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/amtr_fr.xml";
+    public static final String URL_ADIPG_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/adipg_fr.xml";
+    public static final String URL_ADMTR_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/admtr_fr.xml";
+    public static final String URL_BANNED_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/banned_fr.xml";
+    public static final String URL_CR_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/cr_fr.xml";
+    public static final String URL_DQ_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/dq_fr.xml";
+    public static final String URL_TREE_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/ipg_tree_fr.xml";
+    public static final String URL_JAR_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/jar_fr.xml";
+    public static final String URL_LINKS_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/links_fr.xml";
+    public static final String URL_QUIZ_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/quiz_fr.xml";
+    public static final String URL_HJA_FR = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/hja_fr.xml";
+
     public static final String URL_NEWS = "https://raw.githubusercontent.com/alfchaval/Tree/master/documents/news.txt";
 
     //File names
@@ -94,6 +107,7 @@ public class Repository {
     public final static char POISON = 'ϕ';
     public final static String ENGLISH = "en";
     public final static String SPANISH = "es";
+    public final static String FRENCH = "fr";
     public final static String FOLDERNAME = "Ipgtree";
 
     //Preferences
@@ -168,6 +182,19 @@ public class Repository {
     public static final String KEY_LINKS_ES = "key_links_es";
     public static final String KEY_QUIZ_ES = "key_quiz_es";
     public static final String KEY_HJA_ES = "key_hja_es";
+
+    public static final String KEY_AIPG_FR = "key_aipg_fr";
+    public static final String KEY_AMTR_FR = "key_amtr_fr";
+    public static final String KEY_ADIPG_FR = "key_adipg_fr";
+    public static final String KEY_ADMTR_FR = "key_admtr_fr";
+    public static final String KEY_BANNED_FR = "key_banned_fr";
+    public static final String KEY_CR_FR = "key_cr_s";
+    public static final String KEY_DQ_FR = "key_dq_fr";
+    public static final String KEY_TREE_FR = "key_tree_fr";
+    public static final String KEY_JAR_FR = "key_jar_fr";
+    public static final String KEY_LINKS_FR = "key_links_fr";
+    public static final String KEY_QUIZ_FR = "key_quiz_fr";
+    public static final String KEY_HJA_FR = "key_hja_fr";
 
     //Oracle
     public static HashMap<String, Card> cards;

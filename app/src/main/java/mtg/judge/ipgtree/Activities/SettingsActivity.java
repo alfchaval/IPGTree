@@ -11,11 +11,10 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.util.Pair;
@@ -46,7 +45,6 @@ import java.util.HashMap;
 
 import mtg.judge.ipgtree.POJO.Card;
 import mtg.judge.ipgtree.POJO.Face;
-import mtg.judge.ipgtree.Utilities.Code;
 import mtg.judge.ipgtree.R;
 import mtg.judge.ipgtree.Utilities.Repository;
 import mtg.judge.ipgtree.POJO.Set;
@@ -54,10 +52,10 @@ import mtg.judge.ipgtree.Utilities.Translation;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Button btn_update_oracle, btn_update_documents, btn_en_language, btn_es_language, btn_donate, btn_advanced;
+    private Button btn_update_oracle, btn_update_documents, btn_en_language, btn_es_language, btn_fr_language, btn_advanced;
     private CheckBox cb_annotations, cb_update;
     private TextView txv_annotations, txv_web;
-    private LinearLayout ll_en_language, ll_es_language;
+    private LinearLayout ll_en_language, ll_es_language, ll_fr_language;
 
 
     private String startingLanguage;
@@ -75,9 +73,6 @@ public class SettingsActivity extends AppCompatActivity {
         loadStrings();
         loadRepositoryData();
         setListeners();
-        if(Repository.ftpCode == null) {
-            Repository.ftpCode = Code.generateCode();
-        }
     }
 
     private void linkViews() {
@@ -85,7 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
         btn_update_documents = findViewById(R.id.btn_update_documents);
         btn_en_language = findViewById(R.id.btn_en_language);
         btn_es_language = findViewById(R.id.btn_es_language);
-        btn_donate = findViewById(R.id.btn_donate);
+        btn_fr_language = findViewById(R.id.btn_fr_language);
         btn_advanced = findViewById(R.id.btn_advanced);
         cb_annotations = findViewById(R.id.cb_annotations);
         cb_update = findViewById(R.id.cb_update);
@@ -93,7 +88,7 @@ public class SettingsActivity extends AppCompatActivity {
         txv_web = findViewById(R.id.txv_web);
         ll_en_language = findViewById(R.id.ll_en_language);
         ll_es_language = findViewById(R.id.ll_es_language);
-
+        ll_fr_language = findViewById(R.id.ll_fr_language);
     }
 
     private void loadStrings() {
@@ -112,6 +107,9 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
             case Repository.SPANISH:
                 ll_es_language.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                break;
+            case Repository.FRENCH:
+                ll_fr_language.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                 break;
         }
         startingLanguage = Repository.language;
@@ -169,6 +167,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ll_en_language.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                 ll_es_language.setBackground(null);
+                ll_fr_language.setBackground(null);
                 Repository.language = Repository.ENGLISH;
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
                 editor.putString(Repository.KEY_LANGUAGE, Repository.language);
@@ -179,8 +178,9 @@ public class SettingsActivity extends AppCompatActivity {
         btn_es_language.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ll_es_language.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
                 ll_en_language.setBackground(null);
+                ll_es_language.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                ll_fr_language.setBackground(null);
                 Repository.language = Repository.SPANISH;
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
                 editor.putString(Repository.KEY_LANGUAGE, Repository.language);
@@ -188,15 +188,17 @@ public class SettingsActivity extends AppCompatActivity {
                 loadStrings();
             }
         });
-        btn_donate.setOnClickListener(new View.OnClickListener() {
+        btn_fr_language.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
-                    donate();
-                } else {
-                    enableButtons(false);
-                    ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET},3);
-                }
+                ll_en_language.setBackground(null);
+                ll_es_language.setBackground(null);
+                ll_fr_language.setBackground(getResources().getDrawable(R.drawable.answer_background_parent));
+                Repository.language = Repository.FRENCH;
+                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
+                editor.putString(Repository.KEY_LANGUAGE, Repository.language);
+                editor.apply();
+                loadStrings();
             }
         });
         btn_advanced.setOnClickListener(new View.OnClickListener() {
@@ -600,11 +602,25 @@ public class SettingsActivity extends AppCompatActivity {
             documents.add(preferences.getString(Repository.KEY_LINKS_ES, Repository.URL_LINKS_ES));
             documents.add(preferences.getString(Repository.KEY_QUIZ_ES, Repository.URL_QUIZ_ES));
             documents.add(preferences.getString(Repository.KEY_HJA_ES, Repository.URL_HJA_ES));
+
+            documents.add(preferences.getString(Repository.KEY_AIPG_FR, Repository.URL_AIPG_FR));
+            documents.add(preferences.getString(Repository.KEY_AMTR_FR, Repository.URL_AMTR_FR));
+            documents.add(preferences.getString(Repository.KEY_ADIPG_FR, Repository.URL_ADIPG_FR));
+            documents.add(preferences.getString(Repository.KEY_ADMTR_FR, Repository.URL_ADMTR_FR));
+            documents.add(preferences.getString(Repository.KEY_BANNED_FR, Repository.URL_BANNED_FR));
+            documents.add(preferences.getString(Repository.KEY_CR_FR, Repository.URL_CR_FR));
+            documents.add(preferences.getString(Repository.KEY_DQ_FR, Repository.URL_DQ_FR));
+            documents.add(preferences.getString(Repository.KEY_TREE_FR, Repository.URL_TREE_FR));
+            documents.add(preferences.getString(Repository.KEY_JAR_FR, Repository.URL_JAR_FR));
+            documents.add(preferences.getString(Repository.KEY_LINKS_FR, Repository.URL_LINKS_FR));
+            documents.add(preferences.getString(Repository.KEY_QUIZ_FR, Repository.URL_QUIZ_FR));
+            documents.add(preferences.getString(Repository.KEY_HJA_FR, Repository.URL_HJA_FR));
             int count;
             InputStream input;
             OutputStream output;
             URL url;
             URLConnection connection;
+            String documentURL;
             String filename;
             int percent = 0;
             byte[] data;
@@ -612,13 +628,14 @@ public class SettingsActivity extends AppCompatActivity {
                 folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
                 File directory = new File(folder);
 
-                for (String string: documents) {
+                for (int i = 0; i < documents.size(); i++) {
+                    documentURL = documents.get(i);
                     try {
-                        url = new URL(string);
+                        url = new URL(documentURL);
                         connection = url.openConnection();
                         connection.connect();
                         input = new BufferedInputStream(url.openStream(), 8192);
-                        filename = folder + File.separator + string.substring(string.lastIndexOf('/') + 1, string.length());
+                        filename = folder + File.separator + documentURL.substring(documentURL.lastIndexOf('/') + 1, documentURL.length());
                         output = new FileOutputStream(filename);
                         data = new byte[1024];
                         while ((count = input.read(data)) != -1) {
@@ -627,12 +644,12 @@ public class SettingsActivity extends AppCompatActivity {
                         output.flush();
                         output.close();
                         input.close();
-                        percent += 4;
-                        publishProgress(percent + "");
                     }
                     catch (Exception e) {
                         Log.d("ERROR", "5");
                     }
+                    percent += i*100/documents.size();
+                    publishProgress(percent + "");
                 }
                 return Translation.StringMap(55) + folder;
             }
@@ -669,7 +686,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @NonNull Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         enableButtons(true);
     }
