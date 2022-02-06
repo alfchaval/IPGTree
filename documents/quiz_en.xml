@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quiz>
-	The first answer inside a question is the correct one.
+	The first answer inside each question is the correct one.
 	Alex = Active Player
 	Nicky = Non Active Player
 	Sam, Stef = Spectator
@@ -16,7 +16,7 @@
 		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the triggered ability is added to the stack"></answer>
 		<answer text="GPE - Misstrigger, no penalty, resolve the ability immediately"></answer>
     </question>
-	!!!<question text="Alex controls a [CARD|Forced Adaptation] attached to a creature they controls, empieza su turno y roba la carta de su paso de robar. Nicky te llama porque Alex no señaló la habilidad disparada">
+	<question text="Alex controls a [CARD|Forced Adaptation] attached to a creature they control, Alex begins the turn and draws the card of the draw step. Nicky calls you because Alex didn't point the trigger ability.">
 		<answer text="GPE - Misstrigger, no penalty, Nicky chooses whether the triggered ability is added to the stack"></answer>
 		<answer text="GPE - Misstrigger, no penalty, Nicky chooses whether to resolve the ability now or at the start of the next phase"></answer>
 		<answer text="GPE - Misstrigger, Warning, Nicky chooses whether the triggered ability is added to the stack"></answer>
@@ -28,7 +28,7 @@
 		<answer text="GPE - Misstrigger, no penalty, there is no solution"></answer>
 		<answer text="GPE - Game Rule Violation, Warning to Alex"></answer>
     </question>
-	!!!<question text="Alex ataca con [CARD|Akrasan Squire], Nicky bloquea con un 2/2, Alex dice que ambas criaturas mueren. Nicky te llama porque Alex no señaló la habilidad disparada">
+	<question text="Alex attacks with [CARD|Akrasan Squire], Nicky blocks with a 2/2, Alex says both creatures die. Nicky calls you because Alex didn't point out the trigger ability">
 		<answer text="There is no infraction"></answer>
 		<answer text="GPE - Misstrigger, no penalty, Nicky chooses whether the triggered ability is added to the stack"></answer>
 		<answer text="GPE - Misstrigger, no penalty, resolve the ability immediately"></answer>
@@ -131,7 +131,7 @@
 		!!!<answer text="GPE - Game Rule Violation, Warning, regresamos las dos cartas descartadas a la mano de Alex, Alex pone una carta al azar de su mano en la parte superior de su biblioteca, luego Alex descarta, roba y descarta"></answer>
 		<answer text="GPE - Game Rule Violation, Warning, we leave the game state as is"></answer>
     </question>
-	!!!<question text="Alex resuelve su [CARD|Eladamri's Call], luego Nicky señala que Alex no ha revelado qué carta buscó">
+	<question text="Alex resolves their [CARD|Eladamri's Call], then Nicky points out that Alex hasn't revealed which card they searched">
 		!!!<answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand to Nicky, quien elige una carta, si no es una carta de criatura, Alex baraja esa carta en su biblioteca y resuelve Eladamri's Call"></answer>
 		!!!<answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand to Nicky, quien elige una carta, Alex baraja esa carta en su biblioteca y resuelve Eladamri's Call"></answer>
 		<answer text="GPE - Hidden Card Error, Warning, Alex reveals their hand to Nicky"></answer>
@@ -161,7 +161,7 @@
 		<answer text="GPE - Game Rule Violation, Warning, we perform a back up returning Leyline of the Void to Alex's hand"></answer>
 		<answer text="TE - Communication Policy Violation, Warning"></answer>
     </question>
-	<question text="Alex takes their first mulligan and exiles with the ability of [CARD|Serum Powder] the 7 cards he just drew, at that moment Nicky calls you">
+	<question text="Alex takes their first mulligan, and after drawing 7 cards, Alex exile the 7 cards with the ability of [CARD|Serum Powder], at that moment Nicky calls you">
 		<answer text="There is no infraction, Alex puts one of these cards on the bottom of their library"></answer>
 		<answer text="GPE - Mulligan Procedure Error, Warning, Alex must take a mulligan"></answer>
 		<answer text="GPE - Game Rule Violation, Warning, we perform a back up returning the exiled cards to Alex's hand"></answer>
@@ -330,7 +330,7 @@
 		<answer text="TE - Outside Assistance, Warning"></answer>
 		<answer text="There is no infraction, between games players may refer to notes made before the match"></answer>
     </question>
-	!!!<question text="Nicky lleva un minuto pensando si bloquear o no la única criatura con la que le están atacando">
+	<question text="Nicky has been thinking for a minute whether or not to block the only creature attacking.">
 		!!!<answer text="TE - Slow Play, Warning, los jugadores tienen dos turnos adicionales al terminar el tiempo de ronda, pero solo si no están ya en turnos adicionales"></answer>
 		!!!<answer text="TE - Slow Play, Warning, los jugadores tienen dos turnos adicionales al terminar el tiempo de ronda"></answer>
 		!!!<answer text="TE - Slow Play, Warning, los jugadores tienen 1 minuto de tiempo adicional al terminar el tiempo de ronda"></answer>
@@ -342,37 +342,37 @@
 		<answer text="UC - Stalling, Game Loss"></answer>
 		<answer text="There is no infraction, if Alex decides to continue performing that action the game ends in a draw"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos en un torneo de modern, descubres que la lista incluye 4 [CARD|Mox Diamond], que no son legales en el formato">
+	!!!<question text="During a deck check en un torneo de modern, descubres que la lista incluye 4 [CARD|Mox Diamond], que no son legales en el formato">
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex debe reemplazarlas por tierras a su elección llamadas Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		<answer text="TE - Decklist Problem, Disqualification"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex debe quitar esas cartas del mazo, no son reemplazadas"></answer>
 		!!!<answer text="TE - Deck Problem, Game Loss, Alex debe quitar esas cartas del mazo, no son reemplazadas"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que el banquillo de Alex tiene apuntado 16 cartas">
+	<question text="During a deck check, you discover that Alex's sideboard has 16 cards on it.">
 		!!!<answer text="TE - Decklist Problem, Game Loss, removemos una carta del banquillo a elección de Alex"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, removemos una carta del banquillo al azar"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, removemos la última carta apuntada en el banquillo"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex puede añadir una carta de su banquillo a su mazo principal o remover una carta del banquillo a su elección"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que el banquillo tiene apuntado 18 cartas, en él aparece dos veces “x3 [CARD|Duress]”">
+	<question text="During a deck check, you discover that a list has 18 cards in the sideboard, “x3 [CARD|Duress]” appears twice">
 		<answer text="TE - Decklist Problem, no penalty, we fix the decklist"></answer>
 		<answer text="TE - Decklist Problem, Game Loss, we fix the decklist"></answer>
 		<answer text="TE - Decklist Problem, Warning, we fix the decklist"></answer>
 		<answer text="There is no infraction"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que el mazo principal y la lista de mazo de Alex tienen solo 59 cartas">
+	<question text="During a deck check, you discover that Alex's main deck and decklist have only 59 cards">
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex debe agregar una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		!!!<answer text="TE - Deck Problem, Game Loss, Alex debe agregar una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		!!!<answer text="TE - Deck Problem y Decklist Problem, Game Loss, Alex debe agregar una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		!!!<answer text="TE - Deck Problem y Decklist Problem, doble Game Loss, Alex debe agregar una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que el mazo principal de Alex tiene 61 cartas y la lista de mazo tiene 60, Alex dice que añadió una más por error">
+	!!!<question text="During a deck check, descubres que el mazo principal de Alex tiene 61 cartas y la lista de mazo tiene 60, Alex dice que añadió una más por error">
 		!!!<answer text="TE - Deck Problem, Game Loss, removemos la carta sobrante"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, removemos la carta sobrante"></answer>
 		!!!<answer text="TE - Deck Problem y TE - Decklist Problem, Game Loss, removemos la carta sobrante"></answer>
 		!!!<answer text="TE - Deck Problem, Warning, removemos la carta sobrante"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que el mazo principal de Alex tiene 61 cartas y la lista de mazo tiene 60, Alex dice que olvidó apuntar una de las cartas">
+	!!!<question text="During a deck check, descubres que el mazo principal de Alex tiene 61 cartas y la lista de mazo tiene 60, Alex dice que olvidó apuntar una de las cartas">
 		<answer text="TE - Decklist Problem, Game Loss, we fix the decklist"></answer>
 		<answer text="TE - Deck Problem, Game Loss, we fix the decklist"></answer>
 		<answer text="TE - Deck Problem y TE - Decklist Problem, Game Loss, we fix the decklist"></answer>
@@ -396,25 +396,25 @@
 		<answer text="TE - Decklist Problem, Game Loss, alter the decklist to reflect the played card"></answer>
 		<answer text="TE - Decklist Problem, alter the decklist to reflect the played card"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que faltan dos cartas en el banquillo del jugador">
+	<question text="During a deck check, you discover that two cards are missing from the player's sideboard">
 		<answer text="TE - Deck Problem, no penalty"></answer>
 		<answer text="TE - Deck Problem, Warning"></answer>
 		<answer text="TE - Deck Problem, Game Loss"></answer>
 		<answer text="There is no infraction"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres 16 cartas en el banquillo del jugador, una de esas cartas es una carta promocional que se ha entregado en otro torneo del evento">
+	!!!<question text="During a deck check, descubres 16 cartas en el banquillo del jugador, una de esas cartas es una carta promocional que se ha entregado en otro torneo del evento">
 		<answer text="There is no infraction"></answer>
 		!!!<answer text="TE - Deck Problem, no penalty, removemos la carta sobrante del banquillo"></answer>
 		!!!<answer text="TE - Deck Problem, Warning, removemos la carta sobrante del banquillo"></answer>
 		!!!<answer text="TE - Deck Problem, Game Loss, removemos la carta sobrante del banquillo"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres 16 cartas en el banquillo del jugador, todas legales en el formato del evento, solo 15 de ellas están apuntadas en su lista de mazo">
+	!!!<question text="During a deck check, descubres 16 cartas en el banquillo del jugador, todas legales en el formato del evento, solo 15 de ellas están apuntadas en su lista de mazo">
 		!!!<answer text="TE - Deck Problem, Game Loss, removemos la carta sobrante del banquillo"></answer>
 		!!!<answer text="TE - Deck Problem, Warning, removemos la carta sobrante del banquillo"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, removemos la carta sobrante del banquillo"></answer>
 		!!!<answer text="TE - Decklist Problem, Warning, removemos la carta sobrante del banquillo"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que falta una carta en el mazo principal de Alex, la carta está en el mazo principal de Nicky">
+	!!!<question text="During a deck check, descubres que falta una carta en el mazo principal de Alex, la carta está en el mazo principal de Nicky">
 		<answer text="TE - Deck Problem, Warning to both players"></answer>
 		<answer text="TE - Deck Problem, Warning to Alex"></answer>
 		!!!<answer text="TE - Deck Problem, Game Loss to both players, la penalización se registra, pero no afecta al resultado de la partida"></answer>
@@ -427,7 +427,7 @@
 		!!!<answer text="UC - Theft of Tournament Material, Warning, baraja la carta en la porción aleatoria de la biblioteca de Nicky, Alex roba otra carta"></answer>
     </question>
 	??? - Opponent made strategic decissions based in the presence of a sideboard card
-	!!!<question text="Durante una revisión de mazos, descubres que Alex juega 3 copias de una carta en su mazo principal y otras 2 copias de esa carta en su banquillo">
+	!!!<question text="During a deck check, descubres que Alex juega 3 copias de una carta en su mazo principal y otras 2 copias de esa carta en su banquillo">
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex elige si remover una copia de la carta de su mazo principal o de su banquillo, si tras removerla de su mazo principal este no tiene suficientes cartas, debe añadir una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex elige si remover una copia de la carta de su mazo principal o de su banquillo, si la remueve del mazo principal debe añadir una Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		!!!<answer text="TE - Decklist Problem, Game Loss, Alex elige si remover una copia de la carta de su mazo principal o de su banquillo"></answer>
@@ -445,7 +445,7 @@
 		<answer text="TE - Deck Problem, Game Loss"></answer>
 		<answer text="GPE - Hidden Card Error, Warning"></answer>
     </question>
-    !!!<question text="Alex pasa un sobre a su derecha durante un draft cuando debería pasarlo a su izquierda">
+    <question text="Alex passes a booster pack to their right during a draft when they should pass it to their left">
 		<answer text="TE - Limited Procedure Violation, Warning"></answer>
 		<answer text="TE - Limited Procedure Violation, no penalty"></answer>
 		<answer text="TE - Limited Procedure Violation, Game Loss"></answer>
@@ -488,7 +488,7 @@
 		<answer text="There is no infraction"></answer>
     </question>
 	??? - Curved foils
-	!!!<question text="Alex te llama porque la funda de la carta de la parte superior de la biblioteca de Nicky se transparenta y puede ver que es una carta de dos caras">
+	<question text="Alex calls you because the sleeve of the card on top of Nicky's library isn't entirely opaque and they can see that it's a double-faced card">
 		!!!<answer text="TE - Marked Cards, Game Loss, Nicky debe conseguir unas fundas que no se transparenten, unas cartas de listado para esas cartas de dos caras o modificar su lista de mazo reemplazando las cartas de dos caras por tierras a su elección llamadas Llanura, Isla, Pantano, Montaña o Bosque"></answer>
 		!!!<answer text="TE - Marked Cards, Game Loss, hacemos una carta de reemplazo para cada carta de dos caras en el mazo de Nicky"></answer>
 		!!!<answer text="TE - Marked Cards, Warning, hacemos una carta de reemplazo para cada carta de dos caras en el mazo de Nicky, barajamos la porción aleatoria de la biblioteca"></answer>
@@ -500,13 +500,13 @@
 		!!!<answer text="TE - Marked Cards, Warning, Nicky debe encontrar otra copia de la carta o reemplazarla por una Llanura, Isla, Pantano, Montaña o Bosque y modificar su lista de mazo"></answer>
 		!!!<answer text="TE - Marked Cards, Game Loss, Nicky debe encontrar otra copia de la carta o reemplazarla por una Llanura, Isla, Pantano, Montaña o Bosque y modificar su lista de mazo"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que cinco cartas del mazo de Alex sin relación entre ellas tienen marcas de uña en la funda, haciendo que puedan distinguirse de las demás">
+	<question text="During a deck check, you discover that five unrelated cards from Alex's deck have fingernail marks on the sleeve, making them distinguishable from the others.">
 		!!!<answer text="TE - Marked Cards, Warning, Alex debe encontrar un reemplazo para esas fundas"></answer>
 		<answer text="There is no infraction"></answer>
 		!!!<answer text="TE - Marked Cards, Game Loss, Alex debe encontrar un reemplazo para esas fundas"></answer>
 		!!!<answer text="TE - Deck Problem, Game Loss, Alex debe encontrar un reemplazo para esas fundas"></answer>
     </question>
-	!!!<question text="Durante una revisión de mazos, descubres que varias cartas del banquillo de Alex tienen las fundas en mal estado, haciendo que puedan distinguirse de las demás">
+	!!!<question text="During a deck check, descubres que varias cartas del banquillo de Alex tienen las fundas en mal estado, haciendo que puedan distinguirse de las demás">
 		<answer text="There is no infraction"></answer>
 		<answer text="TE - Marked Cards, Warning"></answer>
 		!!!<answer text="TE - Marked Cards, Warning, Alex debe encontrar un reemplazo para esas fundas"></answer>
@@ -529,25 +529,25 @@
     </question>
 	??? - A player throws their deck on the ground after losing a game.
 	??? - A player leaves excessive trash in the play area after leaving the table.
-	!!!<question text="Pides a Sam que se aleje de una partida, Sam dice que quiere verla y se niega a alejarse">
+	<question text="You ask Sam to walk away from a match, Sam says he wants to see it and refuses to walk away">
 		<answer text="UC - Minor, Warning"></answer>
 		<answer text="UC - Major, Game Loss"></answer>
 		<answer text="UC - Major, Match Loss"></answer>
-		!!!<answer text="There is no infraction, pero deberías reportarlo al TO"></answer>
+		<answer text="There is no infraction, but you should report it to the TO"></answer>
     </question>
-	!!!<question text="Pides varias veces a Alex que se levante, que hay que mover esa mesa a otra zona, pero solo te da largas">
+	<question text="You ask Alex several times to get up, that you have to move that table to another area, but they ignores you">
 		<answer text="UC - Minor, Warning"></answer>
 		<answer text="UC - Major, Game Loss"></answer>
 		<answer text="UC - Major, Match Loss"></answer>
-		!!!<answer text="There is no infraction, pero deberías reportarlo al TO"></answer>
+		<answer text="There is no infraction, but you should report it to the TO"></answer>
     </question>
-	!!!<question text="Alex se dedica a hacerse fotos posando junto a jugadores a los que se les ve la raja del culo sin su permiso">
+	<question text="Alex takes photos posing next to players whose asshole is seen without their permission">
 		<answer text="UC - Major, Match Loss"></answer>
 		<answer text="UC - Major, Game Loss"></answer>
 		<answer text="UC - Minor, Warning"></answer>
-		!!!<answer text="There is no infraction, pero deberías reportarlo al TO"></answer>
+		<answer text="There is no infraction, but you should report it to the TO"></answer>
     </question>
-	!!!<question text="Alex pide una cita a Nicky, Nicky se la deniega, y Alex insiste múltiples veces">
+	<question text="Alex asks Nicky for a date, Nicky refuses, and Alex insists many times">
 		<answer text="UC - Major, Match Loss"></answer>
 		<answer text="UC - Major, Game Loss"></answer>
 		<answer text="UC - Minor, Warning"></answer>
@@ -629,7 +629,7 @@
 		<answer text="UC - Major, Match Loss"></answer>
 		<answer text="There is no infraction, but we should report ir to the TO"></answer>
     </question>
-	!!!<question text="Alex ya ha recibido la carta promocional que dan en el evento, pero dice a un oficial de torneo que no se la han dado para recibir otra">
+	<question text="Alex has already received the promo card they give out at the event, but tells a tournament official that they haven't given it to them to receive another">
 		<answer text="UC - Theft of Tournament Material, Disqualification"></answer>
 		<answer text="UC - Theft of Tournament Material, Match Loss"></answer>
 		<answer text="UC - Minor, Warning"></answer>

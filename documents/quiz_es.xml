@@ -161,7 +161,7 @@
 		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás regresando Leyline of the Void a la mano de Alex"></answer>
 		<answer text="TE - Violación de la Política de Comunicación, Advertencia"></answer>
     </question>
-	<question text="Alex hace su primer mulligan y exilia con la habilidad de [CARD|Serum Powder] las 7 cartas que acaba de robar, en ese momento Nicky te llama">
+	<question text="Alex hace su primer mulligan, robando 7 cartas, tras lo cuál exilia esas 7 cartas con la habilidad de [CARD|Serum Powder], en ese momento Nicky te llama">
 		<answer text="No hay infracción, Alex pone una de esas cartas en el fondo de su biblioteca"></answer>
 		<answer text="GPE - Error de Procedimiento de Mulligan, Advertencia, Alex debe hacer mulligan"></answer>
 		<answer text="GPE - Violación de Regla de Juego, Advertencia, hacemos una vuelta atrás regresando las cartas exiliadas a la mano de Alex"></answer>
@@ -354,7 +354,7 @@
 		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, removemos la última carta apuntada en el banquillo"></answer>
 		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, Alex puede añadir una carta de su banquillo a su mazo principal o remover una carta del banquillo a su elección"></answer>
     </question>
-	<question text="Durante una revisión de mazos, descubres que el banquillo tiene apuntado 18 cartas, en él aparece dos veces “x3 [CARD|Duress]”">
+	<question text="Durante una revisión de mazos, descubres que el banquillo tiene 18 cartas apuntadas, en él aparece dos veces “x3 [CARD|Duress]”">
 		<answer text="TE - Problema de Lista de Mazo, sin penalización, arreglamos la lista de mazo"></answer>
 		<answer text="TE - Problema de Lista de Mazo, Pérdida de juego, arreglamos la lista de mazo"></answer>
 		<answer text="TE - Problema de Lista de Mazo, Advertencia, arreglamos la lista de mazo"></answer>

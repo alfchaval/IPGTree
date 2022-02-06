@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Banlists">
     <point text="Standard">
-        <point text="Updated: 12-10-2020"></point>
+        <point text="Updated: 25-01-2022"></point>
         <title text="Banned"></title>
-			<point text="[CARD|Cauldron Familiar]"></point>
-			<point text="[CARD|Escape to the Wilds]"></point>
-			<point text="[CARD|Fires of Invention]"></point>
-			<point text="[CARD|Lucky Clover]"></point>
-			<point text="[CARD|Oko, Thief of Crowns]"></point>
-			<point text="[CARD|Omnath, Locus of Creation]"></point>
-			<point text="[CARD|Once Upon a Time]"></point>
-			<point text="[CARD|Uro, Titan of Nature's Wrath]"></point>
+		<point text="[CARD|Alrund's Epiphany]"></point>
+		<point text="[CARD|Divide by Zero]"></point>
+		<point text="[CARD|Faceless Haven]"></point>
+		<point text="[CARD|Omnath, Locus of Creation]"></point>
     </point>
     <point text="Pioneer">
         <point text="Updated: 15-02-2021"></point>
@@ -134,6 +130,7 @@
             <point text="[CARD|Necropotence]"></point>
             <point text="[CARD|Oath of Druids]"></point>
 			<point text="[CARD|Oko, Thief of Crowns]"></point>
+			<point text="[CARD|Ragavan, Nimble Pilferer]"></point>
             <point text="[CARD|Sensei's Divining Top]"></point>
             <point text="[CARD|Shahrazad]"></point>
             <point text="[CARD|Skullclamp]"></point>
@@ -217,9 +214,11 @@
             <point text="[CARD|Yawgmoth's Will]"></point>
     </point>
     <point text="Pauper">
-        <point text="Updated: 14-01-2021"></point>
+        <point text="Updated: 20-01-2022"></point>
         <title text="Banned"></title>
             <point text="[CARD|Arcum's Astrolabe]"></point>
+			<point text="[CARD|Atog]"></point>
+			<point text="[CARD|Bonder's Ornament]"></point>
             <point text="[CARD|Cloud of Faeries]"></point>
             <point text="[CARD|Cloudpost]"></point>
             <point text="[CARD|Cranial Plating]"></point>
@@ -236,6 +235,7 @@
             <point text="[CARD|Invigorate]"></point>
 			<point text="[CARD|Mystic Sanctuary]"></point>
             <point text="[CARD|Peregrine Drake]"></point>
+			<point text="[CARD|Prophetic Prism]"></point>
             <point text="[CARD|Sinkhole]"></point>
             <point text="[CARD|Temporal Fissure]"></point>
             <point text="[CARD|Treasure Cruise]"></point>
@@ -633,17 +633,17 @@
 			<point text="[CARD|Tainted Pact]"></point>
     </point>
 	<point text="Historic">
-        <point text="Updated: 09-06-2021"></point>
+        <point text="Updated: 25-01-2022"></point>
 		<title text="Banned"></title>
 			<point text="[CARD|Agent of Treachery]"></point>
 			<point text="[CARD|Field of the Dead]"></point>
 			<point text="[CARD|Fires of Invention]"></point>
+			<point text="[CARD|Memory Lapse]"></point>
 			<point text="[CARD|Nexus of Fate]"></point>
 			<point text="[CARD|Oko, Thief of Crowns]"></point>
 			<point text="[CARD|Omnath, Locus of Creation]"></point>
 			<point text="[CARD|Once Upon a Time]"></point>
 			<point text="[CARD|Thassa's Oracle]"></point>
-			<point text="[CARD|Teferi, Time Raveler]"></point>
 			<point text="[CARD|Time Warp]"></point>
 			<point text="[CARD|Uro, Titan of Nature's Wrath]"></point>
 			<point text="[CARD|Veil of Summer]"></point>
