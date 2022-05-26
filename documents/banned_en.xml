@@ -9,7 +9,7 @@
 		<point text="[CARD|Omnath, Locus of Creation]"></point>
     </point>
     <point text="Pioneer">
-        <point text="Updated: 15-02-2021"></point>
+        <point text="Updated: 07-03-2022"></point>
         <title text="Banned"></title>
             <point text="[CARD|Balustrade Spy]"></point>
             <point text="[CARD|Bloodstained Mire]"></point>
@@ -19,6 +19,7 @@
 			<point text="[CARD|Inverter of Truth]"></point>
 			<point text="[CARD|Kethis, the Hidden Hand]"></point>
 			<point text="[CARD|Leyline of Abundance]"></point>
+			<point text="[CARD|Lurrus of the Dream Den]"></point>
 			<point text="[CARD|Oko, Thief of Crowns]"></point>
 			<point text="[CARD|Once Upon a Time]"></point>
 			<point text="[CARD|Nexus of Fate]"></point>
@@ -35,7 +36,7 @@
             <point text="[CARD|Wooded Foothills]"></point>
     </point>
     <point text="Modern">
-        <point text="Updated: 15-02-2021"></point>
+        <point text="Updated: 07-03-2022"></point>
         <title text="Banned"></title>
             <point text="[CARD|Ancient Den]"></point>
 			<point text="[CARD|Arcum's Astrolabe]"></point>
@@ -58,6 +59,7 @@
             <point text="[CARD|Hogaak, Arisen Necropolis]"></point>
             <point text="[CARD|Hypergenesis]"></point>
             <point text="[CARD|Krark-Clan Ironworks]"></point>
+			<point text="[CARD|Lurrus of the Dream Den]"></point>
             <point text="[CARD|Mental Misstep]"></point>
 			<point text="[CARD|Mox Opal]"></point>
 			<point text="[CARD|Mycosynth Lattice]"></point>
@@ -214,7 +216,7 @@
             <point text="[CARD|Yawgmoth's Will]"></point>
     </point>
     <point text="Pauper">
-        <point text="Updated: 20-01-2022"></point>
+        <point text="Updated: 07-03-2022"></point>
         <title text="Banned"></title>
             <point text="[CARD|Arcum's Astrolabe]"></point>
 			<point text="[CARD|Atog]"></point>
@@ -223,10 +225,11 @@
             <point text="[CARD|Cloudpost]"></point>
             <point text="[CARD|Cranial Plating]"></point>
             <point text="[CARD|Daze]"></point>
+			<point text="[CARD|Disciple of the Vault]"></point>
             <point text="[CARD|Empty the Warrens]"></point>
-			<point text="[CARD|Expedition Map]"></point>
 			<point text="[CARD|Fall from Favor]"></point>
             <point text="[CARD|Frantic Search]"></point>
+			<point text="[CARD|Galvanic Relay]"></point>
             <point text="[CARD|Gitaxian Probe]"></point>
             <point text="[CARD|Grapeshot]"></point>
             <point text="[CARD|Gush]"></point>
