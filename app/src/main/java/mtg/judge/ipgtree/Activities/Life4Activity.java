@@ -79,7 +79,7 @@ public class Life4Activity extends AppCompatActivity {
             cly_p3block.setRotation(180);
         }
 
-        File bg1 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p1bg);
+        File bg1 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + Repository.p1bg);
         if(bg1.exists()) {
             try {
                 Bitmap bitmap1 = BitmapFactory.decodeFile(bg1.getAbsolutePath());
@@ -89,7 +89,7 @@ public class Life4Activity extends AppCompatActivity {
             }
         }
 
-        File bg2 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p2bg);
+        File bg2 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + Repository.p2bg);
         if(bg2.exists()) {
             try {
                 Bitmap bitmap2 = BitmapFactory.decodeFile(bg2.getAbsolutePath());
@@ -99,7 +99,7 @@ public class Life4Activity extends AppCompatActivity {
             }
         }
 
-        File bg3 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p3bg);
+        File bg3 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + Repository.p3bg);
         if(bg3.exists()) {
             try {
                 Bitmap bitmap3 = BitmapFactory.decodeFile(bg3.getAbsolutePath());
@@ -109,7 +109,7 @@ public class Life4Activity extends AppCompatActivity {
             }
         }
 
-        File bg4 = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + Repository.p4bg);
+        File bg4 = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + Repository.p4bg);
         if(bg4.exists()) {
             try {
                 Bitmap bitmap4 = BitmapFactory.decodeFile(bg4.getAbsolutePath());
@@ -1477,7 +1477,7 @@ public class Life4Activity extends AppCompatActivity {
                 protected Boolean doInBackground( String... params )
                 {
                     try {
-                        String folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+                        String folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME;
                         File textFile = new File(folder, finalFilename);
                         FileOutputStream fileOutputStream = new FileOutputStream(textFile);
                         fileOutputStream.write(finalInfo.getBytes());

@@ -215,7 +215,7 @@ public class Translation {
                         result = "No se encontraron resultados";
                         break;
                     case 70:
-                        result = "Buscar actualizaciones al iniciar";
+                        result = "Ejemplo.png";
                         break;
                     case 71:
                         result = "Actualizar documentos";
@@ -288,9 +288,6 @@ public class Translation {
                         break;
                     case 94:
                         result = "Invertir vida superior";
-                        break;
-                    case 95:
-                        result = "Ejemplo.png";
                         break;
                 }
                 break;
@@ -504,7 +501,7 @@ public class Translation {
                         result = "No results found";
                         break;
                     case 70:
-                        result = "Check for updates at start";
+                        result = "Example.png";
                         break;
                     case 71:
                         result = "Update documents";
@@ -577,9 +574,6 @@ public class Translation {
                         break;
                     case 94:
                         result = "Inverse upper life";
-                        break;
-                    case 95:
-                        result = "Example.png";
                         break;
                 }
                 break;
@@ -793,7 +787,7 @@ public class Translation {
                         result = "Aucun résultat trouvé";
                         break;
                     case 70:
-                        result = "Vérifier les mises à jour au démarrage";
+                        result = "Exemple.png";
                         break;
                     case 71:
                         result = "Mettre à jour les documents";
@@ -866,9 +860,6 @@ public class Translation {
                         break;
                     case 94:
                         result = "Vie supérieure inversée";
-                        break;
-                    case 95:
-                        result = "Exemple.png";
                         break;
                 }
                 break;

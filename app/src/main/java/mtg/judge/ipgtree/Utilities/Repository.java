@@ -18,8 +18,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class Repository {
 
-    public static final int appVersion = 20210724;
-    public static int lastNews;
+    public static final int appVersion = 20220606;
 
     //URLs
     public static final String URL_CARDS = "https://mtgjson.com/api/v5/AtomicCards.json";
@@ -140,7 +139,6 @@ public class Repository {
 
     public static final String KEY_LANGUAGE = "key_language";
     public static final String KEY_ANNOTATION = "key_annotation";
-    public static final String KEY_DOWNLOADNEWS = "key_downloadnews";
 
     public static final String KEY_ALLOWFTP = "key_allowftp";
     public static final String KEY_FTPSERVER = "key_ftpserver";
@@ -239,7 +237,6 @@ public class Repository {
     //Variables de configuración
     public static String language = ENGLISH;
     public static boolean showAnnotations = true;
-    public static boolean downloadNews = false;
     public static int players = 0;
     public static boolean reverseLife = true;
     public static boolean allowFTP = false;
@@ -281,7 +278,6 @@ public class Repository {
         p6bg = preferences.getString(KEY_P6BG, null);
         language = preferences.getString(KEY_LANGUAGE, ENGLISH);
         showAnnotations = preferences.getBoolean(KEY_ANNOTATION, true);
-        downloadNews = preferences.getBoolean(KEY_DOWNLOADNEWS, true);
         players = preferences.getInt(KEY_PLAYERS, 0);
         reverseLife = preferences.getBoolean(KEY_REVERSELIFE, true);
         allowFTP = preferences.getBoolean(KEY_ALLOWFTP, false);
@@ -296,7 +292,7 @@ public class Repository {
         } catch (JSONException e) {
             savedTimes = new JSONArray();
         }
-        String folder = Environment.getExternalStorageDirectory() + File.separator + FOLDERNAME;
+        String folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + FOLDERNAME;
         File directory = new File(folder);
         if (!directory.exists()) {
             directory.mkdirs();

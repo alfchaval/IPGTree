@@ -36,7 +36,7 @@ public class Read {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
-            File file = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + filename);
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + filename);
             FileInputStream fileInputStream = new FileInputStream(file);
             xpp.setInput(new InputStreamReader(fileInputStream));
             int eventType = xpp.getEventType();
@@ -81,7 +81,7 @@ public class Read {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
-            File file = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + filename);
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + filename);
             FileInputStream fileInputStream = new FileInputStream(file);
             xpp.setInput(new InputStreamReader(fileInputStream));
             int eventType = xpp.getEventType();
@@ -122,7 +122,7 @@ public class Read {
             XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
-            File file = new File(Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + filename);
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + filename);
             FileInputStream fileInputStream = new FileInputStream(file);
             xpp.setInput(new InputStreamReader(fileInputStream));
             int eventType = xpp.getEventType();
@@ -160,7 +160,7 @@ public class Read {
         Gson gson = new GsonBuilder().create();
         Card card;
 
-        String filename = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "oracle.json";
+        String filename = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + "oracle.json";
 
         if(new File(filename).exists()) {
             try {
@@ -188,7 +188,7 @@ public class Read {
         Gson gson = new GsonBuilder().create();
         Set set;
 
-        String filename = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "sets.json";
+        String filename = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME + File.separator + "sets.json";
 
         if(new File(filename).exists()) {
             try {
@@ -209,27 +209,5 @@ public class Read {
         }
 
         return sets;
-    }
-
-    public static Pair<Integer, String> readNews(Context context) {
-        String filename = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME + File.separator + "news.txt";
-        Pair<Integer, String> news;
-        String date = null;
-        String info = null;
-
-        try {
-            FileInputStream fileInputStream = new FileInputStream (filename);
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            date = bufferedReader.readLine();
-            info = bufferedReader.readLine();
-            news = new Pair<>(Integer.parseInt(date.trim()),info.trim());
-            fileInputStream.close();
-            bufferedReader.close();
-        }
-        catch(Exception e) {
-            news = new Pair<>(0, null);
-        }
-        return news;
     }
 }

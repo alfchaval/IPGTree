@@ -203,12 +203,12 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
         txv_p4_background.setText(Translation.StringMap(51) + " 4");
         txv_p5_background.setText(Translation.StringMap(51) + " 5");
         txv_p6_background.setText(Translation.StringMap(51) + " 6");
-        edt_p1_background.setHint(Translation.StringMap(95));
-        edt_p2_background.setHint(Translation.StringMap(95));
-        edt_p3_background.setHint(Translation.StringMap(95));
-        edt_p4_background.setHint(Translation.StringMap(95));
-        edt_p5_background.setHint(Translation.StringMap(95));
-        edt_p6_background.setHint(Translation.StringMap(95));
+        edt_p1_background.setHint(Translation.StringMap(70));
+        edt_p2_background.setHint(Translation.StringMap(70));
+        edt_p3_background.setHint(Translation.StringMap(70));
+        edt_p4_background.setHint(Translation.StringMap(70));
+        edt_p5_background.setHint(Translation.StringMap(70));
+        edt_p6_background.setHint(Translation.StringMap(70));
 
         SharedPreferences preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
 
@@ -397,13 +397,25 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
                 editor.putString(Repository.KEY_HJA_FR, edt_hja_fr.getText().toString());
 
                 editor.apply();
-                if (ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
-                        && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                        && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    checkConnection();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    if (ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        checkConnection();
+                    }
+                    else {
+                        ActivityCompat.requestPermissions(AdvancedSettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                    }
                 }
-                else {
-                    ActivityCompat.requestPermissions(AdvancedSettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                else
+                {
+                    if (ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(AdvancedSettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        checkConnection();
+                    }
+                    else {
+                        ActivityCompat.requestPermissions(AdvancedSettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                    }
                 }
             }
         });
@@ -544,7 +556,7 @@ public class AdvancedSettingsActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        String folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+        String folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME;
         File directory = new File(folder);
         if (!directory.exists()) {
             directory.mkdirs();

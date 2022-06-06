@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import androidx.annotation.NonNull;
@@ -53,7 +54,7 @@ import mtg.judge.ipgtree.Utilities.Translation;
 public class SettingsActivity extends AppCompatActivity {
 
     private Button btn_update_oracle, btn_update_documents, btn_en_language, btn_es_language, btn_fr_language, btn_advanced;
-    private CheckBox cb_annotations, cb_update;
+    private CheckBox cb_annotations;
     private TextView txv_annotations, txv_web;
     private LinearLayout ll_en_language, ll_es_language, ll_fr_language;
 
@@ -83,7 +84,6 @@ public class SettingsActivity extends AppCompatActivity {
         btn_fr_language = findViewById(R.id.btn_fr_language);
         btn_advanced = findViewById(R.id.btn_advanced);
         cb_annotations = findViewById(R.id.cb_annotations);
-        cb_update = findViewById(R.id.cb_update);
         txv_annotations = findViewById(R.id.txv_annotations);
         txv_web = findViewById(R.id.txv_web);
         ll_en_language = findViewById(R.id.ll_en_language);
@@ -97,7 +97,6 @@ public class SettingsActivity extends AppCompatActivity {
         btn_advanced.setText(Translation.StringMap(72));
         cb_annotations.setText(Translation.StringMap(65));
         txv_annotations.setText(Translation.StringMap(66));
-        cb_update.setText(Translation.StringMap(70));
     }
 
     private void loadRepositoryData() {
@@ -114,33 +113,57 @@ public class SettingsActivity extends AppCompatActivity {
         }
         startingLanguage = Repository.language;
         cb_annotations.setChecked(Repository.showAnnotations);
-        cb_update.setChecked(Repository.downloadNews);
     }
 
     private void setListeners() {
         btn_update_oracle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    askDownload();
-                } else {
-                    enableButtons(false);
-                    ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        askDownload();
+                    } else {
+                        enableButtons(false);
+                        ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                    }
                 }
+                else
+                {
+                    if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        askDownload();
+                    } else {
+                        enableButtons(false);
+                        ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+                    }
+                }
+
             }
         });
         btn_update_documents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
-                        && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-                        && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    new UpdateDocuments().execute();
-                } else {
-                    enableButtons(false);
-                    ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        new UpdateDocuments().execute();
+                    } else {
+                        enableButtons(false);
+                        ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE},2);
+                    }
+                }
+                else
+                {
+                    if (ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                            && ContextCompat.checkSelfPermission(SettingsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        new UpdateDocuments().execute();
+                    } else {
+                        enableButtons(false);
+                        ActivityCompat.requestPermissions(SettingsActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},2);
+                    }
                 }
             }
         });
@@ -150,15 +173,6 @@ public class SettingsActivity extends AppCompatActivity {
                 Repository.showAnnotations = isChecked;
                 SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
                 editor.putBoolean(Repository.KEY_ANNOTATION, Repository.showAnnotations);
-                editor.apply();
-            }
-        });
-        cb_update.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Repository.downloadNews = isChecked;
-                SharedPreferences.Editor editor = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE).edit();
-                editor.putBoolean(Repository.KEY_DOWNLOADNEWS, Repository.downloadNews);
                 editor.apply();
             }
         });
@@ -223,7 +237,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        String folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+        String folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME;
         File directory = new File(folder);
         if (!directory.exists()) {
             directory.mkdirs();
@@ -287,7 +301,7 @@ public class SettingsActivity extends AppCompatActivity {
             String filenameSets;
             byte[] data;
             try {
-                folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+                folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME;
                 File directory = new File(folder);
 
                 //Descarga la base de datos de cartas
@@ -625,7 +639,7 @@ public class SettingsActivity extends AppCompatActivity {
             int percent = 0;
             byte[] data;
             try {
-                folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
+                folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + File.separator + Repository.FOLDERNAME;
                 File directory = new File(folder);
 
                 for (int i = 0; i < documents.size(); i++) {

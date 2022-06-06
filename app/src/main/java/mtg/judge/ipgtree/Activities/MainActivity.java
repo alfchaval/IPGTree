@@ -29,13 +29,9 @@ import mtg.judge.ipgtree.Utilities.Translation;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_10, btn_news_alert;
+    private Button btn_1, btn_2, btn_3, btn_4, btn_5, btn_6, btn_7, btn_8, btn_9, btn_10;
 
     private boolean documentsMenu = false;
-
-    private Pair<Integer, String> update;
-
-    private SharedPreferences preferences;
 
     private Intent intent = null;
 
@@ -51,10 +47,6 @@ public class MainActivity extends AppCompatActivity {
         linkViews();
         loadStrings();
         setListeners();
-
-        preferences = getSharedPreferences(Repository.KEY_PREFERENCES, MODE_PRIVATE);
-
-        new checkForUpdates().execute();
     }
 
     private void linkViews() {
@@ -68,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         btn_8 = findViewById(R.id.btn_8);
         btn_9 = findViewById(R.id.btn_9);
         btn_10 = findViewById(R.id.btn_10);
-        btn_news_alert = findViewById(R.id.btn_news_alert);
     }
 
     private void loadStrings() {
@@ -97,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
             btn_9.setText(Translation.StringMap(37));
             btn_10.setVisibility(View.GONE);
         }
-        btn_news_alert.setVisibility(View.GONE);
     }
 
     private void setListeners() {
@@ -159,17 +149,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 move(10);
-            }
-        });
-        btn_news_alert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(update != null && update.second != null) {
-                    AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-                    alertDialog.setTitle(Translation.StringMap(74));
-                    alertDialog.setMessage(update.second);
-                    alertDialog.show();
-                }
             }
         });
     }
@@ -348,55 +327,6 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             super.onBackPressed();
-        }
-    }
-
-    public class checkForUpdates extends AsyncTask<String, String, String> {
-        private String folder;
-
-        @Override
-        protected String doInBackground(String... strings) {
-            update = Read.readNews(getApplicationContext());
-            if(Repository.downloadNews) {
-                int count;
-                InputStream input;
-                OutputStream output;
-                URL url;
-                URLConnection connection;
-                String filename;
-                byte[] data;
-                try {
-                    folder = Environment.getExternalStorageDirectory() + File.separator + Repository.FOLDERNAME;
-                    File directory = new File(folder);
-                    String string = preferences.getString(Repository.KEY_NEWS, Repository.URL_NEWS);
-                    url = new URL(string);
-                    connection = url.openConnection();
-                    connection.connect();
-                    input = new BufferedInputStream(url.openStream(), 8192);
-                    filename = folder + File.separator + string.substring(string.lastIndexOf('/') + 1, string.length());
-                    output = new FileOutputStream(filename);
-                    data = new byte[1024];
-                    while ((count = input.read(data)) != -1) {
-                        output.write(data, 0, count);
-                    }
-                    output.flush();
-                    output.close();
-                    input.close();
-
-                    update = Read.readNews(getApplicationContext());
-                }
-                catch (Exception e) {
-                }
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            if(update != null && update.first > Repository.appVersion) {
-                btn_news_alert.setVisibility(View.VISIBLE);
-            }
         }
     }
 }
