@@ -9,10 +9,11 @@
 		<point text="[CARD|Omnath, Locus of Creation]"></point>
     </point>
     <point text="Pioneer">
-        <point text="Updated: 07-03-2022"></point>
+        <point text="Updated: 07-06-2022"></point>
         <title text="Banned"></title>
             <point text="[CARD|Balustrade Spy]"></point>
             <point text="[CARD|Bloodstained Mire]"></point>
+			<point text="[CARD|Expressive Iteration]"></point>
 			<point text="[CARD|Felidar Guardian]"></point>
 			<point text="[CARD|Field of the Dead]"></point>
             <point text="[CARD|Flooded Strand]"></point>
@@ -33,6 +34,7 @@
 			<point text="[CARD|Walking Ballista]"></point>
 			<point text="[CARD|Wilderness Reclamation]"></point>
             <point text="[CARD|Windswept Heath]"></point>
+			<point text="[CARD|Winota, Joiner of Forces]"></point>
             <point text="[CARD|Wooded Foothills]"></point>
     </point>
     <point text="Modern">
