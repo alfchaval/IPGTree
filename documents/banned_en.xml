@@ -218,8 +218,9 @@
             <point text="[CARD|Yawgmoth's Will]"></point>
     </point>
     <point text="Pauper">
-        <point text="Updated: 07-03-2022"></point>
+        <point text="Updated: 19-09-2022"></point>
         <title text="Banned"></title>
+			<point text="[CARD|Aarakocra Sneak]"></point>
             <point text="[CARD|Arcum's Astrolabe]"></point>
 			<point text="[CARD|Atog]"></point>
 			<point text="[CARD|Bonder's Ornament]"></point>
@@ -242,8 +243,11 @@
             <point text="[CARD|Peregrine Drake]"></point>
 			<point text="[CARD|Prophetic Prism]"></point>
             <point text="[CARD|Sinkhole]"></point>
+			<point text="[CARD|Stirring Bard]"></point>
             <point text="[CARD|Temporal Fissure]"></point>
             <point text="[CARD|Treasure Cruise]"></point>
+			<point text="[CARD|Underdark Explorer]"></point>
+			<point text="[CARD|Vicious Battlerager]"></point>
     </point>
     <point text="Commander">
         <point text="Mtgcommander">
