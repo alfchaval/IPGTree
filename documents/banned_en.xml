@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <point text="Banlists">
     <point text="Standard">
-        <point text="Updated: 25-01-2022"></point>
+        <point text="Updated: 10-10-2022"></point>
         <title text="Banned"></title>
-		<point text="[CARD|Alrund's Epiphany]"></point>
-		<point text="[CARD|Divide by Zero]"></point>
-		<point text="[CARD|Faceless Haven]"></point>
-		<point text="[CARD|Omnath, Locus of Creation]"></point>
+		<point text="[CARD|The Meathook Massacre]"></point>
     </point>
     <point text="Pioneer">
         <point text="Updated: 07-06-2022"></point>
@@ -86,6 +83,7 @@
             <point text="[CARD|Umezawa's Jitte]"></point>
 			<point text="[CARD|Uro, Titan of Nature's Wrath]"></point>
             <point text="[CARD|Vault of Whispers]"></point>
+			<point text="[CARD|Yorion, Sky Nomad]"></point>
     </point>
     <point text="Legacy">
         <point text="Updated: 15-02-2021"></point>
